@@ -1878,10 +1878,6 @@
       "version": "1.0.0"
     },
     {
-      "id": "paper-tweet-generator",
-      "version": "1.0.0"
-    },
-    {
       "id": "patient-consent-simplifier",
       "version": "1.0.0"
     },
@@ -2354,6 +2350,11 @@
       "id": "bioinfo-analysis-plan",
       "version": "1.0.0",
       "reason": "Invalid YAML frontmatter; assessment omission does not waive this source failure."
+    },
+    {
+      "id": "paper-tweet-generator",
+      "version": "1.0.0",
+      "reason": "Bundled extracted_text.txt identifies its article as CC BY-NC-ND 4.0, distinct from the Skill MIT declaration; redistribution review and permission resolution are pending."
     }
   ]
 }

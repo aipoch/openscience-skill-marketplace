@@ -214,7 +214,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed first batch selects 572 candidates and explicitly defers exactly the approved twelve", async () => {
+test("committed first batch selects 571 candidates and explicitly defers exactly the approved thirteen", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -225,7 +225,7 @@ test("committed first batch selects 572 candidates and explicitly defers exactly
     new URL("../skills/release_plan.json", import.meta.url),
   );
   const selected = selectReleaseEntries(bytes, manifest.entries, config.source);
-  assert.equal(selected.length, 572);
+  assert.equal(selected.length, 571);
   assert.deepEqual(
     parseMetadataJson(bytes)
       .deferred.map((e) => e.id)
@@ -243,6 +243,7 @@ test("committed first batch selects 572 candidates and explicitly defers exactly
       "univariate-multivariable-cox-regression",
       "ppi-network-analysis",
       "pptx-skill",
+      "paper-tweet-generator",
     ].sort(),
   );
   const audit = parseMetadataJson(
@@ -260,7 +261,7 @@ test("committed first batch selects 572 candidates and explicitly defers exactly
         {},
       ),
     (error) => {
-      assert.equal(error.blockers.length, 572);
+      assert.equal(error.blockers.length, 571);
       assert.ok(error.blockers.every((b) => b.code === "missing-review"));
       return true;
     },

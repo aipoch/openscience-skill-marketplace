@@ -53,9 +53,12 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 [release_plan.schema.json](release_plan.schema.json), partitions all manifest
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
-deferred entry also requires a nonblank `reason`. The first batch selects 572
-candidates and defers the 11 members with remaining source errors plus `pptx-skill`,
-whose packaged LICENSE.txt conflicts with its MIT frontmatter declaration.
+deferred entry also requires a nonblank `reason`. The first batch selects 571
+candidates and defers 13 members: 11 with remaining source errors, `pptx-skill`
+with conflicting bundled license terms, and `paper-tweet-generator` with an
+independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
+appears in [`extracted_text.txt:117`](https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/paper-tweet-generator/extracted_text.txt#L117);
+its redistribution review and permission resolution remain pending.
 Selection is not a redistribution approval.
 
 To defer another member, move its exact ID/version from `selected` to `deferred`
