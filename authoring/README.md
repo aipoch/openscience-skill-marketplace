@@ -112,10 +112,50 @@ npm run intake:skill -- \
 Both `--reviews` and `--output` are required for a build. The command revalidates
 the manifest and exact reviewed source/evidence, uses the platform publisher in
 `marketplace.config.json`, and calls the existing deterministic catalog builder.
-It writes an **unsigned local one-Skill catalog** with release metadata, a release
+It writes an **unsigned local catalog** with release metadata, a release
 index and ZIP shard. Use a dedicated output directory. Repeating unchanged input
 produces identical bytes; conflicting immutable files in an existing output are
 rejected. A source or authored metadata change requires review again.
+
+## Batch intake
+
+Repeat `--manifest` and `--source` to select multiple Skills explicitly. The first
+manifest uses the first source, the second uses the second source, and so on.
+Supply one source per manifest, repeating the same clone path for Skills from a
+shared repository. Each manifest still pins its own repository, commit and path.
+The command does not discover submissions automatically or fetch repositories.
+
+```bash
+npm run --silent intake:skill -- \
+  --manifest /path/to/alpha/release.config.json --source /path/to/shared-clone \
+  --manifest /path/to/beta/release.config.json --source /path/to/shared-clone \
+  --manifest /path/to/gamma/release.config.json --source /path/to/another-clone \
+  > /tmp/batch-review-input.json
+```
+
+This emits one combined review map, sorted by Skill ID. No review JSON is emitted
+if any selected submission fails validation. Check the command's exit status;
+shell redirection can still create an empty file on failure. Each ID may appear
+only once, including when manifests specify different versions of that ID.
+
+Review each record as described above, then supply the completed review file and
+an output directory with the same selection:
+
+```bash
+npm run intake:skill -- \
+  --manifest /path/to/alpha/release.config.json --source /path/to/shared-clone \
+  --manifest /path/to/beta/release.config.json --source /path/to/shared-clone \
+  --manifest /path/to/gamma/release.config.json --source /path/to/another-clone \
+  --reviews /path/to/reviewed-batch.json --output dist/submission-batch
+```
+
+Every selected Skill must pass validation and exact-byte review before bundle
+writing starts. The existing builder creates one unsigned snapshot with bounded
+ZIP shards containing the entire selection. Reordering manifest/source pairs
+does not change the review input or built bytes. Invalid members are not skipped.
+Filesystem failures during bundle writing retain the existing retry and immutable
+conflict behavior; the output directory is not a transactional filesystem commit.
+The original single-manifest command remains valid.
 
 ## Production and batch publication
 
@@ -126,9 +166,10 @@ Migrating that manifest or admitting new members needs a separate inclusion
 decision. A successful local build is not production eligibility.
 
 The existing [publication workflow](../docs/publication.md) publishes a whole
-catalog snapshot in one batch and creates bounded shards automatically. The new
-intake command handles one submission at a time; batch provider intake and wiring
-submissions into the production catalog are not implemented in this slice.
+catalog snapshot in one batch and creates bounded shards automatically. Provider
+batch intake prepares local review material and unsigned catalogs; wiring
+submissions into the production catalog still requires a separate inclusion
+decision and is not performed by this command.
 
 The Skill CDN route prefix remains `/open-science/skill-marketplace/v1/`.
 If the Specialist origin is approved for Skills, the proposed discovery URL is
