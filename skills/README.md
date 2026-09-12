@@ -25,8 +25,8 @@ sandbox or disabled states.
   files. The older ZIP's 141 reports are a different snapshot.
 - Seventeen additional reports are not mapped: twelve have a different reported
   Skill identity and five lack the required original `final.score/final.max`
-  fields. They require reviewed correction or explicit omission; no alias or
-  maximum score is guessed.
+  fields. Their explicit omission decisions are recorded in `reviews.json`; no
+  alias or maximum score is guessed. Original reports remain in the packages.
 - Four YAML syntax failures: format-references-endnote, format-references-zotero,
   meta-analysis, and bioinfo-analysis-plan.
 - One additional required-field failure: mendelian-randomisation has no valid description.
@@ -47,8 +47,11 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 
 ## Review records
 
-`reviews.json` is deliberately empty. Each future key is `<skill-id>@<version>`
-and must record the following reviewed facts (the example is not an approval):
+`reviews.json` contains seventeen approved assessment-omission decisions, bound
+to the pinned source commit and exact package content digest. These records do
+not approve redistribution: all 584 members still require license review.
+Each key is `<skill-id>@<version>`; a complete redistribution review must record
+the following facts (the example is not an approval):
 
 ```json
 {
@@ -85,7 +88,12 @@ its review. Invalid YAML or missing declarations still fail independently.
 Optional assessments can be explicitly omitted with a nonempty per-version
 `omit_evaluation_reason` in the byte-bound review record. This waives only assessment
 findings; it never waives YAML, license or resource failures. The source audit still
-retains the findings. No score field or zero placeholder is emitted.
+retains the findings and the original report bytes remain in the package. An
+omission-only record has no `reviewed_by`, `reviewed_on`, `license_expression` or
+`license_files`; it continues to produce a `missing-review` blocker. Complete
+license review separately without replacing the approved content digest. Changed
+source commits or package bytes require renewed review, including the omission
+decision. No score field or zero placeholder is emitted.
 
 Missing author credits remain absent. `evaluation` is omitted when unavailable;
 its raw final score is never recomputed, rounded or replaced with zero. The

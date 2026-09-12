@@ -1,1 +1,87 @@
-{}
+{
+  "paper-web@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "5a06896ea8cef8762a68fe2711068c495596019f924657493695c7909ec010aa",
+    "omit_evaluation_reason": "Report identity \"paper-2-web\" does not exactly match Marketplace Skill ID \"paper-web\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "d-molecule-ray-tracer@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "3a290205418d04c3d3a689ecf0fae7cd3dd1ed4f55a480f1aed7067f9218d9fa",
+    "omit_evaluation_reason": "Report identity \"3d-molecule-ray-tracer\" does not exactly match Marketplace Skill ID \"d-molecule-ray-tracer\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "diagnostic-study-quality-assessment-quadas@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "befef6882972d0bd4387f7124cf4c2bba374fbf9af599addb258cb39362c5e0c",
+    "omit_evaluation_reason": "Report identity \"diagnostic-study-quality-assessment-quadas-2\" does not exactly match Marketplace Skill ID \"diagnostic-study-quality-assessment-quadas\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "meta-rob-plot@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "841885ed5e9019de7b9bb38e4bc5c36274a1292cae005c2f021305bd87a619ee",
+    "omit_evaluation_reason": "Report identity \"meta-rob2-plot\" does not exactly match Marketplace Skill ID \"meta-rob-plot\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "neurokit@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "5276961102a5b72a3421ab0b75e44c8f6a22ac29941123701a208cc80b558ee1",
+    "omit_evaluation_reason": "Report identity \"neurokit2\" does not exactly match Marketplace Skill ID \"neurokit\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "pydeseq@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "661874a8fc60a5e0e0c6b8bf0f489d4ffbc90c487e8a4c683504922fb124be6a",
+    "omit_evaluation_reason": "Report identity \"pydeseq2\" does not exactly match Marketplace Skill ID \"pydeseq\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "rct-bias-assessment-rob@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "1acc91cd48b6c3e101973aae2fea5c6fa3c443585971e40f41f5e1efadc5d51c",
+    "omit_evaluation_reason": "Report identity \"rct-bias-assessment-rob2\" does not exactly match Marketplace Skill ID \"rct-bias-assessment-rob\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "torchdrug-english@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "7b91c9df41c93fd90a79c4854a691d1f96d297c1403da413bb2fc1cc83e40190",
+    "omit_evaluation_reason": "Report identity \"TorchDrug (English)\" does not exactly match Marketplace Skill ID \"torchdrug-english\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "co-tank-monitor@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "6d8b5d61621562a3bbd42422933e2b4e7003307852d0fe31ecf317640d2c3b30",
+    "omit_evaluation_reason": "Report identity \"co2-tank-monitor\" does not exactly match Marketplace Skill ID \"co-tank-monitor\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "iso-certification@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "e4e2e58f5573203cdc6a4221e82673f5391dd42357b8ee0a70bd37194e0e5b2e",
+    "omit_evaluation_reason": "Report identity \"iso-13485-certification\" does not exactly match Marketplace Skill ID \"iso-certification\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "bioinfo-analysis-plan@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "bb9c3675ccca17aa4722c4a2ccfc5453e37fba5d9c53f77e988cba21490585e7",
+    "omit_evaluation_reason": "Report identity \"bioinfo_analysis_plan\" does not exactly match Marketplace Skill ID \"bioinfo-analysis-plan\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "dual-disease-transcriptomic-ml-planner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "7678fd3b1e4f9903c62312078439dfca08f20300a23491649ca737c5786534b7",
+    "omit_evaluation_reason": "The source report lacks the required original final.score/final.max pair; omit this upstream self-assessment without inferring a maximum or replacing the reported scoring fields."
+  },
+  "faers-multi-drug-soc-planner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "eb534d15bd151787a5f6bc0bb03ede0197313928bcec8890d9305efa54468904",
+    "omit_evaluation_reason": "The source report lacks the required original final.score/final.max pair; omit this upstream self-assessment without inferring a maximum or replacing the reported scoring fields."
+  },
+  "inplasy-registration-helper@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "7d38d9fe21d6b18eca0ce7aa5b866c60d4261ab08a81b14d0ae743b803f855c2",
+    "omit_evaluation_reason": "Report identity \"INPLASY-registration-helper\" does not exactly match Marketplace Skill ID \"inplasy-registration-helper\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+  },
+  "network-tox-docking-research-planner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "d62c72032d92fbb9fb86e5893de6200dd706039b8f677f7d2cc215ad065112b9",
+    "omit_evaluation_reason": "The source report lacks the required original final.score/final.max pair; omit this upstream self-assessment without inferring a maximum or replacing the reported scoring fields."
+  },
+  "non-tumor-ml-research-planner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "2452ff1b71bb34dd2d44ea7e7e20ce11aa7b447940943aac81b8d4dc9d7e5f4b",
+    "omit_evaluation_reason": "The source report lacks the required original final.score/final.max pair; omit this upstream self-assessment without inferring a maximum or replacing the reported scoring fields."
+  },
+  "two-sample-mr-research-planner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "1cc4d7d7f0f61afadb77215ba52c0823a4015e90b80f0afd657ce23b2a0fa78f",
+    "omit_evaluation_reason": "The source report lacks the required original final.score/final.max pair; omit this upstream self-assessment without inferring a maximum or replacing the reported scoring fields."
+  }
+}

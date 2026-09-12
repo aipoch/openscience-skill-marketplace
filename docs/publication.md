@@ -1,7 +1,9 @@
 # Batch publication and recovery
 
 Production has **not** been published or configured by this change. The current
-source blockers and empty `skills/reviews.json` prevent a complete production build.
+source blockers and missing redistribution reviews prevent a complete production
+build. The seventeen assessment-omission records in `skills/reviews.json` are not
+license approvals.
 The maintainer explicitly deferred publication. Do not bypass these gates.
 
 ## Responsibilities
@@ -158,9 +160,9 @@ in this repository. Category and evidence-kind values are metadata only;
 publication steps are not client installation states. No UI changes require screenshots.
 
 The complete catalog is blocked by four syntax errors, one missing description,
-five missing license declarations, the PPI resource limits, seventeen unresolved
-assessment mappings, and all pending reviewed
-redistribution records. Fixes to upstream bytes and any PPI redesign need separate
+five missing license declarations, the PPI resource limits, and all pending
+reviewed redistribution records. The seventeen invalid assessments are explicitly
+omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate
 approval. No production URL, key pin or immutable published test URL is claimed.
 
 Local tests and the dry-run cover protocol, packaging, history, transport commands

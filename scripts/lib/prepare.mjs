@@ -19,7 +19,7 @@ export function prepareCandidates(audit, reviews, config, snapshot) {
         continue;
       blockers.push({ id: entry.id, ...issue });
     }
-    if (!review)
+    if (!review?.reviewedBy?.trim())
       blockers.push({
         id: entry.id,
         code: "missing-review",
