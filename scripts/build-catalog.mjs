@@ -4,6 +4,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { validateManifest } from "./lib/catalog.mjs";
 import { auditSources, gitSnapshot } from "./lib/source.mjs";
 import { prepareCandidates } from "./lib/prepare.mjs";
+import { selectReleaseEntries } from "./lib/release-plan.mjs";
 import { buildCatalog } from "./lib/build.mjs";
 import { readBundle, writeBundle } from "./lib/bundle.mjs";
 const { values } = parseArgs({
@@ -20,10 +21,20 @@ const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
 validateManifest(manifest, await readFile("skills/inclusion-list.md"));
 const snapshot = gitSnapshot(values.source, config.source.commit);
 const audit = auditSources(manifest, snapshot, config.source);
+const selected = selectReleaseEntries(
+  await readFile("skills/release_plan.json"),
+  audit.entries,
+  config.source,
+);
 const reviews = parseMetadataJson(await readFile("skills/reviews.json"));
 await mkdir(values.output, { recursive: true });
 try {
-  const candidates = prepareCandidates(audit, reviews, config, snapshot);
+  const candidates = prepareCandidates(
+    { entries: selected },
+    reviews,
+    config,
+    snapshot,
+  );
   let history;
   if (values.history) {
     if (!process.env.SKILL_MARKETPLACE_PUBLIC_KEY)

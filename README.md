@@ -2,10 +2,11 @@
 
 An independent protocol and publication toolchain for individually distributed
 OpenScience Skills. The authoritative manifest contains **584 Skills**, resolved
-against a fixed upstream Git commit.
+against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
+selects 572 candidates and explicitly defers 12 problematic members.
 
-**No production catalog has been published.** Source problems and redistribution
-reviews block publication. This repository includes real source metadata and
+**No production catalog has been published.** The selected candidates still need
+redistribution reviews before publication. This repository includes real source metadata and
 clearly marked integration fixtures, not approval to distribute every package.
 
 ## Develop
@@ -33,7 +34,9 @@ npm run build:catalog -- --source /path/to/medical-research-skills
 Both commands read Git objects at
 `d92441066ea6259967469be8e0c8c7b6587928ab`, regardless of the clone's checkout.
 They do not execute Skill scripts. The build currently exits unsuccessfully and
-writes `dist/candidate/publication-blockers.json`; this is the intended gate.
+writes `dist/candidate/publication-blockers.json` for the 572 pending reviews.
+Only the explicitly selected batch is built; a failure in any selected member
+stops the batch. The complete authority and source audit remain unchanged.
 
 ## Repository map
 
