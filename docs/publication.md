@@ -1,7 +1,7 @@
 # Batch publication and recovery
 
 Production has **not** been published or configured by this change. The current
-release plan explicitly defers 12 problematic members; its 572 selected candidates
+release plan explicitly defers 13 problematic members; its 571 selected candidates
 still require redistribution review before production build. The seventeen assessment-omission records in `skills/reviews.json` are not
 license approvals.
 The maintainer explicitly deferred publication. Do not bypass these gates.
@@ -164,7 +164,8 @@ publication steps are not client installation states. No UI changes require scre
 
 The release plan explicitly defers four syntax errors, one missing description,
 five missing license declarations, the PPI resource limits and the PPTX license
-conflict. The 572 selected candidates remain blocked by pending redistribution
+conflict, plus the CC BY-NC-ND 4.0 article bundled in `paper-tweet-generator`.
+The 571 selected candidates remain blocked by pending redistribution
 reviews. See [release selection](../skills/README.md#release-selection) for the
 complete-partition rules and how to include corrected members later. The seventeen invalid assessments are explicitly
 omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate
