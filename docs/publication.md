@@ -1,10 +1,13 @@
 # Batch publication and recovery
 
-Production has **not** been published or configured by this change. The current
-release plan explicitly defers 13 problematic members; its 571 selected candidates
-still require redistribution review before production build. The seventeen assessment-omission records in `skills/reviews.json` are not
-license approvals.
-The maintainer explicitly deferred publication. Do not bypass these gates.
+The initial release selects the reviewed `abstract-trimmer@1.0.0` and explicitly
+defers 583 other members. Its byte-bound redistribution review is recorded in
+`skills/reviews.json`; the seventeen assessment-omission records remain separate
+and are not license approvals. Production publication uses the protected main
+workflow after explicit maintainer authorization. Check the
+[workflow runs](https://github.com/aipoch/openscience-skill-marketplace/actions/workflows/publish.yml)
+and [releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
+for the actual publication outcome.
 
 ## Responsibilities
 
@@ -165,12 +168,14 @@ publication steps are not client installation states. No UI changes require scre
 The release plan explicitly defers four syntax errors, one missing description,
 five missing license declarations, the PPI resource limits and the PPTX license
 conflict, plus the CC BY-NC-ND 4.0 article bundled in `paper-tweet-generator`.
-The 571 selected candidates remain blocked by pending redistribution
-reviews. See [release selection](../skills/README.md#release-selection) for the
+Another 570 members are outside the initial single-Skill batch while their
+redistribution reviews remain pending. See [release selection](../skills/README.md#release-selection) for the
 complete-partition rules and how to include corrected members later. The seventeen invalid assessments are explicitly
 omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate
-approval. No production URL, key pin or immutable published test URL is claimed.
+approval. Production addresses and signed immutable releases must be verified
+from the configured environment and successful publication output.
 
 Local tests and the dry-run cover protocol, packaging, history, transport commands
-and interruption recovery. Live GitHub Release/S3/CDN promotion remains untested
-until a separately authorized production or staging environment is available.
+and interruption recovery. The production workflow and subsequent
+`verify-published.yml` run provide live GitHub Release/S3/CDN validation; local
+simulation alone does not establish that a release is available.

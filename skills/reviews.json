@@ -83,5 +83,18 @@
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
     "content_sha256": "1cc4d7d7f0f61afadb77215ba52c0823a4015e90b80f0afd657ce23b2a0fa78f",
     "omit_evaluation_reason": "The source report lacks the required original final.score/final.max pair; omit this upstream self-assessment without inferring a maximum or replacing the reported scoring fields."
+  },
+  "abstract-trimmer@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "57c037c5030cc190a5b1f8e91f19af6e1ae17bba1dc0aa07145ea207ef7ab0f8",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "license_expression": "MIT",
+    "reviewed_by": "ewen-poch",
+    "reviewed_on": "2026-09-12"
   }
 }
