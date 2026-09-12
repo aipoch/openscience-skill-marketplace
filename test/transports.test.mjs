@@ -79,6 +79,7 @@ test("S3 publication refreshes both stable paths before verification and recover
           [prefix + "marketplace.json", previous.rootBytes],
           [prefix + "marketplace.json.sig", jsonBytes(sign(previous))],
         ]);
+        for (const [key, bytes] of publicStable) objects.set(key, bytes);
         const events = [];
         let fail = failure !== "none";
         const makeStore = () =>
@@ -91,6 +92,11 @@ test("S3 publication refreshes both stable paths before verification and recover
               assert.equal(command, "aws");
               if (args[0] === "s3api") {
                 const key = args[args.indexOf("--key") + 1];
+                if (args[1] === "head-object") {
+                  if (!objects.has(key))
+                    throw new Error("HeadObject (404): Not Found");
+                  return Buffer.from("{}");
+                }
                 events.push(`put:${key}`);
                 if (
                   fail &&
@@ -226,6 +232,10 @@ test("CDN transport uses conditional immutable writes and verifies the public by
       run: async (command, args) => {
         commands.push([command, args]);
         const key = args[args.indexOf("--key") + 1];
+        if (args[1] === "head-object") {
+          if (!objects.has(key)) throw new Error("HeadObject (404): Not Found");
+          return Buffer.from("{}");
+        }
         const bytes = await readFile(args[args.indexOf("--body") + 1]);
         objects.set(key, bytes);
         return Buffer.from("{}");
@@ -239,10 +249,126 @@ test("CDN transport uses conditional immutable writes and verifies the public by
     await store.putImmutable("shards/test.zip", Buffer.from("zip"));
     assert.deepEqual(await store.read("shards/test.zip"), Buffer.from("zip"));
     assert.equal(commands[0][0], "aws");
-    assert.ok(commands[0][1].includes("--if-none-match"));
-    assert.ok(commands[0][1].includes("*"));
+    const put = commands.find(([, args]) => args[1] === "put-object");
+    assert.ok(put[1].includes("--if-none-match"));
+    assert.ok(put[1].includes("*"));
   } finally {
     await rm(tmp, { recursive: true, force: true });
+  }
+});
+
+test("S3 absence is authoritative while access failures and unavailable public objects remain fatal", async () => {
+  for (const code of [
+    "404",
+    "NotFound",
+    "NoSuchKey",
+    "403",
+    "AccessDenied",
+    "500",
+  ]) {
+    let fetched = false;
+    const store = s3Store({
+      bucket: "test-bucket",
+      baseUrl: "https://cdn.example.com",
+      distributionId: "ETEST",
+      run: async (command, args) => {
+        assert.equal(command, "aws");
+        assert.deepEqual(args, [
+          "s3api",
+          "head-object",
+          "--bucket",
+          "test-bucket",
+          "--key",
+          "open-science/skill-marketplace/v1/marketplace.json",
+        ]);
+        throw Object.assign(new Error("AWS command failed"), {
+          stderr: Buffer.from(
+            `An error occurred (${code}) when calling the HeadObject operation`,
+          ),
+        });
+      },
+      fetchImpl: async () => {
+        fetched = true;
+        return new Response(null, { status: 403 });
+      },
+    });
+    if (["404", "NotFound", "NoSuchKey"].includes(code))
+      assert.equal(await store.readRoot(), undefined);
+    else await assert.rejects(store.readRoot(), /AWS command failed/);
+    assert.equal(fetched, false);
+  }
+  for (const status of [403, 404]) {
+    const store = s3Store({
+      bucket: "test-bucket",
+      baseUrl: "https://cdn.example.com",
+      distributionId: "ETEST",
+      run: async () => Buffer.from("{}"),
+      fetchImpl: async () => new Response(null, { status }),
+    });
+    await assert.rejects(store.readRoot(), /HTTP 403|unavailable from CDN/);
+  }
+});
+
+test("first publication never requests an unpublished CDN key that could cache a missing-object 403", async () => {
+  const { publishSnapshot, directoryStore } =
+    await import("../scripts/lib/publish.mjs");
+  const { buildCatalog } = await import("../scripts/lib/build.mjs");
+  const { signRoot } = await import("../scripts/lib/signing.mjs");
+  const { makeCandidate } = await import("./fixtures.mjs");
+  const { generateKeyPairSync } = await import("node:crypto");
+  const temporary = await mkdtemp(path.join(os.tmpdir(), "skill-initial-cdn-"));
+  try {
+    const objects = new Map();
+    let missingPublicReads = 0;
+    const cdn = s3Store({
+      bucket: "test-bucket",
+      baseUrl: "https://cdn.example.com",
+      distributionId: "ETEST",
+      temporary,
+      run: async (command, args) => {
+        assert.equal(command, "aws");
+        if (args[0] === "cloudfront")
+          return Buffer.from(args[1] === "create-invalidation" ? "ITEST" : "");
+        const key = args[args.indexOf("--key") + 1];
+        if (args[1] === "head-object") {
+          if (!objects.has(key)) throw new Error("HeadObject (404): Not Found");
+          return Buffer.from("{}");
+        }
+        assert.equal(args[1], "put-object");
+        if (args.includes("--if-none-match") && objects.has(key))
+          throw new Error("PreconditionFailed 412");
+        objects.set(key, await readFile(args[args.indexOf("--body") + 1]));
+        return Buffer.from("{}");
+      },
+      fetchImpl: async (url) => {
+        const bytes = objects.get(new URL(url).pathname.slice(1));
+        if (!bytes) missingPublicReads++;
+        return new Response(bytes ?? null, { status: bytes ? 200 : 403 });
+      },
+    });
+    const candidate = buildCatalog([makeCandidate()]);
+    const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+    const pin = publicKey
+      .export({ type: "spki", format: "der" })
+      .toString("base64");
+    const signature = signRoot(candidate.rootBytes, {
+      privateKey,
+      expectedPublicKey: pin,
+      keyId: "openscience-skills-test",
+    });
+    const github = await directoryStore(path.join(temporary, "github"));
+    const result = await publishSnapshot({
+      candidate,
+      signature,
+      pin,
+      github,
+      cdn,
+    });
+    assert.equal(result.revision, candidate.root.revision);
+    assert.deepEqual((await cdn.readRoot()).rootBytes, candidate.rootBytes);
+    assert.equal(missingPublicReads, 0);
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
   }
 });
 
