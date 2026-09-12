@@ -8,11 +8,8 @@ const pin = process.env.SKILL_MARKETPLACE_PUBLIC_KEY;
 if (!pin || !process.env.SKILL_MARKETPLACE_CDN_BASE_URL)
   throw new Error("verification requires public trust pin and CDN base URL");
 const candidate = await readBundle(values.history, { pin });
-const { fetchBytes } = await import("./lib/transports.mjs");
-const { assertHttps } = await import("./lib/common.mjs");
-const base = assertHttps(process.env.SKILL_MARKETPLACE_CDN_BASE_URL);
-if (!base.pathname.endsWith("/"))
-  throw new Error("CDN base needs a trailing slash");
+const { fetchBytes, skillCdnBaseUrl } = await import("./lib/transports.mjs");
+const base = skillCdnBaseUrl(process.env.SKILL_MARKETPLACE_CDN_BASE_URL);
 const rootBytes = await fetchBytes(new URL("marketplace.json", base), {
   maxBytes: 4 * 1024 * 1024,
 });

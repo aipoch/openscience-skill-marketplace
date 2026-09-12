@@ -52,22 +52,27 @@ export async function fetchBytes(
   return Buffer.concat(chunks, length);
 }
 
+const cdnPrefix = "open-science/skill-marketplace/v1";
+export function skillCdnBaseUrl(origin) {
+  const base = assertHttps(origin);
+  if (typeof origin !== "string" || !/^https:\/\/[^/?#\\\s]+\/?$/.test(origin))
+    throw new Error("CDN base URL must be an HTTPS origin without a path");
+  return new URL(`/${cdnPrefix}/`, base);
+}
+
 export function s3Store({
   bucket,
   baseUrl,
-  prefix,
+  distributionId,
   temporary,
   run = runCommand,
   fetchImpl = fetch,
 }) {
-  const base = assertHttps(baseUrl);
-  if (!base.pathname.endsWith("/"))
-    throw new Error("CDN base URL needs a trailing slash");
-  assertPath(prefix);
+  const base = skillCdnBaseUrl(baseUrl);
+  if (typeof distributionId !== "string" || !/^[A-Z0-9]+$/.test(distributionId))
+    throw new Error("invalid CloudFront distribution ID");
   if (!bucket || !/^[a-z0-9.-]+$/.test(bucket))
     throw new Error("invalid bucket");
-  if (base.pathname !== `/${prefix}/`)
-    throw new Error("CDN URL path must equal storage prefix");
   const read = (relative, { maxBytes = 64 * 1024 * 1024 } = {}) => {
     assertPath(relative);
     return fetchBytes(new URL(relative, base), { fetchImpl, maxBytes });
@@ -83,7 +88,7 @@ export function s3Store({
       "--bucket",
       bucket,
       "--key",
-      `${prefix}/${relative}`,
+      `${cdnPrefix}/${relative}`,
       "--body",
       file,
       "--content-type",
@@ -109,7 +114,39 @@ export function s3Store({
     read,
     putImmutable: (p, b) => upload(p, b, true),
     writeRootSignature: (b) => upload("marketplace.json.sig", b, false),
-    writeRoot: (b) => upload("marketplace.json", b, false),
+    async writeRoot(bytes) {
+      await upload("marketplace.json", bytes, false);
+      // publishSnapshot writes the signature first. Refresh both only after the
+      // root upload, and finish before its public mirror verification.
+      const invalidationId = (
+        await run("aws", [
+          "cloudfront",
+          "create-invalidation",
+          "--distribution-id",
+          distributionId,
+          "--paths",
+          `/${cdnPrefix}/marketplace.json`,
+          `/${cdnPrefix}/marketplace.json.sig`,
+          "--query",
+          "Invalidation.Id",
+          "--output",
+          "text",
+        ])
+      )
+        .toString()
+        .trim();
+      if (!/^[A-Z0-9]+$/.test(invalidationId))
+        throw new Error("invalid CloudFront invalidation ID");
+      await run("aws", [
+        "cloudfront",
+        "wait",
+        "invalidation-completed",
+        "--distribution-id",
+        distributionId,
+        "--id",
+        invalidationId,
+      ]);
+    },
     async readRoot() {
       const rootBytes = await read("marketplace.json");
       return rootBytes

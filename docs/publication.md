@@ -33,22 +33,34 @@ A production run requires `publish: true`, the current main commit, and the prot
 `production` environment. Configure required reviewers and restrict that environment
 to main before enabling it. Production code checks these explicit values:
 
-| Configuration                                             | Location                                                                   |
-| --------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `SKILL_MARKETPLACE_PUBLISH_ENABLED=true`                  | protected variable                                                         |
-| `SKILL_MARKETPLACE_PUBLIC_KEY` (SPKI DER base64)          | protected variable / independent App pin                                   |
-| `SKILL_MARKETPLACE_KEY_FINGERPRINT` (SHA-256 of SPKI DER) | protected variable                                                         |
-| `SKILL_MARKETPLACE_KEY_ID` (`openscience-skills-...`)     | protected variable                                                         |
-| `SKILL_MARKETPLACE_PRIVATE_KEY` (PKCS#8 DER base64)       | protected secret                                                           |
-| `SKILL_MARKETPLACE_CDN_BASE_URL`                          | protected variable, HTTPS URL ending `/open-science/skill-marketplace/v1/` |
-| `SKILL_MARKETPLACE_BUCKET`                                | protected secret                                                           |
-| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`              | protected secrets                                                          |
-| `AWS_DEFAULT_REGION`                                      | protected variable                                                         |
+| Configuration                                             | Location                                                                     |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `SKILL_MARKETPLACE_PUBLISH_ENABLED=true`                  | protected variable                                                           |
+| `SKILL_MARKETPLACE_PUBLIC_KEY` (SPKI DER base64)          | protected variable / independent App pin                                     |
+| `SKILL_MARKETPLACE_KEY_FINGERPRINT` (SHA-256 of SPKI DER) | protected variable                                                           |
+| `SKILL_MARKETPLACE_KEY_ID` (`openscience-skills-...`)     | protected variable                                                           |
+| `SKILL_MARKETPLACE_PRIVATE_KEY` (PKCS#8 DER base64)       | protected secret                                                             |
+| `SKILL_MARKETPLACE_CDN_BASE_URL`                          | protected variable, HTTPS origin only, for example `https://cdn.example.com` |
+| `SKILL_MARKETPLACE_CDN_DISTRIBUTION_ID`                   | protected secret, CloudFront distribution serving the Skill prefix           |
+| `SKILL_MARKETPLACE_BUCKET`                                | protected secret                                                             |
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`              | protected secrets                                                            |
+| `AWS_DEFAULT_REGION`                                      | protected variable                                                           |
 
 Use least-privilege access restricted to the Skill Marketplace prefix. Keep these
 keys and paths separate from Specialist publication. The Ubuntu runner needs `gh`
-and AWS CLI with S3 `put-object --if-none-match` support. No infrastructure or
+and AWS CLI with S3 `put-object --if-none-match` and CloudFront invalidation support.
+The publication identity also needs `cloudfront:CreateInvalidation` and
+`cloudfront:GetInvalidation` for the configured distribution. No infrastructure or
 production credentials are created by repository validation.
+
+Publishing and mirror verification append the fixed path
+`/open-science/skill-marketplace/v1/` to the HTTPS origin. A trailing `/` on the
+origin is accepted; paths, credentials, queries and fragments are rejected.
+This follows Specialist's origin-plus-prefix configuration while keeping Skills
+under their own prefix. No real origin or distribution is selected by the tools.
+If the candidate origin `https://statics.aipoch.com` is approved later, discovery
+would be `https://statics.aipoch.com/open-science/skill-marketplace/v1/marketplace.json`;
+this is not a claimed live endpoint.
 
 The production workflow:
 
@@ -60,7 +72,8 @@ The production workflow:
 6. Uses conditional S3 writes for immutable objects, reads public CDN and GitHub bytes,
    and verifies equality before moving either stable root.
 7. Publishes the verified release, writes metadata through `.worktree/published`, then
-   promotes the stable CDN signature/root pair and verifies both roots and signatures.
+   promotes the stable CDN signature/root pair, invalidates both CloudFront paths,
+   waits for completion, then verifies both mirrors' roots and signatures.
 
 S3 conditional immutable writes use the documented
 [`If-None-Match: *` operation](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object.html).
@@ -70,7 +83,18 @@ not treated as a missing object. Do not use `gh release upload --clobber`.
 The CDN must expose the object-store prefix with correct byte preservation and no
 stale negative caching for newly created immutable objects. Stable metadata must
 revalidate (`Cache-Control: no-cache`); immutable objects use long-lived caching.
-No CDN distribution or invalidation policy is configured by these tools.
+The S3 transport calls AWS CLI
+[`create-invalidation`](https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html)
+with exactly `/open-science/skill-marketplace/v1/marketplace.json` and
+`/open-science/skill-marketplace/v1/marketplace.json.sig` after both uploads. It
+then calls
+[`wait invalidation-completed`](https://docs.aws.amazon.com/cli/latest/reference/cloudfront/wait/invalidation-completed.html)
+with the returned ID. The waiter polls every 20 seconds and fails after 30
+unsuccessful checks. Creation, wait and final byte-verification failures fail
+the publication run; a completed invalidation alone is not proof of mirror equality.
+Immutable shards, descriptors, indexes and snapshots are never invalidated.
+This does not configure a distribution, change its cache policy or solve negative
+caching of newly uploaded objects; those remain deployment prerequisites.
 
 ## Recovery
 
@@ -93,6 +117,13 @@ then prove that retry restores matching final bytes. During a mismatch clients
 must retain a verified snapshot or retry the bounded fetch. The publisher never
 accepts mismatched bytes as a successful completed run.
 
+A retry after root upload or CloudFront failure revalidates existing immutable
+bytes, rewrites the same stable pair and requests a fresh invalidation for both
+paths. AWS CLI generates the request's caller reference. No invalidation ID is
+persisted locally or used as authoritative recovery state. Even an unchanged
+successful rerun requests another refresh, so it consumes another invalidation
+request; immutable content is still reused.
+
 The signed `previous_revision` preserves the original parent across workflow restarts;
 rebuilding identical already-published input returns its original root and parent.
 The expected previous revision prevents overwriting a different published root.
@@ -107,6 +138,14 @@ GitHub history and compares every referenced object plus the stable signed root
 against the public CDN. It performs no remote writes.
 
 ## Scope and remaining decisions
+
+The earlier full-path `SKILL_MARKETPLACE_CDN_BASE_URL` was unpublished development
+configuration. Preflight on 2026-09-12 found no GitHub Releases, tags, `published`
+branch, repository variables or environments. Replace any local full-path value
+with its origin and supply the distribution ID before an explicitly authorized
+deployment. Both publication and the read-only mirror verifier reject the old
+full-path format; there is no dual-format compatibility reader. Public protocol
+bytes, storage paths and historical immutable objects are unchanged.
 
 There is no App database, settings, cache, installation-source document or migration
 in this repository. Category and evidence-kind values are metadata only;

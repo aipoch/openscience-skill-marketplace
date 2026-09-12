@@ -3,6 +3,215 @@ import assert from "node:assert/strict";
 import { mkdtemp, rm, readFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { s3Store, skillCdnBaseUrl } from "../scripts/lib/transports.mjs";
+
+test("CDN configuration accepts only HTTPS origins and fixes the Skill route", () => {
+  for (const origin of ["https://cdn.example.com", "https://cdn.example.com/"])
+    assert.equal(
+      skillCdnBaseUrl(origin).href,
+      "https://cdn.example.com/open-science/skill-marketplace/v1/",
+    );
+  for (const origin of [
+    "http://cdn.example.com",
+    "https://user:pass@cdn.example.com",
+    "https://cdn.example.com/?x=1",
+    "https://cdn.example.com/#fragment",
+    "https://cdn.example.com/open-science/skill-marketplace/v1/",
+    "https://cdn.example.com/other/..",
+    "https://cdn.example.com\\other",
+    " https://cdn.example.com",
+    "https://cdn.example.com/\n",
+  ])
+    assert.throws(() => skillCdnBaseUrl(origin));
+  for (const distributionId of [undefined, "", "bad/id", "--option"])
+    assert.throws(
+      () =>
+        s3Store({
+          bucket: "test-bucket",
+          baseUrl: "https://cdn.example.com",
+          distributionId,
+        }),
+      /distribution ID/,
+    );
+});
+
+test("S3 publication refreshes both stable paths before verification and recovers after CloudFront failures", async (t) => {
+  const { publishSnapshot, directoryStore } =
+    await import("../scripts/lib/publish.mjs");
+  const { buildCatalog } = await import("../scripts/lib/build.mjs");
+  const { signRoot } = await import("../scripts/lib/signing.mjs");
+  const { jsonBytes } = await import("../scripts/lib/common.mjs");
+  const { makeCandidate } = await import("./fixtures.mjs");
+  const { generateKeyPairSync } = await import("node:crypto");
+  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+  const pin = publicKey
+    .export({ type: "spki", format: "der" })
+    .toString("base64");
+  const sign = (candidate) =>
+    signRoot(candidate.rootBytes, {
+      privateKey,
+      expectedPublicKey: pin,
+      keyId: "openscience-skills-test",
+    });
+  const previous = buildCatalog([makeCandidate("alpha")]);
+  const candidate = buildCatalog(
+    [makeCandidate("alpha"), makeCandidate("beta")],
+    { history: previous.objects, previousRoot: previous.root },
+  );
+  const signature = sign(candidate);
+  const prefix = "open-science/skill-marketplace/v1/";
+  for (const failure of [
+    "upload",
+    "create",
+    "wait",
+    "response",
+    "stale",
+    "none",
+  ]) {
+    await t.test(failure, async () => {
+      const temporary = await mkdtemp(
+        path.join(os.tmpdir(), "skill-cloudfront-"),
+      );
+      try {
+        const github = await directoryStore(path.join(temporary, "github"));
+        const objects = new Map();
+        const publicStable = new Map([
+          [prefix + "marketplace.json", previous.rootBytes],
+          [prefix + "marketplace.json.sig", jsonBytes(sign(previous))],
+        ]);
+        const events = [];
+        let fail = failure !== "none";
+        const makeStore = () =>
+          s3Store({
+            bucket: "test-bucket",
+            baseUrl: "https://cdn.example.com/",
+            distributionId: "EDFDVBD6EXAMPLE",
+            temporary: path.join(temporary, "cdn"),
+            run: async (command, args) => {
+              assert.equal(command, "aws");
+              if (args[0] === "s3api") {
+                const key = args[args.indexOf("--key") + 1];
+                events.push(`put:${key}`);
+                if (
+                  fail &&
+                  failure === "upload" &&
+                  key === prefix + "marketplace.json"
+                )
+                  throw new Error("injected upload failure");
+                const bytes = await readFile(args[args.indexOf("--body") + 1]);
+                if (args.includes("--if-none-match") && objects.has(key))
+                  throw new Error("PreconditionFailed 412");
+                objects.set(key, bytes);
+                return Buffer.alloc(0);
+              }
+              if (args[1] === "create-invalidation") {
+                events.push("invalidate");
+                assert.deepEqual(args, [
+                  "cloudfront",
+                  "create-invalidation",
+                  "--distribution-id",
+                  "EDFDVBD6EXAMPLE",
+                  "--paths",
+                  `/${prefix}marketplace.json`,
+                  `/${prefix}marketplace.json.sig`,
+                  "--query",
+                  "Invalidation.Id",
+                  "--output",
+                  "text",
+                ]);
+                assert.deepEqual(
+                  objects.get(prefix + "marketplace.json"),
+                  candidate.rootBytes,
+                );
+                assert.deepEqual(
+                  objects.get(prefix + "marketplace.json.sig"),
+                  jsonBytes(signature),
+                );
+                if (fail && failure === "create")
+                  throw new Error("injected create failure");
+                return Buffer.from(
+                  fail && failure === "response" ? "None\n" : "IEXAMPLE\n",
+                );
+              }
+              assert.deepEqual(args, [
+                "cloudfront",
+                "wait",
+                "invalidation-completed",
+                "--distribution-id",
+                "EDFDVBD6EXAMPLE",
+                "--id",
+                "IEXAMPLE",
+              ]);
+              events.push("wait");
+              if (fail && failure === "wait")
+                throw new Error("injected wait failure");
+              if (!(fail && failure === "stale"))
+                for (const key of publicStable.keys())
+                  publicStable.set(key, objects.get(key));
+              return Buffer.alloc(0);
+            },
+            fetchImpl: async (url) => {
+              const key = new URL(url).pathname.slice(1);
+              const stable = publicStable.has(key);
+              if (stable) events.push(`read:${key}`);
+              const bytes = stable ? publicStable.get(key) : objects.get(key);
+              return new Response(bytes ?? null, { status: bytes ? 200 : 404 });
+            },
+          });
+        const publish = () =>
+          publishSnapshot({
+            candidate,
+            signature,
+            pin,
+            github,
+            cdn: makeStore(),
+            baseRevision: previous.root.revision,
+          });
+        if (fail) {
+          await assert.rejects(
+            publish(),
+            /injected|invalid CloudFront invalidation ID|stable GitHub\/CDN metadata mismatch/,
+          );
+          if (["upload", "create", "response"].includes(failure))
+            assert.equal(events.includes("wait"), false);
+          if (failure === "upload")
+            assert.equal(events.includes("invalidate"), false);
+        }
+        fail = false;
+        events.length = 0;
+        await publish();
+        const invalidate = events.indexOf("invalidate"),
+          wait = events.indexOf("wait");
+        assert.ok(
+          events.indexOf(`put:${prefix}marketplace.json.sig`) <
+            events.indexOf(`put:${prefix}marketplace.json`),
+        );
+        assert.ok(events.indexOf(`put:${prefix}marketplace.json`) < invalidate);
+        assert.ok(invalidate < wait);
+        assert.deepEqual(events.slice(wait + 1), [
+          `read:${prefix}marketplace.json`,
+          `read:${prefix}marketplace.json.sig`,
+        ]);
+        assert.deepEqual(
+          (await makeStore().readRoot()).rootBytes,
+          candidate.rootBytes,
+        );
+        await publish();
+        // A conditional-write race must compare existing bytes, never replace them.
+        const store = makeStore();
+        const [name, bytes] = candidate.objects.entries().next().value;
+        await store.putImmutable(name, bytes);
+        await assert.rejects(
+          store.putImmutable(name, Buffer.from("conflict")),
+          /immutable CDN conflict/,
+        );
+      } finally {
+        await rm(temporary, { recursive: true, force: true });
+      }
+    });
+  }
+});
+
 test("CDN transport uses conditional immutable writes and verifies the public bytes", async () => {
   const { s3Store } = await import("../scripts/lib/transports.mjs");
   const tmp = await mkdtemp(path.join(os.tmpdir(), "skill-s3-test-"));
@@ -11,8 +220,8 @@ test("CDN transport uses conditional immutable writes and verifies the public by
   try {
     const store = s3Store({
       bucket: "test-bucket",
-      baseUrl: "https://cdn.example.com/open-science/skill-marketplace/v1/",
-      prefix: "open-science/skill-marketplace/v1",
+      baseUrl: "https://cdn.example.com",
+      distributionId: "EDFDVBD6EXAMPLE",
       temporary: tmp,
       run: async (command, args) => {
         commands.push([command, args]);
