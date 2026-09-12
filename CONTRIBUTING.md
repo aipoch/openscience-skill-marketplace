@@ -62,6 +62,14 @@ require `npm run publish:dry-run`. PR CI runs the complete tooling suite on Linu
 macOS and Windows. Do not execute scripts or tests bundled inside imported Skills
 as part of catalog ingestion. Payload fixtures are excluded from tooling tests.
 
+For a focused Windows source-checkout/audit rehearsal, dispatch `validate.yml`
+with `full=false` (the default). It reuses the same checkout and audit steps,
+reads the fixed Git snapshot and skips unrelated tooling tests. Dispatch with
+`full=true` for the full three-platform validation. Both modes are read-only.
+The upstream checkout uses command-scoped `core.longpaths=true`, following
+[Git for Windows guidance](https://gitforwindows.org/git-cannot-create-a-file-or-directory-with-a-long-path.html),
+without changing runner-wide Git configuration.
+
 The protocol, source-readiness and publication responsibilities are documented in
 [the protocol](protocol/README.md) and [publication guide](docs/publication.md).
 
