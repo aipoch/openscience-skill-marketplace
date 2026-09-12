@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "marketplace": {
+    "id": "openscience-skills",
+    "name": "OpenScience Skill Marketplace"
+  },
+  "skills": [
+    {
+      "id": "pdf-to-ppt-pack",
+      "version": "1.0.0",
+      "display_name": "pdf-to-ppt-pack",
+      "summary": "Convert research paper PDFs into literature-report PPTX decks using a fully offline workflow (extract text/figures, map captions, summarize findings, and generate slides). Use when you need to turn a PDF into a presentation deck, especially for scientific articles with figures and tables.",
+      "category": "other",
+      "source": {
+        "repository": "https://github.com/aipoch/medical-research-skills",
+        "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+        "path": "scientific-skills/Other/pdf-to-ppt-pack"
+      },
+      "publisher": {
+        "id": "aipoch",
+        "name": "AIPOCH",
+        "url": "https://aipoch.com/agent-skills"
+      },
+      "authors": [
+        {
+          "name": "AIPOCH"
+        }
+      ],
+      "license": "MIT",
+      "release": {
+        "path": "releases/pdf-to-ppt-pack/1.0.0.json",
+        "sha256": "2c32ab86417169f60e68b8bc19148f86d898565aefc1945826806f132120cfa5"
+      },
+      "artifact": {
+        "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
+        "sha256": "8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f",
+        "bytes": 17318,
+        "skill_path": "pdf-to-ppt-pack"
+      },
+      "content_sha256": "66d74735595ce765693a0a770b7d705386bba24bf6e07c853c797e20d645593d"
+    },
+    {
+      "id": "primary-plan-recommender",
+      "version": "1.0.0",
+      "display_name": "primary-plan-recommender",
+      "summary": "Compares multiple study-route options for the same biomedical research question and recommends one primary plan, while explicitly explaining why alternative routes are secondary, premature, weaker, or dependency-heavy. Always use this skill when the user already has a reasonably defined question but is unsure which main study route should anchor the project. Focus on plan comparison, route selection, dependency awareness, and primary-plan justification rather than full protocol drafting.",
+      "category": "protocol-design",
+      "source": {
+        "repository": "https://github.com/aipoch/medical-research-skills",
+        "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+        "path": "awesome-med-research-skills/Protocol Design/primary-plan-recommender"
+      },
+      "publisher": {
+        "id": "aipoch",
+        "name": "AIPOCH",
+        "url": "https://aipoch.com/agent-skills"
+      },
+      "authors": [
+        {
+          "name": "AIPOCH"
+        }
+      ],
+      "license": "MIT",
+      "evaluation": {
+        "kind": "upstream-self-assessment",
+        "score": 89,
+        "max_score": 100,
+        "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/primary-plan-recommender/eval_report_primary-plan-recommender_result.json",
+        "evaluated_on": "2026-04-22",
+        "evaluator_version": "skill-auditor@1.0",
+        "static_score": {
+          "score": 91,
+          "max_score": 100
+        },
+        "dynamic_score": {
+          "score": 88.4,
+          "max_score": 100
+        }
+      },
+      "release": {
+        "path": "releases/primary-plan-recommender/1.0.0.json",
+        "sha256": "b6e261b170c331b949e210be73684f38d2450653608dd5b83f75d5cc5b87524b"
+      },
+      "artifact": {
+        "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
+        "sha256": "8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f",
+        "bytes": 17318,
+        "skill_path": "primary-plan-recommender"
+      },
+      "content_sha256": "5271f6b085735bc0904552a537484e40cb48573db9cf6e78d8979b667d39bb0b"
+    }
+  ],
+  "release_index": {
+    "path": "indexes/d7ce4989bf34c3689215962c3ab869b9a82114a34863fd44ee0241f81f6f43b1.json",
+    "sha256": "d7ce4989bf34c3689215962c3ab869b9a82114a34863fd44ee0241f81f6f43b1"
+  },
+  "previous_revision": null,
+  "revision": "fbd1a3fa77a4a161b7e1ae78b1663c88b185d937f6ef24a478b3663661c35bee"
+}

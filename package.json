@@ -1,0 +1,28 @@
+{
+  "name": "@aipoch/openscience-skill-marketplace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "audit:sources": "node scripts/audit-sources.mjs",
+    "build:catalog": "node scripts/build-catalog.mjs",
+    "validate": "node scripts/validate.mjs",
+    "publish:dry-run": "node scripts/publish-dry-run.mjs",
+    "review:input": "node scripts/review-input.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "fflate": "0.8.3",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6"
+  },
+  "license": "Apache-2.0"
+}
