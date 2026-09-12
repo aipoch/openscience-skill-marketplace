@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "path": "releases/pdf-to-ppt-pack/1.0.0.json",
+      "sha256": "ae2daf6d5985e1fbb4ce046d6262f99eeb08921b82ade67b207cf5a8c9dabc6a"
+    },
+    {
+      "path": "releases/primary-plan-recommender/1.0.0.json",
+      "sha256": "0d056a67c094595d9493cda199ed3ad3782814b16c30923ffc0560b974f74449"
+    }
+  ]
+}

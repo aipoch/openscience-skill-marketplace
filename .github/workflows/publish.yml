@@ -1,0 +1,78 @@
+name: Publish Skill catalog
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish a reviewed complete catalog through the protected production environment
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: openscience-skill-marketplace-publication
+  cancel-in-progress: false
+jobs:
+  rehearsal:
+    uses: ./.github/workflows/publication-check.yml
+  publish:
+    if: inputs.publish
+    needs: rehearsal
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment: production
+    permissions:
+      contents: write
+    env:
+      SKILL_MARKETPLACE_PUBLIC_KEY: ${{ vars.SKILL_MARKETPLACE_PUBLIC_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require protected main publication configuration
+        shell: bash
+        env:
+          ENABLED: ${{ vars.SKILL_MARKETPLACE_PUBLISH_ENABLED }}
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_REF" == refs/heads/main && "$ENABLED" == true ]]
+          [[ -n "$SKILL_MARKETPLACE_PUBLIC_KEY" ]]
+          [[ "$(git ls-remote origin refs/heads/main | cut -f1)" == "$GITHUB_SHA" ]]
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run validate
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: aipoch/medical-research-skills
+          ref: d92441066ea6259967469be8e0c8c7b6587928ab
+          path: dist/upstream
+          persist-credentials: false
+      - run: npm run audit:sources -- --source dist/upstream --check
+      - run: node scripts/download-history.mjs
+      - name: Build every reviewed member
+        shell: bash
+        run: |
+          set -euo pipefail
+          history=()
+          if [[ -f dist/history/marketplace.json ]]; then history=(--history dist/history); fi
+          npm run build:catalog -- --source dist/upstream "${history[@]}"
+      - name: Sign, reconcile and publish the complete snapshot
+        run: node scripts/publish-catalog.mjs
+        env:
+          SKILL_MARKETPLACE_PUBLISH_ENABLED: ${{ vars.SKILL_MARKETPLACE_PUBLISH_ENABLED }}
+          SKILL_MARKETPLACE_KEY_ID: ${{ vars.SKILL_MARKETPLACE_KEY_ID }}
+          SKILL_MARKETPLACE_KEY_FINGERPRINT: ${{ vars.SKILL_MARKETPLACE_KEY_FINGERPRINT }}
+          SKILL_MARKETPLACE_PRIVATE_KEY: ${{ secrets.SKILL_MARKETPLACE_PRIVATE_KEY }}
+          SKILL_MARKETPLACE_BUCKET: ${{ secrets.SKILL_MARKETPLACE_BUCKET }}
+          SKILL_MARKETPLACE_CDN_BASE_URL: ${{ vars.SKILL_MARKETPLACE_CDN_BASE_URL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}

@@ -1,0 +1,2 @@
+* text=auto eol=lf
+protocol/fixtures/source/** -text

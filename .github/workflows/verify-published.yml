@@ -1,0 +1,25 @@
+name: Verify published Skill mirrors
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SKILL_MARKETPLACE_PUBLIC_KEY: ${{ vars.SKILL_MARKETPLACE_PUBLIC_KEY }}
+      SKILL_MARKETPLACE_CDN_BASE_URL: ${{ vars.SKILL_MARKETPLACE_CDN_BASE_URL }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node scripts/download-history.mjs
+      - run: node scripts/verify-mirrors.mjs

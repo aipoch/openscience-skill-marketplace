@@ -1,0 +1,663 @@
+# Open Science Skills Marketplace v1 最终纳入名单
+
+> 决策快照：2026-08-21。本文件由 `scripts/build_final_manifest.py` 从附件元数据机械生成。
+
+## 最终结论
+
+- 原始 `SKILL.md`：604
+- 唯一技能名：603
+- 最终纳入：584（其中普通目录 565，受限索引 19）
+- 排除：19
+- 同名合并：1（`cover-letter-drafter` 保留 awesome 集合版本为规范来源）
+
+“纳入”指进入 Marketplace v1 的可检索正式目录；不等于默认安装、自动执行或完成独立安全验证。受限索引项只能在明确的人类监督和场景约束下启用。
+
+## 发布层级
+
+| 层级 | 数量 | 含义 |
+|---|---:|---|
+| `mvp-candidate` | 24 | 首批 24 项产品与独立评测候选 |
+| `sandbox-beta` | 8 | 8 项沙箱 Beta 候选 |
+| `catalog-candidate` | 533 | 进入目录，发布前继续做代码/安全/语义重复审查 |
+| `restricted-index` | 19 | 可发现但不默认安装，要求专业人类监督 |
+| `excluded` | 19 | 不进入 v1 open-science 目录 |
+
+## 纳入项分类统计
+
+| 原始分类 | 纳入数 |
+|---|---:|
+| Academic Writing | 123 |
+| Data Analysis | 153 |
+| Evidence Insight | 141 |
+| Other | 95 |
+| Protocol Design | 72 |
+
+## 最终纳入的完整命名清单
+
+### Academic Writing（123）
+
+- `abstract-summarizer` — catalog-candidate — scientific-skills
+- `abstract-trimmer` — catalog-candidate — scientific-skills
+- `academic-abstract-refiner` — catalog-candidate — scientific-skills
+- `academic-highlight-generator` — catalog-candidate — scientific-skills
+- `adverse-event-narrative` — restricted-index — scientific-skills
+- `anatomy-quiz-master` — catalog-candidate — scientific-skills
+- `anki-card-creator` — catalog-candidate — scientific-skills
+- `arxiv-preflight` — mvp-candidate — awesome-med-research-skills
+- `author-response-builder` — catalog-candidate — awesome-med-research-skills
+- `authorship-credit-gen` — catalog-candidate — scientific-skills
+- `automated-soap-note-generator` — restricted-index — scientific-skills
+- `biomed-outline-generator` — catalog-candidate — scientific-skills
+- `biotech-pitch-deck-narrative` — catalog-candidate — scientific-skills
+- `blind-review-sanitizer` — catalog-candidate — scientific-skills
+- `citation-formatter` — catalog-candidate — scientific-skills
+- `claim-strength-calibrator` — mvp-candidate — awesome-med-research-skills
+- `clinical-decision-support` — restricted-index — scientific-skills
+- `conference-abstract-adaptor` — catalog-candidate — scientific-skills
+- `conference-abstract-writer` — catalog-candidate — awesome-med-research-skills
+- `conference-poster-pitch` — catalog-candidate — scientific-skills
+- `consistency-checker-across-manuscript` — mvp-candidate — awesome-med-research-skills
+- `cover-letter-drafter` — catalog-candidate — awesome-med-research-skills
+- `cover-letter-generator` — catalog-candidate — scientific-skills
+- `dei-statement-drafter` — catalog-candidate — scientific-skills
+- `digital-twin-discharge-drafter` — restricted-index — scientific-skills
+- `discharge-summary-writer` — restricted-index — scientific-skills
+- `discussion-composer` — catalog-candidate — awesome-med-research-skills
+- `discussion-section-architect` — catalog-candidate — scientific-skills
+- `ectd-xml-compiler` — catalog-candidate — scientific-skills
+- `ehr-semantic-compressor` — catalog-candidate — scientific-skills
+- `faq-generator` — catalog-candidate — scientific-skills
+- `figure-legend-gen` — catalog-candidate — scientific-skills
+- `figure-legend-writer` — catalog-candidate — awesome-med-research-skills
+- `figure-reference-checker` — catalog-candidate — scientific-skills
+- `find-paper-references` — catalog-candidate — scientific-skills
+- `format-references-endnote` — catalog-candidate — scientific-skills
+- `format-references-zotero` — catalog-candidate — scientific-skills
+- `grant-budget-justification` — catalog-candidate — scientific-skills
+- `grant-mock-reviewer` — catalog-candidate — scientific-skills
+- `grant-proposal-assistant` — catalog-candidate — scientific-skills
+- `grant-specific-aims-writer` — catalog-candidate — awesome-med-research-skills
+- `graph-interpretation` — catalog-candidate — scientific-skills
+- `graphical-abstract-generator` — catalog-candidate — awesome-med-research-skills
+- `hipaa-compliance-auditor` — catalog-candidate — scientific-skills
+- `iacuc-protocol-drafter` — catalog-candidate — scientific-skills
+- `introduction-logic-builder` — catalog-candidate — awesome-med-research-skills
+- `introduction-section-writer` — catalog-candidate — awesome-med-research-skills
+- `irb-application-assistant` — catalog-candidate — scientific-skills
+- `journal-club-presenter` — catalog-candidate — scientific-skills
+- `journal-cover-prompter` — catalog-candidate — scientific-skills
+- `labarchive-integration` — catalog-candidate — scientific-skills
+- `latex-manuscript-format-converter` — catalog-candidate — awesome-med-research-skills
+- `latex-posters` — catalog-candidate — scientific-skills
+- `lay-press-release-writer` — catalog-candidate — scientific-skills
+- `lay-summary-for-cross-disciplinary-teams` — catalog-candidate — awesome-med-research-skills
+- `lay-summary-gen` — catalog-candidate — scientific-skills
+- `limitation-and-risk-writer` — mvp-candidate — awesome-med-research-skills
+- `linkedin-optimizer` — catalog-candidate — scientific-skills
+- `literature-review` — catalog-candidate — scientific-skills
+- `market-access-value` — catalog-candidate — scientific-skills
+- `medical-cv-resume-builder` — catalog-candidate — scientific-skills
+- `medical-device-mdr-auditor` — catalog-candidate — scientific-skills
+- `medical-email-polisher` — catalog-candidate — scientific-skills
+- `medical-english-precision-editor` — catalog-candidate — awesome-med-research-skills
+- `medical-imaging-review` — catalog-candidate — scientific-skills
+- `medical-review-writer-architect` — catalog-candidate — scientific-skills
+- `medical-scribe-dictation` — catalog-candidate — scientific-skills
+- `medical-translation` — catalog-candidate — scientific-skills
+- `medication-adherence-message-gen` — restricted-index — scientific-skills
+- `meeting-minutes` — catalog-candidate — scientific-skills
+- `meta-analysis-methods-generator` — catalog-candidate — scientific-skills
+- `meta-baseline-generator` — catalog-candidate — scientific-skills
+- `meta-manuscript-generator` — catalog-candidate — scientific-skills
+- `meta-results-forest-plot-analyzer` — catalog-candidate — scientific-skills
+- `meta-results-funnel-plot-generator` — catalog-candidate — scientific-skills
+- `meta-results-risk-of-bias` — catalog-candidate — scientific-skills
+- `meta-results-sensitivity-analysis` — catalog-candidate — scientific-skills
+- `method-writing` — catalog-candidate — scientific-skills
+- `methods-section-writer` — mvp-candidate — awesome-med-research-skills
+- `microbiome-diversity-reporter` — catalog-candidate — scientific-skills
+- `moa-explainer` — catalog-candidate — scientific-skills
+- `molecular-review-workflow` — catalog-candidate — scientific-skills
+- `networking-email-drafter` — catalog-candidate — scientific-skills
+- `nih-biosketch-builder` — catalog-candidate — scientific-skills
+- `nsfc-grant-writer` — catalog-candidate — scientific-skills
+- `paper-sprint-review` — catalog-candidate — awesome-med-research-skills
+- `paper-web` — catalog-candidate — scientific-skills
+- `patent-assistant` — catalog-candidate — scientific-skills
+- `patient-recruitment-ad-gen` — restricted-index — scientific-skills
+- `peer-review` — catalog-candidate — scientific-skills
+- `peer-review-response-drafter` — catalog-candidate — scientific-skills
+- `personal-statement` — catalog-candidate — scientific-skills
+- `poster-layout-planner` — catalog-candidate — scientific-skills
+- `poster-storyline-builder` — catalog-candidate — awesome-med-research-skills
+- `presentation-hook` — catalog-candidate — scientific-skills
+- `prior-auth-letter-drafter` — catalog-candidate — scientific-skills
+- `q-and-a-prep-partner` — catalog-candidate — scientific-skills
+- `radiology-image-quiz` — catalog-candidate — scientific-skills
+- `rebuttal-letter-strategist` — catalog-candidate — scientific-skills
+- `recommendation-letter-assistant` — catalog-candidate — scientific-skills
+- `reference-integrity-checker` — mvp-candidate — awesome-med-research-skills
+- `reference-style-sync` — catalog-candidate — scientific-skills
+- `referral-letter-generator` — catalog-candidate — scientific-skills
+- `regulatory-submission` — catalog-candidate — scientific-skills
+- `reporting-guideline-compliance-checker` — mvp-candidate — awesome-med-research-skills
+- `residency-interview-prep` — catalog-candidate — scientific-skills
+- `response-letter` — catalog-candidate — scientific-skills
+- `response-tone-polisher` — catalog-candidate — scientific-skills
+- `results-section-structurer` — catalog-candidate — awesome-med-research-skills
+- `results-section-writer` — mvp-candidate — awesome-med-research-skills
+- `revision-strategy-planner` — catalog-candidate — awesome-med-research-skills
+- `sample-size-power-calculator` — catalog-candidate — scientific-skills
+- `semantic-consistency-auditor` — catalog-candidate — scientific-skills
+- `slide-deck-for-lab-meeting` — catalog-candidate — awesome-med-research-skills
+- `study-limitations-drafter` — catalog-candidate — scientific-skills
+- `style-journal-rewrite` — catalog-candidate — scientific-skills
+- `systematic-review` — catalog-candidate — scientific-skills
+- `table-narrative-writer` — catalog-candidate — awesome-med-research-skills
+- `target-journal-matcher` — catalog-candidate — awesome-med-research-skills
+- `title-and-abstract-optimizer` — catalog-candidate — awesome-med-research-skills
+- `tone-adjuster` — catalog-candidate — scientific-skills
+- `usmle-case-generator` — catalog-candidate — scientific-skills
+- `visual-content-desc` — catalog-candidate — scientific-skills
+
+### Data Analysis（153）
+
+- `adme-property-predictor` — catalog-candidate — scientific-skills
+- `anndata` — catalog-candidate — scientific-skills
+- `baseline-extraction-for-clinical-trials` — catalog-candidate — scientific-skills
+- `batch-effect-correction` — sandbox-beta — awesome-med-research-skills
+- `bio-causal-genomics-mediation-analysis` — catalog-candidate — scientific-skills
+- `bio-causal-genomics-pleiotropy-detection` — catalog-candidate — scientific-skills
+- `biopython` — catalog-candidate — scientific-skills
+- `biopython-advanced` — catalog-candidate — scientific-skills
+- `biopython-alignment` — catalog-candidate — scientific-skills
+- `biopython-phylo` — catalog-candidate — scientific-skills
+- `biopython-sequence-io` — catalog-candidate — scientific-skills
+- `biopython-structure` — catalog-candidate — scientific-skills
+- `bioservices` — catalog-candidate — scientific-skills
+- `case-control-study-quality-assessment-nos` — catalog-candidate — scientific-skills
+- `cerna-analysis` — catalog-candidate — awesome-med-research-skills
+- `cibersort-immune-infiltration-analysis` — catalog-candidate — awesome-med-research-skills
+- `circos-plot-generator` — catalog-candidate — scientific-skills
+- `clinical-data-cleaner` — catalog-candidate — scientific-skills
+- `cnv-caller-plotter` — catalog-candidate — scientific-skills
+- `cobrapy` — catalog-candidate — scientific-skills
+- `code-refactor-for-reproducibility` — catalog-candidate — scientific-skills
+- `cohort-study-quality-assessment-nos` — catalog-candidate — scientific-skills
+- `consensus-clustering-analysis` — catalog-candidate — awesome-med-research-skills
+- `crispr-screen-analyzer` — catalog-candidate — scientific-skills
+- `d-molecule-ray-tracer` — catalog-candidate — scientific-skills
+- `data-stats-analysis` — catalog-candidate — scientific-skills
+- `data-transform` — catalog-candidate — scientific-skills
+- `decision-curve-analysis` — sandbox-beta — awesome-med-research-skills
+- `decision-tree-analysis` — catalog-candidate — awesome-med-research-skills
+- `deeptools` — catalog-candidate — scientific-skills
+- `deg-screening-analysis` — catalog-candidate — awesome-med-research-skills
+- `diagnostic-study-quality-assessment-quadas` — catalog-candidate — scientific-skills
+- `differential-expression-analysis` — sandbox-beta — awesome-med-research-skills
+- `dnanexus-integration` — catalog-candidate — scientific-skills
+- `elastic-net-feature-selection` — catalog-candidate — awesome-med-research-skills
+- `epidemiology` — catalog-candidate — scientific-skills
+- `estimate-immune-score-analysis` — catalog-candidate — awesome-med-research-skills
+- `etetoolkit` — catalog-candidate — scientific-skills
+- `experimental-data-analysis` — catalog-candidate — scientific-skills
+- `exploratory-data-analysis` — catalog-candidate — scientific-skills
+- `external-model-validation` — sandbox-beta — awesome-med-research-skills
+- `facs-gating-viz-style` — catalog-candidate — scientific-skills
+- `fastqc-report-interpreter` — catalog-candidate — scientific-skills
+- `flowio` — catalog-candidate — scientific-skills
+- `forest-plot-styler` — catalog-candidate — scientific-skills
+- `gene-protein-expression-matrix-normalization` — sandbox-beta — awesome-med-research-skills
+- `gene-structure-mapper` — catalog-candidate — scientific-skills
+- `geniml` — catalog-candidate — scientific-skills
+- `geopandas` — catalog-candidate — scientific-skills
+- `gokegg-analysis` — catalog-candidate — awesome-med-research-skills
+- `graphical-abstract-wizard` — catalog-candidate — scientific-skills
+- `gsea` — sandbox-beta — awesome-med-research-skills
+- `gsva-analysis-and-visualization` — catalog-candidate — awesome-med-research-skills
+- `gtars` — catalog-candidate — scientific-skills
+- `heatmap-beautifier` — catalog-candidate — scientific-skills
+- `hierarchical-clustering-plot` — catalog-candidate — awesome-med-research-skills
+- `histolab` — catalog-candidate — scientific-skills
+- `immune-pathway-analysis` — catalog-candidate — awesome-med-research-skills
+- `km-survival-curve` — sandbox-beta — awesome-med-research-skills
+- `knn-imputation` — catalog-candidate — awesome-med-research-skills
+- `lab-budget-forecaster` — catalog-candidate — scientific-skills
+- `lamindb` — catalog-candidate — scientific-skills
+- `lasso-logistics-analysis` — catalog-candidate — awesome-med-research-skills
+- `lightgbm-analysis` — catalog-candidate — awesome-med-research-skills
+- `lipinski-rule-filter` — catalog-candidate — scientific-skills
+- `lncrna-regulatory-network-construction-analysis` — catalog-candidate — awesome-med-research-skills
+- `matchms` — catalog-candidate — scientific-skills
+- `matplotlib` — catalog-candidate — scientific-skills
+- `mechanism-flowchart` — catalog-candidate — scientific-skills
+- `mendelian-randomisation` — catalog-candidate — scientific-skills
+- `meta-abstract-screener` — catalog-candidate — scientific-skills
+- `meta-analysis` — catalog-candidate — scientific-skills
+- `meta-baujat-plot` — catalog-candidate — scientific-skills
+- `meta-criteria-generator` — catalog-candidate — scientific-skills
+- `meta-feasibility-analyzer` — catalog-candidate — scientific-skills
+- `meta-forest-binary-plot` — catalog-candidate — scientific-skills
+- `meta-forest-continuous-plot` — catalog-candidate — scientific-skills
+- `meta-forest-model-plot` — catalog-candidate — scientific-skills
+- `meta-funnel-plot` — catalog-candidate — scientific-skills
+- `meta-picos-generator` — catalog-candidate — scientific-skills
+- `meta-radial-plot` — catalog-candidate — scientific-skills
+- `meta-rob-plot` — catalog-candidate — scientific-skills
+- `meta-screening-fulltext` — catalog-candidate — scientific-skills
+- `meta-sensitivity-plot` — catalog-candidate — scientific-skills
+- `meta-title-generator` — catalog-candidate — scientific-skills
+- `metabolomics-workbench-database` — catalog-candidate — scientific-skills
+- `metagenomic-krona-chart` — catalog-candidate — scientific-skills
+- `model-calibration-curve` — sandbox-beta — awesome-med-research-skills
+- `motif-logo-generator` — catalog-candidate — scientific-skills
+- `neoantigen-predictor` — catalog-candidate — scientific-skills
+- `neurokit` — catalog-candidate — scientific-skills
+- `neuropixels-analysis` — catalog-candidate — scientific-skills
+- `nomogram-construction` — catalog-candidate — awesome-med-research-skills
+- `outcome-extraction-for-clinical-trials` — catalog-candidate — scientific-skills
+- `outlier-detection-handler` — catalog-candidate — scientific-skills
+- `pathml` — catalog-candidate — scientific-skills
+- `pathology-roi-selector` — catalog-candidate — scientific-skills
+- `pca-dimensionality-reduction` — catalog-candidate — awesome-med-research-skills
+- `phylogenetic-tree-styler` — catalog-candidate — scientific-skills
+- `ppi-network-analysis` — catalog-candidate — awesome-med-research-skills
+- `preclinical-pkpd-analyst` — catalog-candidate — scientific-skills
+- `probast-quality-assessment-for-prediction-model-studies` — catalog-candidate — scientific-skills
+- `protocol-deviation-classifier` — catalog-candidate — scientific-skills
+- `pseudotime-trajectory-viz` — catalog-candidate — scientific-skills
+- `pydeseq` — catalog-candidate — scientific-skills
+- `pydicom` — catalog-candidate — scientific-skills
+- `pyhealth` — catalog-candidate — scientific-skills
+- `pyopenms-skill` — catalog-candidate — scientific-skills
+- `pysam` — catalog-candidate — scientific-skills
+- `quadas-c-assessment-for-diagnostic-accuracy-studies` — catalog-candidate — scientific-skills
+- `quality-assessment` — catalog-candidate — scientific-skills
+- `quapas-quality-assessment-for-prognosis-studies` — catalog-candidate — scientific-skills
+- `rct-bias-assessment-rob` — catalog-candidate — scientific-skills
+- `rf-model-importance-analysis` — catalog-candidate — awesome-med-research-skills
+- `roc-diagnostic-performance` — catalog-candidate — awesome-med-research-skills
+- `rowan` — catalog-candidate — scientific-skills
+- `sample-correlation-analysis` — catalog-candidate — awesome-med-research-skills
+- `sample-group-sankey-plot` — catalog-candidate — awesome-med-research-skills
+- `sanger-chromatogram-qa` — catalog-candidate — scientific-skills
+- `scanpy` — catalog-candidate — scientific-skills
+- `scikit-bio` — catalog-candidate — scientific-skills
+- `scikit-survival` — catalog-candidate — scientific-skills
+- `scrna-cell-type-annotator` — catalog-candidate — scientific-skills
+- `scvi-tools` — catalog-candidate — scientific-skills
+- `seaborn` — catalog-candidate — scientific-skills
+- `sequence-alignment` — catalog-candidate — scientific-skills
+- `shap` — catalog-candidate — scientific-skills
+- `singlecell-portal` — catalog-candidate — scientific-skills
+- `smiles-de-salter` — catalog-candidate — scientific-skills
+- `spatial-transcriptomics-mapper` — catalog-candidate — scientific-skills
+- `ssgsea-immune-infiltration-analysis` — catalog-candidate — awesome-med-research-skills
+- `statistical-analysis` — catalog-candidate — scientific-skills
+- `statistical-analysis-advisor` — catalog-candidate — scientific-skills
+- `study-design-scale-selector` — catalog-candidate — scientific-skills
+- `survival-analysis-km` — catalog-candidate — scientific-skills
+- `survival-curve-risk-table` — catalog-candidate — scientific-skills
+- `svm-model-importance-analysis` — catalog-candidate — awesome-med-research-skills
+- `table-1-generator` — catalog-candidate — scientific-skills
+- `table-1-generator-advanced` — catalog-candidate — scientific-skills
+- `tf-target-gene-regulatory-network` — catalog-candidate — awesome-med-research-skills
+- `time-dependent-roc` — catalog-candidate — awesome-med-research-skills
+- `tooluniverse-statistical-modeling` — catalog-candidate — scientific-skills
+- `torchdrug-english` — catalog-candidate — scientific-skills
+- `toxicity-structure-alert` — catalog-candidate — scientific-skills
+- `umap-tsne-analysis` — catalog-candidate — awesome-med-research-skills
+- `univariate-multivariable-cox-regression` — catalog-candidate — awesome-med-research-skills
+- `upset-plot-converter` — catalog-candidate — scientific-skills
+- `variant-pathogenicity-predictor` — catalog-candidate — scientific-skills
+- `volcano-plot-labeler` — catalog-candidate — scientific-skills
+- `volcano-plot-script` — catalog-candidate — scientific-skills
+- `western-blot-quantifier` — catalog-candidate — scientific-skills
+- `wgcna-analysis` — catalog-candidate — awesome-med-research-skills
+- `xgboost-analysis` — catalog-candidate — awesome-med-research-skills
+
+### Evidence Insight（141）
+
+- `acronym-unpacker` — catalog-candidate — scientific-skills
+- `alphafold-db` — catalog-candidate — scientific-skills
+- `arboreto` — catalog-candidate — scientific-skills
+- `arxiv-database` — catalog-candidate — scientific-skills
+- `basic-discovery-translational-opportunity-finder` — catalog-candidate — awesome-med-research-skills
+- `bio-ontology-mapper` — catalog-candidate — scientific-skills
+- `biogrid-orcs` — catalog-candidate — scientific-skills
+- `bioinformatics-translational-opportunity-finder` — catalog-candidate — awesome-med-research-skills
+- `biomarker-landscape-scanner` — catalog-candidate — awesome-med-research-skills
+- `biomedical-search-strategy-builder` — mvp-candidate — awesome-med-research-skills
+- `biopython-entrez` — catalog-candidate — scientific-skills
+- `biorxiv-database` — catalog-candidate — scientific-skills
+- `blockbuster-therapy-predictor` — catalog-candidate — scientific-skills
+- `brenda-database` — catalog-candidate — scientific-skills
+- `cellosaurus-api` — catalog-candidate — scientific-skills
+- `cellxgene-census` — catalog-candidate — scientific-skills
+- `chea-api` — catalog-candidate — scientific-skills
+- `chembl-database` — catalog-candidate — scientific-skills
+- `citation-chasing-mapping` — catalog-candidate — scientific-skills
+- `citation-management` — catalog-candidate — scientific-skills
+- `citation-network` — catalog-candidate — scientific-skills
+- `clinical-question-clarifier` — mvp-candidate — awesome-med-research-skills
+- `clinical-study-info-extractor` — catalog-candidate — scientific-skills
+- `clinical-trial-finder` — catalog-candidate — scientific-skills
+- `clinicaltrials-database` — catalog-candidate — scientific-skills
+- `clinicaltrials-db` — catalog-candidate — scientific-skills
+- `clinicaltrials-gov-parser` — catalog-candidate — scientific-skills
+- `clinpgx-database` — catalog-candidate — scientific-skills
+- `clinvar-database` — catalog-candidate — scientific-skills
+- `comparison-table-gen` — catalog-candidate — scientific-skills
+- `competitor-trial-monitor` — catalog-candidate — scientific-skills
+- `concept-explainer` — catalog-candidate — scientific-skills
+- `contradictory-findings-resolver` — mvp-candidate — awesome-med-research-skills
+- `cosmic-database` — catalog-candidate — scientific-skills
+- `cross-disciplinary-bridge-finder` — catalog-candidate — scientific-skills
+- `crossref-database` — catalog-candidate — scientific-skills
+- `ctd-api` — catalog-candidate — scientific-skills
+- `diagnostic-study-quality-assessment-quadas-2` — catalog-candidate — scientific-skills
+- `diffdock-molecular-docking` — catalog-candidate — scientific-skills
+- `disease-mechanism-evidence-map` — catalog-candidate — awesome-med-research-skills
+- `drug-interaction-checker` — catalog-candidate — scientific-skills
+- `drug-target-evidence-landscape` — catalog-candidate — awesome-med-research-skills
+- `drugbank-database` — catalog-candidate — scientific-skills
+- `emerging-topic-scout` — catalog-candidate — scientific-skills
+- `ena-database` — catalog-candidate — scientific-skills
+- `encode-api` — catalog-candidate — scientific-skills
+- `encori-api` — catalog-candidate — scientific-skills
+- `ensembl-database` — catalog-candidate — scientific-skills
+- `evidence-level-ranker` — catalog-candidate — awesome-med-research-skills
+- `fda-database` — catalog-candidate — scientific-skills
+- `fda-guideline-search` — catalog-candidate — scientific-skills
+- `figure-first-paper-reader` — catalog-candidate — awesome-med-research-skills
+- `funding-trend-forecaster` — catalog-candidate — scientific-skills
+- `gene-database` — catalog-candidate — scientific-skills
+- `gene-info` — catalog-candidate — scientific-skills
+- `geo-search-api` — catalog-candidate — scientific-skills
+- `gget` — catalog-candidate — scientific-skills
+- `grant-funding-scout` — catalog-candidate — scientific-skills
+- `grant-gantt-chart-gen` — catalog-candidate — scientific-skills
+- `gwas-database` — catalog-candidate — scientific-skills
+- `hgnc-api` — catalog-candidate — scientific-skills
+- `high-value-paper-screener` — catalog-candidate — awesome-med-research-skills
+- `hmdb-database` — catalog-candidate — scientific-skills
+- `ib-summarizer` — catalog-candidate — scientific-skills
+- `jaspar-api` — catalog-candidate — scientific-skills
+- `journal-impact-factor-trend` — catalog-candidate — scientific-skills
+- `journal-latest-issue` — catalog-candidate — scientific-skills
+- `journal-matchmaker` — catalog-candidate — scientific-skills
+- `journal-skills` — catalog-candidate — scientific-skills
+- `kegg-api` — catalog-candidate — scientific-skills
+- `kegg-database` — catalog-candidate — scientific-skills
+- `key-takeaways` — catalog-candidate — scientific-skills
+- `keyword-velocity-tracker` — catalog-candidate — scientific-skills
+- `litbase` — catalog-candidate — awesome-med-research-skills
+- `literature-close-read` — catalog-candidate — scientific-skills
+- `literature-experiment-extract` — catalog-candidate — scientific-skills
+- `literature-extensive-read` — catalog-candidate — scientific-skills
+- `literature-filtering` — catalog-candidate — scientific-skills
+- `medchem` — catalog-candidate — scientific-skills
+- `medical-research-gap-finder` — mvp-candidate — awesome-med-research-skills
+- `medical-research-literature-reader-pro` — catalog-candidate — awesome-med-research-skills
+- `medical-topic-saturation-and-whitespace-checker` — catalog-candidate — awesome-med-research-skills
+- `medical-vector-search` — catalog-candidate — scientific-skills
+- `method-gap-detector` — catalog-candidate — awesome-med-research-skills
+- `methodology-extractor` — catalog-candidate — scientific-skills
+- `methods-reverse-engineer` — mvp-candidate — awesome-med-research-skills
+- `multi-database-literature-collector` — mvp-candidate — awesome-med-research-skills
+- `novelty-vs-feasibility-assessor` — catalog-candidate — awesome-med-research-skills
+- `open-access-scout` — catalog-candidate — scientific-skills
+- `open-source-license-check` — catalog-candidate — scientific-skills
+- `open-targets-db` — catalog-candidate — scientific-skills
+- `openalex-db` — catalog-candidate — scientific-skills
+- `paper-lookup` — catalog-candidate — scientific-skills
+- `paper-to-claim-verifier` — mvp-candidate — awesome-med-research-skills
+- `patent-claim-mapper` — catalog-candidate — scientific-skills
+- `patent-landscape` — catalog-candidate — scientific-skills
+- `pathway-introduction-expert` — catalog-candidate — scientific-skills
+- `pdb-database` — catalog-candidate — scientific-skills
+- `pdf-extract-experimental-materials` — catalog-candidate — scientific-skills
+- `phenotype-introduction` — catalog-candidate — scientific-skills
+- `pmc-official-download` — catalog-candidate — scientific-skills
+- `population-gap-detector` — catalog-candidate — awesome-med-research-skills
+- `preprint-surveillance-finder` — catalog-candidate — awesome-med-research-skills
+- `pubchem-database-skill` — catalog-candidate — scientific-skills
+- `pubmed-database` — catalog-candidate — scientific-skills
+- `pubmed-search-specialist` — catalog-candidate — scientific-skills
+- `pubmed-topic-recommend` — catalog-candidate — scientific-skills
+- `pytdc` — catalog-candidate — scientific-skills
+- `rare-disease-hpo-mapper` — catalog-candidate — scientific-skills
+- `rct-bias-assessment-rob2` — catalog-candidate — scientific-skills
+- `reactome-skill` — catalog-candidate — scientific-skills
+- `reagent-substitute-scout` — catalog-candidate — scientific-skills
+- `reference-finder` — catalog-candidate — scientific-skills
+- `reference-retrieval-skill` — catalog-candidate — scientific-skills
+- `reference-search` — catalog-candidate — scientific-skills
+- `research-article-weekly` — catalog-candidate — scientific-skills
+- `research-hotspot-analysis` — catalog-candidate — scientific-skills
+- `research-paper-downloader` — catalog-candidate — scientific-skills
+- `result-reliability-checker` — mvp-candidate — awesome-med-research-skills
+- `retraction-watcher` — catalog-candidate — scientific-skills
+- `scholar-evaluation` — catalog-candidate — scientific-skills
+- `scientific-critical-thinking` — catalog-candidate — scientific-skills
+- `scientific-podcast-summary` — catalog-candidate — scientific-skills
+- `scite-database` — catalog-candidate — scientific-skills
+- `sds-msds-risk-scanner` — catalog-candidate — scientific-skills
+- `semantic-scholar-database` — catalog-candidate — scientific-skills
+- `smart-journal-monitor` — catalog-candidate — scientific-skills
+- `string-database` — catalog-candidate — scientific-skills
+- `study-design-identifier` — catalog-candidate — awesome-med-research-skills
+- `systematic-review-screener` — catalog-candidate — scientific-skills
+- `target-novelty-scorer` — catalog-candidate — scientific-skills
+- `tooluniverse-clinical-trial-matching` — restricted-index — scientific-skills
+- `tooluniverse-literature-deep-research` — catalog-candidate — scientific-skills
+- `topic-evidence-mapper` — catalog-candidate — awesome-med-research-skills
+- `translational-gap-analyzer` — catalog-candidate — scientific-skills
+- `uniprot-database` — catalog-candidate — scientific-skills
+- `unmet-clinical-need-extractor` — catalog-candidate — awesome-med-research-skills
+- `unstructured-medical-text-miner` — catalog-candidate — scientific-skills
+- `variant-annotation` — catalog-candidate — scientific-skills
+- `venue-templates` — catalog-candidate — scientific-skills
+- `zinc-database` — catalog-candidate — scientific-skills
+
+### Other（95）
+
+- `academic-cv-generator` — catalog-candidate — scientific-skills
+- `academic-norm-review` — catalog-candidate — scientific-skills
+- `academic-poster-generator` — catalog-candidate — scientific-skills
+- `adaptyv` — catalog-candidate — scientific-skills
+- `article-format-adjustment` — catalog-candidate — scientific-skills
+- `benchling-integration` — catalog-candidate — scientific-skills
+- `bianque` — catalog-candidate — awesome-med-research-skills
+- `bib-formatter` — catalog-candidate — scientific-skills
+- `bibliography` — catalog-candidate — scientific-skills
+- `biodbnet-api` — catalog-candidate — scientific-skills
+- `bmi-bsa-calculator` — catalog-candidate — scientific-skills
+- `buffer-calculator` — catalog-candidate — scientific-skills
+- `chart-style-unifier` — catalog-candidate — scientific-skills
+- `chemical-storage-sorter` — catalog-candidate — scientific-skills
+- `chemical-structure-converter` — catalog-candidate — scientific-skills
+- `clinic-sample-size` — catalog-candidate — scientific-skills
+- `clinical-diagnostic-reasoning` — restricted-index — scientific-skills
+- `clinical-reports` — restricted-index — scientific-skills
+- `co-tank-monitor` — catalog-candidate — scientific-skills
+- `cold-chain-risk-calculator` — catalog-candidate — scientific-skills
+- `conference-tweet-generator` — catalog-candidate — scientific-skills
+- `conflict-of-interest-checker` — catalog-candidate — scientific-skills
+- `content-proofreading` — catalog-candidate — scientific-skills
+- `datamol` — catalog-candidate — scientific-skills
+- `date-calculator` — catalog-candidate — scientific-skills
+- `dicom-anonymizer` — catalog-candidate — scientific-skills
+- `docx-feedback-tracker` — catalog-candidate — scientific-skills
+- `dpi-upscaler-checker` — catalog-candidate — scientific-skills
+- `ebm-calculator` — catalog-candidate — scientific-skills
+- `equipment-maintenance-log` — catalog-candidate — scientific-skills
+- `experiment-detail-comparator` — catalog-candidate — scientific-skills
+- `expert-interview-generator` — catalog-candidate — scientific-skills
+- `expert-interview-topics` — catalog-candidate — scientific-skills
+- `file-security-toolkit` — catalog-candidate — scientific-skills
+- `fulltext-fetcher` — catalog-candidate — scientific-skills
+- `hippocrates` — catalog-candidate — scientific-skills
+- `html-to-pdf` — catalog-candidate — scientific-skills
+- `icd10-cpt-coding-assistant` — restricted-index — scientific-skills
+- `image-ocr` — catalog-candidate — scientific-skills
+- `image-processing` — catalog-candidate — scientific-skills
+- `iso-certification` — catalog-candidate — scientific-skills
+- `journal-recommender` — catalog-candidate — scientific-skills
+- `knowledge-base-search` — catalog-candidate — scientific-skills
+- `lab-inventory-predictor` — catalog-candidate — scientific-skills
+- `lab-prep-calculations` — catalog-candidate — scientific-skills
+- `lab-result-interpretation` — restricted-index — scientific-skills
+- `literature-management` — catalog-candidate — scientific-skills
+- `literature-statistics` — catalog-candidate — scientific-skills
+- `literatureimages-interpretation` — catalog-candidate — scientific-skills
+- `markitdown` — catalog-candidate — scientific-skills
+- `medical-case-interpreter` — restricted-index — scientific-skills
+- `medical-case-report-generator` — catalog-candidate — scientific-skills
+- `medical-unit-converter` — catalog-candidate — scientific-skills
+- `medication-reconciliation` — restricted-index — scientific-skills
+- `mendel` — catalog-candidate — awesome-med-research-skills
+- `meta-search-builder` — catalog-candidate — scientific-skills
+- `microscopy-scale-bar-adder` — catalog-candidate — scientific-skills
+- `mindmap` — catalog-candidate — scientific-skills
+- `mindmap-helper` — catalog-candidate — scientific-skills
+- `mindmap-html-generator` — catalog-candidate — scientific-skills
+- `multi-panel-figure-assembler` — catalog-candidate — scientific-skills
+- `paper-tweet-generator` — catalog-candidate — scientific-skills
+- `patient-consent-simplifier` — restricted-index — scientific-skills
+- `pdf-extract` — catalog-candidate — scientific-skills
+- `pdf-ppt` — catalog-candidate — scientific-skills
+- `pdf-processor` — catalog-candidate — scientific-skills
+- `pdf-to-ppt-pack` — catalog-candidate — scientific-skills
+- `phi-prompt-guard` — catalog-candidate — scientific-skills
+- `plotly` — catalog-candidate — scientific-skills
+- `postdoc-fellowship-matcher` — catalog-candidate — scientific-skills
+- `poster-designer` — catalog-candidate — scientific-skills
+- `ppt` — catalog-candidate — scientific-skills
+- `ppt-master` — catalog-candidate — scientific-skills
+- `pptx-posters` — catalog-candidate — scientific-skills
+- `pptx-skill` — catalog-candidate — scientific-skills
+- `reagent-expiry-alert` — catalog-candidate — scientific-skills
+- `reproducibility-check` — catalog-candidate — scientific-skills
+- `resubmission-deadline-tracker` — catalog-candidate — scientific-skills
+- `result-figure-consistencycheck` — catalog-candidate — scientific-skills
+- `sci-paper-reviewer` — catalog-candidate — scientific-skills
+- `science-popularization-article` — catalog-candidate — scientific-skills
+- `scientific-schematics` — catalog-candidate — scientific-skills
+- `search-pubmed` — catalog-candidate — scientific-skills
+- `shift-handover-summarizer` — restricted-index — scientific-skills
+- `slide-deck-images` — catalog-candidate — scientific-skills
+- `spreadsheet-ops` — catalog-candidate — scientific-skills
+- `symptom-checker-triage` — restricted-index — scientific-skills
+- `text-format-organizer` — catalog-candidate — scientific-skills
+- `text-to-technical-roadmap` — catalog-candidate — scientific-skills
+- `treatment-plans` — restricted-index — scientific-skills
+- `uspto-database` — catalog-candidate — scientific-skills
+- `vector-text-fixer` — catalog-candidate — scientific-skills
+- `virtual-patient-roleplay` — restricted-index — scientific-skills
+- `waste-disposal-guide` — catalog-candidate — scientific-skills
+- `word-read-write` — catalog-candidate — scientific-skills
+
+### Protocol Design（72）
+
+- `active-comparator-single-soc-faers-safety-comparison` — catalog-candidate — awesome-med-research-skills
+- `adaptive-trial-simulator` — catalog-candidate — scientific-skills
+- `aim-and-hypothesis-designer` — mvp-candidate — awesome-med-research-skills
+- `animal-and-cell-validation-planner` — catalog-candidate — awesome-med-research-skills
+- `basic-research-design` — catalog-candidate — scientific-skills
+- `bidirectional-multi-phenotype-mr-research-planner` — catalog-candidate — awesome-med-research-skills
+- `bioinfo-analysis-plan` — catalog-candidate — scientific-skills
+- `bulk-omics-integrative-planner` — catalog-candidate — awesome-med-research-skills
+- `case-control-study-planner` — catalog-candidate — awesome-med-research-skills
+- `clinic-research-design` — catalog-candidate — scientific-skills
+- `clinical-cohort-protocol-designer` — catalog-candidate — awesome-med-research-skills
+- `clinical-trial-protocol-skill` — catalog-candidate — scientific-skills
+- `comorbidity-common-immune-biomarker-research-planner` — catalog-candidate — awesome-med-research-skills
+- `comparative-network-toxicology-shared-mechanism-reference-grounded` — catalog-candidate — awesome-med-research-skills
+- `confounder-and-bias-control-planner` — mvp-candidate — awesome-med-research-skills
+- `conventional-non-oncology-hub-gene-research-planner` — catalog-candidate — awesome-med-research-skills
+- `conventional-oncology-hub-gene-research-planner` — catalog-candidate — awesome-med-research-skills
+- `cross-disease-shared-biomarker-network-research-planner` — catalog-candidate — awesome-med-research-skills
+- `drug-repurposing-study-planner` — catalog-candidate — awesome-med-research-skills
+- `dual-disease-shared-transcriptome-biomarker-research-planner` — catalog-candidate — awesome-med-research-skills
+- `dual-disease-transcriptomic-ml-planner` — catalog-candidate — scientific-skills
+- `endpoint-definition-designer` — mvp-candidate — awesome-med-research-skills
+- `esm` — catalog-candidate — scientific-skills
+- `experiment-design` — catalog-candidate — scientific-skills
+- `faers-multi-drug-soc-planner` — catalog-candidate — scientific-skills
+- `faers-pharmacovigilance-disproportionality-research-planner` — catalog-candidate — awesome-med-research-skills
+- `feasibility-aware-study-planner` — mvp-candidate — awesome-med-research-skills
+- `generic-phenotype-scoring-research-planner` — catalog-candidate — awesome-med-research-skills
+- `hypogenic` — catalog-candidate — scientific-skills
+- `hypothesis-generation` — catalog-candidate — scientific-skills
+- `inclusion-criteria-gen` — catalog-candidate — scientific-skills
+- `inclusion-exclusion-criteria-builder` — mvp-candidate — awesome-med-research-skills
+- `inplasy-registration-helper` — catalog-candidate — scientific-skills
+- `mechanism-to-validation-planner` — catalog-candidate — awesome-med-research-skills
+- `medical-research-algorithm-matcher` — catalog-candidate — awesome-med-research-skills
+- `medical-research-gap-to-study-planner` — catalog-candidate — awesome-med-research-skills
+- `mendelian-randomization-protocol-designer` — catalog-candidate — awesome-med-research-skills
+- `meta-protocol-writer` — catalog-candidate — scientific-skills
+- `mr-scrna-research-planner` — catalog-candidate — awesome-med-research-skills
+- `multi-omics-clinical-integration-planner` — catalog-candidate — awesome-med-research-skills
+- `network-tox-docking-research-planner` — catalog-candidate — scientific-skills
+- `nhanes-clinical-retrospective-biomarker-research-planner` — catalog-candidate — awesome-med-research-skills
+- `non-tumor-mechanism-guided-diagnostic-ml-research-planner` — catalog-candidate — awesome-med-research-skills
+- `non-tumor-ml-research-planner` — catalog-candidate — scientific-skills
+- `pcd-immune-oncology-research-planner` — catalog-candidate — awesome-med-research-skills
+- `primary-plan-recommender` — catalog-candidate — awesome-med-research-skills
+- `process-related-diagnostic-biomarker-nomogram-research-planner` — catalog-candidate — awesome-med-research-skills
+- `prognostic-biomarker-protocol-designer` — catalog-candidate — awesome-med-research-skills
+- `prospero-registration-helper` — catalog-candidate — scientific-skills
+- `protocol-standardization` — catalog-candidate — scientific-skills
+- `qtl-colocalization-study-planner` — catalog-candidate — awesome-med-research-skills
+- `randomization-gen` — catalog-candidate — scientific-skills
+- `real-world-evidence-study-designer` — catalog-candidate — awesome-med-research-skills
+- `research-grants` — catalog-candidate — scientific-skills
+- `research-proposal-generator` — catalog-candidate — scientific-skills
+- `sample-size-and-power-planning-assistant` — mvp-candidate — awesome-med-research-skills
+- `sample-size-basic` — catalog-candidate — scientific-skills
+- `single-cell-research-planner` — catalog-candidate — awesome-med-research-skills
+- `single-compound-network-toxicology-disease-link-reference-grounded` — catalog-candidate — awesome-med-research-skills
+- `single-drug-adverse-effect-hub-first-network-pharmacology` — catalog-candidate — awesome-med-research-skills
+- `single-drug-adverse-effect-pathway-anchored-network-pharmacology` — catalog-candidate — awesome-med-research-skills
+- `single-drug-faers-safety-profile-research-planner` — catalog-candidate — awesome-med-research-skills
+- `single-gene-oncology-reference-grounded-research-planner` — catalog-candidate — awesome-med-research-skills
+- `sop-writer` — catalog-candidate — scientific-skills
+- `study-objective-refiner` — mvp-candidate — awesome-med-research-skills
+- `tooluniverse-clinical-trial-design` — catalog-candidate — scientific-skills
+- `translational-study-blueprint` — catalog-candidate — awesome-med-research-skills
+- `treatment-response-predictor-planner` — catalog-candidate — awesome-med-research-skills
+- `tumor-immune-infiltration-diagnostic-ml-research-planner` — catalog-candidate — awesome-med-research-skills
+- `two-sample-mr-exposure-screening-reference-grounded` — catalog-candidate — awesome-med-research-skills
+- `two-sample-mr-research-planner` — catalog-candidate — scientific-skills
+- `validation-strategy-designer` — mvp-candidate — awesome-med-research-skills
+
+## 排除项
+
+- `api-design-principles` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `brainstorming` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `file-management` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `file-search` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `id-photo-tool` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `imagegenskill` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `kv-design` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `learning-tutoring` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `market-research-report-generator` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `meeting-assistant` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `meeting-minutes-generator` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `multi-source-news-writer` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `note-summarizer` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `plan-generator` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `schedule-management` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `short-video-script-generator` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `soft-article-writer` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `task-reminder` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+- `time-zone-planner` — Generic assistant/marketing utility outside the v1 open-science domain boundary.
+
+## 审计边界
+
+- 附件 JSON 分数均标为上游自评，不作为独立验证或安全背书。
+- 当前仅读取 `SKILL.md` frontmatter 与顶层审计 JSON；没有执行附件中的脚本。
+- 逐项 license/作者缺失情况见 `final-skill-manifest.csv` 的 `metadata_issues` 字段。
+- K-Dense、Synthetic Sciences、Nature、Google DeepMind 作为联邦上游源登记；为避免来源重复和许可混淆，其 individual skills 不计入这 584 个 v1 直接目录项。

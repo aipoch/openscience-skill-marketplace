@@ -54,9 +54,16 @@ Run relevant module tests and checks after the final material edit, and record
 the commands and results in the pull request. A complete local test run is not
 required; follow the pull request's CI results for full validation.
 
-This initial repository has no executable tooling or test commands yet. Future
-tooling changes must document their checks here. Do not execute scripts or
-tests bundled inside imported Skills as part of catalog ingestion.
+Use Node.js 22 and install dependencies with `npm ci --ignore-scripts`. Run
+`npm run format:check`, `npm run validate`, and the relevant files under
+`test/*.test.mjs` with `node --test`. Source changes also require
+`npm run audit:sources -- --source /path/to/upstream --check`; publication changes
+require `npm run publish:dry-run`. PR CI runs the complete tooling suite on Linux,
+macOS and Windows. Do not execute scripts or tests bundled inside imported Skills
+as part of catalog ingestion. Payload fixtures are excluded from tooling tests.
+
+The protocol, source-readiness and publication responsibilities are documented in
+[the protocol](protocol/README.md) and [publication guide](docs/publication.md).
 
 ## Content and publication
 
@@ -69,3 +76,8 @@ The initial catalog implementation, protocol, and publication configuration are 
 under review. Production releases, signing-key configuration, and CDN writes
 require separate explicit maintainer authorization. A merged pull request does
 not itself authorize publication.
+
+## License
+
+Tooling contributions use [Apache-2.0](LICENSE). Preserve the separate licenses
+and required notices of upstream Skill content and fixtures.

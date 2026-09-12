@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "pdf-to-ppt-pack",
+    "version": "1.0.0",
+    "display_name": "pdf-to-ppt-pack",
+    "summary": "Convert research paper PDFs into literature-report PPTX decks using a fully offline workflow (extract text/figures, map captions, summarize findings, and generate slides). Use when you need to turn a PDF into a presentation deck, especially for scientific articles with figures and tables.",
+    "category": "other",
+    "inclusion_tier": "catalog-candidate",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/pdf-to-ppt-pack"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/pdf-to-ppt-pack/SKILL.md",
+          "sha256": "c672c80a30a530f4dd0356e390a47355937c5b35c13a33ca83aa462d7b3bbc6c"
+        }
+      ],
+      "review": {
+        "reviewed_by": "TEST FIXTURE ONLY — redistribution review pending",
+        "reviewed_on": "2026-09-12"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "66d74735595ce765693a0a770b7d705386bba24bf6e07c853c797e20d645593d",
+    "file_count": 1,
+    "uncompressed_bytes": 8882
+  },
+  "artifact": {
+    "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
+    "sha256": "8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f",
+    "bytes": 17318,
+    "skill_path": "pdf-to-ppt-pack"
+  }
+}

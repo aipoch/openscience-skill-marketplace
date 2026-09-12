@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "primary-plan-recommender",
+    "version": "1.0.0",
+    "display_name": "primary-plan-recommender",
+    "summary": "Compares multiple study-route options for the same biomedical research question and recommends one primary plan, while explicitly explaining why alternative routes are secondary, premature, weaker, or dependency-heavy. Always use this skill when the user already has a reasonably defined question but is unsure which main study route should anchor the project. Focus on plan comparison, route selection, dependency awareness, and primary-plan justification rather than full protocol drafting.",
+    "category": "protocol-design",
+    "inclusion_tier": "catalog-candidate",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/primary-plan-recommender"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/primary-plan-recommender/SKILL.md",
+          "sha256": "8e9f34626da86366f0d2331a3b779888e958ea610cd40b5a89ee180fe6ce3e8f"
+        }
+      ],
+      "review": {
+        "reviewed_by": "TEST FIXTURE ONLY — redistribution review pending",
+        "reviewed_on": "2026-09-12"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/primary-plan-recommender/eval_report_primary-plan-recommender_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "5271f6b085735bc0904552a537484e40cb48573db9cf6e78d8979b667d39bb0b",
+    "file_count": 11,
+    "uncompressed_bytes": 32595
+  },
+  "artifact": {
+    "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
+    "sha256": "8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f",
+    "bytes": 17318,
+    "skill_path": "primary-plan-recommender"
+  }
+}

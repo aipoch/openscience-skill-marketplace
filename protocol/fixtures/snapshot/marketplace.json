@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "marketplace": {
+    "id": "openscience-skills",
+    "name": "OpenScience Skill Marketplace"
+  },
+  "skills": [
+    {
+      "id": "pdf-to-ppt-pack",
+      "version": "1.0.0",
+      "display_name": "pdf-to-ppt-pack",
+      "summary": "Convert research paper PDFs into literature-report PPTX decks using a fully offline workflow (extract text/figures, map captions, summarize findings, and generate slides). Use when you need to turn a PDF into a presentation deck, especially for scientific articles with figures and tables.",
+      "category": "other",
+      "inclusion_tier": "catalog-candidate",
+      "source": {
+        "repository": "https://github.com/aipoch/medical-research-skills",
+        "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+        "path": "scientific-skills/Other/pdf-to-ppt-pack"
+      },
+      "publisher": {
+        "id": "aipoch",
+        "name": "AIPOCH",
+        "url": "https://aipoch.com/agent-skills"
+      },
+      "authors": [
+        {
+          "name": "AIPOCH"
+        }
+      ],
+      "license": "MIT",
+      "release": {
+        "path": "releases/pdf-to-ppt-pack/1.0.0.json",
+        "sha256": "ae2daf6d5985e1fbb4ce046d6262f99eeb08921b82ade67b207cf5a8c9dabc6a"
+      },
+      "artifact": {
+        "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
+        "sha256": "8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f",
+        "bytes": 17318,
+        "skill_path": "pdf-to-ppt-pack"
+      },
+      "content_sha256": "66d74735595ce765693a0a770b7d705386bba24bf6e07c853c797e20d645593d"
+    },
+    {
+      "id": "primary-plan-recommender",
+      "version": "1.0.0",
+      "display_name": "primary-plan-recommender",
+      "summary": "Compares multiple study-route options for the same biomedical research question and recommends one primary plan, while explicitly explaining why alternative routes are secondary, premature, weaker, or dependency-heavy. Always use this skill when the user already has a reasonably defined question but is unsure which main study route should anchor the project. Focus on plan comparison, route selection, dependency awareness, and primary-plan justification rather than full protocol drafting.",
+      "category": "protocol-design",
+      "inclusion_tier": "catalog-candidate",
+      "source": {
+        "repository": "https://github.com/aipoch/medical-research-skills",
+        "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+        "path": "awesome-med-research-skills/Protocol Design/primary-plan-recommender"
+      },
+      "publisher": {
+        "id": "aipoch",
+        "name": "AIPOCH",
+        "url": "https://aipoch.com/agent-skills"
+      },
+      "authors": [
+        {
+          "name": "AIPOCH"
+        }
+      ],
+      "license": "MIT",
+      "evaluation": {
+        "kind": "upstream-self-assessment",
+        "score": 89,
+        "max_score": 100,
+        "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/primary-plan-recommender/eval_report_primary-plan-recommender_result.json",
+        "evaluated_on": "2026-04-22",
+        "evaluator_version": "skill-auditor@1.0",
+        "static_score": {
+          "score": 91,
+          "max_score": 100
+        },
+        "dynamic_score": {
+          "score": 88.4,
+          "max_score": 100
+        }
+      },
+      "release": {
+        "path": "releases/primary-plan-recommender/1.0.0.json",
+        "sha256": "0d056a67c094595d9493cda199ed3ad3782814b16c30923ffc0560b974f74449"
+      },
+      "artifact": {
+        "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
+        "sha256": "8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f",
+        "bytes": 17318,
+        "skill_path": "primary-plan-recommender"
+      },
+      "content_sha256": "5271f6b085735bc0904552a537484e40cb48573db9cf6e78d8979b667d39bb0b"
+    }
+  ],
+  "release_index": {
+    "path": "indexes/bb6661a52de9820a04fa91c0f0a343e3aaa57788b853fa0c2e2181d538fd5bed.json",
+    "sha256": "bb6661a52de9820a04fa91c0f0a343e3aaa57788b853fa0c2e2181d538fd5bed"
+  },
+  "previous_revision": null,
+  "revision": "2fbf6c2d60d211ccfb36a883e8bbad13cbf8ca0f54b78580cbd509b6c711930e"
+}

@@ -1,0 +1,117 @@
+# Batch publication and recovery
+
+Production has **not** been published or configured by this change. The current
+source blockers and empty `skills/reviews.json` prevent a complete production build.
+The maintainer explicitly deferred publication. Do not bypass these gates.
+
+## Responsibilities
+
+- `main`: reviewed inputs, protocol, tooling, source observations and review records.
+- `published`: signed discovery, immutable snapshot metadata, release indexes and details.
+- GitHub Releases: one `catalog-<revision>` release per complete snapshot, containing
+  all required immutable objects. There is no per-Skill release operation.
+- CDN/S3: byte-identical immutable logical objects and the stable discovery pair.
+- Workflow temporary directories: build/download state only, never authoritative recovery data.
+
+Unchanged versions reuse their exact descriptors and shard associations. The signed
+release index retains older versions even when the current listing changes. The
+first implementation includes all retained referenced objects in each catalog's
+GitHub Release so each snapshot is self-contained; unchanged CDN objects and retries
+reuse existing bytes. This duplicates unchanged GitHub assets across different
+snapshots. The tool currently caps a snapshot at 1,000 assets; introduce an explicit
+cross-snapshot transport index before growing beyond this limit, rather than losing
+historical objects. The complete snapshot fails if the limit is exceeded.
+
+## Workflow
+
+`publish.yml` is manually dispatched and defaults to rehearsal only. Its reusable
+`publication-check.yml` runs the real publication/reconciliation code against local
+stores and transport-boundary tests, with no secrets or external writes. A normal
+PR also exercises that code through `npm test` and `npm run publish:dry-run`.
+
+A production run requires `publish: true`, the current main commit, and the protected
+`production` environment. Configure required reviewers and restrict that environment
+to main before enabling it. Production code checks these explicit values:
+
+| Configuration                                             | Location                                                                   |
+| --------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `SKILL_MARKETPLACE_PUBLISH_ENABLED=true`                  | protected variable                                                         |
+| `SKILL_MARKETPLACE_PUBLIC_KEY` (SPKI DER base64)          | protected variable / independent App pin                                   |
+| `SKILL_MARKETPLACE_KEY_FINGERPRINT` (SHA-256 of SPKI DER) | protected variable                                                         |
+| `SKILL_MARKETPLACE_KEY_ID` (`openscience-skills-...`)     | protected variable                                                         |
+| `SKILL_MARKETPLACE_PRIVATE_KEY` (PKCS#8 DER base64)       | protected secret                                                           |
+| `SKILL_MARKETPLACE_CDN_BASE_URL`                          | protected variable, HTTPS URL ending `/open-science/skill-marketplace/v1/` |
+| `SKILL_MARKETPLACE_BUCKET`                                | protected secret                                                           |
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`              | protected secrets                                                          |
+| `AWS_DEFAULT_REGION`                                      | protected variable                                                         |
+
+Use least-privilege access restricted to the Skill Marketplace prefix. Keep these
+keys and paths separate from Specialist publication. The Ubuntu runner needs `gh`
+and AWS CLI with S3 `put-object --if-none-match` support. No infrastructure or
+production credentials are created by repository validation.
+
+The production workflow:
+
+1. Runs tooling checks; reads the fixed upstream Git commit and verifies audit equality.
+2. Downloads and verifies the previous signed root and every object in its release index.
+3. Builds all 584 members after source, license-review and resource gates pass.
+4. Signs exact root bytes; verifies the separately configured public key and fingerprint.
+5. Creates/reuses one draft catalog release and uploads missing assets without clobbering.
+6. Uses conditional S3 writes for immutable objects, reads public CDN and GitHub bytes,
+   and verifies equality before moving either stable root.
+7. Publishes the verified release, writes metadata through `.worktree/published`, then
+   promotes the stable CDN signature/root pair and verifies both roots and signatures.
+
+S3 conditional immutable writes use the documented
+[`If-None-Match: *` operation](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object.html).
+An existing unequal object is a hard conflict. Authorization or network errors are
+not treated as a missing object. Do not use `gh release upload --clobber`.
+
+The CDN must expose the object-store prefix with correct byte preservation and no
+stale negative caching for newly created immutable objects. Stable metadata must
+revalidate (`Cache-Control: no-cache`); immutable objects use long-lived caching.
+No CDN distribution or invalidation policy is configured by these tools.
+
+## Recovery
+
+Retry from the same reviewed inputs and pinned key. A snapshot identity and Ed25519
+signature are deterministic. Every retry reads existing object bytes: matching
+bytes are reused, and conflicting bytes stop publication. A partially uploaded
+draft can receive its missing assets. A published release missing an expected asset
+fails rather than modifying released content.
+
+Both transports receive the immutable snapshot pair before stable promotion.
+The stable root/signature pair is not atomic across objects or transports. Tests
+interrupt every immutable write, stable-signature write and stable-root write,
+then prove that retry restores matching final bytes. During a mismatch clients
+must retain a verified snapshot or retry the bounded fetch. The publisher never
+accepts mismatched bytes as a successful completed run.
+
+The signed `previous_revision` preserves the original parent across workflow restarts;
+rebuilding identical already-published input returns its original root and parent.
+The expected previous revision prevents overwriting a different published root.
+Workflow concurrency serializes publications; an interrupted run must be reconciled
+before authoring an unrelated next snapshot. If `published` has already advanced,
+restore the candidate from its immutable signed snapshot rather than signing a
+new interpretation of old bytes. All historical objects remain referenced through
+the signed release index. Local recovery files cannot override remote evidence.
+
+Run `verify-published.yml` only after a publication exists. It reads and authenticates
+GitHub history and compares every referenced object plus the stable signed root
+against the public CDN. It performs no remote writes.
+
+## Scope and remaining decisions
+
+There is no App database, settings, cache, installation-source document or migration
+in this repository. Category/tier and evidence-kind values are metadata only;
+publication steps are not client installation states. No UI changes require screenshots.
+
+The complete catalog is blocked by four syntax errors, one missing description,
+five missing license declarations, the PPI resource limits, seventeen unresolved
+assessment mappings, and all pending reviewed
+redistribution records. Fixes to upstream bytes and any PPI redesign need separate
+approval. No production URL, key pin or immutable published test URL is claimed.
+
+Local tests and the dry-run cover protocol, packaging, history, transport commands
+and interruption recovery. Live GitHub Release/S3/CDN promotion remains untested
+until a separately authorized production or staging environment is available.

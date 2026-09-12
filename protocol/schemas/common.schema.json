@@ -1,0 +1,400 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_score": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": ["score", "max_score"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repository": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096,
+          "format": "https-url"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024,
+          "format": "safe-path"
+        },
+        "upstream_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "required": ["repository", "commit", "path"]
+    },
+    "publisher": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096,
+          "format": "https-url"
+        }
+      },
+      "required": ["id", "name", "url"]
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096,
+            "format": "https-url"
+          }
+        },
+        "required": ["name"]
+      },
+      "maxItems": 30,
+      "minItems": 1
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "format": "https-url"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": ["url", "sha256"]
+          },
+          "maxItems": 20,
+          "minItems": 1
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "reviewed_by": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "reviewed_on": {
+              "type": "string",
+              "format": "iso-date"
+            },
+            "exception_reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "required": ["reviewed_by", "reviewed_on"]
+        }
+      },
+      "required": ["expression", "evidence", "review"]
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "upstream-self-assessment"
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_score": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "report_url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096,
+          "format": "https-url"
+        },
+        "evaluated_on": {
+          "type": "string",
+          "format": "iso-date"
+        },
+        "evaluator_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "skill_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "static_score": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/score"
+        },
+        "dynamic_score": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/score"
+        }
+      },
+      "required": ["kind", "score", "max_score", "report_url"]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^shards/[a-f0-9]{64}\\.zip$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 67108864
+        },
+        "skill_path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "format": "safe-path"
+        }
+      },
+      "required": ["path", "sha256", "bytes", "skill_path"]
+    },
+    "skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "version": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-((?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000
+        },
+        "category": {
+          "enum": [
+            "academic-writing",
+            "data-analysis",
+            "evidence-insight",
+            "other",
+            "protocol-design"
+          ]
+        },
+        "inclusion_tier": {
+          "enum": [
+            "mvp-candidate",
+            "sandbox-beta",
+            "catalog-candidate",
+            "restricted-index"
+          ]
+        },
+        "source": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/source"
+        },
+        "publisher": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/publisher"
+        },
+        "authors": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/authors"
+        },
+        "license": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/license"
+        },
+        "evaluation": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/evaluation"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "display_name",
+        "summary",
+        "category",
+        "inclusion_tier",
+        "source",
+        "publisher",
+        "license"
+      ]
+    },
+    "listing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "version": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-((?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000
+        },
+        "category": {
+          "enum": [
+            "academic-writing",
+            "data-analysis",
+            "evidence-insight",
+            "other",
+            "protocol-design"
+          ]
+        },
+        "inclusion_tier": {
+          "enum": [
+            "mvp-candidate",
+            "sandbox-beta",
+            "catalog-candidate",
+            "restricted-index"
+          ]
+        },
+        "source": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/source"
+        },
+        "publisher": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/publisher"
+        },
+        "authors": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/authors"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "evaluation": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/evaluation"
+        },
+        "release": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "format": "safe-path"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"]
+        },
+        "artifact": {
+          "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/artifact"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "display_name",
+        "summary",
+        "category",
+        "inclusion_tier",
+        "source",
+        "publisher",
+        "license",
+        "release",
+        "artifact",
+        "content_sha256"
+      ]
+    }
+  }
+}

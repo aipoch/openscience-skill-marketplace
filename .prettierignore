@@ -1,0 +1,10 @@
+.worktree/
+docs/internal/
+dist/
+node_modules/
+skills/inclusion-list.md
+protocol/fixtures/source/
+package-lock.json
+skills/source-audit.json
+protocol/fixtures/snapshot/
+protocol/fixtures/provenance.json

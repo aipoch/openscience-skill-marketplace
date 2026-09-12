@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aipoch.github.io/openscience-skill-marketplace/protocol/skill-release.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "protocol": {
+      "const": "openscience-skill-marketplace"
+    },
+    "skill": {
+      "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/skill"
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "file_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16384
+        },
+        "uncompressed_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 134217728
+        }
+      },
+      "required": ["content_sha256", "file_count", "uncompressed_bytes"]
+    },
+    "artifact": {
+      "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/artifact"
+    }
+  },
+  "required": ["schema_version", "protocol", "skill", "package", "artifact"]
+}
