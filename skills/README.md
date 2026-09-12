@@ -53,8 +53,10 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 [release_plan.schema.json](release_plan.schema.json), partitions all manifest
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
-deferred entry also requires a nonblank `reason`. The first batch selects 571
-candidates and defers 13 members: 11 with remaining source errors, `pptx-skill`
+deferred entry also requires a nonblank `reason`. The initial release selects
+only the reviewed `abstract-trimmer@1.0.0` and defers the other 583 members.
+Of these, 570 await redistribution review for a later batch. The original 13
+deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
 appears in [`extracted_text.txt:117`](https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/paper-tweet-generator/extracted_text.txt#L117);
@@ -85,9 +87,11 @@ added. Public signatures and digests still cover their original bytes.
 
 ## Review records
 
-`reviews.json` contains seventeen approved assessment-omission decisions, bound
-to the pinned source commit and exact package content digest. These records do
-not approve redistribution: all 584 members still require license review.
+`reviews.json` contains the approved redistribution review for
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and seventeen
+separate assessment-omission decisions. Each is bound to the pinned source commit
+and exact source content digest. Omission-only records do not approve
+redistribution; all other members still need a complete license review.
 Each key is `<skill-id>@<version>`; a complete redistribution review must record
 the following facts (the example is not an approval):
 

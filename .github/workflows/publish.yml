@@ -32,6 +32,8 @@ jobs:
           ref: ${{ github.sha }}
           fetch-depth: 0
           persist-credentials: false
+      - name: Authenticate Git through the workflow token
+        run: gh auth setup-git --hostname github.com
       - name: Require protected main publication configuration
         shell: bash
         env:

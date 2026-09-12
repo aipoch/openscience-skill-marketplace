@@ -214,7 +214,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed first batch selects 571 candidates and explicitly defers exactly the approved thirteen", async () => {
+test("committed initial release selects only the approved abstract trimmer and still enforces review", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -225,26 +225,18 @@ test("committed first batch selects 571 candidates and explicitly defers exactly
     new URL("../skills/release_plan.json", import.meta.url),
   );
   const selected = selectReleaseEntries(bytes, manifest.entries, config.source);
-  assert.equal(selected.length, 571);
+  assert.deepEqual(
+    selected.map(({ id, version }) => ({ id, version })),
+    [{ id: "abstract-trimmer", version: "1.0.0" }],
+  );
   assert.deepEqual(
     parseMetadataJson(bytes)
-      .deferred.map((e) => e.id)
+      .deferred.map((entry) => entry.id)
       .sort(),
-    [
-      "format-references-endnote",
-      "format-references-zotero",
-      "meta-analysis",
-      "bioinfo-analysis-plan",
-      "mendelian-randomisation",
-      "elastic-net-feature-selection",
-      "hierarchical-clustering-plot",
-      "lasso-logistics-analysis",
-      "roc-diagnostic-performance",
-      "univariate-multivariable-cox-regression",
-      "ppi-network-analysis",
-      "pptx-skill",
-      "paper-tweet-generator",
-    ].sort(),
+    manifest.entries
+      .filter((entry) => entry.id !== "abstract-trimmer")
+      .map((entry) => entry.id)
+      .sort(),
   );
   const audit = parseMetadataJson(
     await readFile(new URL("../skills/source-audit.json", import.meta.url)),
@@ -252,17 +244,32 @@ test("committed first batch selects 571 candidates and explicitly defers exactly
   const reviews = parseMetadataJson(
     await readFile(new URL("../skills/reviews.json", import.meta.url)),
   );
+  assert.deepEqual(
+    Object.entries(reviews)
+      .filter(([, review]) => review.reviewedBy)
+      .map(([key]) => key),
+    ["abstract-trimmer@1.0.0"],
+  );
+  assert.equal(reviews["abstract-trimmer@1.0.0"].reviewedBy, "ewen-poch");
   assert.throws(
     () =>
       prepareCandidates(
         { entries: selectReleaseEntries(bytes, audit.entries, config.source) },
-        reviews,
+        {
+          ...reviews,
+          "abstract-trimmer@1.0.0": {
+            ...reviews["abstract-trimmer@1.0.0"],
+            reviewedBy: "",
+          },
+        },
         config,
         {},
       ),
     (error) => {
-      assert.equal(error.blockers.length, 571);
-      assert.ok(error.blockers.every((b) => b.code === "missing-review"));
+      assert.deepEqual(
+        error.blockers.map(({ id, code }) => ({ id, code })),
+        [{ id: "abstract-trimmer", code: "missing-review" }],
+      );
       return true;
     },
   );
