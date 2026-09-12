@@ -11,16 +11,13 @@ const report = JSON.parse(await readFile("skills/source-audit.json"));
 assert.deepEqual(report.source, config.source);
 assert.equal(report.memberCount, 584);
 assert.deepEqual(
-  report.entries.map(
-    ({ id, category, inclusionTier, collection, sourcePath, version }) => ({
-      id,
-      category,
-      inclusionTier,
-      collection,
-      sourcePath,
-      version,
-    }),
-  ),
+  report.entries.map(({ id, category, collection, sourcePath, version }) => ({
+    id,
+    category,
+    collection,
+    sourcePath,
+    version,
+  })),
   manifest.entries,
 );
 const fixtures = await readBundle("protocol/fixtures/snapshot");

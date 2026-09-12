@@ -110,6 +110,9 @@ fails the complete build. Native root `.source.json` and `.specialist-package.js
 (case insensitive), traversal, symlinks, special files, nested Skill roots,
 case/Unicode collisions, file/directory conflicts and nonportable paths are rejected.
 
+The original inclusion list retains historical inclusion tiers for traceability.
+They are not part of active manifests, published metadata or the App field mapping.
+
 ## App field mapping
 
 `toAppEntry` in `scripts/lib/protocol.mjs` provides the reviewed wire-to-display
@@ -117,7 +120,7 @@ mapping without modifying the App repository.
 
 | Wire                                            | Existing App model                             |
 | ----------------------------------------------- | ---------------------------------------------- |
-| `display_name`, `inclusion_tier`                | `displayName`, `inclusionTier`                 |
+| `display_name`                                  | `displayName`                                  |
 | category slug                                   | existing English category label                |
 | `version`                                       | Marketplace package `version`                  |
 | `publisher`                                     | accountable publisher; separate from `authors` |

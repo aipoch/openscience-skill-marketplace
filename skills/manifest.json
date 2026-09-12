@@ -5,7 +5,6 @@
     {
       "id": "abstract-summarizer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/abstract-summarizer",
       "version": "1.0.0"
@@ -13,7 +12,6 @@
     {
       "id": "abstract-trimmer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/abstract-trimmer",
       "version": "1.0.0"
@@ -21,7 +19,6 @@
     {
       "id": "academic-abstract-refiner",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/academic-abstract-refiner",
       "version": "1.0.0"
@@ -29,7 +26,6 @@
     {
       "id": "academic-highlight-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/academic-highlight-generator",
       "version": "1.0.0"
@@ -37,7 +33,6 @@
     {
       "id": "adverse-event-narrative",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/adverse-event-narrative",
       "version": "1.0.0"
@@ -45,7 +40,6 @@
     {
       "id": "anatomy-quiz-master",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/anatomy-quiz-master",
       "version": "1.0.0"
@@ -53,7 +47,6 @@
     {
       "id": "anki-card-creator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/anki-card-creator",
       "version": "1.0.0"
@@ -61,7 +54,6 @@
     {
       "id": "arxiv-preflight",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/arxiv-preflight",
       "version": "1.0.0"
@@ -69,7 +61,6 @@
     {
       "id": "author-response-builder",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/author-response-builder",
       "version": "1.0.0"
@@ -77,7 +68,6 @@
     {
       "id": "authorship-credit-gen",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/authorship-credit-gen",
       "version": "1.0.0"
@@ -85,7 +75,6 @@
     {
       "id": "automated-soap-note-generator",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/automated-soap-note-generator",
       "version": "1.0.0"
@@ -93,7 +82,6 @@
     {
       "id": "biomed-outline-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/biomed-outline-generator",
       "version": "1.0.0"
@@ -101,7 +89,6 @@
     {
       "id": "biotech-pitch-deck-narrative",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/biotech-pitch-deck-narrative",
       "version": "1.0.0"
@@ -109,7 +96,6 @@
     {
       "id": "blind-review-sanitizer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/blind-review-sanitizer",
       "version": "1.0.0"
@@ -117,7 +103,6 @@
     {
       "id": "citation-formatter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/citation-formatter",
       "version": "1.0.0"
@@ -125,7 +110,6 @@
     {
       "id": "claim-strength-calibrator",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/claim-strength-calibrator",
       "version": "1.0.0"
@@ -133,7 +117,6 @@
     {
       "id": "clinical-decision-support",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/clinical-decision-support",
       "version": "1.0.0"
@@ -141,7 +124,6 @@
     {
       "id": "conference-abstract-adaptor",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/conference-abstract-adaptor",
       "version": "1.0.0"
@@ -149,7 +131,6 @@
     {
       "id": "conference-abstract-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/conference-abstract-writer",
       "version": "1.0.0"
@@ -157,7 +138,6 @@
     {
       "id": "conference-poster-pitch",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/conference-poster-pitch",
       "version": "1.0.0"
@@ -165,7 +145,6 @@
     {
       "id": "consistency-checker-across-manuscript",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/consistency-checker-across-manuscript",
       "version": "1.0.0"
@@ -173,7 +152,6 @@
     {
       "id": "cover-letter-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/cover-letter-drafter",
       "version": "1.0.0"
@@ -181,7 +159,6 @@
     {
       "id": "cover-letter-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/cover-letter-generator",
       "version": "1.0.0"
@@ -189,7 +166,6 @@
     {
       "id": "dei-statement-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/dei-statement-drafter",
       "version": "1.0.0"
@@ -197,7 +173,6 @@
     {
       "id": "digital-twin-discharge-drafter",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/digital-twin-discharge-drafter",
       "version": "1.0.0"
@@ -205,7 +180,6 @@
     {
       "id": "discharge-summary-writer",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/discharge-summary-writer",
       "version": "1.0.0"
@@ -213,7 +187,6 @@
     {
       "id": "discussion-composer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/discussion-composer",
       "version": "1.0.0"
@@ -221,7 +194,6 @@
     {
       "id": "discussion-section-architect",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/discussion-section-architect",
       "version": "1.0.0"
@@ -229,7 +201,6 @@
     {
       "id": "ectd-xml-compiler",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/ectd-xml-compiler",
       "version": "1.0.0"
@@ -237,7 +208,6 @@
     {
       "id": "ehr-semantic-compressor",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/ehr-semantic-compressor",
       "version": "1.0.0"
@@ -245,7 +215,6 @@
     {
       "id": "faq-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/faq-generator",
       "version": "1.0.0"
@@ -253,7 +222,6 @@
     {
       "id": "figure-legend-gen",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/figure-legend-gen",
       "version": "1.0.0"
@@ -261,7 +229,6 @@
     {
       "id": "figure-legend-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/figure-legend-writer",
       "version": "1.0.0"
@@ -269,7 +236,6 @@
     {
       "id": "figure-reference-checker",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/figure-reference-checker",
       "version": "1.0.0"
@@ -277,7 +243,6 @@
     {
       "id": "find-paper-references",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/find-paper-references",
       "version": "1.0.0"
@@ -285,7 +250,6 @@
     {
       "id": "format-references-endnote",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/format-references-endnote",
       "version": "1.0.0"
@@ -293,7 +257,6 @@
     {
       "id": "format-references-zotero",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/format-references-zotero",
       "version": "1.0.0"
@@ -301,7 +264,6 @@
     {
       "id": "grant-budget-justification",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/grant-budget-justification",
       "version": "1.0.0"
@@ -309,7 +271,6 @@
     {
       "id": "grant-mock-reviewer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/grant-mock-reviewer",
       "version": "1.0.0"
@@ -317,7 +278,6 @@
     {
       "id": "grant-proposal-assistant",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/grant-proposal-assistant",
       "version": "1.0.0"
@@ -325,7 +285,6 @@
     {
       "id": "grant-specific-aims-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/grant-specific-aims-writer",
       "version": "1.0.0"
@@ -333,7 +292,6 @@
     {
       "id": "graph-interpretation",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/graph-interpretation",
       "version": "1.0.0"
@@ -341,7 +299,6 @@
     {
       "id": "graphical-abstract-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/graphical-abstract-generator",
       "version": "1.0.0"
@@ -349,7 +306,6 @@
     {
       "id": "hipaa-compliance-auditor",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/hipaa-compliance-auditor",
       "version": "1.0.0"
@@ -357,7 +313,6 @@
     {
       "id": "iacuc-protocol-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/iacuc-protocol-drafter",
       "version": "1.0.0"
@@ -365,7 +320,6 @@
     {
       "id": "introduction-logic-builder",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/introduction-logic-builder",
       "version": "1.0.0"
@@ -373,7 +327,6 @@
     {
       "id": "introduction-section-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/introduction-section-writer",
       "version": "1.0.0"
@@ -381,7 +334,6 @@
     {
       "id": "irb-application-assistant",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/irb-application-assistant",
       "version": "1.0.0"
@@ -389,7 +341,6 @@
     {
       "id": "journal-club-presenter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/journal-club-presenter",
       "version": "1.0.0"
@@ -397,7 +348,6 @@
     {
       "id": "journal-cover-prompter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/journal-cover-prompter",
       "version": "1.0.0"
@@ -405,7 +355,6 @@
     {
       "id": "labarchive-integration",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/labarchive-integration",
       "version": "1.0.0"
@@ -413,7 +362,6 @@
     {
       "id": "latex-manuscript-format-converter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/latex-manuscript-format-converter",
       "version": "1.0.0"
@@ -421,7 +369,6 @@
     {
       "id": "latex-posters",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/latex-posters",
       "version": "1.0.0"
@@ -429,7 +376,6 @@
     {
       "id": "lay-press-release-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/lay-press-release-writer",
       "version": "1.0.0"
@@ -437,7 +383,6 @@
     {
       "id": "lay-summary-for-cross-disciplinary-teams",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/lay-summary-for-cross-disciplinary-teams",
       "version": "1.0.0"
@@ -445,7 +390,6 @@
     {
       "id": "lay-summary-gen",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/lay-summary-gen",
       "version": "1.0.0"
@@ -453,7 +397,6 @@
     {
       "id": "limitation-and-risk-writer",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/limitation-and-risk-writer",
       "version": "1.0.0"
@@ -461,7 +404,6 @@
     {
       "id": "linkedin-optimizer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/linkedin-optimizer",
       "version": "1.0.0"
@@ -469,7 +411,6 @@
     {
       "id": "literature-review",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/literature-review",
       "version": "1.0.0"
@@ -477,7 +418,6 @@
     {
       "id": "market-access-value",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/market-access-value",
       "version": "1.0.0"
@@ -485,7 +425,6 @@
     {
       "id": "medical-cv-resume-builder",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-cv-resume-builder",
       "version": "1.0.0"
@@ -493,7 +432,6 @@
     {
       "id": "medical-device-mdr-auditor",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-device-mdr-auditor",
       "version": "1.0.0"
@@ -501,7 +439,6 @@
     {
       "id": "medical-email-polisher",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-email-polisher",
       "version": "1.0.0"
@@ -509,7 +446,6 @@
     {
       "id": "medical-english-precision-editor",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/medical-english-precision-editor",
       "version": "1.0.0"
@@ -517,7 +453,6 @@
     {
       "id": "medical-imaging-review",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-imaging-review",
       "version": "1.0.0"
@@ -525,7 +460,6 @@
     {
       "id": "medical-review-writer-architect",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-review-writer-architect",
       "version": "1.0.0"
@@ -533,7 +467,6 @@
     {
       "id": "medical-scribe-dictation",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-scribe-dictation",
       "version": "1.0.0"
@@ -541,7 +474,6 @@
     {
       "id": "medical-translation",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medical-translation",
       "version": "1.0.0"
@@ -549,7 +481,6 @@
     {
       "id": "medication-adherence-message-gen",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/medication-adherence-message-gen",
       "version": "1.0.0"
@@ -557,7 +488,6 @@
     {
       "id": "meeting-minutes",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meeting-minutes",
       "version": "1.0.0"
@@ -565,7 +495,6 @@
     {
       "id": "meta-analysis-methods-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-analysis-methods-generator",
       "version": "1.0.0"
@@ -573,7 +502,6 @@
     {
       "id": "meta-baseline-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-baseline-generator",
       "version": "1.0.0"
@@ -581,7 +509,6 @@
     {
       "id": "meta-manuscript-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-manuscript-generator",
       "version": "1.0.0"
@@ -589,7 +516,6 @@
     {
       "id": "meta-results-forest-plot-analyzer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-results-forest-plot-analyzer",
       "version": "1.0.0"
@@ -597,7 +523,6 @@
     {
       "id": "meta-results-funnel-plot-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-results-funnel-plot-generator",
       "version": "1.0.0"
@@ -605,7 +530,6 @@
     {
       "id": "meta-results-risk-of-bias",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-results-risk-of-bias",
       "version": "1.0.0"
@@ -613,7 +537,6 @@
     {
       "id": "meta-results-sensitivity-analysis",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/meta-results-sensitivity-analysis",
       "version": "1.0.0"
@@ -621,7 +544,6 @@
     {
       "id": "method-writing",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/method-writing",
       "version": "1.0.0"
@@ -629,7 +551,6 @@
     {
       "id": "methods-section-writer",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/methods-section-writer",
       "version": "1.0.0"
@@ -637,7 +558,6 @@
     {
       "id": "microbiome-diversity-reporter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/microbiome-diversity-reporter",
       "version": "1.0.0"
@@ -645,7 +565,6 @@
     {
       "id": "moa-explainer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/moa-explainer",
       "version": "1.0.0"
@@ -653,7 +572,6 @@
     {
       "id": "molecular-review-workflow",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/molecular-review-workflow",
       "version": "1.0.0"
@@ -661,7 +579,6 @@
     {
       "id": "networking-email-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/networking-email-drafter",
       "version": "1.0.0"
@@ -669,7 +586,6 @@
     {
       "id": "nih-biosketch-builder",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/nih-biosketch-builder",
       "version": "1.0.0"
@@ -677,7 +593,6 @@
     {
       "id": "nsfc-grant-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/nsfc-grant-writer",
       "version": "1.0.0"
@@ -685,7 +600,6 @@
     {
       "id": "paper-sprint-review",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/paper-sprint-review",
       "version": "1.0.0"
@@ -693,7 +607,6 @@
     {
       "id": "paper-web",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/paper-2-web",
       "version": "1.0.0"
@@ -701,7 +614,6 @@
     {
       "id": "patent-assistant",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/patent-assistant",
       "version": "1.0.0"
@@ -709,7 +621,6 @@
     {
       "id": "patient-recruitment-ad-gen",
       "category": "academic-writing",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/patient-recruitment-ad-gen",
       "version": "1.0.0"
@@ -717,7 +628,6 @@
     {
       "id": "peer-review",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/peer-review",
       "version": "1.0.0"
@@ -725,7 +635,6 @@
     {
       "id": "peer-review-response-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/peer-review-response-drafter",
       "version": "1.0.0"
@@ -733,7 +642,6 @@
     {
       "id": "personal-statement",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/personal-statement",
       "version": "1.0.0"
@@ -741,7 +649,6 @@
     {
       "id": "poster-layout-planner",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/poster-layout-planner",
       "version": "1.0.0"
@@ -749,7 +656,6 @@
     {
       "id": "poster-storyline-builder",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/poster-storyline-builder",
       "version": "1.0.0"
@@ -757,7 +663,6 @@
     {
       "id": "presentation-hook",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/presentation-hook",
       "version": "1.0.0"
@@ -765,7 +670,6 @@
     {
       "id": "prior-auth-letter-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/prior-auth-letter-drafter",
       "version": "1.0.0"
@@ -773,7 +677,6 @@
     {
       "id": "q-and-a-prep-partner",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/q-and-a-prep-partner",
       "version": "1.0.0"
@@ -781,7 +684,6 @@
     {
       "id": "radiology-image-quiz",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/radiology-image-quiz",
       "version": "1.0.0"
@@ -789,7 +691,6 @@
     {
       "id": "rebuttal-letter-strategist",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/rebuttal-letter-strategist",
       "version": "1.0.0"
@@ -797,7 +698,6 @@
     {
       "id": "recommendation-letter-assistant",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/recommendation-letter-assistant",
       "version": "1.0.0"
@@ -805,7 +705,6 @@
     {
       "id": "reference-integrity-checker",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/reference-integrity-checker",
       "version": "1.0.0"
@@ -813,7 +712,6 @@
     {
       "id": "reference-style-sync",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/reference-style-sync",
       "version": "1.0.0"
@@ -821,7 +719,6 @@
     {
       "id": "referral-letter-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/referral-letter-generator",
       "version": "1.0.0"
@@ -829,7 +726,6 @@
     {
       "id": "regulatory-submission",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/regulatory-submission",
       "version": "1.0.0"
@@ -837,7 +733,6 @@
     {
       "id": "reporting-guideline-compliance-checker",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/reporting-guideline-compliance-checker",
       "version": "1.0.0"
@@ -845,7 +740,6 @@
     {
       "id": "residency-interview-prep",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/residency-interview-prep",
       "version": "1.0.0"
@@ -853,7 +747,6 @@
     {
       "id": "response-letter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/response-letter",
       "version": "1.0.0"
@@ -861,7 +754,6 @@
     {
       "id": "response-tone-polisher",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/response-tone-polisher",
       "version": "1.0.0"
@@ -869,7 +761,6 @@
     {
       "id": "results-section-structurer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/results-section-structurer",
       "version": "1.0.0"
@@ -877,7 +768,6 @@
     {
       "id": "results-section-writer",
       "category": "academic-writing",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/results-section-writer",
       "version": "1.0.0"
@@ -885,7 +775,6 @@
     {
       "id": "revision-strategy-planner",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/revision-strategy-planner",
       "version": "1.0.0"
@@ -893,7 +782,6 @@
     {
       "id": "sample-size-power-calculator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/sample-size-power-calculator",
       "version": "1.0.0"
@@ -901,7 +789,6 @@
     {
       "id": "semantic-consistency-auditor",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/semantic-consistency-auditor",
       "version": "1.0.0"
@@ -909,7 +796,6 @@
     {
       "id": "slide-deck-for-lab-meeting",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/slide-deck-for-lab-meeting",
       "version": "1.0.0"
@@ -917,7 +803,6 @@
     {
       "id": "study-limitations-drafter",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/study-limitations-drafter",
       "version": "1.0.0"
@@ -925,7 +810,6 @@
     {
       "id": "style-journal-rewrite",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/style-journal-rewrite",
       "version": "1.0.0"
@@ -933,7 +817,6 @@
     {
       "id": "systematic-review",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/systematic-review",
       "version": "1.0.0"
@@ -941,7 +824,6 @@
     {
       "id": "table-narrative-writer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/table-narrative-writer",
       "version": "1.0.0"
@@ -949,7 +831,6 @@
     {
       "id": "target-journal-matcher",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/target-journal-matcher",
       "version": "1.0.0"
@@ -957,7 +838,6 @@
     {
       "id": "title-and-abstract-optimizer",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Academic Writing/title-and-abstract-optimizer",
       "version": "1.0.0"
@@ -965,7 +845,6 @@
     {
       "id": "tone-adjuster",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/tone-adjuster",
       "version": "1.0.0"
@@ -973,7 +852,6 @@
     {
       "id": "usmle-case-generator",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/usmle-case-generator",
       "version": "1.0.0"
@@ -981,7 +859,6 @@
     {
       "id": "visual-content-desc",
       "category": "academic-writing",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Academic Writing/visual-content-desc",
       "version": "1.0.0"
@@ -989,7 +866,6 @@
     {
       "id": "adme-property-predictor",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/adme-property-predictor",
       "version": "1.0.0"
@@ -997,7 +873,6 @@
     {
       "id": "anndata",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/anndata",
       "version": "1.0.0"
@@ -1005,7 +880,6 @@
     {
       "id": "baseline-extraction-for-clinical-trials",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/baseline-extraction-for-clinical-trials",
       "version": "1.0.0"
@@ -1013,7 +887,6 @@
     {
       "id": "batch-effect-correction",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/batch-effect-correction",
       "version": "1.0.0"
@@ -1021,7 +894,6 @@
     {
       "id": "bio-causal-genomics-mediation-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/bio-causal-genomics-mediation-analysis",
       "version": "1.0.0"
@@ -1029,7 +901,6 @@
     {
       "id": "bio-causal-genomics-pleiotropy-detection",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/bio-causal-genomics-pleiotropy-detection",
       "version": "1.0.0"
@@ -1037,7 +908,6 @@
     {
       "id": "biopython",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/biopython",
       "version": "1.0.0"
@@ -1045,7 +915,6 @@
     {
       "id": "biopython-advanced",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/biopython-advanced",
       "version": "1.0.0"
@@ -1053,7 +922,6 @@
     {
       "id": "biopython-alignment",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/biopython-alignment",
       "version": "1.0.0"
@@ -1061,7 +929,6 @@
     {
       "id": "biopython-phylo",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/biopython-phylo",
       "version": "1.0.0"
@@ -1069,7 +936,6 @@
     {
       "id": "biopython-sequence-io",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/biopython-sequence-io",
       "version": "1.0.0"
@@ -1077,7 +943,6 @@
     {
       "id": "biopython-structure",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/biopython-structure",
       "version": "1.0.0"
@@ -1085,7 +950,6 @@
     {
       "id": "bioservices",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/bioservices",
       "version": "1.0.0"
@@ -1093,7 +957,6 @@
     {
       "id": "case-control-study-quality-assessment-nos",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/Case-control-study-quality-assessment-nos",
       "version": "1.0.0"
@@ -1101,7 +964,6 @@
     {
       "id": "cerna-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/cerna-analysis",
       "version": "1.0.0"
@@ -1109,7 +971,6 @@
     {
       "id": "cibersort-immune-infiltration-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/cibersort-immune-infiltration-analysis",
       "version": "1.0.0"
@@ -1117,7 +978,6 @@
     {
       "id": "circos-plot-generator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/circos-plot-generator",
       "version": "1.0.0"
@@ -1125,7 +985,6 @@
     {
       "id": "clinical-data-cleaner",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/clinical-data-cleaner",
       "version": "1.0.0"
@@ -1133,7 +992,6 @@
     {
       "id": "cnv-caller-plotter",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/cnv-caller-plotter",
       "version": "1.0.0"
@@ -1141,7 +999,6 @@
     {
       "id": "cobrapy",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/cobrapy",
       "version": "1.0.0"
@@ -1149,7 +1006,6 @@
     {
       "id": "code-refactor-for-reproducibility",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/code-refactor-for-reproducibility",
       "version": "1.0.0"
@@ -1157,7 +1013,6 @@
     {
       "id": "cohort-study-quality-assessment-nos",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/cohort-study-quality-assessment-nos",
       "version": "1.0.0"
@@ -1165,7 +1020,6 @@
     {
       "id": "consensus-clustering-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/consensus-clustering-analysis",
       "version": "1.0.0"
@@ -1173,7 +1027,6 @@
     {
       "id": "crispr-screen-analyzer",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/crispr-screen-analyzer",
       "version": "1.0.0"
@@ -1181,7 +1034,6 @@
     {
       "id": "d-molecule-ray-tracer",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/3d-molecule-ray-tracer",
       "version": "1.0.0"
@@ -1189,7 +1041,6 @@
     {
       "id": "data-stats-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/data-stats-analysis",
       "version": "1.0.0"
@@ -1197,7 +1048,6 @@
     {
       "id": "data-transform",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/data-transform",
       "version": "1.0.0"
@@ -1205,7 +1055,6 @@
     {
       "id": "decision-curve-analysis",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/decision-curve-analysis",
       "version": "1.0.0"
@@ -1213,7 +1062,6 @@
     {
       "id": "decision-tree-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/decision-tree-analysis",
       "version": "1.0.0"
@@ -1221,7 +1069,6 @@
     {
       "id": "deeptools",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/deeptools",
       "version": "1.0.0"
@@ -1229,7 +1076,6 @@
     {
       "id": "deg-screening-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/deg-screening-analysis",
       "version": "1.0.0"
@@ -1237,7 +1083,6 @@
     {
       "id": "diagnostic-study-quality-assessment-quadas",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/diagnostic-study-quality-assessment-quadas-2",
       "version": "1.0.0"
@@ -1245,7 +1090,6 @@
     {
       "id": "differential-expression-analysis",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/differential-expression-analysis",
       "version": "1.0.0"
@@ -1253,7 +1097,6 @@
     {
       "id": "dnanexus-integration",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/dnanexus-integration",
       "version": "1.0.0"
@@ -1261,7 +1104,6 @@
     {
       "id": "elastic-net-feature-selection",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/elastic-net-feature-selection",
       "version": "1.0.0"
@@ -1269,7 +1111,6 @@
     {
       "id": "epidemiology",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/epidemiology",
       "version": "1.0.0"
@@ -1277,7 +1118,6 @@
     {
       "id": "estimate-immune-score-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/estimate-immune-score-analysis",
       "version": "1.0.0"
@@ -1285,7 +1125,6 @@
     {
       "id": "etetoolkit",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/etetoolkit",
       "version": "1.0.0"
@@ -1293,7 +1132,6 @@
     {
       "id": "experimental-data-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/experimental-data-analysis",
       "version": "1.0.0"
@@ -1301,7 +1139,6 @@
     {
       "id": "exploratory-data-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/exploratory-data-analysis",
       "version": "1.0.0"
@@ -1309,7 +1146,6 @@
     {
       "id": "external-model-validation",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/external-model-validation",
       "version": "1.0.0"
@@ -1317,7 +1153,6 @@
     {
       "id": "facs-gating-viz-style",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/facs-gating-viz-style",
       "version": "1.0.0"
@@ -1325,7 +1160,6 @@
     {
       "id": "fastqc-report-interpreter",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/fastqc-report-interpreter",
       "version": "1.0.0"
@@ -1333,7 +1167,6 @@
     {
       "id": "flowio",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/flowio",
       "version": "1.0.0"
@@ -1341,7 +1174,6 @@
     {
       "id": "forest-plot-styler",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/forest-plot-styler",
       "version": "1.0.0"
@@ -1349,7 +1181,6 @@
     {
       "id": "gene-protein-expression-matrix-normalization",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/gene-protein-expression-matrix-normalization",
       "version": "1.0.0"
@@ -1357,7 +1188,6 @@
     {
       "id": "gene-structure-mapper",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/gene-structure-mapper",
       "version": "1.0.0"
@@ -1365,7 +1195,6 @@
     {
       "id": "geniml",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/geniml",
       "version": "1.0.0"
@@ -1373,7 +1202,6 @@
     {
       "id": "geopandas",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/geopandas",
       "version": "1.0.0"
@@ -1381,7 +1209,6 @@
     {
       "id": "gokegg-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/gokegg",
       "version": "1.0.0"
@@ -1389,7 +1216,6 @@
     {
       "id": "graphical-abstract-wizard",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/graphical-abstract-wizard",
       "version": "1.0.0"
@@ -1397,7 +1223,6 @@
     {
       "id": "gsea",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/gsea",
       "version": "1.0.0"
@@ -1405,7 +1230,6 @@
     {
       "id": "gsva-analysis-and-visualization",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/gsva-analysis-and-visualization",
       "version": "1.0.0"
@@ -1413,7 +1237,6 @@
     {
       "id": "gtars",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/gtars",
       "version": "1.0.0"
@@ -1421,7 +1244,6 @@
     {
       "id": "heatmap-beautifier",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/heatmap-beautifier",
       "version": "1.0.0"
@@ -1429,7 +1251,6 @@
     {
       "id": "hierarchical-clustering-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot",
       "version": "1.0.0"
@@ -1437,7 +1258,6 @@
     {
       "id": "histolab",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/histolab",
       "version": "1.0.0"
@@ -1445,7 +1265,6 @@
     {
       "id": "immune-pathway-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/immune-pathway-analysis",
       "version": "1.0.0"
@@ -1453,7 +1272,6 @@
     {
       "id": "km-survival-curve",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/km-survival-curve",
       "version": "1.0.0"
@@ -1461,7 +1279,6 @@
     {
       "id": "knn-imputation",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/knn-imputation",
       "version": "1.0.0"
@@ -1469,7 +1286,6 @@
     {
       "id": "lab-budget-forecaster",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/lab-budget-forecaster",
       "version": "1.0.0"
@@ -1477,7 +1293,6 @@
     {
       "id": "lamindb",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/lamindb",
       "version": "1.0.0"
@@ -1485,7 +1300,6 @@
     {
       "id": "lasso-logistics-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/lasso-logistics-analysis",
       "version": "1.0.0"
@@ -1493,7 +1307,6 @@
     {
       "id": "lightgbm-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/LightGBM-analysis",
       "version": "1.0.0"
@@ -1501,7 +1314,6 @@
     {
       "id": "lipinski-rule-filter",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/lipinski-rule-filter",
       "version": "1.0.0"
@@ -1509,7 +1321,6 @@
     {
       "id": "lncrna-regulatory-network-construction-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/lncrna-regulatory-network-construction-analysis",
       "version": "1.0.0"
@@ -1517,7 +1328,6 @@
     {
       "id": "matchms",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/matchms",
       "version": "1.0.0"
@@ -1525,7 +1335,6 @@
     {
       "id": "matplotlib",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/matplotlib",
       "version": "1.0.0"
@@ -1533,7 +1342,6 @@
     {
       "id": "mechanism-flowchart",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/mechanism-flowchart",
       "version": "1.0.0"
@@ -1541,7 +1349,6 @@
     {
       "id": "mendelian-randomisation",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/mendelian-randomisation",
       "version": "1.0.0"
@@ -1549,7 +1356,6 @@
     {
       "id": "meta-abstract-screener",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-abstract-screener",
       "version": "1.0.0"
@@ -1557,7 +1363,6 @@
     {
       "id": "meta-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-analysis",
       "version": "1.0.0"
@@ -1565,7 +1370,6 @@
     {
       "id": "meta-baujat-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-baujat-plot",
       "version": "1.0.0"
@@ -1573,7 +1377,6 @@
     {
       "id": "meta-criteria-generator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-criteria-generator",
       "version": "1.0.0"
@@ -1581,7 +1384,6 @@
     {
       "id": "meta-feasibility-analyzer",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-feasibility-analyzer",
       "version": "1.0.0"
@@ -1589,7 +1391,6 @@
     {
       "id": "meta-forest-binary-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-forest-binary-plot",
       "version": "1.0.0"
@@ -1597,7 +1398,6 @@
     {
       "id": "meta-forest-continuous-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-forest-continuous-plot",
       "version": "1.0.0"
@@ -1605,7 +1405,6 @@
     {
       "id": "meta-forest-model-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-forest-model-plot",
       "version": "1.0.0"
@@ -1613,7 +1412,6 @@
     {
       "id": "meta-funnel-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-funnel-plot",
       "version": "1.0.0"
@@ -1621,7 +1419,6 @@
     {
       "id": "meta-picos-generator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-picos-generator",
       "version": "1.0.0"
@@ -1629,7 +1426,6 @@
     {
       "id": "meta-radial-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-radial-plot",
       "version": "1.0.0"
@@ -1637,7 +1433,6 @@
     {
       "id": "meta-rob-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-rob2-plot",
       "version": "1.0.0"
@@ -1645,7 +1440,6 @@
     {
       "id": "meta-screening-fulltext",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-screening-fulltext",
       "version": "1.0.0"
@@ -1653,7 +1447,6 @@
     {
       "id": "meta-sensitivity-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-sensitivity-plot",
       "version": "1.0.0"
@@ -1661,7 +1454,6 @@
     {
       "id": "meta-title-generator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/meta-title-generator",
       "version": "1.0.0"
@@ -1669,7 +1461,6 @@
     {
       "id": "metabolomics-workbench-database",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/metabolomics-workbench-database",
       "version": "1.0.0"
@@ -1677,7 +1468,6 @@
     {
       "id": "metagenomic-krona-chart",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/metagenomic-krona-chart",
       "version": "1.0.0"
@@ -1685,7 +1475,6 @@
     {
       "id": "model-calibration-curve",
       "category": "data-analysis",
-      "inclusionTier": "sandbox-beta",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/model-calibration-curve",
       "version": "1.0.0"
@@ -1693,7 +1482,6 @@
     {
       "id": "motif-logo-generator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/motif-logo-generator",
       "version": "1.0.0"
@@ -1701,7 +1489,6 @@
     {
       "id": "neoantigen-predictor",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/neoantigen-predictor",
       "version": "1.0.0"
@@ -1709,7 +1496,6 @@
     {
       "id": "neurokit",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/neurokit2",
       "version": "1.0.0"
@@ -1717,7 +1503,6 @@
     {
       "id": "neuropixels-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/neuropixels-analysis",
       "version": "1.0.0"
@@ -1725,7 +1510,6 @@
     {
       "id": "nomogram-construction",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/nomogram-construction",
       "version": "1.0.0"
@@ -1733,7 +1517,6 @@
     {
       "id": "outcome-extraction-for-clinical-trials",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/outcome-extraction-for-clinical-trials",
       "version": "1.0.0"
@@ -1741,7 +1524,6 @@
     {
       "id": "outlier-detection-handler",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/outlier-detection-handler",
       "version": "1.0.0"
@@ -1749,7 +1531,6 @@
     {
       "id": "pathml",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pathml",
       "version": "1.0.0"
@@ -1757,7 +1538,6 @@
     {
       "id": "pathology-roi-selector",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pathology-roi-selector",
       "version": "1.0.0"
@@ -1765,7 +1545,6 @@
     {
       "id": "pca-dimensionality-reduction",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/pca-dimensionality-reduction",
       "version": "1.0.0"
@@ -1773,7 +1552,6 @@
     {
       "id": "phylogenetic-tree-styler",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/phylogenetic-tree-styler",
       "version": "1.0.0"
@@ -1781,7 +1559,6 @@
     {
       "id": "ppi-network-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/ppi-network-analysis",
       "version": "1.0.0"
@@ -1789,7 +1566,6 @@
     {
       "id": "preclinical-pkpd-analyst",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/preclinical-pkpd-analyst",
       "version": "1.0.0"
@@ -1797,7 +1573,6 @@
     {
       "id": "probast-quality-assessment-for-prediction-model-studies",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/probast-quality-assessment-for-prediction-model-studies",
       "version": "1.0.0"
@@ -1805,7 +1580,6 @@
     {
       "id": "protocol-deviation-classifier",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/protocol-deviation-classifier",
       "version": "1.0.0"
@@ -1813,7 +1587,6 @@
     {
       "id": "pseudotime-trajectory-viz",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pseudotime-trajectory-viz",
       "version": "1.0.0"
@@ -1821,7 +1594,6 @@
     {
       "id": "pydeseq",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pydeseq2",
       "version": "1.0.0"
@@ -1829,7 +1601,6 @@
     {
       "id": "pydicom",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pydicom",
       "version": "1.0.0"
@@ -1837,7 +1608,6 @@
     {
       "id": "pyhealth",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pyhealth",
       "version": "1.0.0"
@@ -1845,7 +1615,6 @@
     {
       "id": "pyopenms-skill",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pyopenms-skill",
       "version": "1.0.0"
@@ -1853,7 +1622,6 @@
     {
       "id": "pysam",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/pysam",
       "version": "1.0.0"
@@ -1861,7 +1629,6 @@
     {
       "id": "quadas-c-assessment-for-diagnostic-accuracy-studies",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/quadas-c-assessment-for-diagnostic-accuracy-studies",
       "version": "1.0.0"
@@ -1869,7 +1636,6 @@
     {
       "id": "quality-assessment",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/quality-assessment",
       "version": "1.0.0"
@@ -1877,7 +1643,6 @@
     {
       "id": "quapas-quality-assessment-for-prognosis-studies",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/quapas-quality-assessment-for-prognosis-studies",
       "version": "1.0.0"
@@ -1885,7 +1650,6 @@
     {
       "id": "rct-bias-assessment-rob",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/rct-bias-assessment-rob2",
       "version": "1.0.0"
@@ -1893,7 +1657,6 @@
     {
       "id": "rf-model-importance-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/rf-model-importance-analysis",
       "version": "1.0.0"
@@ -1901,7 +1664,6 @@
     {
       "id": "roc-diagnostic-performance",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/roc-diagnostic-performance",
       "version": "1.0.0"
@@ -1909,7 +1671,6 @@
     {
       "id": "rowan",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/rowan",
       "version": "1.0.0"
@@ -1917,7 +1678,6 @@
     {
       "id": "sample-correlation-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/sample-correlation-analysis",
       "version": "1.0.0"
@@ -1925,7 +1685,6 @@
     {
       "id": "sample-group-sankey-plot",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/sample-group-sankey-plot",
       "version": "1.0.0"
@@ -1933,7 +1692,6 @@
     {
       "id": "sanger-chromatogram-qa",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/sanger-chromatogram-qa",
       "version": "1.0.0"
@@ -1941,7 +1699,6 @@
     {
       "id": "scanpy",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/scanpy",
       "version": "1.0.0"
@@ -1949,7 +1706,6 @@
     {
       "id": "scikit-bio",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/scikit-bio",
       "version": "1.0.0"
@@ -1957,7 +1713,6 @@
     {
       "id": "scikit-survival",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/scikit-survival",
       "version": "1.0.0"
@@ -1965,7 +1720,6 @@
     {
       "id": "scrna-cell-type-annotator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/scrna-cell-type-annotator",
       "version": "1.0.0"
@@ -1973,7 +1727,6 @@
     {
       "id": "scvi-tools",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/scvi-tools",
       "version": "1.0.0"
@@ -1981,7 +1734,6 @@
     {
       "id": "seaborn",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/seaborn",
       "version": "1.0.0"
@@ -1989,7 +1741,6 @@
     {
       "id": "sequence-alignment",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/sequence-alignment",
       "version": "1.0.0"
@@ -1997,7 +1748,6 @@
     {
       "id": "shap",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/shap",
       "version": "1.0.0"
@@ -2005,7 +1755,6 @@
     {
       "id": "singlecell-portal",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/singlecell-portal",
       "version": "1.0.0"
@@ -2013,7 +1762,6 @@
     {
       "id": "smiles-de-salter",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/smiles-de-salter",
       "version": "1.0.0"
@@ -2021,7 +1769,6 @@
     {
       "id": "spatial-transcriptomics-mapper",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/spatial-transcriptomics-mapper",
       "version": "1.0.0"
@@ -2029,7 +1776,6 @@
     {
       "id": "ssgsea-immune-infiltration-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/ssgsea-immune-infiltration-analysis",
       "version": "1.0.0"
@@ -2037,7 +1783,6 @@
     {
       "id": "statistical-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/statistical-analysis",
       "version": "1.0.0"
@@ -2045,7 +1790,6 @@
     {
       "id": "statistical-analysis-advisor",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/statistical-analysis-advisor",
       "version": "1.0.0"
@@ -2053,7 +1797,6 @@
     {
       "id": "study-design-scale-selector",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/study-design-scale-selector",
       "version": "1.0.0"
@@ -2061,7 +1804,6 @@
     {
       "id": "survival-analysis-km",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/survival-analysis-km",
       "version": "1.0.0"
@@ -2069,7 +1811,6 @@
     {
       "id": "survival-curve-risk-table",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/survival-curve-risk-table",
       "version": "1.0.0"
@@ -2077,7 +1818,6 @@
     {
       "id": "svm-model-importance-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/svm-model-importance-analysis",
       "version": "1.0.0"
@@ -2085,7 +1825,6 @@
     {
       "id": "table-1-generator",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/table-1-generator",
       "version": "1.0.0"
@@ -2093,7 +1832,6 @@
     {
       "id": "table-1-generator-advanced",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/table-1-generator-advanced",
       "version": "1.0.0"
@@ -2101,7 +1839,6 @@
     {
       "id": "tf-target-gene-regulatory-network",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/tf-target-gene-regulatory-network",
       "version": "1.0.0"
@@ -2109,7 +1846,6 @@
     {
       "id": "time-dependent-roc",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/time-dependent-roc",
       "version": "1.0.0"
@@ -2117,7 +1853,6 @@
     {
       "id": "tooluniverse-statistical-modeling",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/tooluniverse-statistical-modeling",
       "version": "1.0.0"
@@ -2125,7 +1860,6 @@
     {
       "id": "torchdrug-english",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/TorchDrug-English",
       "version": "1.0.0"
@@ -2133,7 +1867,6 @@
     {
       "id": "toxicity-structure-alert",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/toxicity-structure-alert",
       "version": "1.0.0"
@@ -2141,7 +1874,6 @@
     {
       "id": "umap-tsne-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/umap-tsne-analysis",
       "version": "1.0.0"
@@ -2149,7 +1881,6 @@
     {
       "id": "univariate-multivariable-cox-regression",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/univariate-multivariable-cox-regression",
       "version": "1.0.0"
@@ -2157,7 +1888,6 @@
     {
       "id": "upset-plot-converter",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/upset-plot-converter",
       "version": "1.0.0"
@@ -2165,7 +1895,6 @@
     {
       "id": "variant-pathogenicity-predictor",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/variant-pathogenicity-predictor",
       "version": "1.0.0"
@@ -2173,7 +1902,6 @@
     {
       "id": "volcano-plot-labeler",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/volcano-plot-labeler",
       "version": "1.0.0"
@@ -2181,7 +1909,6 @@
     {
       "id": "volcano-plot-script",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/volcano-plot-script",
       "version": "1.0.0"
@@ -2189,7 +1916,6 @@
     {
       "id": "western-blot-quantifier",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Data Analysis/western-blot-quantifier",
       "version": "1.0.0"
@@ -2197,7 +1923,6 @@
     {
       "id": "wgcna-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/wgcna-analysis",
       "version": "1.0.0"
@@ -2205,7 +1930,6 @@
     {
       "id": "xgboost-analysis",
       "category": "data-analysis",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Data Analysis/XGBoost-analysis",
       "version": "1.0.0"
@@ -2213,7 +1937,6 @@
     {
       "id": "acronym-unpacker",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/acronym-unpacker",
       "version": "1.0.0"
@@ -2221,7 +1944,6 @@
     {
       "id": "alphafold-db",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/alphafold-db",
       "version": "1.0.0"
@@ -2229,7 +1951,6 @@
     {
       "id": "arboreto",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/arboreto",
       "version": "1.0.0"
@@ -2237,7 +1958,6 @@
     {
       "id": "arxiv-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/arxiv-database",
       "version": "1.0.0"
@@ -2245,7 +1965,6 @@
     {
       "id": "basic-discovery-translational-opportunity-finder",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/basic-discovery-translational-opportunity-finder",
       "version": "1.0.0"
@@ -2253,7 +1972,6 @@
     {
       "id": "bio-ontology-mapper",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/bio-ontology-mapper",
       "version": "1.0.0"
@@ -2261,7 +1979,6 @@
     {
       "id": "biogrid-orcs",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/biogrid-orcs",
       "version": "1.0.0"
@@ -2269,7 +1986,6 @@
     {
       "id": "bioinformatics-translational-opportunity-finder",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/bioinformatics-translational-opportunity-finder",
       "version": "1.0.0"
@@ -2277,7 +1993,6 @@
     {
       "id": "biomarker-landscape-scanner",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/biomarker-landscape-scanner",
       "version": "1.0.0"
@@ -2285,7 +2000,6 @@
     {
       "id": "biomedical-search-strategy-builder",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/biomedical-search-strategy-builder",
       "version": "1.0.0"
@@ -2293,7 +2007,6 @@
     {
       "id": "biopython-entrez",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/biopython-entrez",
       "version": "1.0.0"
@@ -2301,7 +2014,6 @@
     {
       "id": "biorxiv-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/biorxiv-database",
       "version": "1.0.0"
@@ -2309,7 +2021,6 @@
     {
       "id": "blockbuster-therapy-predictor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/blockbuster-therapy-predictor",
       "version": "1.0.0"
@@ -2317,7 +2028,6 @@
     {
       "id": "brenda-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/brenda-database",
       "version": "1.0.0"
@@ -2325,7 +2035,6 @@
     {
       "id": "cellosaurus-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/cellosaurus-api",
       "version": "1.0.0"
@@ -2333,7 +2042,6 @@
     {
       "id": "cellxgene-census",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/cellxgene-census",
       "version": "1.0.0"
@@ -2341,7 +2049,6 @@
     {
       "id": "chea-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/chea-api",
       "version": "1.0.0"
@@ -2349,7 +2056,6 @@
     {
       "id": "chembl-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/chembl-database",
       "version": "1.0.0"
@@ -2357,7 +2063,6 @@
     {
       "id": "citation-chasing-mapping",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/citation-chasing-mapping",
       "version": "1.0.0"
@@ -2365,7 +2070,6 @@
     {
       "id": "citation-management",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/citation-management",
       "version": "1.0.0"
@@ -2373,7 +2077,6 @@
     {
       "id": "citation-network",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/citation-network",
       "version": "1.0.0"
@@ -2381,7 +2084,6 @@
     {
       "id": "clinical-question-clarifier",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/clinical-question-clarifier",
       "version": "1.0.0"
@@ -2389,7 +2091,6 @@
     {
       "id": "clinical-study-info-extractor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinical-study-info-extractor",
       "version": "1.0.0"
@@ -2397,7 +2098,6 @@
     {
       "id": "clinical-trial-finder",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinical-trial-finder",
       "version": "1.0.0"
@@ -2405,7 +2105,6 @@
     {
       "id": "clinicaltrials-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinicaltrials-database",
       "version": "1.0.0"
@@ -2413,7 +2112,6 @@
     {
       "id": "clinicaltrials-db",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinicaltrials-db",
       "version": "1.0.0"
@@ -2421,7 +2119,6 @@
     {
       "id": "clinicaltrials-gov-parser",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinicaltrials-gov-parser",
       "version": "1.0.0"
@@ -2429,7 +2126,6 @@
     {
       "id": "clinpgx-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinpgx-database",
       "version": "1.0.0"
@@ -2437,7 +2133,6 @@
     {
       "id": "clinvar-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/clinvar-database",
       "version": "1.0.0"
@@ -2445,7 +2140,6 @@
     {
       "id": "comparison-table-gen",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/comparison-table-gen",
       "version": "1.0.0"
@@ -2453,7 +2147,6 @@
     {
       "id": "competitor-trial-monitor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/competitor-trial-monitor",
       "version": "1.0.0"
@@ -2461,7 +2154,6 @@
     {
       "id": "concept-explainer",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/concept-explainer",
       "version": "1.0.0"
@@ -2469,7 +2161,6 @@
     {
       "id": "contradictory-findings-resolver",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/contradictory-findings-resolver",
       "version": "1.0.0"
@@ -2477,7 +2168,6 @@
     {
       "id": "cosmic-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/cosmic-database",
       "version": "1.0.0"
@@ -2485,7 +2175,6 @@
     {
       "id": "cross-disciplinary-bridge-finder",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/cross-disciplinary-bridge-finder",
       "version": "1.0.0"
@@ -2493,7 +2182,6 @@
     {
       "id": "crossref-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/crossref-database",
       "version": "1.0.0"
@@ -2501,7 +2189,6 @@
     {
       "id": "ctd-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/ctd-api",
       "version": "1.0.0"
@@ -2509,7 +2196,6 @@
     {
       "id": "diagnostic-study-quality-assessment-quadas-2",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/diagnostic-study-quality-assessment-quadas-2",
       "version": "1.0.0"
@@ -2517,7 +2203,6 @@
     {
       "id": "diffdock-molecular-docking",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/diffdock-molecular-docking",
       "version": "1.0.0"
@@ -2525,7 +2210,6 @@
     {
       "id": "disease-mechanism-evidence-map",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/disease-mechanism-evidence-map",
       "version": "1.0.0"
@@ -2533,7 +2217,6 @@
     {
       "id": "drug-interaction-checker",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/drug-interaction-checker",
       "version": "1.0.0"
@@ -2541,7 +2224,6 @@
     {
       "id": "drug-target-evidence-landscape",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/drug-target-evidence-landscape",
       "version": "1.0.0"
@@ -2549,7 +2231,6 @@
     {
       "id": "drugbank-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/drugbank-database",
       "version": "1.0.0"
@@ -2557,7 +2238,6 @@
     {
       "id": "emerging-topic-scout",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/emerging-topic-scout",
       "version": "1.0.0"
@@ -2565,7 +2245,6 @@
     {
       "id": "ena-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/ena-database",
       "version": "1.0.0"
@@ -2573,7 +2252,6 @@
     {
       "id": "encode-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/encode-api",
       "version": "1.0.0"
@@ -2581,7 +2259,6 @@
     {
       "id": "encori-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/encori-api",
       "version": "1.0.0"
@@ -2589,7 +2266,6 @@
     {
       "id": "ensembl-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/ensembl-database",
       "version": "1.0.0"
@@ -2597,7 +2273,6 @@
     {
       "id": "evidence-level-ranker",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/evidence-level-ranker",
       "version": "1.0.0"
@@ -2605,7 +2280,6 @@
     {
       "id": "fda-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/fda-database",
       "version": "1.0.0"
@@ -2613,7 +2287,6 @@
     {
       "id": "fda-guideline-search",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/fda-guideline-search",
       "version": "1.0.0"
@@ -2621,7 +2294,6 @@
     {
       "id": "figure-first-paper-reader",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/figure-first-paper-reader",
       "version": "1.0.0"
@@ -2629,7 +2301,6 @@
     {
       "id": "funding-trend-forecaster",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/funding-trend-forecaster",
       "version": "1.0.0"
@@ -2637,7 +2308,6 @@
     {
       "id": "gene-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/gene-database",
       "version": "1.0.0"
@@ -2645,7 +2315,6 @@
     {
       "id": "gene-info",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/gene-info",
       "version": "1.0.0"
@@ -2653,7 +2322,6 @@
     {
       "id": "geo-search-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/geo-search-api",
       "version": "1.0.0"
@@ -2661,7 +2329,6 @@
     {
       "id": "gget",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/gget",
       "version": "1.0.0"
@@ -2669,7 +2336,6 @@
     {
       "id": "grant-funding-scout",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/grant-funding-scout",
       "version": "1.0.0"
@@ -2677,7 +2343,6 @@
     {
       "id": "grant-gantt-chart-gen",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/grant-gantt-chart-gen",
       "version": "1.0.0"
@@ -2685,7 +2350,6 @@
     {
       "id": "gwas-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/gwas-database",
       "version": "1.0.0"
@@ -2693,7 +2357,6 @@
     {
       "id": "hgnc-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/hgnc-api",
       "version": "1.0.0"
@@ -2701,7 +2364,6 @@
     {
       "id": "high-value-paper-screener",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/high-value-paper-screener",
       "version": "1.0.0"
@@ -2709,7 +2371,6 @@
     {
       "id": "hmdb-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/hmdb-database",
       "version": "1.0.0"
@@ -2717,7 +2378,6 @@
     {
       "id": "ib-summarizer",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/ib-summarizer",
       "version": "1.0.0"
@@ -2725,7 +2385,6 @@
     {
       "id": "jaspar-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/jaspar-api",
       "version": "1.0.0"
@@ -2733,7 +2392,6 @@
     {
       "id": "journal-impact-factor-trend",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/journal-impact-factor-trend",
       "version": "1.0.0"
@@ -2741,7 +2399,6 @@
     {
       "id": "journal-latest-issue",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/journal-latest-issue",
       "version": "1.0.0"
@@ -2749,7 +2406,6 @@
     {
       "id": "journal-matchmaker",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/journal-matchmaker",
       "version": "1.0.0"
@@ -2757,7 +2413,6 @@
     {
       "id": "journal-skills",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/journal-skills",
       "version": "1.0.0"
@@ -2765,7 +2420,6 @@
     {
       "id": "kegg-api",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/kegg-api",
       "version": "1.0.0"
@@ -2773,7 +2427,6 @@
     {
       "id": "kegg-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/kegg-database",
       "version": "1.0.0"
@@ -2781,7 +2434,6 @@
     {
       "id": "key-takeaways",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/key-takeaways",
       "version": "1.0.0"
@@ -2789,7 +2441,6 @@
     {
       "id": "keyword-velocity-tracker",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/keyword-velocity-tracker",
       "version": "1.0.0"
@@ -2797,7 +2448,6 @@
     {
       "id": "litbase",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/litbase",
       "version": "1.0.0"
@@ -2805,7 +2455,6 @@
     {
       "id": "literature-close-read",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/literature-close-read",
       "version": "1.0.0"
@@ -2813,7 +2462,6 @@
     {
       "id": "literature-experiment-extract",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/literature-experiment-extract",
       "version": "1.0.0"
@@ -2821,7 +2469,6 @@
     {
       "id": "literature-extensive-read",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/literature-extensive-read",
       "version": "1.0.0"
@@ -2829,7 +2476,6 @@
     {
       "id": "literature-filtering",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/literature-filtering",
       "version": "1.0.0"
@@ -2837,7 +2483,6 @@
     {
       "id": "medchem",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/medchem",
       "version": "1.0.0"
@@ -2845,7 +2490,6 @@
     {
       "id": "medical-research-gap-finder",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/medical-research-gap-finder",
       "version": "1.0.0"
@@ -2853,7 +2497,6 @@
     {
       "id": "medical-research-literature-reader-pro",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/medical-research-literature-reader-pro",
       "version": "1.0.0"
@@ -2861,7 +2504,6 @@
     {
       "id": "medical-topic-saturation-and-whitespace-checker",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/medical-topic-saturation-and-whitespace-checker",
       "version": "1.0.0"
@@ -2869,7 +2511,6 @@
     {
       "id": "medical-vector-search",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/medical-vector-search",
       "version": "1.0.0"
@@ -2877,7 +2518,6 @@
     {
       "id": "method-gap-detector",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/method-gap-detector",
       "version": "1.0.0"
@@ -2885,7 +2525,6 @@
     {
       "id": "methodology-extractor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/methodology-extractor",
       "version": "1.0.0"
@@ -2893,7 +2532,6 @@
     {
       "id": "methods-reverse-engineer",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/methods-reverse-engineer",
       "version": "1.0.0"
@@ -2901,7 +2539,6 @@
     {
       "id": "multi-database-literature-collector",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/multi-database-literature-collector",
       "version": "1.0.0"
@@ -2909,7 +2546,6 @@
     {
       "id": "novelty-vs-feasibility-assessor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/novelty-vs-feasibility-assessor",
       "version": "1.0.0"
@@ -2917,7 +2553,6 @@
     {
       "id": "open-access-scout",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/open-access-scout",
       "version": "1.0.0"
@@ -2925,7 +2560,6 @@
     {
       "id": "open-source-license-check",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/open-source-license-check",
       "version": "1.0.0"
@@ -2933,7 +2567,6 @@
     {
       "id": "open-targets-db",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/open-targets-db",
       "version": "1.0.0"
@@ -2941,7 +2574,6 @@
     {
       "id": "openalex-db",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/openalex-db",
       "version": "1.0.0"
@@ -2949,7 +2581,6 @@
     {
       "id": "paper-lookup",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/paper-lookup",
       "version": "1.0.0"
@@ -2957,7 +2588,6 @@
     {
       "id": "paper-to-claim-verifier",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/paper-to-claim-verifier",
       "version": "1.0.0"
@@ -2965,7 +2595,6 @@
     {
       "id": "patent-claim-mapper",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/patent-claim-mapper",
       "version": "1.0.0"
@@ -2973,7 +2602,6 @@
     {
       "id": "patent-landscape",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/patent-landscape",
       "version": "1.0.0"
@@ -2981,7 +2609,6 @@
     {
       "id": "pathway-introduction-expert",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pathway-introduction-expert",
       "version": "1.0.0"
@@ -2989,7 +2616,6 @@
     {
       "id": "pdb-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pdb-database",
       "version": "1.0.0"
@@ -2997,7 +2623,6 @@
     {
       "id": "pdf-extract-experimental-materials",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pdf-extract-experimental-materials",
       "version": "1.0.0"
@@ -3005,7 +2630,6 @@
     {
       "id": "phenotype-introduction",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/phenotype-introduction",
       "version": "1.0.0"
@@ -3013,7 +2637,6 @@
     {
       "id": "pmc-official-download",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pmc-official-download",
       "version": "1.0.0"
@@ -3021,7 +2644,6 @@
     {
       "id": "population-gap-detector",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/population-gap-detector",
       "version": "1.0.0"
@@ -3029,7 +2651,6 @@
     {
       "id": "preprint-surveillance-finder",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/preprint-surveillance-finder",
       "version": "1.0.0"
@@ -3037,7 +2658,6 @@
     {
       "id": "pubchem-database-skill",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pubchem-database-skill",
       "version": "1.0.0"
@@ -3045,7 +2665,6 @@
     {
       "id": "pubmed-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pubmed-database",
       "version": "1.0.0"
@@ -3053,7 +2672,6 @@
     {
       "id": "pubmed-search-specialist",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pubmed-search-specialist",
       "version": "1.0.0"
@@ -3061,7 +2679,6 @@
     {
       "id": "pubmed-topic-recommend",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pubmed-topic-recommend",
       "version": "1.0.0"
@@ -3069,7 +2686,6 @@
     {
       "id": "pytdc",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/pytdc",
       "version": "1.0.0"
@@ -3077,7 +2693,6 @@
     {
       "id": "rare-disease-hpo-mapper",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/rare-disease-hpo-mapper",
       "version": "1.0.0"
@@ -3085,7 +2700,6 @@
     {
       "id": "rct-bias-assessment-rob2",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/rct-bias-assessment-rob2",
       "version": "1.0.0"
@@ -3093,7 +2707,6 @@
     {
       "id": "reactome-skill",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/reactome-skill",
       "version": "1.0.0"
@@ -3101,7 +2714,6 @@
     {
       "id": "reagent-substitute-scout",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/reagent-substitute-scout",
       "version": "1.0.0"
@@ -3109,7 +2721,6 @@
     {
       "id": "reference-finder",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/reference-finder",
       "version": "1.0.0"
@@ -3117,7 +2728,6 @@
     {
       "id": "reference-retrieval-skill",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/reference-retrieval-skill",
       "version": "1.0.0"
@@ -3125,7 +2735,6 @@
     {
       "id": "reference-search",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/reference-search",
       "version": "1.0.0"
@@ -3133,7 +2742,6 @@
     {
       "id": "research-article-weekly",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/research-article-weekly",
       "version": "1.0.0"
@@ -3141,7 +2749,6 @@
     {
       "id": "research-hotspot-analysis",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/research-hotspot-analysis",
       "version": "1.0.0"
@@ -3149,7 +2756,6 @@
     {
       "id": "research-paper-downloader",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/research-paper-downloader",
       "version": "1.0.0"
@@ -3157,7 +2763,6 @@
     {
       "id": "result-reliability-checker",
       "category": "evidence-insight",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/result-reliability-checker",
       "version": "1.0.0"
@@ -3165,7 +2770,6 @@
     {
       "id": "retraction-watcher",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/retraction-watcher",
       "version": "1.0.0"
@@ -3173,7 +2777,6 @@
     {
       "id": "scholar-evaluation",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/scholar-evaluation",
       "version": "1.0.0"
@@ -3181,7 +2784,6 @@
     {
       "id": "scientific-critical-thinking",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/scientific-critical-thinking",
       "version": "1.0.0"
@@ -3189,7 +2791,6 @@
     {
       "id": "scientific-podcast-summary",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/scientific-podcast-summary",
       "version": "1.0.0"
@@ -3197,7 +2798,6 @@
     {
       "id": "scite-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/scite-database",
       "version": "1.0.0"
@@ -3205,7 +2805,6 @@
     {
       "id": "sds-msds-risk-scanner",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/sds-msds-risk-scanner",
       "version": "1.0.0"
@@ -3213,7 +2812,6 @@
     {
       "id": "semantic-scholar-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/semantic-scholar-database",
       "version": "1.0.0"
@@ -3221,7 +2819,6 @@
     {
       "id": "smart-journal-monitor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/smart-journal-monitor",
       "version": "1.0.0"
@@ -3229,7 +2826,6 @@
     {
       "id": "string-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/string-database",
       "version": "1.0.0"
@@ -3237,7 +2833,6 @@
     {
       "id": "study-design-identifier",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/study-design-identifier",
       "version": "1.0.0"
@@ -3245,7 +2840,6 @@
     {
       "id": "systematic-review-screener",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/systematic-review-screener",
       "version": "1.0.0"
@@ -3253,7 +2847,6 @@
     {
       "id": "target-novelty-scorer",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/target-novelty-scorer",
       "version": "1.0.0"
@@ -3261,7 +2854,6 @@
     {
       "id": "tooluniverse-clinical-trial-matching",
       "category": "evidence-insight",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/tooluniverse-clinical-trial-matching",
       "version": "1.0.0"
@@ -3269,7 +2861,6 @@
     {
       "id": "tooluniverse-literature-deep-research",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/tooluniverse-literature-deep-research",
       "version": "1.0.0"
@@ -3277,7 +2868,6 @@
     {
       "id": "topic-evidence-mapper",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/topic-evidence-mapper",
       "version": "1.0.0"
@@ -3285,7 +2875,6 @@
     {
       "id": "translational-gap-analyzer",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/translational-gap-analyzer",
       "version": "1.0.0"
@@ -3293,7 +2882,6 @@
     {
       "id": "uniprot-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/uniprot-database",
       "version": "1.0.0"
@@ -3301,7 +2889,6 @@
     {
       "id": "unmet-clinical-need-extractor",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Evidence Insight/unmet-clinical-need-extractor",
       "version": "1.0.0"
@@ -3309,7 +2896,6 @@
     {
       "id": "unstructured-medical-text-miner",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/unstructured-medical-text-miner",
       "version": "1.0.0"
@@ -3317,7 +2903,6 @@
     {
       "id": "variant-annotation",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/variant-annotation",
       "version": "1.0.0"
@@ -3325,7 +2910,6 @@
     {
       "id": "venue-templates",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/venue-templates",
       "version": "1.0.0"
@@ -3333,7 +2917,6 @@
     {
       "id": "zinc-database",
       "category": "evidence-insight",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Evidence Insight/zinc-database",
       "version": "1.0.0"
@@ -3341,7 +2924,6 @@
     {
       "id": "academic-cv-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/academic-cv-generator",
       "version": "1.0.0"
@@ -3349,7 +2931,6 @@
     {
       "id": "academic-norm-review",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/academic-norm-review",
       "version": "1.0.0"
@@ -3357,7 +2938,6 @@
     {
       "id": "academic-poster-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/academic-poster-generator",
       "version": "1.0.0"
@@ -3365,7 +2945,6 @@
     {
       "id": "adaptyv",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/adaptyv",
       "version": "1.0.0"
@@ -3373,7 +2952,6 @@
     {
       "id": "article-format-adjustment",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/article-format-adjustment",
       "version": "1.0.0"
@@ -3381,7 +2959,6 @@
     {
       "id": "benchling-integration",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/benchling-integration",
       "version": "1.0.0"
@@ -3389,7 +2966,6 @@
     {
       "id": "bianque",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Other/bianque",
       "version": "1.0.0"
@@ -3397,7 +2973,6 @@
     {
       "id": "bib-formatter",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/bib-formatter",
       "version": "1.0.0"
@@ -3405,7 +2980,6 @@
     {
       "id": "bibliography",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/bibliography",
       "version": "1.0.0"
@@ -3413,7 +2987,6 @@
     {
       "id": "biodbnet-api",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/biodbnet-api",
       "version": "1.0.0"
@@ -3421,7 +2994,6 @@
     {
       "id": "bmi-bsa-calculator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/bmi-bsa-calculator",
       "version": "1.0.0"
@@ -3429,7 +3001,6 @@
     {
       "id": "buffer-calculator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/buffer-calculator",
       "version": "1.0.0"
@@ -3437,7 +3008,6 @@
     {
       "id": "chart-style-unifier",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/chart-style-unifier",
       "version": "1.0.0"
@@ -3445,7 +3015,6 @@
     {
       "id": "chemical-storage-sorter",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/chemical-storage-sorter",
       "version": "1.0.0"
@@ -3453,7 +3022,6 @@
     {
       "id": "chemical-structure-converter",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/chemical-structure-converter",
       "version": "1.0.0"
@@ -3461,7 +3029,6 @@
     {
       "id": "clinic-sample-size",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/clinic-sample-size",
       "version": "1.0.0"
@@ -3469,7 +3036,6 @@
     {
       "id": "clinical-diagnostic-reasoning",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/clinical-diagnostic-reasoning",
       "version": "1.0.0"
@@ -3477,7 +3043,6 @@
     {
       "id": "clinical-reports",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/clinical-reports",
       "version": "1.0.0"
@@ -3485,7 +3050,6 @@
     {
       "id": "co-tank-monitor",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/co2-tank-monitor",
       "version": "1.0.0"
@@ -3493,7 +3057,6 @@
     {
       "id": "cold-chain-risk-calculator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/cold-chain-risk-calculator",
       "version": "1.0.0"
@@ -3501,7 +3064,6 @@
     {
       "id": "conference-tweet-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/conference-tweet-generator",
       "version": "1.0.0"
@@ -3509,7 +3071,6 @@
     {
       "id": "conflict-of-interest-checker",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/conflict-of-interest-checker",
       "version": "1.0.0"
@@ -3517,7 +3078,6 @@
     {
       "id": "content-proofreading",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/content-proofreading",
       "version": "1.0.0"
@@ -3525,7 +3085,6 @@
     {
       "id": "datamol",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/datamol",
       "version": "1.0.0"
@@ -3533,7 +3092,6 @@
     {
       "id": "date-calculator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/date-calculator",
       "version": "1.0.0"
@@ -3541,7 +3099,6 @@
     {
       "id": "dicom-anonymizer",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/dicom-anonymizer",
       "version": "1.0.0"
@@ -3549,7 +3106,6 @@
     {
       "id": "docx-feedback-tracker",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/docx-feedback-tracker",
       "version": "1.0.0"
@@ -3557,7 +3113,6 @@
     {
       "id": "dpi-upscaler-checker",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/dpi-upscaler-checker",
       "version": "1.0.0"
@@ -3565,7 +3120,6 @@
     {
       "id": "ebm-calculator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/ebm-calculator",
       "version": "1.0.0"
@@ -3573,7 +3127,6 @@
     {
       "id": "equipment-maintenance-log",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/equipment-maintenance-log",
       "version": "1.0.0"
@@ -3581,7 +3134,6 @@
     {
       "id": "experiment-detail-comparator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/experiment-detail-comparator",
       "version": "1.0.0"
@@ -3589,7 +3141,6 @@
     {
       "id": "expert-interview-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/expert-interview-generator",
       "version": "1.0.0"
@@ -3597,7 +3148,6 @@
     {
       "id": "expert-interview-topics",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/expert-interview-topics",
       "version": "1.0.0"
@@ -3605,7 +3155,6 @@
     {
       "id": "file-security-toolkit",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/file-security-toolkit",
       "version": "1.0.0"
@@ -3613,7 +3162,6 @@
     {
       "id": "fulltext-fetcher",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/fulltext-fetcher",
       "version": "1.0.0"
@@ -3621,7 +3169,6 @@
     {
       "id": "hippocrates",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/hippocrates",
       "version": "1.0.0"
@@ -3629,7 +3176,6 @@
     {
       "id": "html-to-pdf",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/html-to-pdf",
       "version": "1.0.0"
@@ -3637,7 +3183,6 @@
     {
       "id": "icd10-cpt-coding-assistant",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/icd10-cpt-coding-assistant",
       "version": "1.0.0"
@@ -3645,7 +3190,6 @@
     {
       "id": "image-ocr",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/image-ocr",
       "version": "1.0.0"
@@ -3653,7 +3197,6 @@
     {
       "id": "image-processing",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/image-processing",
       "version": "1.0.0"
@@ -3661,7 +3204,6 @@
     {
       "id": "iso-certification",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/iso-13485-certification",
       "version": "1.0.0"
@@ -3669,7 +3211,6 @@
     {
       "id": "journal-recommender",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/journal-recommender",
       "version": "1.0.0"
@@ -3677,7 +3218,6 @@
     {
       "id": "knowledge-base-search",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/knowledge-base-search",
       "version": "1.0.0"
@@ -3685,7 +3225,6 @@
     {
       "id": "lab-inventory-predictor",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/lab-inventory-predictor",
       "version": "1.0.0"
@@ -3693,7 +3232,6 @@
     {
       "id": "lab-prep-calculations",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/Lab-Prep-Calculations",
       "version": "1.0.0"
@@ -3701,7 +3239,6 @@
     {
       "id": "lab-result-interpretation",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/lab-result-interpretation",
       "version": "1.0.0"
@@ -3709,7 +3246,6 @@
     {
       "id": "literature-management",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/literature-management",
       "version": "1.0.0"
@@ -3717,7 +3253,6 @@
     {
       "id": "literature-statistics",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/literature-statistics",
       "version": "1.0.0"
@@ -3725,7 +3260,6 @@
     {
       "id": "literatureimages-interpretation",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/literatureimages-interpretation",
       "version": "1.0.0"
@@ -3733,7 +3267,6 @@
     {
       "id": "markitdown",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/markitdown",
       "version": "1.0.0"
@@ -3741,7 +3274,6 @@
     {
       "id": "medical-case-interpreter",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/medical-case-interpreter",
       "version": "1.0.0"
@@ -3749,7 +3281,6 @@
     {
       "id": "medical-case-report-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/medical-case-report-generator",
       "version": "1.0.0"
@@ -3757,7 +3288,6 @@
     {
       "id": "medical-unit-converter",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/medical-unit-converter",
       "version": "1.0.0"
@@ -3765,7 +3295,6 @@
     {
       "id": "medication-reconciliation",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/medication-reconciliation",
       "version": "1.0.0"
@@ -3773,7 +3302,6 @@
     {
       "id": "mendel",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Other/mendel",
       "version": "1.0.0"
@@ -3781,7 +3309,6 @@
     {
       "id": "meta-search-builder",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/meta-search-builder",
       "version": "1.0.0"
@@ -3789,7 +3316,6 @@
     {
       "id": "microscopy-scale-bar-adder",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/microscopy-scale-bar-adder",
       "version": "1.0.0"
@@ -3797,7 +3323,6 @@
     {
       "id": "mindmap",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/mindmap",
       "version": "1.0.0"
@@ -3805,7 +3330,6 @@
     {
       "id": "mindmap-helper",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/mindmap-helper",
       "version": "1.0.0"
@@ -3813,7 +3337,6 @@
     {
       "id": "mindmap-html-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/mindmap-html-generator",
       "version": "1.0.0"
@@ -3821,7 +3344,6 @@
     {
       "id": "multi-panel-figure-assembler",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/multi-panel-figure-assembler",
       "version": "1.0.0"
@@ -3829,7 +3351,6 @@
     {
       "id": "paper-tweet-generator",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/paper-tweet-generator",
       "version": "1.0.0"
@@ -3837,7 +3358,6 @@
     {
       "id": "patient-consent-simplifier",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/patient-consent-simplifier",
       "version": "1.0.0"
@@ -3845,7 +3365,6 @@
     {
       "id": "pdf-extract",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/pdf-extract",
       "version": "1.0.0"
@@ -3853,7 +3372,6 @@
     {
       "id": "pdf-ppt",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/pdf-ppt",
       "version": "1.0.0"
@@ -3861,7 +3379,6 @@
     {
       "id": "pdf-processor",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/pdf-processor",
       "version": "1.0.0"
@@ -3869,7 +3386,6 @@
     {
       "id": "pdf-to-ppt-pack",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/pdf-to-ppt-pack",
       "version": "1.0.0"
@@ -3877,7 +3393,6 @@
     {
       "id": "phi-prompt-guard",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/phi-prompt-guard",
       "version": "1.0.0"
@@ -3885,7 +3400,6 @@
     {
       "id": "plotly",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/plotly",
       "version": "1.0.0"
@@ -3893,7 +3407,6 @@
     {
       "id": "postdoc-fellowship-matcher",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/postdoc-fellowship-matcher",
       "version": "1.0.0"
@@ -3901,7 +3414,6 @@
     {
       "id": "poster-designer",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/poster-designer",
       "version": "1.0.0"
@@ -3909,7 +3421,6 @@
     {
       "id": "ppt",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/ppt",
       "version": "1.0.0"
@@ -3917,7 +3428,6 @@
     {
       "id": "ppt-master",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/ppt-master",
       "version": "1.0.0"
@@ -3925,7 +3435,6 @@
     {
       "id": "pptx-posters",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/pptx-posters",
       "version": "1.0.0"
@@ -3933,7 +3442,6 @@
     {
       "id": "pptx-skill",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/PPTX-Skill",
       "version": "1.0.0"
@@ -3941,7 +3449,6 @@
     {
       "id": "reagent-expiry-alert",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/reagent-expiry-alert",
       "version": "1.0.0"
@@ -3949,7 +3456,6 @@
     {
       "id": "reproducibility-check",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/reproducibility-check",
       "version": "1.0.0"
@@ -3957,7 +3463,6 @@
     {
       "id": "resubmission-deadline-tracker",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/resubmission-deadline-tracker",
       "version": "1.0.0"
@@ -3965,7 +3470,6 @@
     {
       "id": "result-figure-consistencycheck",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/result-figure-consistencycheck",
       "version": "1.0.0"
@@ -3973,7 +3477,6 @@
     {
       "id": "sci-paper-reviewer",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/sci-paper-reviewer",
       "version": "1.0.0"
@@ -3981,7 +3484,6 @@
     {
       "id": "science-popularization-article",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/science-popularization-article",
       "version": "1.0.0"
@@ -3989,7 +3491,6 @@
     {
       "id": "scientific-schematics",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/scientific-schematics",
       "version": "1.0.0"
@@ -3997,7 +3498,6 @@
     {
       "id": "search-pubmed",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/search-pubmed",
       "version": "1.0.0"
@@ -4005,7 +3505,6 @@
     {
       "id": "shift-handover-summarizer",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/shift-handover-summarizer",
       "version": "1.0.0"
@@ -4013,7 +3512,6 @@
     {
       "id": "slide-deck-images",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/slide-deck-images",
       "version": "1.0.0"
@@ -4021,7 +3519,6 @@
     {
       "id": "spreadsheet-ops",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/spreadsheet-ops",
       "version": "1.0.0"
@@ -4029,7 +3526,6 @@
     {
       "id": "symptom-checker-triage",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/symptom-checker-triage",
       "version": "1.0.0"
@@ -4037,7 +3533,6 @@
     {
       "id": "text-format-organizer",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/text-format-organizer",
       "version": "1.0.0"
@@ -4045,7 +3540,6 @@
     {
       "id": "text-to-technical-roadmap",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/text-to-technical-roadmap",
       "version": "1.0.0"
@@ -4053,7 +3547,6 @@
     {
       "id": "treatment-plans",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/treatment-plans",
       "version": "1.0.0"
@@ -4061,7 +3554,6 @@
     {
       "id": "uspto-database",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/uspto-database",
       "version": "1.0.0"
@@ -4069,7 +3561,6 @@
     {
       "id": "vector-text-fixer",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/vector-text-fixer",
       "version": "1.0.0"
@@ -4077,7 +3568,6 @@
     {
       "id": "virtual-patient-roleplay",
       "category": "other",
-      "inclusionTier": "restricted-index",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/virtual-patient-roleplay",
       "version": "1.0.0"
@@ -4085,7 +3575,6 @@
     {
       "id": "waste-disposal-guide",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/waste-disposal-guide",
       "version": "1.0.0"
@@ -4093,7 +3582,6 @@
     {
       "id": "word-read-write",
       "category": "other",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Other/word-read-write",
       "version": "1.0.0"
@@ -4101,7 +3589,6 @@
     {
       "id": "active-comparator-single-soc-faers-safety-comparison",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/active-comparator-single-soc-faers-safety-comparison",
       "version": "1.0.0"
@@ -4109,7 +3596,6 @@
     {
       "id": "adaptive-trial-simulator",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/adaptive-trial-simulator",
       "version": "1.0.0"
@@ -4117,7 +3603,6 @@
     {
       "id": "aim-and-hypothesis-designer",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/aim-and-hypothesis-designer",
       "version": "1.0.0"
@@ -4125,7 +3610,6 @@
     {
       "id": "animal-and-cell-validation-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/animal-and-cell-validation-planner",
       "version": "1.0.0"
@@ -4133,7 +3617,6 @@
     {
       "id": "basic-research-design",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/basic-research-design",
       "version": "1.0.0"
@@ -4141,7 +3624,6 @@
     {
       "id": "bidirectional-multi-phenotype-mr-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/bidirectional-multi-phenotype-mr-research-planner",
       "version": "1.0.0"
@@ -4149,7 +3631,6 @@
     {
       "id": "bioinfo-analysis-plan",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/bioinfo-analysis-plan",
       "version": "1.0.0"
@@ -4157,7 +3638,6 @@
     {
       "id": "bulk-omics-integrative-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/bulk-omics-integrative-planner",
       "version": "1.0.0"
@@ -4165,7 +3645,6 @@
     {
       "id": "case-control-study-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/case-control-study-planner",
       "version": "1.0.0"
@@ -4173,7 +3652,6 @@
     {
       "id": "clinic-research-design",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/clinic-research-design",
       "version": "1.0.0"
@@ -4181,7 +3659,6 @@
     {
       "id": "clinical-cohort-protocol-designer",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/clinical-cohort-protocol-designer",
       "version": "1.0.0"
@@ -4189,7 +3666,6 @@
     {
       "id": "clinical-trial-protocol-skill",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/clinical-trial-protocol-skill",
       "version": "1.0.0"
@@ -4197,7 +3673,6 @@
     {
       "id": "comorbidity-common-immune-biomarker-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/comorbidity-common-immune-biomarker-research-planner",
       "version": "1.0.0"
@@ -4205,7 +3680,6 @@
     {
       "id": "comparative-network-toxicology-shared-mechanism-reference-grounded",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/comparative-network-toxicology-shared-mechanism-reference-grounded",
       "version": "1.0.0"
@@ -4213,7 +3687,6 @@
     {
       "id": "confounder-and-bias-control-planner",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/confounder-and-bias-control-planner",
       "version": "1.0.0"
@@ -4221,7 +3694,6 @@
     {
       "id": "conventional-non-oncology-hub-gene-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/conventional-non-oncology-hub-gene-research-planner",
       "version": "1.0.0"
@@ -4229,7 +3701,6 @@
     {
       "id": "conventional-oncology-hub-gene-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/conventional-oncology-hub-gene-research-planner",
       "version": "1.0.0"
@@ -4237,7 +3708,6 @@
     {
       "id": "cross-disease-shared-biomarker-network-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/cross-disease-shared-biomarker-network-research-planner",
       "version": "1.0.0"
@@ -4245,7 +3715,6 @@
     {
       "id": "drug-repurposing-study-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/drug-repurposing-study-planner",
       "version": "1.0.0"
@@ -4253,7 +3722,6 @@
     {
       "id": "dual-disease-shared-transcriptome-biomarker-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/dual-disease-shared-transcriptome-biomarker-research-planner",
       "version": "1.0.0"
@@ -4261,7 +3729,6 @@
     {
       "id": "dual-disease-transcriptomic-ml-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/dual-disease-transcriptomic-ml-planner",
       "version": "1.0.0"
@@ -4269,7 +3736,6 @@
     {
       "id": "endpoint-definition-designer",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/endpoint-definition-designer",
       "version": "1.0.0"
@@ -4277,7 +3743,6 @@
     {
       "id": "esm",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/esm",
       "version": "1.0.0"
@@ -4285,7 +3750,6 @@
     {
       "id": "experiment-design",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/experiment-design",
       "version": "1.0.0"
@@ -4293,7 +3757,6 @@
     {
       "id": "faers-multi-drug-soc-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/faers-multi-drug-soc-planner",
       "version": "1.0.0"
@@ -4301,7 +3764,6 @@
     {
       "id": "faers-pharmacovigilance-disproportionality-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/faers-pharmacovigilance-disproportionality-research-planner",
       "version": "1.0.0"
@@ -4309,7 +3771,6 @@
     {
       "id": "feasibility-aware-study-planner",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/feasibility-aware-study-planner",
       "version": "1.0.0"
@@ -4317,7 +3778,6 @@
     {
       "id": "generic-phenotype-scoring-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/generic-phenotype-scoring-research-planner",
       "version": "1.0.0"
@@ -4325,7 +3785,6 @@
     {
       "id": "hypogenic",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/hypogenic",
       "version": "1.0.0"
@@ -4333,7 +3792,6 @@
     {
       "id": "hypothesis-generation",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/hypothesis-generation",
       "version": "1.0.0"
@@ -4341,7 +3799,6 @@
     {
       "id": "inclusion-criteria-gen",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/inclusion-criteria-gen",
       "version": "1.0.0"
@@ -4349,7 +3806,6 @@
     {
       "id": "inclusion-exclusion-criteria-builder",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/inclusion-exclusion-criteria-builder",
       "version": "1.0.0"
@@ -4357,7 +3813,6 @@
     {
       "id": "inplasy-registration-helper",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/INPLASY-registration-helper",
       "version": "1.0.0"
@@ -4365,7 +3820,6 @@
     {
       "id": "mechanism-to-validation-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/mechanism-to-validation-planner",
       "version": "1.0.0"
@@ -4373,7 +3827,6 @@
     {
       "id": "medical-research-algorithm-matcher",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/medical-research-algorithm-matcher",
       "version": "1.0.0"
@@ -4381,7 +3834,6 @@
     {
       "id": "medical-research-gap-to-study-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/medical-research-gap-to-study-planner",
       "version": "1.0.0"
@@ -4389,7 +3841,6 @@
     {
       "id": "mendelian-randomization-protocol-designer",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/mendelian-randomization-protocol-designer",
       "version": "1.0.0"
@@ -4397,7 +3848,6 @@
     {
       "id": "meta-protocol-writer",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/meta-protocol-writer",
       "version": "1.0.0"
@@ -4405,7 +3855,6 @@
     {
       "id": "mr-scrna-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/mr-scrna-research-planner",
       "version": "1.0.0"
@@ -4413,7 +3862,6 @@
     {
       "id": "multi-omics-clinical-integration-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/multi-omics-clinical-integration-planner",
       "version": "1.0.0"
@@ -4421,7 +3869,6 @@
     {
       "id": "network-tox-docking-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/network-tox-docking-research-planner",
       "version": "1.0.0"
@@ -4429,7 +3876,6 @@
     {
       "id": "nhanes-clinical-retrospective-biomarker-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/nhanes-clinical-retrospective-biomarker-research-planner",
       "version": "1.0.0"
@@ -4437,7 +3883,6 @@
     {
       "id": "non-tumor-mechanism-guided-diagnostic-ml-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/non-tumor-mechanism-guided-diagnostic-ml-research-planner",
       "version": "1.0.0"
@@ -4445,7 +3890,6 @@
     {
       "id": "non-tumor-ml-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/non-tumor-ml-research-planner",
       "version": "1.0.0"
@@ -4453,7 +3897,6 @@
     {
       "id": "pcd-immune-oncology-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/pcd-immune-oncology-research-planner",
       "version": "1.0.0"
@@ -4461,7 +3904,6 @@
     {
       "id": "primary-plan-recommender",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/primary-plan-recommender",
       "version": "1.0.0"
@@ -4469,7 +3911,6 @@
     {
       "id": "process-related-diagnostic-biomarker-nomogram-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/process-related-diagnostic-biomarker-nomogram-research-planner",
       "version": "1.0.0"
@@ -4477,7 +3918,6 @@
     {
       "id": "prognostic-biomarker-protocol-designer",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/prognostic-biomarker-protocol-designer",
       "version": "1.0.0"
@@ -4485,7 +3925,6 @@
     {
       "id": "prospero-registration-helper",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/prospero-registration-helper",
       "version": "1.0.0"
@@ -4493,7 +3932,6 @@
     {
       "id": "protocol-standardization",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/protocol-standardization",
       "version": "1.0.0"
@@ -4501,7 +3939,6 @@
     {
       "id": "qtl-colocalization-study-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/qtl-colocalization-study-planner",
       "version": "1.0.0"
@@ -4509,7 +3946,6 @@
     {
       "id": "randomization-gen",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/randomization-gen",
       "version": "1.0.0"
@@ -4517,7 +3953,6 @@
     {
       "id": "real-world-evidence-study-designer",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/real-world-evidence-study-designer",
       "version": "1.0.0"
@@ -4525,7 +3960,6 @@
     {
       "id": "research-grants",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/research-grants",
       "version": "1.0.0"
@@ -4533,7 +3967,6 @@
     {
       "id": "research-proposal-generator",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/research-proposal-generator",
       "version": "1.0.0"
@@ -4541,7 +3974,6 @@
     {
       "id": "sample-size-and-power-planning-assistant",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/sample-size-and-power-planning-assistant",
       "version": "1.0.0"
@@ -4549,7 +3981,6 @@
     {
       "id": "sample-size-basic",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/sample-size-basic",
       "version": "1.0.0"
@@ -4557,7 +3988,6 @@
     {
       "id": "single-cell-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/single-cell-research-planner",
       "version": "1.0.0"
@@ -4565,7 +3995,6 @@
     {
       "id": "single-compound-network-toxicology-disease-link-reference-grounded",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/single-compound-network-toxicology-disease-link-reference-grounded",
       "version": "1.0.0"
@@ -4573,7 +4002,6 @@
     {
       "id": "single-drug-adverse-effect-hub-first-network-pharmacology",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/single-drug-adverse-effect-hub-first-network-pharmacology",
       "version": "1.0.0"
@@ -4581,7 +4009,6 @@
     {
       "id": "single-drug-adverse-effect-pathway-anchored-network-pharmacology",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/single-drug-adverse-effect-pathway-anchored-network-pharmacology",
       "version": "1.0.0"
@@ -4589,7 +4016,6 @@
     {
       "id": "single-drug-faers-safety-profile-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/single-drug-faers-safety-profile-research-planner",
       "version": "1.0.0"
@@ -4597,7 +4023,6 @@
     {
       "id": "single-gene-oncology-reference-grounded-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/single-gene-oncology-reference-grounded-research-planner",
       "version": "1.0.0"
@@ -4605,7 +4030,6 @@
     {
       "id": "sop-writer",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/sop-writer",
       "version": "1.0.0"
@@ -4613,7 +4037,6 @@
     {
       "id": "study-objective-refiner",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/study-objective-refiner",
       "version": "1.0.0"
@@ -4621,7 +4044,6 @@
     {
       "id": "tooluniverse-clinical-trial-design",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/tooluniverse-clinical-trial-design",
       "version": "1.0.0"
@@ -4629,7 +4051,6 @@
     {
       "id": "translational-study-blueprint",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/translational-study-blueprint",
       "version": "1.0.0"
@@ -4637,7 +4058,6 @@
     {
       "id": "treatment-response-predictor-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/treatment-response-predictor-planner",
       "version": "1.0.0"
@@ -4645,7 +4065,6 @@
     {
       "id": "tumor-immune-infiltration-diagnostic-ml-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/tumor-immune-infiltration-diagnostic-ml-research-planner",
       "version": "1.0.0"
@@ -4653,7 +4072,6 @@
     {
       "id": "two-sample-mr-exposure-screening-reference-grounded",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/two-sample-mr-exposure-screening-reference-grounded",
       "version": "1.0.0"
@@ -4661,7 +4079,6 @@
     {
       "id": "two-sample-mr-research-planner",
       "category": "protocol-design",
-      "inclusionTier": "catalog-candidate",
       "collection": "scientific-skills",
       "sourcePath": "scientific-skills/Protocol Design/two-sample-mr-research-planner",
       "version": "1.0.0"
@@ -4669,7 +4086,6 @@
     {
       "id": "validation-strategy-designer",
       "category": "protocol-design",
-      "inclusionTier": "mvp-candidate",
       "collection": "awesome-med-research-skills",
       "sourcePath": "awesome-med-research-skills/Protocol Design/validation-strategy-designer",
       "version": "1.0.0"

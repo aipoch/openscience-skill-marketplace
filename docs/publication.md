@@ -109,7 +109,7 @@ against the public CDN. It performs no remote writes.
 ## Scope and remaining decisions
 
 There is no App database, settings, cache, installation-source document or migration
-in this repository. Category/tier and evidence-kind values are metadata only;
+in this repository. Category and evidence-kind values are metadata only;
 publication steps are not client installation states. No UI changes require screenshots.
 
 The complete catalog is blocked by four syntax errors, one missing description,

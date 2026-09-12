@@ -96,7 +96,6 @@ export function prepareCandidates(audit, reviews, config, snapshot) {
         display_name: entry.id,
         summary: entry.description,
         category: entry.category,
-        inclusion_tier: entry.inclusionTier,
         source: entry.source,
         publisher: config.publisher,
         ...(entry.authors ? { authors: entry.authors } : {}),

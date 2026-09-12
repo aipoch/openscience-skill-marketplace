@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { parseInclusionList } from "../scripts/lib/catalog.mjs";
 
-test("the approved list contains exactly 584 unique members with the approved category and tier counts", async () => {
+test("the approved list contains exactly 584 unique members with the approved category counts", async () => {
   const entries = parseInclusionList(
     await readFile(
       new URL("../skills/inclusion-list.md", import.meta.url),
@@ -25,12 +25,7 @@ test("the approved list contains exactly 584 unique members with the approved ca
     other: 95,
     "protocol-design": 72,
   });
-  assert.deepEqual(counts("inclusionTier"), {
-    "catalog-candidate": 533,
-    "mvp-candidate": 24,
-    "restricted-index": 19,
-    "sandbox-beta": 8,
-  });
+  assert.ok(entries.every((entry) => !("inclusionTier" in entry)));
   assert.throws(
     () =>
       parseInclusionList(

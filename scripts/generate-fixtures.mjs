@@ -38,7 +38,6 @@ for (const id of ["primary-plan-recommender", "pdf-to-ppt-pack"]) {
       display_name: id,
       summary: entry.description,
       category: entry.category,
-      inclusion_tier: entry.inclusionTier,
       source: entry.source,
       publisher: config.publisher,
       ...(entry.authors ? { authors: entry.authors } : {}),

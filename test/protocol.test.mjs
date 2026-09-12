@@ -10,7 +10,6 @@ test("independent Skill schema accepts optional evaluation and rejects unknown f
     display_name: "Example",
     summary: "Example Skill",
     category: "other",
-    inclusion_tier: "catalog-candidate",
     source: {
       repository: "https://github.com/test/source",
       commit: "a".repeat(40),
@@ -47,6 +46,14 @@ test("independent Skill schema accepts optional evaluation and rejects unknown f
   validateDocument("skill-release", descriptor);
   assert.throws(
     () => validateDocument("skill-release", { ...descriptor, unknown: true }),
+    /schema/,
+  );
+  assert.throws(
+    () =>
+      validateDocument("skill-release", {
+        ...descriptor,
+        skill: { ...skill, inclusion_tier: "catalog-candidate" },
+      }),
     /schema/,
   );
   const scored = structuredClone(descriptor);
@@ -107,6 +114,8 @@ test("real-source fixtures map to App fields while preserving missing evaluation
     bundle.root.skills.find((s) => s.id === "primary-plan-recommender"),
   );
   assert.equal(scored.category, "Protocol Design");
+  assert.equal("inclusionTier" in scored, false);
+  assert.ok(bundle.root.skills.every((entry) => !("inclusion_tier" in entry)));
   assert.equal(scored.publisher.url, "https://aipoch.com/agent-skills");
   assert.equal(
     scored.source.repository,

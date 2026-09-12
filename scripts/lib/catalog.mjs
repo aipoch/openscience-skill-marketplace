@@ -5,12 +5,6 @@ export const categories = [
   "other",
   "protocol-design",
 ];
-export const inclusionTiers = [
-  "mvp-candidate",
-  "sandbox-beta",
-  "catalog-candidate",
-  "restricted-index",
-];
 
 export function parseInclusionList(markdown) {
   const entries = [];
@@ -20,7 +14,7 @@ export function parseInclusionList(markdown) {
     const heading = line.match(/^### (.+)（\d+）$/);
     if (heading) category = heading[1].toLowerCase().replaceAll(" ", "-");
     const row = line.match(
-      /^- `([^`]+)` — (mvp-candidate|sandbox-beta|catalog-candidate|restricted-index) — (scientific-skills|awesome-med-research-skills)$/,
+      /^- `([^`]+)` — [^—]+ — (scientific-skills|awesome-med-research-skills)$/,
     );
     if (!row) continue;
     if (!categories.includes(category))
@@ -30,8 +24,7 @@ export function parseInclusionList(markdown) {
     entries.push({
       id: row[1],
       category,
-      inclusionTier: row[2],
-      collection: row[3],
+      collection: row[2],
     });
   }
   return entries;
@@ -145,9 +138,7 @@ export function validateManifest(manifest, authority) {
     if (
       !original ||
       seen.has(entry.id) ||
-      ["category", "inclusionTier", "collection"].some(
-        (k) => original[k] !== entry[k],
-      )
+      ["category", "collection"].some((k) => original[k] !== entry[k])
     )
       throw new Error(`manifest membership mismatch: ${entry.id}`);
     if (typeof entry.version !== "string" || !entry.version.trim())

@@ -85,5 +85,7 @@ Missing author credits remain absent. `evaluation` is omitted when unavailable;
 its raw final score is never recomputed, rounded or replaced with zero. The
 assessment's tool version is separate from a reported assessed Skill version.
 
-Categories and inclusion tiers describe browsing metadata. They do not introduce
+Categories describe browsing metadata. Historical inclusion tiers remain only in
+`inclusion-list.md`; active manifests, audits and published metadata omit them.
+Categories do not introduce
 an installation state, automatic activation, sandbox policy or safety endorsement.

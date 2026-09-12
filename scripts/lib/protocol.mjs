@@ -135,7 +135,6 @@ export function toAppEntry(listing) {
       .split("-")
       .map((s) => s[0].toUpperCase() + s.slice(1))
       .join(" "),
-    inclusionTier: listing.inclusion_tier,
     version: listing.version,
     publisher: { name: listing.publisher.name, url: listing.publisher.url },
     source: {

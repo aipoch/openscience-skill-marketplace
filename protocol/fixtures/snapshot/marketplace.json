@@ -12,7 +12,6 @@
       "display_name": "pdf-to-ppt-pack",
       "summary": "Convert research paper PDFs into literature-report PPTX decks using a fully offline workflow (extract text/figures, map captions, summarize findings, and generate slides). Use when you need to turn a PDF into a presentation deck, especially for scientific articles with figures and tables.",
       "category": "other",
-      "inclusion_tier": "catalog-candidate",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -31,7 +30,7 @@
       "license": "MIT",
       "release": {
         "path": "releases/pdf-to-ppt-pack/1.0.0.json",
-        "sha256": "ae2daf6d5985e1fbb4ce046d6262f99eeb08921b82ade67b207cf5a8c9dabc6a"
+        "sha256": "2c32ab86417169f60e68b8bc19148f86d898565aefc1945826806f132120cfa5"
       },
       "artifact": {
         "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
@@ -47,7 +46,6 @@
       "display_name": "primary-plan-recommender",
       "summary": "Compares multiple study-route options for the same biomedical research question and recommends one primary plan, while explicitly explaining why alternative routes are secondary, premature, weaker, or dependency-heavy. Always use this skill when the user already has a reasonably defined question but is unsure which main study route should anchor the project. Focus on plan comparison, route selection, dependency awareness, and primary-plan justification rather than full protocol drafting.",
       "category": "protocol-design",
-      "inclusion_tier": "catalog-candidate",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -82,7 +80,7 @@
       },
       "release": {
         "path": "releases/primary-plan-recommender/1.0.0.json",
-        "sha256": "0d056a67c094595d9493cda199ed3ad3782814b16c30923ffc0560b974f74449"
+        "sha256": "b6e261b170c331b949e210be73684f38d2450653608dd5b83f75d5cc5b87524b"
       },
       "artifact": {
         "path": "shards/8b050d756793ed5004dc8bdcec5e2fabab04a9832e3347f630b26e3bbe222d1f.zip",
@@ -94,9 +92,9 @@
     }
   ],
   "release_index": {
-    "path": "indexes/bb6661a52de9820a04fa91c0f0a343e3aaa57788b853fa0c2e2181d538fd5bed.json",
-    "sha256": "bb6661a52de9820a04fa91c0f0a343e3aaa57788b853fa0c2e2181d538fd5bed"
+    "path": "indexes/d7ce4989bf34c3689215962c3ab869b9a82114a34863fd44ee0241f81f6f43b1.json",
+    "sha256": "d7ce4989bf34c3689215962c3ab869b9a82114a34863fd44ee0241f81f6f43b1"
   },
   "previous_revision": null,
-  "revision": "2fbf6c2d60d211ccfb36a883e8bbad13cbf8ca0f54b78580cbd509b6c711930e"
+  "revision": "fbd1a3fa77a4a161b7e1ae78b1663c88b185d937f6ef24a478b3663661c35bee"
 }

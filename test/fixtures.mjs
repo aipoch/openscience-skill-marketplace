@@ -6,7 +6,6 @@ export function makeCandidate(id = "example") {
       display_name: id,
       summary: "Test-only fixture",
       category: "other",
-      inclusion_tier: "catalog-candidate",
       publisher: {
         id: "fixture",
         name: "Test fixture",

@@ -261,14 +261,6 @@
             "protocol-design"
           ]
         },
-        "inclusion_tier": {
-          "enum": [
-            "mvp-candidate",
-            "sandbox-beta",
-            "catalog-candidate",
-            "restricted-index"
-          ]
-        },
         "source": {
           "$ref": "https://aipoch.github.io/openscience-skill-marketplace/protocol/common.schema.json#/$defs/source"
         },
@@ -291,7 +283,6 @@
         "display_name",
         "summary",
         "category",
-        "inclusion_tier",
         "source",
         "publisher",
         "license"
@@ -329,14 +320,6 @@
             "evidence-insight",
             "other",
             "protocol-design"
-          ]
-        },
-        "inclusion_tier": {
-          "enum": [
-            "mvp-candidate",
-            "sandbox-beta",
-            "catalog-candidate",
-            "restricted-index"
           ]
         },
         "source": {
@@ -387,7 +370,6 @@
         "display_name",
         "summary",
         "category",
-        "inclusion_tier",
         "source",
         "publisher",
         "license",
