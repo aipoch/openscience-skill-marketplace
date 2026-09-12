@@ -1,0 +1,8 @@
+.worktree/
+docs/internal/
+node_modules/
+dist/
+coverage/
+/.codex/
+/.DS_Store
+/open-science-skills-bundle-*.zip
