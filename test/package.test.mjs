@@ -74,14 +74,24 @@ test("package safety and shard budgets reject invalid inputs and split only betw
       ),
     /symlink/,
   );
+  for (const path of ["nested/SKILL.md", "nested/skill.md", "nested/Skill.MD"])
+    assert.throws(
+      () => inspectSkill(skill("example", [{ path, bytes: Buffer.from("x") }])),
+      /nested/,
+    );
+  inspectSkill(
+    skill("example", [
+      { path: "a/b/c/d/e/f/g/file.txt", bytes: Buffer.from("x") },
+    ]),
+  );
   assert.throws(
     () =>
       inspectSkill(
         skill("example", [
-          { path: "nested/SKILL.md", bytes: Buffer.from("x") },
+          { path: "a/b/c/d/e/f/g/h/file.txt", bytes: Buffer.from("x") },
         ]),
       ),
-    /nested/,
+    /depth/,
   );
   assert.throws(
     () =>

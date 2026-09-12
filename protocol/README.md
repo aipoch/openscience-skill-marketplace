@@ -88,17 +88,20 @@ The ZIP contains `<skill-id>/SKILL.md` and that Skill's regular files, without
 explicit directory entries. Files/Skills are sorted; DOS ZIP time is fixed to
 1980-01-01 00:00:00 in local calendar fields. Compression uses pinned fflate.
 
-| Limit                                          | Maximum |
-| ---------------------------------------------- | ------: |
-| One file                                       |  50 MiB |
-| One Skill expanded                             | 128 MiB |
-| Files per Skill                                |  16,384 |
-| Archive path depth, including the Skill prefix |       8 |
-| Aggregate SKILL.md preview bytes per shard     |   4 MiB |
-| Shard compressed                               |  64 MiB |
-| Shard expanded                                 | 256 MiB |
-| Shard file entries                             |  32,768 |
-| Skills per shard                               |     128 |
+| Limit                                               | Maximum |
+| --------------------------------------------------- | ------: |
+| One file                                            |  50 MiB |
+| One Skill expanded                                  | 128 MiB |
+| Files per Skill                                     |  16,384 |
+| Archive directory depth, including the Skill prefix |       8 |
+| Aggregate SKILL.md preview bytes per shard          |   4 MiB |
+| Shard compressed                                    |  64 MiB |
+| Shard expanded                                      | 256 MiB |
+| Shard file entries                                  |  32,768 |
+| Skills per shard                                    |     128 |
+
+Directory depth counts separators: `<id>/a/b/c/d/e/f/g/file.txt` has eight
+directory levels and is accepted; one more directory is rejected.
 
 The shard limits are deliberately tighter than the App's 256 MiB compressed
 bundle and 256-Skill caps. A Skill never spans shards. Both expanded budgets and

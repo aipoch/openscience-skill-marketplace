@@ -90,12 +90,21 @@ test("GitHub transport creates one draft catalog release and never clobbers exis
     });
     await store.putImmutable("shards/example.zip", Buffer.from("archive"));
     await store.putImmutable("shards/example.zip", Buffer.from("archive"));
+    const retry = githubStore({
+      repository: "test/repo",
+      revision: "b".repeat(64),
+      sourceCommit: "c".repeat(40),
+      temporary: tmp,
+      run,
+    });
+    await retry.putImmutable("shards/second.zip", Buffer.from("second"));
+    assert.equal(release.targetCommitish, "a".repeat(40));
     await assert.rejects(
       store.putImmutable("shards/example.zip", Buffer.from("different")),
       /immutable/,
     );
     assert.equal(commands.filter(([, a]) => a[1] === "create").length, 1);
-    assert.equal(commands.filter(([, a]) => a[1] === "upload").length, 1);
+    assert.equal(commands.filter(([, a]) => a[1] === "upload").length, 2);
     assert.ok(
       commands.find(([, a]) => a[1] === "create")[1].includes("--draft"),
     );
@@ -127,6 +136,7 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
   await mkdir(repo);
   const git = (args) => runCommand("git", args, { cwd: repo });
   const releases = new Map();
+  let failPush = true;
   try {
     await runCommand("git", ["init", "--bare", path.join(tmp, "remote.git")]);
     await git(["init", "-b", "main"]);
@@ -148,6 +158,10 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
       if (command === "git") {
         if (args[0] === "worktree" && args[1] === "add")
           assert.equal(args[3], path.join(repo, ".worktree", "published"));
+        if (args.includes("push") && failPush) {
+          failPush = false;
+          throw new Error("injected push failure");
+        }
         return git(args);
       }
       const action = args[1],
@@ -204,6 +218,16 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
       run,
     });
     const cdn = await directoryStore(path.join(tmp, "cdn"));
+    await assert.rejects(
+      publishSnapshot({ candidate, signature, pin, github, cdn }),
+      /injected push failure/,
+    );
+    assert.equal(
+      (await git(["worktree", "list", "--porcelain"]))
+        .toString()
+        .includes(path.join(".worktree", "published")),
+      false,
+    );
     await publishSnapshot({ candidate, signature, pin, github, cdn });
     const before = (await git(["rev-parse", "origin/published"])).toString();
     await publishSnapshot({ candidate, signature, pin, github, cdn });

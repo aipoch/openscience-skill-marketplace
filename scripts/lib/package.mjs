@@ -73,7 +73,7 @@ export function inspectSkill(skill, overrides = {}) {
       if (!front.valid || front.name !== skill.id)
         throw new Error("invalid Skill frontmatter or identity");
       previewBytes = file.bytes.length;
-    } else if (file.path.endsWith("/SKILL.md"))
+    } else if (folded.endsWith("/skill.md"))
       throw new Error("nested Skill root changes bundle discovery");
   }
   for (const file of seen) {

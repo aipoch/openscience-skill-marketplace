@@ -91,6 +91,7 @@ export function auditSources(manifest, snapshot, source) {
       seen.add(folded);
       if (file.mode !== "100644" && file.mode !== "100755")
         add("special-file", relative);
+      if (folded.endsWith("/skill.md")) add("nested-skill", relative);
       if (relative.split("/").length > 8) add("path-depth", relative);
       if ([".source.json", ".specialist-package.json"].includes(folded))
         add("reserved-file", relative);

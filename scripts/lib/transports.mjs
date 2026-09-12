@@ -228,8 +228,6 @@ export function githubStore({
         ]);
         release = { assets: [], isDraft: true, targetCommitish: sourceCommit };
       }
-      if (sourceCommit && release.targetCommitish !== sourceCommit)
-        throw new Error("existing release targets a different source commit");
       const old = await read(relative);
       if (old) {
         if (!old.equals(bytes))
@@ -276,63 +274,80 @@ export function githubStore({
         worktree,
         state?.commit ?? "HEAD",
       ]);
-      if (!state)
-        await run("git", ["-C", worktree, "switch", "--orphan", "published"]);
-      const files = new Map(candidate.objects);
-      files.set(`snapshots/${revision}/marketplace.json`, rootBytes);
-      files.set(`snapshots/${revision}/marketplace.json.sig`, signatureBytes);
-      files.set("marketplace.json", rootBytes);
-      files.set("marketplace.json.sig", signatureBytes);
-      const metadataStore = await directoryStore(worktree);
-      for (const [relative, bytes] of files) {
-        if (
-          relative.endsWith(".zip") ||
-          relative === "marketplace.json" ||
-          relative === "marketplace.json.sig"
-        )
-          continue;
-        await metadataStore.putImmutable(relative, bytes);
-      }
-      await metadataStore.writeRootSignature(signatureBytes);
-      await metadataStore.writeRoot(rootBytes);
-      await run("git", [
-        "-C",
-        worktree,
-        "add",
-        "marketplace.json",
-        "marketplace.json.sig",
-        "releases",
-        "indexes",
-        "snapshots",
-      ]);
-      const changed =
-        (await run("git", ["-C", worktree, "diff", "--cached", "--name-only"]))
-          .length > 0;
-      if (changed) {
+      let createdBranch = false;
+      let committed = false;
+      try {
+        if (!state) {
+          await run("git", ["-C", worktree, "switch", "--orphan", "published"]);
+          createdBranch = true;
+        }
+        const files = new Map(candidate.objects);
+        files.set(`snapshots/${revision}/marketplace.json`, rootBytes);
+        files.set(`snapshots/${revision}/marketplace.json.sig`, signatureBytes);
+        files.set("marketplace.json", rootBytes);
+        files.set("marketplace.json.sig", signatureBytes);
+        const metadataStore = await directoryStore(worktree);
+        for (const [relative, bytes] of files) {
+          if (
+            relative.endsWith(".zip") ||
+            relative === "marketplace.json" ||
+            relative === "marketplace.json.sig"
+          )
+            continue;
+          await metadataStore.putImmutable(relative, bytes);
+        }
+        await metadataStore.writeRootSignature(signatureBytes);
+        await metadataStore.writeRoot(rootBytes);
         await run("git", [
           "-C",
           worktree,
-          "-c",
-          "user.name=github-actions[bot]",
-          "-c",
-          "user.email=41898282+github-actions[bot]@users.noreply.github.com",
-          "commit",
-          "-m",
-          "feat(publishing): publish skill catalog snapshot",
+          "add",
+          "marketplace.json",
+          "marketplace.json.sig",
+          "releases",
+          "indexes",
+          "snapshots",
         ]);
-        await run("git", [
-          "-C",
-          worktree,
-          "-c",
-          "credential.helper=",
-          "-c",
-          "credential.helper=!gh auth git-credential",
-          "push",
-          "origin",
-          "HEAD:published",
-        ]);
+        const changed =
+          (
+            await run("git", [
+              "-C",
+              worktree,
+              "diff",
+              "--cached",
+              "--name-only",
+            ])
+          ).length > 0;
+        if (changed) {
+          await run("git", [
+            "-C",
+            worktree,
+            "-c",
+            "user.name=github-actions[bot]",
+            "-c",
+            "user.email=41898282+github-actions[bot]@users.noreply.github.com",
+            "commit",
+            "-m",
+            "feat(publishing): publish skill catalog snapshot",
+          ]);
+          committed = true;
+          await run("git", [
+            "-C",
+            worktree,
+            "-c",
+            "credential.helper=",
+            "-c",
+            "credential.helper=!gh auth git-credential",
+            "push",
+            "origin",
+            "HEAD:published",
+          ]);
+        }
+      } finally {
+        await run("git", ["worktree", "remove", "--force", worktree]);
+        if (createdBranch && committed)
+          await run("git", ["branch", "-D", "published"]);
       }
-      await run("git", ["worktree", "remove", worktree]);
     },
     readRoot: () => publishedState({ run }),
   };

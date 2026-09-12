@@ -77,8 +77,12 @@ No CDN distribution or invalidation policy is configured by these tools.
 Retry from the same reviewed inputs and pinned key. A snapshot identity and Ed25519
 signature are deterministic. Every retry reads existing object bytes: matching
 bytes are reused, and conflicting bytes stop publication. A partially uploaded
-draft can receive its missing assets. A published release missing an expected asset
-fails rather than modifying released content.
+draft can receive its missing assets. If unchanged inputs produce the same snapshot
+after main advances, retries preserve the original draft target commit and verify
+each asset against the candidate bytes. A published release missing an expected
+asset fails rather than modifying released content. Failed Git promotion cleans
+up the temporary worktree and any local publication branch it created, allowing
+the same checkout to retry.
 
 Both transports receive the immutable snapshot pair before stable promotion.
 The stable root/signature pair is not atomic across objects or transports. Tests
