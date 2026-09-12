@@ -1,3 +1,4 @@
+import { parseMetadataJson, metadataJsonBytes } from "./lib/metadata-json.mjs";
 import { parseArgs } from "node:util";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { validateManifest } from "./lib/catalog.mjs";
@@ -5,7 +6,6 @@ import { auditSources, gitSnapshot } from "./lib/source.mjs";
 import { prepareCandidates } from "./lib/prepare.mjs";
 import { buildCatalog } from "./lib/build.mjs";
 import { readBundle, writeBundle } from "./lib/bundle.mjs";
-import { jsonBytes } from "./lib/common.mjs";
 const { values } = parseArgs({
   options: {
     source: { type: "string" },
@@ -15,12 +15,12 @@ const { values } = parseArgs({
 });
 if (!values.source)
   throw new Error("--source <local upstream Git repository> is required");
-const config = JSON.parse(await readFile("marketplace.config.json"));
-const manifest = JSON.parse(await readFile("skills/manifest.json"));
+const config = parseMetadataJson(await readFile("marketplace.config.json"));
+const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
 validateManifest(manifest, await readFile("skills/inclusion-list.md"));
 const snapshot = gitSnapshot(values.source, config.source.commit);
 const audit = auditSources(manifest, snapshot, config.source);
-const reviews = JSON.parse(await readFile("skills/reviews.json"));
+const reviews = parseMetadataJson(await readFile("skills/reviews.json"));
 await mkdir(values.output, { recursive: true });
 try {
   const candidates = prepareCandidates(audit, reviews, config, snapshot);
@@ -40,7 +40,7 @@ try {
   await writeBundle(values.output, built);
   await writeFile(
     `${values.output}/build-context.json`,
-    jsonBytes({ baseRevision: built.root.previous_revision }),
+    metadataJsonBytes({ baseRevision: built.root.previous_revision }),
   );
   console.log(
     JSON.stringify({
@@ -52,7 +52,10 @@ try {
 } catch (error) {
   await writeFile(
     `${values.output}/publication-blockers.json`,
-    jsonBytes({ message: error.message, blockers: error.blockers ?? [] }),
+    metadataJsonBytes({
+      message: error.message,
+      blockers: error.blockers ?? [],
+    }),
   );
   console.error(error.message);
   process.exitCode = 1;

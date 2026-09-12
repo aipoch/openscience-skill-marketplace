@@ -12,15 +12,15 @@ The [strict schema](release.config.schema.json) rejects unknown fields.
 
 | Field               | Required | Meaning                                                                                                                                                    |
 | ------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `schemaVersion`     | Yes      | `1`, the provider input format version.                                                                                                                    |
+| `schema_version`    | Yes      | `1`, the provider input format version.                                                                                                                    |
 | `id`                | Yes      | Lowercase kebab-case, at most 128 characters; must equal `SKILL.md` frontmatter `name`.                                                                    |
 | `version`           | Yes      | Marketplace package SemVer, for example `1.0.0`; independent of upstream tags and immutable once published.                                                |
 | `category`          | Yes      | `academic-writing`, `data-analysis`, `evidence-insight`, `other`, or `protocol-design`. Used for catalog display and filtering.                            |
-| `displayName`       | No       | Human-readable title, at most 500 characters; defaults to `id`.                                                                                            |
+| `display_name`      | No       | Human-readable title, at most 500 characters; defaults to `id`.                                                                                            |
 | `source.repository` | Yes      | HTTPS GitHub repository URL, for example `https://github.com/organization/skills`.                                                                         |
 | `source.commit`     | Yes      | Full lowercase 40-character commit SHA; branches and tags are rejected.                                                                                    |
 | `source.path`       | Yes      | Repository-relative directory containing the exact `SKILL.md`, for example `skills/example-skill`.                                                         |
-| `licenseFiles`      | Yes      | 1–20 distinct repository-relative paths to actual license evidence in that commit, possibly outside the Skill directory. The tool calculates their hashes. |
+| `license_files`     | Yes      | 1–20 distinct repository-relative paths to actual license evidence in that commit, possibly outside the Skill directory. The tool calculates their hashes. |
 
 Paths use `/`, without a leading slash, `..`, backslashes or non-portable names.
 The Skill must occupy a subdirectory; repository-root Skills are not supported by
@@ -84,7 +84,7 @@ npm run --silent intake:skill -- \
 The command validates the manifest, source identity, metadata, package and license
 evidence, then prints a JSON map keyed by `<id>@<version>`. It includes computed
 content/evidence hashes, source repository/commit/path, license declaration and
-package metrics. `manifestSha256` binds the authored metadata using the tool's
+package metrics. `manifest_sha256` binds the authored metadata using the tool's
 JSON serialization; regenerate review input after any manifest edits, including
 key reordering. This output is **not approval** and contains no reviewer identity
 or approval date.
@@ -92,9 +92,9 @@ or approval date.
 ## Maintainer review and local build
 
 Review the source, attribution, license scope, bundled notices and exact package
-bytes. Copy the generated JSON map to a local review file and add `reviewedBy`
-and `reviewedOn` (`YYYY-MM-DD`) to the version's record only after that review.
-An unsupported license additionally requires `exceptionReason` under the existing
+bytes. Copy the generated JSON map to a local review file and add `reviewed_by`
+and `reviewed_on` (`YYYY-MM-DD`) to the version's record only after that review.
+An unsupported license additionally requires `exception_reason` under the existing
 [review policy](../skills/README.md). Existing default reviewed expressions are
 MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC and CC0-1.0.
 
@@ -134,6 +134,13 @@ That is a proposal, **not a live endpoint**. This change performs no CDN writes,
 does not configure an origin/distribution, and does not change publication routing.
 
 ## Compatibility and storage
+
+Repository-owned JSON fields use `snake_case`, including earlier Marketplace
+configuration, manifests, audits, reviews and build context. Former camelCase
+fields are rejected; there is no compatibility reader or migration adapter.
+Regenerate local review input and rebuild local candidates using the current
+format. Manifest hashes bind the snake_case serialization. JavaScript models
+remain camelCase after boundary conversion, and filenames are unchanged.
 
 Provider input is a new authoring contract, separate from the unchanged public
 Skill Protocol v1. It adds no categories, App installation states, database

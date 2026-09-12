@@ -1,8 +1,9 @@
+import { parseMetadataJson, metadataJsonBytes } from "./lib/metadata-json.mjs";
 import { parseArgs } from "node:util";
 import { readFile } from "node:fs/promises";
 import { gitSnapshot } from "./lib/source.mjs";
 import { inspectSkill, LIMITS } from "./lib/package.mjs";
-import { assertPath, sha256, jsonBytes } from "./lib/common.mjs";
+import { assertPath, sha256 } from "./lib/common.mjs";
 const { values } = parseArgs({
   options: {
     source: { type: "string" },
@@ -12,8 +13,8 @@ const { values } = parseArgs({
 });
 if (!values.source || !values.id)
   throw new Error("--source and --id are required");
-const config = JSON.parse(await readFile("marketplace.config.json"));
-const manifest = JSON.parse(await readFile("skills/manifest.json"));
+const config = parseMetadataJson(await readFile("marketplace.config.json"));
+const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
 const entry = manifest.entries.find((e) => e.id === values.id);
 if (!entry) throw new Error("ID is not in the approved manifest");
 const snapshot = gitSnapshot(values.source, config.source.commit);
@@ -49,7 +50,7 @@ const evidence = values["license-path"].map((p) => {
   return { path: p, sha256: sha256(snapshot.read([p]).get(p)) };
 });
 process.stdout.write(
-  jsonBytes({
+  metadataJsonBytes({
     id: entry.id,
     version: entry.version,
     sourceCommit: config.source.commit,

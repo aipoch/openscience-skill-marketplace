@@ -1,3 +1,4 @@
+import { parseMetadataJson } from "../scripts/lib/metadata-json.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -101,7 +102,7 @@ test("manifest paths must map the exact authority and cannot omit members or sub
   const authority = await readFile(
     new URL("../skills/inclusion-list.md", import.meta.url),
   );
-  const manifest = JSON.parse(
+  const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
   validateManifest(manifest, authority);

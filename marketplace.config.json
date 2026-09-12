@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schema_version": 1,
   "marketplace": {
     "id": "openscience-skills",
     "name": "OpenScience Skill Marketplace"
@@ -9,7 +9,7 @@
     "name": "AIPOCH",
     "url": "https://aipoch.com/agent-skills"
   },
-  "initialVersion": "1.0.0",
+  "initial_version": "1.0.0",
   "source": {
     "repository": "https://github.com/aipoch/medical-research-skills",
     "commit": "d92441066ea6259967469be8e0c8c7b6587928ab"

@@ -1,7 +1,8 @@
+import { parseMetadataJson, metadataJsonBytes } from "./metadata-json.mjs";
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import Ajv from "ajv";
-import { assertPath, assertSource, jsonBytes, sha256 } from "./common.mjs";
+import { assertPath, assertSource, sha256 } from "./common.mjs";
 import { gitSnapshot } from "./source.mjs";
 import { inspectSkill, LIMITS } from "./package.mjs";
 import { inspectFrontmatter } from "./catalog.mjs";
@@ -31,12 +32,18 @@ const validate = ajv.compile(
   ),
 );
 
-export function validateReleaseConfig(manifest) {
+export function parseReleaseConfig(bytes) {
+  const manifest = JSON.parse(bytes);
   if (!validate(manifest))
     throw new Error(
       `invalid release.config.json: ${ajv.errorsText(validate.errors)}`,
     );
   assertSource(manifest.source);
+  return parseMetadataJson(bytes);
+}
+
+export function validateReleaseConfig(manifest) {
+  parseReleaseConfig(metadataJsonBytes(manifest));
   return manifest;
 }
 
@@ -131,7 +138,7 @@ export function inspectSubmission(manifest, snapshot) {
       sourceCommit: manifest.source.commit,
       sourcePath: manifest.source.path,
       // Bind the authored metadata as well as payload/evidence bytes to review.
-      manifestSha256: sha256(jsonBytes(manifest)),
+      manifestSha256: sha256(metadataJsonBytes(manifest)),
       contentSha256: metrics.contentSha256,
       fileCount: metrics.fileCount,
       totalBytes: metrics.totalBytes,

@@ -1,3 +1,4 @@
+import { parseMetadataJson, metadataJsonBytes } from "./lib/metadata-json.mjs";
 import { parseArgs } from "node:util";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
@@ -5,12 +6,12 @@ import { gitSnapshot } from "./lib/source.mjs";
 import { buildCatalog } from "./lib/build.mjs";
 import { writeBundle } from "./lib/bundle.mjs";
 import { evaluationToWire } from "./lib/protocol.mjs";
-import { sha256, jsonBytes } from "./lib/common.mjs";
+import { sha256 } from "./lib/common.mjs";
 import { sourceUrl } from "./lib/catalog.mjs";
 const { values } = parseArgs({ options: { source: { type: "string" } } });
 if (!values.source) throw new Error("--source is required");
-const config = JSON.parse(await readFile("marketplace.config.json"));
-const audit = JSON.parse(await readFile("skills/source-audit.json"));
+const config = parseMetadataJson(await readFile("marketplace.config.json"));
+const audit = parseMetadataJson(await readFile("skills/source-audit.json"));
 const snapshot = gitSnapshot(values.source, config.source.commit);
 const licenseBytes = snapshot.read(["LICENSE"]).get("LICENSE");
 await mkdir("protocol/fixtures/source", { recursive: true });
@@ -63,7 +64,7 @@ const built = buildCatalog(candidates, { marketplace: config.marketplace });
 await writeBundle("protocol/fixtures/snapshot", built);
 await writeFile(
   "protocol/fixtures/provenance.json",
-  jsonBytes({
+  metadataJsonBytes({
     source: config.source,
     fixtureOnly: true,
     members: candidates.map((c) => c.skill.id),

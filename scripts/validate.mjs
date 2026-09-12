@@ -1,13 +1,14 @@
+import { parseMetadataJson } from "./lib/metadata-json.mjs";
 import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { validateManifest } from "./lib/catalog.mjs";
 import { readBundle } from "./lib/bundle.mjs";
 import { assertSource } from "./lib/common.mjs";
-const config = JSON.parse(await readFile("marketplace.config.json"));
+const config = parseMetadataJson(await readFile("marketplace.config.json"));
 assertSource(config.source);
-const manifest = JSON.parse(await readFile("skills/manifest.json"));
+const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
 validateManifest(manifest, await readFile("skills/inclusion-list.md"));
-const report = JSON.parse(await readFile("skills/source-audit.json"));
+const report = parseMetadataJson(await readFile("skills/source-audit.json"));
 assert.deepEqual(report.source, config.source);
 assert.equal(report.memberCount, 584);
 assert.deepEqual(

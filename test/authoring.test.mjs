@@ -1,3 +1,7 @@
+import {
+  parseMetadataJson,
+  metadataJsonBytes,
+} from "../scripts/lib/metadata-json.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
@@ -12,6 +16,7 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync, spawnSync } from "node:child_process";
 import {
+  parseReleaseConfig,
   validateReleaseConfig,
   inspectSubmission,
   prepareSubmission,
@@ -20,7 +25,7 @@ import {
 import { buildCatalog, loadCatalog } from "../scripts/lib/build.mjs";
 import { LIMITS } from "../scripts/lib/package.mjs";
 
-const config = JSON.parse(
+const config = parseMetadataJson(
   readFileSync(new URL("../marketplace.config.json", import.meta.url)),
 );
 const manifest = () => ({
@@ -66,11 +71,9 @@ function reviewed(m, snapshot) {
 
 test("provider manifest is strict, uses existing categories/SemVer and excludes platform metadata", () => {
   validateReleaseConfig(manifest());
-  validateReleaseConfig(
-    JSON.parse(
-      readFileSync(
-        new URL("../authoring/example/release.config.json", import.meta.url),
-      ),
+  parseReleaseConfig(
+    readFileSync(
+      new URL("../authoring/example/release.config.json", import.meta.url),
     ),
   );
   for (const field of [
@@ -290,7 +293,7 @@ test("CLI reads the pinned Git snapshot despite dirty checkout, catches wrong or
     "dirty checkout ignored",
   );
   const manifestPath = join(directory, "release.config.json");
-  writeFileSync(manifestPath, JSON.stringify(m));
+  writeFileSync(manifestPath, metadataJsonBytes(m));
   const cli = (...args) =>
     spawnSync(
       process.execPath,
@@ -304,19 +307,36 @@ test("CLI reads the pinned Git snapshot despite dirty checkout, catches wrong or
       ],
       { cwd: fileURLToPath(new URL("..", import.meta.url)), encoding: "utf8" },
     );
+  writeFileSync(manifestPath, JSON.stringify(m));
+  assert.notEqual(cli().status, 0, "old camelCase manifest must fail");
+  writeFileSync(manifestPath, metadataJsonBytes(m));
   const inspected = cli();
   assert.equal(inspected.status, 0, inspected.stderr);
-  const reviews = JSON.parse(inspected.stdout);
+  const wireReview = JSON.parse(inspected.stdout)["example-skill@1.0.0"];
+  assert.equal(wireReview.source_commit, m.source.commit);
+  assert.equal("sourceCommit" in wireReview, false);
+  assert.equal(
+    wireReview.manifest_sha256,
+    (await import("../scripts/lib/common.mjs")).sha256(metadataJsonBytes(m)),
+  );
+  const reviews = parseMetadataJson(inspected.stdout);
   assert.equal(reviews["example-skill@1.0.0"].sourceCommit, m.source.commit);
   const reviewPath = join(directory, "reviews.json"),
     output = join(directory, "bundle");
-  writeFileSync(reviewPath, JSON.stringify(reviews));
+  writeFileSync(reviewPath, metadataJsonBytes(reviews));
   assert.notEqual(cli("--reviews", reviewPath, "--output", output).status, 0);
   Object.assign(reviews["example-skill@1.0.0"], {
     reviewedBy: "Test-only reviewer",
     reviewedOn: "2026-09-12",
   });
+  writeFileSync(reviewPath, metadataJsonBytes(reviews));
   writeFileSync(reviewPath, JSON.stringify(reviews));
+  assert.notEqual(
+    cli("--reviews", reviewPath, "--output", output).status,
+    0,
+    "old camelCase review must fail",
+  );
+  writeFileSync(reviewPath, metadataJsonBytes(reviews));
   const built = cli("--reviews", reviewPath, "--output", output);
   assert.equal(built.status, 0, built.stderr);
   assert.equal(JSON.parse(built.stdout).signed, false);
@@ -336,7 +356,10 @@ test("CLI reads the pinned Git snapshot despite dirty checkout, catches wrong or
   );
   writeFileSync(
     manifestPath,
-    JSON.stringify({ ...m, source: { ...m.source, commit: "0".repeat(40) } }),
+    metadataJsonBytes({
+      ...m,
+      source: { ...m.source, commit: "0".repeat(40) },
+    }),
   );
   assert.notEqual(cli().status, 0);
 });

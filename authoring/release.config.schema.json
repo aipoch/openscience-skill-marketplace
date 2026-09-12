@@ -5,15 +5,15 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "schemaVersion",
+    "schema_version",
     "id",
     "version",
     "category",
     "source",
-    "licenseFiles"
+    "license_files"
   ],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schema_version": { "const": 1 },
     "id": { "$ref": "../protocol/common.schema.json#/$defs/id" },
     "version": {
       "$ref": "../protocol/common.schema.json#/$defs/skill/properties/version"
@@ -21,7 +21,7 @@
     "category": {
       "$ref": "../protocol/common.schema.json#/$defs/skill/properties/category"
     },
-    "displayName": {
+    "display_name": {
       "type": "string",
       "minLength": 1,
       "maxLength": 500,
@@ -41,7 +41,7 @@
         "path": { "type": "string", "format": "safe-path" }
       }
     },
-    "licenseFiles": {
+    "license_files": {
       "type": "array",
       "minItems": 1,
       "maxItems": 20,

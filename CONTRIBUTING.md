@@ -75,6 +75,13 @@ The protocol, source-readiness and publication responsibilities are documented i
 
 ## Content and publication
 
+Repository-owned JSON data uses `snake_case` field names. JavaScript APIs use
+`camelCase`; decode and encode configuration, manifests, audits, review records
+and build context through `scripts/lib/metadata-json.mjs` at the file boundary.
+Former camelCase JSON fields are rejected with no compatibility aliases. Keep
+standard `package.json`/JSON Schema keywords, upstream payloads and authenticated
+protocol bytes in their own formats. File names are unchanged.
+
 Skill providers use the [authoring guide](authoring/README.md) and
 `release.config.json` to reference a fixed Git commit. Do not edit the historical
 584-member manifest to submit a new Skill. Provider intake produces review input

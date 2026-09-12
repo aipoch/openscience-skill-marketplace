@@ -47,12 +47,12 @@ and must record the following reviewed facts (the example is not an approval):
 ```json
 {
   "example@1.0.0": {
-    "sourceCommit": "FULL_40_CHARACTER_COMMIT",
-    "contentSha256": "REVIEWED_SKILL_CONTENT_SHA256",
-    "reviewedBy": "Reviewer identity",
-    "reviewedOn": "YYYY-MM-DD",
-    "licenseExpression": "MIT",
-    "licenseFiles": [
+    "source_commit": "FULL_40_CHARACTER_COMMIT",
+    "content_sha256": "REVIEWED_SKILL_CONTENT_SHA256",
+    "reviewed_by": "Reviewer identity",
+    "reviewed_on": "YYYY-MM-DD",
+    "license_expression": "MIT",
+    "license_files": [
       { "path": "path/to/license-evidence", "sha256": "EXACT_FILE_SHA256" }
     ]
   }
@@ -73,11 +73,11 @@ license is evidence to review, not automatic permission for third-party content.
 
 The ordinary license policy accepts MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause,
 ISC and CC0-1.0 only after review. Other terms require a nonempty reviewed
-`exceptionReason`, retained in the descriptor. A changed package digest invalidates
+`exception_reason`, retained in the descriptor. A changed package digest invalidates
 its review. Invalid YAML or missing declarations still fail independently.
 
 Optional assessments can be explicitly omitted with a nonempty per-version
-`omitEvaluationReason` in the byte-bound review record. This waives only assessment
+`omit_evaluation_reason` in the byte-bound review record. This waives only assessment
 findings; it never waives YAML, license or resource failures. The source audit still
 retains the findings. No score field or zero placeholder is emitted.
 
