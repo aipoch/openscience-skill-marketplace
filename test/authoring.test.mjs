@@ -10,6 +10,7 @@ import {
   writeFileSync,
   readFileSync,
   rmSync,
+  existsSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -24,6 +25,7 @@ import {
 } from "../scripts/lib/authoring.mjs";
 import { buildCatalog, loadCatalog } from "../scripts/lib/build.mjs";
 import { LIMITS } from "../scripts/lib/package.mjs";
+import { readBundle } from "../scripts/lib/bundle.mjs";
 
 const config = parseMetadataJson(
   readFileSync(new URL("../marketplace.config.json", import.meta.url)),
@@ -40,6 +42,159 @@ const manifest = () => ({
     path: "skills/example-skill",
   },
   licenseFiles: ["LICENSE"],
+});
+
+test("batch CLI combines explicit sources deterministically and rejects incomplete batches before writing", async (t) => {
+  const directory = mkdtempSync(join(tmpdir(), "skill-batch-"));
+  t.after(() => rmSync(directory, { recursive: true, force: true }));
+  const inputs = [];
+  for (const [group, ids] of [
+    ["shared", ["alpha-skill", "beta-skill"]],
+    ["other", ["gamma-skill"]],
+  ]) {
+    const repo = join(directory, group);
+    mkdirSync(repo);
+    const git = (...args) =>
+      execFileSync("git", ["-C", repo, ...args], { encoding: "utf8" }).trim();
+    git("init", "--quiet");
+    git("config", "user.name", "Test fixture");
+    git("config", "user.email", "fixture@example.invalid");
+    git("config", "core.autocrlf", "false");
+    git("remote", "add", "origin", `https://github.com/test/${group}`);
+    writeFileSync(join(repo, "LICENSE"), "Test-only license evidence");
+    for (const id of ids) {
+      mkdirSync(join(repo, "skills", id), { recursive: true });
+      writeFileSync(
+        join(repo, "skills", id, "SKILL.md"),
+        skillText.replace("example-skill", id),
+      );
+    }
+    git("add", ".");
+    git("commit", "--quiet", "-m", "test(fixture): add batch sources");
+    const commit = git("rev-parse", "HEAD");
+    for (const id of ids) {
+      const m = {
+        ...manifest(),
+        id,
+        source: {
+          repository: `https://github.com/test/${group}`,
+          commit,
+          path: `skills/${id}`,
+        },
+      };
+      const path = join(directory, `${id}.json`);
+      writeFileSync(path, metadataJsonBytes(m));
+      inputs.push({ path, repo, manifest: m });
+      writeFileSync(
+        join(repo, "skills", id, "SKILL.md"),
+        "ignored dirty content",
+      );
+    }
+  }
+  const args = (selection) =>
+    selection.flatMap(({ path, repo }) => [
+      "--manifest",
+      path,
+      "--source",
+      repo,
+    ]);
+  const cli = (...options) =>
+    spawnSync(process.execPath, ["scripts/intake-skill.mjs", ...options], {
+      cwd: fileURLToPath(new URL("..", import.meta.url)),
+      encoding: "utf8",
+    });
+  const inspected = cli(...args(inputs));
+  assert.equal(inspected.status, 0, inspected.stderr);
+  assert.equal(cli(...args([...inputs].reverse())).stdout, inspected.stdout);
+  const reviews = parseMetadataJson(inspected.stdout);
+  assert.equal(Object.keys(reviews).length, 3);
+  for (const review of Object.values(reviews)) {
+    assert.equal("reviewedBy" in review, false);
+    Object.assign(review, {
+      reviewedBy: "Test-only reviewer",
+      reviewedOn: "2026-09-12",
+    });
+  }
+  const reviewPath = join(directory, "reviews.json");
+  writeFileSync(reviewPath, metadataJsonBytes(reviews));
+  const build = (selection, output) =>
+    cli(...args(selection), "--reviews", reviewPath, "--output", output);
+  const output = join(directory, "bundle");
+  const result = build(inputs, output);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(JSON.parse(result.stdout).members, 3);
+  assert.equal(JSON.parse(result.stdout).signed, false);
+  const first = await readBundle(output);
+  assert.deepEqual(
+    first.root.skills.map((skill) => skill.id),
+    inputs.map((input) => input.manifest.id),
+  );
+  const reversedOutput = join(directory, "reversed");
+  assert.equal(build([...inputs].reverse(), reversedOutput).status, 0);
+  const second = await readBundle(reversedOutput);
+  assert.deepEqual(first.rootBytes, second.rootBytes);
+  assert.deepEqual(first.objects, second.objects);
+  assert.equal(build(inputs, output).status, 0, "unchanged retries succeed");
+
+  const rejectedOutput = join(directory, "rejected");
+  const rejectBuild = (selection, pattern) => {
+    const result = build(selection, rejectedOutput);
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, pattern);
+    assert.equal(result.stdout, "");
+    assert.equal(existsSync(rejectedOutput), false);
+    assert.deepEqual(
+      readFileSync(join(output, "marketplace.json")),
+      first.rootBytes,
+    );
+  };
+  for (const options of [
+    [],
+    ["--manifest", inputs[0].path],
+    [...args(inputs), "--source", inputs[0].repo],
+  ]) {
+    const result = cli(
+      ...options,
+      "--reviews",
+      reviewPath,
+      "--output",
+      rejectedOutput,
+    );
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /required|matching --source/);
+    assert.equal(existsSync(rejectedOutput), false);
+  }
+  rejectBuild([...inputs, inputs[0]], /duplicate current Skill ID/);
+  const anotherVersion = join(directory, "another-version.json");
+  writeFileSync(
+    anotherVersion,
+    metadataJsonBytes({ ...inputs[0].manifest, version: "2.0.0" }),
+  );
+  rejectBuild(
+    [...inputs, { ...inputs[0], path: anotherVersion }],
+    /duplicate current Skill ID/,
+  );
+  const wrongSource = inputs.map((input, index) =>
+    index === 2 ? { ...input, repo: inputs[0].repo } : input,
+  );
+  rejectBuild(wrongSource, /origin does not match/);
+  assert.equal(
+    cli(...args(wrongSource)).stdout,
+    "",
+    "inspection never emits partial review input",
+  );
+  const changed = structuredClone(reviews);
+  delete changed["gamma-skill@1.0.0"];
+  writeFileSync(reviewPath, metadataJsonBytes(changed));
+  rejectBuild(inputs, /missing maintainer review/);
+  changed["gamma-skill@1.0.0"] = {
+    ...reviews["gamma-skill@1.0.0"],
+    contentSha256: "0".repeat(64),
+  };
+  writeFileSync(reviewPath, metadataJsonBytes(changed));
+  rejectBuild(inputs, /reviewed package bytes changed/);
+  writeFileSync(inputs[2].path, JSON.stringify(inputs[2].manifest));
+  rejectBuild(inputs, /invalid release/);
 });
 const skillText =
   "---\nname: example-skill\ndescription: Example description\nlicense: MIT\nauthor: Test author\n---\nInstructions.\n";
