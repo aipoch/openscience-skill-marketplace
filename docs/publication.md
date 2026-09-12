@@ -82,7 +82,9 @@ after main advances, retries preserve the original draft target commit and verif
 each asset against the candidate bytes. A published release missing an expected
 asset fails rather than modifying released content. Failed Git promotion cleans
 up the temporary worktree and any local publication branch it created, allowing
-the same checkout to retry.
+the same checkout to retry. The published branch carries `* -text` Git attributes
+to preserve signed metadata bytes even when the checkout enables automatic
+line-ending conversion.
 
 Both transports receive the immutable snapshot pair before stable promotion.
 The stable root/signature pair is not atomic across objects or transports. Tests

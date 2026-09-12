@@ -140,6 +140,7 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
   try {
     await runCommand("git", ["init", "--bare", path.join(tmp, "remote.git")]);
     await git(["init", "-b", "main"]);
+    await git(["config", "core.autocrlf", "true"]);
     await writeFile(path.join(repo, "README.md"), "Fixture\n");
     await git(["add", "README.md"]);
     await git([

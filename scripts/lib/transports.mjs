@@ -287,6 +287,10 @@ export function githubStore({
         files.set("marketplace.json", rootBytes);
         files.set("marketplace.json.sig", signatureBytes);
         const metadataStore = await directoryStore(worktree);
+        await metadataStore.putImmutable(
+          ".gitattributes",
+          Buffer.from("* -text\n"),
+        );
         for (const [relative, bytes] of files) {
           if (
             relative.endsWith(".zip") ||
@@ -302,6 +306,7 @@ export function githubStore({
           "-C",
           worktree,
           "add",
+          ".gitattributes",
           "marketplace.json",
           "marketplace.json.sig",
           "releases",
