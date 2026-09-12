@@ -73,9 +73,35 @@ export function s3Store({
     throw new Error("invalid CloudFront distribution ID");
   if (!bucket || !/^[a-z0-9.-]+$/.test(bucket))
     throw new Error("invalid bucket");
-  const read = (relative, { maxBytes = 64 * 1024 * 1024 } = {}) => {
+  const read = async (relative, { maxBytes = 64 * 1024 * 1024 } = {}) => {
     assertPath(relative);
-    return fetchBytes(new URL(relative, base), { fetchImpl, maxBytes });
+    // Do not request unpublished CDN keys: a missing S3 object may produce a
+    // cached public 403. Only authenticated S3 absence permits an upload.
+    try {
+      await run("aws", [
+        "s3api",
+        "head-object",
+        "--bucket",
+        bucket,
+        "--key",
+        `${cdnPrefix}/${relative}`,
+      ]);
+    } catch (error) {
+      if (
+        /\(404\)|\(NotFound\)|\(NoSuchKey\)/.test(
+          String(error.stderr ?? error.message),
+        )
+      )
+        return undefined;
+      throw error;
+    }
+    const bytes = await fetchBytes(new URL(relative, base), {
+      fetchImpl,
+      maxBytes,
+    });
+    if (!bytes)
+      throw new Error(`S3 object is unavailable from CDN: ${relative}`);
+    return bytes;
   };
   async function upload(relative, bytes, immutable) {
     assertPath(relative);

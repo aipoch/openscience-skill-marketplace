@@ -179,3 +179,16 @@ Local tests and the dry-run cover protocol, packaging, history, transport comman
 and interruption recovery. The production workflow and subsequent
 `verify-published.yml` run provide live GitHub Release/S3/CDN validation; local
 simulation alone does not establish that a release is available.
+
+## Initial CDN object checks
+
+Publication checks each exact object key with authenticated S3 `HeadObject`
+before requesting its public CDN bytes. Only an explicit S3 not-found response
+means the object can be created; access-denied and other errors stop publication.
+This avoids requesting missing CDN keys, which can return and cache HTTP 403
+before the first upload. Existing objects must still be publicly retrievable
+and byte-identical; S3 existence never substitutes for CDN verification.
+
+The upload identity needs `s3:GetObject` and sufficient `s3:ListBucket` permission
+to distinguish missing objects from access denial, alongside the existing write
+and CloudFront invalidation permissions. See [AWS HeadObject behavior](https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html).
