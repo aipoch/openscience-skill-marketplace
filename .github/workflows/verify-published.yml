@@ -11,7 +11,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       SKILL_MARKETPLACE_PUBLIC_KEY: ${{ vars.SKILL_MARKETPLACE_PUBLIC_KEY }}
-      SKILL_MARKETPLACE_CDN_BASE_URL: ${{ vars.SKILL_MARKETPLACE_CDN_BASE_URL }}
+      SKILL_MARKETPLACE_CDN_BASE_URL: ${{ secrets.SKILL_MARKETPLACE_CDN_BASE_URL }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

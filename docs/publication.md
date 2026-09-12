@@ -33,18 +33,24 @@ A production run requires `publish: true`, the current main commit, and the prot
 `production` environment. Configure required reviewers and restrict that environment
 to main before enabling it. Production code checks these explicit values:
 
-| Configuration                                             | Location                                                                     |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `SKILL_MARKETPLACE_PUBLISH_ENABLED=true`                  | protected variable                                                           |
-| `SKILL_MARKETPLACE_PUBLIC_KEY` (SPKI DER base64)          | protected variable / independent App pin                                     |
-| `SKILL_MARKETPLACE_KEY_FINGERPRINT` (SHA-256 of SPKI DER) | protected variable                                                           |
-| `SKILL_MARKETPLACE_KEY_ID` (`openscience-skills-...`)     | protected variable                                                           |
-| `SKILL_MARKETPLACE_PRIVATE_KEY` (PKCS#8 DER base64)       | protected secret                                                             |
-| `SKILL_MARKETPLACE_CDN_BASE_URL`                          | protected variable, HTTPS origin only, for example `https://cdn.example.com` |
-| `SKILL_MARKETPLACE_CDN_DISTRIBUTION_ID`                   | protected secret, CloudFront distribution serving the Skill prefix           |
-| `SKILL_MARKETPLACE_BUCKET`                                | protected secret                                                             |
-| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`              | protected secrets                                                            |
-| `AWS_DEFAULT_REGION`                                      | protected variable                                                           |
+| Configuration                                             | Location                                                                   |
+| --------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `SKILL_MARKETPLACE_PUBLISH_ENABLED=true`                  | protected variable                                                         |
+| `SKILL_MARKETPLACE_PUBLIC_KEY` (SPKI DER base64)          | protected variable / independent App pin                                   |
+| `SKILL_MARKETPLACE_KEY_FINGERPRINT` (SHA-256 of SPKI DER) | protected variable                                                         |
+| `SKILL_MARKETPLACE_KEY_ID` (`openscience-skills-...`)     | protected variable                                                         |
+| `SKILL_MARKETPLACE_PRIVATE_KEY` (PKCS#8 DER base64)       | protected secret                                                           |
+| `SKILL_MARKETPLACE_CDN_BASE_URL`                          | protected secret, HTTPS origin only, for example `https://cdn.example.com` |
+| `SKILL_MARKETPLACE_CDN_DISTRIBUTION_ID`                   | protected secret, CloudFront distribution serving the Skill prefix         |
+| `SKILL_MARKETPLACE_BUCKET`                                | protected secret                                                           |
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`              | protected secrets                                                          |
+| `AWS_DEFAULT_REGION`                                      | protected variable                                                         |
+
+As in Specialist, the signing key ID, expected public key and fingerprint are
+Variables; the private key, bucket, CDN origin, distribution ID and AWS credentials
+are Secrets. Skill additionally uses the existing publish-enabled and AWS region
+Variables. Keep these settings in the `production` environment. The fixed route
+prefix is owned by the code and is not another Actions setting.
 
 Use least-privilege access restricted to the Skill Marketplace prefix. Keep these
 keys and paths separate from Specialist publication. The Ubuntu runner needs `gh`
