@@ -1,5 +1,5 @@
 import { assertPath, sha256 } from "./common.mjs";
-import { contentDigest } from "./package.mjs";
+import { contentDigest, inspectSkill } from "./package.mjs";
 import { evaluationToWire } from "./protocol.mjs";
 import { sourceUrl } from "./catalog.mjs";
 
@@ -72,6 +72,7 @@ export function prepareCandidates(audit, reviews, config, snapshot) {
     }));
     if (contentDigest(files) !== review.contentSha256)
       throw new Error(`reviewed package bytes changed: ${entry.id}`);
+    const bundledEvidence = new Set();
     const evidence = review.licenseFiles.map((file) => {
       assertPath(file.path);
       const evidenceFile = snapshot.files.find((f) => f.path === file.path);
@@ -84,8 +85,20 @@ export function prepareCandidates(audit, reviews, config, snapshot) {
       const bytes = snapshot.read([file.path]).get(file.path);
       if (sha256(bytes) !== file.sha256)
         throw new Error(`license evidence changed: ${file.path}`);
+      if (
+        !file.path.startsWith(entry.source.path + "/") &&
+        !bundledEvidence.has(file.sha256)
+      ) {
+        files.push({
+          path: `LICENSES/${file.sha256}.txt`,
+          mode: "100644",
+          bytes,
+        });
+        bundledEvidence.add(file.sha256);
+      }
       return { url: sourceUrl(entry.source, file.path), sha256: file.sha256 };
     });
+    inspectSkill({ id: entry.id, files });
     const evaluation = review.omitEvaluationReason?.trim()
       ? undefined
       : evaluationToWire(entry.evaluation);
