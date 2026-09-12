@@ -101,10 +101,16 @@ test("reviewed release preparation binds package bytes and license evidence with
   const { contentDigest } = await import("../scripts/lib/package.mjs");
   const { sha256 } = await import("../scripts/lib/common.mjs");
   const c = makeCandidate("alpha");
+  const reportBytes = Buffer.from('{"meta":{"skill_name":"different-id"}}');
+  c.files.push({
+    path: "eval_report_alpha.json",
+    mode: "100644",
+    bytes: reportBytes,
+  });
   const license = Buffer.from("Test-only MIT evidence");
   const sourcePath = c.skill.source.path;
   const input = new Map([
-    [sourcePath + "/SKILL.md", c.files[0].bytes],
+    ...c.files.map((file) => [sourcePath + "/" + file.path, file.bytes]),
     ["LICENSE", license],
   ]);
   const snapshot = {
@@ -152,11 +158,41 @@ test("reviewed release preparation binds package bytes and license evidence with
   );
   review.omitEvaluationReason =
     "Explicit test-only omission of unrecognized report";
-  assert.equal(
-    "evaluation" in
-      prepareCandidates(audit, reviews, config, snapshot)[0].skill,
-    false,
+  const omissionOnly = {
+    sourceCommit: review.sourceCommit,
+    contentSha256: review.contentSha256,
+    omitEvaluationReason: review.omitEvaluationReason,
+  };
+  for (const reviewedBy of [undefined, "", "  "]) {
+    assert.throws(
+      () =>
+        prepareCandidates(
+          audit,
+          { "alpha@1.0.0": { ...omissionOnly, reviewedBy } },
+          config,
+          snapshot,
+        ),
+      (error) => {
+        assert.deepEqual(
+          error.blockers.map((blocker) => blocker.code),
+          ["missing-review"],
+        );
+        return true;
+      },
+    );
+  }
+  const [omitted] = prepareCandidates(audit, reviews, config, snapshot);
+  assert.equal("evaluation" in omitted.skill, false);
+  assert.deepEqual(
+    omitted.files.find((file) => file.path === "eval_report_alpha.json").bytes,
+    reportBytes,
   );
+  input.set(sourcePath + "/eval_report_alpha.json", Buffer.from("changed"));
+  assert.throws(
+    () => prepareCandidates(audit, reviews, config, snapshot),
+    /package bytes changed/,
+  );
+  input.set(sourcePath + "/eval_report_alpha.json", reportBytes);
   audit.entries[0].issues.push({
     code: "invalid-yaml",
     detail: "invalid source",
@@ -166,6 +202,12 @@ test("reviewed release preparation binds package bytes and license evidence with
     /publication blocked/,
   );
   audit.entries[0].issues = [];
+  review.sourceCommit = "0".repeat(40);
+  assert.throws(
+    () => prepareCandidates(audit, reviews, config, snapshot),
+    /invalid reviewed evidence/,
+  );
+  review.sourceCommit = c.skill.source.commit;
   review.contentSha256 = "0".repeat(64);
   assert.throws(
     () => prepareCandidates(audit, reviews, config, snapshot),
