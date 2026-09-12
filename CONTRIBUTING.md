@@ -75,6 +75,11 @@ The protocol, source-readiness and publication responsibilities are documented i
 
 ## Content and publication
 
+Skill providers use the [authoring guide](authoring/README.md) and
+`release.config.json` to reference a fixed Git commit. Do not edit the historical
+584-member manifest to submit a new Skill. Provider intake produces review input
+and unsigned local builds; it does not enroll submissions in production.
+
 Keep authorship, publisher identity, upstream repository and exact commit/path,
 package version, and license evidence separate. Do not infer reviewed release
 metadata from demonstration fixtures or apply a repository license to all

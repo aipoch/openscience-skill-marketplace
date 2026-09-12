@@ -10,6 +10,8 @@ export function gitSnapshot(repository, commit) {
       maxBuffer: 600 * 1024 * 1024,
       ...options,
     });
+  if (git(["cat-file", "-t", commit]).toString().trim() !== "commit")
+    throw new Error("source must reference a Git commit object");
   const files = git(["ls-tree", "-rlz", commit])
     .toString()
     .split("\0")
