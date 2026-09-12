@@ -29,6 +29,7 @@ const required = [
   "SKILL_MARKETPLACE_PRIVATE_KEY",
   "SKILL_MARKETPLACE_BUCKET",
   "SKILL_MARKETPLACE_CDN_BASE_URL",
+  "SKILL_MARKETPLACE_CDN_DISTRIBUTION_ID",
 ];
 for (const key of required)
   if (!process.env[key])
@@ -87,7 +88,7 @@ try {
   const cdn = s3Store({
     bucket: process.env.SKILL_MARKETPLACE_BUCKET,
     baseUrl: process.env.SKILL_MARKETPLACE_CDN_BASE_URL,
-    prefix: "open-science/skill-marketplace/v1",
+    distributionId: process.env.SKILL_MARKETPLACE_CDN_DISTRIBUTION_ID,
     temporary: path.join(temporary, "cdn"),
   });
   const result = await publishSnapshot({
