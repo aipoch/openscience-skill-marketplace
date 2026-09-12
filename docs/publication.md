@@ -1,8 +1,8 @@
 # Batch publication and recovery
 
 Production has **not** been published or configured by this change. The current
-source blockers and missing redistribution reviews prevent a complete production
-build. The seventeen assessment-omission records in `skills/reviews.json` are not
+release plan explicitly defers 12 problematic members; its 572 selected candidates
+still require redistribution review before production build. The seventeen assessment-omission records in `skills/reviews.json` are not
 license approvals.
 The maintainer explicitly deferred publication. Do not bypass these gates.
 
@@ -28,7 +28,8 @@ historical objects. The complete snapshot fails if the limit is exceeded.
 
 `publish.yml` is manually dispatched and defaults to rehearsal only. Its reusable
 `publication-check.yml` runs the real publication/reconciliation code against local
-stores and transport-boundary tests, with no secrets or external writes. A normal
+stores, release-selection guards and transport-boundary tests, with no secrets
+or external writes. A normal
 PR also exercises that code through `npm test` and `npm run publish:dry-run`.
 
 A production run requires `publish: true`, the current main commit, and the protected
@@ -74,8 +75,10 @@ The production workflow:
 
 1. Runs tooling checks; reads the fixed upstream Git commit and verifies audit equality.
 2. Downloads and verifies the previous signed root and every object in its release index.
-3. Builds all 584 members after source, license-review and resource gates pass.
-4. Signs exact root bytes; verifies the separately configured public key and fingerprint.
+3. Validates the release plan against the complete 584-member authority, then builds
+   every selected member after source, license-review and resource gates pass.
+4. Requires current listings to match exactly the selected IDs, versions and source
+   paths, then signs exact root bytes and verifies the configured key and fingerprint.
 5. Creates/reuses one draft catalog release and uploads missing assets without clobbering.
 6. Uses conditional S3 writes for immutable objects, reads public CDN and GitHub bytes,
    and verifies equality before moving either stable root.
@@ -159,9 +162,11 @@ There is no App database, settings, cache, installation-source document or migra
 in this repository. Category and evidence-kind values are metadata only;
 publication steps are not client installation states. No UI changes require screenshots.
 
-The complete catalog is blocked by four syntax errors, one missing description,
-five missing license declarations, the PPI resource limits, and all pending
-reviewed redistribution records. The seventeen invalid assessments are explicitly
+The release plan explicitly defers four syntax errors, one missing description,
+five missing license declarations, the PPI resource limits and the PPTX license
+conflict. The 572 selected candidates remain blocked by pending redistribution
+reviews. See [release selection](../skills/README.md#release-selection) for the
+complete-partition rules and how to include corrected members later. The seventeen invalid assessments are explicitly
 omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate
 approval. No production URL, key pin or immutable published test URL is claimed.
 

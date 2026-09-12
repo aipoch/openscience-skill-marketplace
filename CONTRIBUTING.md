@@ -82,6 +82,10 @@ Former camelCase JSON fields are rejected with no compatibility aliases. Keep
 standard `package.json`/JSON Schema keywords, upstream payloads and authenticated
 protocol bytes in their own formats. File names are unchanged.
 
+Use `skills/release_plan.json` to select a publication batch and record explicit
+deferrals while preserving every authoritative manifest member. Selection does not
+waive source, package or license review gates; see [release selection](skills/README.md#release-selection).
+
 Skill providers use the [authoring guide](authoring/README.md) and
 `release.config.json` to reference a fixed Git commit. Do not edit the historical
 584-member manifest to submit a new Skill. Provider intake produces review input

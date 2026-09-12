@@ -4,6 +4,10 @@ import { mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { buildCatalog } from "./lib/build.mjs";
+import {
+  selectReleaseEntries,
+  assertReleaseSelection,
+} from "./lib/release-plan.mjs";
 import { signRoot } from "./lib/signing.mjs";
 import { directoryStore, publishSnapshot } from "./lib/publish.mjs";
 import { makeCandidate } from "../test/fixtures.mjs";
@@ -11,10 +15,33 @@ const directory = await mkdtemp(
   path.join(os.tmpdir(), "openscience-skill-dry-run-"),
 );
 try {
-  const candidate = buildCatalog([
-    makeCandidate("example-one"),
-    makeCandidate("example-two"),
-  ]);
+  const inputs = ["example-one", "example-two", "deferred-example"].map((id) =>
+    makeCandidate(id),
+  );
+  const entries = inputs.map(({ skill }) => ({
+    id: skill.id,
+    version: skill.version,
+    sourcePath: skill.source.path,
+  }));
+  const { repository, commit } = inputs[0].skill.source;
+  const source = { repository, commit };
+  const identity = ({ id, version }) => ({ id, version });
+  const selected = selectReleaseEntries(
+    metadataJsonBytes({
+      schemaVersion: 1,
+      source,
+      selected: entries.slice(0, 2).map(identity),
+      deferred: [
+        { ...identity(entries[2]), reason: "Test-only explicit deferral" },
+      ],
+    }),
+    entries,
+    source,
+  );
+  const candidate = buildCatalog(
+    inputs.filter((c) => selected.some((e) => e.id === c.skill.id)),
+  );
+  assertReleaseSelection(candidate.root, selected, source);
   const { privateKey, publicKey } = generateKeyPairSync("ed25519");
   const pin = publicKey
     .export({ type: "spki", format: "der" })

@@ -80,6 +80,7 @@ test("all committed metadata uses snake_case and round-trips without field or va
     "skills/manifest.json",
     "skills/source-audit.json",
     "skills/reviews.json",
+    "skills/release_plan.json",
     "protocol/fixtures/provenance.json",
     "authoring/example/release.config.json",
   ];

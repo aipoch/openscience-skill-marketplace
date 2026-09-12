@@ -17,5 +17,5 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: node --test test/publish.test.mjs test/transports.test.mjs
+      - run: node --test test/release-plan.test.mjs test/publish.test.mjs test/transports.test.mjs
       - run: npm run publish:dry-run

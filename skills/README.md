@@ -37,13 +37,48 @@ sandbox or disabled states.
   84,569,998 and 72,718,210 bytes. They exceed the App's 128 MiB Skill and 50 MiB
   file limits. The Skill depends on these offline assets; they are not removed.
 
-All members stay in the manifest. Neither the build nor publication silently
-skips a blocked member, substitutes a license, repairs YAML, or truncates data.
+All members stay in the manifest and raw source audit. The release plan below
+explicitly controls which members enter the current publication. Every selected
+member must pass all gates; failures are never silently skipped. The builder does
+not substitute a license, repair YAML, or truncate data.
 Upstream content fixes and any PPI packaging redesign require separate approval.
 
 Each manifest entry starts at the approved `1.0.0` package version. A later change
 can bump that entry's version without bumping the entire catalog. The fixed source
 baseline is deliberate; changing it requires re-auditing provenance and reviews.
+
+## Release selection
+
+[release_plan.json](release_plan.json), validated by
+[release_plan.schema.json](release_plan.schema.json), partitions all manifest
+members into `selected` and `deferred` entries at the configured source repository
+and commit. Every entry identifies an exact `id` and package `version`; each
+deferred entry also requires a nonblank `reason`. The first batch selects 572
+candidates and defers the 11 members with remaining source errors plus `pptx-skill`,
+whose packaged LICENSE.txt conflicts with its MIT frontmatter declaration.
+Selection is not a redistribution approval.
+
+To defer another member, move its exact ID/version from `selected` to `deferred`
+and record the reason. To include a corrected member later, update the reviewed
+source baseline and evidence as needed, then move it back to `selected`. Keep
+all other members accounted for. Unknown or stale versions, source mismatch,
+duplicates, overlaps, missing decisions, empty selections and unsupported fields
+fail validation. Run `npm run validate` after editing the plan.
+
+The complete source audit remains reproducible, including findings for deferred
+members. Build and publication use the same selection validator. Before signing,
+the current listings must match the selected IDs, versions and source paths
+exactly. A selected member's missing review or source error still blocks the
+whole batch. No license or runtime approval is inferred from a deferral reason.
+
+Only selected members appear in current Marketplace discovery. If a later plan
+defers a previously published member, its immutable release descriptors and
+shards remain in the signed history index; this does not uninstall or change the
+state of an installed Skill. For initial deferrals, no descriptor is generated.
+
+This file is repository publication configuration, not an App model or new public
+protocol field. No App state enum, database field or historical-data migration is
+added. Public signatures and digests still cover their original bytes.
 
 ## Review records
 

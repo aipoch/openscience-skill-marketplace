@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: Publish a reviewed complete catalog through the protected production environment
+        description: Publish the explicitly selected reviewed catalog through the protected production environment
         type: boolean
         required: true
         default: false
@@ -57,7 +57,7 @@ jobs:
           persist-credentials: false
       - run: npm run audit:sources -- --source dist/upstream --check
       - run: node scripts/download-history.mjs
-      - name: Build every reviewed member
+      - name: Build every selected reviewed member
         shell: bash
         run: |
           set -euo pipefail

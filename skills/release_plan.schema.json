@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aipoch.github.io/openscience-skill-marketplace/skills/release_plan.schema.json",
+  "title": "Explicit catalog release selection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source", "selected", "deferred"],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit"],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "maxLength": 4096,
+          "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        }
+      }
+    },
+    "selected": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 584,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version"],
+        "properties": {
+          "id": {
+            "$ref": "../protocol/common.schema.json#/$defs/id"
+          },
+          "version": {
+            "$ref": "../protocol/common.schema.json#/$defs/skill/properties/version"
+          }
+        }
+      }
+    },
+    "deferred": {
+      "type": "array",
+      "maxItems": 584,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version", "reason"],
+        "properties": {
+          "id": {
+            "$ref": "../protocol/common.schema.json#/$defs/id"
+          },
+          "version": {
+            "$ref": "../protocol/common.schema.json#/$defs/skill/properties/version"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  }
+}

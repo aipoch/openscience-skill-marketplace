@@ -1,4 +1,9 @@
 import { parseMetadataJson, metadataJsonBytes } from "./lib/metadata-json.mjs";
+import {
+  selectReleaseEntries,
+  assertReleaseSelection,
+} from "./lib/release-plan.mjs";
+import { validateManifest } from "./lib/catalog.mjs";
 import { parseArgs } from "node:util";
 import { readFile, mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
@@ -51,13 +56,14 @@ if (
   throw new Error("public-key fingerprint mismatch");
 const candidate = await readBundle(values.candidate);
 const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
-if (
-  candidate.root.skills.length !== 584 ||
-  candidate.root.skills.some(
-    (s) => !manifest.entries.some((e) => e.id === s.id),
-  )
-)
-  throw new Error("production snapshot must contain all 584 approved members");
+validateManifest(manifest, await readFile("skills/inclusion-list.md"));
+const config = parseMetadataJson(await readFile("marketplace.config.json"));
+const selected = selectReleaseEntries(
+  await readFile("skills/release_plan.json"),
+  manifest.entries,
+  config.source,
+);
+assertReleaseSelection(candidate.root, selected, config.source);
 if (candidate.objects.size + 2 > 1000)
   throw new Error(
     "snapshot exceeds the current 1000-asset publication tool limit",
