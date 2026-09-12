@@ -35,6 +35,9 @@ for (const name of [
   );
   ajv.addSchema(schema);
   if (name !== "common") validators[name] = ajv.getSchema(schema.$id);
+  else
+    for (const kind of ["skill", "listing"])
+      validators[kind] = ajv.getSchema(`${schema.$id}#/$defs/${kind}`);
 }
 function immutableUrl(value) {
   const url = assertHttps(value);
@@ -54,7 +57,9 @@ export function validateDocument(kind, value) {
       ? value.skills
       : kind === "skill-release"
         ? [value.skill]
-        : [];
+        : ["skill", "listing"].includes(kind)
+          ? [value]
+          : [];
   const seen = new Set();
   for (const skill of skills) {
     assertSource(skill.source);
@@ -81,7 +86,7 @@ export function validateDocument(kind, value) {
           throw new Error("evaluation score exceeds maximum");
     }
     if (
-      kind === "marketplace" &&
+      ["marketplace", "listing"].includes(kind) &&
       skill.release.path !== `releases/${skill.id}/${skill.version}.json`
     )
       throw new Error("release path identity mismatch");
@@ -91,7 +96,9 @@ export function validateDocument(kind, value) {
       ? value.skills.map((s) => [s.artifact, s.id])
       : kind === "skill-release"
         ? [[value.artifact, value.skill.id]]
-        : [];
+        : kind === "listing"
+          ? [[value.artifact, value.id]]
+          : [];
   for (const [artifact, id] of artifacts)
     if (
       artifact.path !== `shards/${artifact.sha256}.zip` ||
@@ -127,14 +134,18 @@ export function evaluationToWire(value) {
 }
 
 export function toAppEntry(listing) {
+  // A validated catalog listing or release descriptor's skill object. This
+  // projection is for Marketplace browsing, never for installed SkillView.
+  // Call only after authenticating the containing document's original bytes.
+  validateDocument(
+    typeof listing?.license === "string" ? "listing" : "skill",
+    listing,
+  );
   const result = {
     id: listing.id,
     displayName: listing.display_name,
     summary: listing.summary,
-    category: listing.category
-      .split("-")
-      .map((s) => s[0].toUpperCase() + s.slice(1))
-      .join(" "),
+    category: listing.category,
     version: listing.version,
     publisher: { name: listing.publisher.name, url: listing.publisher.url },
     source: {

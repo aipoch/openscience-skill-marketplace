@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "example-skill",
+  "version": "1.0.0",
+  "category": "Data Analysis",
+  "display_name": "Example Skill",
+  "source": {
+    "repository": "https://github.com/your-organization/your-skills",
+    "commit": "0000000000000000000000000000000000000000",
+    "path": "skills/example-skill"
+  },
+  "license_files": ["LICENSE"]
+}

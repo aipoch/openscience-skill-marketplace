@@ -7,6 +7,9 @@ fields are rejected, so later additions need an explicit version/gating decision
 
 JSON uses UTF-8, two-space indentation and a final LF. Digests and Ed25519
 signatures authenticate exact bytes, never reserialized equivalents.
+External custom field names use `snake_case`; internal JavaScript models use
+`camelCase` after explicit boundary mapping. Standard JSON Schema/package keys,
+upstream source files and existing filenames keep their original formats.
 
 ## Discovery, details and retained history
 
@@ -115,13 +118,23 @@ They are not part of active manifests, published metadata or the App field mappi
 
 ## App field mapping
 
-`toAppEntry` in `scripts/lib/protocol.mjs` provides the reviewed wire-to-display
-mapping without modifying the App repository.
+`toAppEntry` in `scripts/lib/protocol.mjs` projects a catalog listing or a release
+descriptor's `skill` object into Open Science's `SkillMarketplaceEntry`, aligned
+with `skill-marketplace-model.ts` at App commit `9b37d9c57`. It validates the strict
+wire shape before projecting it. Callers must authenticate the original catalog
+and descriptor bytes **before** calling this mapper. Schema validation and field
+mapping do not establish authenticity.
+
+`category` is exactly one of `Academic Writing`, `Data Analysis`,
+`Evidence Insight`, `Protocol Design`, or `Other` in both wire and App models.
+The mapper copies the value unchanged. App i18n supplies translated display text;
+field naming conventions do not transform category values. Slugs are rejected.
 
 | Wire                                            | Existing App model                             |
 | ----------------------------------------------- | ---------------------------------------------- |
 | `display_name`                                  | `displayName`                                  |
-| category slug                                   | existing English category label                |
+| `category`                                      | identical category value                       |
+| `summary` / `authors[]`                         | `summary` / `authors[]`, retaining author URLs |
 | `version`                                       | Marketplace package `version`                  |
 | `publisher`                                     | accountable publisher; separate from `authors` |
 | `source.repository/commit/path`                 | original content provenance                    |
@@ -130,8 +143,50 @@ mapping without modifying the App repository.
 | `evaluated_on/evaluator_version/skill_version`  | `evaluatedOn/evaluatorVersion/skillVersion`    |
 | `static_score/dynamic_score`                    | `staticScore/dynamicScore`                     |
 
+The browsing projection is **not** an installed `SkillView`. Its `source` remains
+`{ repository, commit, path }`; the installed model's `source` is the separate
+`featured` / `imported` / `personal` enum. This mapper does not write that enum or
+map `authors[]`/`summary` over installed `author`/`description`. Installed content
+continues to use its own `SKILL.md` and installation workflow. Never rewrite
+upstream `SKILL.md` to accommodate a JSON representation.
+
+Author names/URLs, publisher identity/URL and upstream provenance remain distinct.
+Release references, artifact locations, full publisher identity and license
+evidence stay in the authenticated catalog/descriptor; the App's smaller browsing
+view projects the license expression as a string. Distribution URLs are not
+substitutes for upstream repository URLs. Marketplace package version, any declared
+upstream version, evaluator version and assessed Skill version remain independent;
+none is inferred from another. Missing authors stay absent. Real metadata still
+requires an exact source path, summary and license evidence despite the mock
+model's more permissive optional properties.
+
 `evaluation.kind` is always `upstream-self-assessment`. The source report's
 `final.score/final.max` are preserved exactly; optional subtotals do not replace the
 final score. Report URLs must match the selected Skill's exact source commit/path.
 No assessed Skill version is inferred from the package carrying a report. No score
 leaderboard or App endorsement is introduced.
+When no evaluation exists, omit the entire object; never substitute a zero score.
+An upstream self-assessment is not an independent safety certification. Historical
+inclusion tiers are not interface requirements, installation eligibility, sandbox
+policy or disabled states.
+
+## Unpublished format alignment
+
+The 2026-09-12 check found no GitHub Releases, tags or `published` branch in this
+repository. The inspected App commit has mock-only Marketplace browsing, with no
+real Marketplace installation provenance or cache to migrate. Earlier camelCase
+JSON fields and category slugs are therefore replaced directly in development
+schemas, tooling and fixtures. They are rejected, including mixed formats; there
+are no aliases or compatibility readers. Regenerate local authoring/review data
+and build fresh candidate directories. The development fixture snapshot is rebuilt
+with new descriptor/index/root hashes; upstream payload and shard bytes stay intact.
+No production immutable release is overwritten. Any future published contract
+change needs its own consumer/version decision before implementation.
+
+Authentication continues to check signatures and referenced object digests over
+the original byte buffers. The root's deterministic `revision` (defined above as
+the publisher-serialized body hash) is a catalog identifier, not a replacement for
+whole-document signature verification. Do not normalize JSON or apply the App
+projection before authentication. `test/app-contract.test.mjs` exercises this
+ordering, real-source listing/detail projections, the five category values and
+strict rejection of old formats and installed-Skill source values.

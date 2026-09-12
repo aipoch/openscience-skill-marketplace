@@ -1,3 +1,4 @@
+import { metadataJsonBytes } from "./lib/metadata-json.mjs";
 import { generateKeyPairSync } from "node:crypto";
 import { mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
@@ -25,13 +26,13 @@ try {
   });
   const github = await directoryStore(path.join(directory, "github")),
     cdn = await directoryStore(path.join(directory, "cdn"));
-  console.log(
-    JSON.stringify(
+  process.stdout.write(
+    metadataJsonBytes(
       await publishSnapshot({ candidate, signature, pin, github, cdn }),
     ),
   );
-  console.log(
-    JSON.stringify(
+  process.stdout.write(
+    metadataJsonBytes(
       await publishSnapshot({ candidate, signature, pin, github, cdn }),
     ),
   );

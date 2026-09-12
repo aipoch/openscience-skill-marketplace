@@ -93,7 +93,7 @@ export function prepareCandidates(audit, reviews, config, snapshot) {
       skill: {
         id: entry.id,
         version: entry.version ?? config.initialVersion,
-        display_name: entry.id,
+        display_name: entry.displayName ?? entry.id,
         summary: entry.description,
         category: entry.category,
         source: entry.source,

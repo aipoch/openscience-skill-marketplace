@@ -1,9 +1,9 @@
 export const categories = [
-  "academic-writing",
-  "data-analysis",
-  "evidence-insight",
-  "other",
-  "protocol-design",
+  "Academic Writing",
+  "Data Analysis",
+  "Evidence Insight",
+  "Protocol Design",
+  "Other",
 ];
 
 export function parseInclusionList(markdown) {
@@ -12,7 +12,7 @@ export function parseInclusionList(markdown) {
   let category;
   for (const line of markdown.split(/\r?\n/)) {
     const heading = line.match(/^### (.+)（\d+）$/);
-    if (heading) category = heading[1].toLowerCase().replaceAll(" ", "-");
+    if (heading) category = heading[1];
     const row = line.match(
       /^- `([^`]+)` — [^—]+ — (scientific-skills|awesome-med-research-skills)$/,
     );

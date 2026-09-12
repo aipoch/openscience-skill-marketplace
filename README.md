@@ -37,6 +37,7 @@ writes `dist/candidate/publication-blockers.json`; this is the intended gate.
 
 ## Repository map
 
+- [Provider authoring guide](authoring/README.md): `release.config.json`, fixed Git source intake and reviewed local builds.
 - [skills/](skills/README.md): exact membership, source mapping, audit and review policy.
 - [protocol/](protocol/README.md): independent Skill Protocol v1 draft and App mapping.
 - [protocol/fixtures/](protocol/fixtures/README.md): scored and unscored real-source examples.

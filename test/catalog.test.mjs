@@ -1,3 +1,4 @@
+import { parseMetadataJson } from "../scripts/lib/metadata-json.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -19,11 +20,11 @@ test("the approved list contains exactly 584 unique members with the approved ca
         .map((v) => [v, entries.filter((x) => x[field] === v).length]),
     );
   assert.deepEqual(counts("category"), {
-    "academic-writing": 123,
-    "data-analysis": 153,
-    "evidence-insight": 141,
-    other: 95,
-    "protocol-design": 72,
+    "Academic Writing": 123,
+    "Data Analysis": 153,
+    "Evidence Insight": 141,
+    Other: 95,
+    "Protocol Design": 72,
   });
   assert.ok(entries.every((entry) => !("inclusionTier" in entry)));
   assert.throws(
@@ -101,7 +102,7 @@ test("manifest paths must map the exact authority and cannot omit members or sub
   const authority = await readFile(
     new URL("../skills/inclusion-list.md", import.meta.url),
   );
-  const manifest = JSON.parse(
+  const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
   validateManifest(manifest, authority);

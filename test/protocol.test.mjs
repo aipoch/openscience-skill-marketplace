@@ -9,7 +9,7 @@ test("independent Skill schema accepts optional evaluation and rejects unknown f
     version: "1.0.0",
     display_name: "Example",
     summary: "Example Skill",
-    category: "other",
+    category: "Other",
     source: {
       repository: "https://github.com/test/source",
       commit: "a".repeat(40),

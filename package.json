@@ -14,7 +14,8 @@
     "build:catalog": "node scripts/build-catalog.mjs",
     "validate": "node scripts/validate.mjs",
     "publish:dry-run": "node scripts/publish-dry-run.mjs",
-    "review:input": "node scripts/review-input.mjs"
+    "review:input": "node scripts/review-input.mjs",
+    "intake:skill": "node scripts/intake-skill.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",

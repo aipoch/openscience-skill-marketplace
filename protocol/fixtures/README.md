@@ -22,3 +22,14 @@ rejects them; the production builder uses the manifest and reviewed source input
 not this fixture directory. Tests never execute their scripts. Signing tests and
 dry-runs generate ephemeral keys; no private key is committed. There is no published
 immutable test URL yet.
+
+The category alignment rebuilds this unpublished development snapshot with the
+App's literal category values. Its root, index and descriptor hashes change; Skill
+payloads and shard bytes do not. When updating a development contract, move the old
+local `snapshot/` aside and generate into a fresh directory. Do not feed obsolete
+fixtures into the history path or overwrite an actual published immutable release.
+
+`test/app-contract.test.mjs` projects both real listings and their release details.
+Explicitly synthetic builder cases cover all five App categories, missing authors,
+optional assessments and independent version fields without changing these real
+sources or claiming additional redistribution approvals.

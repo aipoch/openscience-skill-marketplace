@@ -5,7 +5,7 @@ export function makeCandidate(id = "example") {
       version: "1.0.0",
       display_name: id,
       summary: "Test-only fixture",
-      category: "other",
+      category: "Other",
       publisher: {
         id: "fixture",
         name: "Test fixture",

@@ -254,11 +254,11 @@
         },
         "category": {
           "enum": [
-            "academic-writing",
-            "data-analysis",
-            "evidence-insight",
-            "other",
-            "protocol-design"
+            "Academic Writing",
+            "Data Analysis",
+            "Evidence Insight",
+            "Protocol Design",
+            "Other"
           ]
         },
         "source": {
@@ -315,11 +315,11 @@
         },
         "category": {
           "enum": [
-            "academic-writing",
-            "data-analysis",
-            "evidence-insight",
-            "other",
-            "protocol-design"
+            "Academic Writing",
+            "Data Analysis",
+            "Evidence Insight",
+            "Protocol Design",
+            "Other"
           ]
         },
         "source": {

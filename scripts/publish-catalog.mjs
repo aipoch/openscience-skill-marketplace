@@ -1,3 +1,4 @@
+import { parseMetadataJson, metadataJsonBytes } from "./lib/metadata-json.mjs";
 import { parseArgs } from "node:util";
 import { readFile, mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
@@ -48,7 +49,7 @@ if (
 )
   throw new Error("public-key fingerprint mismatch");
 const candidate = await readBundle(values.candidate);
-const manifest = JSON.parse(await readFile("skills/manifest.json"));
+const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
 if (
   candidate.root.skills.length !== 584 ||
   candidate.root.skills.some(
@@ -70,7 +71,7 @@ const signature = signRoot(candidate.rootBytes, {
   expectedPublicKey: pin,
   keyId: process.env.SKILL_MARKETPLACE_KEY_ID,
 });
-const context = JSON.parse(
+const context = parseMetadataJson(
   await readFile(path.join(values.candidate, "build-context.json")),
 );
 const temporary = await mkdtemp(path.join(os.tmpdir(), "skill-production-"));
@@ -97,7 +98,7 @@ try {
     cdn,
     baseRevision: context.baseRevision,
   });
-  console.log(JSON.stringify(result));
+  process.stdout.write(metadataJsonBytes(result));
 } finally {
   await rm(temporary, { recursive: true, force: true });
 }
