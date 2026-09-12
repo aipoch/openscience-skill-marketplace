@@ -118,6 +118,20 @@ retention of required notices. Evidence must be bounded regular files from the
 same pinned source commit; the builder checks their hashes. A repository-root
 license is evidence to review, not automatic permission for third-party content.
 
+The builder includes verified evidence outside the Skill source directory as
+`LICENSES/<sha256>.txt`, preserving its original bytes. Evidence already inside
+the Skill stays at its original path; identical external evidence is bundled
+once. Generated paths must not collide with source files. Added notices count
+toward all package limits and are covered by the final package and shard hashes.
+The evidence URL and SHA-256 identify the original source and copied notice.
+
+Review `content_sha256` binds the original source-directory files, while
+`license_files` binds each additional evidence input. The release descriptor's
+`package.content_sha256`, `file_count` and `uncompressed_bytes` describe the
+complete distributed package, including added notices. No source files are
+rewritten. Regenerate unpublished development artifacts after this packaging
+change; existing immutable releases cannot be overwritten.
+
 The ordinary license policy accepts MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause,
 ISC and CC0-1.0 only after review. Other terms require a nonempty reviewed
 `exception_reason`, retained in the descriptor. A changed package digest invalidates

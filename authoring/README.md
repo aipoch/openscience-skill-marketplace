@@ -97,6 +97,14 @@ or approval date.
 Review the source, attribution, license scope, bundled notices and exact package
 bytes. Copy the generated JSON map to a local review file and add `reviewed_by`
 and `reviewed_on` (`YYYY-MM-DD`) to the version's record only after that review.
+The build retains reviewed external license evidence under
+`LICENSES/<sha256>.txt`; evidence inside the Skill remains at its original path.
+Review-input hashes and metrics describe the source directory. Published package
+hashes and metrics also include added license files. See
+[license packaging](../skills/README.md#review-records) for collision, size and
+notice-retention rules. Preserve the complete required notices when selecting
+evidence; copying an unrelated license does not approve third-party content.
+
 An unsupported license additionally requires `exception_reason` under the existing
 [review policy](../skills/README.md). Existing default reviewed expressions are
 MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC and CC0-1.0.
