@@ -32,7 +32,7 @@ const manifest = () => ({
   schemaVersion: 1,
   id: "example-skill",
   version: "1.0.0",
-  category: "other",
+  category: "Other",
   displayName: "Example Skill",
   source: {
     repository: "https://github.com/test/skills",
@@ -95,6 +95,7 @@ test("provider manifest is strict, uses existing categories/SemVer and excludes 
     { version: "1.0" },
     { version: "1.0.0-01" },
     { category: "new-category" },
+    { category: "data-analysis" },
     { displayName: "  " },
     { licenseFiles: [] },
     { licenseFiles: ["../LICENSE"] },
@@ -169,7 +170,7 @@ test("review binds authoring metadata, source identity, package bytes and licens
     snapshot = fixture(),
     reviews = reviewed(m, snapshot);
   for (const change of [
-    { category: "data-analysis" },
+    { category: "Data Analysis" },
     { displayName: "Changed" },
     { version: "2.0.0" },
   ])

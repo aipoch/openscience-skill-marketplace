@@ -15,7 +15,7 @@ The [strict schema](release.config.schema.json) rejects unknown fields.
 | `schema_version`    | Yes      | `1`, the provider input format version.                                                                                                                    |
 | `id`                | Yes      | Lowercase kebab-case, at most 128 characters; must equal `SKILL.md` frontmatter `name`.                                                                    |
 | `version`           | Yes      | Marketplace package SemVer, for example `1.0.0`; independent of upstream tags and immutable once published.                                                |
-| `category`          | Yes      | `academic-writing`, `data-analysis`, `evidence-insight`, `other`, or `protocol-design`. Used for catalog display and filtering.                            |
+| `category`          | Yes      | `Academic Writing`, `Data Analysis`, `Evidence Insight`, `Other`, or `Protocol Design`. Used for catalog display and filtering.                            |
 | `display_name`      | No       | Human-readable title, at most 500 characters; defaults to `id`.                                                                                            |
 | `source.repository` | Yes      | HTTPS GitHub repository URL, for example `https://github.com/organization/skills`.                                                                         |
 | `source.commit`     | Yes      | Full lowercase 40-character commit SHA; branches and tags are rejected.                                                                                    |
@@ -23,6 +23,9 @@ The [strict schema](release.config.schema.json) rejects unknown fields.
 | `license_files`     | Yes      | 1–20 distinct repository-relative paths to actual license evidence in that commit, possibly outside the Skill directory. The tool calculates their hashes. |
 
 Paths use `/`, without a leading slash, `..`, backslashes or non-portable names.
+Category values match the App model exactly; no slug conversion or translation
+occurs during intake. For example, `Data Analysis` is valid and its former slug
+is rejected. Display localization belongs to the App.
 The Skill must occupy a subdirectory; repository-root Skills are not supported by
 the existing source-path contract. Each evidence file must be a nonempty regular
 file of at most 4 MiB.
@@ -138,6 +141,7 @@ does not configure an origin/distribution, and does not change publication routi
 Repository-owned JSON fields use `snake_case`, including earlier Marketplace
 configuration, manifests, audits, reviews and build context. Former camelCase
 fields are rejected; there is no compatibility reader or migration adapter.
+Former category slugs are also rejected; use the five exact category values above.
 Regenerate local review input and rebuild local candidates using the current
 format. Manifest hashes bind the snake_case serialization. JavaScript models
 remain camelCase after boundary conversion, and filenames are unchanged.

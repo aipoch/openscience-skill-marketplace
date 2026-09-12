@@ -6,7 +6,7 @@
     "version": "1.0.0",
     "display_name": "pdf-to-ppt-pack",
     "summary": "Convert research paper PDFs into literature-report PPTX decks using a fully offline workflow (extract text/figures, map captions, summarize findings, and generate slides). Use when you need to turn a PDF into a presentation deck, especially for scientific articles with figures and tables.",
-    "category": "other",
+    "category": "Other",
     "source": {
       "repository": "https://github.com/aipoch/medical-research-skills",
       "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",

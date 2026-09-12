@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "example-skill",
   "version": "1.0.0",
-  "category": "data-analysis",
+  "category": "Data Analysis",
   "display_name": "Example Skill",
   "source": {
     "repository": "https://github.com/your-organization/your-skills",

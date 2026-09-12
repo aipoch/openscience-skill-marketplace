@@ -10,6 +10,12 @@ It records descriptions, declared licenses, available author credits, optional
 upstream assessments, file counts, sizes, and blockers from the fixed commit.
 The source ZIP and mutable upstream main are not membership or content inputs.
 
+Categories preserve the authoritative heading values verbatim: `Academic Writing`,
+`Data Analysis`, `Evidence Insight`, `Protocol Design`, and `Other`. These are the
+App's category values, not slugs; display translation belongs to the App. The raw
+list's historical inclusion tiers do not produce Marketplace fields or installation,
+sandbox or disabled states.
+
 ## Current evidence
 
 - 584 unique members: 443 scientific-skills and 141 awesome-med-research-skills.

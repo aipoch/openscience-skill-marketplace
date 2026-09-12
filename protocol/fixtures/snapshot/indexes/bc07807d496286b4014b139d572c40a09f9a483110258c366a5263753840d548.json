@@ -3,11 +3,11 @@
   "releases": [
     {
       "path": "releases/pdf-to-ppt-pack/1.0.0.json",
-      "sha256": "2c32ab86417169f60e68b8bc19148f86d898565aefc1945826806f132120cfa5"
+      "sha256": "2fc33a4a0473f6f3a0201a47f62554aec73d06ef83c0e70cf45873a5d35e53c1"
     },
     {
       "path": "releases/primary-plan-recommender/1.0.0.json",
-      "sha256": "b6e261b170c331b949e210be73684f38d2450653608dd5b83f75d5cc5b87524b"
+      "sha256": "114bf97e556dac9cfb3854cda910981ccc2361cb70417bc390e0396d0c771ab2"
     }
   ]
 }
