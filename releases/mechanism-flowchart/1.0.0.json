@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "mechanism-flowchart",
+    "version": "1.0.0",
+    "display_name": "mechanism-flowchart",
+    "summary": "Generates Mermaid flowchart code and visual diagrams for pathophysiological.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/mechanism-flowchart"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/mechanism-flowchart/mechanism-flowchart_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 89.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "918be95b39258c7e8b724e995896ee73512e92a7414ef2da6e670390036e3de8",
+    "file_count": 6,
+    "uncompressed_bytes": 33201
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "mechanism-flowchart"
+  }
+}

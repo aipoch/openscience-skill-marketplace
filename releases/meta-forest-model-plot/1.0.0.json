@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-forest-model-plot",
+    "version": "1.0.0",
+    "display_name": "meta-forest-model-plot",
+    "summary": "Generate forest plots for meta-analysis of survival data. Input is a CSV file containing study names, HR and 95% confidence intervals, output forest plot PNG and data table CSV. Supports both R and Python scripts.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/meta-forest-model-plot"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/meta-forest-model-plot/meta-forest-model-plot_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 83,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 93.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c7e552b6d583efe2ec560f53e84c7e87b8ae80ac764650e876685bb219b66db1",
+    "file_count": 6,
+    "uncompressed_bytes": 38274
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "meta-forest-model-plot"
+  }
+}

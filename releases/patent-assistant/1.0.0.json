@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "patent-assistant",
+    "version": "1.0.0",
+    "display_name": "patent-assistant",
+    "summary": "Assists R&D teams with patent technical disclosure drafting and patent/novelty search analysis; use when users ask to write a patent disclosure, structure an invention description, search related patents, or assess novelty.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/patent-assistant"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 88,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/patent-assistant/patent-assistant_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 82,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 91.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "760a454ac631601c61e452b942801a1688a2d5d7e83aa525ced8b1b7230a881d",
+    "file_count": 5,
+    "uncompressed_bytes": 42775
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "patent-assistant"
+  }
+}

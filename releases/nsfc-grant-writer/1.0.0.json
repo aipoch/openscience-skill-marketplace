@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nsfc-grant-writer",
+    "version": "1.0.0",
+    "display_name": "nsfc-grant-writer",
+    "summary": "Generate a complete NSFC (National Natural Science Foundation of China) General Program grant application in Chinese, following the 2026 official template. Use when the user provides a scientific hypothesis and wants to generate a full grant application document, including abs...",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/nsfc-grant-writer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/nsfc-grant-writer/eval_report_nsfc-grant-writer_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 95,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "35754b54413331ba3c6ba3c8257ef05f69f2e1db5fb60b6c0f97c80425061560",
+    "file_count": 8,
+    "uncompressed_bytes": 42671
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "nsfc-grant-writer"
+  }
+}

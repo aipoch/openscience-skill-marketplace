@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "regulatory-submission",
+    "version": "1.0.0",
+    "display_name": "regulatory-submission",
+    "summary": "Prepare FDA/EMA regulatory submissions (IND/NDA/BLA/510(k)/PMA/MAA) in CTD format. Generate module outlines (Modules 1-5), run ICH compliance checks (ALCOA+, E6 GCP, Q1-Q12), verify data integrity, and produce submission-ready dossiers with cover letters and checklists.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/regulatory-submission"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/regulatory-submission/eval_report_regulatory-submission_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "a4f50a1bc4c27de07a176cbadf4f5dbaf5bfef34dd6510b8fdb075a48c3e5775",
+    "file_count": 4,
+    "uncompressed_bytes": 12060
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "regulatory-submission"
+  }
+}

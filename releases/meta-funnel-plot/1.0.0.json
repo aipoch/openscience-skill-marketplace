@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-funnel-plot",
+    "version": "1.0.0",
+    "display_name": "meta-funnel-plot",
+    "summary": "Generate Meta-analysis funnel plots and perform publication bias testing. Takes CSV file with Meta-analysis data as input, outputs funnel plot PNG, Egger test and Begg test results.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/meta-funnel-plot"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/meta-funnel-plot/meta-funnel-plot_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 83,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "a53e0bd462611a8b7201af5ab5f7152cf921a54db33e2888a587dca3ebe88f6a",
+    "file_count": 7,
+    "uncompressed_bytes": 48258
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "meta-funnel-plot"
+  }
+}

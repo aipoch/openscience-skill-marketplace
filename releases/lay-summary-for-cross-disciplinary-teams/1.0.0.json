@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "lay-summary-for-cross-disciplinary-teams",
+    "version": "1.0.0",
+    "display_name": "lay-summary-for-cross-disciplinary-teams",
+    "summary": "Rewrites technical research content into a structured lay summary that cross-disciplinary teams can quickly understand and act on. Use when the user wants to explain research to colleagues outside their specialty — clinicians, wet-lab scientists, bioinformaticians, product managers, or leadership. Trigger on: \"lay summary\", \"explain my research to the team\", \"non-technical summary\", \"cross-disciplinary summary\", \"translate my findings\", \"align our team on the study\", or any request to communicate research goals, findings, or next steps to a mixed or non-specialist audience. Part of the AIPOCH Academic Writing skill hub. Sits midstream: after research content is clarified, before downstream deliverables like slide decks or graphical abstracts.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/lay-summary-for-cross-disciplinary-teams"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/lay-summary-for-cross-disciplinary-teams/eval_report_Lay-Summary-for-Cross-Disciplinary-Teams_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "85702cbbd747a31713e114a6cd6144ed9c977b91cc00d2496a3b45de5e169abb",
+    "file_count": 5,
+    "uncompressed_bytes": 31808
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "lay-summary-for-cross-disciplinary-teams"
+  }
+}

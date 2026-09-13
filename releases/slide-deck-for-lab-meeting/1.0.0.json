@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "slide-deck-for-lab-meeting",
+    "version": "1.0.0",
+    "display_name": "slide-deck-for-lab-meeting",
+    "summary": "Structures research progress into focused and actionable slides for lab meetings or project reviews without inventing missing content.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/slide-deck-for-lab-meeting"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 91,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/slide-deck-for-lab-meeting/eval_report_slide-deck-for-lab-meeting_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 89.9,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "b3702e6263f792526e95bed508bc75f52dddbda303ba35f67f159610e6607d48",
+    "file_count": 10,
+    "uncompressed_bytes": 39090
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "slide-deck-for-lab-meeting"
+  }
+}

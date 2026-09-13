@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "path": "releases/abstract-summarizer/1.0.0.json",
+      "sha256": "3a552e784e1c56c8f9de5818223dcbdc8df4dc001839e97455e44ffb9bbbd5f1"
+    },
+    {
+      "path": "releases/abstract-trimmer/1.0.0.json",
+      "sha256": "d9b854785d267477571e3f5bc29bffe68652605706e10b1abbe1c4da3a1e96e2"
+    },
+    {
+      "path": "releases/academic-abstract-refiner/1.0.0.json",
+      "sha256": "42ec6b7c9d6dc70365b92a61ef0fcde37562083f1434e4699fcc16d1766f628b"
+    },
+    {
+      "path": "releases/academic-highlight-generator/1.0.0.json",
+      "sha256": "06c955e727a823d2976f44911d55b4bc52b2d944b380cc3920073709516fce18"
+    },
+    {
+      "path": "releases/adme-property-predictor/1.0.0.json",
+      "sha256": "4e09820af5bffdb2c7777ae05953baf394cfb1e4c5501f56f4eeb3fd0528ff07"
+    },
+    {
+      "path": "releases/anatomy-quiz-master/1.0.0.json",
+      "sha256": "509aeda6cb449c06d7375d192a92983fe4069b583f597a736bce98f0ec603021"
+    },
+    {
+      "path": "releases/anki-card-creator/1.0.0.json",
+      "sha256": "fe37ae8a2bcb4c74471c29be290f7cb5b64ba760de72e804117595df582bfbe4"
+    },
+    {
+      "path": "releases/anndata/1.0.0.json",
+      "sha256": "9033e3ec9588acfc07ac91bfe56dc63d3cdd0b23d77dac30af4594566187f093"
+    },
+    {
+      "path": "releases/arxiv-preflight/1.0.0.json",
+      "sha256": "b4c858653565f0cc4a5f1bcfab265980225110bd1835b16a7d5c1ae85748cdd2"
+    },
+    {
+      "path": "releases/author-response-builder/1.0.0.json",
+      "sha256": "2fa9588faa8c33264e51b98705a2ec279e2fe4be941985944b3deb1bce6dd541"
+    },
+    {
+      "path": "releases/automated-soap-note-generator/1.0.0.json",
+      "sha256": "d950b23cb4512255a76e48a22f7b97828380883caf09dbb48a39edd82795a581"
+    },
+    {
+      "path": "releases/bio-causal-genomics-mediation-analysis/1.0.0.json",
+      "sha256": "c7e02b141e735deab9cbc2e0f4aa95d1ce77f569051dc702c4055bfb549ca8d2"
+    },
+    {
+      "path": "releases/bio-causal-genomics-pleiotropy-detection/1.0.0.json",
+      "sha256": "c5997f4e5b5ac2f8cc4452b6b3488048a642a3ed7302a0b2143fb8afb5c4f763"
+    },
+    {
+      "path": "releases/biomed-outline-generator/1.0.0.json",
+      "sha256": "918b05156bd87687541f206847160fc29fee9811f871765f691efe3437929410"
+    },
+    {
+      "path": "releases/biopython-alignment/1.0.0.json",
+      "sha256": "c4f86a10e75fdc1de61d8e2a9e39dda1a458544b068f3bfa3bdb188ee5cbaa50"
+    },
+    {
+      "path": "releases/biopython/1.0.0.json",
+      "sha256": "2336529ee8edd2b26eb74707638db5c1c503ea8b112385ef126db2d00b906dd2"
+    },
+    {
+      "path": "releases/bioservices/1.0.0.json",
+      "sha256": "12ecd2e2f00f03d2f94d7ae6c5d635c74947ac11133ff53eb86b93c19537f129"
+    },
+    {
+      "path": "releases/biotech-pitch-deck-narrative/1.0.0.json",
+      "sha256": "a361fe199c6e20beccfc3d517b91efebc83c351ac7ef46b954d1942069e02fe9"
+    },
+    {
+      "path": "releases/blind-review-sanitizer/1.0.0.json",
+      "sha256": "e52ca34a6c3dbb802240173262fbd6257927581ab1bf4dac82495c669ee9a20f"
+    },
+    {
+      "path": "releases/claim-strength-calibrator/1.0.0.json",
+      "sha256": "7e7810387c90d91b10642eaa04148b830d6efc0557b155a0f8b3e2861e717ee4"
+    },
+    {
+      "path": "releases/cobrapy/1.0.0.json",
+      "sha256": "379a581bec0bc823152e91080647fa4c548a8c621515e9ec5168e15fbe7dee58"
+    },
+    {
+      "path": "releases/conference-abstract-adaptor/1.0.0.json",
+      "sha256": "57fa9b90b849e579c60a3e4f41e673187532065fe1ceb3c5cbc0497d09314b07"
+    },
+    {
+      "path": "releases/conference-abstract-writer/1.0.0.json",
+      "sha256": "3fa8049f6c747321849fa38f96c24d8768cc90632f1acb2a840aece80c2bbd8b"
+    },
+    {
+      "path": "releases/conference-poster-pitch/1.0.0.json",
+      "sha256": "92d7677320e5e770892886c869c2e1fd52b7fa5fa6975b338365a94d2eb5c664"
+    },
+    {
+      "path": "releases/consistency-checker-across-manuscript/1.0.0.json",
+      "sha256": "1169c9c42e4eb1262a5d097e6a98b580075212f3fbfafbdf54b52ffa086b33c0"
+    },
+    {
+      "path": "releases/cover-letter-drafter/1.0.0.json",
+      "sha256": "d78e932c1f1486abedd799401773415d3cc3ee98f5f535b382c63f4b5187e156"
+    },
+    {
+      "path": "releases/d-molecule-ray-tracer/1.0.0.json",
+      "sha256": "f325e450bc3dff264186d2fb497239c72bcfb5fb7fe4be80aad80641555dd309"
+    },
+    {
+      "path": "releases/data-stats-analysis/1.0.0.json",
+      "sha256": "8bce6c5f882364d1cc3fa90b5dd369b75e8d82b47cfdd3c222038e5a6cbab0d5"
+    },
+    {
+      "path": "releases/data-transform/1.0.0.json",
+      "sha256": "17543e1b19432470df04dfdf34b6aff8d273697120eb9c8163f5eff93df9b47b"
+    },
+    {
+      "path": "releases/dei-statement-drafter/1.0.0.json",
+      "sha256": "55a64ea590d7f10ef7de1bc0bcf5e446d8505920e7bc78639eb1f8f65c5bc4a8"
+    },
+    {
+      "path": "releases/discussion-composer/1.0.0.json",
+      "sha256": "a7f1ffa8063382f07e95e3588933ea7d24c51d7227b7ad05b0f7eb3ede1bc4cf"
+    },
+    {
+      "path": "releases/ectd-xml-compiler/1.0.0.json",
+      "sha256": "efa09f708adb29043513fbf5b75a09923292a833f93aa28b64bf93d7a3436b1c"
+    },
+    {
+      "path": "releases/epidemiology/1.0.0.json",
+      "sha256": "11bfb9fea6d4e0009de3357368355acecaf02891c85d12143e22d5f383633d3d"
+    },
+    {
+      "path": "releases/etetoolkit/1.0.0.json",
+      "sha256": "6f0cf420201a0253fd79882c0b92302c10f6f9d93903768436d38f2d3fb74c97"
+    },
+    {
+      "path": "releases/experimental-data-analysis/1.0.0.json",
+      "sha256": "e2b33f58e502810cb8f503f0281fb4920f1644d8b571a0d51ec9ae8424999da7"
+    },
+    {
+      "path": "releases/facs-gating-viz-style/1.0.0.json",
+      "sha256": "65da853c78f27ff17c1003c53dddc185264b76c10f1aace9b786c83953ca6cdc"
+    },
+    {
+      "path": "releases/faq-generator/1.0.0.json",
+      "sha256": "5a591a35017c6323ed9f3400d5eb819c9d8df6ed1bab3f3f9fe876234af78e32"
+    },
+    {
+      "path": "releases/figure-legend-gen/1.0.0.json",
+      "sha256": "69ef87cd1abbcccb963b005e8972511a68085b3b2be0617a9edffae63f544380"
+    },
+    {
+      "path": "releases/figure-legend-writer/1.0.0.json",
+      "sha256": "d55dbfd8282652eb3d6d4b9c1366cecab0200f9b68de9d71d7f2a999aa7e6f77"
+    },
+    {
+      "path": "releases/figure-reference-checker/1.0.0.json",
+      "sha256": "04617682841b61810ea8304bb66c94ebcf2a005f2f6b8cfcc35d833859933cc4"
+    },
+    {
+      "path": "releases/flowio/1.0.0.json",
+      "sha256": "1cd1b49da52ba418c33e88314465f28690b321536e7a0df04b8f130244571272"
+    },
+    {
+      "path": "releases/gene-structure-mapper/1.0.0.json",
+      "sha256": "035453576de28038435083fd04fbfc6ac95f02a2a6473123505410f1e2de769f"
+    },
+    {
+      "path": "releases/geniml/1.0.0.json",
+      "sha256": "4cf06f3d717ca07312d7d0a4c1656257e8fbda79a166cebc519c068d61a07f9d"
+    },
+    {
+      "path": "releases/geopandas/1.0.0.json",
+      "sha256": "615dac7c911def51977d430987ee826cb4ae75aab09f1cceada05ebd37ea7bbf"
+    },
+    {
+      "path": "releases/grant-budget-justification/1.0.0.json",
+      "sha256": "5da6942bf63754a89bd2444fb84743d1c9497e5e39f6528ef8f6b063987db118"
+    },
+    {
+      "path": "releases/grant-mock-reviewer/1.0.0.json",
+      "sha256": "a4de447ef08fa0dbf9741f1cf28185d86a085498f778798e77d90df6b35620e1"
+    },
+    {
+      "path": "releases/grant-proposal-assistant/1.0.0.json",
+      "sha256": "03efb42a9ff562d79c6e00201932fedb5c05d7f1eafb1ba4ce0b244cf0eaf320"
+    },
+    {
+      "path": "releases/grant-specific-aims-writer/1.0.0.json",
+      "sha256": "a98e5b9dd207f574508ff42d1aba5f844c1221783aaa6a3468a7ef3b053dd68a"
+    },
+    {
+      "path": "releases/graphical-abstract-generator/1.0.0.json",
+      "sha256": "0308b4d97e2b0605ecb96bd65307645fd25c647749dc6934c876954b5b7e2281"
+    },
+    {
+      "path": "releases/gtars/1.0.0.json",
+      "sha256": "567f62f81640fbb6bd2141c9d8ce9e795253c1e49af47007598b1ff0d6c0336d"
+    },
+    {
+      "path": "releases/heatmap-beautifier/1.0.0.json",
+      "sha256": "39a181672ebbf224748369ea07426f65a79e31bd3793c850a4556b9261374cf1"
+    },
+    {
+      "path": "releases/histolab/1.0.0.json",
+      "sha256": "2eb0790f3959853ff86f8495d53e189de5d341c04d8bb9f06af01ab45d6cf73a"
+    },
+    {
+      "path": "releases/iacuc-protocol-drafter/1.0.0.json",
+      "sha256": "73d1ebf90cce357a63002ef83f6fb556c8f91648dfa5c844998982bd3a1e9d17"
+    },
+    {
+      "path": "releases/introduction-logic-builder/1.0.0.json",
+      "sha256": "292e2562a7a4e5dc82680c197a41fd2843db9a588f231fb2dede41881a2a8228"
+    },
+    {
+      "path": "releases/introduction-section-writer/1.0.0.json",
+      "sha256": "ce181e41e800489fc5f3fd746b5f166f5e6cabc0ead40bdb7f6d9d932937653d"
+    },
+    {
+      "path": "releases/journal-club-presenter/1.0.0.json",
+      "sha256": "df9c58fc531002cfbd6f40ad8ef5aa6205a1ab65fd2fdf052b22da56e34d05c2"
+    },
+    {
+      "path": "releases/lab-budget-forecaster/1.0.0.json",
+      "sha256": "0330438f320da3f6950a9a9b6a2955e46b649faf2110ef71c9275c68b0148fe1"
+    },
+    {
+      "path": "releases/labarchive-integration/1.0.0.json",
+      "sha256": "dd815927e3375eb4cf2e0698c2eed418f717949271ac2558ae6f0a81981c104a"
+    },
+    {
+      "path": "releases/latex-manuscript-format-converter/1.0.0.json",
+      "sha256": "b27b4c72cf63d4d84a2f5c1dbf827d8d0919522dacbf1cb1db4dfbc53dd80434"
+    },
+    {
+      "path": "releases/lay-press-release-writer/1.0.0.json",
+      "sha256": "d402cc883425a6377b0b19c7be12587c738acfe403818d27fdefd82d8c7b366d"
+    },
+    {
+      "path": "releases/lay-summary-for-cross-disciplinary-teams/1.0.0.json",
+      "sha256": "586c47a79a8206b9646d900cebbbb837208325de6f4a29941c07d5bc37bd3dd0"
+    },
+    {
+      "path": "releases/lay-summary-gen/1.0.0.json",
+      "sha256": "5b68b8a4b08a7ee06a4bd3b7d3b1c5ea73ace467429a16b8bc3e15e120169c08"
+    },
+    {
+      "path": "releases/limitation-and-risk-writer/1.0.0.json",
+      "sha256": "dd12a7b6fcf2423ed813f2488ff1c22ef787f5d7d438ea2106db2ec0b0ded04c"
+    },
+    {
+      "path": "releases/lipinski-rule-filter/1.0.0.json",
+      "sha256": "754f6bf7867243b88fbcad09c52922f759278657d17fc13a7653a815514d958a"
+    },
+    {
+      "path": "releases/market-access-value/1.0.0.json",
+      "sha256": "9514b28db50eb62eef53ee4e50320aed848f8692774db15940031d8c879c3370"
+    },
+    {
+      "path": "releases/matchms/1.0.0.json",
+      "sha256": "b4460b324fca2debb4b033e6cade9fb265813c56bc7f86fe94d5b57b7f7b3718"
+    },
+    {
+      "path": "releases/mechanism-flowchart/1.0.0.json",
+      "sha256": "71116b1cce63676842b5e6b8c8e95155b1ca93d7645ac0d825dbe5b39b5bfff1"
+    },
+    {
+      "path": "releases/medical-cv-resume-builder/1.0.0.json",
+      "sha256": "1b7e5d7ce227861cc4189041766ff1ce8228a0509e5fcc639d386c540d541004"
+    },
+    {
+      "path": "releases/medical-device-mdr-auditor/1.0.0.json",
+      "sha256": "ce034cdb454801cadbb357826ad63e6a6c7b09ee79e195b93ce8ab821ad8f5b0"
+    },
+    {
+      "path": "releases/medical-email-polisher/1.0.0.json",
+      "sha256": "4bd70ae33f8204374a86c63a90dcacd91a79bc2d05502b5e17eae4b2f5117f00"
+    },
+    {
+      "path": "releases/medical-english-precision-editor/1.0.0.json",
+      "sha256": "e19b23c4d6452c8c2f65bb6d32881b327ff16809f8fce043d963b012384dd712"
+    },
+    {
+      "path": "releases/medical-imaging-review/1.0.0.json",
+      "sha256": "1154cc2fc4275d5efaf1c85fd8c0c4f04ed6632921910b81261ae712a4411601"
+    },
+    {
+      "path": "releases/medical-translation/1.0.0.json",
+      "sha256": "3c4bb35cee351f949f209ebc71229f5dda7ccf8e4bd32bf31e1d364374fbaa1c"
+    },
+    {
+      "path": "releases/medication-adherence-message-gen/1.0.0.json",
+      "sha256": "f80c2fba005fd596eee1e8639165f3645aed3dcf401d4156a52c57121a0cb554"
+    },
+    {
+      "path": "releases/meeting-minutes/1.0.0.json",
+      "sha256": "0f079d7d645223e56f924c48c9fda2e7a84e80a2417748715af20438d77656fa"
+    },
+    {
+      "path": "releases/meta-analysis-methods-generator/1.0.0.json",
+      "sha256": "0f62490caf17430d1b78aad1d9aad071b9de9078e4aa12b3e0d5274790639079"
+    },
+    {
+      "path": "releases/meta-baseline-generator/1.0.0.json",
+      "sha256": "4ee15048acf3b96c97c74ccf729f3767ff2a4afbda1c3580ce117976842b1d0e"
+    },
+    {
+      "path": "releases/meta-baujat-plot/1.0.0.json",
+      "sha256": "e3f64fcce185dcf67db56d90516d99d7ea70279b0ba06b189994f64f90b7c26a"
+    },
+    {
+      "path": "releases/meta-criteria-generator/1.0.0.json",
+      "sha256": "52b673f38014a3c6003178da0d906e4cd7e9d85e7cf4eaf771c464df0aca776d"
+    },
+    {
+      "path": "releases/meta-feasibility-analyzer/1.0.0.json",
+      "sha256": "5145e961bee06e3b2618f671cd2ca0c6d374b335180c48cd073e5cca5324bfeb"
+    },
+    {
+      "path": "releases/meta-forest-binary-plot/1.0.0.json",
+      "sha256": "f162e4f0b801bc4d62c079c76aba403504fef67d9d0964f8f7ae516bd95c6121"
+    },
+    {
+      "path": "releases/meta-forest-continuous-plot/1.0.0.json",
+      "sha256": "ad7afc31fadbbf351ab183a224cff9539ce1484021822888a83de1f30aa95e2c"
+    },
+    {
+      "path": "releases/meta-forest-model-plot/1.0.0.json",
+      "sha256": "6464e6f57ab4a1dbb41d197fe14174d45620e212722dc08de8772d9e6aa081c5"
+    },
+    {
+      "path": "releases/meta-funnel-plot/1.0.0.json",
+      "sha256": "87c7e8995dd9a494ecb9e35046e9608a60e719efb7028437d77009804e39d3fa"
+    },
+    {
+      "path": "releases/meta-picos-generator/1.0.0.json",
+      "sha256": "e7d09a9b3e9affe52a0daff4adc73d8e134aeedf60af2f9ecd09a755b116401d"
+    },
+    {
+      "path": "releases/meta-results-forest-plot-analyzer/1.0.0.json",
+      "sha256": "e9240976139e678b6455f739837c43669c603f8ca7bf3a519be14cd7eaf22307"
+    },
+    {
+      "path": "releases/meta-results-funnel-plot-generator/1.0.0.json",
+      "sha256": "2f1c57aa34d3960f909097899b54d0fb735859397bea2f371551aef616dbcc98"
+    },
+    {
+      "path": "releases/meta-results-risk-of-bias/1.0.0.json",
+      "sha256": "7749e7609a5fc0d6419c9bea7f66e300a6d8d3b62b12a882daa7b53e7f8101ba"
+    },
+    {
+      "path": "releases/meta-results-sensitivity-analysis/1.0.0.json",
+      "sha256": "943516621290d185c247d349d2ed603313db8e0d63733d60de8bf9ec140f8987"
+    },
+    {
+      "path": "releases/microbiome-diversity-reporter/1.0.0.json",
+      "sha256": "78993950c596b91a004d427ae2edcf6f0d16d0ed03dd8024008debed9415ec53"
+    },
+    {
+      "path": "releases/moa-explainer/1.0.0.json",
+      "sha256": "8b0d583c3d7106d8777e69ca8d89de41ec846547d4daa7ef765c78b2b5bda15e"
+    },
+    {
+      "path": "releases/networking-email-drafter/1.0.0.json",
+      "sha256": "d886a92512f7b55f46794459bb7577f80da776e395190303f8a321a59a41e8a7"
+    },
+    {
+      "path": "releases/nih-biosketch-builder/1.0.0.json",
+      "sha256": "c79b49c3b72de66f04ba68f446d9bf73b1ec983ffa48d38967cd58e28aa908b7"
+    },
+    {
+      "path": "releases/nsfc-grant-writer/1.0.0.json",
+      "sha256": "e4a960523a472da9cdd006584a50855b0a3fdb3e51204ac989274ce38f4a67c1"
+    },
+    {
+      "path": "releases/patent-assistant/1.0.0.json",
+      "sha256": "9b5abb54b24a81c4c08bf2e695190909a49917428653aaea4a5f54f85a11e2d3"
+    },
+    {
+      "path": "releases/patient-recruitment-ad-gen/1.0.0.json",
+      "sha256": "d8acc0a6b38b438f3c541b481f94cfb3b8e797dd4cf928067610f5d994b43376"
+    },
+    {
+      "path": "releases/peer-review-response-drafter/1.0.0.json",
+      "sha256": "265eb49d82eee0017258c493665d98cf434d896172a7f8fce7c4de77551f13dd"
+    },
+    {
+      "path": "releases/peer-review/1.0.0.json",
+      "sha256": "369f1eec3ca0098cce90fc61306e6dbd67b749f662b323b8deeb0a0f0f8d8bf0"
+    },
+    {
+      "path": "releases/poster-layout-planner/1.0.0.json",
+      "sha256": "38980fc112d6ae01e43d4e4de351ae570778ae28f2b443a142470898438feba0"
+    },
+    {
+      "path": "releases/poster-storyline-builder/1.0.0.json",
+      "sha256": "fdfd1f07fc6d8b7e577fbf293a9f5d14fd02918616cf2ce8f93cfe38a6190d8f"
+    },
+    {
+      "path": "releases/presentation-hook/1.0.0.json",
+      "sha256": "77abfa1f3b37420c9028dd9c7b58fb246be1b3add53e1b0a1d60cc190bd61d9c"
+    },
+    {
+      "path": "releases/q-and-a-prep-partner/1.0.0.json",
+      "sha256": "55f72c2c34518384cd7c30df148f8586f63b3451701852485e555e2f1bc6a7b2"
+    },
+    {
+      "path": "releases/rebuttal-letter-strategist/1.0.0.json",
+      "sha256": "9db68368a1d0a75b5a06a7eb4f6648d7ca4d6b08c4ae4fbc01a3a43d1dd292de"
+    },
+    {
+      "path": "releases/recommendation-letter-assistant/1.0.0.json",
+      "sha256": "cb8f01d7d4eadbd537090de9cba3a11487eadcbde560f89ed094a41f790a4e9b"
+    },
+    {
+      "path": "releases/reference-integrity-checker/1.0.0.json",
+      "sha256": "826bb4694f9e4e3bcfb8ce344c2d62a9a38412c44aa27bc230172dfa30ab680b"
+    },
+    {
+      "path": "releases/reference-style-sync/1.0.0.json",
+      "sha256": "43dada88dbe457bf34a159edacdbfba981db341ade5cd9e1809a5b201cfa5a0d"
+    },
+    {
+      "path": "releases/referral-letter-generator/1.0.0.json",
+      "sha256": "0c4441e79ba68ba4f2840ad5837716dc86985d3372f3ea18df4d0a040c69fc44"
+    },
+    {
+      "path": "releases/regulatory-submission/1.0.0.json",
+      "sha256": "a7a30b5c790a7809d0a5cc21c6789f5c870b51ee5e9d9a9068dccd7e029a6787"
+    },
+    {
+      "path": "releases/reporting-guideline-compliance-checker/1.0.0.json",
+      "sha256": "d0a4f7fde5232b7f978c8dfdc8e936c8e424ff5884d4a4cebe833e3304cc19ae"
+    },
+    {
+      "path": "releases/residency-interview-prep/1.0.0.json",
+      "sha256": "e33c793f0f8279be9445bafc4652f3ea3604218bd5ffc13f3caaa9f940c0c2f7"
+    },
+    {
+      "path": "releases/results-section-structurer/1.0.0.json",
+      "sha256": "55d7fe88245d5f6377902ae0fa5e8fca197e663db479d28744a003758d93d101"
+    },
+    {
+      "path": "releases/results-section-writer/1.0.0.json",
+      "sha256": "69903c2eac6841c801832324097211e492824d46d5db0990337ff85db8db62c6"
+    },
+    {
+      "path": "releases/revision-strategy-planner/1.0.0.json",
+      "sha256": "f0f1767f26abc46858331e2e06047e590bbbffd6b74fa9baed53fc7dd620ec2e"
+    },
+    {
+      "path": "releases/semantic-consistency-auditor/1.0.0.json",
+      "sha256": "8b6b3e341b3023d8df7588de18656292e6edba724e488831adfb679c16c591d9"
+    },
+    {
+      "path": "releases/slide-deck-for-lab-meeting/1.0.0.json",
+      "sha256": "c9e4e561d099e5a2842b66374e0ddc8933006865f1e15c5a1a347e116561ed3b"
+    },
+    {
+      "path": "releases/study-limitations-drafter/1.0.0.json",
+      "sha256": "2b08325839f1bfa6d8235b3fc471b6bee309ad2df0e571cc97333bff12715acd"
+    },
+    {
+      "path": "releases/style-journal-rewrite/1.0.0.json",
+      "sha256": "edf2c8b683b241beb6c22db550ba5d7865d3d35d572a73eaca1d2278720fcb93"
+    },
+    {
+      "path": "releases/systematic-review/1.0.0.json",
+      "sha256": "3e5d4c982c86f248523bc62bee6848c06e7306472b5b8e56961af873981c4790"
+    },
+    {
+      "path": "releases/table-narrative-writer/1.0.0.json",
+      "sha256": "1b536f5423f44121dc4a1cc1cdc8093dd35e9023675e62a012696aa1710323b0"
+    },
+    {
+      "path": "releases/title-and-abstract-optimizer/1.0.0.json",
+      "sha256": "f8a3e1be1ac0f936a66d7cadd41e5978b6627c68011677ca38b5c41a96aabcf7"
+    },
+    {
+      "path": "releases/visual-content-desc/1.0.0.json",
+      "sha256": "5fd8eb7f2fb518683c672c8749e53e4d6f2450ead69b30ed22440e763e68b88b"
+    }
+  ]
+}

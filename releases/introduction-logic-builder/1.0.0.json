@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "introduction-logic-builder",
+    "version": "1.0.0",
+    "display_name": "introduction-logic-builder",
+    "summary": "Builds background-gap-objective logic for biomedical manuscript introductions with clear study positioning and disciplined narrative structure.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/introduction-logic-builder"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/introduction-logic-builder/eval_report_introduction-logic-builder_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 81.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f42c9a8fb300493c3136914417283f62bdb11fe9750942558c0df62fba7bf760",
+    "file_count": 9,
+    "uncompressed_bytes": 35918
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "introduction-logic-builder"
+  }
+}

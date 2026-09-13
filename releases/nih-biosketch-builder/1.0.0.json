@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nih-biosketch-builder",
+    "version": "1.0.0",
+    "display_name": "nih-biosketch-builder",
+    "summary": "Generate NIH Biosketch documents compliant with the 2022 OMB-approved.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/nih-biosketch-builder"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/nih-biosketch-builder/nih-biosketch-builder_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "bd9b1b60554b5f93653184710f5595bd438b02b28b10c89d0b1323ac4bc18bb3",
+    "file_count": 6,
+    "uncompressed_bytes": 47618
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "nih-biosketch-builder"
+  }
+}

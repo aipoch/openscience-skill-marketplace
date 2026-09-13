@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "results-section-writer",
+    "version": "1.0.0",
+    "display_name": "results-section-writer",
+    "summary": "Writes the full Results section of a biomedical manuscript from a sufficiently clear result structure, figure inventory, or analysis summary while preserving evidence boundaries and result hierarchy.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/results-section-writer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 93,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/results-section-writer/eval_report_results-section-writer_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 97,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.3,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "0081801f568b340adf6bb33549b29cb195a79ea8a9f2ea1f1a1fd19b60496259",
+    "file_count": 11,
+    "uncompressed_bytes": 40183
+  },
+  "artifact": {
+    "path": "shards/d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b.zip",
+    "sha256": "d8e984a46df1337c13e2a20138efa359b6b22811f3fa8fb4d733bf90eb2a377b",
+    "bytes": 1370201,
+    "skill_path": "results-section-writer"
+  }
+}
