@@ -1,8 +1,8 @@
 # Batch publication and recovery
 
-The current release selects 21 reviewed Skills: the published
-`abstract-trimmer@1.0.0` plus 20 additional members at `1.0.0`. It explicitly
-defers 563 other members. Byte-bound redistribution reviews are recorded in
+The current release selects 121 reviewed Skills: the 21 previously published
+members plus 100 additional members at `1.0.0`. It explicitly defers 463 other
+members. Byte-bound redistribution reviews are recorded in
 `skills/reviews.json`; the seventeen assessment-omission records remain separate
 and are not license approvals. Production publication uses the protected main
 workflow after explicit maintainer authorization. Check the
@@ -169,9 +169,10 @@ publication steps are not client installation states. No UI changes require scre
 The release plan explicitly defers four syntax errors, one missing description,
 five missing license declarations, the PPI resource limits and the PPTX license
 conflict, plus the CC BY-NC-ND 4.0 article bundled in `paper-tweet-generator`.
-Another 550 members are outside the current batch while their reviews remain
+Another 450 members are outside the current batch while their reviews remain
 pending, including six entries with documented package paths absent from the
-pinned source. The first published Skill keeps its original descriptor and shard. See [release selection](../skills/README.md#release-selection) for the
+pinned source and 29 entries with asset or attribution follow-ups. All 21
+previously published Skills keep their original descriptors and shards. See [release selection](../skills/README.md#release-selection) for the
 complete-partition rules and how to include corrected members later. The seventeen invalid assessments are explicitly
 omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate
 approval. Production addresses and signed immutable releases must be verified

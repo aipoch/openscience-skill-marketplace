@@ -214,7 +214,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed release adds twenty reviewed members while retaining the first release and review gates", async () => {
+test("committed release adds one hundred reviewed members while retaining the previous batch and review gates", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -225,7 +225,7 @@ test("committed release adds twenty reviewed members while retaining the first r
     new URL("../skills/release_plan.json", import.meta.url),
   );
   const selected = selectReleaseEntries(bytes, manifest.entries, config.source);
-  const expectedIds = [
+  const retainedIds = [
     "abstract-summarizer",
     "abstract-trimmer",
     "academic-abstract-refiner",
@@ -248,18 +248,16 @@ test("committed release adds twenty reviewed members while retaining the first r
     "discussion-composer",
     "ectd-xml-compiler",
   ];
-  assert.deepEqual(
-    selected
-      .map(({ id, version }) => ({ id, version }))
-      .sort((a, b) => a.id.localeCompare(b.id)),
-    expectedIds.map((id) => ({ id, version: "1.0.0" })),
-  );
+  const selectedIds = selected.map(({ id }) => id).sort();
+  assert.equal(selected.length, 121);
+  for (const id of retainedIds) assert.ok(selectedIds.includes(id), id);
+  assert.ok(selected.every(({ version }) => version === "1.0.0"));
   assert.deepEqual(
     parseMetadataJson(bytes)
       .deferred.map((entry) => entry.id)
       .sort(),
     manifest.entries
-      .filter((entry) => !expectedIds.includes(entry.id))
+      .filter((entry) => !selectedIds.includes(entry.id))
       .map((entry) => entry.id)
       .sort(),
   );
@@ -274,7 +272,7 @@ test("committed release adds twenty reviewed members while retaining the first r
       .filter(([, review]) => review.reviewedBy)
       .map(([key]) => key)
       .sort(),
-    expectedIds.map((id) => `${id}@1.0.0`),
+    selectedIds.map((id) => `${id}@1.0.0`).sort(),
   );
   assert.equal(reviews["abstract-trimmer@1.0.0"].reviewedBy, "ewen-poch");
   assert.throws(
