@@ -1727,7 +1727,7 @@
     {
       "id": "response-letter",
       "version": "1.0.0",
-      "reason": "Bundled Word review-response template and embedded contents require individual origin, applicable license and redistribution evidence review before selection."
+      "reason": "The required assets/review_response_template.docx fails ZIP container parsing with a bad central-directory signature. Verify a valid Word template and its redistribution evidence before publication."
     },
     {
       "id": "response-tone-polisher",
@@ -1782,7 +1782,7 @@
     {
       "id": "circos-plot-generator",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:1103 requires original license and notice evidence review."
+      "reason": "With a relative --output such as ./plots, scripts/main.py passes plots/circos.conf to Circos while also setting cwd=plots, duplicating the output directory in the resolved path. Verify the documented rendering workflow and existing provenance concerns before publication."
     },
     {
       "id": "clinical-data-cleaner",
@@ -1792,7 +1792,7 @@
     {
       "id": "cnv-caller-plotter",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:1120 requires original license and notice evidence review."
+      "reason": "scripts/main.py returns two fixed example CNVs without reading the input or reference, and plot_genome_wide only returns a filename without generating a plot. Real calling/rendering and the existing third-party provenance concern remain unresolved."
     },
     {
       "id": "code-refactor-for-reproducibility",
@@ -1812,7 +1812,7 @@
     {
       "id": "crispr-screen-analyzer",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:1128 requires original license and notice evidence review."
+      "reason": "scripts/main.py sorts p-values for its FDR calculation, then assigns that sorted vector to the original sgRNA order without restoring the index mapping. Verify statistical correctness and the existing third-party provenance concern before publication."
     },
     {
       "id": "decision-curve-analysis",
@@ -1877,7 +1877,7 @@
     {
       "id": "gokegg-analysis",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: test/data/gene.txt."
+      "reason": "The package also bundles assets/KEGG_pathway_name.txt (81,701 bytes), beyond the minimal test gene list. Verify that mapping table origin, applicable terms and redistribution evidence before publication."
     },
     {
       "id": "graphical-abstract-wizard",
@@ -2152,7 +2152,7 @@
     {
       "id": "citation-network",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/README.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "scripts/export_gexf_html.py inserts user-derived node labels into an inline script using json.dumps without escaping closing script sequences. Fix HTML serialization before publication; references/README.md is also absent."
     },
     {
       "id": "clinical-trial-finder",
@@ -2202,7 +2202,7 @@
     {
       "id": "funding-trend-forecaster",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: report.json."
+      "reason": "scripts/main.py unconditionally calls generate_mock_data from its CLI despite documented automatic NIH/NSF/Horizon collection. Verify real-data behavior, bundled report provenance and OpenClaw attribution before publication."
     },
     {
       "id": "grant-funding-scout",
@@ -2272,7 +2272,7 @@
     {
       "id": "preprint-surveillance-finder",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: data/history.json."
+      "reason": "data/history.json contains repeated arXiv abstract excerpts for arXiv:2602.09248, not an empty history template. Verify the cached content redistribution evidence before publication."
     },
     {
       "id": "rare-disease-hpo-mapper",
@@ -2417,7 +2417,7 @@
     {
       "id": "mendel",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: evals/evals.json."
+      "reason": "The bundled teaching references contradict each other on the seed counts for the same experiment (references/genetics-guide.md versus references/philosophy-of-science.md). Resolve content accuracy before publication; evals/evals.json contains teaching prompts rather than an external dataset."
     },
     {
       "id": "mindmap-html-generator",
@@ -2457,12 +2457,12 @@
     {
       "id": "resubmission-deadline-tracker",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: data/deadlines.json, references/task_templates.json."
+      "reason": "SKILL.md documents --timezone, but scripts/main.py does not accept that option and calculate_remaining_time ignores the stored timezone. Resolve deadline calculation and bundled record provenance before publication."
     },
     {
       "id": "slide-deck-images",
       "version": "1.0.0",
-      "reason": "Bundled design references and example outline require individual provenance review before selection."
+      "reason": "scripts/generate_svg.py uses double-escaped whitespace patterns that do not parse the documented outline headings. Verify the renderer input contract and bundled design-reference provenance before publication."
     },
     {
       "id": "symptom-checker-triage",
