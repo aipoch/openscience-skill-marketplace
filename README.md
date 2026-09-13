@@ -3,10 +3,10 @@
 An independent protocol and publication toolchain for individually distributed
 Open-Science Skills. The authoritative manifest contains **584 Skills**, resolved
 against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
-selects the reviewed `abstract-trimmer@1.0.0` for the initial release and explicitly
-defers the other 583 members.
+selects **21 reviewed Skills**: the published `abstract-trimmer@1.0.0` and 20
+additional members at `1.0.0`. It explicitly defers the other 563 members.
 
-The selected package has a byte-bound redistribution review. Deferred members
+Every selected package has a byte-bound redistribution review. Deferred members
 require separate review before inclusion. See [GitHub Releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
 and [publication runs](https://github.com/aipoch/openscience-skill-marketplace/actions/workflows/publish.yml)
 for production status; a successful local build is not publication.
@@ -35,7 +35,7 @@ npm run build:catalog -- --source /path/to/medical-research-skills
 
 Both commands read Git objects at
 `d92441066ea6259967469be8e0c8c7b6587928ab`, regardless of the clone's checkout.
-They do not execute Skill scripts. The build creates an unsigned one-Skill
+They do not execute Skill scripts. The build creates an unsigned selected-Skill
 catalog in `dist/candidate`, including the original MIT notice in the package.
 Only the explicitly selected batch is built; a failure in any selected member
 stops the batch. The complete authority and source audit remain unchanged.

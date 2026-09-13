@@ -6,7 +6,87 @@
   },
   "selected": [
     {
+      "id": "abstract-summarizer",
+      "version": "1.0.0"
+    },
+    {
       "id": "abstract-trimmer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "academic-abstract-refiner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "academic-highlight-generator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "anatomy-quiz-master",
+      "version": "1.0.0"
+    },
+    {
+      "id": "anki-card-creator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "arxiv-preflight",
+      "version": "1.0.0"
+    },
+    {
+      "id": "author-response-builder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "automated-soap-note-generator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biomed-outline-generator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biotech-pitch-deck-narrative",
+      "version": "1.0.0"
+    },
+    {
+      "id": "blind-review-sanitizer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "claim-strength-calibrator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "conference-abstract-adaptor",
+      "version": "1.0.0"
+    },
+    {
+      "id": "conference-abstract-writer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "conference-poster-pitch",
+      "version": "1.0.0"
+    },
+    {
+      "id": "consistency-checker-across-manuscript",
+      "version": "1.0.0"
+    },
+    {
+      "id": "cover-letter-drafter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "dei-statement-drafter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "discussion-composer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "ectd-xml-compiler",
       "version": "1.0.0"
     }
   ],
@@ -77,79 +157,19 @@
       "reason": "Bundled extracted_text.txt identifies its article as CC BY-NC-ND 4.0, distinct from the Skill MIT declaration; redistribution review and permission resolution are pending."
     },
     {
-      "id": "abstract-summarizer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "academic-abstract-refiner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "academic-highlight-generator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "adverse-event-narrative",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "anatomy-quiz-master",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "anki-card-creator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "arxiv-preflight",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "author-response-builder",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "authorship-credit-gen",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "automated-soap-note-generator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "biomed-outline-generator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "biotech-pitch-deck-narrative",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "blind-review-sanitizer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Documented package references are absent from the pinned Skill directory: references/guide.md. Source completeness review is pending."
     },
     {
       "id": "citation-formatter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "claim-strength-calibrator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Documented package references are absent from the pinned Skill directory: references/guide.md, scripts/main.py. Source completeness review is pending."
     },
     {
       "id": "clinical-decision-support",
@@ -157,64 +177,24 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "conference-abstract-adaptor",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "conference-abstract-writer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "conference-poster-pitch",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "consistency-checker-across-manuscript",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "cover-letter-drafter",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "cover-letter-generator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "dei-statement-drafter",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Documented package references are absent from the pinned Skill directory: assets/cover_letter_template.md, references/guide.md. Source completeness review is pending."
     },
     {
       "id": "digital-twin-discharge-drafter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Documented package references are absent from the pinned Skill directory: scripts/discharge_drafter.py. Source completeness review is pending."
     },
     {
       "id": "discharge-summary-writer",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "discussion-composer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Documented package references are absent from the pinned Skill directory: references/medical_terms.js. Source completeness review is pending."
     },
     {
       "id": "discussion-section-architect",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "ectd-xml-compiler",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Documented package references are absent from the pinned Skill directory: references/guide.md. Source completeness review is pending."
     },
     {
       "id": "ehr-semantic-compressor",
