@@ -606,7 +606,8 @@ test("committed release retains prior members and pins the repaired skill separa
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 385);
+  assert.equal(selected.length, 386);
+  assert.ok(selectedIds.includes("discussion-section-architect"));
   const repaired = selected.find(({ id }) => id === "citation-network");
   assert.equal(
     repaired.sourceCommit,

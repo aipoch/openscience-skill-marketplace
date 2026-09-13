@@ -54,11 +54,10 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-385 reviewed Skills, retaining all 384 previously selected members and adding
-`citation-network` at `1.0.0` from upstream commit
-`63c61d38c6c4bba5128f98f0b225aa44e3fe748d`. Its [review](../docs/citation-network-review.md)
-records the repaired HTML exporter, full payload and MIT evidence. The other 199 members remain
-explicitly deferred. Of these, 186 await review for a later batch, including six
+386 reviewed Skills, retaining all 384 previously selected members and adding
+`citation-network` and `discussion-section-architect` at `1.0.0`. Both preserve the
+complete source package and original MIT notice. The other 198 members remain
+explicitly deferred. Of these, 185 await review for a later batch, including five
 previously deferred entries with missing documented package files and 180 entries
 with asset, attribution, or source-completeness follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
@@ -70,6 +69,21 @@ Selection is not a redistribution approval.
 See the [original-list review follow-up](../docs/original-list-review.md) for
 verified license discrepancies, source defects and dataset provenance findings
 that refine 12 of these existing deferrals without changing the selection.
+
+The current batch resolves two former missing-reference deferrals without adding
+invented files. `citation-network` pins upstream commit
+`63c61d38c6c4bba5128f98f0b225aa44e3fe748d`, which escapes inline HTML payloads;
+its absent `references/README.md` is additional documentation unused by the
+workflow. HTML uses an unversioned external vis-network CDN dependency; custom
+GEXF output paths require the separate exporter's `--input` option.
+`discussion-section-architect` stays on the default commit: its drafting and
+revision workflow is complete in SKILL.md. Its absent guide/examples are
+supplementary; the Python helper produces generic outlines and transition phrases,
+not a personalized interpretation of `--findings`. The agent must ground prose
+in the supplied results and literature. The original self-assessments remain
+90/100 and 91/100 respectively; no evaluated Skill version or independent safety
+approval is inferred. Detailed working notes remain local; exact release approvals
+are bound to source, content and license hashes in `reviews.json`.
 
 A selected member may specify `source_commit`, a lowercase 40-character commit
 from that same repository. Its source path still comes from the original manifest.
@@ -117,9 +131,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 384
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 385
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review and the repaired `citation-network` review. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review and the `discussion-section-architect` review. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records

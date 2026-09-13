@@ -391,6 +391,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "discussion-section-architect",
+      "version": "1.0.0"
+    },
+    {
       "id": "disease-mechanism-evidence-map",
       "version": "1.0.0"
     },
@@ -1647,11 +1651,6 @@
       "id": "discharge-summary-writer",
       "version": "1.0.0",
       "reason": "Documented package references are absent from the pinned Skill directory: references/medical_terms.js. Source completeness review is pending."
-    },
-    {
-      "id": "discussion-section-architect",
-      "version": "1.0.0",
-      "reason": "Documented package references are absent from the pinned Skill directory: references/guide.md. Source completeness review is pending."
     },
     {
       "id": "graph-interpretation",
