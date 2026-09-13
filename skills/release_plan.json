@@ -98,6 +98,11 @@
       "version": "1.0.0"
     },
     {
+      "id": "basic-research-design",
+      "version": "1.0.0",
+      "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
+    },
+    {
       "id": "benchling-integration",
       "version": "1.0.0"
     },
@@ -357,6 +362,11 @@
     {
       "id": "cover-letter-drafter",
       "version": "1.0.0"
+    },
+    {
+      "id": "cover-letter-generator",
+      "version": "1.0.0",
+      "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
     },
     {
       "id": "cross-disease-shared-biomarker-network-research-planner",
@@ -867,6 +877,11 @@
       "version": "1.0.0"
     },
     {
+      "id": "meta-abstract-screener",
+      "version": "1.0.0",
+      "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
+    },
+    {
       "id": "meta-analysis-methods-generator",
       "version": "1.0.0"
     },
@@ -933,6 +948,11 @@
     {
       "id": "meta-rob-plot",
       "version": "1.0.0"
+    },
+    {
+      "id": "meta-screening-fulltext",
+      "version": "1.0.0",
+      "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
     },
     {
       "id": "meta-search-builder",
@@ -1646,11 +1666,6 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "cover-letter-generator",
-      "version": "1.0.0",
-      "reason": "Documented package references are absent from the pinned Skill directory: assets/cover_letter_template.md, references/guide.md. Source completeness review is pending."
-    },
-    {
       "id": "digital-twin-discharge-drafter",
       "version": "1.0.0",
       "reason": "Documented package references are absent from the pinned Skill directory: scripts/discharge_drafter.py. Source completeness review is pending."
@@ -1939,16 +1954,6 @@
       "id": "matplotlib",
       "version": "1.0.0",
       "reason": "Original K-Dense scientific-skills/matplotlib/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"https://github.com/matplotlib/matplotlib/tree/main/LICENSE\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
-    },
-    {
-      "id": "meta-abstract-screener",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/screen_paper.py, references/screening_prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
-      "id": "meta-screening-fulltext",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/extract_pdf.py, scripts/query_pubmed.py, references/screening_prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "metabolomics-workbench-database",
@@ -2484,11 +2489,6 @@
       "id": "word-read-write",
       "version": "1.0.0",
       "reason": "Bundled Office schemas and helper sources require individual third-party origin and redistribution notice review."
-    },
-    {
-      "id": "basic-research-design",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/prompt_templates.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "clinic-research-design",

@@ -5103,5 +5103,57 @@
         "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
       }
     ]
+  },
+  "cover-letter-generator@1.0.0": {
+    "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+    "content_sha256": "07b84d07f12216dce602cbe75bc06ff489f5a6639e074bdc24527d30615ce745",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT"
+  },
+  "basic-research-design@1.0.0": {
+    "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+    "content_sha256": "082854ccd5cf9461f0d7b6df01f3cbac6be3a0b0e0e3a6f5a2676818912a341d",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT"
+  },
+  "meta-abstract-screener@1.0.0": {
+    "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+    "content_sha256": "c54c930e2899bc1f14a01d4de61f4ea9f6e5e32a061a735cb56d67da91539c37",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT"
+  },
+  "meta-screening-fulltext@1.0.0": {
+    "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+    "content_sha256": "e23830f472b6d80b7e408e13aa5f1990fa868cd668307b85c1dac9236184ec96",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT"
   }
 }
