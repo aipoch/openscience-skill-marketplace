@@ -4598,5 +4598,178 @@
         "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
       }
     ]
+  },
+  "ehr-semantic-compressor@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "e9d29757d009d4520e41abe984e1651f65c8f951bfce9017270a521ce9815655",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "paper-sprint-review@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "d5586c81d1e92305ef62a662d7d33a65b33e8966328efc83daf888e829f6357e",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Academic Writing/paper-sprint-review/LICENSE",
+        "sha256": "aac5acbb84bfd67e605ca16965e475f9c8243f6aceda2d47fc32ff4cbf622263"
+      }
+    ]
+  },
+  "biopython-advanced@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "62ee9f52205ae1f98a82df8ba7352db7d5a2e335f7638409655f218b32528d79",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "biopython-phylo@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "5deb09620dab2459aa58d1f9d8d6aa037b59d68094f8bae3a30239e384dac557",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "biopython-sequence-io@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "118a83b07049ae6639d9da86a7b7d54e949cdfd502822ecc11d4d63d5fc15ac8",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "biopython-structure@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "e208bfd2ddf54a12d7cb3dfd956ad275397fb05b0881a25ffd4596523ca2d9d1",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "exploratory-data-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "b3624758ac6de54dcd7bfeff3bb554d728664f8b602f1eb835e77cf86475e595",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "biopython-entrez@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "91b4faeb884477a0e4b78ae862a7e8a97041f207445a6e0dede1d597efc7b369",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "geo-search-api@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "1efa0b75c0effaa899b45a3a882b373b58138f062a025ee4d877084b73c453c5",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "medchem@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "1589047e4a0d4cb025c3a870d0e5e1628e9c77c680caa10c298681d827ab4aa1",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "methods-reverse-engineer@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "282d5dd05fed416fb382753126766426d3d1dd4bdcf692f084d5879bfcfad8d4",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "buffer-calculator@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "a0a935469f659d554b49bdf56e62adc6019ff40ecf7d36f025f3be92500ee8cd",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
+  },
+  "image-ocr@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "cc5f9eaf26d00073c3458c40b9f65dd6dd24d070b9cde69f2a755ec6cbf12cda",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ]
   }
 }

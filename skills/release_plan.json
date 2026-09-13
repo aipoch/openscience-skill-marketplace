@@ -134,7 +134,27 @@
       "version": "1.0.0"
     },
     {
+      "id": "biopython-advanced",
+      "version": "1.0.0"
+    },
+    {
       "id": "biopython-alignment",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biopython-entrez",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biopython-phylo",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biopython-sequence-io",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biopython-structure",
       "version": "1.0.0"
     },
     {
@@ -155,6 +175,10 @@
     },
     {
       "id": "brenda-database",
+      "version": "1.0.0"
+    },
+    {
+      "id": "buffer-calculator",
       "version": "1.0.0"
     },
     {
@@ -382,6 +406,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "ehr-semantic-compressor",
+      "version": "1.0.0"
+    },
+    {
       "id": "ena-database",
       "version": "1.0.0"
     },
@@ -435,6 +463,10 @@
     },
     {
       "id": "expert-interview-topics",
+      "version": "1.0.0"
+    },
+    {
+      "id": "exploratory-data-analysis",
       "version": "1.0.0"
     },
     {
@@ -506,6 +538,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "geo-search-api",
+      "version": "1.0.0"
+    },
+    {
       "id": "geopandas",
       "version": "1.0.0"
     },
@@ -571,6 +607,10 @@
     },
     {
       "id": "ib-summarizer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "image-ocr",
       "version": "1.0.0"
     },
     {
@@ -687,6 +727,10 @@
     },
     {
       "id": "mechanism-to-validation-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "medchem",
       "version": "1.0.0"
     },
     {
@@ -854,6 +898,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "methods-reverse-engineer",
+      "version": "1.0.0"
+    },
+    {
       "id": "microbiome-diversity-reporter",
       "version": "1.0.0"
     },
@@ -947,6 +995,10 @@
     },
     {
       "id": "outlier-detection-handler",
+      "version": "1.0.0"
+    },
+    {
+      "id": "paper-sprint-review",
       "version": "1.0.0"
     },
     {
@@ -1479,7 +1531,7 @@
     {
       "id": "adverse-event-narrative",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled CIOMS/MedDRA reference material and sample cases require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "authorship-credit-gen",
@@ -1494,7 +1546,7 @@
     {
       "id": "clinical-decision-support",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "cover-letter-generator",
@@ -1517,11 +1569,6 @@
       "reason": "Documented package references are absent from the pinned Skill directory: references/guide.md. Source completeness review is pending."
     },
     {
-      "id": "ehr-semantic-compressor",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "find-paper-references",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: _user_meta.json."
@@ -1529,22 +1576,22 @@
     {
       "id": "graph-interpretation",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/graph_interpreter.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "hipaa-compliance-auditor",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "SKILL.md requires a root requirements.txt that is absent; the available dependency file is under references/. Verify the documented installation path before publication."
     },
     {
       "id": "irb-application-assistant",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/main.py, references/guide.md, references/audit-reference.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "journal-cover-prompter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/cover_prompter.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "latex-posters",
@@ -1554,12 +1601,12 @@
     {
       "id": "linkedin-optimizer",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/linkedin_optimizer.py, references/linkedin-examples.md, references/keywords-by-specialty.json (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "literature-review",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "medical-review-writer-architect",
@@ -1574,7 +1621,7 @@
     {
       "id": "meta-manuscript-generator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/writing-guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "method-writing",
@@ -1589,47 +1636,42 @@
     {
       "id": "molecular-review-workflow",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "paper-sprint-review",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/pubmed_api.py, scripts/validate_skill.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "paper-web",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "personal-statement",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/personal-statement-examples.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "prior-auth-letter-drafter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled carrier_requirements.json insurance requirements require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "radiology-image-quiz",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/radiology_quiz.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "response-letter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled Word review-response template and embedded contents require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "response-tone-polisher",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "SKILL.md requires requirements.txt, but that file is absent from the pinned package. Verify the documented installation path before publication."
     },
     {
       "id": "sample-size-power-calculator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/main.py, references/audit-reference.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "target-journal-matcher",
@@ -1639,17 +1681,17 @@
     {
       "id": "tone-adjuster",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/tone_adjuster.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "usmle-case-generator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled references/topics.json is invalid JSON (unquoted expressions such as 1-2 abnormal). Verify the configuration and case-generation input contract before publication."
     },
     {
       "id": "baseline-extraction-for-clinical-trials",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/baseline_extractor.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "batch-effect-correction",
@@ -1657,34 +1699,14 @@
       "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix_merged.csv, tests/data/sample_info.csv."
     },
     {
-      "id": "biopython-advanced",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "biopython-phylo",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "biopython-sequence-io",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "biopython-structure",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "case-control-study-quality-assessment-nos",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/extract_pdf.py, scripts/format_nos_table.py, references/nos_criteria_prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "cerna-analysis",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled miRDB, miRTarBase and starBase databases require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "cibersort-immune-infiltration-analysis",
@@ -1699,7 +1721,7 @@
     {
       "id": "clinical-data-cleaner",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled SDTM guidance, domain definitions and clinical outlier thresholds require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "cnv-caller-plotter",
@@ -1709,12 +1731,12 @@
     {
       "id": "code-refactor-for-reproducibility",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/environment-setup.md, references/guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "cohort-study-quality-assessment-nos",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/calculate_nos_score.py, references/nos_criteria.md, scripts/extract_pdf.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "consensus-clustering-analysis",
@@ -1754,7 +1776,7 @@
     {
       "id": "differential-expression-analysis",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled Combined_Datasets_Matrix_mus.csv expression data require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "dnanexus-integration",
@@ -1767,11 +1789,6 @@
       "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv."
     },
     {
-      "id": "exploratory-data-analysis",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "external-model-validation",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: tests/data/BRCA_clinic.csv, tests/data/BRCA_coef.csv, tests/data/BRCA_data.csv."
@@ -1779,12 +1796,12 @@
     {
       "id": "fastqc-report-interpreter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/fastqc_interpreter.py, references/troubleshooting.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "forest-plot-styler",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "gene-protein-expression-matrix-normalization",
@@ -1804,12 +1821,12 @@
     {
       "id": "gsea",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled ssGSEA.rds gene-set data require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "gsva-analysis-and-visualization",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled GSE44076-derived expression data require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "immune-pathway-analysis",
@@ -1824,7 +1841,7 @@
     {
       "id": "knn-imputation",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled expression matrix and sample-group tables require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "lamindb",
@@ -1839,7 +1856,7 @@
     {
       "id": "lncrna-regulatory-network-construction-analysis",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled miRDB, miRTarBase and starBase databases require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "matplotlib",
@@ -1849,12 +1866,12 @@
     {
       "id": "meta-abstract-screener",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/screen_paper.py, references/screening_prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "meta-screening-fulltext",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/extract_pdf.py, scripts/query_pubmed.py, references/screening_prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "metabolomics-workbench-database",
@@ -1869,7 +1886,7 @@
     {
       "id": "model-calibration-curve",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/install_dependencies.R. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "neoantigen-predictor",
@@ -1879,17 +1896,17 @@
     {
       "id": "nomogram-construction",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/install_dependencies.R. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pathml",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/image_loading.md, references/preprocessing.md, references/graphs.md (and 3 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pathology-roi-selector",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pca-dimensionality-reduction",
@@ -1914,12 +1931,12 @@
     {
       "id": "pydicom",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/anonymize_dicom.py, scripts/dicom_to_image.py, references/transfer_syntaxes.md (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pyhealth",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/datasets.md, references/medical_coding.md, references/tasks.md (and 3 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pysam",
@@ -1954,7 +1971,7 @@
     {
       "id": "rowan",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "SKILL.md credits K-Dense Inc.; verify original attribution, license evidence and required redistribution notices before selection."
     },
     {
       "id": "sample-correlation-analysis",
@@ -1979,7 +1996,7 @@
     {
       "id": "shap",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/explainers.md, references/plots.md, references/workflows.md (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "smiles-de-salter",
@@ -1989,22 +2006,22 @@
     {
       "id": "spatial-transcriptomics-mapper",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_test_data.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "ssgsea-immune-infiltration-analysis",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled expression data and Charoentong 2017-derived immune gene sets require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "statistical-analysis",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/test_selection_guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "survival-analysis-km",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "survival-curve-risk-table",
@@ -2019,7 +2036,7 @@
     {
       "id": "tf-target-gene-regulatory-network",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled DoRothEA RDS databases and generated RData/XLSX results require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "time-dependent-roc",
@@ -2029,7 +2046,7 @@
     {
       "id": "tooluniverse-statistical-modeling",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/troubleshooting.md, references/bixbench_patterns.md, references/logistic_regression.md (and 3 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "umap-tsne-analysis",
@@ -2054,7 +2071,7 @@
     {
       "id": "wgcna-analysis",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/diagnosis-report.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "xgboost-analysis",
@@ -2064,17 +2081,12 @@
     {
       "id": "alphafold-db",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled AlphaFold CIF/PDB files carry CC-BY-4.0 notices; review data attribution and mixed-license projection before selection."
     },
     {
       "id": "bio-ontology-mapper",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: references/mesh_sample.json, references/snomed_sample.json, references/synonyms.json."
-    },
-    {
-      "id": "biopython-entrez",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "blockbuster-therapy-predictor",
@@ -2084,12 +2096,12 @@
     {
       "id": "citation-chasing-mapping",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/main.py, references/guide.md, references/audit-reference.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "citation-network",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/README.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "clinical-trial-finder",
@@ -2099,7 +2111,7 @@
     {
       "id": "clinpgx-database",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The query script declares CC BY-SA 4.0 while Skill frontmatter declares MIT; review file-level licensing and required notices."
     },
     {
       "id": "comparison-table-gen",
@@ -2109,7 +2121,7 @@
     {
       "id": "cross-disciplinary-bridge-finder",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "diagnostic-study-quality-assessment-quadas-2",
@@ -2119,12 +2131,12 @@
     {
       "id": "diffdock-molecular-docking",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/workflows_examples.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "drug-interaction-checker",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled drug-interaction database, CYP450 substrate data and severity criteria require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "emerging-topic-scout",
@@ -2134,22 +2146,17 @@
     {
       "id": "fda-database",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled openFDA response caches with separate data terms and notices require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "fda-guideline-search",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "scripts/main.py explicitly supplies mock demonstration guideline data rather than real FDA search results. Verify documented real-source search behavior before publication."
     },
     {
       "id": "funding-trend-forecaster",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: report.json."
-    },
-    {
-      "id": "geo-search-api",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "grant-funding-scout",
@@ -2159,7 +2166,7 @@
     {
       "id": "gwas-database",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/api_reference.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "journal-impact-factor-trend",
@@ -2169,12 +2176,12 @@
     {
       "id": "journal-latest-issue",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/journal_digest.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "journal-matchmaker",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled journal catalog and scoring metadata require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "journal-skills",
@@ -2189,7 +2196,7 @@
     {
       "id": "key-takeaways",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "litbase",
@@ -2202,19 +2209,9 @@
       "reason": "Bundled assets require individual provenance review before selection: assets/screening_log_template.csv."
     },
     {
-      "id": "medchem",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "methods-reverse-engineer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "open-access-scout",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/oa_scout.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "open-source-license-check",
@@ -2229,12 +2226,12 @@
     {
       "id": "patent-claim-mapper",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/claim_mapper.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "patent-landscape",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/patent_landscape.py, references/ipc-classifications.md, references/patent-search-strategies.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "preprint-surveillance-finder",
@@ -2279,7 +2276,7 @@
     {
       "id": "scientific-critical-thinking",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "string-database",
@@ -2309,12 +2306,12 @@
     {
       "id": "venue-templates",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled journal/conference/grant LaTeX templates and style guides require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "academic-norm-review",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/guide.md, assets/academic_compliance_checklist.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "academic-poster-generator",
@@ -2334,7 +2331,7 @@
     {
       "id": "bib-formatter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled CSL styles carry separate CC BY-SA notices; review authorship, license evidence and mixed-license projection."
     },
     {
       "id": "bibliography",
@@ -2344,12 +2341,7 @@
     {
       "id": "bmi-bsa-calculator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "buffer-calculator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/bsa_formulas_comparison.md, references/pediatric_norms.md, references/chemotherapy_dosing.md (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "chemical-structure-converter",
@@ -2359,7 +2351,7 @@
     {
       "id": "clinical-reports",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "conference-tweet-generator",
@@ -2379,12 +2371,12 @@
     {
       "id": "dicom-anonymizer",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "references/phi_tags.json contains Python-like assignments and comments rather than JSON. Verify its intended format and documented consumption before publication."
     },
     {
       "id": "experiment-detail-comparator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled full article text and extracted derivatives with independent content licenses require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "hippocrates",
@@ -2394,17 +2386,12 @@
     {
       "id": "html-to-pdf",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled large vendored dependency tree require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "icd10-cpt-coding-assistant",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: references/common_mappings.json, references/cpt_common_codes.json, references/icd10_common_codes.json."
-    },
-    {
-      "id": "image-ocr",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "iso-certification",
@@ -2419,17 +2406,17 @@
     {
       "id": "lab-result-interpretation",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/test_metadata.json. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "literature-management",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/requirements.txt, scripts/import_library.py, references/examples.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "literature-statistics",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/process_references.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "mendel",
@@ -2439,12 +2426,12 @@
     {
       "id": "mindmap-html-generator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "scripts/generate_mindmap_html.py fails static Python syntax parsing, starting at line 19. Correct the upstream executable before publication."
     },
     {
       "id": "patient-consent-simplifier",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/consent_simplifier.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pdf-extract",
@@ -2454,12 +2441,12 @@
     {
       "id": "pdf-processor",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/requirements.txt, references/examples.md, scripts/pdf_tool.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "pdf-to-ppt-pack",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/validate_skill.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "phi-prompt-guard",
@@ -2479,7 +2466,7 @@
     {
       "id": "ppt-master",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled more than 12,000 template/dependency files require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "resubmission-deadline-tracker",
@@ -2499,17 +2486,17 @@
     {
       "id": "symptom-checker-triage",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/red_flags.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "text-format-organizer",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/init_run.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "treatment-plans",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "uspto-database",
@@ -2524,27 +2511,27 @@
     {
       "id": "basic-research-design",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/prompt_templates.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "clinic-research-design",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: scripts/calculators/sample_size.py, scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "clinical-trial-protocol-skill",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled FDA protocol template and detailed operational reference material require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "hypothesis-generation",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: assets/FORMATTING_GUIDE.md, references/hypothesis_quality_criteria.md, references/experimental_design_patterns.md (and 2 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "inclusion-criteria-gen",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled eligibility templates, feasibility data and regulatory guidance require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "randomization-gen",
@@ -2554,12 +2541,12 @@
     {
       "id": "research-grants",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/budget_preparation.md, references/review_criteria.md, references/timeline_planning.md (and 6 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "research-proposal-generator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Referenced paths are absent from the pinned package: references/prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "sample-size-basic",
