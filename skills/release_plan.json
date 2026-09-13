@@ -70,6 +70,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "article-format-adjustment",
+      "version": "1.0.0"
+    },
+    {
       "id": "arxiv-database",
       "version": "1.0.0"
     },
@@ -91,6 +95,14 @@
     },
     {
       "id": "benchling-integration",
+      "version": "1.0.0"
+    },
+    {
+      "id": "bianque",
+      "version": "1.0.0"
+    },
+    {
+      "id": "bibliography",
       "version": "1.0.0"
     },
     {
@@ -278,6 +290,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "comparison-table-gen",
+      "version": "1.0.0"
+    },
+    {
       "id": "competitor-trial-monitor",
       "version": "1.0.0"
     },
@@ -307,6 +323,10 @@
     },
     {
       "id": "consistency-checker-across-manuscript",
+      "version": "1.0.0"
+    },
+    {
+      "id": "content-proofreading",
       "version": "1.0.0"
     },
     {
@@ -510,6 +530,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "find-paper-references",
+      "version": "1.0.0"
+    },
+    {
       "id": "flowio",
       "version": "1.0.0"
     },
@@ -590,6 +614,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "hippocrates",
+      "version": "1.0.0"
+    },
+    {
       "id": "histolab",
       "version": "1.0.0"
     },
@@ -646,11 +674,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "journal-skills",
+      "version": "1.0.0"
+    },
+    {
       "id": "kegg-database",
       "version": "1.0.0"
     },
     {
       "id": "keyword-velocity-tracker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "knowledge-base-search",
       "version": "1.0.0"
     },
     {
@@ -671,6 +707,10 @@
     },
     {
       "id": "latex-manuscript-format-converter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "latex-posters",
       "version": "1.0.0"
     },
     {
@@ -703,6 +743,10 @@
     },
     {
       "id": "literature-extensive-read",
+      "version": "1.0.0"
+    },
+    {
+      "id": "literature-filtering",
       "version": "1.0.0"
     },
     {
@@ -1026,6 +1070,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "pdf-extract",
+      "version": "1.0.0"
+    },
+    {
       "id": "pdf-extract-experimental-materials",
       "version": "1.0.0"
     },
@@ -1043,6 +1091,14 @@
     },
     {
       "id": "phenotype-introduction",
+      "version": "1.0.0"
+    },
+    {
+      "id": "phi-prompt-guard",
+      "version": "1.0.0"
+    },
+    {
+      "id": "phylogenetic-tree-styler",
       "version": "1.0.0"
     },
     {
@@ -1198,7 +1254,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "research-paper-downloader",
+      "version": "1.0.0"
+    },
+    {
       "id": "residency-interview-prep",
+      "version": "1.0.0"
+    },
+    {
+      "id": "result-figure-consistencycheck",
       "version": "1.0.0"
     },
     {
@@ -1219,6 +1283,10 @@
     },
     {
       "id": "revision-strategy-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "sample-group-sankey-plot",
       "version": "1.0.0"
     },
     {
@@ -1358,6 +1426,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "systematic-review-screener",
+      "version": "1.0.0"
+    },
+    {
       "id": "table-1-generator",
       "version": "1.0.0"
     },
@@ -1451,6 +1523,10 @@
     },
     {
       "id": "visual-content-desc",
+      "version": "1.0.0"
+    },
+    {
+      "id": "volcano-plot-script",
       "version": "1.0.0"
     },
     {
@@ -1569,11 +1645,6 @@
       "reason": "Documented package references are absent from the pinned Skill directory: references/guide.md. Source completeness review is pending."
     },
     {
-      "id": "find-paper-references",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: _user_meta.json."
-    },
-    {
       "id": "graph-interpretation",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/graph_interpreter.py. Verify whether these are required package files, generated examples or external dependencies before selection."
@@ -1594,11 +1665,6 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/cover_prompter.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "latex-posters",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/baposter_template.tex, assets/beamerposter_template.tex, assets/tikzposter_template.tex."
-    },
-    {
       "id": "linkedin-optimizer",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/linkedin_optimizer.py, references/linkedin-examples.md, references/keywords-by-specialty.json (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
@@ -1611,7 +1677,7 @@
     {
       "id": "medical-review-writer-architect",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/Review_Final.md."
+      "reason": "Bundled scripts/check_section.py (line 64) and scripts/pubmed_search.py (line 95) fail static Python syntax parsing. Correct the pinned upstream executables before publication."
     },
     {
       "id": "medical-scribe-dictation",
@@ -1741,7 +1807,7 @@
     {
       "id": "consensus-clustering-analysis",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/genes.csv, tests/data/groups.csv."
+      "reason": "Bundled DESCRIPTION declares GPL-3 while SKILL.md declares MIT. Resolve package-level license evidence and projection before publication."
     },
     {
       "id": "crispr-screen-analyzer",
@@ -1891,7 +1957,7 @@
     {
       "id": "neoantigen-predictor",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/example_mutations.csv."
+      "reason": "The implementation uses simulated NetMHC binding scores and mock protein/peptide sequences. Verify real prediction inputs and implementation before publication."
     },
     {
       "id": "nomogram-construction",
@@ -1912,11 +1978,6 @@
       "id": "pca-dimensionality-reduction",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: tests/data/sample_pca_1.csv, tests/data/sample_pca_2.csv, tests/data/sample_pca_3.csv."
-    },
-    {
-      "id": "phylogenetic-tree-styler",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: example/taxonomy.csv, example/tree.nwk."
     },
     {
       "id": "probast-quality-assessment-for-prediction-model-studies",
@@ -1977,11 +2038,6 @@
       "id": "sample-correlation-analysis",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: tests/data/sample_correlation_1.csv, tests/data/sample_correlation_2.csv, tests/data/sample_correlation_3.csv."
-    },
-    {
-      "id": "sample-group-sankey-plot",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/sample_annotations.csv."
     },
     {
       "id": "scanpy",
@@ -2059,11 +2115,6 @@
       "reason": "The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices."
     },
     {
-      "id": "volcano-plot-script",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/example_deg_data.csv."
-    },
-    {
       "id": "western-blot-quantifier",
       "version": "1.0.0",
       "reason": "SKILL.md includes an OpenClaw Skills attribution; verify original source and required redistribution notices."
@@ -2112,11 +2163,6 @@
       "id": "clinpgx-database",
       "version": "1.0.0",
       "reason": "The query script declares CC BY-SA 4.0 while Skill frontmatter declares MIT; review file-level licensing and required notices."
-    },
-    {
-      "id": "comparison-table-gen",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: comparison.json."
     },
     {
       "id": "cross-disciplinary-bridge-finder",
@@ -2184,11 +2230,6 @@
       "reason": "Bundled journal catalog and scoring metadata require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
-      "id": "journal-skills",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/journal_recommendation_template.csv."
-    },
-    {
       "id": "kegg-api",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: references/KEGG_API_Manual.txt."
@@ -2201,12 +2242,7 @@
     {
       "id": "litbase",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: config.json, core/config.json, core/search_config.json, core/settings.local.json, search_config.json, settings.local.json."
-    },
-    {
-      "id": "literature-filtering",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/screening_log_template.csv."
+      "reason": "The package includes populated research memory, reading notes and search_config.json alongside empty core templates. Verify their provenance and intended redistribution before publication."
     },
     {
       "id": "open-access-scout",
@@ -2261,17 +2297,12 @@
     {
       "id": "reference-search",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/search_log_template.csv, assets/search_results_template.csv, inputs/query.json."
-    },
-    {
-      "id": "research-paper-downloader",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: config.json."
+      "reason": "Blank CSV templates are reviewable, but inputs/query.json contains a full PDAC review abstract without its origin or redistribution evidence. Resolve that bundled text before publication."
     },
     {
       "id": "scholar-evaluation",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: scores.json."
+      "reason": "The documented snake_case score keys do not match calculate_scores.py title-case dimension keys; the documented example produces no recognized scores. Correct the upstream input contract before publication."
     },
     {
       "id": "scientific-critical-thinking",
@@ -2282,11 +2313,6 @@
       "id": "string-database",
       "version": "1.0.0",
       "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
-    },
-    {
-      "id": "systematic-review-screener",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/sample_references.csv."
     },
     {
       "id": "target-novelty-scorer",
@@ -2316,27 +2342,12 @@
     {
       "id": "academic-poster-generator",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/templates/baposter-template.tex, assets/templates/beamerposter-template.tex, assets/templates/tikzposter-template.tex."
-    },
-    {
-      "id": "article-format-adjustment",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/formats/apa.json, assets/formats/bmc.json, assets/formats/cell.json, assets/formats/cell_ffc.json, assets/formats/cell_reports.json, assets/formats/embo.json, assets/formats/faseb.json, assets/formats/ieee.json, assets/formats/jbc.json, assets/formats/jimmunol.json, assets/formats/lancet.json, assets/formats/molecular_cell.json, assets/formats/nature.json, assets/formats/nature_ffc.json, assets/formats/nejm.json, assets/formats/plos.json, assets/formats/pnas.json, assets/formats/scientific_reports.json."
-    },
-    {
-      "id": "bianque",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: evals/evals.json."
+      "reason": "The bundled tikzposter template uses a poster environment associated with baposter. Verify template/package compatibility and the documented end-to-end poster workflow before publication."
     },
     {
       "id": "bib-formatter",
       "version": "1.0.0",
       "reason": "Bundled CSL styles carry separate CC BY-SA notices; review authorship, license evidence and mixed-license projection."
-    },
-    {
-      "id": "bibliography",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/bibliography_template.csv."
     },
     {
       "id": "bmi-bsa-calculator",
@@ -2359,11 +2370,6 @@
       "reason": "The bundled drug dictionary requires individual source and redistribution evidence review."
     },
     {
-      "id": "content-proofreading",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/terminology/biology.json."
-    },
-    {
       "id": "datamol",
       "version": "1.0.0",
       "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
@@ -2379,11 +2385,6 @@
       "reason": "Bundled full article text and extracted derivatives with independent content licenses require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
-      "id": "hippocrates",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: evals/evals.json."
-    },
-    {
       "id": "html-to-pdf",
       "version": "1.0.0",
       "reason": "Bundled large vendored dependency tree require individual origin, applicable license and redistribution evidence review before selection."
@@ -2397,11 +2398,6 @@
       "id": "iso-certification",
       "version": "1.0.0",
       "reason": "Bundled ISO 13485 requirements and checklists require separate source and redistribution evidence review."
-    },
-    {
-      "id": "knowledge-base-search",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/hit_list_template.csv."
     },
     {
       "id": "lab-result-interpretation",
@@ -2434,11 +2430,6 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/consent_simplifier.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "pdf-extract",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: report.json."
-    },
-    {
       "id": "pdf-processor",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/requirements.txt, references/examples.md, scripts/pdf_tool.py. Verify whether these are required package files, generated examples or external dependencies before selection."
@@ -2447,11 +2438,6 @@
       "id": "pdf-to-ppt-pack",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/validate_skill.py. Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
-      "id": "phi-prompt-guard",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: phi-prompt-guard_structural_precheck.json."
     },
     {
       "id": "postdoc-fellowship-matcher",
@@ -2472,11 +2458,6 @@
       "id": "resubmission-deadline-tracker",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: data/deadlines.json, references/task_templates.json."
-    },
-    {
-      "id": "result-figure-consistencycheck",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: assets/figure_caption_checklist.csv."
     },
     {
       "id": "slide-deck-images",
@@ -2536,7 +2517,7 @@
     {
       "id": "randomization-gen",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: randomization.csv."
+      "reason": "The CLI exposes blocked allocation only and outputs a plain CSV, despite documented stratification, seed and sealed-allocation claims. Verify the supported interface and concealment claims before publication."
     },
     {
       "id": "research-grants",

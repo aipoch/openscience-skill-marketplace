@@ -54,10 +54,10 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-364 reviewed Skills, retaining all 351 previously published members and adding
-13 members at `1.0.0`. The other 220 members remain explicitly deferred.
-Of these, 207 await review for a later batch, including six previously deferred entries with missing
-documented package files and 201 entries with asset, attribution, or source-completeness follow-ups. The original 13
+383 reviewed Skills, retaining all 364 previously selected members and adding
+19 members at `1.0.0`. The other 201 members remain explicitly deferred.
+Of these, 188 await review for a later batch, including six previously deferred entries with missing
+documented package files and 182 entries with asset, attribution, or source-completeness follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice

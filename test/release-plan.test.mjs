@@ -214,7 +214,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed release adds one hundred reviewed members while retaining the previous batch and review gates", async () => {
+test("committed release retains prior members and adds nineteen reviewed skills", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -578,8 +578,29 @@ test("committed release adds one hundred reviewed members while retaining the pr
     "waste-disposal-guide",
     "zinc-database",
   ];
+  retainedIds.push(
+    "article-format-adjustment",
+    "bianque",
+    "bibliography",
+    "comparison-table-gen",
+    "content-proofreading",
+    "find-paper-references",
+    "hippocrates",
+    "journal-skills",
+    "knowledge-base-search",
+    "latex-posters",
+    "literature-filtering",
+    "pdf-extract",
+    "phi-prompt-guard",
+    "phylogenetic-tree-styler",
+    "research-paper-downloader",
+    "result-figure-consistencycheck",
+    "sample-group-sankey-plot",
+    "systematic-review-screener",
+    "volcano-plot-script",
+  );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 364);
+  assert.equal(selected.length, 383);
   for (const id of retainedIds) assert.ok(selectedIds.includes(id), id);
   assert.ok(selected.every(({ version }) => version === "1.0.0"));
   assert.deepEqual(
