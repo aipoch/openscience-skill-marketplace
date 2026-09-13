@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "hippocrates",
+    "version": "1.0.0",
+    "display_name": "hippocrates",
+    "summary": "Evidence-based medical knowledge and research mentor. Trigger this skill when users ask any question related to medicine, clinical science, pharmacology, pathology, epidemiology, or health sciences. Covers: disease mechanisms, drug actions and interactions, differential diagnosis reasoning, clinical guideline interpretation, medical literature appraisal (including GRADE assessment), treatment comparisons, lab and imaging interpretation, public health analysis, and medical terminology. Even if the user doesn't explicitly say \"evidence-based\" or \"medical research,\" trigger this skill whenever the topic touches health, disease, drugs, or therapeutics. Part of the AIPOCH Medical Research Skill Hub.\n",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/hippocrates"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 91,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/hippocrates/eval_report_hippocrates_result_v1.json",
+      "evaluated_on": "2026-04-08",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.3,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f93c3c38c08523b3a87a0d9192bccd23b9497a69e3b5c7398a777402e1ccc058",
+    "file_count": 7,
+    "uncompressed_bytes": 56055
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "hippocrates"
+  }
+}

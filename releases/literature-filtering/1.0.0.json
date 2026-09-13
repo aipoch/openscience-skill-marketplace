@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "literature-filtering",
+    "version": "1.0.0",
+    "display_name": "literature-filtering",
+    "summary": "Filter literature by publication year, journal, and predefined screening rules to produce inclusion/exclusion lists; use when conducting preliminary screening or systematic review screening to narrow the literature scope.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/literature-filtering"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/literature-filtering/literature-filtering_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "a71855b68083c1be1bde14a9ce8990ee3845eadd2b3fa33675eb456dcb59b68c",
+    "file_count": 5,
+    "uncompressed_bytes": 23286
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "literature-filtering"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "bibliography",
+    "version": "1.0.0",
+    "display_name": "bibliography",
+    "summary": "Classifies and organizes literature by theme, method, and conclusion; use when you need to batch-read a folder of PDF/MD/DOCX/TXT files and output a structured CSV for literature reviews and annotation management.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/bibliography"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/bibliography/bibliography_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "6b2b82af66d1c181146d96f7b2398b511ec8de010931bc661787ea2b40623147",
+    "file_count": 5,
+    "uncompressed_bytes": 23042
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "bibliography"
+  }
+}

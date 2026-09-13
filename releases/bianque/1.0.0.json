@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "bianque",
+    "version": "1.0.0",
+    "display_name": "bianque",
+    "summary": "Evidence-based medical knowledge and research mentor grounded in the Bian Que tradition. Covers clinical reasoning, diagnostic thinking (望闻问切), pharmacology, pathology, differential diagnosis, medical literature appraisal, and the philosophy of early intervention. Trigger whenever users ask about medicine, clinical science, drugs, disease mechanisms, diagnosis, lab interpretation, treatment comparison, or health sciences. Even without explicit research framing, trigger on any topic touching disease, therapeutics, or clinical decision-making. Part of the AIPOCH Medical Research Skill Hub.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Other/bianque"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 93,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Other/bianque/eval_report_bianque_result.json",
+      "evaluated_on": "2026-04-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 93,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 92.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "22e3efd8a9a0f61021aa588f3faebfc5b1421dfe4fcbc6f894b0fff52301f9fc",
+    "file_count": 7,
+    "uncompressed_bytes": 44686
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "bianque"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "result-figure-consistencycheck",
+    "version": "1.0.0",
+    "display_name": "result-figure-consistencycheck",
+    "summary": "Checks consistency between paper result descriptions and figure legends (text-only) when the input is a PDF-to-Markdown full text containing page breaks (e.g., `## Page XX`) and legend text; outputs a Markdown consistency report and a UTF-8 CSV issue list.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/result-figure-consistencycheck"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/result-figure-consistencycheck/eval_report_result-figure-consistencycheck_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 94,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "465d6784fcb88af0790ffd629e64017ccf6a96595ce6d6a15b2d95c2fb66c94a",
+    "file_count": 7,
+    "uncompressed_bytes": 19328
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "result-figure-consistencycheck"
+  }
+}

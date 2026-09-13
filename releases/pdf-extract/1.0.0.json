@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "pdf-extract",
+    "version": "1.0.0",
+    "display_name": "pdf-extract",
+    "summary": "Extract PDF selectable text and full-page or segmented page images (including tables) into Markdown with per-page headings and image links; use when you need both readable text and page visuals for PPT creation, review, or analysis.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/pdf-extract"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/pdf-extract/pdf-extract_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 83,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 94.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "8c4d86c1585560f0d9d03e6291d012a28512a1aa5712b2e2c4dcc0fa79c9643f",
+    "file_count": 7,
+    "uncompressed_bytes": 41690
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "pdf-extract"
+  }
+}

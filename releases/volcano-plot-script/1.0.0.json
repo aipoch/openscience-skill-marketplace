@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "volcano-plot-script",
+    "version": "1.0.0",
+    "display_name": "volcano-plot-script",
+    "summary": "Generate R/Python code for volcano plots from DEG (Differentially Expressed Genes) analysis results. Triggered when user needs visualization of gene expression data, p-value vs fold-change scatter plots, publication-ready figures for bioinformatics analysis.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/volcano-plot-script"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/volcano-plot-script/volcano-plot-script_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 84.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "76ca9da79914ab7c866418c095fa84d732e0f3d6ac94b73b736ccb5c568b1520",
+    "file_count": 9,
+    "uncompressed_bytes": 42967
+  },
+  "artifact": {
+    "path": "shards/1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995.zip",
+    "sha256": "1ea735cead62d521282de0bf8a672a95515d73332ea4fa7d5d2ccf72eed45995",
+    "bytes": 342914,
+    "skill_path": "volcano-plot-script"
+  }
+}
