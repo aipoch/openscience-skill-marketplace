@@ -19,29 +19,35 @@ if (!values.source)
 const config = parseMetadataJson(await readFile("marketplace.config.json"));
 const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
 validateManifest(manifest, await readFile("skills/inclusion-list.md"));
-const snapshot = gitSnapshot(values.source, config.source.commit);
-const audit = auditSources(manifest, snapshot, config.source);
 const selected = selectReleaseEntries(
   await readFile("skills/release_plan.json"),
-  audit.entries,
+  manifest.entries,
   config.source,
 );
 const reviews = parseMetadataJson(await readFile("skills/reviews.json"));
 await mkdir(values.output, { recursive: true });
 try {
-  const candidates = prepareCandidates(
-    { entries: selected },
-    reviews,
-    config,
-    snapshot,
-    await loadAdditionalLicenses(
-      selected.map(
-        (entry) =>
-          reviews[`${entry.id}@${entry.version ?? config.initialVersion}`],
-      ),
-      "licenses",
+  const licenseCopies = await loadAdditionalLicenses(
+    selected.map(
+      (entry) =>
+        reviews[`${entry.id}@${entry.version ?? config.initialVersion}`],
     ),
+    "licenses",
   );
+  const candidates = [];
+  for (const [commit, entries] of Map.groupBy(
+    selected,
+    (entry) => entry.sourceCommit ?? config.source.commit,
+  )) {
+    const snapshot = gitSnapshot(values.source, commit);
+    const audit = auditSources({ entries }, snapshot, {
+      ...config.source,
+      commit,
+    });
+    candidates.push(
+      ...prepareCandidates(audit, reviews, config, snapshot, licenseCopies),
+    );
+  }
   let history;
   if (values.history) {
     if (!process.env.SKILL_MARKETPLACE_PUBLIC_KEY)

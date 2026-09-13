@@ -10,6 +10,30 @@ workflow after explicit maintainer authorization. Check the
 and [releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
 for the actual publication outcome.
 
+## Source commits within the original list
+
+Selected records can pin `source_commit` to consume a repaired, unpublished Skill
+from the configured repository without moving other members off the default
+snapshot. This does not add repositories or members outside the original authority.
+The fetch command retrieves only missing selected commits and never checks them
+out; the baseline audit still checks the original full source snapshot. Builds
+group selected members by commit and audit each group before preparing packages.
+The review-input CLI and signing guard use the same resolved per-member source.
+
+CI and production run `node scripts/fetch-selected-sources.mjs --source dist/upstream`
+after the baseline checkout. A missing commit or mismatched approval blocks the
+build. CI also builds the selected source snapshots without signing or uploading.
+The focused Windows `validate.yml` dispatch exercises these same fetch/audit/build
+steps. The publication rehearsal includes the two-snapshot integration contract.
+
+Historical descriptors, ZIPs and source identities remain immutable. New approved
+members receive new artifacts through the existing incremental publication path.
+The public `source.commit` field already carries the actual content commit, so
+consuming Apps need no protocol or database update. This introduces one optional
+repository configuration field, no state enums, migrations or compatibility aliases.
+The current selection remains 384 members; this capability does not approve or
+publish any additional Skill by itself.
+
 ## Responsibilities
 
 - `main`: reviewed inputs, protocol, tooling, source observations and review records.

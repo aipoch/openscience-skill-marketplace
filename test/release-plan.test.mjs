@@ -45,7 +45,13 @@ const select = (value, authority = entries) =>
 test("release plans require an exact, versioned partition and a matching source", () => {
   const value = plan();
   const original = structuredClone(value);
-  assert.deepEqual(select(value), entries.slice(0, 2));
+  assert.deepEqual(
+    select(value),
+    entries.slice(0, 2).map((entry) => ({
+      ...entry,
+      sourceCommit: source.commit,
+    })),
+  );
   assert.deepEqual(value, original);
   for (const mutate of [
     (p) => p.selected.push(p.selected[0]),

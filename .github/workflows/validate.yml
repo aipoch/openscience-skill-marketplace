@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       full:
-        description: Run the full matrix instead of the focused Windows source audit
+        description: Run the full matrix instead of the focused Windows source fetch/audit/build
         type: boolean
         default: false
   push:
@@ -47,4 +47,8 @@ jobs:
           ref: d92441066ea6259967469be8e0c8c7b6587928ab
           path: dist/upstream
           persist-credentials: false
+      - name: Fetch selected immutable source commits
+        run: node scripts/fetch-selected-sources.mjs --source dist/upstream
       - run: npm run audit:sources -- --source dist/upstream --check
+      - name: Build selected source snapshots without publishing
+        run: npm run build:catalog -- --source dist/upstream
