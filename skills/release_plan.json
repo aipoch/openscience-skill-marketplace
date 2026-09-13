@@ -762,6 +762,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "mendelian-randomization-protocol-designer",
+      "version": "1.0.0"
+    },
+    {
       "id": "meta-analysis-methods-generator",
       "version": "1.0.0"
     },
@@ -799,6 +803,10 @@
     },
     {
       "id": "meta-picos-generator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "meta-protocol-writer",
       "version": "1.0.0"
     },
     {
@@ -870,11 +878,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "mr-scrna-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "multi-database-literature-collector",
       "version": "1.0.0"
     },
     {
+      "id": "multi-omics-clinical-integration-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "multi-panel-figure-assembler",
+      "version": "1.0.0"
+    },
+    {
+      "id": "network-tox-docking-research-planner",
       "version": "1.0.0"
     },
     {
@@ -890,7 +910,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "nhanes-clinical-retrospective-biomarker-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "nih-biosketch-builder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "non-tumor-mechanism-guided-diagnostic-ml-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "non-tumor-ml-research-planner",
       "version": "1.0.0"
     },
     {
@@ -931,6 +963,10 @@
     },
     {
       "id": "patient-recruitment-ad-gen",
+      "version": "1.0.0"
+    },
+    {
+      "id": "pcd-immune-oncology-research-planner",
       "version": "1.0.0"
     },
     {
@@ -994,7 +1030,27 @@
       "version": "1.0.0"
     },
     {
+      "id": "primary-plan-recommender",
+      "version": "1.0.0"
+    },
+    {
+      "id": "process-related-diagnostic-biomarker-nomogram-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "prognostic-biomarker-protocol-designer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "prospero-registration-helper",
+      "version": "1.0.0"
+    },
+    {
       "id": "protocol-deviation-classifier",
+      "version": "1.0.0"
+    },
+    {
+      "id": "protocol-standardization",
       "version": "1.0.0"
     },
     {
@@ -1030,7 +1086,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "qtl-colocalization-study-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "reagent-expiry-alert",
+      "version": "1.0.0"
+    },
+    {
+      "id": "real-world-evidence-study-designer",
       "version": "1.0.0"
     },
     {
@@ -1106,6 +1170,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "sample-size-and-power-planning-assistant",
+      "version": "1.0.0"
+    },
+    {
       "id": "sanger-chromatogram-qa",
       "version": "1.0.0"
     },
@@ -1170,6 +1238,30 @@
       "version": "1.0.0"
     },
     {
+      "id": "single-cell-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "single-compound-network-toxicology-disease-link-reference-grounded",
+      "version": "1.0.0"
+    },
+    {
+      "id": "single-drug-adverse-effect-hub-first-network-pharmacology",
+      "version": "1.0.0"
+    },
+    {
+      "id": "single-drug-adverse-effect-pathway-anchored-network-pharmacology",
+      "version": "1.0.0"
+    },
+    {
+      "id": "single-drug-faers-safety-profile-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "single-gene-oncology-reference-grounded-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "singlecell-portal",
       "version": "1.0.0"
     },
@@ -1199,6 +1291,10 @@
     },
     {
       "id": "study-limitations-drafter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "study-objective-refiner",
       "version": "1.0.0"
     },
     {
@@ -1254,6 +1350,26 @@
       "version": "1.0.0"
     },
     {
+      "id": "translational-study-blueprint",
+      "version": "1.0.0"
+    },
+    {
+      "id": "treatment-response-predictor-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "tumor-immune-infiltration-diagnostic-ml-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "two-sample-mr-exposure-screening-reference-grounded",
+      "version": "1.0.0"
+    },
+    {
+      "id": "two-sample-mr-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "uniprot-database",
       "version": "1.0.0"
     },
@@ -1263,6 +1379,10 @@
     },
     {
       "id": "upset-plot-converter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "validation-strategy-designer",
       "version": "1.0.0"
     },
     {
@@ -2427,89 +2547,9 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "mendelian-randomization-protocol-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "meta-protocol-writer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "mr-scrna-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "multi-omics-clinical-integration-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "network-tox-docking-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "nhanes-clinical-retrospective-biomarker-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "non-tumor-mechanism-guided-diagnostic-ml-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "non-tumor-ml-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "pcd-immune-oncology-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "primary-plan-recommender",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "process-related-diagnostic-biomarker-nomogram-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "prognostic-biomarker-protocol-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "prospero-registration-helper",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "protocol-standardization",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "qtl-colocalization-study-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "randomization-gen",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: randomization.csv."
-    },
-    {
-      "id": "real-world-evidence-study-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "research-grants",
@@ -2522,89 +2562,19 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "sample-size-and-power-planning-assistant",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "sample-size-basic",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "single-cell-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "single-compound-network-toxicology-disease-link-reference-grounded",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "single-drug-adverse-effect-hub-first-network-pharmacology",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "single-drug-adverse-effect-pathway-anchored-network-pharmacology",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "single-drug-faers-safety-profile-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "single-gene-oncology-reference-grounded-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The documented paired t-test/chi-square and parameter interface do not match the bundled CLI, and SKILL.md requires requirements.txt absent from the pinned package; verify calculation scope, inputs and package completeness before publication."
     },
     {
       "id": "sop-writer",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "study-objective-refiner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The bundled CLI always uses fixed demo procedure steps and leaves materials/QC placeholders despite the documented complete SOP output; verify real procedure input handling and output claims before publication."
     },
     {
       "id": "tooluniverse-clinical-trial-design",
       "version": "1.0.0",
       "reason": "The bundled trial report and example implementation require individual provenance review before selection."
-    },
-    {
-      "id": "translational-study-blueprint",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "treatment-response-predictor-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "tumor-immune-infiltration-diagnostic-ml-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "two-sample-mr-exposure-screening-reference-grounded",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "two-sample-mr-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "validation-strategy-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     }
   ]
 }

@@ -3,8 +3,8 @@
 An independent protocol and publication toolchain for individually distributed
 Open-Science Skills. The authoritative manifest contains **584 Skills**, resolved
 against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
-selects **321 reviewed Skills**: the 221 previously published members and 100
-additional members at `1.0.0`. It explicitly defers the other 263 members.
+selects **351 reviewed Skills**: the 321 previously published members and 30
+additional members at `1.0.0`. It explicitly defers the other 233 members.
 
 Every selected package has a byte-bound redistribution review. Deferred members
 require separate review before inclusion. See [GitHub Releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
