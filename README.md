@@ -3,9 +3,9 @@
 An independent protocol and publication toolchain for individually distributed
 Open-Science Skills. The authoritative manifest contains **584 Skills**, resolved
 against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
-selects **386 reviewed Skills**, retaining all 384 previous members and adding
-`citation-network` and `discussion-section-architect` at `1.0.0`. It explicitly
-defers the other 198 members. See [release selection](skills/README.md#release-selection).
+selects **388 reviewed Skills**, retaining all 386 previous members and adding
+`baseline-extraction-for-clinical-trials` and `scientific-critical-thinking` at
+`1.0.0`. It explicitly defers the other 196 members. See [release selection](skills/README.md#release-selection).
 
 Every selected package has a byte-bound redistribution review. Deferred members
 require separate review before inclusion. See [GitHub Releases](https://github.com/aipoch/openscience-skill-marketplace/releases)

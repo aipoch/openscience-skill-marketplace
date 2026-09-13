@@ -5067,5 +5067,41 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-13",
     "license_expression": "MIT"
+  },
+  "baseline-extraction-for-clinical-trials@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "ab473c1e2898b9dea818af86271ab495974f94abd036f828d27efec63b63e1ed",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT"
+  },
+  "scientific-critical-thinking@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "content_sha256": "cca5c978475baa4bf5782afebf8b02d8b3deaf394a2792033643d1716ae5169d",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT",
+    "additional_license_files": [
+      {
+        "source": {
+          "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+          "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+          "path": "LICENSE.md"
+        },
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ]
   }
 }

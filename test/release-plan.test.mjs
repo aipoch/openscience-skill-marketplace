@@ -606,7 +606,9 @@ test("committed release retains prior members and pins the repaired skill separa
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 386);
+  assert.equal(selected.length, 388);
+  assert.ok(selectedIds.includes("baseline-extraction-for-clinical-trials"));
+  assert.ok(selectedIds.includes("scientific-critical-thinking"));
   assert.ok(selectedIds.includes("discussion-section-architect"));
   const repaired = selected.find(({ id }) => id === "citation-network");
   assert.equal(
