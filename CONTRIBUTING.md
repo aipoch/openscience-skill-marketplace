@@ -1,4 +1,4 @@
-# Contributing to the OpenScience Skill Marketplace
+# Contributing to the Open-Science Skill Marketplace
 
 ## Repository workflow
 

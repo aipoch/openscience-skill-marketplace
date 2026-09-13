@@ -12,7 +12,7 @@ import { signRoot, verifyRoot } from "../scripts/lib/signing.mjs";
 import { jsonBytes } from "../scripts/lib/common.mjs";
 import { makeCandidate } from "./fixtures.mjs";
 
-// Pinned to Open Science 9b37d9c57, skill-marketplace-model.ts.
+// Pinned to Open-Science 9b37d9c57, skill-marketplace-model.ts.
 // These are category values, not translation strings or slug aliases.
 const appCategories = [
   "Academic Writing",

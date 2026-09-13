@@ -287,7 +287,7 @@ export function githubStore({
           "--title",
           `Skill catalog ${revision}`,
           "--notes",
-          "Immutable OpenScience Skill catalog snapshot.",
+          "Immutable Open-Science Skill catalog snapshot.",
         ]);
         release = { assets: [], isDraft: true, targetCommitish: sourceCommit };
       }

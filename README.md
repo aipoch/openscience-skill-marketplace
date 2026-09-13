@@ -1,7 +1,7 @@
-# OpenScience Skill Marketplace
+# Open-Science Skill Marketplace
 
 An independent protocol and publication toolchain for individually distributed
-OpenScience Skills. The authoritative manifest contains **584 Skills**, resolved
+Open-Science Skills. The authoritative manifest contains **584 Skills**, resolved
 against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
 selects the reviewed `abstract-trimmer@1.0.0` for the initial release and explicitly
 defers the other 583 members.
