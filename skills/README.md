@@ -54,10 +54,10 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-121 reviewed Skills, retaining all 21 previously published members and adding
-100 members at `1.0.0`. The other 463 members remain explicitly deferred.
-Of these, 450 await review for a later batch, including six entries with missing
-documented package files and 29 entries with asset or attribution follow-ups. The original 13
+221 reviewed Skills, retaining all 121 previously published members and adding
+100 members at `1.0.0`. The other 363 members remain explicitly deferred.
+Of these, 350 await review for a later batch, including six entries with missing
+documented package files and 96 entries with asset, attribution, or source-completeness follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -90,9 +90,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 120
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 220
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member and 100-member batches. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch and two 100-member batches. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records
