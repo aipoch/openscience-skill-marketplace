@@ -3,8 +3,9 @@
 An independent protocol and publication toolchain for individually distributed
 Open-Science Skills. The authoritative manifest contains **584 Skills**, resolved
 against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
-selects **384 reviewed Skills**: the 383 previously selected members and the
-K-Dense-authored `paper-lookup` at `1.0.0`. It explicitly defers the other 200 members.
+selects **385 reviewed Skills**, retaining all 384 previous members and adding
+`citation-network` at `1.0.0` from its repaired upstream commit. It explicitly
+defers the other 199 members. See the [intake review](docs/citation-network-review.md).
 
 Every selected package has a byte-bound redistribution review. Deferred members
 require separate review before inclusion. See [GitHub Releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
@@ -33,8 +34,11 @@ npm run audit:sources -- --source /path/to/medical-research-skills --check
 npm run build:catalog -- --source /path/to/medical-research-skills
 ```
 
-Both commands read Git objects at
-`d92441066ea6259967469be8e0c8c7b6587928ab`, regardless of the clone's checkout.
+The complete audit reads Git objects at the default snapshot
+`d92441066ea6259967469be8e0c8c7b6587928ab`. Builds also read selected per-Skill
+commits; fetch missing objects with
+`node scripts/fetch-selected-sources.mjs --source /path/to/medical-research-skills`.
+Neither command depends on the clone's checkout.
 They do not execute Skill scripts. The build creates an unsigned selected-Skill
 catalog in `dist/candidate`, including the original MIT notice in the package.
 Only the explicitly selected batch is built; a failure in any selected member

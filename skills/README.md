@@ -54,10 +54,13 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-384 reviewed Skills, retaining all 383 previously selected members and adding
-`paper-lookup` at `1.0.0` with its original K-Dense MIT notice. The other 200 members remain explicitly deferred.
-Of these, 187 await review for a later batch, including six previously deferred entries with missing
-documented package files and 181 entries with asset, attribution, or source-completeness follow-ups. The original 13
+385 reviewed Skills, retaining all 384 previously selected members and adding
+`citation-network` at `1.0.0` from upstream commit
+`63c61d38c6c4bba5128f98f0b225aa44e3fe748d`. Its [review](../docs/citation-network-review.md)
+records the repaired HTML exporter, full payload and MIT evidence. The other 199 members remain
+explicitly deferred. Of these, 186 await review for a later batch, including six
+previously deferred entries with missing documented package files and 180 entries
+with asset, attribution, or source-completeness follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -114,9 +117,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 383
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 384
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch and the K-Dense `paper-lookup` review. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review and the repaired `citation-network` review. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records

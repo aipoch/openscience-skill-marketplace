@@ -5041,5 +5041,18 @@
         "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
       }
     ]
+  },
+  "citation-network@1.0.0": {
+    "source_commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d",
+    "content_sha256": "4526395a1d7c87f7aa5eae0da841aac2bb7533c7695d18f2c8410e95a6833940",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "license_expression": "MIT"
   }
 }
