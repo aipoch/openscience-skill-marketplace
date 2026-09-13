@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "pdf-ppt",
+    "version": "1.0.0",
+    "display_name": "pdf-ppt",
+    "summary": "Create literature-report PPTX decks from PDF papers. Use when you must extract a paper’s metadata, summarize the study, interpret Results/Figures/Tables, and generate slides with 1:1 figure-to-text alignment and layout rules (triggered by requests like “PDF to PPT”, “literature report slides”, or “turn this paper into a presentation”).",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/pdf-ppt"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/pdf-ppt/pdf-ppt_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "0df25047799840c76aebabe6508b467f1026aa842f6b9dc121825769e9b85f4f",
+    "file_count": 6,
+    "uncompressed_bytes": 24886
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "pdf-ppt"
+  }
+}

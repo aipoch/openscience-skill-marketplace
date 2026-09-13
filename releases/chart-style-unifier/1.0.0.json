@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "chart-style-unifier",
+    "version": "1.0.0",
+    "display_name": "chart-style-unifier",
+    "summary": "Batch-unify typography (font family, size, italics) for Word table cells and embedded charts; use when you need consistent formatting across theses/reports without changing body text.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/chart-style-unifier"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 88,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/chart-style-unifier/chart-style-unifier_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "76690928eda4da6fad0beb2e6fa660eed709d70f6c200bd79efbee43737c15b4",
+    "file_count": 8,
+    "uncompressed_bytes": 50226
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "chart-style-unifier"
+  }
+}

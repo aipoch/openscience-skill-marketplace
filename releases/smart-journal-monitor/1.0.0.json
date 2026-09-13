@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "smart-journal-monitor",
+    "version": "1.0.0",
+    "display_name": "smart-journal-monitor",
+    "summary": "Use smart journal monitor for evidence insight workflows that need structured execution, explicit assumptions, and clear output boundaries.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/smart-journal-monitor"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/smart-journal-monitor/smart-journal-monitor_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "1a153c9fc826f45fcc580cebbafafbf70cec870d857863e5fabf20bb67d28240",
+    "file_count": 5,
+    "uncompressed_bytes": 25611
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "smart-journal-monitor"
+  }
+}

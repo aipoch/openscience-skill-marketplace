@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "docx-feedback-tracker",
+    "version": "1.0.0",
+    "display_name": "docx-feedback-tracker",
+    "summary": "Automatically detect DOCX track-changes history, version rounds, and author feedback to generate a Markdown modification explanation file when you run it on one or more DOCX versions.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/docx-feedback-tracker"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/docx-feedback-tracker/docx-feedback-tracker_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "a59afd5216989205f2e160b302e2d2b6f03911821f40bb1574ed73d23a6c24e7",
+    "file_count": 7,
+    "uncompressed_bytes": 31930
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "docx-feedback-tracker"
+  }
+}

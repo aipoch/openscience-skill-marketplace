@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "generic-phenotype-scoring-research-planner",
+    "version": "1.0.0",
+    "display_name": "generic-phenotype-scoring-research-planner",
+    "summary": "Generates complete phenotype-scoring bioinformatics research designs for any disease context and any user-defined phenotype, pathway, process, signature, or molecular program. Use when a study centers on gene-set or feature-set definition, intersection with DEGs or candidate features, phenotype scoring, feature selection, diagnostic or stratification assessment, immune or cellular-resolution interpretation, network analysis, and optional orthogonal validation. Covers five study patterns (signature discovery, phenotype scoring, feature selection, immune/cellular interpretation, multi-layer validation) and always outputs Lite / Standard / Advanced / Publication+ with a recommended primary plan, stepwise workflow, figure plan, validation hierarchy, minimal executable version, publication upgrade path, and strictly verified literature retrieval.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/generic-phenotype-scoring-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/generic-phenotype-scoring-research-planner/eval_report_generic-phenotype-scoring-research-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "678e5cc15a9ea137261ed1a623480bf6372436c085afc266a82e90f31a0fc225",
+    "file_count": 11,
+    "uncompressed_bytes": 52412
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "generic-phenotype-scoring-research-planner"
+  }
+}

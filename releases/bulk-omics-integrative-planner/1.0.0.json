@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "bulk-omics-integrative-planner",
+    "version": "1.0.0",
+    "display_name": "bulk-omics-integrative-planner",
+    "summary": "Designs complete integrated research plans for bulk transcriptomics, proteomics, metabolomics, and related omics from a user-provided biomedical direction. Always use this skill whenever a user wants to design, scope, or structure a bulk multi-omics or single-omics-plus-clinical study — including disease-focused, mechanism-focused, biomarker-focused, stratification-oriented, or translational projects. It should define the research question, choose the best-fit study pattern, recommend example datasets as reference candidates only, specify the core analysis modules and method choices, propose a validation ladder, and output four workload configurations (Lite / Standard / Advanced / Publication+). Never fabricate datasets, accession numbers, sample counts, metadata completeness, cohort availability, assay coverage, literature references, PMIDs, DOIs, or validation status. Always include the mandatory Dataset Disclaimer immediately before any workflow section that mentions datasets or public resources.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/bulk-omics-integrative-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/bulk-omics-integrative-planner/eval_report_bulk-omics-integrative-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 94,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.1,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "8d7735a30236c541946e02aad9f57d281f393acc28e0a256f3fcf1c75e42174f",
+    "file_count": 12,
+    "uncompressed_bytes": 42509
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "bulk-omics-integrative-planner"
+  }
+}

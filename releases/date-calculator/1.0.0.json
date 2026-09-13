@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "date-calculator",
+    "version": "1.0.0",
+    "display_name": "date-calculator",
+    "summary": "Calculate medical date windows including gestational age, estimated delivery dates, and follow-up visit scheduling. Produces structured JSON output for clinical research and trial coordination workflows.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/date-calculator"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/date-calculator/date-calculator_audit_result_v2.json",
+      "evaluated_on": "2026-03-19",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 90,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.5,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e9accb1eed97d8e3dbb8e7d6d6cf24004b33ca59bfe7362787c8f8694d4241a8",
+    "file_count": 5,
+    "uncompressed_bytes": 21509
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "date-calculator"
+  }
+}

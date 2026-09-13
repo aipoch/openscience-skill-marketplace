@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "endpoint-definition-designer",
+    "version": "1.0.0",
+    "display_name": "endpoint-definition-designer",
+    "summary": "Designs primary, secondary, and exploratory endpoints for biomedical and clinical research protocols. Always use this skill when a user needs to translate study aims into operational endpoint definitions with event rules, assessment timing, composite logic, interpretability, and protocol-stage auditability. Focus on endpoint precision, feasibility, clinical meaning, ambiguity reduction, and implementation readiness rather than generic study design advice.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/endpoint-definition-designer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/endpoint-definition-designer/eval_report_endpoint-definition-designer_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 93,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.8,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "2eaa7b5b86e4d3a6ac09896e4927c276a29beace6c698a5efc14d13062451ed5",
+    "file_count": 13,
+    "uncompressed_bytes": 34760
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "endpoint-definition-designer"
+  }
+}

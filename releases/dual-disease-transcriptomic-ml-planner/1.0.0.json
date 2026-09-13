@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "dual-disease-transcriptomic-ml-planner",
+    "version": "1.0.0",
+    "display_name": "dual-disease-transcriptomic-ml-planner",
+    "summary": "Generates complete dual-disease transcriptomic + machine learning research designs from a user-provided disease pair. Use when users want to identify shared DEGs, common hub genes, cross-disease biomarkers, or shared molecular mechanisms between two diseases using public GEO data. Triggers:\"shared biomarker study for two diseases\", \"dual-disease transcriptomic ML paper\", \"identify common DEGs between disease A and B\", \"cross-disease hub gene discovery\", \"shared DEG + PPI + ROC design\", \"immune infiltration shared biomarker\", or \"I want to study disease X and Y together\". Always outputs four workload configurations (Lite / Standard / Advanced / Publication+) with a recommended primary plan, step-by-step workflow, figure plan, validation strategy, minimal executable version, and publication upgrade path.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/dual-disease-transcriptomic-ml-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "51fcf960dd6072d72659e3225d3d7bb186a9b177d6af3b0aa45fa6f09cb90416",
+    "file_count": 7,
+    "uncompressed_bytes": 50179
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "dual-disease-transcriptomic-ml-planner"
+  }
+}

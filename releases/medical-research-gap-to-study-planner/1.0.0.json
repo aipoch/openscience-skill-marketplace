@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "medical-research-gap-to-study-planner",
+    "version": "1.0.0",
+    "display_name": "medical-research-gap-to-study-planner",
+    "summary": "Converts an audited medical research gap into a complete, structured, gap-traceable study design. Always use this skill whenever a user already has one or more candidate research gaps and wants to transform them into an executable biomedical research plan rather than re-run broad topic ideation. Covers six gap-to-design patterns (evidence-completion, mechanism-resolution, cell-state/context-mapping, translation-bridge, causality-upgrade, population/stage-specific) and always outputs one recommended primary protocol, a gap-to-design dependency map, step-by-step workflow, figure plan, validation strategy, minimal executable version, publication upgrade path, and verified design-support literature rules. Never fabricate references. Preserve claim-evidence discipline and do not replace a topic-specific gap with a generic workflow.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/medical-research-gap-to-study-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/medical-research-gap-to-study-planner/eval_report_medical-research-gap-to-study-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "710247b5fdf1bfeadd1df1d247153bbcaed5cc74071c68e4e297974faa141edf",
+    "file_count": 12,
+    "uncompressed_bytes": 44731
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "medical-research-gap-to-study-planner"
+  }
+}

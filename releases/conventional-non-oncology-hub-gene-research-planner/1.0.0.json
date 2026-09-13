@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "conventional-non-oncology-hub-gene-research-planner",
+    "version": "1.0.0",
+    "display_name": "conventional-non-oncology-hub-gene-research-planner",
+    "summary": "Generates complete conventional non-oncology bioinformatics research designs from a user-provided disease context, process-related gene family or biological theme, and validation direction. Use when a study centers on multi-dataset bulk transcriptome integration, DEG analysis, process-gene intersection, enrichment analysis, GSEA, PPI hub-gene prioritization, TF/miRNA regulatory networks, ROC-based biomarker evaluation, and immune infiltration analysis. Covers five study patterns (process-DEG discovery, enrichment/GSEA interpretation, hub-gene prioritization, regulatory-network and immune interpretation, multi-layer public validation) and always outputs Lite / Standard / Advanced / Publication+ with a recommended primary plan, stepwise workflow, figure plan, validation hierarchy, minimal executable version, publication upgrade path, and strictly verified literature retrieval.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/conventional-non-oncology-hub-gene-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/conventional-non-oncology-hub-gene-research-planner/eval_report_conventional-non-oncology-hub-gene-research-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "8fe5d1182e3cb753d18c4a7dfc8147d97ec5d9dbe9b5b68e2bc6cc312708ab83",
+    "file_count": 11,
+    "uncompressed_bytes": 51400
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "conventional-non-oncology-hub-gene-research-planner"
+  }
+}

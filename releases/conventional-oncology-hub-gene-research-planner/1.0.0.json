@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "conventional-oncology-hub-gene-research-planner",
+    "version": "1.0.0",
+    "display_name": "conventional-oncology-hub-gene-research-planner",
+    "summary": "Generates complete conventional oncology bulk-transcriptome biomarker and hub-gene research designs from a user-provided cancer type and study direction. Always use this skill whenever a user wants to design, plan, or build a tumor bioinformatics study centered on differential expression, prognostic filtering or risk modeling, PPI-based hub-gene prioritization, diagnostic/prognostic evaluation, clinical association, immune infiltration context, methylation context, and optional tissue or cell validation. Covers five study patterns (signature-first prognostic workflow, hub-gene-first biomarker workflow, hybrid signature-to-hub workflow, immune-context biomarker workflow, translational validation workflow) and always outputs four workload configs (Lite / Standard / Advanced / Publication+) with recommended primary plan, step-by-step workflow, figure plan, validation strategy, minimal executable version, publication upgrade path...",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/conventional-oncology-hub-gene-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/conventional-oncology-hub-gene-research-planner/eval_report_conventional-oncology-hub-gene-research-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 93,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "4235e9aa32ad8dba444cea7a53da32abf79a54838c5639c2c4103d941efc443b",
+    "file_count": 11,
+    "uncompressed_bytes": 71454
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "conventional-oncology-hub-gene-research-planner"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "study-design-identifier",
+    "version": "1.0.0",
+    "display_name": "study-design-identifier",
+    "summary": "Identifies the real underlying study design used in a medical or biomedical paper, distinguishes primary and secondary design components when papers are hybrid, and converts the paper into an evidence-aware design label suitable for literature appraisal, evidence grading, and downstream review workflows. Always identify the actual design from what the study did, not from how the authors describe it. Never fabricate references, metadata, or study features.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/study-design-identifier"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/study-design-identifier/eval_report_study-design-identifier_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 89,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83.3,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "125ba1292bf81835ab8878967032a347daf59c9769c3bb75fa02159320f9f68c",
+    "file_count": 9,
+    "uncompressed_bytes": 39602
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "study-design-identifier"
+  }
+}

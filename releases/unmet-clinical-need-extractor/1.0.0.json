@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "unmet-clinical-need-extractor",
+    "version": "1.0.0",
+    "display_name": "unmet-clinical-need-extractor",
+    "summary": "Extracts concrete unmet clinical needs from guidelines, reviews, real-world studies, and clinical-practice evidence. Use this skill when a user wants to turn broad medical research value into specific clinical pain points such as weak early detection, poor risk stratification, treatment-response heterogeneity, monitoring gaps, diagnostic delay, undertreatment, overtreatment, or implementation failure. Always ground unmet-need claims in retrieved evidence and distinguish true care gaps from generic statements of importance.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/unmet-clinical-need-extractor"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/unmet-clinical-need-extractor/eval_report_unmet-clinical-need-extractor_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 90,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 84.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "9768a4915e687880e616131707ee84fa7d147df626d71f477d2cdbd51d7204af",
+    "file_count": 10,
+    "uncompressed_bytes": 52519
+  },
+  "artifact": {
+    "path": "shards/fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0.zip",
+    "sha256": "fe539b040e93655def3e77f2488b69a153f319072065f701aef6f8076d8bbeb0",
+    "bytes": 1383584,
+    "skill_path": "unmet-clinical-need-extractor"
+  }
+}
