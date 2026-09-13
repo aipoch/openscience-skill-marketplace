@@ -230,6 +230,11 @@
       "version": "1.0.0"
     },
     {
+      "id": "citation-network",
+      "version": "1.0.0",
+      "source_commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d"
+    },
+    {
       "id": "claim-strength-calibrator",
       "version": "1.0.0"
     },
@@ -2152,11 +2157,6 @@
       "id": "citation-chasing-mapping",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/main.py, references/guide.md, references/audit-reference.md. Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
-      "id": "citation-network",
-      "version": "1.0.0",
-      "reason": "scripts/export_gexf_html.py inserts user-derived node labels into an inline script using json.dumps without escaping closing script sequences. Fix HTML serialization before publication; references/README.md is also absent."
     },
     {
       "id": "clinical-trial-finder",

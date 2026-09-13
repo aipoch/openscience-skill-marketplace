@@ -220,7 +220,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed release retains prior members and adds the reviewed third-party skill", async () => {
+test("committed release retains prior members and pins the repaired skill separately", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -606,7 +606,17 @@ test("committed release retains prior members and adds the reviewed third-party 
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 384);
+  assert.equal(selected.length, 385);
+  const repaired = selected.find(({ id }) => id === "citation-network");
+  assert.equal(
+    repaired.sourceCommit,
+    "63c61d38c6c4bba5128f98f0b225aa44e3fe748d",
+  );
+  assert.ok(
+    selected
+      .filter(({ id }) => id !== repaired.id)
+      .every(({ sourceCommit }) => sourceCommit === config.source.commit),
+  );
   assert.ok(selectedIds.includes("paper-lookup"));
   for (const id of retainedIds) assert.ok(selectedIds.includes(id), id);
   assert.ok(selected.every(({ version }) => version === "1.0.0"));

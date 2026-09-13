@@ -1,8 +1,8 @@
 # Batch publication and recovery
 
-The current release selects 384 reviewed Skills: the 383 previously selected
-members plus K-Dense-authored `paper-lookup` at `1.0.0`. It explicitly defers 200 other
-members. Byte-bound redistribution reviews are recorded in
+The current release selects 385 reviewed Skills: all 384 previous members plus
+`citation-network` at `1.0.0` from its repaired upstream commit. It explicitly
+defers 199 other members. See the [intake review](citation-network-review.md). Byte-bound redistribution reviews are recorded in
 `skills/reviews.json`; the seventeen assessment-omission records remain separate
 and are not license approvals. Production publication uses the protected main
 workflow after explicit maintainer authorization. Check the
@@ -31,8 +31,8 @@ members receive new artifacts through the existing incremental publication path.
 The public `source.commit` field already carries the actual content commit, so
 consuming Apps need no protocol or database update. This introduces one optional
 repository configuration field, no state enums, migrations or compatibility aliases.
-The current selection remains 384 members; this capability does not approve or
-publish any additional Skill by itself.
+The source-commit capability does not approve or publish a Skill by itself;
+`citation-network` has a separate byte-bound review at its selected commit.
 
 ## Responsibilities
 
@@ -232,9 +232,9 @@ publication steps are not client installation states. No UI changes require scre
 The release plan explicitly defers four syntax errors, one missing description,
 five missing license declarations, the PPI resource limits and the PPTX license
 conflict, plus the CC BY-NC-ND 4.0 article bundled in `paper-tweet-generator`.
-Another 187 members are outside the current batch while their reviews remain
+Another 186 members are outside the current batch while their reviews remain
 pending, including six previously deferred entries with documented package paths absent from the
-pinned source and 181 entries with asset, attribution, or source-completeness follow-ups. All 383
+pinned source and 180 entries with asset, attribution, or source-completeness follow-ups. All 384
 previously selected Skills keep their original descriptors and shards. See [release selection](../skills/README.md#release-selection) for the
 complete-partition rules and how to include corrected members later. The seventeen invalid assessments are explicitly
 omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate
