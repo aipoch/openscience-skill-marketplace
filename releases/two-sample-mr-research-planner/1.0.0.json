@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "two-sample-mr-research-planner",
+    "version": "1.0.0",
+    "display_name": "two-sample-mr-research-planner",
+    "summary": "Generates complete two-sample Mendelian randomization (MR) research designs from a user-provided research direction. Use when users want to design, plan, or build a study using two-sample MR to test causal relationships. Triggers:\"design a two-sample MR study\", \"build a publishable MR paper\", \"test whether this biomarker causally affects this disease\", \"generate Lite/Standard/Advanced MR plans\", \"screen multiple exposures with MR\", \"bidirectional MR design\", \"causal inference using GWAS summary statistics\", or \"I want to study X and Y using MR\". Always outputs four workload configurations (Lite / Standard / Advanced / Publication+) with a recommended primary plan, step-by-step workflow, figure plan, validation strategy, minimal executable version, and publication upgrade path.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/two-sample-mr-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "49884dfc5279c7bf2b0c576e49574a03a169d26d22b45a3c59dc16587d1d595c",
+    "file_count": 5,
+    "uncompressed_bytes": 33828
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "two-sample-mr-research-planner"
+  }
+}

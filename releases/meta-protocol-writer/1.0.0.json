@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-protocol-writer",
+    "version": "1.0.0",
+    "display_name": "meta-protocol-writer",
+    "summary": "Generates a PROSPERO-compliant Meta-analysis protocol based on Title and PICOS. Use when the user wants to write a protocol for a systematic review or meta-analysis.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/meta-protocol-writer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Protocol%20Design/meta-protocol-writer/eval_report_meta-protocol-writer_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 96,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "b4218e5d78658cf9c6c6b2ad3be0704064bde07456e55cb78c25ac2cbdbd3af4",
+    "file_count": 6,
+    "uncompressed_bytes": 20162
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "meta-protocol-writer"
+  }
+}

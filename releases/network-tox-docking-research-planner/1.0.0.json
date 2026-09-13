@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "network-tox-docking-research-planner",
+    "version": "1.0.0",
+    "display_name": "network-tox-docking-research-planner",
+    "summary": "Generates complete network toxicology + molecular docking research designs from a user-provided toxicant and disease/phenotype. Always use this skill when users want to investigate how an environmental toxicant, endocrine disruptor, heavy metal, food contaminant, pharmaceutical residue, or consumer product chemical may contribute to a disease through shared molecular targets, hub genes, pathways, and docking evidence. Trigger for:\"network toxicology study\", \"toxicology mechanism paper\", \"target prediction + PPI + docking\", \"environmental pollutant and disease mechanism\", \"hub genes and docking for toxicant\", \"Lite/Standard/Advanced toxicology plan\", \"CTD + SwissTargetPrediction + GeneCards + STRING\", \"CB-Dock2 docking study\", \"triclosan/BPA/cadmium/PFAS + disease\". Also triggers for Chinese phrasings:\"网络毒理学研究设计\"、\"毒物机制论文\"、\"靶点预测+PPI+对接\"、\"环境污染物与疾病机制\". Trigger even for casual phrasings like \"I want to study how chemical X affects disease Y\" or \"help me design a toxicology paper\". Always output four workload configurations (Lite / Standard / Advanced / Publication+) with a recommended primary plan, step-by-step workflow, figure plan, validation strategy, minimal executable version, and publication upgrade path.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/network-tox-docking-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "6298451f1f2b8a82baf5080a77a82f545f373519984e6c56ac83e980c0e21d1f",
+    "file_count": 8,
+    "uncompressed_bytes": 43958
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "network-tox-docking-research-planner"
+  }
+}

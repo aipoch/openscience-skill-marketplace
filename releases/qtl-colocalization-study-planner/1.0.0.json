@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "qtl-colocalization-study-planner",
+    "version": "1.0.0",
+    "display_name": "qtl-colocalization-study-planner",
+    "summary": "Designs QTL colocalization studies that connect eQTL, pQTL, sQTL, or related molecular QTL signals with GWAS loci. Always use this skill whenever a user wants to plan, scope, or structure a locus-level study asking whether a GWAS association and a molecular QTL association may reflect the same underlying causal signal. Covers locus definition, QTL/GWAS source architecture, ancestry and LD alignment, single-locus vs multi-locus strategy, candidate-gene prioritization, optional fine-mapping, linked MR/SMR follow-up, and functional annotation. Always output four workload configurations (Lite / Standard / Advanced / Publication+) with a recommended primary plan, stepwise workflow, method rationale, evidence hierarchy, figure plan, minimal executable version, and strictly verified literature guidance with no fabricated references. Never equate colocalization with causality proof, mediation proof, or automatic target validation. Always include the mandatory Dataset Disclaimer immediately before any workflow section that mentions datasets, repositories, consortia, or public resources.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/qtl-colocalization-study-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 91,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/qtl-colocalization-study-planner/eval_report_qtl-colocalization-study-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 94,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "7e96344b580bdb1f6b40bb43e479313b8749226819b04aaa4c2ae275b59f7d32",
+    "file_count": 12,
+    "uncompressed_bytes": 42884
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "qtl-colocalization-study-planner"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "single-drug-faers-safety-profile-research-planner",
+    "version": "1.0.0",
+    "display_name": "single-drug-faers-safety-profile-research-planner",
+    "summary": "Generates complete FAERS pharmacovigilance study designs for one-drug whole-profile safety mapping using signal detection, subgroup analysis, onset/seriousness characterization, and conservative label-gap interpretation.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/single-drug-faers-safety-profile-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/single-drug-faers-safety-profile-research-planner/eval_report_single-drug-faers-safety-profile-research-planner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "d3b766e8d7085ffa8cd6df3b7ad25b8f6209a13c543ff8b1c2d5e3231aedc4bd",
+    "file_count": 11,
+    "uncompressed_bytes": 57119
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "single-drug-faers-safety-profile-research-planner"
+  }
+}

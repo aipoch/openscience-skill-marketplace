@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "two-sample-mr-exposure-screening-reference-grounded",
+    "version": "1.0.0",
+    "display_name": "two-sample-mr-exposure-screening-reference-grounded",
+    "summary": "Generates complete two-sample Mendelian randomization research designs from a user-provided outcome, exposure or exposure family, and robustness direction. Use when a study centers on summary-statistics causal inference with instrument selection, harmonization, IVW-primary estimation, complementary estimators, sensitivity analyses, optional multivariable upgrades, and conservative evidence interpretation. Covers five study patterns and always outputs Lite / Standard / Advanced / Publication+ with a recommended primary plan, stepwise workflow, figure plan, validation hierarchy, minimal executable version, publication upgrade path, and strictly verified literature retrieval.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/two-sample-mr-exposure-screening-reference-grounded"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/two-sample-mr-exposure-screening-reference-grounded/eval_report_two-sample-mr-exposure-screening-reference-grounded_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "20fbda8aca01b87d7fbe94c0227d8692a4744b54e70ea9117e24ad949aa9945f",
+    "file_count": 11,
+    "uncompressed_bytes": 49997
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "two-sample-mr-exposure-screening-reference-grounded"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "study-objective-refiner",
+    "version": "1.0.0",
+    "display_name": "study-objective-refiner",
+    "summary": "Refines broad, vague, or aspirational biomedical research objectives into clear, bounded, measurable, executable, and downstream-ready study objective statements. Always use this skill when a user has a general aim such as “explore a mechanism,” “study prognosis,” “investigate biomarkers,” or “look at treatment response,” but the objective is still too broad, non-operational, or too ambiguous to support protocol framing, design selection, analysis planning, or hypothesis design. Never assume that polished wording alone means the objective is actionable. Focus first on objective type, missing operational elements, scope discipline, and downstream-ready formulation.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/study-objective-refiner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/study-objective-refiner/eval_report_study-objective-refiner_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e5ffeac341a55c48bc6a2d255b65b6556e0a0ae7c477176b0b92099cac2ac242",
+    "file_count": 13,
+    "uncompressed_bytes": 33413
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "study-objective-refiner"
+  }
+}

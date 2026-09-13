@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "single-compound-network-toxicology-disease-link-reference-grounded",
+    "version": "1.0.0",
+    "display_name": "single-compound-network-toxicology-disease-link-reference-grounded",
+    "summary": "Generates complete single-compound network-toxicology research designs from one exposure, one disease or toxic phenotype, and a validation direction. Use when a study centers on one compound–one disease link and needs target collection, overlap construction, enrichment, PPI hub prioritization, docking, optional transcriptomic cross-check, and conservative mechanistic synthesis. Covers five study patterns and always outputs Lite / Standard / Advanced / Publication+ with a recommended primary plan, stepwise workflow, figure plan, validation hierarchy, minimal executable version, publication upgrade path, and strictly verified literature retrieval.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Protocol Design/single-compound-network-toxicology-disease-link-reference-grounded"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Protocol%20Design/single-compound-network-toxicology-disease-link-reference-grounded/eval_report_single-compound-network-toxicology-disease-link-reference-grounded_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "89154a092689a16fb8125ddf91c8b2f661b0d5a9c86527bffc96f1dabb3e7744",
+    "file_count": 11,
+    "uncompressed_bytes": 47162
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "single-compound-network-toxicology-disease-link-reference-grounded"
+  }
+}

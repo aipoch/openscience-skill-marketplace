@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "non-tumor-ml-research-planner",
+    "version": "1.0.0",
+    "display_name": "non-tumor-ml-research-planner",
+    "summary": "Generates complete non-tumor biomedical machine learning research designs from a user-provided research direction. Always use this skill when users want to plan bioinformatics + ML papers for non-cancer diseases (metabolic, cardiovascular, kidney, inflammatory, autoimmune, infectious, neurological, endocrine, wound healing, chronic multifactor), design diagnostic biomarker studies, combine GEO datasets with feature selection and ML modeling, or generate Lite/Standard/Advanced/Publication+ workload plans. Trigger for:\"non-tumor ML study\", \"bioinformatics paper outside oncology\", \"key genes and diagnostic model for a disease\", \"pyroptosis/ferroptosis/senescence/autophagy + disease\", \"GEO datasets + machine learning\", \"RF + LASSO diagnostic model\", \"DEG + feature selection + validation\", \"immune infiltration + biomarker\", \"non-cancer biomarker paper\". Trigger even for casual phrasings like \"I want to study X using machine learning\", \"help me design a non-tumor bioinformatics paper\", or \"how do I build a diagnostic model for disease Y\".",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/non-tumor-ml-research-planner"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c96c507b9bd41dcde0ee5a23caacb9e430efc99839db2b1543b9e805deef9ce6",
+    "file_count": 6,
+    "uncompressed_bytes": 37642
+  },
+  "artifact": {
+    "path": "shards/630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61.zip",
+    "sha256": "630d1b4dab37083d632d924264ae93642b8327521aaa70fbf83de3cc7fd53d61",
+    "bytes": 542522,
+    "skill_path": "non-tumor-ml-research-planner"
+  }
+}
