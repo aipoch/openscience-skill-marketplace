@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "paper-lookup",
+    "version": "1.0.0",
+    "display_name": "paper-lookup",
+    "summary": "Search 10 academic paper databases via REST APIs for research papers, preprints, and scholarly articles. Covers PubMed, PMC (full text), bioRxiv, medRxiv, arXiv, OpenAlex, Crossref, Semantic Scholar, CORE, Unpaywall. Use when searching for papers, citations, DOI/PMID lookups, abstracts, full text, open access, preprints, citation graphs, author search, or any scholarly literature query. Triggers on mentions of any supported database or requests like \"find papers on X\" or \"look up this DOI\".",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/paper-lookup"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/paper-lookup/eval_report_paper-lookup_result.json",
+      "evaluated_on": "2026-06-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 90,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 82.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e00822806820c884e0260d0e1b49df5ae8507f77274a74956f5dc75625256abf",
+    "file_count": 15,
+    "uncompressed_bytes": 67280
+  },
+  "artifact": {
+    "path": "shards/db1762fd180f4ec84677183a5f8bd51207e11a31387d2b9cc977beff02afdcf9.zip",
+    "sha256": "db1762fd180f4ec84677183a5f8bd51207e11a31387d2b9cc977beff02afdcf9",
+    "bytes": 29837,
+    "skill_path": "paper-lookup"
+  }
+}
