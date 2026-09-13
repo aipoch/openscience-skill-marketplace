@@ -8,3 +8,4 @@ package-lock.json
 skills/source-audit.json
 protocol/fixtures/snapshot/
 protocol/fixtures/provenance.json
+licenses/*.txt

@@ -519,3 +519,14 @@ test("CLI reads the pinned Git snapshot despite dirty checkout, catches wrong or
   );
   assert.notEqual(cli().status, 0);
 });
+
+test("provider intake rejects unsupported supplemental review records", () => {
+  const m = manifest(),
+    snapshot = fixture(),
+    reviews = reviewed(m, snapshot);
+  reviews["example-skill@1.0.0"].additionalLicenseFiles = [];
+  assert.throws(
+    () => prepareSubmission(m, snapshot, reviews, config),
+    /provider intake does not support/,
+  );
+});

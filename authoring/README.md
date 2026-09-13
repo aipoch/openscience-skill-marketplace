@@ -201,3 +201,17 @@ migrations or historical compatibility adapter. Metadata may be committed to
 Marketplace Git; payloads stay upstream; generated review material and local
 bundles stay local until deliberately reviewed and promoted. Do not commit local
 plans, generated bundles, credentials or fabricated approval records.
+
+## Independent providers
+
+Providers and authors do not have to be AIPOCH. Keep the actual upstream
+repository, immutable commit/path and original author credits in the submission;
+the Marketplace config supplies its separate publisher identity. Provider intake
+supports multiple source repositories for reviewed unsigned local builds, but
+does not automatically add them to the production manifest.
+
+Include all required third-party notices in the submitted Git snapshot and list
+them in `license_files`. The supplemental copies used by the historical catalog
+are maintainer-controlled repository inputs; `additional_license_files` is not
+part of the provider manifest, and intake rejects this field in review records
+rather than ignoring notices. See [catalog review records](../skills/README.md#original-notices-from-another-repository).

@@ -3,7 +3,7 @@ import { parseArgs } from "node:util";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { validateManifest } from "./lib/catalog.mjs";
 import { auditSources, gitSnapshot } from "./lib/source.mjs";
-import { prepareCandidates } from "./lib/prepare.mjs";
+import { prepareCandidates, loadAdditionalLicenses } from "./lib/prepare.mjs";
 import { selectReleaseEntries } from "./lib/release-plan.mjs";
 import { buildCatalog } from "./lib/build.mjs";
 import { readBundle, writeBundle } from "./lib/bundle.mjs";
@@ -34,6 +34,13 @@ try {
     reviews,
     config,
     snapshot,
+    await loadAdditionalLicenses(
+      selected.map(
+        (entry) =>
+          reviews[`${entry.id}@${entry.version ?? config.initialVersion}`],
+      ),
+      "licenses",
+    ),
   );
   let history;
   if (values.history) {

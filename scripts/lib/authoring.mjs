@@ -153,6 +153,10 @@ export function prepareSubmission(manifest, snapshot, reviews, config) {
   const key = `${manifest.id}@${manifest.version}`;
   const review = reviews[key];
   if (!review) throw new Error(`missing maintainer review: ${key}`);
+  if (Object.hasOwn(review, "additionalLicenseFiles"))
+    throw new Error(
+      "provider intake does not support additional license copies; include required notices in the submitted source",
+    );
   for (const field of ["sourceRepository", "sourcePath", "manifestSha256"])
     if (review[field] !== reviewInput[field])
       throw new Error(`reviewed submission metadata changed: ${field}`);

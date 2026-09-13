@@ -1,8 +1,15 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { mkdtemp, mkdir, writeFile, rm, symlink } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { toAppEntry } from "../scripts/lib/protocol.mjs";
 import { unzipSync } from "fflate";
 import { makeCandidate } from "./fixtures.mjs";
-import { prepareCandidates } from "../scripts/lib/prepare.mjs";
+import {
+  prepareCandidates,
+  loadAdditionalLicenses,
+} from "../scripts/lib/prepare.mjs";
 import { buildCatalog } from "../scripts/lib/build.mjs";
 import {
   contentDigest,
@@ -47,6 +54,13 @@ function reviewInput(sourceFiles = [], evidencePaths = ["LICENSE"]) {
       sha256: sha256(contents.get(path)),
     })),
   };
+  const licenseCopies = new Map();
+  const authors = [
+    {
+      name: "Independent fixture author",
+      url: "https://authors.example/profile",
+    },
+  ];
   const prepare = () =>
     prepareCandidates(
       {
@@ -56,6 +70,7 @@ function reviewInput(sourceFiles = [], evidencePaths = ["LICENSE"]) {
             version: "1.0.0",
             source,
             description: "Test-only fixture",
+            authors,
             category: "Other",
             declaredLicense: "MIT",
             issues: [],
@@ -63,10 +78,17 @@ function reviewInput(sourceFiles = [], evidencePaths = ["LICENSE"]) {
         ],
       },
       { "alpha@1.0.0": review },
-      { publisher: candidate.skill.publisher },
+      {
+        publisher: {
+          id: "aipoch",
+          name: "AIPOCH",
+          url: "https://aipoch.com/agent-skills",
+        },
+      },
       snapshot,
+      licenseCopies,
     )[0];
-  return { candidate, contents, review, prepare };
+  return { candidate, contents, review, prepare, licenseCopies, authors };
 }
 
 test("external license bytes survive preparation and ZIP distribution with complete package metrics", () => {
@@ -168,4 +190,175 @@ test("license files count toward package limits and never waive missing review",
     input.prepare,
     (error) => error.blockers?.[0]?.code === "missing-review",
   );
+});
+
+const originalNotice = Buffer.from(
+  "Third-party fixture copyright © original\r\nMIT fixture notice\r\n",
+);
+const originalEvidence = {
+  source: {
+    repository: "https://github.com/independent-author/original-skills",
+    commit: "b".repeat(40),
+    path: "LICENSE.md",
+  },
+  sha256: sha256(originalNotice),
+};
+
+test("third-party notices and authors survive listing, detail, ZIP and incremental history", async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), "skill-license-"));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  await writeFile(
+    join(directory, `${originalEvidence.sha256}.txt`),
+    originalNotice,
+  );
+  const input = reviewInput();
+  const previous = buildCatalog([input.prepare()]);
+  const oldSkillBytes = Buffer.from(input.candidate.files[0].bytes);
+  input.review.additionalLicenseFiles = [originalEvidence, originalEvidence];
+  const loaded = await loadAdditionalLicenses([input.review], directory);
+  for (const [hash, bytes] of loaded) input.licenseCopies.set(hash, bytes);
+  const prepared = input.prepare();
+  const built = buildCatalog([prepared]);
+  const listing = built.root.skills[0];
+  const detail = JSON.parse(built.objects.get(listing.release.path));
+  assert.deepEqual(toAppEntry(listing), toAppEntry(detail.skill));
+  assert.deepEqual(toAppEntry(listing).authors, input.authors);
+  assert.equal(toAppEntry(listing).publisher.name, "AIPOCH");
+  assert.deepEqual(listing.source, input.candidate.skill.source);
+  assert.deepEqual(detail.skill.license.evidence.at(-1), {
+    url: `${originalEvidence.source.repository}/blob/${originalEvidence.source.commit}/LICENSE.md`,
+    sha256: originalEvidence.sha256,
+  });
+  const zip = unzipSync(built.objects.get(detail.artifact.path));
+  assert.deepEqual(
+    Buffer.from(zip[`alpha/LICENSES/${originalEvidence.sha256}.txt`]),
+    originalNotice,
+  );
+  assert.deepEqual(Buffer.from(zip["alpha/SKILL.md"]), oldSkillBytes);
+  assert.equal(prepared.files.length, input.candidate.files.length + 2);
+  assert.throws(
+    () =>
+      buildCatalog([prepared], {
+        history: previous.objects,
+        previousRoot: previous.root,
+      }),
+    /immutable/,
+  );
+  const added = makeCandidate("new-third-party");
+  added.skill.authors = input.authors;
+  const increment = buildCatalog([prepared, added], {
+    history: built.objects,
+    previousRoot: built.root,
+  });
+  for (const [path, bytes] of built.objects) {
+    if (path.startsWith("releases/") || path.startsWith("shards/"))
+      assert.deepEqual(increment.objects.get(path), bytes, path);
+  }
+});
+
+test("supplemental copies fail closed for missing, changed, unsafe and special files", async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), "skill-license-invalid-"));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const input = reviewInput();
+  input.review.additionalLicenseFiles = [originalEvidence];
+  const path = join(directory, `${originalEvidence.sha256}.txt`);
+  assert.throws(input.prepare, /missing or changed/);
+  await assert.rejects(
+    loadAdditionalLicenses([input.review], directory),
+    /ENOENT/,
+  );
+  for (const bytes of [
+    Buffer.alloc(0),
+    Buffer.from("tampered"),
+    Buffer.alloc(4 * 1024 * 1024 + 1),
+  ]) {
+    await writeFile(path, bytes);
+    await assert.rejects(
+      loadAdditionalLicenses([input.review], directory),
+      /nonempty bounded|changed/,
+    );
+  }
+  await rm(path);
+  await mkdir(path);
+  await assert.rejects(
+    loadAdditionalLicenses([input.review], directory),
+    /regular file/,
+  );
+  await rm(path, { recursive: true });
+  const target = join(directory, "original.txt");
+  await writeFile(target, originalNotice);
+  // Directory junctions need no Windows symlink privilege; file symlinks are also checked on POSIX.
+  const linkedDirectory = join(directory, "linked");
+  await symlink(
+    directory,
+    linkedDirectory,
+    process.platform === "win32" ? "junction" : "dir",
+  );
+  await assert.rejects(
+    loadAdditionalLicenses([input.review], linkedDirectory),
+    /regular directory/,
+  );
+  if (process.platform !== "win32") {
+    await symlink(target, path);
+    await assert.rejects(
+      loadAdditionalLicenses([input.review], directory),
+      /regular file/,
+    );
+  }
+  for (const record of [
+    null,
+    { ...originalEvidence, sha256: "../escape" },
+    { ...originalEvidence, path: "arbitrary-local.txt" },
+    {
+      ...originalEvidence,
+      source: { ...originalEvidence.source, commit: "main" },
+    },
+    {
+      ...originalEvidence,
+      source: {
+        ...originalEvidence.source,
+        repository: "https://example.com/repo",
+      },
+    },
+    {
+      ...originalEvidence,
+      source: { ...originalEvidence.source, path: "../LICENSE" },
+    },
+    {
+      ...originalEvidence,
+      source: {
+        repository: originalEvidence.source.repository,
+        commit: originalEvidence.source.commit,
+      },
+    },
+  ]) {
+    input.review.additionalLicenseFiles = [record];
+    await assert.rejects(
+      loadAdditionalLicenses([input.review], directory),
+      /invalid|unsafe|immutable/,
+    );
+    assert.throws(input.prepare, /invalid|unsafe|immutable/);
+  }
+  input.review.additionalLicenseFiles = null;
+  assert.throws(input.prepare, /must be an array/);
+});
+
+test("supplemental notices share deduplication and collision gates with source evidence", () => {
+  const input = reviewInput();
+  input.review.additionalLicenseFiles = [
+    { ...originalEvidence, sha256: sha256(licenseBytes) },
+  ];
+  input.licenseCopies.set(sha256(licenseBytes), licenseBytes);
+  assert.equal(input.prepare().files.length, 2);
+  input.licenseCopies.set(
+    sha256(licenseBytes),
+    Buffer.from("tampered duplicate"),
+  );
+  assert.throws(input.prepare, /missing or changed/);
+  const collision = reviewInput([
+    { path: `LICENSES/${originalEvidence.sha256}.txt`, bytes: originalNotice },
+  ]);
+  collision.review.additionalLicenseFiles = [originalEvidence];
+  collision.licenseCopies.set(originalEvidence.sha256, originalNotice);
+  assert.throws(collision.prepare, /duplicate or case-colliding/);
 });
