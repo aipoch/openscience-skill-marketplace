@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "baseline-extraction-for-clinical-trials",
+    "version": "1.0.0",
+    "display_name": "baseline-extraction-for-clinical-trials",
+    "summary": "Extracts clinical trial baseline data (study, region, participants, etc.) from article text or PMID. Checks PubMed for metadata; always falls back to LLM extraction for full details.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/baseline-extraction-for-clinical-trials"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/baseline-extraction-for-clinical-trials/baseline-extraction-for-clinical-trials_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 81,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c5a7356db7c3ebce8723f44b16b962bfa4d6843fcfcc732fe57c058b6be7a4d2",
+    "file_count": 5,
+    "uncompressed_bytes": 22246
+  },
+  "artifact": {
+    "path": "shards/7c8f9f8124373f70427a2a59443dcbc72f77935f64151065ea3740842f3c00e3.zip",
+    "sha256": "7c8f9f8124373f70427a2a59443dcbc72f77935f64151065ea3740842f3c00e3",
+    "bytes": 53660,
+    "skill_path": "baseline-extraction-for-clinical-trials"
+  }
+}
