@@ -214,7 +214,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed initial release selects only the approved abstract trimmer and still enforces review", async () => {
+test("committed release adds twenty reviewed members while retaining the first release and review gates", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -225,16 +225,41 @@ test("committed initial release selects only the approved abstract trimmer and s
     new URL("../skills/release_plan.json", import.meta.url),
   );
   const selected = selectReleaseEntries(bytes, manifest.entries, config.source);
+  const expectedIds = [
+    "abstract-summarizer",
+    "abstract-trimmer",
+    "academic-abstract-refiner",
+    "academic-highlight-generator",
+    "anatomy-quiz-master",
+    "anki-card-creator",
+    "arxiv-preflight",
+    "author-response-builder",
+    "automated-soap-note-generator",
+    "biomed-outline-generator",
+    "biotech-pitch-deck-narrative",
+    "blind-review-sanitizer",
+    "claim-strength-calibrator",
+    "conference-abstract-adaptor",
+    "conference-abstract-writer",
+    "conference-poster-pitch",
+    "consistency-checker-across-manuscript",
+    "cover-letter-drafter",
+    "dei-statement-drafter",
+    "discussion-composer",
+    "ectd-xml-compiler",
+  ];
   assert.deepEqual(
-    selected.map(({ id, version }) => ({ id, version })),
-    [{ id: "abstract-trimmer", version: "1.0.0" }],
+    selected
+      .map(({ id, version }) => ({ id, version }))
+      .sort((a, b) => a.id.localeCompare(b.id)),
+    expectedIds.map((id) => ({ id, version: "1.0.0" })),
   );
   assert.deepEqual(
     parseMetadataJson(bytes)
       .deferred.map((entry) => entry.id)
       .sort(),
     manifest.entries
-      .filter((entry) => entry.id !== "abstract-trimmer")
+      .filter((entry) => !expectedIds.includes(entry.id))
       .map((entry) => entry.id)
       .sort(),
   );
@@ -247,8 +272,9 @@ test("committed initial release selects only the approved abstract trimmer and s
   assert.deepEqual(
     Object.entries(reviews)
       .filter(([, review]) => review.reviewedBy)
-      .map(([key]) => key),
-    ["abstract-trimmer@1.0.0"],
+      .map(([key]) => key)
+      .sort(),
+    expectedIds.map((id) => `${id}@1.0.0`),
   );
   assert.equal(reviews["abstract-trimmer@1.0.0"].reviewedBy, "ewen-poch");
   assert.throws(

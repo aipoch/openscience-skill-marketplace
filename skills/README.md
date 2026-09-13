@@ -53,9 +53,11 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 [release_plan.schema.json](release_plan.schema.json), partitions all manifest
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
-deferred entry also requires a nonblank `reason`. The initial release selects
-only the reviewed `abstract-trimmer@1.0.0` and defers the other 583 members.
-Of these, 570 await redistribution review for a later batch. The original 13
+deferred entry also requires a nonblank `reason`. The current release selects
+21 reviewed Skills, retaining `abstract-trimmer@1.0.0` and adding 20 members at
+`1.0.0`. The other 563 members remain explicitly deferred.
+Of these, 550 await review for a later batch, including six entries with missing
+documented package files. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -87,11 +89,14 @@ added. Public signatures and digests still cover their original bytes.
 
 ## Review records
 
-`reviews.json` contains the approved redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and seventeen
-separate assessment-omission decisions. Each is bound to the pinned source commit
-and exact source content digest. Omission-only records do not approve
-redistribution; all other members still need a complete license review.
+`reviews.json` retains the initial redistribution review for
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and adds 20
+static package and license reviews recorded by `Codex` on 2026-09-13 for the
+maintainer-authorized batch. These reviews cover the pinned package inventory,
+source declarations, provenance-sensitive examples and required MIT notice. They
+do not certify runtime behavior or provide independent safety endorsement.
+The seventeen assessment-omission records remain separate; omission-only records
+do not approve redistribution. All unreviewed members remain deferred.
 Each key is `<skill-id>@<version>`; a complete redistribution review must record
 the following facts (the example is not an approval):
 
