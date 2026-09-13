@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "outlier-detection-handler",
+    "version": "1.0.0",
+    "display_name": "outlier-detection-handler",
+    "summary": "Use outlier detection handler for data analysis workflows that need structured execution, explicit assumptions, and clear output boundaries.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/outlier-detection-handler"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/outlier-detection-handler/eval_report_outlier-detection-handler_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 95,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e24bcc82644ba49ad59819bb832f44b182477e28a4a93f8c729ad3b109a2bc98",
+    "file_count": 5,
+    "uncompressed_bytes": 24650
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "outlier-detection-handler"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "drugbank-database",
+    "version": "1.0.0",
+    "display_name": "drugbank-database",
+    "summary": "Programmatic access to DrugBank drug and target data; use when you need to download, parse, and analyze DrugBank XML for properties, interactions, pathways, and pharmacology.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/drugbank-database"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/drugbank-database/drugbank-database_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 87,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "5d735f13025607ff1a83c9d8cc09ebc4334164883a15c04863b2c98673cf8df7",
+    "file_count": 9,
+    "uncompressed_bytes": 22094
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "drugbank-database"
+  }
+}

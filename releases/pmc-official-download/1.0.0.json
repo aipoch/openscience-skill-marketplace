@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "pmc-official-download",
+    "version": "1.0.0",
+    "display_name": "pmc-official-download",
+    "summary": "Download PubMed/PMC literature using officially permitted PMC methods. Whenever the user wants to download PMC full text, batch-retrieve PMC Open Access Subset articles, save full text corresponding to PMID/PMCID locally, or needs to determine whether a PubMed article can be l...",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/pmc-official-download"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/pmc-official-download/eval_report_pmc-official-download_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 95,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "cc2e2021e771a244ce1f566318dfa9003a454ef6a36dad6bad56c92e14aa4710",
+    "file_count": 7,
+    "uncompressed_bytes": 42250
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "pmc-official-download"
+  }
+}

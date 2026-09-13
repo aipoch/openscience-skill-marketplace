@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "openalex-db",
+    "version": "1.0.0",
+    "display_name": "openalex-db",
+    "summary": "Access the OpenAlex database (240M+ scholarly works) for bibliometric analysis, literature search, and citation tracking; use when you need to query works/authors/institutions/concepts without an API key.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/openalex-db"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/openalex-db/openalex-db_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 92.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e67695dae63cc0a6d3f2004f6c34dd798779ad1b7a494a1a389abc815820de83",
+    "file_count": 5,
+    "uncompressed_bytes": 18613
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "openalex-db"
+  }
+}

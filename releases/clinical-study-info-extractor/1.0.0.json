@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "clinical-study-info-extractor",
+    "version": "1.0.0",
+    "display_name": "clinical-study-info-extractor",
+    "summary": "Batch extracts and verifies structured information (PMID, title, abstract, methodology, results, etc.) from clinical research literature using PMIDs. Use when the user wants to extract details from specific PMIDs.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/clinical-study-info-extractor"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/clinical-study-info-extractor/clinical-study-info-extractor_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 77,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 91.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "63083257d8b4929fde7829bb7a6a9a2acb8223820a00883411c71cc323cbe5fa",
+    "file_count": 5,
+    "uncompressed_bytes": 25922
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "clinical-study-info-extractor"
+  }
+}

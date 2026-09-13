@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "paper-to-claim-verifier",
+    "version": "1.0.0",
+    "display_name": "paper-to-claim-verifier",
+    "summary": "Verifies whether a scientific or biomedical claim is actually supported by the cited original papers rather than by citation drift, overstatement, selective citation, or correlation-to-causation inflation. Use this skill whenever a user wants to check whether a repeated statement, slide claim, manuscript sentence, review assertion, or “people often say” scientific conclusion is truly supported by the underlying primary literature. Always separate the claim itself, the cited paper(s), what the paper actually showed, what it did not show, and whether later retellings drifted beyond the original evidence. Never fabricate references, findings, study features, or citation chains.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/paper-to-claim-verifier"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/paper-to-claim-verifier/eval_report_paper-to-claim-verifier_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 93,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c3307d58b75c45df2a6a97f997aeb9d4368ecedb689a303953cd2839a69ba1a9",
+    "file_count": 12,
+    "uncompressed_bytes": 40716
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "paper-to-claim-verifier"
+  }
+}

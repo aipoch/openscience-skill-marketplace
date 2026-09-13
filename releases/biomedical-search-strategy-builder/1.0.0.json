@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "biomedical-search-strategy-builder",
+    "version": "1.0.0",
+    "display_name": "biomedical-search-strategy-builder",
+    "summary": "Builds professional search strategies for PubMed, Embase, Web of Science, and similar databases. Use when a user needs to construct a MeSH-based Boolean query, design a systematic review search, expand a concept with synonyms, apply study-type or date filters, or adapt a query across multiple databases. Also triggers when the user says \"help me search for papers on X\", \"build a search strategy\", \"what are the MeSH terms for\", or \"I need a systematic review search string\".",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/biomedical-search-strategy-builder"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/biomedical-search-strategy-builder/eval_report_biomedical-search-strategy-builder_result.json",
+      "evaluated_on": "2026-04-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.8,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "50b68e42d2406c8f33ea598016c610e29adddd891cdf7bf8bdf10f73b21a7e38",
+    "file_count": 7,
+    "uncompressed_bytes": 62476
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "biomedical-search-strategy-builder"
+  }
+}

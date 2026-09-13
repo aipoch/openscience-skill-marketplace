@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "bioinformatics-translational-opportunity-finder",
+    "version": "1.0.0",
+    "display_name": "bioinformatics-translational-opportunity-finder",
+    "summary": "Identifies translationally meaningful paths for bioinformatics findings by mapping omics or computational discoveries to diagnosis, stratification, prognosis, treatment-response, monitoring, or target-nomination use cases, while auditing bridge evidence, assayability, and validation burden. Use this skill when a user wants to know whether a bioinformatics finding can be framed as a stronger translational topic without overclaiming clinical relevance. Always separate statistical signal from translational value, and never imply clinical utility, targetability, or validation depth without explicit evidence support.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/bioinformatics-translational-opportunity-finder"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 83,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/bioinformatics-translational-opportunity-finder/eval_report_bioinformatics-translational-opportunity-finder_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 86,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 81.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "03bb5e91d66f31861a3b112cc830426380741c99cb519aefd2ec5bd3e2e6d415",
+    "file_count": 11,
+    "uncompressed_bytes": 49950
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "bioinformatics-translational-opportunity-finder"
+  }
+}

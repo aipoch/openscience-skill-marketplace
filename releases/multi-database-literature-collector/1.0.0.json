@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "multi-database-literature-collector",
+    "version": "1.0.0",
+    "display_name": "multi-database-literature-collector",
+    "summary": "Collects candidate biomedical literature across multiple databases, adapts search logic by database, preserves source metadata, and organizes results into a structured, screening-ready candidate pool. Always use this skill when a user wants cross-database literature collection, search strategy construction, candidate paper aggregation, or first-pass evidence organization before deduplication, screening, layered reading, or review planning. Requires real and verifiable literature records only. Every formal literature item must include a real link and DOI when available; never fabricate citations, titles, authors, years, journals, abstracts, PMIDs, or DOIs. If a DOI is unavailable or cannot be verified, state that explicitly rather than inventing one.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/multi-database-literature-collector"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/multi-database-literature-collector/eval_report_multi-database-literature-collector_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 84.9,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c78382b168e5b49ab89898fb52ee1f59f8fc0046fddf83cbcd2c99e3194c1fef",
+    "file_count": 12,
+    "uncompressed_bytes": 42360
+  },
+  "artifact": {
+    "path": "shards/363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb.zip",
+    "sha256": "363034760dae6778b913abb9de8c2c721e250f5255b4c76346abd49f4a0de2cb",
+    "bytes": 1471244,
+    "skill_path": "multi-database-literature-collector"
+  }
+}
