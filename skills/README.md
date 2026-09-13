@@ -54,11 +54,11 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-388 reviewed Skills, retaining all 386 previously selected members and adding
-`baseline-extraction-for-clinical-trials` and `scientific-critical-thinking` at
-`1.0.0`. Both preserve the complete source package and required MIT notices.
-The other 196 members remain explicitly deferred. Of these, 183 have asset,
-attribution, source-completeness or implementation follow-ups. The original 13
+392 reviewed Skills, retaining all 388 previously selected members and adding
+`cover-letter-generator`, `basic-research-design`, `meta-abstract-screener` and
+`meta-screening-fulltext` at `1.0.0`. All preserve the complete source package and
+required MIT notices. The other 192 members remain explicitly deferred. Of these,
+179 have asset, attribution, source-completeness or implementation follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -84,7 +84,7 @@ in the supplied results and literature. The original self-assessments remain
 approval is inferred. Detailed working notes remain local; exact release approvals
 are bound to source, content and license hashes in `reviews.json`.
 
-The new batch stays on the default source commit. For
+The preceding two-member batch stays on the default source commit. For
 `baseline-extraction-for-clinical-trials`, the full-text extraction path includes
 all ten schema fields and the PDF text helper. Its PMID-only lookup helper is
 absent; that shortcut is unavailable, and full article text is required for the
@@ -99,6 +99,29 @@ original K-Dense MIT copyright notice is included alongside AIPOCH's notice.
 These static reviews do not certify clinical decisions, runtime behavior or the
 upstream self-assessments. Missing optional helpers are not reconstructed.
 
+The four new members pin the complete upstream snapshot
+`d915031495e1c755d272c3de817ee3fc012e8b7b`; their required templates and prompts
+were removed in the default snapshot. These are first Marketplace releases of
+previously deferred members, not replacements for published content.
+
+- `cover-letter-generator` includes its letter template and writing checklist.
+  Originality, author approval and submission declarations require user confirmation.
+- `basic-research-design` includes both subtitle and experimental-outline prompts.
+  Outputs are proposed research plans, not validated experimental findings.
+- `meta-abstract-screener` includes both screening prompts and its optional JSON
+  validator. The validator accepts a JSON positional argument, not `--help`; it
+  checks required fields and enum values, not exact keys or decision correctness.
+  The agent must enforce the documented two-field output and screening criteria.
+- `meta-screening-fulltext` includes the screening prompts and PDF text extractor.
+  Full text is required; the absent optional `query_pubmed.py` helper cannot be
+  used. PDF extraction needs separately installed PyPDF2 and does not perform OCR.
+
+The source self-assessments retain final scores of 87/100, 87/100, 86/100 and
+85/100 respectively, together with their distinct static and dynamic scores.
+Their report URLs point to the selected commit; no evaluated Skill version or
+independent safety endorsement is inferred. Static inspection does not certify
+runtime behavior or systematic-review decisions. Upstream files remain unmodified.
+
 A selected member may specify `source_commit`, a lowercase 40-character commit
 from that same repository. Its source path still comes from the original manifest.
 Omitting the field uses the default commit; `sourceCommit` JSON, branch names,
@@ -106,7 +129,7 @@ repository/path overrides and overrides on deferred records are rejected.
 The reading boundary resolves `source_commit` to internal `sourceCommit`; this
 is format mapping, not a historical compatibility alias.
 
-For an unpublished member repaired upstream, move its ID/version to `selected`
+For an unpublished member with a reviewed complete upstream snapshot, move its ID/version to `selected`
 with the reviewed commit in your local plan, fetch it, then generate review input:
 
 ```bash
@@ -145,9 +168,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 387
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 391
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review, the `discussion-section-architect` review and this two-member intake. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review, the `discussion-section-architect` review, the two-member extraction/appraisal intake and this four-member complete-snapshot intake. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records

@@ -606,7 +606,20 @@ test("committed release retains prior members and pins the repaired skill separa
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 388);
+  assert.equal(selected.length, 392);
+  const completeSnapshots = [
+    "basic-research-design",
+    "cover-letter-generator",
+    "meta-abstract-screener",
+    "meta-screening-fulltext",
+  ];
+  for (const id of completeSnapshots) {
+    assert.equal(
+      selected.find((entry) => entry.id === id)?.sourceCommit,
+      "d915031495e1c755d272c3de817ee3fc012e8b7b",
+      id,
+    );
+  }
   assert.ok(selectedIds.includes("baseline-extraction-for-clinical-trials"));
   assert.ok(selectedIds.includes("scientific-critical-thinking"));
   assert.ok(selectedIds.includes("discussion-section-architect"));
@@ -617,7 +630,7 @@ test("committed release retains prior members and pins the repaired skill separa
   );
   assert.ok(
     selected
-      .filter(({ id }) => id !== repaired.id)
+      .filter(({ id }) => id !== repaired.id && !completeSnapshots.includes(id))
       .every(({ sourceCommit }) => sourceCommit === config.source.commit),
   );
   assert.ok(selectedIds.includes("paper-lookup"));
