@@ -53,8 +53,13 @@ export function selectReleaseEntries(bytes, entries, source) {
   }
   if (seen.size !== available.size)
     throw new Error("release plan must account for every manifest member");
-  const selected = new Set(plan.selected.map(key));
-  return entries.filter((entry) => selected.has(key(entry)));
+  const selected = new Map(plan.selected.map((entry) => [key(entry), entry]));
+  return entries
+    .filter((entry) => selected.has(key(entry)))
+    .map((entry) => {
+      const { sourceCommit } = selected.get(key(entry));
+      return { ...entry, sourceCommit: sourceCommit ?? source.commit };
+    });
 }
 
 // Call after authenticating/validating a candidate bundle, before signing it.
@@ -70,7 +75,7 @@ export function assertReleaseSelection(root, selected, source) {
       !entry ||
       skill.version !== entry.version ||
       skill.source.repository !== source.repository ||
-      skill.source.commit !== source.commit ||
+      skill.source.commit !== (entry.sourceCommit ?? source.commit) ||
       skill.source.path !== entry.sourcePath
     )
       throw new Error(

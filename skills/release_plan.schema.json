@@ -39,6 +39,10 @@
           },
           "version": {
             "$ref": "../protocol/common.schema.json#/$defs/skill/properties/version"
+          },
+          "source_commit": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
           }
         }
       }

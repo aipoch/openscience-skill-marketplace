@@ -52,7 +52,7 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 [release_plan.json](release_plan.json), validated by
 [release_plan.schema.json](release_plan.schema.json), partitions all manifest
 members into `selected` and `deferred` entries at the configured source repository
-and commit. Every entry identifies an exact `id` and package `version`; each
+and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
 384 reviewed Skills, retaining all 383 previously selected members and adding
 `paper-lookup` at `1.0.0` with its original K-Dense MIT notice. The other 200 members remain explicitly deferred.
@@ -68,17 +68,38 @@ See the [original-list review follow-up](../docs/original-list-review.md) for
 verified license discrepancies, source defects and dataset provenance findings
 that refine 12 of these existing deferrals without changing the selection.
 
-To defer another member, move its exact ID/version from `selected` to `deferred`
+A selected member may specify `source_commit`, a lowercase 40-character commit
+from that same repository. Its source path still comes from the original manifest.
+Omitting the field uses the default commit; `sourceCommit` JSON, branch names,
+repository/path overrides and overrides on deferred records are rejected.
+The reading boundary resolves `source_commit` to internal `sourceCommit`; this
+is format mapping, not a historical compatibility alias.
+
+For an unpublished member repaired upstream, move its ID/version to `selected`
+with the reviewed commit in your local plan, fetch it, then generate review input:
+
+```bash
+node scripts/fetch-selected-sources.mjs --source /path/to/upstream
+npm run review:input -- --source /path/to/upstream --id skill-id --license-path LICENSE
+```
+
+Review input uses the selected commit for both package bytes and license evidence.
+Deferred members still use the default snapshot. Selection is only configuration:
+building remains blocked until the exact commit, content digest and license
+notices have complete approval. Never change a published ID/version's source;
+the authenticated-history build rejects any change to its release or package.
+
+To defer another member, remove any `source_commit`, move its exact ID/version from `selected` to `deferred`
 and record the reason. To include a corrected member later, update the reviewed
-source baseline and evidence as needed, then move it back to `selected`. Keep
+per-member commit and evidence as needed, then move it back to `selected`. Keep
 all other members accounted for. Unknown or stale versions, source mismatch,
 duplicates, overlaps, missing decisions, empty selections and unsupported fields
 fail validation. Run `npm run validate` after editing the plan.
 
 The complete source audit remains reproducible, including findings for deferred
 members. Build and publication use the same selection validator. Before signing,
-the current listings must match the selected IDs, versions and source paths
-exactly. A selected member's missing review or source error still blocks the
+the current listings must match the selected IDs, versions, resolved commits
+and source paths exactly. A selected member's missing review or source error still blocks the
 whole batch. No license or runtime approval is inferred from a deferral reason.
 
 Only selected members appear in current Marketplace discovery. If a later plan

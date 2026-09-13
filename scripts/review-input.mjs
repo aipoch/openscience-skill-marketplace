@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import { gitSnapshot } from "./lib/source.mjs";
 import { inspectSkill, LIMITS } from "./lib/package.mjs";
 import { assertPath, sha256 } from "./lib/common.mjs";
+import { selectReleaseEntries } from "./lib/release-plan.mjs";
+import { validateManifest } from "./lib/catalog.mjs";
 const { values } = parseArgs({
   options: {
     source: { type: "string" },
@@ -15,9 +17,18 @@ if (!values.source || !values.id)
   throw new Error("--source and --id are required");
 const config = parseMetadataJson(await readFile("marketplace.config.json"));
 const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
+validateManifest(manifest, await readFile("skills/inclusion-list.md"));
 const entry = manifest.entries.find((e) => e.id === values.id);
 if (!entry) throw new Error("ID is not in the approved manifest");
-const snapshot = gitSnapshot(values.source, config.source.commit);
+const releaseEntries = selectReleaseEntries(
+  await readFile("skills/release_plan.json"),
+  manifest.entries,
+  config.source,
+);
+const commit =
+  releaseEntries.find((e) => e.id === entry.id)?.sourceCommit ??
+  config.source.commit;
+const snapshot = gitSnapshot(values.source, commit);
 const selected = snapshot.files.filter((f) =>
   f.path.startsWith(entry.sourcePath + "/"),
 );
@@ -53,7 +64,7 @@ process.stdout.write(
   metadataJsonBytes({
     id: entry.id,
     version: entry.version,
-    sourceCommit: config.source.commit,
+    sourceCommit: commit,
     sourcePath: entry.sourcePath,
     contentSha256: metrics.contentSha256,
     fileCount: metrics.fileCount,
