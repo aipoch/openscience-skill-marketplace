@@ -1831,7 +1831,7 @@
     {
       "id": "deeptools",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:471 requires original license and notice evidence review."
+      "reason": "Original K-Dense scientific-skills/deeptools/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"BSD license\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "deg-screening-analysis",
@@ -1851,7 +1851,7 @@
     {
       "id": "dnanexus-integration",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:432 requires original license and notice evidence review."
+      "reason": "Original K-Dense scientific-skills/dnanexus-integration/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Unknown\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "estimate-immune-score-analysis",
@@ -1906,7 +1906,7 @@
     {
       "id": "km-survival-curve",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/km_custom_columns.csv, tests/data/km_sample1.txt, tests/data/km_sample2.txt, tests/data/km_sample3.txt."
+      "reason": "Bundled tests/data/km_sample1.txt, km_sample2.txt and km_sample3.txt contain TCGA sample identifiers with follow-up, outcome, risk-score and expression columns. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames."
     },
     {
       "id": "knn-imputation",
@@ -1916,7 +1916,7 @@
     {
       "id": "lamindb",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:429 requires original license and notice evidence review."
+      "reason": "Original K-Dense scientific-skills/lamindb/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Apache-2.0 license\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "lightgbm-analysis",
@@ -1931,7 +1931,7 @@
     {
       "id": "matplotlib",
       "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:412 requires original license and notice evidence review."
+      "reason": "Original K-Dense scientific-skills/matplotlib/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"https://github.com/matplotlib/matplotlib/tree/main/LICENSE\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "meta-abstract-screener",
@@ -1946,12 +1946,12 @@
     {
       "id": "metabolomics-workbench-database",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/metabolomics-workbench-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares \"Unknown\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "metagenomic-krona-chart",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: example/sample_custom.tsv."
+      "reason": "scripts/main.py:75-77 derives Kraken2 taxonomy depth from whitespace before the whole row rather than the indented name column, losing the parent hierarchy. The same file credits OpenClaw. Verify correct report parsing, example taxonomy data provenance and original redistribution notices before selection."
     },
     {
       "id": "model-calibration-curve",
@@ -2006,7 +2006,7 @@
     {
       "id": "pysam",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "The original K-Dense Skill declares MIT, but pinned SKILL.md:214 passes a samtools region string as the positional contig argument in samfile.fetch(\"chr1:1000-2000\"); pysam requires the region keyword for this syntax. Correct source guidance and original redistribution notices remain required before selection."
     },
     {
       "id": "quadas-c-assessment-for-diagnostic-accuracy-studies",
@@ -2036,12 +2036,12 @@
     {
       "id": "rowan",
       "version": "1.0.0",
-      "reason": "SKILL.md credits K-Dense Inc.; verify original attribution, license evidence and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/rowan/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Proprietary (API key required)\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "sample-correlation-analysis",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/sample_correlation_1.csv, tests/data/sample_correlation_2.csv, tests/data/sample_correlation_3.csv."
+      "reason": "Bundled tests/data/sample_correlation_2.csv contains TCGA sample identifiers alongside drug-response columns, and sample_correlation_3.csv contains GEO sample identifiers. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames."
     },
     {
       "id": "scanpy",
@@ -2161,7 +2161,7 @@
     {
       "id": "clinical-trial-finder",
       "version": "1.0.0",
-      "reason": "SKILL.md credits Duvet05; verify original author license evidence and copyright notice before relying on the aggregator root MIT notice."
+      "reason": "Original ClawBio source at 736753c4a4c55e7ca6c56506b78854def1b172c7 confirms Duvet05 authorship and MIT terms with a Manuel Corpas copyright notice. However, pinned writers.py labels merged EUCTR records as ClinicalTrials.gov in reports/JSON and emits their FHIR identifiers and URLs in the ClinicalTrials.gov namespace. Correct source attribution in generated outputs and include the original notice before selection."
     },
     {
       "id": "clinpgx-database",
@@ -2371,7 +2371,7 @@
     {
       "id": "datamol",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/datamol/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Apache-2.0 license\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
       "id": "dicom-anonymizer",

@@ -64,6 +64,9 @@ independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notic
 appears in [`extracted_text.txt:117`](https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/paper-tweet-generator/extracted_text.txt#L117);
 its redistribution review and permission resolution remain pending.
 Selection is not a redistribution approval.
+See the [original-list review follow-up](../docs/original-list-review.md) for
+verified license discrepancies, source defects and dataset provenance findings
+that refine 12 of these existing deferrals without changing the selection.
 
 To defer another member, move its exact ID/version from `selected` to `deferred`
 and record the reason. To include a corrected member later, update the reviewed
