@@ -54,10 +54,10 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-351 reviewed Skills, retaining all 321 previously published members and adding
-30 members at `1.0.0`. The other 233 members remain explicitly deferred.
-Of these, 220 await review for a later batch, including six previously deferred entries with missing
-documented package files and 109 entries with asset, attribution, or source-completeness follow-ups. The original 13
+364 reviewed Skills, retaining all 351 previously published members and adding
+13 members at `1.0.0`. The other 220 members remain explicitly deferred.
+Of these, 207 await review for a later batch, including six previously deferred entries with missing
+documented package files and 201 entries with asset, attribution, or source-completeness follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -90,9 +90,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 350
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 363
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches and a 30-member batch. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch and a 13-member batch. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records
