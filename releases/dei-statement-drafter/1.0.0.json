@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "dei-statement-drafter",
+    "version": "1.0.0",
+    "display_name": "dei-statement-drafter",
+    "summary": "Draft Diversity, Equity, and Inclusion statements for academic applications.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/dei-statement-drafter"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/dei-statement-drafter/dei-statement-drafter_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "ef66a4b29b32c3f645be0121aa93b0940927aa24ffb89e7028fbdca80c4cfa05",
+    "file_count": 5,
+    "uncompressed_bytes": 27508
+  },
+  "artifact": {
+    "path": "shards/04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449.zip",
+    "sha256": "04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449",
+    "bytes": 277617,
+    "skill_path": "dei-statement-drafter"
+  }
+}

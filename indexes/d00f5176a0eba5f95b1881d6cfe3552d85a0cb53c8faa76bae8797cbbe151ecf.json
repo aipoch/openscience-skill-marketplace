@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "path": "releases/abstract-summarizer/1.0.0.json",
+      "sha256": "3a552e784e1c56c8f9de5818223dcbdc8df4dc001839e97455e44ffb9bbbd5f1"
+    },
+    {
+      "path": "releases/abstract-trimmer/1.0.0.json",
+      "sha256": "d9b854785d267477571e3f5bc29bffe68652605706e10b1abbe1c4da3a1e96e2"
+    },
+    {
+      "path": "releases/academic-abstract-refiner/1.0.0.json",
+      "sha256": "42ec6b7c9d6dc70365b92a61ef0fcde37562083f1434e4699fcc16d1766f628b"
+    },
+    {
+      "path": "releases/academic-highlight-generator/1.0.0.json",
+      "sha256": "06c955e727a823d2976f44911d55b4bc52b2d944b380cc3920073709516fce18"
+    },
+    {
+      "path": "releases/anatomy-quiz-master/1.0.0.json",
+      "sha256": "509aeda6cb449c06d7375d192a92983fe4069b583f597a736bce98f0ec603021"
+    },
+    {
+      "path": "releases/anki-card-creator/1.0.0.json",
+      "sha256": "fe37ae8a2bcb4c74471c29be290f7cb5b64ba760de72e804117595df582bfbe4"
+    },
+    {
+      "path": "releases/arxiv-preflight/1.0.0.json",
+      "sha256": "b4c858653565f0cc4a5f1bcfab265980225110bd1835b16a7d5c1ae85748cdd2"
+    },
+    {
+      "path": "releases/author-response-builder/1.0.0.json",
+      "sha256": "2fa9588faa8c33264e51b98705a2ec279e2fe4be941985944b3deb1bce6dd541"
+    },
+    {
+      "path": "releases/automated-soap-note-generator/1.0.0.json",
+      "sha256": "d950b23cb4512255a76e48a22f7b97828380883caf09dbb48a39edd82795a581"
+    },
+    {
+      "path": "releases/biomed-outline-generator/1.0.0.json",
+      "sha256": "918b05156bd87687541f206847160fc29fee9811f871765f691efe3437929410"
+    },
+    {
+      "path": "releases/biotech-pitch-deck-narrative/1.0.0.json",
+      "sha256": "a361fe199c6e20beccfc3d517b91efebc83c351ac7ef46b954d1942069e02fe9"
+    },
+    {
+      "path": "releases/blind-review-sanitizer/1.0.0.json",
+      "sha256": "e52ca34a6c3dbb802240173262fbd6257927581ab1bf4dac82495c669ee9a20f"
+    },
+    {
+      "path": "releases/claim-strength-calibrator/1.0.0.json",
+      "sha256": "7e7810387c90d91b10642eaa04148b830d6efc0557b155a0f8b3e2861e717ee4"
+    },
+    {
+      "path": "releases/conference-abstract-adaptor/1.0.0.json",
+      "sha256": "57fa9b90b849e579c60a3e4f41e673187532065fe1ceb3c5cbc0497d09314b07"
+    },
+    {
+      "path": "releases/conference-abstract-writer/1.0.0.json",
+      "sha256": "3fa8049f6c747321849fa38f96c24d8768cc90632f1acb2a840aece80c2bbd8b"
+    },
+    {
+      "path": "releases/conference-poster-pitch/1.0.0.json",
+      "sha256": "92d7677320e5e770892886c869c2e1fd52b7fa5fa6975b338365a94d2eb5c664"
+    },
+    {
+      "path": "releases/consistency-checker-across-manuscript/1.0.0.json",
+      "sha256": "1169c9c42e4eb1262a5d097e6a98b580075212f3fbfafbdf54b52ffa086b33c0"
+    },
+    {
+      "path": "releases/cover-letter-drafter/1.0.0.json",
+      "sha256": "d78e932c1f1486abedd799401773415d3cc3ee98f5f535b382c63f4b5187e156"
+    },
+    {
+      "path": "releases/dei-statement-drafter/1.0.0.json",
+      "sha256": "55a64ea590d7f10ef7de1bc0bcf5e446d8505920e7bc78639eb1f8f65c5bc4a8"
+    },
+    {
+      "path": "releases/discussion-composer/1.0.0.json",
+      "sha256": "a7f1ffa8063382f07e95e3588933ea7d24c51d7227b7ad05b0f7eb3ede1bc4cf"
+    },
+    {
+      "path": "releases/ectd-xml-compiler/1.0.0.json",
+      "sha256": "efa09f708adb29043513fbf5b75a09923292a833f93aa28b64bf93d7a3436b1c"
+    }
+  ]
+}

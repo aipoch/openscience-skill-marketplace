@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "author-response-builder",
+    "version": "1.0.0",
+    "display_name": "author-response-builder",
+    "summary": "Turns reviewer comments into structured, professional point-by-point responses linked to manuscript revisions, clarifications, rebuttals, and additional analyses.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/author-response-builder"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 84,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/author-response-builder/eval_report_author-response-builder_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 82,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "66b971c51bf6bc5be5154d55880ec7f7c0130c38a061c12272d87597900b1b7f",
+    "file_count": 10,
+    "uncompressed_bytes": 40884
+  },
+  "artifact": {
+    "path": "shards/04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449.zip",
+    "sha256": "04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449",
+    "bytes": 277617,
+    "skill_path": "author-response-builder"
+  }
+}

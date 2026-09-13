@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "discussion-composer",
+    "version": "1.0.0",
+    "display_name": "discussion-composer",
+    "summary": "Composes a Discussion around key findings, mechanisms, clinical relevance, and limitations. Use when writing or improving a Discussion section for any biomedical manuscript — including interpreting results, connecting to prior literature, addressing unexpected findings, framing limitations, and writing the conclusion. Also triggers on \"write my discussion\", \"help me discuss my findings\", \"how do I compare to prior studies\", \"write the limitations paragraph\", or \"draft a discussion for my paper\".",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/discussion-composer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 83,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/discussion-composer/eval_report_discussion-composer_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 86,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 81,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f9dff89d4c07256821b4e77cb61e2276fa1175a60f83458264998b52a2dc14c3",
+    "file_count": 5,
+    "uncompressed_bytes": 27764
+  },
+  "artifact": {
+    "path": "shards/04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449.zip",
+    "sha256": "04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449",
+    "bytes": 277617,
+    "skill_path": "discussion-composer"
+  }
+}

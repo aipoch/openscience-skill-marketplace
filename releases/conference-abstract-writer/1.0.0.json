@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "conference-abstract-writer",
+    "version": "1.0.0",
+    "display_name": "conference-abstract-writer",
+    "summary": "Condenses a full study into conference-submission abstract format. Use when adapting a manuscript abstract or study summary to meet a specific conference's word limit, structured format (Background/Methods/Results/Conclusion), character limits, or required section headings. Also triggers on \"adapt my abstract for [conference]\", \"shorten my abstract to 250 words\", \"reformat for ASCO/ASGCT/SfN/AACR\", \"I need a conference abstract\", or \"cut my abstract to fit the word limit\".",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/conference-abstract-writer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 84,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/conference-abstract-writer/eval_report_conference-abstract-writer_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 82.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "02b81c02a790d47be5e61f4524ffcb217fec1e0e7d4b7f3701d0ccadaecafcb2",
+    "file_count": 6,
+    "uncompressed_bytes": 31720
+  },
+  "artifact": {
+    "path": "shards/04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449.zip",
+    "sha256": "04fe26384dcbf921da2cd3850d445a115fa70108d0edb105df3313f82b7df449",
+    "bytes": 277617,
+    "skill_path": "conference-abstract-writer"
+  }
+}
