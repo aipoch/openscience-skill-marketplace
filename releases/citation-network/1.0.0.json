@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "citation-network",
+    "version": "1.0.0",
+    "display_name": "citation-network",
+    "summary": "Build and visualize a citation network from a source/target CSV to identify key papers, communities, and emerging hotspots; use when you have citation pairs and need fast literature review or trend analysis.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d",
+      "path": "scientific-skills/Evidence Insight/citation-network"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/63c61d38c6c4bba5128f98f0b225aa44e3fe748d/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/63c61d38c6c4bba5128f98f0b225aa44e3fe748d/scientific-skills/Evidence%20Insight/citation-network/eval_report_citation-network_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 96,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "ad530e8a6b202c2206d41923074976ce1af5297e2d5bcb05207abe0b4179c5f2",
+    "file_count": 9,
+    "uncompressed_bytes": 33157
+  },
+  "artifact": {
+    "path": "shards/c7fbe00cdc768bf2001464149d72245d871d762a7fd6df72d6d22c79b240ac69.zip",
+    "sha256": "c7fbe00cdc768bf2001464149d72245d871d762a7fd6df72d6d22c79b240ac69",
+    "bytes": 23150,
+    "skill_path": "citation-network"
+  }
+}
