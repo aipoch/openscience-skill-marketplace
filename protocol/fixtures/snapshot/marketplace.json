@@ -3,7 +3,7 @@
   "protocol": "openscience-skill-marketplace",
   "marketplace": {
     "id": "openscience-skills",
-    "name": "OpenScience Skill Marketplace"
+    "name": "Open-Science Skill Marketplace"
   },
   "skills": [
     {
@@ -96,5 +96,5 @@
     "sha256": "bc07807d496286b4014b139d572c40a09f9a483110258c366a5263753840d548"
   },
   "previous_revision": null,
-  "revision": "3440d0185bab287bec48bf82926dbf20e41b1d799c78ce2e62c32fcf58843647"
+  "revision": "a460433d2c24ac2ead90f71c5ef6c56b050a89000205e5ca0d7151a2c8622599"
 }

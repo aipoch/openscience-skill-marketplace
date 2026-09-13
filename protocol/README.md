@@ -1,4 +1,4 @@
-# OpenScience Skill Protocol v1 (unpublished)
+# Open-Science Skill Protocol v1 (unpublished)
 
 This is an independent Skill protocol. It does not extend or modify Specialist
 Protocol v1. The initial contract includes optional authors and upstream
@@ -82,6 +82,8 @@ Production client freshness/rollback policy remains an explicit integration deci
 
 For each regular file relative to a Skill root, sort by unsigned UTF-8 path bytes.
 Initialize SHA-256 with `OpenScience Skill content digest v1` and a zero byte.
+This is a fixed Protocol v1 byte prefix, not display text; preserve its spelling
+when using the Open-Science project name.
 For each file append: uint64 big-endian path-byte length, UTF-8 path bytes,
 uint64 big-endian content length, and exact content bytes. ZIP metadata, timestamps,
 file modes and explicit directory entries are excluded. This matches the
@@ -119,7 +121,7 @@ They are not part of active manifests, published metadata or the App field mappi
 ## App field mapping
 
 `toAppEntry` in `scripts/lib/protocol.mjs` projects a catalog listing or a release
-descriptor's `skill` object into Open Science's `SkillMarketplaceEntry`, aligned
+descriptor's `skill` object into Open-Science's `SkillMarketplaceEntry`, aligned
 with `skill-marketplace-model.ts` at App commit `9b37d9c57`. It validates the strict
 wire shape before projecting it. Callers must authenticate the original catalog
 and descriptor bytes **before** calling this mapper. Schema validation and field

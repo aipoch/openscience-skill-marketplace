@@ -9,7 +9,7 @@ export function buildCatalog(
     previousRoot,
     marketplace = {
       id: "openscience-skills",
-      name: "OpenScience Skill Marketplace",
+      name: "Open-Science Skill Marketplace",
     },
   } = {},
 ) {
