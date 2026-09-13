@@ -1,8 +1,8 @@
 # Batch publication and recovery
 
-The current release selects 386 reviewed Skills: all 384 previous members plus
-`citation-network` and `discussion-section-architect` at `1.0.0`. It explicitly
-defers 198 other members. See [release selection](../skills/README.md#release-selection).
+The current release selects 388 reviewed Skills: all 386 previous members plus
+`baseline-extraction-for-clinical-trials` and `scientific-critical-thinking` at
+`1.0.0`. It explicitly defers 196 other members. See [release selection](../skills/README.md#release-selection).
 Byte-bound redistribution reviews are recorded in
 `skills/reviews.json`; the seventeen assessment-omission records remain separate
 and are not license approvals. Production publication uses the protected main
@@ -233,9 +233,8 @@ publication steps are not client installation states. No UI changes require scre
 The release plan explicitly defers four syntax errors, one missing description,
 five missing license declarations, the PPI resource limits and the PPTX license
 conflict, plus the CC BY-NC-ND 4.0 article bundled in `paper-tweet-generator`.
-Another 185 members are outside the current batch while their reviews remain
-pending, including five previously deferred entries with documented package paths absent from the
-pinned source and 180 entries with asset, attribution, or source-completeness follow-ups. All 384
+Another 183 members remain deferred for asset, attribution, source-completeness
+or implementation follow-ups. All 386
 previously selected Skills keep their original descriptors and shards. See [release selection](../skills/README.md#release-selection) for the
 complete-partition rules and how to include corrected members later. The seventeen invalid assessments are explicitly
 omitted; their original reports and audit findings remain intact. Fixes to upstream bytes and any PPI redesign need separate

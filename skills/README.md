@@ -54,12 +54,11 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-386 reviewed Skills, retaining all 384 previously selected members and adding
-`citation-network` and `discussion-section-architect` at `1.0.0`. Both preserve the
-complete source package and original MIT notice. The other 198 members remain
-explicitly deferred. Of these, 185 await review for a later batch, including five
-previously deferred entries with missing documented package files and 180 entries
-with asset, attribution, or source-completeness follow-ups. The original 13
+388 reviewed Skills, retaining all 386 previously selected members and adding
+`baseline-extraction-for-clinical-trials` and `scientific-critical-thinking` at
+`1.0.0`. Both preserve the complete source package and required MIT notices.
+The other 196 members remain explicitly deferred. Of these, 183 have asset,
+attribution, source-completeness or implementation follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -70,7 +69,7 @@ See the [original-list review follow-up](../docs/original-list-review.md) for
 verified license discrepancies, source defects and dataset provenance findings
 that refine 12 of these existing deferrals without changing the selection.
 
-The current batch resolves two former missing-reference deferrals without adding
+The previous batch resolved two missing-reference deferrals without adding
 invented files. `citation-network` pins upstream commit
 `63c61d38c6c4bba5128f98f0b225aa44e3fe748d`, which escapes inline HTML payloads;
 its absent `references/README.md` is additional documentation unused by the
@@ -84,6 +83,21 @@ in the supplied results and literature. The original self-assessments remain
 90/100 and 91/100 respectively; no evaluated Skill version or independent safety
 approval is inferred. Detailed working notes remain local; exact release approvals
 are bound to source, content and license hashes in `reviews.json`.
+
+The new batch stays on the default source commit. For
+`baseline-extraction-for-clinical-trials`, the full-text extraction path includes
+all ten schema fields and the PDF text helper. Its PMID-only lookup helper is
+absent; that shortcut is unavailable, and full article text is required for the
+documented fallback. PDF extraction requires the separately installed PyPDF2
+library and does not perform OCR. For `scientific-critical-thinking`, the complete
+textual appraisal workflow and all six references are present. Its schematic
+command belongs to the separately installed `scientific-schematics` Skill;
+diagram generation is not bundled with this package. The six references match
+K-Dense's fixed original snapshot byte for byte, and the workflow body differs
+only in aggregation metadata and the appended input-validation section. The
+original K-Dense MIT copyright notice is included alongside AIPOCH's notice.
+These static reviews do not certify clinical decisions, runtime behavior or the
+upstream self-assessments. Missing optional helpers are not reconstructed.
 
 A selected member may specify `source_commit`, a lowercase 40-character commit
 from that same repository. Its source path still comes from the original manifest.
@@ -131,9 +145,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 385
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 387
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review and the `discussion-section-architect` review. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review, the `discussion-section-architect` review and this two-member intake. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records

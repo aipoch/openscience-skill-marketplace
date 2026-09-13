@@ -90,6 +90,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "baseline-extraction-for-clinical-trials",
+      "version": "1.0.0"
+    },
+    {
       "id": "basic-discovery-translational-opportunity-finder",
       "version": "1.0.0"
     },
@@ -1319,6 +1323,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "scientific-critical-thinking",
+      "version": "1.0.0"
+    },
+    {
       "id": "scientific-podcast-summary",
       "version": "1.0.0"
     },
@@ -1655,7 +1663,7 @@
     {
       "id": "graph-interpretation",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/graph_interpreter.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "scripts/main.py always renders a fixed bar-chart demo and inserts a significant-differences claim without inspecting graph data or statistics. Verify real input handling and evidence-grounded interpretation before publication."
     },
     {
       "id": "hipaa-compliance-auditor",
@@ -1763,14 +1771,9 @@
       "reason": "Bundled references/topics.json is invalid JSON (unquoted expressions such as 1-2 abnormal). Verify the configuration and case-generation input contract before publication."
     },
     {
-      "id": "baseline-extraction-for-clinical-trials",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/baseline_extractor.py. Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
       "id": "batch-effect-correction",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix_merged.csv, tests/data/sample_info.csv."
+      "reason": "Bundled expression_matrix_merged.csv and sample_info.csv include GEO GSM sample identifiers and identify GSE114007 as a batch. Verify dataset origins, transformations and redistribution evidence before publication."
     },
     {
       "id": "case-control-study-quality-assessment-nos",
@@ -1830,7 +1833,7 @@
     {
       "id": "decision-tree-analysis",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt."
+      "reason": "Bundled dt_sample1.csv and dt_sample2.csv contain TCGA sample identifiers, survival status and expression values; dt_sample3.txt also contains expression data. Establish dataset origins, transformations and redistribution evidence before publication."
     },
     {
       "id": "deeptools",
@@ -1880,7 +1883,7 @@
     {
       "id": "gene-protein-expression-matrix-normalization",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv."
+      "reason": "references/cli-guide.md explicitly identifies the bundled expression_matrix.csv as real data derived from GEO GSE150613. Verify the source supplement, transformations and redistribution evidence before publication."
     },
     {
       "id": "gokegg-analysis",
@@ -2110,7 +2113,7 @@
     {
       "id": "tooluniverse-statistical-modeling",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/troubleshooting.md, references/bixbench_patterns.md, references/logistic_regression.md (and 3 more). Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The inline ANOVA workflow selects features by matching an expected benchmark F-statistic range, rather than specifying the scientific feature before testing; its aggregate example also flattens repeated feature measurements into independent observations. Resolve methodological guidance and original source notices before publication."
     },
     {
       "id": "umap-tsne-analysis",
@@ -2250,7 +2253,7 @@
     {
       "id": "open-access-scout",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/oa_scout.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "scripts/main.py unconditionally returns mock Unpaywall and PubMed Central availability and license results for any DOI/title without querying either service. Verify real search and license evidence before publication."
     },
     {
       "id": "open-source-license-check",
@@ -2290,7 +2293,7 @@
     {
       "id": "reagent-substitute-scout",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: config.example.json."
+      "reason": "The example configuration contains placeholders only, but scripts/main.py ignores the formula-only query and application filter, uses a hardcoded substitute table and labels PubMed search-hit counts as citations/validation. Verify actual substitute evidence and input handling before publication."
     },
     {
       "id": "reference-search",
@@ -2301,11 +2304,6 @@
       "id": "scholar-evaluation",
       "version": "1.0.0",
       "reason": "The documented snake_case score keys do not match calculate_scores.py title-case dimension keys; the documented example produces no recognized scores. Correct the upstream input contract before publication."
-    },
-    {
-      "id": "scientific-critical-thinking",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "string-database",
