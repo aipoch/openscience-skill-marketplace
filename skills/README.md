@@ -54,10 +54,10 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-383 reviewed Skills, retaining all 364 previously selected members and adding
-19 members at `1.0.0`. The other 201 members remain explicitly deferred.
-Of these, 188 await review for a later batch, including six previously deferred entries with missing
-documented package files and 182 entries with asset, attribution, or source-completeness follow-ups. The original 13
+384 reviewed Skills, retaining all 383 previously selected members and adding
+`paper-lookup` at `1.0.0` with its original K-Dense MIT notice. The other 200 members remain explicitly deferred.
+Of these, 187 await review for a later batch, including six previously deferred entries with missing
+documented package files and 181 entries with asset, attribution, or source-completeness follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -90,9 +90,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 363
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 383
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch and a 13-member batch. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch and the K-Dense `paper-lookup` review. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records
@@ -123,8 +123,8 @@ npm run review:input -- --source /path/to/upstream --id primary-plan-recommender
 ```
 
 Review must cover redistribution of all package files, third-party assets and
-retention of required notices. Evidence must be bounded regular files from the
-same pinned source commit; the builder checks their hashes. A repository-root
+retention of required notices. `license_files` evidence must be bounded regular files from the
+same pinned content source commit; the builder checks their hashes. A repository-root
 license is evidence to review, not automatic permission for third-party content.
 
 The builder includes verified evidence outside the Skill source directory as
@@ -140,6 +140,50 @@ Review `content_sha256` binds the original source-directory files, while
 complete distributed package, including added notices. No source files are
 rewritten. Regenerate unpublished development artifacts after this packaging
 change; existing immutable releases cannot be overwritten.
+
+### Original notices from another repository
+
+Authors do not have to be AIPOCH. Review the actual content license and preserve
+original credits independently of the configured Marketplace publisher. The
+content source, original notice source and CDN distribution address are separate.
+
+When a required original notice is missing from the aggregation snapshot, retain
+a verified raw copy in `licenses/<sha256>.txt` in this repository and add optional
+`additional_license_files` to the complete review:
+
+```json
+{
+  "additional_license_files": [
+    {
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+        "path": "LICENSE.md"
+      },
+      "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+    }
+  ]
+}
+```
+
+Before recording this evidence, verify the original repository/commit/path,
+compare the notice bytes and trace the covered content back to that source.
+Commit the verbatim copy with its review record; do not reformat it. The builder
+loads only selected reviews' copies, rejects missing, empty, oversized, symlinked
+or hash-mismatched files, and bundles them through the same `LICENSES/` path and
+collision/size checks. Duplicate notice bytes are packaged once. No network
+fetch or guessed local path is used during the build.
+
+The existing public `license.evidence` array carries each notice's original URL
+and hash. No consumer update or historical migration is needed. Existing
+id/version releases remain immutable; use this for newly reviewed releases.
+Supplemental evidence does not override a conflicting declared license or waive
+package/quality review. See [the retained notices](../licenses/README.md).
+
+Provider intake accepts external content repositories but does not enroll them
+in the production manifest. Its current contract requires notices in the
+submitted source and rejects supplemental review fields explicitly. Production
+admission remains a separate maintainer-reviewed selection decision.
 
 The ordinary license policy accepts MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause,
 ISC and CC0-1.0 only after review. Other terms require a nonempty reviewed

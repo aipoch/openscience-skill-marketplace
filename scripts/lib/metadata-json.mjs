@@ -15,6 +15,7 @@ const fields = [
   "contentSha256",
   "licenseExpression",
   "licenseFiles",
+  "additionalLicenseFiles",
   "reviewedBy",
   "reviewedOn",
   "exceptionReason",

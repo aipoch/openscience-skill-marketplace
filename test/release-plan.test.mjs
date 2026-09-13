@@ -214,7 +214,7 @@ test("selected listings and details retain history, while the signing guard reje
   );
 });
 
-test("committed release retains prior members and adds nineteen reviewed skills", async () => {
+test("committed release retains prior members and adds the reviewed third-party skill", async () => {
   const manifest = parseMetadataJson(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
@@ -600,7 +600,8 @@ test("committed release retains prior members and adds nineteen reviewed skills"
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 383);
+  assert.equal(selected.length, 384);
+  assert.ok(selectedIds.includes("paper-lookup"));
   for (const id of retainedIds) assert.ok(selectedIds.includes(id), id);
   assert.ok(selected.every(({ version }) => version === "1.0.0"));
   assert.deepEqual(
@@ -749,12 +750,51 @@ test("catalog CLI uses the explicit plan and fails the whole selected batch when
         [command, "--source", sourceDirectory, "--output", output],
         { cwd: inputDirectory, encoding: "utf8" },
       );
+    reviews[`${manifest.entries[2].id}@${manifest.entries[2].version}`] = {
+      additionalLicenseFiles: [{ sha256: "invalid deferred input" }],
+    };
+    const supplemental = Buffer.from("Third-party fixture notice\r\n");
+    const digest = sha256(supplemental);
+    reviews[`${selected[0].id}@${selected[0].version}`].additionalLicenseFiles =
+      [
+        {
+          source: {
+            repository: "https://github.com/independent/skills",
+            commit: "c".repeat(40),
+            path: "LICENSE.md",
+          },
+          sha256: digest,
+        },
+      ];
+    await writeFile(
+      join(inputDirectory, "skills/reviews.json"),
+      metadataJsonBytes(reviews),
+    );
+    const missing = run(join(directory, "missing-copy"));
+    assert.notEqual(missing.status, 0);
+    assert.match(missing.stderr, /ENOENT/);
+    await mkdir(join(inputDirectory, "licenses"));
+    await writeFile(
+      join(inputDirectory, "licenses", `${digest}.txt`),
+      supplemental,
+    );
     const output = join(directory, "candidate");
     const success = run(output);
     assert.equal(success.status, 0, success.stderr);
     const built = await readBundle(output);
     assertReleaseSelection(built.root, selected, source);
     assert.equal(built.root.skills.length, 2);
+    const detail = JSON.parse(
+      built.objects.get(
+        built.root.skills.find((skill) => skill.id === selected[0].id).release
+          .path,
+      ),
+    );
+    assert.equal(detail.skill.license.evidence.at(-1).sha256, digest);
+    assert.match(
+      detail.skill.license.evidence.at(-1).url,
+      /github.com\/independent\/skills\/blob/,
+    );
     delete reviews[`${selected[0].id}@${selected[0].version}`];
     await writeFile(
       join(inputDirectory, "skills/reviews.json"),

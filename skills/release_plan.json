@@ -1042,6 +1042,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "paper-lookup",
+      "version": "1.0.0"
+    },
+    {
       "id": "paper-sprint-review",
       "version": "1.0.0"
     },
@@ -2253,11 +2257,6 @@
       "id": "open-source-license-check",
       "version": "1.0.0",
       "reason": "The bundled software-license lookup table requires individual source and accuracy verification before publication."
-    },
-    {
-      "id": "paper-lookup",
-      "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
     },
     {
       "id": "patent-claim-mapper",
