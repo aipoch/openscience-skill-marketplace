@@ -18,6 +18,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "academic-cv-generator",
+      "version": "1.0.0"
+    },
+    {
       "id": "academic-highlight-generator",
       "version": "1.0.0"
     },
@@ -26,11 +30,31 @@
       "version": "1.0.0"
     },
     {
+      "id": "active-comparator-single-soc-faers-safety-comparison",
+      "version": "1.0.0"
+    },
+    {
+      "id": "adaptive-trial-simulator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "adaptyv",
+      "version": "1.0.0"
+    },
+    {
       "id": "adme-property-predictor",
       "version": "1.0.0"
     },
     {
+      "id": "aim-and-hypothesis-designer",
+      "version": "1.0.0"
+    },
+    {
       "id": "anatomy-quiz-master",
+      "version": "1.0.0"
+    },
+    {
+      "id": "animal-and-cell-validation-planner",
       "version": "1.0.0"
     },
     {
@@ -66,11 +90,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "benchling-integration",
+      "version": "1.0.0"
+    },
+    {
+      "id": "bidirectional-multi-phenotype-mr-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "bio-causal-genomics-mediation-analysis",
       "version": "1.0.0"
     },
     {
       "id": "bio-causal-genomics-pleiotropy-detection",
+      "version": "1.0.0"
+    },
+    {
+      "id": "biodbnet-api",
       "version": "1.0.0"
     },
     {
@@ -122,11 +158,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "bulk-omics-integrative-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "case-control-study-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "cellosaurus-api",
       "version": "1.0.0"
     },
     {
       "id": "cellxgene-census",
+      "version": "1.0.0"
+    },
+    {
+      "id": "chart-style-unifier",
       "version": "1.0.0"
     },
     {
@@ -138,11 +186,27 @@
       "version": "1.0.0"
     },
     {
+      "id": "chemical-storage-sorter",
+      "version": "1.0.0"
+    },
+    {
       "id": "citation-management",
       "version": "1.0.0"
     },
     {
       "id": "claim-strength-calibrator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "clinic-sample-size",
+      "version": "1.0.0"
+    },
+    {
+      "id": "clinical-cohort-protocol-designer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "clinical-diagnostic-reasoning",
       "version": "1.0.0"
     },
     {
@@ -170,7 +234,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "co-tank-monitor",
+      "version": "1.0.0"
+    },
+    {
       "id": "cobrapy",
+      "version": "1.0.0"
+    },
+    {
+      "id": "cold-chain-risk-calculator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "comorbidity-common-immune-biomarker-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "comparative-network-toxicology-shared-mechanism-reference-grounded",
       "version": "1.0.0"
     },
     {
@@ -194,6 +274,14 @@
       "version": "1.0.0"
     },
     {
+      "id": "conflict-of-interest-checker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "confounder-and-bias-control-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "consistency-checker-across-manuscript",
       "version": "1.0.0"
     },
@@ -202,11 +290,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "conventional-non-oncology-hub-gene-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "conventional-oncology-hub-gene-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "cosmic-database",
       "version": "1.0.0"
     },
     {
       "id": "cover-letter-drafter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "cross-disease-shared-biomarker-network-research-planner",
       "version": "1.0.0"
     },
     {
@@ -230,6 +330,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "date-calculator",
+      "version": "1.0.0"
+    },
+    {
       "id": "dei-statement-drafter",
       "version": "1.0.0"
     },
@@ -242,11 +346,35 @@
       "version": "1.0.0"
     },
     {
+      "id": "docx-feedback-tracker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "dpi-upscaler-checker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "drug-repurposing-study-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "drug-target-evidence-landscape",
       "version": "1.0.0"
     },
     {
       "id": "drugbank-database",
+      "version": "1.0.0"
+    },
+    {
+      "id": "dual-disease-shared-transcriptome-biomarker-research-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "dual-disease-transcriptomic-ml-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "ebm-calculator",
       "version": "1.0.0"
     },
     {
@@ -266,11 +394,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "endpoint-definition-designer",
+      "version": "1.0.0"
+    },
+    {
       "id": "ensembl-database",
       "version": "1.0.0"
     },
     {
       "id": "epidemiology",
+      "version": "1.0.0"
+    },
+    {
+      "id": "equipment-maintenance-log",
+      "version": "1.0.0"
+    },
+    {
+      "id": "esm",
       "version": "1.0.0"
     },
     {
@@ -282,7 +422,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "experiment-design",
+      "version": "1.0.0"
+    },
+    {
       "id": "experimental-data-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "expert-interview-generator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "expert-interview-topics",
       "version": "1.0.0"
     },
     {
@@ -290,7 +442,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "faers-multi-drug-soc-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "faers-pharmacovigilance-disproportionality-research-planner",
+      "version": "1.0.0"
+    },
+    {
       "id": "faq-generator",
+      "version": "1.0.0"
+    },
+    {
+      "id": "feasibility-aware-study-planner",
       "version": "1.0.0"
     },
     {
@@ -310,7 +474,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "file-security-toolkit",
+      "version": "1.0.0"
+    },
+    {
       "id": "flowio",
+      "version": "1.0.0"
+    },
+    {
+      "id": "fulltext-fetcher",
       "version": "1.0.0"
     },
     {
@@ -323,6 +495,10 @@
     },
     {
       "id": "gene-structure-mapper",
+      "version": "1.0.0"
+    },
+    {
+      "id": "generic-phenotype-scoring-research-planner",
       "version": "1.0.0"
     },
     {
@@ -386,11 +562,27 @@
       "version": "1.0.0"
     },
     {
+      "id": "hypogenic",
+      "version": "1.0.0"
+    },
+    {
       "id": "iacuc-protocol-drafter",
       "version": "1.0.0"
     },
     {
       "id": "ib-summarizer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "image-processing",
+      "version": "1.0.0"
+    },
+    {
+      "id": "inclusion-exclusion-criteria-builder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "inplasy-registration-helper",
       "version": "1.0.0"
     },
     {
@@ -410,6 +602,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "journal-recommender",
+      "version": "1.0.0"
+    },
+    {
       "id": "kegg-database",
       "version": "1.0.0"
     },
@@ -419,6 +615,14 @@
     },
     {
       "id": "lab-budget-forecaster",
+      "version": "1.0.0"
+    },
+    {
+      "id": "lab-inventory-predictor",
+      "version": "1.0.0"
+    },
+    {
+      "id": "lab-prep-calculations",
       "version": "1.0.0"
     },
     {
@@ -462,7 +666,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "literatureimages-interpretation",
+      "version": "1.0.0"
+    },
+    {
       "id": "market-access-value",
+      "version": "1.0.0"
+    },
+    {
+      "id": "markitdown",
       "version": "1.0.0"
     },
     {
@@ -471,6 +683,18 @@
     },
     {
       "id": "mechanism-flowchart",
+      "version": "1.0.0"
+    },
+    {
+      "id": "mechanism-to-validation-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "medical-case-interpreter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "medical-case-report-generator",
       "version": "1.0.0"
     },
     {
@@ -494,7 +718,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "medical-research-algorithm-matcher",
+      "version": "1.0.0"
+    },
+    {
       "id": "medical-research-gap-finder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "medical-research-gap-to-study-planner",
       "version": "1.0.0"
     },
     {
@@ -510,11 +742,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "medical-unit-converter",
+      "version": "1.0.0"
+    },
+    {
       "id": "medical-vector-search",
       "version": "1.0.0"
     },
     {
       "id": "medication-adherence-message-gen",
+      "version": "1.0.0"
+    },
+    {
+      "id": "medication-reconciliation",
       "version": "1.0.0"
     },
     {
@@ -586,6 +826,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "meta-search-builder",
+      "version": "1.0.0"
+    },
+    {
       "id": "meta-sensitivity-plot",
       "version": "1.0.0"
     },
@@ -606,6 +850,18 @@
       "version": "1.0.0"
     },
     {
+      "id": "microscopy-scale-bar-adder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "mindmap",
+      "version": "1.0.0"
+    },
+    {
+      "id": "mindmap-helper",
+      "version": "1.0.0"
+    },
+    {
       "id": "moa-explainer",
       "version": "1.0.0"
     },
@@ -615,6 +871,10 @@
     },
     {
       "id": "multi-database-literature-collector",
+      "version": "1.0.0"
+    },
+    {
+      "id": "multi-panel-figure-assembler",
       "version": "1.0.0"
     },
     {
@@ -682,6 +942,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "pdf-ppt",
+      "version": "1.0.0"
+    },
+    {
       "id": "peer-review",
       "version": "1.0.0"
     },
@@ -694,6 +958,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "plotly",
+      "version": "1.0.0"
+    },
+    {
       "id": "pmc-official-download",
       "version": "1.0.0"
     },
@@ -702,11 +970,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "poster-designer",
+      "version": "1.0.0"
+    },
+    {
       "id": "poster-layout-planner",
       "version": "1.0.0"
     },
     {
       "id": "poster-storyline-builder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "pptx-posters",
       "version": "1.0.0"
     },
     {
@@ -754,6 +1030,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "reagent-expiry-alert",
+      "version": "1.0.0"
+    },
+    {
       "id": "rebuttal-letter-strategist",
       "version": "1.0.0"
     },
@@ -762,7 +1042,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "reference-finder",
+      "version": "1.0.0"
+    },
+    {
       "id": "reference-integrity-checker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "reference-retrieval-skill",
       "version": "1.0.0"
     },
     {
@@ -782,7 +1070,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "reproducibility-check",
+      "version": "1.0.0"
+    },
+    {
+      "id": "research-article-weekly",
+      "version": "1.0.0"
+    },
+    {
+      "id": "research-hotspot-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "residency-interview-prep",
+      "version": "1.0.0"
+    },
+    {
+      "id": "result-reliability-checker",
       "version": "1.0.0"
     },
     {
@@ -794,11 +1098,31 @@
       "version": "1.0.0"
     },
     {
+      "id": "retraction-watcher",
+      "version": "1.0.0"
+    },
+    {
       "id": "revision-strategy-planner",
       "version": "1.0.0"
     },
     {
       "id": "sanger-chromatogram-qa",
+      "version": "1.0.0"
+    },
+    {
+      "id": "sci-paper-reviewer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "science-popularization-article",
+      "version": "1.0.0"
+    },
+    {
+      "id": "scientific-podcast-summary",
+      "version": "1.0.0"
+    },
+    {
+      "id": "scientific-schematics",
       "version": "1.0.0"
     },
     {
@@ -810,7 +1134,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "scite-database",
+      "version": "1.0.0"
+    },
+    {
       "id": "scvi-tools",
+      "version": "1.0.0"
+    },
+    {
+      "id": "sds-msds-risk-scanner",
       "version": "1.0.0"
     },
     {
@@ -818,11 +1150,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "search-pubmed",
+      "version": "1.0.0"
+    },
+    {
       "id": "semantic-consistency-auditor",
       "version": "1.0.0"
     },
     {
+      "id": "semantic-scholar-database",
+      "version": "1.0.0"
+    },
+    {
       "id": "sequence-alignment",
+      "version": "1.0.0"
+    },
+    {
+      "id": "shift-handover-summarizer",
       "version": "1.0.0"
     },
     {
@@ -834,7 +1178,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "smart-journal-monitor",
+      "version": "1.0.0"
+    },
+    {
+      "id": "spreadsheet-ops",
+      "version": "1.0.0"
+    },
+    {
       "id": "statistical-analysis-advisor",
+      "version": "1.0.0"
+    },
+    {
+      "id": "study-design-identifier",
       "version": "1.0.0"
     },
     {
@@ -866,7 +1222,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "text-to-technical-roadmap",
+      "version": "1.0.0"
+    },
+    {
       "id": "title-and-abstract-optimizer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "tooluniverse-clinical-trial-matching",
+      "version": "1.0.0"
+    },
+    {
+      "id": "tooluniverse-literature-deep-research",
+      "version": "1.0.0"
+    },
+    {
+      "id": "topic-evidence-mapper",
       "version": "1.0.0"
     },
     {
@@ -878,6 +1250,18 @@
       "version": "1.0.0"
     },
     {
+      "id": "translational-gap-analyzer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "uniprot-database",
+      "version": "1.0.0"
+    },
+    {
+      "id": "unmet-clinical-need-extractor",
+      "version": "1.0.0"
+    },
+    {
       "id": "upset-plot-converter",
       "version": "1.0.0"
     },
@@ -886,7 +1270,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "vector-text-fixer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "virtual-patient-roleplay",
+      "version": "1.0.0"
+    },
+    {
       "id": "visual-content-desc",
+      "version": "1.0.0"
+    },
+    {
+      "id": "waste-disposal-guide",
+      "version": "1.0.0"
+    },
+    {
+      "id": "zinc-database",
       "version": "1.0.0"
     }
   ],
@@ -1724,7 +2124,7 @@
     {
       "id": "rare-disease-hpo-mapper",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The bundled phenotype-to-gene lookup data requires source, scope and redistribution evidence review."
     },
     {
       "id": "rct-bias-assessment-rob2",
@@ -1742,44 +2142,14 @@
       "reason": "Bundled assets require individual provenance review before selection: config.example.json."
     },
     {
-      "id": "reference-finder",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "reference-retrieval-skill",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "reference-search",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: assets/search_log_template.csv, assets/search_results_template.csv, inputs/query.json."
     },
     {
-      "id": "research-article-weekly",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "research-hotspot-analysis",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "research-paper-downloader",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: config.json."
-    },
-    {
-      "id": "result-reliability-checker",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "retraction-watcher",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "scholar-evaluation",
@@ -1792,39 +2162,9 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "scientific-podcast-summary",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "scite-database",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "sds-msds-risk-scanner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "semantic-scholar-database",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "smart-journal-monitor",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "string-database",
       "version": "1.0.0",
       "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
-    },
-    {
-      "id": "study-design-identifier",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "systematic-review-screener",
@@ -1834,60 +2174,20 @@
     {
       "id": "target-novelty-scorer",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "tooluniverse-clinical-trial-matching",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "tooluniverse-literature-deep-research",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "topic-evidence-mapper",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "translational-gap-analyzer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "uniprot-database",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "unmet-clinical-need-extractor",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "SKILL.md credits the OpenClaw Bioinformatics Skills Collection and the search implementation generates simulated literature counts; verify attribution and real-data behavior."
     },
     {
       "id": "unstructured-medical-text-miner",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The MIMIC-IV-oriented example discharge summary requires explicit provenance and redistribution evidence before selection."
     },
     {
       "id": "variant-annotation",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled ACMG guideline material requires separate source and redistribution evidence review."
     },
     {
       "id": "venue-templates",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "zinc-database",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "academic-cv-generator",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -1902,19 +2202,9 @@
       "reason": "Bundled assets require individual provenance review before selection: assets/templates/baposter-template.tex, assets/templates/beamerposter-template.tex, assets/templates/tikzposter-template.tex."
     },
     {
-      "id": "adaptyv",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "article-format-adjustment",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: assets/formats/apa.json, assets/formats/bmc.json, assets/formats/cell.json, assets/formats/cell_ffc.json, assets/formats/cell_reports.json, assets/formats/embo.json, assets/formats/faseb.json, assets/formats/ieee.json, assets/formats/jbc.json, assets/formats/jimmunol.json, assets/formats/lancet.json, assets/formats/molecular_cell.json, assets/formats/nature.json, assets/formats/nature_ffc.json, assets/formats/nejm.json, assets/formats/plos.json, assets/formats/pnas.json, assets/formats/scientific_reports.json."
-    },
-    {
-      "id": "benchling-integration",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "bianque",
@@ -1932,11 +2222,6 @@
       "reason": "Bundled assets require individual provenance review before selection: assets/bibliography_template.csv."
     },
     {
-      "id": "biodbnet-api",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "bmi-bsa-calculator",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
@@ -1947,29 +2232,9 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "chart-style-unifier",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "chemical-storage-sorter",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "chemical-structure-converter",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "clinic-sample-size",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "clinical-diagnostic-reasoning",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The bundled name/SMILES conversion implementation is a fixed mock lookup; verify documented real-input behavior before publication."
     },
     {
       "id": "clinical-reports",
@@ -1977,24 +2242,9 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "co-tank-monitor",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "cold-chain-risk-calculator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "conference-tweet-generator",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "conflict-of-interest-checker",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The bundled drug dictionary requires individual source and redistribution evidence review."
     },
     {
       "id": "content-proofreading",
@@ -2007,57 +2257,12 @@
       "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
     },
     {
-      "id": "date-calculator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "dicom-anonymizer",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "docx-feedback-tracker",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "dpi-upscaler-checker",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "ebm-calculator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "equipment-maintenance-log",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "experiment-detail-comparator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "expert-interview-generator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "expert-interview-topics",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "file-security-toolkit",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "fulltext-fetcher",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -2082,34 +2287,14 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "image-processing",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "iso-certification",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "journal-recommender",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled ISO 13485 requirements and checklists require separate source and redistribution evidence review."
     },
     {
       "id": "knowledge-base-search",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: assets/hit_list_template.csv."
-    },
-    {
-      "id": "lab-inventory-predictor",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "lab-prep-calculations",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "lab-result-interpretation",
@@ -2127,67 +2312,12 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "literatureimages-interpretation",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "markitdown",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "medical-case-interpreter",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "medical-case-report-generator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "medical-unit-converter",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "medication-reconciliation",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "mendel",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: evals/evals.json."
     },
     {
-      "id": "meta-search-builder",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "microscopy-scale-bar-adder",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "mindmap",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "mindmap-helper",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "mindmap-html-generator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "multi-panel-figure-assembler",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -2200,11 +2330,6 @@
       "id": "pdf-extract",
       "version": "1.0.0",
       "reason": "Bundled assets require individual provenance review before selection: report.json."
-    },
-    {
-      "id": "pdf-ppt",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
       "id": "pdf-processor",
@@ -2222,42 +2347,17 @@
       "reason": "Bundled assets require individual provenance review before selection: phi-prompt-guard_structural_precheck.json."
     },
     {
-      "id": "plotly",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "postdoc-fellowship-matcher",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "poster-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The bundled fellowship database requires source and currency verification before publication."
     },
     {
       "id": "ppt",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "The bundled presentation content and framework require individual provenance review before selection."
     },
     {
       "id": "ppt-master",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "pptx-posters",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "reagent-expiry-alert",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "reproducibility-check",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -2272,39 +2372,9 @@
       "reason": "Bundled assets require individual provenance review before selection: assets/figure_caption_checklist.csv."
     },
     {
-      "id": "sci-paper-reviewer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "science-popularization-article",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "scientific-schematics",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "search-pubmed",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "shift-handover-summarizer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "slide-deck-images",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "spreadsheet-ops",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled design references and example outline require individual provenance review before selection."
     },
     {
       "id": "symptom-checker-triage",
@@ -2313,11 +2383,6 @@
     },
     {
       "id": "text-format-organizer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "text-to-technical-roadmap",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -2332,62 +2397,12 @@
       "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
     },
     {
-      "id": "vector-text-fixer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "virtual-patient-roleplay",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "waste-disposal-guide",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "word-read-write",
       "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "active-comparator-single-soc-faers-safety-comparison",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "adaptive-trial-simulator",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "aim-and-hypothesis-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "animal-and-cell-validation-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
+      "reason": "Bundled Office schemas and helper sources require individual third-party origin and redistribution notice review."
     },
     {
       "id": "basic-research-design",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "bidirectional-multi-phenotype-mr-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "bulk-omics-integrative-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "case-control-study-planner",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -2397,97 +2412,7 @@
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
     {
-      "id": "clinical-cohort-protocol-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
       "id": "clinical-trial-protocol-skill",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "comorbidity-common-immune-biomarker-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "comparative-network-toxicology-shared-mechanism-reference-grounded",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "confounder-and-bias-control-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "conventional-non-oncology-hub-gene-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "conventional-oncology-hub-gene-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "cross-disease-shared-biomarker-network-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "drug-repurposing-study-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "dual-disease-shared-transcriptome-biomarker-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "dual-disease-transcriptomic-ml-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "endpoint-definition-designer",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "esm",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "experiment-design",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "faers-multi-drug-soc-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "faers-pharmacovigilance-disproportionality-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "feasibility-aware-study-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "generic-phenotype-scoring-research-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "hypogenic",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
@@ -2498,31 +2423,6 @@
     },
     {
       "id": "inclusion-criteria-gen",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "inclusion-exclusion-criteria-builder",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "inplasy-registration-helper",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "mechanism-to-validation-planner",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "medical-research-algorithm-matcher",
-      "version": "1.0.0",
-      "reason": "Outside the initial single-Skill release; redistribution review remains pending."
-    },
-    {
-      "id": "medical-research-gap-to-study-planner",
       "version": "1.0.0",
       "reason": "Outside the initial single-Skill release; redistribution review remains pending."
     },
