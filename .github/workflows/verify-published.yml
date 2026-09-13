@@ -1,4 +1,4 @@
-name: Verify published Skill mirrors
+name: Audit complete published Skill mirrors
 on:
   workflow_dispatch:
 permissions:

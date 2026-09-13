@@ -24,9 +24,9 @@ release index retains older versions even when the current listing changes. The
 first implementation includes all retained referenced objects in each catalog's
 GitHub Release so each snapshot is self-contained; unchanged CDN objects and retries
 reuse existing bytes. This duplicates unchanged GitHub assets across different
-snapshots. The tool currently caps a snapshot at 1,000 assets; introduce an explicit
-cross-snapshot transport index before growing beyond this limit, rather than losing
-historical objects. The complete snapshot fails if the limit is exceeded.
+snapshots. The tool caps a snapshot at 1,000 assets and fails if that limit is
+exceeded. Changing the GitHub layout requires a separate consumer-contract decision;
+this optimization adds no transport index or App requirement.
 
 ## Workflow
 
@@ -78,14 +78,18 @@ this is not a claimed live endpoint.
 The production workflow:
 
 1. Runs tooling checks; reads the fixed upstream Git commit and verifies audit equality.
-2. Downloads and verifies the previous signed root and every object in its release index.
+2. Authenticates the previous signed root, reuses a verified cache for that exact
+   revision when available, or reads JSON metadata in one Git batch and downloads
+   each referenced ZIP once. All bytes are verified locally before reuse.
 3. Validates the release plan against the complete 584-member authority, then builds
    every selected member after source, license-review and resource gates pass.
 4. Requires current listings to match exactly the selected IDs, versions and source
    paths, then signs exact root bytes and verifies the configured key and fingerprint.
 5. Creates/reuses one draft catalog release and uploads missing assets without clobbering.
-6. Uses conditional S3 writes for immutable objects, reads public CDN and GitHub bytes,
-   and verifies equality before moving either stable root.
+6. Compares the candidate with its authenticated original parent. Reconciles all
+   GitHub assets and only new CDN objects plus the snapshot pair, using up to four
+   workers per mirror. Existing objects are read once; new uploads are read back
+   and compared before either stable root moves. Immutable S3 writes remain conditional.
 7. Publishes the verified release, writes metadata through `.worktree/published`, then
    promotes the stable CDN signature/root pair, invalidates both CloudFront paths,
    waits for completion, then verifies both mirrors' roots and signatures.
@@ -111,11 +115,46 @@ Immutable shards, descriptors, indexes and snapshots are never invalidated.
 This does not configure a distribution, change its cache policy or solve negative
 caching of newly uploaded objects; those remain deployment prerequisites.
 
+## Incremental publication and disposable cache
+
+The total `marketplace.json`, its signature, release index, descriptors and ZIP paths
+keep their existing formats. Clients continue to resolve GitHub assets from the
+current `catalog-<revision>` Release. Only the publisher changes; App adapters,
+installation receipts and databases need no update.
+
+The CDN staging set excludes objects whose exact bytes belong to the authenticated
+original parent. Parent signatures are verified on raw bytes, including during a
+retry after GitHub has advanced ahead of the CDN. Changed or removed historical
+objects fail validation. Both mirrors must still expose an expected stable root.
+This relies on historical CDN objects remaining immutable and available; a separate
+full mirror audit detects deletion or corruption of those old objects. A normal
+publication is not a complete historical integrity audit.
+
+`publish.yml` caches the complete verified history under its signed catalog revision.
+The cache contains public catalog bytes only, is disposable, and never replaces the
+independent public-key pin or digest checks. A cache miss reads metadata from the
+fixed `published` Git commit and downloads each shared ZIP once. Invalid cached bytes
+fail validation; discard that cache and rebuild it from published history. Only a
+successfully published candidate is saved for the next run. Cache eviction requires
+no migration and no changes to repository variables or secrets.
+
+For a synthetic 364-to-383 batch with one new ZIP, the CDN staging set has 23 objects:
+19 descriptors, the new ZIP, the updated release index and the immutable snapshot
+root/signature pair. The stable root/signature are promoted afterward. No historical
+CDN object is downloaded. GitHub still receives the complete snapshot for the existing
+fallback URL contract; it does not have cross-Release deduplication.
+
+Workers finish outstanding operations before reporting a failure, and stable promotion
+starts only after both staging sets pass. Retry reuses matching draft assets without
+clobbering them. This bounds network concurrency without weakening byte checks.
+
 ## Recovery
 
 Retry from the same reviewed inputs and pinned key. A snapshot identity and Ed25519
-signature are deterministic. Every retry reads existing object bytes: matching
-bytes are reused, and conflicting bytes stop publication. A partially uploaded
+signature are deterministic. Every retry reads existing bytes in its staging set:
+all GitHub assets, and the CDN delta plus snapshot pair. Matching bytes are reused,
+and conflicting bytes stop publication. Unchanged historical CDN objects are not
+rechecked during publication. A partially uploaded
 draft can receive its missing assets. If unchanged inputs produce the same snapshot
 after main advances, retries preserve the original draft target commit and verify
 each asset against the candidate bytes. A published release missing an expected
@@ -132,8 +171,8 @@ then prove that retry restores matching final bytes. During a mismatch clients
 must retain a verified snapshot or retry the bounded fetch. The publisher never
 accepts mismatched bytes as a successful completed run.
 
-A retry after root upload or CloudFront failure revalidates existing immutable
-bytes, rewrites the same stable pair and requests a fresh invalidation for both
+A retry after root upload or CloudFront failure revalidates the staging set,
+rewrites the same stable pair and requests a fresh invalidation for both
 paths. AWS CLI generates the request's caller reference. No invalidation ID is
 persisted locally or used as authoritative recovery state. Even an unchanged
 successful rerun requests another refresh, so it consumes another invalidation

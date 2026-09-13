@@ -29,8 +29,20 @@ test("metadata boundaries translate nested fields while preserving identifiers a
   });
   assert.deepEqual(parseMetadataJson(bytes), value);
   assert.deepEqual(
-    JSON.parse(metadataJsonBytes({ baseRevision: null, rootSha256: "hash" })),
-    { base_revision: null, root_sha256: "hash" },
+    JSON.parse(
+      metadataJsonBytes({
+        baseRevision: null,
+        rootSha256: "hash",
+        cdnObjects: 23,
+        reusedObjects: 367,
+      }),
+    ),
+    {
+      base_revision: null,
+      root_sha256: "hash",
+      cdn_objects: 23,
+      reused_objects: 367,
+    },
   );
 });
 

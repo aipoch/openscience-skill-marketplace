@@ -1,3 +1,8 @@
+import {
+  publishedMetadata,
+  publicationParent,
+} from "./lib/published-history.mjs";
+import { jsonBytes, sha256 } from "./lib/common.mjs";
 import { parseMetadataJson, metadataJsonBytes } from "./lib/metadata-json.mjs";
 import {
   selectReleaseEntries,
@@ -5,15 +10,19 @@ import {
 } from "./lib/release-plan.mjs";
 import { validateManifest } from "./lib/catalog.mjs";
 import { parseArgs } from "node:util";
-import { readFile, mkdtemp, rm } from "node:fs/promises";
+import { readFile, writeFile, mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { createPrivateKey } from "node:crypto";
 import { readBundle } from "./lib/bundle.mjs";
 import { signRoot } from "./lib/signing.mjs";
 import { publishSnapshot } from "./lib/publish.mjs";
-import { githubStore, s3Store, runCommand } from "./lib/transports.mjs";
-import { sha256 } from "./lib/common.mjs";
+import {
+  githubStore,
+  s3Store,
+  runCommand,
+  publishedState,
+} from "./lib/transports.mjs";
 const { values } = parseArgs({
   options: { candidate: { type: "string", default: "dist/candidate" } },
 });
@@ -64,10 +73,11 @@ const selected = selectReleaseEntries(
   config.source,
 );
 assertReleaseSelection(candidate.root, selected, config.source);
+const state = await publishedState();
+const metadata = state ? publishedMetadata(state) : new Map();
+const history = await publicationParent(candidate, metadata, pin);
 if (candidate.objects.size + 2 > 1000)
-  throw new Error(
-    "snapshot exceeds the current 1000-asset publication tool limit",
-  );
+  throw new Error("snapshot exceeds the 1000-asset publication limit");
 const privateKey = createPrivateKey({
   key: Buffer.from(process.env.SKILL_MARKETPLACE_PRIVATE_KEY, "base64"),
   type: "pkcs8",
@@ -104,7 +114,18 @@ try {
     github,
     cdn,
     baseRevision: context.baseRevision,
+    history,
   });
+  await writeFile(
+    path.join(values.candidate, "marketplace.json.sig"),
+    jsonBytes(signature),
+  );
+  if (process.env.GITHUB_OUTPUT)
+    await writeFile(
+      process.env.GITHUB_OUTPUT,
+      `revision=${candidate.root.revision}\n`,
+      { flag: "a" },
+    );
   process.stdout.write(metadataJsonBytes(result));
 } finally {
   await rm(temporary, { recursive: true, force: true });

@@ -1,3 +1,4 @@
+import { publicationDelta } from "./incremental.mjs";
 import {
   mkdir,
   lstat,
@@ -102,13 +103,17 @@ export async function publishSnapshot({
   github,
   cdn,
   baseRevision,
+  history,
 }) {
   const root = verifyCatalog(candidate);
   if (!verifyRoot(candidate.rootBytes, signature, pin))
     throw new Error("candidate signature does not match trusted pin");
   const signatureBytes = jsonBytes(signature);
+  const delta = publicationDelta(candidate, history, pin);
   for (const store of [github, cdn]) {
     const current = await store.readRoot();
+    if (!current && history)
+      throw new Error("missing published mirror history");
     if (current) {
       const currentRoot = JSON.parse(current.rootBytes);
       if (
@@ -133,23 +138,48 @@ export async function publishSnapshot({
       }
     }
   }
-  const staged = new Map(candidate.objects);
-  staged.set(
-    `snapshots/${root.revision}/marketplace.json`,
-    candidate.rootBytes,
-  );
-  staged.set(`snapshots/${root.revision}/marketplace.json.sig`, signatureBytes);
-  for (const store of [github, cdn])
-    for (const [name, bytes] of staged) {
+  const snapshot = new Map([
+    [`snapshots/${root.revision}/marketplace.json`, candidate.rootBytes],
+    [`snapshots/${root.revision}/marketplace.json.sig`, signatureBytes],
+  ]);
+  // Existing consumers address every GitHub asset through catalog-<revision>.
+  // CDN paths are shared, so only the signed parent's new objects need staging.
+  for (const [store, objects] of [
+    [github, candidate.objects],
+    [cdn, delta],
+  ]) {
+    const staged = [...new Map([...objects, ...snapshot])];
+    async function reconcile([name, bytes]) {
       const existing = await store.read(name);
       if (existing) {
         if (!existing.equals(bytes))
           throw new Error(`immutable object conflict: ${name}`);
-      } else await store.putImmutable(name, bytes);
+        return;
+      }
+      await store.putImmutable(name, bytes);
       const downloaded = await store.read(name);
       if (!downloaded?.equals(bytes))
         throw new Error(`mirror verification failed: ${name}`);
     }
+    // Initialize the Release before concurrent workers can upload into its draft.
+    await reconcile(staged.shift());
+    const pending = staged.values();
+    let failure;
+    await Promise.all(
+      Array.from({ length: 4 }, async () => {
+        for (const item of pending) {
+          if (failure) return;
+          try {
+            await reconcile(item);
+          } catch (error) {
+            failure ??= error;
+            return;
+          }
+        }
+      }),
+    );
+    if (failure) throw failure;
+  }
   // Both transports must expose identical immutable bytes before either stable root is moved.
   for (const store of [github, cdn]) {
     await store.writeRootSignature(signatureBytes);
@@ -165,7 +195,9 @@ export async function publishSnapshot({
   }
   return {
     revision: root.revision,
-    objects: staged.size,
+    objects: candidate.objects.size + snapshot.size,
+    cdnObjects: delta.size + snapshot.size,
+    reusedObjects: candidate.objects.size - delta.size,
     rootSha256: sha256(candidate.rootBytes),
   };
 }

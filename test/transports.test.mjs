@@ -75,6 +75,12 @@ test("S3 publication refreshes both stable paths before verification and recover
       try {
         const github = await directoryStore(path.join(temporary, "github"));
         const objects = new Map();
+        for (const [p, bytes] of previous.objects) {
+          await github.putImmutable(p, bytes);
+          objects.set(prefix + p, bytes);
+        }
+        await github.writeRootSignature(jsonBytes(sign(previous)));
+        await github.writeRoot(previous.rootBytes);
         const publicStable = new Map([
           [prefix + "marketplace.json", previous.rootBytes],
           [prefix + "marketplace.json.sig", jsonBytes(sign(previous))],
@@ -172,6 +178,7 @@ test("S3 publication refreshes both stable paths before verification and recover
             github,
             cdn: makeStore(),
             baseRevision: previous.root.revision,
+            history: { ...previous, signature: sign(previous) },
           });
         if (fail) {
           await assert.rejects(
@@ -514,6 +521,11 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
         );
       }
       if (action === "create") {
+        assert.equal(
+          releases.has(tag),
+          false,
+          "concurrent workers create only one draft",
+        );
         releases.set(tag, { assets: new Map(), isDraft: true });
         return Buffer.alloc(0);
       }
@@ -573,6 +585,21 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
     );
     assert.equal(releases.size, 1);
     assert.deepEqual((await github.readRoot()).rootBytes, candidate.rootBytes);
+    const { publishedMetadata, loadPublishedCatalog } =
+      await import("../scripts/lib/published-history.mjs");
+    const state = await github.readRoot();
+    const metadata = publishedMetadata(state, repo);
+    assert(metadata.get("marketplace.json").equals(candidate.rootBytes));
+    assert([...metadata.keys()].every((p) => !p.endsWith(".zip")));
+    const restored = await loadPublishedCatalog({
+      state,
+      pin,
+      metadata,
+      readArtifact: github.read,
+    });
+    assert.equal(restored.artifactDownloads, 1);
+    assert(restored.candidate.rootBytes.equals(candidate.rootBytes));
+    assert.deepEqual(restored.candidate.objects, candidate.objects);
   } finally {
     await rm(tmp, { recursive: true, force: true });
   }

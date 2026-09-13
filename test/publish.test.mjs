@@ -115,6 +115,7 @@ test("a new workflow can resume when GitHub advanced but CDN still serves the pr
     await assert.rejects(
       publishSnapshot({
         candidate: second,
+        history: { ...first, signature: signed(first) },
         signature: signed(second),
         pin,
         github,
@@ -134,6 +135,7 @@ test("a new workflow can resume when GitHub advanced but CDN still serves the pr
     );
     await publishSnapshot({
       candidate: rebuilt,
+      history: { ...first, signature: signed(first) },
       signature: signed(rebuilt),
       pin,
       github,
