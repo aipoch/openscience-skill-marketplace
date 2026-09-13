@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "geo-search-api",
+    "version": "1.0.0",
+    "display_name": "geo-search-api",
+    "summary": "Search for gene expression DataSets and Profiles in the NCBI GEO database. Use this skill when the user wants to find microarray, RNA-seq, or other genomic data by keywords, organism, author, or specific fields.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/geo-search-api"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/geo-search-api/geo-search-api_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "8e8b81588931a685f0a1dd1898336ac160e95060edea798c53e0da13163c0beb",
+    "file_count": 5,
+    "uncompressed_bytes": 27341
+  },
+  "artifact": {
+    "path": "shards/1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8.zip",
+    "sha256": "1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8",
+    "bytes": 234009,
+    "skill_path": "geo-search-api"
+  }
+}

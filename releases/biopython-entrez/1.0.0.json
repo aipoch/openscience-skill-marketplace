@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "biopython-entrez",
+    "version": "1.0.0",
+    "display_name": "biopython-entrez",
+    "summary": "Use Bio.Entrez to access NCBI databases (e.g., PubMed/GenBank) for searching, fetching summaries, and downloading records when your workflow needs to call the NCBI E-utilities API over the network.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/biopython-entrez"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/biopython-entrez/biopython-entrez_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f53d8ba8e18850290d82f221a1c76748d4fe20c17751c057df0aa545f1d73179",
+    "file_count": 5,
+    "uncompressed_bytes": 31054
+  },
+  "artifact": {
+    "path": "shards/1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8.zip",
+    "sha256": "1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8",
+    "bytes": 234009,
+    "skill_path": "biopython-entrez"
+  }
+}

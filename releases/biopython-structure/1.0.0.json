@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "biopython-structure",
+    "version": "1.0.0",
+    "display_name": "biopython-structure",
+    "summary": "Use Bio.PDB to parse and analyze protein structures (PDB/mmCIF) for structural bioinformatics tasks; use when you need structure parsing, geometry calculations, or structural comparison/superposition.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/biopython-structure"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/biopython-structure/biopython-structure_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "b709319ed285d5ebf280839704ecf6c67cb566175c41e486480d8a1a66180a15",
+    "file_count": 5,
+    "uncompressed_bytes": 35334
+  },
+  "artifact": {
+    "path": "shards/1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8.zip",
+    "sha256": "1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8",
+    "bytes": 234009,
+    "skill_path": "biopython-structure"
+  }
+}

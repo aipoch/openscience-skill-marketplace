@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "biopython-phylo",
+    "version": "1.0.0",
+    "display_name": "biopython-phylo",
+    "summary": "Use Bio.Phylo to read/write phylogenetic trees and perform visualization and statistics; use when tree parsing/conversion, pruning/rerooting, distance calculation, or plotting is required.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/biopython-phylo"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/biopython-phylo/biopython-phylo_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f443e2a645d6f294a18a45d2101ad7f21ad547b74cabb3a8fbb4e8d7806ca59f",
+    "file_count": 5,
+    "uncompressed_bytes": 34810
+  },
+  "artifact": {
+    "path": "shards/1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8.zip",
+    "sha256": "1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8",
+    "bytes": 234009,
+    "skill_path": "biopython-phylo"
+  }
+}

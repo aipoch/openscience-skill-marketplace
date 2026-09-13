@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "paper-sprint-review",
+    "version": "1.0.0",
+    "display_name": "paper-sprint-review",
+    "summary": "Scrum-inspired paper review, revision, and R&R workflow. Handles docx/tex/md/PDF in English or Chinese. Auto-detects manuscript stage, estimates sprint count, runs multi-lens review (Contribution/Rigor/Writing/Editor), generates prioritized revision backlog, exports MD/DOCX/PDF/HTML reports. Use when asked to review a paper, revise based on reviewer comments, handle R&R, respond to peer review, plan paper revision sprints, or when user types /ps or /papersprint.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/paper-sprint-review"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/paper-sprint-review/LICENSE",
+          "sha256": "aac5acbb84bfd67e605ca16965e475f9c8243f6aceda2d47fc32ff4cbf622263"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 95,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/paper-sprint-review/eval_report_paper-sprint-review_result.json",
+      "evaluated_on": "2026-04-20",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 93,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 96.3,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "0ab3d746130b53f391f2f77e436916bc6d897179211d260afd35105a6b184b8e",
+    "file_count": 26,
+    "uncompressed_bytes": 97731
+  },
+  "artifact": {
+    "path": "shards/1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8.zip",
+    "sha256": "1d2612a702320846b10cda57f9f37ce17f5e19186095f2fe96bfa6e44eb077e8",
+    "bytes": 234009,
+    "skill_path": "paper-sprint-review"
+  }
+}
