@@ -38,29 +38,55 @@ try {
     entries,
     source,
   );
+  const previous = buildCatalog([inputs[0]]);
   const candidate = buildCatalog(
     inputs.filter((c) => selected.some((e) => e.id === c.skill.id)),
+    { history: previous.objects, previousRoot: previous.root },
   );
   assertReleaseSelection(candidate.root, selected, source);
   const { privateKey, publicKey } = generateKeyPairSync("ed25519");
   const pin = publicKey
     .export({ type: "spki", format: "der" })
     .toString("base64");
-  const signature = signRoot(candidate.rootBytes, {
-    privateKey,
-    expectedPublicKey: pin,
-    keyId: "openscience-skills-dry-run",
-  });
+  const sign = (bytes) =>
+    signRoot(bytes, {
+      privateKey,
+      expectedPublicKey: pin,
+      keyId: "openscience-skills-dry-run",
+    });
+  const signature = sign(candidate.rootBytes);
+  const history = { ...previous, signature: sign(previous.rootBytes) };
   const github = await directoryStore(path.join(directory, "github")),
     cdn = await directoryStore(path.join(directory, "cdn"));
+  await publishSnapshot({
+    candidate: previous,
+    signature: history.signature,
+    pin,
+    github,
+    cdn,
+  });
   process.stdout.write(
     metadataJsonBytes(
-      await publishSnapshot({ candidate, signature, pin, github, cdn }),
+      await publishSnapshot({
+        candidate,
+        signature,
+        pin,
+        github,
+        cdn,
+        history,
+      }),
     ),
   );
   process.stdout.write(
     metadataJsonBytes(
-      await publishSnapshot({ candidate, signature, pin, github, cdn }),
+      await publishSnapshot({
+        candidate,
+        signature,
+        pin,
+        github,
+        cdn,
+        history,
+      }),
     ),
   );
 } finally {

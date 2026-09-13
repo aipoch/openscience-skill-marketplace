@@ -58,6 +58,14 @@ jobs:
           path: dist/upstream
           persist-credentials: false
       - run: npm run audit:sources -- --source dist/upstream --check
+      - name: Resolve authenticated history revision
+        id: history
+        run: echo "revision=$(node scripts/download-history.mjs --revision-only)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        if: steps.history.outputs.revision != 'none'
+        with:
+          path: dist/history
+          key: skill-history-v1-${{ steps.history.outputs.revision }}
       - run: node scripts/download-history.mjs
       - name: Build every selected reviewed member
         shell: bash
@@ -66,7 +74,8 @@ jobs:
           history=()
           if [[ -f dist/history/marketplace.json ]]; then history=(--history dist/history); fi
           npm run build:catalog -- --source dist/upstream "${history[@]}"
-      - name: Sign, reconcile and publish the complete snapshot
+      - name: Sign and publish the catalog with incremental CDN writes
+        id: publication
         run: node scripts/publish-catalog.mjs
         env:
           SKILL_MARKETPLACE_PUBLISH_ENABLED: ${{ vars.SKILL_MARKETPLACE_PUBLISH_ENABLED }}
@@ -79,3 +88,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+      - name: Prepare disposable verified history cache
+        run: |
+          mkdir -p dist/history
+          cp -R dist/candidate/. dist/history/
+      - uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: dist/history
+          key: skill-history-v1-${{ steps.publication.outputs.revision }}

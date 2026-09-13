@@ -26,6 +26,8 @@ const fields = [
   "fixtureOnly",
   "baseRevision",
   "rootSha256",
+  "cdnObjects",
+  "reusedObjects",
   "affectedMembers",
   "maxScore",
   "reportUrl",
