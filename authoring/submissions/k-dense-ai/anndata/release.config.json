@@ -1,10 +1,5 @@
 {
-  "schema_version": 2,
-  "provider": {
-    "id": "k-dense-ai",
-    "name": "K-Dense AI",
-    "url": "https://github.com/K-Dense-AI"
-  },
+  "schema_version": 1,
   "id": "anndata",
   "version": "1.0.0",
   "category": "Data Analysis",

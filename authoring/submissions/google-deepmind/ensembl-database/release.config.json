@@ -1,10 +1,5 @@
 {
-  "schema_version": 2,
-  "provider": {
-    "id": "google-deepmind",
-    "name": "Google DeepMind",
-    "url": "https://github.com/google-deepmind"
-  },
+  "schema_version": 1,
   "id": "ensembl-database",
   "version": "1.0.0",
   "category": "Evidence Insight",

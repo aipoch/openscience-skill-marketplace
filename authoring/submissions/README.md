@@ -16,10 +16,13 @@ and path. Skill payloads and archive-added evaluation files are not committed.
 | Yuan1z0825         |      20 |                             17 |                    0 |                     0 |
 | **Total**          | **192** |                         **46** |              **141** |               **104** |
 
-There are 130 unique runtime Skill IDs. Provider qualification makes every
-submission review identity unique, but it does not change the public App runtime
-ID. A collision therefore needs an explicit provider-variant selection before a
-catalog can be built or published.
+There are 130 unique runtime Skill IDs. All release configs use authoring v1.
+Provider identity and the provider-qualified candidate key exist only in this
+queue index. Intake review records continue using `<skill-id>@<version>`; inspect
+same-name alternatives in separate invocations and files. Queue keys do not change
+public App runtime IDs or authorize replacing existing sources. The production
+register rejects IDs reserved by any historical member or existing registration;
+a colliding candidate requires a separate source-selection decision and change.
 
 Categories for records sharing an ID with the historical catalog reuse that
 catalog category. Categories for the 51 new Nature and NVIDIA IDs are proposed

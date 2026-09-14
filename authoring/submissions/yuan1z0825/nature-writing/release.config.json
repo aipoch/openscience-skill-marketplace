@@ -1,10 +1,5 @@
 {
-  "schema_version": 2,
-  "provider": {
-    "id": "yuan1z0825",
-    "name": "Yuan1z0825",
-    "url": "https://github.com/Yuan1z0825"
-  },
+  "schema_version": 1,
   "id": "nature-writing",
   "version": "1.0.0",
   "category": "Academic Writing",

@@ -5,7 +5,6 @@ import {
   parseReleaseConfig,
   inspectSubmission,
   prepareSubmission,
-  submissionKey,
   submissionSnapshot,
 } from "./lib/authoring.mjs";
 import { buildCatalog } from "./lib/build.mjs";
@@ -29,22 +28,20 @@ if (values.manifest.length !== values.source.length)
 if (Boolean(values.reviews) !== Boolean(values.output))
   throw new Error("local builds require both --reviews and --output");
 const submissions = [];
-const keys = new Set();
+const ids = new Set();
 for (const [index, path] of values.manifest.entries()) {
   const manifest = parseReleaseConfig(await readFile(path));
-  const key = submissionKey(manifest);
-  if (keys.has(key)) throw new Error(`duplicate submission identity: ${key}`);
-  keys.add(key);
+  if (ids.has(manifest.id))
+    throw new Error(`duplicate current Skill ID: ${manifest.id}`);
+  ids.add(manifest.id);
   submissions.push({ manifest, source: values.source[index] });
 }
-submissions.sort((a, b) =>
-  utf8Compare(submissionKey(a.manifest), submissionKey(b.manifest)),
-);
+submissions.sort((a, b) => utf8Compare(a.manifest.id, b.manifest.id));
 if (!values.output) {
   const entries = submissions.map(({ manifest, source }) => {
     const snapshot = submissionSnapshot(source, manifest);
     const { reviewInput } = inspectSubmission(manifest, snapshot);
-    return [submissionKey(manifest), reviewInput];
+    return [`${manifest.id}@${manifest.version}`, reviewInput];
   });
   process.stdout.write(metadataJsonBytes(Object.fromEntries(entries)));
 } else {
