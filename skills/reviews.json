@@ -6379,5 +6379,100 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-14",
     "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned science-skills LICENSE supplies the Apache-2.0 grant; the bundled STRING CLI retains its 2026 Google LLC Apache-2.0 copyright header. All local references and the CLI are present. STRING responses are fetched only at runtime; no database content is bundled. uv, polite-http and network access are runtime prerequisites. No author is inferred from the repository owner."
+  },
+  "clinpgx-database@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "71add644263a56368f8680d68df504c6674dc1e5",
+    "source_path": "scientific-skills/clinpgx-database",
+    "manifest_sha256": "12009bcb3acd75f38de20ce31cbb9a547109387ec8b31f8b3bd9dd0a24b21a8e",
+    "content_sha256": "4e082936311f10cd4176f68c029e0ca5a96c4c911d6d9230b2487611ef49139b",
+    "file_count": 3,
+    "total_bytes": 52603,
+    "license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains the original ClinPGx guide, API reference and query helper; no clinical datasets or patient records are bundled. Python requests/pandas and permitted ClinPGx API access are runtime prerequisites."
+  },
+  "fda-database@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "71add644263a56368f8680d68df504c6674dc1e5",
+    "source_path": "scientific-skills/fda-database",
+    "manifest_sha256": "66e2b3f1b7be55491856d343a35c52e9e849b8a22472fc5b1902a3204a91f4a6",
+    "content_sha256": "07cd0d3cd3521928a9e38e5d473646ed4742582e5ffba169f9d0728bdaa2a651",
+    "file_count": 9,
+    "total_bytes": 125727,
+    "license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains the original openFDA guide, six endpoint references and two query/example scripts; no FDA response cache or downloaded database content is bundled. Python dependencies and optional openFDA credentials are runtime prerequisites."
+  },
+  "gwas-database@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "71add644263a56368f8680d68df504c6674dc1e5",
+    "source_path": "scientific-skills/gwas-database",
+    "manifest_sha256": "820918b2f0eeccd5fa98c9620599e8ab2076e9a28e1850c0194afc827bb02b6b",
+    "content_sha256": "e0222e3cc0d43d8cae4b5713e3f8748089cb49d0646765c74678d4fc2487f577",
+    "file_count": 2,
+    "total_bytes": 41306,
+    "license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains only the original GWAS Catalog guide and API reference, with illustrative response examples; no GWAS dataset or summary-statistics files are bundled. External GWAS endpoints and scientific Python dependencies are runtime prerequisites."
+  },
+  "metabolomics-workbench-database@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "71add644263a56368f8680d68df504c6674dc1e5",
+    "source_path": "scientific-skills/metabolomics-workbench-database",
+    "manifest_sha256": "c4ae71a6b208b15242a23f2b2373a0dfc314b7b44608f7dd52ada34ee03c1227",
+    "content_sha256": "0bac9bdef48d9cc44e4ba2b484a46dedf814296d92b9bbab91bd6d27b0382961",
+    "file_count": 2,
+    "total_bytes": 26694,
+    "license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains only the original Metabolomics Workbench guide and API reference, with illustrative query examples; no study datasets, spectra or chemical database dumps are bundled. External Workbench access and scientific Python dependencies are runtime prerequisites."
+  },
+  "uspto-database@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "71add644263a56368f8680d68df504c6674dc1e5",
+    "source_path": "scientific-skills/uspto-database",
+    "manifest_sha256": "67112a9f7975594272323731f6d15a621e8468297fc73e886cb4c1ecd68fe5df",
+    "content_sha256": "ba1835fc1a68c0c722dc97976f2db647d8eadf4ee0d0f8c7ef7d9c286284a377",
+    "file_count": 8,
+    "total_bytes": 81416,
+    "license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains the original USPTO guide, four API references and three query helpers; no patent corpus or user credentials are bundled. Provider-specific credentials, network access and endpoint availability remain runtime prerequisites; imported API clients were not executed."
   }
 }

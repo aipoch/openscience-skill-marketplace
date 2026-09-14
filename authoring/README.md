@@ -182,10 +182,13 @@ The original single-manifest command remains valid.
 `intake:skill` produces unsigned local artifacts only. Production enrollment is
 explicitly maintained in [`production.json`](production.json): `schema_version: 1`
 and a `releases` array of the same strict release-config objects described above.
-The register selects 394 original members and 46 provider Skills: 14 K-Dense,
+The register selects 394 original members and 51 provider Skills: 19 K-Dense,
 26 NVIDIA BioNeMo, one Google DeepMind and five Nature entries. Eight additions
 with absent per-Skill license declarations have explicit `Unknown` reviews with
-retained license evidence. Earlier releases keep their exact sources. Review records remain in `skills/reviews.json` and bind every
+retained license evidence. Five database Skills additionally preserve their original
+K-Dense `Unknown` declarations, authors and MIT evidence at
+`71add644263a56368f8680d68df504c6674dc1e5`. Earlier releases keep their exact
+sources. Review records remain in `skills/reviews.json` and bind every
 provider's manifest, source and license bytes. A registration without approved
 review evidence fails the build.
 

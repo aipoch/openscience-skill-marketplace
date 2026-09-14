@@ -44,6 +44,18 @@
     },
     {
       "schema_version": 1,
+      "id": "clinpgx-database",
+      "version": "1.0.0",
+      "category": "Evidence Insight",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "71add644263a56368f8680d68df504c6674dc1e5",
+        "path": "scientific-skills/clinpgx-database"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "complexa-binder-design",
       "version": "1.0.0",
       "category": "Protocol Design",
@@ -141,6 +153,18 @@
     },
     {
       "schema_version": 1,
+      "id": "fda-database",
+      "version": "1.0.0",
+      "category": "Evidence Insight",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "71add644263a56368f8680d68df504c6674dc1e5",
+        "path": "scientific-skills/fda-database"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "genmol-nim",
       "version": "1.0.0",
       "category": "Data Analysis",
@@ -183,6 +207,18 @@
         "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
         "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
         "path": "scientific-skills/get-available-resources"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "gwas-database",
+      "version": "1.0.0",
+      "category": "Evidence Insight",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "71add644263a56368f8680d68df504c6674dc1e5",
+        "path": "scientific-skills/gwas-database"
       },
       "license_files": ["LICENSE.md"]
     },
@@ -331,6 +367,18 @@
         "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
         "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
         "path": "skills/literature-review"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "metabolomics-workbench-database",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "71add644263a56368f8680d68df504c6674dc1e5",
+        "path": "scientific-skills/metabolomics-workbench-database"
       },
       "license_files": ["LICENSE.md"]
     },
@@ -685,6 +733,18 @@
         "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
         "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
         "path": "skills/treatment-plans"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "uspto-database",
+      "version": "1.0.0",
+      "category": "Other",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "71add644263a56368f8680d68df504c6674dc1e5",
+        "path": "scientific-skills/uspto-database"
       },
       "license_files": ["LICENSE.md"]
     }
