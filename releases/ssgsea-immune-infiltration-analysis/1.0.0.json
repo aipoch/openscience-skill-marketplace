@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "ssgsea-immune-infiltration-analysis",
+    "version": "1.0.0",
+    "display_name": "ssgsea-immune-infiltration-analysis",
+    "summary": "Use when estimating immune infiltration from bulk RNA-seq expression matrices with ssGSEA/GSVA, comparing case versus control groups, and generating downstream immune-score visualizations. NOT for single-cell RNA-seq, absolute cell proportion estimation, or clinical decision making.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/ssgsea-immune-infiltration-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/ssgsea-immune-infiltration-analysis/SKILL.md",
+          "sha256": "c3db6dbc2bf6e1a004f3ca8a59f661a4a726fabe75aa94ee723b0d4fe0f52185"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled expression data and Charoentong 2017-derived immune gene sets require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 95.3,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/ssgsea-immune-infiltration-analysis/eval_report_ssgsea-immune-infiltration-analysis_result.json",
+      "evaluated_on": "2026-04-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 94,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 96.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "2a4732b505974cf9c25311efa848faf78bda7c97a92b31739bcdb643b4b19b1d",
+    "file_count": 18,
+    "uncompressed_bytes": 25631232
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "ssgsea-immune-infiltration-analysis"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "immune-pathway-analysis",
+    "version": "1.0.0",
+    "display_name": "immune-pathway-analysis",
+    "summary": "Run immune pathway GSVA or ssGSEA analysis from a bulk expression matrix, a sample group file, and a local immune Reactome gene-set table, then export differential pathway results and a heatmap for two-group comparison.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/immune-pathway-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/immune-pathway-analysis/SKILL.md",
+          "sha256": "e5de1cb06314872a14e151e0c5c1b8e9421f3fa9b268944a6d35ac4eed883c8f"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv, tests/data/immune_genesets.csv, tests/data/immune_genesets_minimal.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 94,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/immune-pathway-analysis/eval_report_immune-pathway-analysis_result.json",
+      "evaluated_on": "2026-04-20",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 98,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 91.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "124d5e865640f48a10c40f19ad7bb6ba8a6984a68d82c2c21c8fa520c4a41ae1",
+    "file_count": 21,
+    "uncompressed_bytes": 2314655
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "immune-pathway-analysis"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "drug-interaction-checker",
+    "version": "1.0.0",
+    "display_name": "drug-interaction-checker",
+    "summary": "Check for interactions between multiple medications, including severity classification and mechanism explanations.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/drug-interaction-checker"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/drug-interaction-checker/SKILL.md",
+          "sha256": "fc96a4bef262f16560dbd01f789e5e9ba473297105c823385c1f25c442c16e8e"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled drug-interaction database, CYP450 substrate data and severity criteria require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/drug-interaction-checker/drug-interaction-checker_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "1d028ddd3e6ca97a23f2301af809522510867c8610ae7633dbd207dc0f8d8bfd",
+    "file_count": 8,
+    "uncompressed_bytes": 68708
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "drug-interaction-checker"
+  }
+}

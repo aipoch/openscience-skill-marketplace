@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "experiment-detail-comparator",
+    "version": "1.0.0",
+    "display_name": "experiment-detail-comparator",
+    "summary": "Compare experimental method details between two Zotero PDF papers, identify protocol differences (ratios, dosages, timing, conditions), search supporting literature to explain why they differ, and generate an HTML report. Use when you need a parameter-level comparison of two methods and evidence-backed reasons for discrepancies.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/experiment-detail-comparator"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/experiment-detail-comparator/SKILL.md",
+          "sha256": "92abc66f5b9a3ceac730e56d0c9e37cdb485e48247f0d6e1ca13b2321f81f4a2"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled full article text and extracted derivatives with independent content licenses require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/experiment-detail-comparator/experiment-detail-comparator_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 81,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 89.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c56db9a206ca91163686cf1cb0040a483ca314502295f453b2042e22cbb6feea",
+    "file_count": 38,
+    "uncompressed_bytes": 1483549
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "experiment-detail-comparator"
+  }
+}

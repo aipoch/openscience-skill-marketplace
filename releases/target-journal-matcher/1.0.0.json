@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "target-journal-matcher",
+    "version": "1.0.0",
+    "display_name": "target-journal-matcher",
+    "summary": "Matches your study to appropriate journals based on topic, design, and evidence strength. Use when deciding where to submit a manuscript, comparing journal options by impact factor vs scope fit vs method tolerance, or finding a realistic submission target after a rejection. Also triggers on \"where should I submit this paper\", \"which journal is best for my study\", \"find journals for my manuscript\", \"is this a good fit for [journal]\", or \"I need a journal with IF around X\".",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/target-journal-matcher"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/target-journal-matcher/SKILL.md",
+          "sha256": "b67f6419499a23f0051cf24cce255623fbb33d6c73b25ecf0ac7403ba4a4eb46"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: references/journals.json. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/target-journal-matcher/eval_report_target-journal-matcher_result.json",
+      "evaluated_on": "2026-04-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e3ecf5a48e6e58b207f17bc46e6c4081d1227479ed33b2dacbed0b07c5b21736",
+    "file_count": 8,
+    "uncompressed_bytes": 80586
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "target-journal-matcher"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "wgcna-analysis",
+    "version": "1.0.0",
+    "display_name": "wgcna-analysis",
+    "summary": "Use when building a weighted gene co-expression network from a bulk expression matrix and a sample group file, filtering variable genes by MAD, identifying co-expression modules with WGCNA, correlating modules with traits, and exporting module-level plots and gene tables. NOT for single-cell RNA-seq, differential expression testing, methylation analysis, or datasets that are too small for WGCNA after quality control.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/wgcna-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/wgcna-analysis/SKILL.md",
+          "sha256": "9b087bf97049de780dd97f657446c31e63da8e836e5bc0ffeb856e5713c93347"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/expression.csv and group.csv contain TCGA sample identifiers, expression values and assigned Case/Control groups. Establish dataset origins, transformations, group-label evidence and redistribution terms before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/wgcna-analysis/eval_report_wgcna-analysis_result.json",
+      "evaluated_on": "2026-04-17",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 91,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 89.8,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "db22a99d467395499a467cb6180e0c334006539b32a39f55128ac0e7527e6d6d",
+    "file_count": 18,
+    "uncompressed_bytes": 782733
+  },
+  "artifact": {
+    "path": "shards/b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2.zip",
+    "sha256": "b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2",
+    "bytes": 4463302,
+    "skill_path": "wgcna-analysis"
+  }
+}

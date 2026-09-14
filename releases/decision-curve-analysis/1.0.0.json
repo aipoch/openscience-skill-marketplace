@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "decision-curve-analysis",
+    "version": "1.0.0",
+    "display_name": "decision-curve-analysis",
+    "summary": "Use when evaluating the clinical utility of a binary prediction model from a single clinical CSV file by fitting a logistic decision-curve model, plotting decision and clinical-impact curves, and exporting summary outputs. NOT for: survival calibration, ROC-only discrimination analysis, nomogram construction, or time-to-event outcomes.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/decision-curve-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/decision-curve-analysis/SKILL.md",
+          "sha256": "a029cf4473fe464b2fe2386cdf48f87a292a99d85fe94f42549f10579e28b7a8"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/dca_data.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/decision-curve-analysis/eval_report_decision-curve-analysis_result.json",
+      "evaluated_on": "2026-04-27",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "b86df3b54ce3e64c9fa48b01cebc7ea2ec009aae11bf2fd6f1c9f3f38032bf8a",
+    "file_count": 13,
+    "uncompressed_bytes": 74275
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "decision-curve-analysis"
+  }
+}

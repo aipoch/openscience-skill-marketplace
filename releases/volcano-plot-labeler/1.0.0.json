@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "volcano-plot-labeler",
+    "version": "1.0.0",
+    "display_name": "volcano-plot-labeler",
+    "summary": "Analyze data with `volcano-plot-labeler` using a reproducible workflow, explicit validation, and structured outputs for review-ready interpretation.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/volcano-plot-labeler"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/volcano-plot-labeler/SKILL.md",
+          "sha256": "45f2e00e2480d74f67f6fecf016566ca4b14bd06a1761ce0272c2560a472a9ff"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/volcano-plot-labeler/volcano-plot-labeler_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 84.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "85e90da4e528ed75678419932cbdfaf1e597789473455ca129a1a57517cd81fb",
+    "file_count": 6,
+    "uncompressed_bytes": 42688
+  },
+  "artifact": {
+    "path": "shards/b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2.zip",
+    "sha256": "b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2",
+    "bytes": 4463302,
+    "skill_path": "volcano-plot-labeler"
+  }
+}

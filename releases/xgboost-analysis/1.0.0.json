@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "xgboost-analysis",
+    "version": "1.0.0",
+    "display_name": "xgboost-analysis",
+    "summary": "Use when building XGBoost models on tabular data and returning feature importance ranking outputs. Supports binary classification and regression with automatic task detection, train-test split, performance tables, feature importance ranking tables, and PNG importance plots.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/XGBoost-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/XGBoost-analysis/SKILL.md",
+          "sha256": "82b2c924c184a88ab1c88d8e02eaad21f7fc3fef54053493c7598c0826930b4f"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 88,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/XGBoost-analysis/eval_report_xgboost-analysis_result.json",
+      "evaluated_on": "2026-04-20",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 87,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "31acef3674a8e3fcd32aa7c9d22feaeff2e2b56f4301ab0738b2fd6e79972430",
+    "file_count": 13,
+    "uncompressed_bytes": 154549
+  },
+  "artifact": {
+    "path": "shards/b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2.zip",
+    "sha256": "b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2",
+    "bytes": 4463302,
+    "skill_path": "xgboost-analysis"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "decision-tree-analysis",
+    "version": "1.0.0",
+    "display_name": "decision-tree-analysis",
+    "summary": "Use when building a decision tree model in R and generating feature importance ranking outputs. Supports classification and regression, automatic task detection, parameter validation, model evaluation summaries, and exports of feature-importance tables and figures.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/decision-tree-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/decision-tree-analysis/SKILL.md",
+          "sha256": "668c26cef95e087a7dbb678830a670ed36a483c2c3cf73275668df0f7fbd5388"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled dt_sample1.csv and dt_sample2.csv contain TCGA sample identifiers, survival status and expression values; dt_sample3.txt also contains expression data. Establish dataset origins, transformations and redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 88,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/decision-tree-analysis/eval_report_decision-tree-analysis_result.json",
+      "evaluated_on": "2026-04-20",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 90,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.8,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "dbf2f1cd1d7926585d6388351edba5a2a3d8d79f610d47f7f91ab2a897d63293",
+    "file_count": 13,
+    "uncompressed_bytes": 144476
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "decision-tree-analysis"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "lightgbm-analysis",
+    "version": "1.0.0",
+    "display_name": "lightgbm-analysis",
+    "summary": "Use when training a LightGBM model on tabular data in R and returning model metrics, feature importance ranking tables, and feature importance plots.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/LightGBM-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/LightGBM-analysis/SKILL.md",
+          "sha256": "07961bdfb1c127bc5c89c89b9b050f051744594ffe5bb0a4b72f4186fa6bcb87"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/LightGBM-analysis/eval_report_lightgbm-analysis_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 90,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f79af0433f4511837afdfde5cc1a1a854538b47f9a4dbfc10e04b948a20f2afd",
+    "file_count": 13,
+    "uncompressed_bytes": 183989
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "lightgbm-analysis"
+  }
+}

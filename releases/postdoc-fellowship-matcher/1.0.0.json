@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "postdoc-fellowship-matcher",
+    "version": "1.0.0",
+    "display_name": "postdoc-fellowship-matcher",
+    "summary": "Filter and match postdoctoral fellowship opportunities based on applicant nationality, years since PhD, and research field from a curated database.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/postdoc-fellowship-matcher"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/postdoc-fellowship-matcher/SKILL.md",
+          "sha256": "2c9db3ce068818d234b2cc4e381841f81d0f5ed3625d9c82e83007ff44a78b97"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled fellowship database requires source and currency verification before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/postdoc-fellowship-matcher/postdoc-fellowship-matcher_audit_result_v2.json",
+      "evaluated_on": "2026-03-19",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "30ce5b4e12e7d18e29d43858df36d5a4f909210dc50e6c0866352a80da8e08f3",
+    "file_count": 6,
+    "uncompressed_bytes": 22710
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "postdoc-fellowship-matcher"
+  }
+}

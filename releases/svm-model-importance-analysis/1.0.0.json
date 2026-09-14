@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "svm-model-importance-analysis",
+    "version": "1.0.0",
+    "display_name": "svm-model-importance-analysis",
+    "summary": "Use when you need a standardized R CLI workflow to run two-class SVM-RFE feature ranking on an expression-like matrix, choose an informative feature count from cross-validated error, and generate reproducible ranking and error plots. NOT for regression, multi-class classification, missing-value imputation, or remote data fetching.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/svm-model-importance-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/svm-model-importance-analysis/SKILL.md",
+          "sha256": "5e1c6edc97a91ce9b8e88a6b1744f8b14fd03aa231cbb798351a4b3940f81f3c"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 93,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/svm-model-importance-analysis/eval_report_svm-model-importance-analysis_result.json",
+      "evaluated_on": "2026-04-20",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 94,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 92.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e2d41a9e122cecb9eb09d3533714e9807b71f8d67bab86fae10f5f8bf1eff2b9",
+    "file_count": 23,
+    "uncompressed_bytes": 77036
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "svm-model-importance-analysis"
+  }
+}

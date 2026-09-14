@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "quapas-quality-assessment-for-prognosis-studies",
+    "version": "1.0.0",
+    "display_name": "quapas-quality-assessment-for-prognosis-studies",
+    "summary": "Evaluates bias in medical literature (prognosis studies) using QUAPAS criteria. Use when the user wants to assess the quality or risk of bias of a medical paper text.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/quapas-quality-assessment-for-prognosis-studies"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/quapas-quality-assessment-for-prognosis-studies/SKILL.md",
+          "sha256": "7d9a65778bce92dcf658b68583a60df4d2ebe04f15bf49fc0cad9ff58f54bac1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/quapas-quality-assessment-for-prognosis-studies/quapas-quality-assessment-for-prognosis-studies_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 81,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "7afbd94eaf2d594159c49409fa49b0801a0d3fce82bd1a34e1c6e54e4c66f81e",
+    "file_count": 5,
+    "uncompressed_bytes": 27229
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "quapas-quality-assessment-for-prognosis-studies"
+  }
+}

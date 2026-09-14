@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "rf-model-importance-analysis",
+    "version": "1.0.0",
+    "display_name": "rf-model-importance-analysis",
+    "summary": "Use when you need a standardized R CLI workflow to train a two-class random forest model from an expression-like feature matrix, rank variable importance, and generate reproducible error and importance plots. NOT for regression tasks, multi-class classification, missing-value imputation, preprocessing, or remote data fetching.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/rf-model-importance-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/rf-model-importance-analysis/SKILL.md",
+          "sha256": "37c7e58fa30cde927c6fdfe2e9111231fdab6ff25f4a4f6d6ab370054e5e9661"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 92,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/rf-model-importance-analysis/eval_report_rf-model-importance-analysis_result.json",
+      "evaluated_on": "2026-04-20",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 97,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "f28400bd987708edd3ce4bf08f40f77050cf87ea8e470c6e779a82a0b25bd0bb",
+    "file_count": 22,
+    "uncompressed_bytes": 86398
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "rf-model-importance-analysis"
+  }
+}

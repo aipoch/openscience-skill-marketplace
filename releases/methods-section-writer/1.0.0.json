@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "methods-section-writer",
+    "version": "1.0.0",
+    "display_name": "methods-section-writer",
+    "summary": "Turns your protocol and analysis workflow into publication-ready Methods text. Use when writing or revising the Methods section of a biomedical manuscript, ensuring it complies with reporting guidelines (CONSORT, STROBE, PRISMA, TRIPOD), matches what is in the Results section, and satisfies journal-specific word limits and declarations. Also triggers on \"write my methods\", \"revise my methods section\", \"how to report my statistics\", \"what do I need to include in methods for [study type]\", or \"make my methods CONSORT-compliant\".",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Academic Writing/methods-section-writer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/methods-section-writer/SKILL.md",
+          "sha256": "5cbd7170c3360c04538f602a8de1237f1a6c61bc6a56e29f57bc3fe77974f38e"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled reporting_guidelines.md includes multiple third-party reporting checklists; attribution and redistribution evidence need review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 92,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Academic%20Writing/methods-section-writer/eval_report_methods-section-writer_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 95,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 89.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "3cb58eedc1e741c574be450d76a0aff32c3247be6ae088f61b3e2bffa81ccdb0",
+    "file_count": 6,
+    "uncompressed_bytes": 108845
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "methods-section-writer"
+  }
+}

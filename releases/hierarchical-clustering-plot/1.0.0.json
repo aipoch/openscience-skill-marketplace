@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "hierarchical-clustering-plot",
+    "version": "1.0.0",
+    "display_name": "hierarchical-clustering-plot",
+    "summary": "Use when building a sample-level hierarchical clustering dendrogram from a bulk expression matrix and sample annotation table, especially for QC, batch inspection, or sample similarity assessment. Trigger keywords: hierarchical clustering, dendrogram, sample QC, batch inspection, sample similarity. NOT for: differential expression testing, gene clustering heatmaps, single-cell clustering workflows.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/hierarchical-clustering-plot/SKILL.md",
+          "sha256": "5ba8faebcdf85237355fefdf969abe9634d0c91f693e5b35c4f1c8a39dcc2c05"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/hierarchical-clustering-plot/DESCRIPTION",
+          "sha256": "d9ed30f8c318c9a75c48b39c4bb187b4040326d2677b9e672a5def9885d57ddd"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: SKILL.md lacks a license field, but the same Skill DESCRIPTION explicitly declares MIT; both it and the complete root MIT notice are now hash-bound in reviews.json. The original intake still rejects the absent frontmatter declaration. Establish the origin and redistribution evidence for the bundled expression matrix and sample groups before using the existing reviewed Unknown provider intake; generic Sample labels are not synthetic-data evidence. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "7bf5b79e96575815ca15873e69ca169f36e11a4ff0c0dbcddb2ea9a1da1b0ebc",
+    "file_count": 19,
+    "uncompressed_bytes": 76601
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "hierarchical-clustering-plot"
+  }
+}

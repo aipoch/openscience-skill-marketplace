@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "preprint-surveillance-finder",
+    "version": "1.0.0",
+    "display_name": "preprint-surveillance-finder",
+    "summary": "Tracks the latest preprints and emerging research topics related to your topic across bioRxiv, medRxiv, and arXiv. Use when a user wants to discover what is being published right now before it reaches journals, monitor competitor directions, spot new methodology trends, or get an early-warning scan of a research area. Triggers on phrases like \"what's new in X\", \"latest preprints on Y\", \"emerging topics in Z\", \"monitor bioRxiv for\", or \"what are people working on in this field\".",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Evidence Insight/preprint-surveillance-finder"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/preprint-surveillance-finder/SKILL.md",
+          "sha256": "f5f13c95a46cef8c29a118d5e6b66fd7834366201933fe91dde1f5b6655c45d1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: data/history.json contains repeated arXiv abstract excerpts for arXiv:2602.09248, not an empty history template. Verify the cached content redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Evidence%20Insight/preprint-surveillance-finder/eval_report_preprint-surveillance-finder_result.json",
+      "evaluated_on": "2026-04-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 89,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 83.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "02b6b711ac1aac4f3bbf288e3ff39926a2bf9825a4f5f92433c4744dfc4ff7d4",
+    "file_count": 9,
+    "uncompressed_bytes": 67171
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "preprint-surveillance-finder"
+  }
+}

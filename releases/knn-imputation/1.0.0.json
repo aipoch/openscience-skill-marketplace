@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "knn-imputation",
+    "version": "1.0.0",
+    "display_name": "knn-imputation",
+    "summary": "Use when filtering genes with high missingness and then imputing missing values in a bulk expression matrix with group-aware KNN through DMwR2, where donor samples are restricted by one annotation column before imputation. For strata with 10 or fewer samples, the script falls back to row-wise direct filling with mean or median. NOT for: single-cell data, multi-column stratification, non-tabular inputs, network access, or interactive workflows.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/knn-imputation"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/knn-imputation/SKILL.md",
+          "sha256": "d0da0e05ae4888fb517859fa4f477a7e6bceeb165f7fa8fad22be2fbaa6d0c1f"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled expression matrix and sample-group tables require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 95,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/knn-imputation/eval_report_knn-imputation_result.json",
+      "evaluated_on": "2026-04-27",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 98,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 92.7,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "60b30ca0e3d0ecd4631653fe4e32f50e4148316ac7f64bed63cdcf5922fcb790",
+    "file_count": 15,
+    "uncompressed_bytes": 7378884
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "knn-imputation"
+  }
+}

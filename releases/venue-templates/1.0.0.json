@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "venue-templates",
+    "version": "1.0.0",
+    "display_name": "venue-templates",
+    "summary": "Venue-specific LaTeX templates, formatting requirements, and submission guidelines for journals, conferences, posters, and grants—use when a target venue imposes strict layout, page limits, anonymization, or agency compliance rules.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Evidence Insight/venue-templates"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/venue-templates/SKILL.md",
+          "sha256": "fc9bcd0ee7da8cec7d25af47ccd6feaaed67b0e3ab465032ea7914c4230c2f28"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled journal/conference/grant LaTeX templates and style guides require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Evidence%20Insight/venue-templates/venue-templates_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 87,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "5317f38f29546798a04aa4ce7a8503060377ac3a53da6758510acc0e7ce5ce50",
+    "file_count": 23,
+    "uncompressed_bytes": 298046
+  },
+  "artifact": {
+    "path": "shards/b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2.zip",
+    "sha256": "b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2",
+    "bytes": 4463302,
+    "skill_path": "venue-templates"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "umap-tsne-analysis",
+    "version": "1.0.0",
+    "display_name": "umap-tsne-analysis",
+    "summary": "Use when performing sample-level dimensionality reduction and visualization on abundance or OTU-style matrices with a companion group file, generating UMAP and/or t-SNE coordinates and plots for group separation assessment. NOT for: differential expression testing, single-cell workflows requiring dedicated embeddings pipelines, or analyses without a sample grouping file.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/umap-tsne-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/umap-tsne-analysis/SKILL.md",
+          "sha256": "ed77cd50292ee986e687afdabd48480a9994ebebd04f79cf2441393487fd519c"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: dependencies.lock.tsv, tests/data/group_info.csv, tests/data/otu_table.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/umap-tsne-analysis/eval_report_umap-tsne-analysis_result.json",
+      "evaluated_on": "2026-04-27",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 85.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "94e41233e50e4f66df5008027feba8bfb3f9b71c3545c592ae3c48400c4024b0",
+    "file_count": 18,
+    "uncompressed_bytes": 945684
+  },
+  "artifact": {
+    "path": "shards/b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2.zip",
+    "sha256": "b59b653f29f7a13300e44e10319c3e8d0034b6cd474a81070508a2d1195c9ff2",
+    "bytes": 4463302,
+    "skill_path": "umap-tsne-analysis"
+  }
+}

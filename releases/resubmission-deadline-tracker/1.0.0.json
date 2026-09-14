@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "resubmission-deadline-tracker",
+    "version": "1.0.0",
+    "display_name": "resubmission-deadline-tracker",
+    "summary": "Track manuscript resubmission deadlines and automatically generate phase-appropriate task breakdowns for academic researchers based on remaining time.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d",
+      "path": "scientific-skills/Other/resubmission-deadline-tracker"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/63c61d38c6c4bba5128f98f0b225aa44e3fe748d/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/63c61d38c6c4bba5128f98f0b225aa44e3fe748d/scientific-skills/Other/resubmission-deadline-tracker/SKILL.md",
+          "sha256": "c00b6c3e7d5031af6f681c142fe22b5b3265cfc69ee27682208e49e00404af7c"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The available 63c61d38c6c4bba5128f98f0b225aa44e3fe748d snapshot repairs --timezone and UTC deadline calculation, but still bundles populated data/deadlines.json manuscript titles, journals and reviewer notes without evidence identifying them as redistributable examples. Resolve those records and the unsourced journal timing reference before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/63c61d38c6c4bba5128f98f0b225aa44e3fe748d/scientific-skills/Other/resubmission-deadline-tracker/resubmission-deadline-tracker_audit_result_v2.json",
+      "evaluated_on": "2026-03-19",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 88,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "491fc927eb4af1cf8a789fb83df456d2f879a9c9541b42be2a917207d47ef015",
+    "file_count": 10,
+    "uncompressed_bytes": 53764
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "resubmission-deadline-tracker"
+  }
+}

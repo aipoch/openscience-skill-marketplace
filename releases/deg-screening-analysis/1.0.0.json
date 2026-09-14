@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "deg-screening-analysis",
+    "version": "1.0.0",
+    "display_name": "deg-screening-analysis",
+    "summary": "Use when screening differentially expressed genes from a bulk expression matrix between two user-specified groups, producing DEG tables, a volcano plot, and a clustered heatmap. Triggers include DEG analysis, volcano plot, clustered heatmap, limma-based two-group comparison, and case-vs-control screening. NOT for single-cell RNA-seq, multi-group contrasts, count-model workflows such as DESeq2/edgeR, or non-expression omics data.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/deg-screening-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/deg-screening-analysis/SKILL.md",
+          "sha256": "6c396523fd8732ea512613cefca36bd92b06440f4d85ad603c35c09336a9d6b0"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/oa_exp.csv, tests/data/oa_group.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/deg-screening-analysis/eval_report_deg-screening-analysis_result.json",
+      "evaluated_on": "2026-04-16",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 89.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "5a9b99e08989f21d3be766da96546f2391923b0750f52cfa999ba686bf944ae6",
+    "file_count": 15,
+    "uncompressed_bytes": 1094119
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "deg-screening-analysis"
+  }
+}

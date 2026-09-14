@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "estimate-immune-score-analysis",
+    "version": "1.0.0",
+    "display_name": "estimate-immune-score-analysis",
+    "summary": "Use this skill to compute ESTIMATE immune-related microenvironment scores from a bulk expression matrix, generate an ESTIMATE score heatmap, and optionally generate group-wise ESTIMATE score boxplots plus significance tables when a sample group file is supplied. Trigger keywords: ESTIMATE, immune score, stromal score, tumor microenvironment score. NOT for: immune cell deconvolution, single-cell analysis, differential expression, clinical diagnosis.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/estimate-immune-score-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/estimate-immune-score-analysis/SKILL.md",
+          "sha256": "3eb2761d3966ec8125231be8684101ab05348f46bdb70694ce5f986ae3623f8b"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 97,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/estimate-immune-score-analysis/eval_report_estimate-immune-score-analysis_result.json",
+      "evaluated_on": "2026-04-27",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 99,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 95.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e27ca0fdb28a7c58fad6e72241a292f9007674e8f34d16f262bd7cce57484a98",
+    "file_count": 17,
+    "uncompressed_bytes": 115310
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "estimate-immune-score-analysis"
+  }
+}

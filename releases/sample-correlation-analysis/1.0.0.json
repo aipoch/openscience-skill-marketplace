@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "sample-correlation-analysis",
+    "version": "1.0.0",
+    "display_name": "sample-correlation-analysis",
+    "summary": "Use when performing correlation analysis between two variables including Pearson and Spearman correlation methods. Supports command-line parameter input, automatic data format detection, parameter validation, result directory creation, and CSV or TXT format result export.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "awesome-med-research-skills/Data Analysis/sample-correlation-analysis"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/sample-correlation-analysis/SKILL.md",
+          "sha256": "942729908791812da9245b58ab7f642fa3d6497936d3d5926c2cf9b8c32360c9"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/sample_correlation_2.csv contains TCGA sample identifiers alongside drug-response columns, and sample_correlation_3.csv contains GEO sample identifiers. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/awesome-med-research-skills/Data%20Analysis/sample-correlation-analysis/eval_report_sample-correlation-analysis_result.json",
+      "evaluated_on": "2026-04-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 89,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 84.4,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "ac7ee0cd0092fff94cc93f96a0546d2001308239d1fd2286765fee74fa40da57",
+    "file_count": 13,
+    "uncompressed_bytes": 134904
+  },
+  "artifact": {
+    "path": "shards/8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30.zip",
+    "sha256": "8af7a34004c50d378c0395a66bb4d91878109e0c9e2ec913bcd3571818d63b30",
+    "bytes": 29914343,
+    "skill_path": "sample-correlation-analysis"
+  }
+}

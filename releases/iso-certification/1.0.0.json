@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "iso-certification",
+    "version": "1.0.0",
+    "display_name": "iso-certification",
+    "summary": "A toolkit for preparing ISO 13485:2016 certification documentation for medical device QMS. Use when you need to perform a documentation gap analysis, draft or update a Quality Manual, create required procedures/work instructions, build Medical Device Files (MDF), interpret ISO 13485 clauses, or identify missing documents for certification (often triggered by ISO 13485, QMS certification, FDA QMSR, EU MDR, or quality system documentation requests).",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Other/iso-13485-certification"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/iso-13485-certification/SKILL.md",
+          "sha256": "d072d440dca62630aaf7ed4f6edd58300aa4938ba974199c70adb80362a7f385"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled ISO 13485 requirements and checklists require separate source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c36deed1d2433878a9c4351049ffe6bdc3a28538866b9cc729b853d4038f6020",
+    "file_count": 11,
+    "uncompressed_bytes": 199412
+  },
+  "artifact": {
+    "path": "shards/c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7.zip",
+    "sha256": "c98bdc1cad7927e4c2810fcf3208cc7bf87446b6f193c7d20004481554973cc7",
+    "bytes": 47185344,
+    "skill_path": "iso-certification"
+  }
+}
