@@ -63,20 +63,33 @@ export function selectReleaseEntries(bytes, entries, source) {
 }
 
 // Call after authenticating/validating a candidate bundle, before signing it.
-export function assertReleaseSelection(root, selected, source) {
-  if (!selected.length || root.skills.length !== selected.length)
+export function assertReleaseSelection(root, selected, source, providers = []) {
+  const releases = [
+    ...selected.map((entry) => ({
+      ...entry,
+      source: {
+        repository: source.repository,
+        commit: entry.sourceCommit ?? source.commit,
+        path: entry.sourcePath,
+      },
+    })),
+    ...providers,
+  ];
+  if (!releases.length || root.skills.length !== releases.length)
     throw new Error(
       "production snapshot must contain exactly the selected members",
     );
-  const expected = new Map(selected.map((entry) => [entry.id, entry]));
+  const expected = new Map(releases.map((entry) => [entry.id, entry]));
+  if (expected.size !== releases.length)
+    throw new Error("duplicate production selection");
   for (const skill of root.skills) {
     const entry = expected.get(skill.id);
     if (
       !entry ||
       skill.version !== entry.version ||
-      skill.source.repository !== source.repository ||
-      skill.source.commit !== (entry.sourceCommit ?? source.commit) ||
-      skill.source.path !== entry.sourcePath
+      skill.source.repository !== entry.source.repository ||
+      skill.source.commit !== entry.source.commit ||
+      skill.source.path !== entry.source.path
     )
       throw new Error(
         `production snapshot differs from release selection: ${skill.id}`,

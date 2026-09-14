@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "schema_version": 1,
+      "id": "get-available-resources",
+      "version": "1.0.0",
+      "category": "Other",
+      "display_name": "Compute Resource Detection",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+        "path": "scientific-skills/get-available-resources"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "scientific-brainstorming",
+      "version": "1.0.0",
+      "category": "Protocol Design",
+      "display_name": "Scientific Brainstorming",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+        "path": "scientific-skills/scientific-brainstorming"
+      },
+      "license_files": ["LICENSE.md"]
+    }
+  ]
+}

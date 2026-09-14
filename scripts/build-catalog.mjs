@@ -7,9 +7,15 @@ import { prepareCandidates, loadAdditionalLicenses } from "./lib/prepare.mjs";
 import { selectReleaseEntries } from "./lib/release-plan.mjs";
 import { buildCatalog } from "./lib/build.mjs";
 import { readBundle, writeBundle } from "./lib/bundle.mjs";
+import {
+  readProductionProviders,
+  providerDirectory,
+} from "./lib/production-providers.mjs";
+import { submissionSnapshot, prepareSubmission } from "./lib/authoring.mjs";
 const { values } = parseArgs({
   options: {
     source: { type: "string" },
+    providers: { type: "string", default: "dist/providers" },
     output: { type: "string", default: "dist/candidate" },
     history: { type: "string" },
   },
@@ -25,6 +31,7 @@ const selected = selectReleaseEntries(
   config.source,
 );
 const reviews = parseMetadataJson(await readFile("skills/reviews.json"));
+const providers = await readProductionProviders(manifest.entries);
 await mkdir(values.output, { recursive: true });
 try {
   const licenseCopies = await loadAdditionalLicenses(
@@ -47,6 +54,13 @@ try {
     candidates.push(
       ...prepareCandidates(audit, reviews, config, snapshot, licenseCopies),
     );
+  }
+  for (const release of providers) {
+    const snapshot = submissionSnapshot(
+      providerDirectory(values.providers, release.source.repository),
+      release,
+    );
+    candidates.push(prepareSubmission(release, snapshot, reviews, config));
   }
   let history;
   if (values.history) {

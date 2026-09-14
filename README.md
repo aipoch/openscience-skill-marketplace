@@ -57,3 +57,12 @@ Tooling is licensed under [Apache-2.0](LICENSE). The small upstream fixture copi
 retain their own [MIT license](protocol/fixtures/source/LICENSE). Source package
 licenses and third-party data rights require separate review; the tooling license
 does not relicense them.
+
+## Registered external sources
+
+The production catalog now selects 394 original members plus two independently
+reviewed K-Dense Skills: `scientific-brainstorming` and `get-available-resources`.
+Their exact provider configurations live in [authoring/production.json](authoring/production.json).
+The original 584-member manifest and its 190 deferrals remain unchanged. See
+[provider publication](authoring/README.md#production-and-batch-publication) for
+source fetching, review requirements and incremental CDN publication.

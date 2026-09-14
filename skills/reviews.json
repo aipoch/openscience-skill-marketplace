@@ -5201,5 +5201,43 @@
         "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
       }
     ]
+  },
+  "get-available-resources@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+    "source_path": "scientific-skills/get-available-resources",
+    "manifest_sha256": "d4c684607c970df46490d9bc0fef60406efdb2a93aadf84c51c46c2920ab9eb3",
+    "content_sha256": "6b04e33027e4a7c59495f6186dcc2805ac981fedef1e890402beb3c8a86f3298",
+    "file_count": 2,
+    "total_bytes": 23918,
+    "license_expression": "MIT license",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "The original K-Dense Skill explicitly declares \"MIT license\" and credits K-Dense Inc.; LICENSE.md at the same pinned commit supplies its complete MIT grant and copyright notice. Preserve the literal declaration and original payload; this spelling exception does not substitute another license. The build retains LICENSE.md under LICENSES by its digest."
+  },
+  "scientific-brainstorming@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+    "source_path": "scientific-skills/scientific-brainstorming",
+    "manifest_sha256": "fe3905151faf02dbbc7c4397e1b1a76e474ccbeab91a8e53da0f7eeef146a4df",
+    "content_sha256": "6a5e84cc8a83f06238b2c6173ef9e122ddfd0ecd3a48f30163ad91e026df658c",
+    "file_count": 2,
+    "total_bytes": 20244,
+    "license_expression": "MIT license",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "The original K-Dense Skill explicitly declares \"MIT license\" and credits K-Dense Inc.; LICENSE.md at the same pinned commit supplies its complete MIT grant and copyright notice. Preserve the literal declaration and original payload; this spelling exception does not substitute another license. The build retains LICENSE.md under LICENSES by its digest."
   }
 }
