@@ -653,6 +653,11 @@
       "version": "1.0.0"
     },
     {
+      "id": "hypothesis-generation",
+      "version": "1.0.0",
+      "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
+    },
+    {
       "id": "iacuc-protocol-drafter",
       "version": "1.0.0"
     },
@@ -1287,6 +1292,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "research-grants",
+      "version": "1.0.0"
+    },
+    {
       "id": "research-hotspot-analysis",
       "version": "1.0.0"
     },
@@ -1663,7 +1672,7 @@
     {
       "id": "clinical-decision-support",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The package has no assets/ or scripts/ directory, despite documenting five LaTeX templates and nine cohort/statistical/validation helpers. Verify these advertised package resources; the separate scientific-schematics dependency does not resolve the other missing files."
     },
     {
       "id": "digital-twin-discharge-drafter",
@@ -1738,7 +1747,7 @@
     {
       "id": "paper-web",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Original K-Dense scientific-skills/paper-2-web/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares Unknown, while the aggregation declares MIT. Resolve original content licensing before publication; scientific-schematics is a separate dependency."
     },
     {
       "id": "personal-statement",
@@ -1983,7 +1992,7 @@
     {
       "id": "pathml",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/image_loading.md, references/preprocessing.md, references/graphs.md (and 3 more). Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Original K-Dense scientific-skills/pathml/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares GPL-2.0 license, while the aggregation declares MIT. Resolve applicable content licensing and projection before publication; recovered references do not waive that conflict."
     },
     {
       "id": "pathology-roi-selector",
@@ -2008,7 +2017,7 @@
     {
       "id": "pydicom",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/anonymize_dicom.py, scripts/dicom_to_image.py, references/transfer_syntaxes.md (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Original K-Dense scientific-skills/pydicom/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f points to the pydicom project LICENSE, while the aggregation declares MIT. Verify the original applicable terms and required notices before publication."
     },
     {
       "id": "pyhealth",
@@ -2501,11 +2510,6 @@
       "reason": "Bundled FDA protocol template and detailed operational reference material require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
-      "id": "hypothesis-generation",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: assets/FORMATTING_GUIDE.md, references/hypothesis_quality_criteria.md, references/experimental_design_patterns.md (and 2 more). Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
       "id": "inclusion-criteria-gen",
       "version": "1.0.0",
       "reason": "Bundled eligibility templates, feasibility data and regulatory guidance require individual origin, applicable license and redistribution evidence review before selection."
@@ -2514,11 +2518,6 @@
       "id": "randomization-gen",
       "version": "1.0.0",
       "reason": "The CLI exposes blocked allocation only and outputs a plain CSV, despite documented stratification, seed and sealed-allocation claims. Verify the supported interface and concealment claims before publication."
-    },
-    {
-      "id": "research-grants",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/budget_preparation.md, references/review_criteria.md, references/timeline_planning.md (and 6 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "research-proposal-generator",

@@ -606,8 +606,10 @@ test("committed release retains prior members and pins the repaired skill separa
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 392);
+  assert.equal(selected.length, 394);
+  assert.ok(selectedIds.includes("research-grants"));
   const completeSnapshots = [
+    "hypothesis-generation",
     "basic-research-design",
     "cover-letter-generator",
     "meta-abstract-screener",
