@@ -10,7 +10,7 @@
     "unique_skill_ids": 130,
     "pending_review": 146,
     "blocked": 46,
-    "runtime_id_collisions": 153,
+    "runtime_id_collisions": 158,
     "missing_skill_licenses": 46,
     "license_policy_reviews": 104
   },
@@ -1144,7 +1144,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/clinpgx-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1274,7 +1274,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/fda-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1344,7 +1344,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/gwas-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1484,7 +1484,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/metabolomics-workbench-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1754,7 +1754,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/uspto-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
