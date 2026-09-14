@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "msa-structure-prediction-pipeline",
+    "version": "1.0.0",
+    "display_name": "msa-structure-prediction-pipeline",
+    "summary": "NOTE: your protein sequence and the retrieved MSA alignment are transmitted to external NVIDIA-hosted APIs (health.api.nvidia.com) on every call. Use local NIM containers for confidential or proprietary sequences. Run a complete protein structure prediction pipeline using NVIDIA BioNeMo NIMs: search for MSA alignments with MSA-Search (ColabFold), then predict the structure with OpenFold3 using the retrieved alignments. Use this skill whenever the user wants to predict a protein structure with maximum accuracy using MSA context, run the full AlphaFold3-style pipeline, generate MSA-informed structure predictions, or improve structure prediction accuracy by providing evolutionary information. Triggers on: MSA structure prediction pipeline, structure prediction pipeline, MSA-informed prediction, OpenFold3, ColabFold MSA, AlphaFold3 pipeline, protein structure, homology search, a3m alignment, UniRef30, NIM microservice. This pipeline chains MSA-Search and OpenFold3.\n",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+      "path": "skills/bionemo-agent-toolkit/skills/msa-structure-prediction-pipeline"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Apache-2.0 AND CC-BY-4.0",
+      "evidence": [
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE",
+          "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-APACHE-2.0",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-CC-BY-4.0",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/NOTICE",
+          "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13",
+        "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "c016b1c7351d0765f9cd926fc90cf79ee34cb0ae37efaf79a0cb536854c17e8b",
+    "file_count": 6,
+    "uncompressed_bytes": 48144
+  },
+  "artifact": {
+    "path": "shards/d9eadedf27584c96257c396b3554a2f479383e134ebaf455716ea80dd4f8de94.zip",
+    "sha256": "d9eadedf27584c96257c396b3554a2f479383e134ebaf455716ea80dd4f8de94",
+    "bytes": 1161536,
+    "skill_path": "msa-structure-prediction-pipeline"
+  }
+}

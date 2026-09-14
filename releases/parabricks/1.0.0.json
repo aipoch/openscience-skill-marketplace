@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "parabricks",
+    "version": "1.0.0",
+    "display_name": "parabricks",
+    "summary": "Route NVIDIA Parabricks pbrun tools, assess GPU/runtime readiness, and provide version-aware command guidance for FASTQ/BAM processing, RNA-seq, variant calling, BAM QC, and GVCF workflows. Do NOT use for inspecting or accelerating whole pipelines — use genomics-workflow-acceleration.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+      "path": "skills/bionemo-agent-toolkit/skills/parabricks"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "CC-BY-4.0 AND Apache-2.0",
+      "evidence": [
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE",
+          "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-APACHE-2.0",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-CC-BY-4.0",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/NOTICE",
+          "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13",
+        "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "386f17c3845776fca8b6d5acc739df13cdf6bdff6489454605a74c78cce1d1dd",
+    "file_count": 40,
+    "uncompressed_bytes": 242791
+  },
+  "artifact": {
+    "path": "shards/d9eadedf27584c96257c396b3554a2f479383e134ebaf455716ea80dd4f8de94.zip",
+    "sha256": "d9eadedf27584c96257c396b3554a2f479383e134ebaf455716ea80dd4f8de94",
+    "bytes": 1161536,
+    "skill_path": "parabricks"
+  }
+}

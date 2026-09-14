@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "diffdock-nim",
+    "version": "1.0.0",
+    "display_name": "diffdock-nim",
+    "summary": "Run DiffDock molecular docking via NVIDIA NIM to predict small-molecule binding poses against protein targets. Use for DiffDock, molecular docking, ligand docking, blind docking, SMILES or SDF ligands, ranked poses, confidence scores, hosted NVIDIA API, or local Docker deployment.\n",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+      "path": "skills/bionemo-agent-toolkit/skills/diffdock-nim"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Apache-2.0 AND CC-BY-4.0",
+      "evidence": [
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE",
+          "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-APACHE-2.0",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-CC-BY-4.0",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/NOTICE",
+          "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13",
+        "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data. Bundled PDB fixtures match the official RCSB downloads byte-for-byte (1M17 or 1R42); PDB archive data are CC0 under https://www.wwpdb.org/about/usage-policies. Their original headers and attribution remain intact."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "2a2a8a9520d5f510ef10a9b5d466ca863e6b1f2156e6acf0fa60226437a0558e",
+    "file_count": 15,
+    "uncompressed_bytes": 312117
+  },
+  "artifact": {
+    "path": "shards/d9eadedf27584c96257c396b3554a2f479383e134ebaf455716ea80dd4f8de94.zip",
+    "sha256": "d9eadedf27584c96257c396b3554a2f479383e134ebaf455716ea80dd4f8de94",
+    "bytes": 1161536,
+    "skill_path": "diffdock-nim"
+  }
+}

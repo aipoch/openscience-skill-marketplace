@@ -1,0 +1,1689 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "path": "releases/abstract-summarizer/1.0.0.json",
+      "sha256": "3a552e784e1c56c8f9de5818223dcbdc8df4dc001839e97455e44ffb9bbbd5f1"
+    },
+    {
+      "path": "releases/abstract-trimmer/1.0.0.json",
+      "sha256": "d9b854785d267477571e3f5bc29bffe68652605706e10b1abbe1c4da3a1e96e2"
+    },
+    {
+      "path": "releases/academic-abstract-refiner/1.0.0.json",
+      "sha256": "42ec6b7c9d6dc70365b92a61ef0fcde37562083f1434e4699fcc16d1766f628b"
+    },
+    {
+      "path": "releases/academic-cv-generator/1.0.0.json",
+      "sha256": "41a81bfec839aff364c5ff5230f41d1b7a52fadfa780059a2c206caf6f76aac2"
+    },
+    {
+      "path": "releases/academic-highlight-generator/1.0.0.json",
+      "sha256": "06c955e727a823d2976f44911d55b4bc52b2d944b380cc3920073709516fce18"
+    },
+    {
+      "path": "releases/acronym-unpacker/1.0.0.json",
+      "sha256": "eb30eec855d08ef96b4801d0c54c38cb5aa8fcc741cbf479aef4c8c613ae3619"
+    },
+    {
+      "path": "releases/active-comparator-single-soc-faers-safety-comparison/1.0.0.json",
+      "sha256": "a16e6f263f8241ad13bce54be5ee96cea027afcf6cb9a9e63a05b42bad91c198"
+    },
+    {
+      "path": "releases/adaptive-trial-simulator/1.0.0.json",
+      "sha256": "b30f7304491921660aeba95c9a1eed0e18512a2bb212ba0f227c80d8a1e9a82d"
+    },
+    {
+      "path": "releases/adaptyv/1.0.0.json",
+      "sha256": "048ce634f0a73bd71ec3555684d4e54fbf31a6a87418f59a21ab718fc1690224"
+    },
+    {
+      "path": "releases/adme-property-predictor/1.0.0.json",
+      "sha256": "4e09820af5bffdb2c7777ae05953baf394cfb1e4c5501f56f4eeb3fd0528ff07"
+    },
+    {
+      "path": "releases/aim-and-hypothesis-designer/1.0.0.json",
+      "sha256": "eeb3068e0704adb9a3ff769f37b35038ad2207f2c4008ba4ca095979f8d5ea1f"
+    },
+    {
+      "path": "releases/anatomy-quiz-master/1.0.0.json",
+      "sha256": "509aeda6cb449c06d7375d192a92983fe4069b583f597a736bce98f0ec603021"
+    },
+    {
+      "path": "releases/animal-and-cell-validation-planner/1.0.0.json",
+      "sha256": "623f4227f9a121aa4b79d45860c14722a8cd6e62e7644faaf53724406877e7d1"
+    },
+    {
+      "path": "releases/anki-card-creator/1.0.0.json",
+      "sha256": "fe37ae8a2bcb4c74471c29be290f7cb5b64ba760de72e804117595df582bfbe4"
+    },
+    {
+      "path": "releases/anndata/1.0.0.json",
+      "sha256": "9033e3ec9588acfc07ac91bfe56dc63d3cdd0b23d77dac30af4594566187f093"
+    },
+    {
+      "path": "releases/arboreto/1.0.0.json",
+      "sha256": "f8ea854a9db4c35e001f2a29a82812385681f97939ce2c4298ff254ad9c5a38c"
+    },
+    {
+      "path": "releases/article-format-adjustment/1.0.0.json",
+      "sha256": "83ebbe9080680308fff37ccb37fde3f8e8bd20c1bdc1e4ea65be0c092d2eaa83"
+    },
+    {
+      "path": "releases/arxiv-database/1.0.0.json",
+      "sha256": "7a073f936726e27bffb760c3013c56e8bdc9f06a5ad15e6a0aff07d5af07fde7"
+    },
+    {
+      "path": "releases/arxiv-preflight/1.0.0.json",
+      "sha256": "b4c858653565f0cc4a5f1bcfab265980225110bd1835b16a7d5c1ae85748cdd2"
+    },
+    {
+      "path": "releases/author-response-builder/1.0.0.json",
+      "sha256": "2fa9588faa8c33264e51b98705a2ec279e2fe4be941985944b3deb1bce6dd541"
+    },
+    {
+      "path": "releases/automated-soap-note-generator/1.0.0.json",
+      "sha256": "d950b23cb4512255a76e48a22f7b97828380883caf09dbb48a39edd82795a581"
+    },
+    {
+      "path": "releases/baseline-extraction-for-clinical-trials/1.0.0.json",
+      "sha256": "9f37928e2b1640d447c782d637e23d6db94231d9687c173cc9d4ffcdf70d872a"
+    },
+    {
+      "path": "releases/basic-discovery-translational-opportunity-finder/1.0.0.json",
+      "sha256": "2385a0c664a962042f451bc6914a30824bdc94f4c9a715f939018afec331a02d"
+    },
+    {
+      "path": "releases/basic-research-design/1.0.0.json",
+      "sha256": "3062c78531ce0b1faa7c39f0495c5ee39d1b0fbecf86cf12f60f3a4a657e7055"
+    },
+    {
+      "path": "releases/benchling-integration/1.0.0.json",
+      "sha256": "f4868d77e71171f7a8c7f80534e1f9552ebebc30036fa53221c0c7cbd5ec8495"
+    },
+    {
+      "path": "releases/bianque/1.0.0.json",
+      "sha256": "9079faf94bae424ff15b1588e1e44653e0def6e2839db5586975cdd6cbef645e"
+    },
+    {
+      "path": "releases/bibliography/1.0.0.json",
+      "sha256": "f643343c17392c793a5c98028a67610fc9032d5a5a929802b411b6f8fc0859e7"
+    },
+    {
+      "path": "releases/bidirectional-multi-phenotype-mr-research-planner/1.0.0.json",
+      "sha256": "16cce7cc2c7ce5debb0ed5a75ed6183d79af70abab352e9ffb65fdf93391d0c7"
+    },
+    {
+      "path": "releases/bio-causal-genomics-mediation-analysis/1.0.0.json",
+      "sha256": "c7e02b141e735deab9cbc2e0f4aa95d1ce77f569051dc702c4055bfb549ca8d2"
+    },
+    {
+      "path": "releases/bio-causal-genomics-pleiotropy-detection/1.0.0.json",
+      "sha256": "c5997f4e5b5ac2f8cc4452b6b3488048a642a3ed7302a0b2143fb8afb5c4f763"
+    },
+    {
+      "path": "releases/biodbnet-api/1.0.0.json",
+      "sha256": "f336e32ece643cf7b92959e8a3ab4adac31651ee2cc1edaf5ce196846ab717e4"
+    },
+    {
+      "path": "releases/biogrid-orcs/1.0.0.json",
+      "sha256": "d2e23a3cc2ca9bd4433dd1fc94757173bcaf12403085ce9c6a169323012a6208"
+    },
+    {
+      "path": "releases/bioinformatics-translational-opportunity-finder/1.0.0.json",
+      "sha256": "184b115c0e17d5d2e2d6141cc1f1f4d9106bad857f998c34ce63ef9950ac1c73"
+    },
+    {
+      "path": "releases/biomarker-landscape-scanner/1.0.0.json",
+      "sha256": "f2ab69b7ae63f1c8f4720eca8a396c088bf0b9c5bb22e897205301685d361319"
+    },
+    {
+      "path": "releases/biomed-outline-generator/1.0.0.json",
+      "sha256": "918b05156bd87687541f206847160fc29fee9811f871765f691efe3437929410"
+    },
+    {
+      "path": "releases/biomedical-search-strategy-builder/1.0.0.json",
+      "sha256": "d25b2819411fcd8c824b538baa8342e25c539b602a80219ebff00830b98d3239"
+    },
+    {
+      "path": "releases/biopython-advanced/1.0.0.json",
+      "sha256": "c3e351ee4999d340670431dabcb29f67e7e04991cfebe574df6b1df4505eec4c"
+    },
+    {
+      "path": "releases/biopython-alignment/1.0.0.json",
+      "sha256": "c4f86a10e75fdc1de61d8e2a9e39dda1a458544b068f3bfa3bdb188ee5cbaa50"
+    },
+    {
+      "path": "releases/biopython-entrez/1.0.0.json",
+      "sha256": "b095a125d6a2d04d81138ee41632a3733270cdf7f54fee50d85566e17b01931e"
+    },
+    {
+      "path": "releases/biopython-phylo/1.0.0.json",
+      "sha256": "9903afed52c251653f375b374ce8ea2df1846f3a4452af385107bd4bcbbafea1"
+    },
+    {
+      "path": "releases/biopython-sequence-io/1.0.0.json",
+      "sha256": "e439bd6b835653b9418d11cafa28731353df4bd2e5f63420c183ad1742f11971"
+    },
+    {
+      "path": "releases/biopython-structure/1.0.0.json",
+      "sha256": "1b40c8fb95cbba11f2fb405f3ee872376086a7409da45c0157aec6030780116f"
+    },
+    {
+      "path": "releases/biopython/1.0.0.json",
+      "sha256": "2336529ee8edd2b26eb74707638db5c1c503ea8b112385ef126db2d00b906dd2"
+    },
+    {
+      "path": "releases/biorxiv-database/1.0.0.json",
+      "sha256": "df98637de2a983b54289109d41f8889421220bd0fbbe16b68252254aa496d1d5"
+    },
+    {
+      "path": "releases/bioservices/1.0.0.json",
+      "sha256": "12ecd2e2f00f03d2f94d7ae6c5d635c74947ac11133ff53eb86b93c19537f129"
+    },
+    {
+      "path": "releases/biotech-pitch-deck-narrative/1.0.0.json",
+      "sha256": "a361fe199c6e20beccfc3d517b91efebc83c351ac7ef46b954d1942069e02fe9"
+    },
+    {
+      "path": "releases/blind-review-sanitizer/1.0.0.json",
+      "sha256": "e52ca34a6c3dbb802240173262fbd6257927581ab1bf4dac82495c669ee9a20f"
+    },
+    {
+      "path": "releases/boltz2-nim/1.0.0.json",
+      "sha256": "53ebfa2f15ec73f48f3c11cc122df6d7d242e927c1b1f2a00228fb258816d392"
+    },
+    {
+      "path": "releases/brenda-database/1.0.0.json",
+      "sha256": "d06413fc14559ba73160eaece9df924479f11979aab50c75b7ebead18205b9ed"
+    },
+    {
+      "path": "releases/buffer-calculator/1.0.0.json",
+      "sha256": "77f59fa0b93731328e2206be9cc348412d251be4f74eb050839f74c9b0d5aaf7"
+    },
+    {
+      "path": "releases/bulk-omics-integrative-planner/1.0.0.json",
+      "sha256": "1589e65ef6ab47601fd4ba57450cc8a9930e59ec784be7eb3c78f72df7116a14"
+    },
+    {
+      "path": "releases/case-control-study-planner/1.0.0.json",
+      "sha256": "2b1e55cf54f2a7ad6e7881ab8074a4e217bef3e7b69b13e49e1b0a3ccd8babda"
+    },
+    {
+      "path": "releases/cellosaurus-api/1.0.0.json",
+      "sha256": "76c78d8085dbaf0836fe0293048e688ee614ce4e7d3cfa05b46ad79c9269230a"
+    },
+    {
+      "path": "releases/cellxgene-census/1.0.0.json",
+      "sha256": "4bea71e16e02d2803d3a4e0574d0cfa231769bc3d0e580c9414e7e91ccb48633"
+    },
+    {
+      "path": "releases/chart-style-unifier/1.0.0.json",
+      "sha256": "b6df244a2d334ebb7db033e048f3e78e023a6105eb1b036b3cb17c48ac49a8c4"
+    },
+    {
+      "path": "releases/chea-api/1.0.0.json",
+      "sha256": "3ddfa5429ff4cd989deecb89975d11a24c5312d340940553631b70ef576fd2d5"
+    },
+    {
+      "path": "releases/chembl-database/1.0.0.json",
+      "sha256": "17ccc5c268ffa4e5288f49e3b6b66019d78e4cc359fbdd0a52117c22dd7f8c9b"
+    },
+    {
+      "path": "releases/chemical-storage-sorter/1.0.0.json",
+      "sha256": "9551686dc56cc43924fd08ce6c9a1a3a548e4332e7bcb037e210a38b14e6d5da"
+    },
+    {
+      "path": "releases/citation-management/1.0.0.json",
+      "sha256": "fa3def5c4c9610201c0a1ff3802bba4d8cc1d719ba9198f72fda11ab2ff47083"
+    },
+    {
+      "path": "releases/citation-network/1.0.0.json",
+      "sha256": "3485fff327fd8e6e5a91b6b0a7ebc31fd2034bbc1390201fb965eb0e070965db"
+    },
+    {
+      "path": "releases/claim-strength-calibrator/1.0.0.json",
+      "sha256": "7e7810387c90d91b10642eaa04148b830d6efc0557b155a0f8b3e2861e717ee4"
+    },
+    {
+      "path": "releases/clinic-sample-size/1.0.0.json",
+      "sha256": "05e4447ab97c5ed0b973fb88c257650fef8390af70fcd156724746cfee7f4331"
+    },
+    {
+      "path": "releases/clinical-cohort-protocol-designer/1.0.0.json",
+      "sha256": "086ac657044b801cb8c89a5a4a0fa755b3a15d35e29487c071a4c1d07200ce99"
+    },
+    {
+      "path": "releases/clinical-diagnostic-reasoning/1.0.0.json",
+      "sha256": "95518bf52b57b30ed94ecba92934166d70785056a511427af8c4c9e9ae419a59"
+    },
+    {
+      "path": "releases/clinical-question-clarifier/1.0.0.json",
+      "sha256": "16821d9b822f43fe76276abbb0ddcea736d82c295a4ab4336ec637b3523dae6a"
+    },
+    {
+      "path": "releases/clinical-study-info-extractor/1.0.0.json",
+      "sha256": "7e632f3a8b65b15ed64ecc7021d02814f0bfc0b42ac070c0aa5a384facc8a991"
+    },
+    {
+      "path": "releases/clinicaltrials-database/1.0.0.json",
+      "sha256": "93d1f718ae4e426bba2e37eb2b47ea889cb77ad32b9d40aa132b8d7303858c13"
+    },
+    {
+      "path": "releases/clinicaltrials-db/1.0.0.json",
+      "sha256": "e7984d9e78acabcb7ad0f38d7ddbab584ca219384e7b6678ddd39d75b8f181fb"
+    },
+    {
+      "path": "releases/clinicaltrials-gov-parser/1.0.0.json",
+      "sha256": "a6b908cf3fef0f740415c851e22508569387cbc538e2fe25154ac72cdff2f7cf"
+    },
+    {
+      "path": "releases/clinvar-database/1.0.0.json",
+      "sha256": "ffeaa278ccf4be6b8ee4107983cc3da779eb3478d2f8a4c802c37dc1fe3df8e0"
+    },
+    {
+      "path": "releases/co-tank-monitor/1.0.0.json",
+      "sha256": "4073d3ae33fc257a7e0b5e3cecd8ecfe5b87ab0f5576a7bc60f00b4a59138f33"
+    },
+    {
+      "path": "releases/cobrapy/1.0.0.json",
+      "sha256": "379a581bec0bc823152e91080647fa4c548a8c621515e9ec5168e15fbe7dee58"
+    },
+    {
+      "path": "releases/cold-chain-risk-calculator/1.0.0.json",
+      "sha256": "e89753f1a159aaa051cc7908b4bb6915ee01dc4eaf42142e8f9be9be39ca19e0"
+    },
+    {
+      "path": "releases/comorbidity-common-immune-biomarker-research-planner/1.0.0.json",
+      "sha256": "84b07bb772ed235e0d25db6bfe5f0273a5bcfc0950ba4b04f5490f0972e7a2b2"
+    },
+    {
+      "path": "releases/comparative-network-toxicology-shared-mechanism-reference-grounded/1.0.0.json",
+      "sha256": "c399a18a2c40854ec2088c6edb4f049537f5393c88ec1a28d3bb60b1503bdeea"
+    },
+    {
+      "path": "releases/comparison-table-gen/1.0.0.json",
+      "sha256": "ae85010a97d77df040990674fc1b8b1d9f76576d4cd5cfcba9c8cc42e7dd1acf"
+    },
+    {
+      "path": "releases/competitor-trial-monitor/1.0.0.json",
+      "sha256": "dec965920585d9896b02085c6472609b21b4fb344e9b0a7a89905caea06dff53"
+    },
+    {
+      "path": "releases/complexa-binder-design/1.0.0.json",
+      "sha256": "8500c134f3dada0ccf8adca3851364fb0590c5cdcfc9bc317451bbdcb70a1512"
+    },
+    {
+      "path": "releases/concept-explainer/1.0.0.json",
+      "sha256": "1038506257acc16678c57df35d2ee30312d711328ff905a3cf346a2fcf08b461"
+    },
+    {
+      "path": "releases/conference-abstract-adaptor/1.0.0.json",
+      "sha256": "57fa9b90b849e579c60a3e4f41e673187532065fe1ceb3c5cbc0497d09314b07"
+    },
+    {
+      "path": "releases/conference-abstract-writer/1.0.0.json",
+      "sha256": "3fa8049f6c747321849fa38f96c24d8768cc90632f1acb2a840aece80c2bbd8b"
+    },
+    {
+      "path": "releases/conference-poster-pitch/1.0.0.json",
+      "sha256": "92d7677320e5e770892886c869c2e1fd52b7fa5fa6975b338365a94d2eb5c664"
+    },
+    {
+      "path": "releases/conflict-of-interest-checker/1.0.0.json",
+      "sha256": "a92a6a073e03c42a98db8d66a74a49b6563a259007546e25fe2e539834cdf22e"
+    },
+    {
+      "path": "releases/confounder-and-bias-control-planner/1.0.0.json",
+      "sha256": "f9be8047752c7ae913b4988333f8cefa6a7e34ec06b59196190a645db4ff73fe"
+    },
+    {
+      "path": "releases/consistency-checker-across-manuscript/1.0.0.json",
+      "sha256": "1169c9c42e4eb1262a5d097e6a98b580075212f3fbfafbdf54b52ffa086b33c0"
+    },
+    {
+      "path": "releases/content-proofreading/1.0.0.json",
+      "sha256": "ee206e94c5ffd4e564daaa029009f9c2086aaa99e849b024676fc7ce9987c92c"
+    },
+    {
+      "path": "releases/contradictory-findings-resolver/1.0.0.json",
+      "sha256": "1563890d59337e7558518a0fc340597ab6df2d33d06fbbb78fb8137cddaa9631"
+    },
+    {
+      "path": "releases/conventional-non-oncology-hub-gene-research-planner/1.0.0.json",
+      "sha256": "1c6ef256eb99e4c510ea85cd04a19fdeddbaa29587a26609f782d319bbf5e679"
+    },
+    {
+      "path": "releases/conventional-oncology-hub-gene-research-planner/1.0.0.json",
+      "sha256": "63e8d4acfb48049b1bb335c01530750f52708a0a41ba519ed91f910ebc1f59f5"
+    },
+    {
+      "path": "releases/cosmic-database/1.0.0.json",
+      "sha256": "01746c66cd4f099783e2540a344a40263a130f31005edfc6c9f863268dcb3d66"
+    },
+    {
+      "path": "releases/cover-letter-drafter/1.0.0.json",
+      "sha256": "d78e932c1f1486abedd799401773415d3cc3ee98f5f535b382c63f4b5187e156"
+    },
+    {
+      "path": "releases/cover-letter-generator/1.0.0.json",
+      "sha256": "e16d18291ff1175e413a8e464b89b17a548542c89996d3b802ec9b4499b38712"
+    },
+    {
+      "path": "releases/cross-disease-shared-biomarker-network-research-planner/1.0.0.json",
+      "sha256": "a9f467584f1ac0b43b02b887c8db2eab26874cc3b64377fee5936a69b1fcc342"
+    },
+    {
+      "path": "releases/crossref-database/1.0.0.json",
+      "sha256": "de0b3de0cf9d777699b1b1022b5abcad55fec51a24ee2a3f3a90aa64b2055442"
+    },
+    {
+      "path": "releases/ctd-api/1.0.0.json",
+      "sha256": "8f88269caf6e6025b295e30d86bd661cc372cd8c31144b506866da815f4368da"
+    },
+    {
+      "path": "releases/d-molecule-ray-tracer/1.0.0.json",
+      "sha256": "f325e450bc3dff264186d2fb497239c72bcfb5fb7fe4be80aad80641555dd309"
+    },
+    {
+      "path": "releases/data-stats-analysis/1.0.0.json",
+      "sha256": "8bce6c5f882364d1cc3fa90b5dd369b75e8d82b47cfdd3c222038e5a6cbab0d5"
+    },
+    {
+      "path": "releases/data-transform/1.0.0.json",
+      "sha256": "17543e1b19432470df04dfdf34b6aff8d273697120eb9c8163f5eff93df9b47b"
+    },
+    {
+      "path": "releases/date-calculator/1.0.0.json",
+      "sha256": "6e262144c91213871dfc04965068a96bc974a25fd38fa6498dd4d7038736de3f"
+    },
+    {
+      "path": "releases/dei-statement-drafter/1.0.0.json",
+      "sha256": "55a64ea590d7f10ef7de1bc0bcf5e446d8505920e7bc78639eb1f8f65c5bc4a8"
+    },
+    {
+      "path": "releases/diffdock-nim/1.0.0.json",
+      "sha256": "7350f4ab1f8afd1a3ceec3aa719e9e23f46287d46b9c69a1eecb76c0ab3d96da"
+    },
+    {
+      "path": "releases/discussion-composer/1.0.0.json",
+      "sha256": "a7f1ffa8063382f07e95e3588933ea7d24c51d7227b7ad05b0f7eb3ede1bc4cf"
+    },
+    {
+      "path": "releases/discussion-section-architect/1.0.0.json",
+      "sha256": "7fdbcff4e590617497371739f1c63649d7fb5038ffac051b1f1ea2e374b2b3a9"
+    },
+    {
+      "path": "releases/disease-mechanism-evidence-map/1.0.0.json",
+      "sha256": "f00b85fed58a415313f9eb590fd08667d5f80d5713d71715af957e8840755320"
+    },
+    {
+      "path": "releases/docx-feedback-tracker/1.0.0.json",
+      "sha256": "8840f89078bb9ef8f27683e4ee0f0a398d267619c469723b77dd0705804a2ebf"
+    },
+    {
+      "path": "releases/dpi-upscaler-checker/1.0.0.json",
+      "sha256": "861daf42f90e0b762d206e9d41c4262ad4ad4491965e641d2245c2ac27fd7332"
+    },
+    {
+      "path": "releases/drug-discovery-pipeline/1.0.0.json",
+      "sha256": "0bc5381ef60ff245e9c47eccc05011bc94d7ec8c5c4f67b78f4c566e4d341f3f"
+    },
+    {
+      "path": "releases/drug-repurposing-study-planner/1.0.0.json",
+      "sha256": "935e185d857c65212c41cdd785cfc8643d608d130a75cc233c307af01693bb9c"
+    },
+    {
+      "path": "releases/drug-target-evidence-landscape/1.0.0.json",
+      "sha256": "b0e862d2eb46cb9bd12aa407a000ea0afedb9880039276e0da1898e71db76061"
+    },
+    {
+      "path": "releases/drugbank-database/1.0.0.json",
+      "sha256": "015cb4a1650c3a5d3fd0843b9ccf74241808286936bc577523f5d585cfc21c1d"
+    },
+    {
+      "path": "releases/dual-disease-shared-transcriptome-biomarker-research-planner/1.0.0.json",
+      "sha256": "a8449e4e219449b6b4416e13370e070ca659ff34d86a336ab582bd12c756eaed"
+    },
+    {
+      "path": "releases/dual-disease-transcriptomic-ml-planner/1.0.0.json",
+      "sha256": "4139564046a2629fd58e7705543a646a25820225ff8962848443620baa203215"
+    },
+    {
+      "path": "releases/ebm-calculator/1.0.0.json",
+      "sha256": "8533b78862c0dd2ab66e679a5cba101e26b95af4739782f5c3b200e236b546e2"
+    },
+    {
+      "path": "releases/ectd-xml-compiler/1.0.0.json",
+      "sha256": "efa09f708adb29043513fbf5b75a09923292a833f93aa28b64bf93d7a3436b1c"
+    },
+    {
+      "path": "releases/ehr-semantic-compressor/1.0.0.json",
+      "sha256": "c7d7f92780aea1d6006e6f562a746cb478ab28f04ffb9c4e1c016e8039c6db63"
+    },
+    {
+      "path": "releases/ena-database/1.0.0.json",
+      "sha256": "fdb838637363ac65ba061ac59d05ccf9dd8b8589cf3b45b5476f98e9d259dbc2"
+    },
+    {
+      "path": "releases/encode-api/1.0.0.json",
+      "sha256": "b176a1c40117afb61d737f82976aebb066fdf04b24e68bfcffa89bae09792e47"
+    },
+    {
+      "path": "releases/encori-api/1.0.0.json",
+      "sha256": "b8df9245579fa5b9bcc9ed97fe564c6598401c859a4e03f5f86ce58461391a79"
+    },
+    {
+      "path": "releases/endpoint-definition-designer/1.0.0.json",
+      "sha256": "a7d0cf4154179adb74cb1ad8f5e0693d03622422441090c7b8353d951aadb623"
+    },
+    {
+      "path": "releases/ensembl-database/1.0.0.json",
+      "sha256": "ff0cd31d425e6805ce7ba145223eaaf52a9c0662e5e82afbadc6b14711909bf6"
+    },
+    {
+      "path": "releases/epidemiology/1.0.0.json",
+      "sha256": "11bfb9fea6d4e0009de3357368355acecaf02891c85d12143e22d5f383633d3d"
+    },
+    {
+      "path": "releases/equipment-maintenance-log/1.0.0.json",
+      "sha256": "b332ba68dacf148f72f55fe1b5557384566206053b6e9ff68012fc2c4ed27791"
+    },
+    {
+      "path": "releases/esm/1.0.0.json",
+      "sha256": "e9048284c7936eb990eae2f287903eceb384b798f1e2ea1d028a91d3b7d58bb8"
+    },
+    {
+      "path": "releases/etetoolkit/1.0.0.json",
+      "sha256": "6f0cf420201a0253fd79882c0b92302c10f6f9d93903768436d38f2d3fb74c97"
+    },
+    {
+      "path": "releases/evidence-level-ranker/1.0.0.json",
+      "sha256": "67ef27e40ff0a829a727620c4a52c3a04b4616665e85eceb0565616f8d21c494"
+    },
+    {
+      "path": "releases/evo2-nim/1.0.0.json",
+      "sha256": "d4881b5958f0e970930312dadd0545378d6ae86fd77d67a6317748774e4c7dc6"
+    },
+    {
+      "path": "releases/experiment-design/1.0.0.json",
+      "sha256": "445178a064f3474a01ee91cc935534227b89554b5f3e9532dd457b59378548c5"
+    },
+    {
+      "path": "releases/experimental-data-analysis/1.0.0.json",
+      "sha256": "e2b33f58e502810cb8f503f0281fb4920f1644d8b571a0d51ec9ae8424999da7"
+    },
+    {
+      "path": "releases/expert-interview-generator/1.0.0.json",
+      "sha256": "95af26210096bbd4c473d4ba41c729068682fcb04f87f8f6373d05d02308e6b7"
+    },
+    {
+      "path": "releases/expert-interview-topics/1.0.0.json",
+      "sha256": "692047babad70a0beece2131a0d3ff9a24ceffef78ea2d01979c2341495c4404"
+    },
+    {
+      "path": "releases/exploratory-data-analysis/1.0.0.json",
+      "sha256": "b4a16e9997bf55337aeedd4d198506c94d47a878c3466194f6f77a07d39c84b7"
+    },
+    {
+      "path": "releases/facs-gating-viz-style/1.0.0.json",
+      "sha256": "65da853c78f27ff17c1003c53dddc185264b76c10f1aace9b786c83953ca6cdc"
+    },
+    {
+      "path": "releases/faers-multi-drug-soc-planner/1.0.0.json",
+      "sha256": "28cd0a722af505cc5a61676cbb8d291147ed12863548b2fee2e642e378456198"
+    },
+    {
+      "path": "releases/faers-pharmacovigilance-disproportionality-research-planner/1.0.0.json",
+      "sha256": "bf9388dc806472acbc8e60ba6f9f41299d09f518f2513664e8730165f2f9dcc5"
+    },
+    {
+      "path": "releases/faq-generator/1.0.0.json",
+      "sha256": "5a591a35017c6323ed9f3400d5eb819c9d8df6ed1bab3f3f9fe876234af78e32"
+    },
+    {
+      "path": "releases/feasibility-aware-study-planner/1.0.0.json",
+      "sha256": "bdfdbd0c9f1ccef8af14e81957e9677edf3b556915323f1e104b7b7339e6ae78"
+    },
+    {
+      "path": "releases/figure-first-paper-reader/1.0.0.json",
+      "sha256": "611cd6220fc75d25a5af84f0618fded5a8824bf16e223c8efc341258a4a81138"
+    },
+    {
+      "path": "releases/figure-legend-gen/1.0.0.json",
+      "sha256": "69ef87cd1abbcccb963b005e8972511a68085b3b2be0617a9edffae63f544380"
+    },
+    {
+      "path": "releases/figure-legend-writer/1.0.0.json",
+      "sha256": "d55dbfd8282652eb3d6d4b9c1366cecab0200f9b68de9d71d7f2a999aa7e6f77"
+    },
+    {
+      "path": "releases/figure-reference-checker/1.0.0.json",
+      "sha256": "04617682841b61810ea8304bb66c94ebcf2a005f2f6b8cfcc35d833859933cc4"
+    },
+    {
+      "path": "releases/file-security-toolkit/1.0.0.json",
+      "sha256": "37a2578ce4f62b6690ae4f73a62224b3713d11fb9b053c7f33c6ef0e97ba6ea6"
+    },
+    {
+      "path": "releases/find-paper-references/1.0.0.json",
+      "sha256": "a086b95ffaeba614274043a14c1b658c28a910385cb1ab4130dba4ca37914b9e"
+    },
+    {
+      "path": "releases/flowio/1.0.0.json",
+      "sha256": "1cd1b49da52ba418c33e88314465f28690b321536e7a0df04b8f130244571272"
+    },
+    {
+      "path": "releases/fulltext-fetcher/1.0.0.json",
+      "sha256": "b822567f68206f3d3174d8606a01244b10aa7233b5b20b9701e14b3348f75743"
+    },
+    {
+      "path": "releases/gene-database/1.0.0.json",
+      "sha256": "1744a69c5562d44b5cec02155ed3248450853dfedb010a3ec152284734a7eed1"
+    },
+    {
+      "path": "releases/gene-info/1.0.0.json",
+      "sha256": "bd383d8e4500b6c2577db9acafb7da858b56f60d7dac901a24d9ec9b00aaf0d0"
+    },
+    {
+      "path": "releases/gene-structure-mapper/1.0.0.json",
+      "sha256": "035453576de28038435083fd04fbfc6ac95f02a2a6473123505410f1e2de769f"
+    },
+    {
+      "path": "releases/generic-phenotype-scoring-research-planner/1.0.0.json",
+      "sha256": "73111ed15f028b1b93bac10b9595470ba4b7a1a21d6d38a3275bec7dfb2440ae"
+    },
+    {
+      "path": "releases/geniml/1.0.0.json",
+      "sha256": "4cf06f3d717ca07312d7d0a4c1656257e8fbda79a166cebc519c068d61a07f9d"
+    },
+    {
+      "path": "releases/genmol-nim/1.0.0.json",
+      "sha256": "878441b130c4e7e33efd8c21e546076f1fbdf459a2118afdc31ce000498be2f3"
+    },
+    {
+      "path": "releases/genomics-workflow-acceleration/1.0.0.json",
+      "sha256": "08890d00bb716285102c1ef9bdc2fc3b2f4cce488e3e896cc07697a01232b0db"
+    },
+    {
+      "path": "releases/geo-search-api/1.0.0.json",
+      "sha256": "a8daf61ba9ec74a4d4a9e8f418be0413a0aa152f3eb146b39ec6d29511233432"
+    },
+    {
+      "path": "releases/geopandas/1.0.0.json",
+      "sha256": "615dac7c911def51977d430987ee826cb4ae75aab09f1cceada05ebd37ea7bbf"
+    },
+    {
+      "path": "releases/get-available-resources/1.0.0.json",
+      "sha256": "89b27cab4fb324e4e35873056716385f04a2971f02598e6542e0c6c2fe7d07bf"
+    },
+    {
+      "path": "releases/gget/1.0.0.json",
+      "sha256": "8215d2934edd924eeeeba71af074d273e416e6efd0d801533d92e93d5d38ae84"
+    },
+    {
+      "path": "releases/grant-budget-justification/1.0.0.json",
+      "sha256": "5da6942bf63754a89bd2444fb84743d1c9497e5e39f6528ef8f6b063987db118"
+    },
+    {
+      "path": "releases/grant-gantt-chart-gen/1.0.0.json",
+      "sha256": "930b2f7533a19ad78439575454e27269203b5c3e6e98cf905441592960417b9c"
+    },
+    {
+      "path": "releases/grant-mock-reviewer/1.0.0.json",
+      "sha256": "a4de447ef08fa0dbf9741f1cf28185d86a085498f778798e77d90df6b35620e1"
+    },
+    {
+      "path": "releases/grant-proposal-assistant/1.0.0.json",
+      "sha256": "03efb42a9ff562d79c6e00201932fedb5c05d7f1eafb1ba4ce0b244cf0eaf320"
+    },
+    {
+      "path": "releases/grant-specific-aims-writer/1.0.0.json",
+      "sha256": "a98e5b9dd207f574508ff42d1aba5f844c1221783aaa6a3468a7ef3b053dd68a"
+    },
+    {
+      "path": "releases/graphical-abstract-generator/1.0.0.json",
+      "sha256": "0308b4d97e2b0605ecb96bd65307645fd25c647749dc6934c876954b5b7e2281"
+    },
+    {
+      "path": "releases/gtars/1.0.0.json",
+      "sha256": "567f62f81640fbb6bd2141c9d8ce9e795253c1e49af47007598b1ff0d6c0336d"
+    },
+    {
+      "path": "releases/heatmap-beautifier/1.0.0.json",
+      "sha256": "39a181672ebbf224748369ea07426f65a79e31bd3793c850a4556b9261374cf1"
+    },
+    {
+      "path": "releases/hgnc-api/1.0.0.json",
+      "sha256": "e1c8b40e044dbce73a82cd390a3fe9cda1b2f4e12207dbcb039eb18273b7abaa"
+    },
+    {
+      "path": "releases/high-value-paper-screener/1.0.0.json",
+      "sha256": "191dadc17e7ccd41e252d3f44218e140153c40c8b9c2bbe6675d73de62b9341e"
+    },
+    {
+      "path": "releases/hippocrates/1.0.0.json",
+      "sha256": "6a25f3e326849e90cc483a42aa657f973b05ab391e89d16dcb0a03dacb38ca50"
+    },
+    {
+      "path": "releases/histolab/1.0.0.json",
+      "sha256": "2eb0790f3959853ff86f8495d53e189de5d341c04d8bb9f06af01ab45d6cf73a"
+    },
+    {
+      "path": "releases/hmdb-database/1.0.0.json",
+      "sha256": "967797d5cb1a4dc923403a045b394ffc4fb6514f7c9ce8312e142c59331fdd20"
+    },
+    {
+      "path": "releases/hypogenic/1.0.0.json",
+      "sha256": "4320e1286d2c2683d4c2635f318a8b8abfb2941a19522a711aac61ca74294b14"
+    },
+    {
+      "path": "releases/hypothesis-generation/1.0.0.json",
+      "sha256": "5514c2f95ef93efb58db1f7efbb51b11c2e763f39f0fa8c4c460214caf862084"
+    },
+    {
+      "path": "releases/iacuc-protocol-drafter/1.0.0.json",
+      "sha256": "73d1ebf90cce357a63002ef83f6fb556c8f91648dfa5c844998982bd3a1e9d17"
+    },
+    {
+      "path": "releases/ib-summarizer/1.0.0.json",
+      "sha256": "445e64f4520be798cb0f895df37279c6ed62d24b93b737c1db22e9de226e05c2"
+    },
+    {
+      "path": "releases/image-ocr/1.0.0.json",
+      "sha256": "fbdddc6c18e311ed118daade9345bf62907561b7a16706fc096c544abd14dc9a"
+    },
+    {
+      "path": "releases/image-processing/1.0.0.json",
+      "sha256": "6a39793fc0310b44bcc4cd0cd23e82845b328feca59ad56cde83e985c21da34a"
+    },
+    {
+      "path": "releases/inclusion-exclusion-criteria-builder/1.0.0.json",
+      "sha256": "775fc83e90b726ae62d2f8e2cb6cade8f218374a13c0872c744ecc2275c5d114"
+    },
+    {
+      "path": "releases/inplasy-registration-helper/1.0.0.json",
+      "sha256": "d8320d2185e51ebd1a8d6cbc5abe0d08a4652622a2a6598a7f3a1e380572d35e"
+    },
+    {
+      "path": "releases/introduction-logic-builder/1.0.0.json",
+      "sha256": "292e2562a7a4e5dc82680c197a41fd2843db9a588f231fb2dede41881a2a8228"
+    },
+    {
+      "path": "releases/introduction-section-writer/1.0.0.json",
+      "sha256": "ce181e41e800489fc5f3fd746b5f166f5e6cabc0ead40bdb7f6d9d932937653d"
+    },
+    {
+      "path": "releases/jaspar-api/1.0.0.json",
+      "sha256": "b64fe893a3d3a7adcd70e29746dc930da6f6e6b078ac92f9b8b1fd9902e8a054"
+    },
+    {
+      "path": "releases/journal-club-presenter/1.0.0.json",
+      "sha256": "df9c58fc531002cfbd6f40ad8ef5aa6205a1ab65fd2fdf052b22da56e34d05c2"
+    },
+    {
+      "path": "releases/journal-recommender/1.0.0.json",
+      "sha256": "93a98212b769d205868ee3a2029470aac719ded8def9d79eff9525bd12c2160a"
+    },
+    {
+      "path": "releases/journal-skills/1.0.0.json",
+      "sha256": "c8039bff3adc24ee8612112e79fea4eb25d88a67178fd4d7e950ee23dccf2ab9"
+    },
+    {
+      "path": "releases/kegg-database/1.0.0.json",
+      "sha256": "000b989e82fafe1674331a085a4d27fdd4085f1ec7e9b9545bf24a71522c9154"
+    },
+    {
+      "path": "releases/kermt-add-cmim-pretrain/1.0.0.json",
+      "sha256": "5421cb231356885d79156bc900b4b3c16a60d4725c28698aeab294c57e42a073"
+    },
+    {
+      "path": "releases/kermt-continue-pretrain/1.0.0.json",
+      "sha256": "6683c2b726d8a114831bea0cb7277e2eff8e64bdbfc594a229e538ebb20ce6c4"
+    },
+    {
+      "path": "releases/kermt-embed/1.0.0.json",
+      "sha256": "47a8483f4f22cae58c675bdbae297782ddc4b424b9eb028cf19aa52434bdab5e"
+    },
+    {
+      "path": "releases/kermt-finetune/1.0.0.json",
+      "sha256": "d4ba52073a4dab48463696092f96c769563b6109d02a1c7d5fe3b062ad291040"
+    },
+    {
+      "path": "releases/kermt-infer/1.0.0.json",
+      "sha256": "26e18b992f92e2a5d886eb42ade05fdfecc4ced2d2e3797266f06040e9d3aa8d"
+    },
+    {
+      "path": "releases/kermt-monitor/1.0.0.json",
+      "sha256": "bac216565d7b88961f72353f08d47076cdabddfbcf57d4af94ab135caddb0004"
+    },
+    {
+      "path": "releases/kermt-pretrain-scratch/1.0.0.json",
+      "sha256": "6b9cce5a2578a6d87872667ad932ebce8a76342411713809b7fce49fb885c5d0"
+    },
+    {
+      "path": "releases/kermt-setup/1.0.0.json",
+      "sha256": "b1b196c3d7f22a81cac9a986a9375cdce3b985e5b75d91f182b32037a396bb95"
+    },
+    {
+      "path": "releases/keyword-velocity-tracker/1.0.0.json",
+      "sha256": "8874f9c723e22a137bdb9546d403d3c6eb64201f99bdb10b378875008a74831b"
+    },
+    {
+      "path": "releases/knowledge-base-search/1.0.0.json",
+      "sha256": "e9675bcd2305c8e8874b3cd1e6b70c4a4c2ce911090bae81ecc2be39d5086550"
+    },
+    {
+      "path": "releases/lab-budget-forecaster/1.0.0.json",
+      "sha256": "0330438f320da3f6950a9a9b6a2955e46b649faf2110ef71c9275c68b0148fe1"
+    },
+    {
+      "path": "releases/lab-inventory-predictor/1.0.0.json",
+      "sha256": "8b48850dce8eebd6e8e4a2414fafa4f631b4b47a3e3938c4464ec013086175c6"
+    },
+    {
+      "path": "releases/lab-prep-calculations/1.0.0.json",
+      "sha256": "2a2e82132d5a6e9fc7cea71cffc0856dc80863d5b84cc7677f10da9c0b36dd12"
+    },
+    {
+      "path": "releases/labarchive-integration/1.0.0.json",
+      "sha256": "dd815927e3375eb4cf2e0698c2eed418f717949271ac2558ae6f0a81981c104a"
+    },
+    {
+      "path": "releases/latex-manuscript-format-converter/1.0.0.json",
+      "sha256": "b27b4c72cf63d4d84a2f5c1dbf827d8d0919522dacbf1cb1db4dfbc53dd80434"
+    },
+    {
+      "path": "releases/latex-posters/1.0.0.json",
+      "sha256": "9a531f4fb4a5559ca3bf2fee9daaf2be84c146442dc55a33d3797b3f3bb6c0d9"
+    },
+    {
+      "path": "releases/lay-press-release-writer/1.0.0.json",
+      "sha256": "d402cc883425a6377b0b19c7be12587c738acfe403818d27fdefd82d8c7b366d"
+    },
+    {
+      "path": "releases/lay-summary-for-cross-disciplinary-teams/1.0.0.json",
+      "sha256": "586c47a79a8206b9646d900cebbbb837208325de6f4a29941c07d5bc37bd3dd0"
+    },
+    {
+      "path": "releases/lay-summary-gen/1.0.0.json",
+      "sha256": "5b68b8a4b08a7ee06a4bd3b7d3b1c5ea73ace467429a16b8bc3e15e120169c08"
+    },
+    {
+      "path": "releases/limitation-and-risk-writer/1.0.0.json",
+      "sha256": "dd12a7b6fcf2423ed813f2488ff1c22ef787f5d7d438ea2106db2ec0b0ded04c"
+    },
+    {
+      "path": "releases/lipinski-rule-filter/1.0.0.json",
+      "sha256": "754f6bf7867243b88fbcad09c52922f759278657d17fc13a7653a815514d958a"
+    },
+    {
+      "path": "releases/literature-close-read/1.0.0.json",
+      "sha256": "7ae259e3f86f4a017e999a278e8a0bcb1ed21d497d5c01f969ecb68d9b8b118b"
+    },
+    {
+      "path": "releases/literature-experiment-extract/1.0.0.json",
+      "sha256": "7712c4ee18ace3577e65a3e798cf0f3bd4c7241b14697ac73d6ca14bbea7054b"
+    },
+    {
+      "path": "releases/literature-extensive-read/1.0.0.json",
+      "sha256": "372f2100989206927bec39d3ea4976c6ed53557f31f708227b90c19b77253a16"
+    },
+    {
+      "path": "releases/literature-filtering/1.0.0.json",
+      "sha256": "9270db5594ddbc617d66d2a16b78f2036c6732b8967527f7e682e6f5f9184e91"
+    },
+    {
+      "path": "releases/literatureimages-interpretation/1.0.0.json",
+      "sha256": "0c7496f73415b1b642444dd5fb0104f9807c671d89c78012986cd59771782f6d"
+    },
+    {
+      "path": "releases/market-access-value/1.0.0.json",
+      "sha256": "9514b28db50eb62eef53ee4e50320aed848f8692774db15940031d8c879c3370"
+    },
+    {
+      "path": "releases/markitdown/1.0.0.json",
+      "sha256": "85cca6a6dec258cdcde45e52e252c8b0acc5fa1d5828b78347185fbf2934cb0f"
+    },
+    {
+      "path": "releases/matchms/1.0.0.json",
+      "sha256": "b4460b324fca2debb4b033e6cade9fb265813c56bc7f86fe94d5b57b7f7b3718"
+    },
+    {
+      "path": "releases/mechanism-flowchart/1.0.0.json",
+      "sha256": "71116b1cce63676842b5e6b8c8e95155b1ca93d7645ac0d825dbe5b39b5bfff1"
+    },
+    {
+      "path": "releases/mechanism-to-validation-planner/1.0.0.json",
+      "sha256": "ef3efd052d74f6fb5fc4a37b07902c3f08363eea17fadb62dae994d66bb8a2f2"
+    },
+    {
+      "path": "releases/medchem/1.0.0.json",
+      "sha256": "0cbf8ec25662a35aa6f82d69ed2877c0be690be4db4baa3b04c2514952b3ac60"
+    },
+    {
+      "path": "releases/medical-case-interpreter/1.0.0.json",
+      "sha256": "a198e3501ba65c1a4e192d9b249cbab159554df1e0563baac9e2bfc282cecdb9"
+    },
+    {
+      "path": "releases/medical-case-report-generator/1.0.0.json",
+      "sha256": "7323c2014c14e1c5b88d1df0bae46749f8921f2eee19d72a0cf772db74898fc7"
+    },
+    {
+      "path": "releases/medical-cv-resume-builder/1.0.0.json",
+      "sha256": "1b7e5d7ce227861cc4189041766ff1ce8228a0509e5fcc639d386c540d541004"
+    },
+    {
+      "path": "releases/medical-device-mdr-auditor/1.0.0.json",
+      "sha256": "ce034cdb454801cadbb357826ad63e6a6c7b09ee79e195b93ce8ab821ad8f5b0"
+    },
+    {
+      "path": "releases/medical-email-polisher/1.0.0.json",
+      "sha256": "4bd70ae33f8204374a86c63a90dcacd91a79bc2d05502b5e17eae4b2f5117f00"
+    },
+    {
+      "path": "releases/medical-english-precision-editor/1.0.0.json",
+      "sha256": "e19b23c4d6452c8c2f65bb6d32881b327ff16809f8fce043d963b012384dd712"
+    },
+    {
+      "path": "releases/medical-imaging-review/1.0.0.json",
+      "sha256": "1154cc2fc4275d5efaf1c85fd8c0c4f04ed6632921910b81261ae712a4411601"
+    },
+    {
+      "path": "releases/medical-research-algorithm-matcher/1.0.0.json",
+      "sha256": "b9f1df816684f82d3a16d21567d860e3a9b0ce6262abf71c2cc4bd71384e7afb"
+    },
+    {
+      "path": "releases/medical-research-gap-finder/1.0.0.json",
+      "sha256": "a9a8d8366b93290db58664ca8df5056618ca29e942d928d3009da0eabf56e9bd"
+    },
+    {
+      "path": "releases/medical-research-gap-to-study-planner/1.0.0.json",
+      "sha256": "b7ddfee6a352c7ffa6d8131d00a54f524d9c2979d717fcac1bcefecf79cd3655"
+    },
+    {
+      "path": "releases/medical-research-literature-reader-pro/1.0.0.json",
+      "sha256": "02ce70906d9a1e2d6cb01092acda8eb0a5405bbcaaabb41c59190db7430e747a"
+    },
+    {
+      "path": "releases/medical-topic-saturation-and-whitespace-checker/1.0.0.json",
+      "sha256": "12d4ab491e52f67edef9d566a5b5fe782eecf37e4a42342648d453b273fe820a"
+    },
+    {
+      "path": "releases/medical-translation/1.0.0.json",
+      "sha256": "3c4bb35cee351f949f209ebc71229f5dda7ccf8e4bd32bf31e1d364374fbaa1c"
+    },
+    {
+      "path": "releases/medical-unit-converter/1.0.0.json",
+      "sha256": "82d5dbaee8fa61f7d19b904f9558b39cf6c3bc5aa8b67260192fe8c91b23e359"
+    },
+    {
+      "path": "releases/medical-vector-search/1.0.0.json",
+      "sha256": "694ff6f725a07738624a2ce322190870110afd64c8b2123eede1678668f9843d"
+    },
+    {
+      "path": "releases/medication-adherence-message-gen/1.0.0.json",
+      "sha256": "f80c2fba005fd596eee1e8639165f3645aed3dcf401d4156a52c57121a0cb554"
+    },
+    {
+      "path": "releases/medication-reconciliation/1.0.0.json",
+      "sha256": "974bfe47f6bb2581837489936a653eb8e5d3aba93e45126f7c4a235f78acf781"
+    },
+    {
+      "path": "releases/meeting-minutes/1.0.0.json",
+      "sha256": "0f079d7d645223e56f924c48c9fda2e7a84e80a2417748715af20438d77656fa"
+    },
+    {
+      "path": "releases/mendelian-randomization-protocol-designer/1.0.0.json",
+      "sha256": "7586bc9e1b22fcbaa2f078bc2367925b6fd8e9eb44113f583cded4a6b217075e"
+    },
+    {
+      "path": "releases/meta-abstract-screener/1.0.0.json",
+      "sha256": "4ebaeb3cd4c06923301608c47225257be7d9cbce5315d42d26d018b78c1a5c32"
+    },
+    {
+      "path": "releases/meta-analysis-methods-generator/1.0.0.json",
+      "sha256": "0f62490caf17430d1b78aad1d9aad071b9de9078e4aa12b3e0d5274790639079"
+    },
+    {
+      "path": "releases/meta-baseline-generator/1.0.0.json",
+      "sha256": "4ee15048acf3b96c97c74ccf729f3767ff2a4afbda1c3580ce117976842b1d0e"
+    },
+    {
+      "path": "releases/meta-baujat-plot/1.0.0.json",
+      "sha256": "e3f64fcce185dcf67db56d90516d99d7ea70279b0ba06b189994f64f90b7c26a"
+    },
+    {
+      "path": "releases/meta-criteria-generator/1.0.0.json",
+      "sha256": "52b673f38014a3c6003178da0d906e4cd7e9d85e7cf4eaf771c464df0aca776d"
+    },
+    {
+      "path": "releases/meta-feasibility-analyzer/1.0.0.json",
+      "sha256": "5145e961bee06e3b2618f671cd2ca0c6d374b335180c48cd073e5cca5324bfeb"
+    },
+    {
+      "path": "releases/meta-forest-binary-plot/1.0.0.json",
+      "sha256": "f162e4f0b801bc4d62c079c76aba403504fef67d9d0964f8f7ae516bd95c6121"
+    },
+    {
+      "path": "releases/meta-forest-continuous-plot/1.0.0.json",
+      "sha256": "ad7afc31fadbbf351ab183a224cff9539ce1484021822888a83de1f30aa95e2c"
+    },
+    {
+      "path": "releases/meta-forest-model-plot/1.0.0.json",
+      "sha256": "6464e6f57ab4a1dbb41d197fe14174d45620e212722dc08de8772d9e6aa081c5"
+    },
+    {
+      "path": "releases/meta-funnel-plot/1.0.0.json",
+      "sha256": "87c7e8995dd9a494ecb9e35046e9608a60e719efb7028437d77009804e39d3fa"
+    },
+    {
+      "path": "releases/meta-picos-generator/1.0.0.json",
+      "sha256": "e7d09a9b3e9affe52a0daff4adc73d8e134aeedf60af2f9ecd09a755b116401d"
+    },
+    {
+      "path": "releases/meta-protocol-writer/1.0.0.json",
+      "sha256": "6b58764824c2a7e826965b961bc25f76a8c91020f12402a94c155a63136f2057"
+    },
+    {
+      "path": "releases/meta-radial-plot/1.0.0.json",
+      "sha256": "ba0c81e38fcad2139acb6d2f6c25bb52634f10b2b15877d0a3e77144a480d37a"
+    },
+    {
+      "path": "releases/meta-results-forest-plot-analyzer/1.0.0.json",
+      "sha256": "e9240976139e678b6455f739837c43669c603f8ca7bf3a519be14cd7eaf22307"
+    },
+    {
+      "path": "releases/meta-results-funnel-plot-generator/1.0.0.json",
+      "sha256": "2f1c57aa34d3960f909097899b54d0fb735859397bea2f371551aef616dbcc98"
+    },
+    {
+      "path": "releases/meta-results-risk-of-bias/1.0.0.json",
+      "sha256": "7749e7609a5fc0d6419c9bea7f66e300a6d8d3b62b12a882daa7b53e7f8101ba"
+    },
+    {
+      "path": "releases/meta-results-sensitivity-analysis/1.0.0.json",
+      "sha256": "943516621290d185c247d349d2ed603313db8e0d63733d60de8bf9ec140f8987"
+    },
+    {
+      "path": "releases/meta-rob-plot/1.0.0.json",
+      "sha256": "276844e809c858ba84a26d4f19d52183757338d0f698334b800998e532131400"
+    },
+    {
+      "path": "releases/meta-screening-fulltext/1.0.0.json",
+      "sha256": "c13eb75493efe8a66d066173a1bc9c1a1732eb65ec84e096bb67cd09ad2c94cc"
+    },
+    {
+      "path": "releases/meta-search-builder/1.0.0.json",
+      "sha256": "466a8d939674fd2d84280ef4521d9185abd15d7e19fda7af3d9ef45a9afcc742"
+    },
+    {
+      "path": "releases/meta-sensitivity-plot/1.0.0.json",
+      "sha256": "3ae8c499944ab007e9c96be14ba705a7069e0dec4390e7580ad96620ebef7f01"
+    },
+    {
+      "path": "releases/meta-title-generator/1.0.0.json",
+      "sha256": "f1c49d27ac86cd5fb3a0526733f27e36416620e29ff8af1a3f37a63be4b1e835"
+    },
+    {
+      "path": "releases/method-gap-detector/1.0.0.json",
+      "sha256": "eb1abebc498a1a230f3e925c367390feb277350e76bd25f3c601fde70ccf62e8"
+    },
+    {
+      "path": "releases/methodology-extractor/1.0.0.json",
+      "sha256": "2fafbfe95420ae991ca5b00538e3eb3d8817181d622568c54dca64eb704e89a3"
+    },
+    {
+      "path": "releases/methods-reverse-engineer/1.0.0.json",
+      "sha256": "fc6865411364e44a30048cca566a899f05eb1c9d45e41372c0b3e8df2579c433"
+    },
+    {
+      "path": "releases/microbiome-diversity-reporter/1.0.0.json",
+      "sha256": "78993950c596b91a004d427ae2edcf6f0d16d0ed03dd8024008debed9415ec53"
+    },
+    {
+      "path": "releases/microscopy-scale-bar-adder/1.0.0.json",
+      "sha256": "806e773a585fec5792faf658987d52d4173dbfcec29dbd4da83d10c6f9787c70"
+    },
+    {
+      "path": "releases/mindmap-helper/1.0.0.json",
+      "sha256": "47ccd94c4103dd3aba2d2adc0ee447c2d85c96e59da56f945cdad3887f0ced63"
+    },
+    {
+      "path": "releases/mindmap/1.0.0.json",
+      "sha256": "5a131804db0555ffd20c1259c68d5c988aa856d654ad476171ac6c0c99e9087f"
+    },
+    {
+      "path": "releases/moa-explainer/1.0.0.json",
+      "sha256": "8b0d583c3d7106d8777e69ca8d89de41ec846547d4daa7ef765c78b2b5bda15e"
+    },
+    {
+      "path": "releases/molmim-nim/1.0.0.json",
+      "sha256": "f4f7e7aacd0babe7f16b65f1700d73623c3fa931967bc59e9a096dec1dab6060"
+    },
+    {
+      "path": "releases/motif-logo-generator/1.0.0.json",
+      "sha256": "a6dd5d78f739c1a1a2c4bd0f863b63c500564f1c695f2a7fdb5b892337d329b1"
+    },
+    {
+      "path": "releases/mr-scrna-research-planner/1.0.0.json",
+      "sha256": "1e3e70a32a4e83ba7f4786298ae5821b1bef8f5edfcc4f22bbd62610b4c460e7"
+    },
+    {
+      "path": "releases/msa-search-nim/1.0.0.json",
+      "sha256": "b2c9e53c70d0a9a30a10c52f00fb2eb4d1d8391f5e8c0aff2c2a33365d24bfe9"
+    },
+    {
+      "path": "releases/msa-structure-prediction-pipeline/1.0.0.json",
+      "sha256": "0bd8465d8c1f09ef71df08bd94c3cb07a2cf8cee8fc4658840032d3107884f31"
+    },
+    {
+      "path": "releases/multi-database-literature-collector/1.0.0.json",
+      "sha256": "2a4088a1ff334384704b2a6b4fda21a9a0d5a204ea0e1d801165263cda1153c6"
+    },
+    {
+      "path": "releases/multi-omics-clinical-integration-planner/1.0.0.json",
+      "sha256": "b970d8ff26a357a121bf2b1dab918f51bed4ba2961844477f965f5c09d7c25b9"
+    },
+    {
+      "path": "releases/multi-panel-figure-assembler/1.0.0.json",
+      "sha256": "9353bb3995122879e9692ad11aabbd9bc5735c332c43ab7b039f3e8790dbcb57"
+    },
+    {
+      "path": "releases/network-tox-docking-research-planner/1.0.0.json",
+      "sha256": "651c2d94d381b2405f7aa8553386a773c95669cddb15bc1d9d93c1700f9ba99e"
+    },
+    {
+      "path": "releases/networking-email-drafter/1.0.0.json",
+      "sha256": "d886a92512f7b55f46794459bb7577f80da776e395190303f8a321a59a41e8a7"
+    },
+    {
+      "path": "releases/neurokit/1.0.0.json",
+      "sha256": "d49c53cfa5f9d4d1a0f3732e931b498b73fb05495cdeeca1bf2db014e702addc"
+    },
+    {
+      "path": "releases/neuropixels-analysis/1.0.0.json",
+      "sha256": "e7a69847023365cc3244bd42dd3a6c0bfb96118102d9fca0af5a827627af96a1"
+    },
+    {
+      "path": "releases/nhanes-clinical-retrospective-biomarker-research-planner/1.0.0.json",
+      "sha256": "e77ce5228281fa101025159ec1cd300f569d83f7bcdcfadb0e5689d3532bda98"
+    },
+    {
+      "path": "releases/nih-biosketch-builder/1.0.0.json",
+      "sha256": "c79b49c3b72de66f04ba68f446d9bf73b1ec983ffa48d38967cd58e28aa908b7"
+    },
+    {
+      "path": "releases/non-tumor-mechanism-guided-diagnostic-ml-research-planner/1.0.0.json",
+      "sha256": "e6af48f85961a0f8d3401893559dc63c3d693bfbc1e760e09912292e28623bcc"
+    },
+    {
+      "path": "releases/non-tumor-ml-research-planner/1.0.0.json",
+      "sha256": "d57f7d6b9bb757fe63c2e11d9f902cfe0a73c46c9a53164142ba9444b854352f"
+    },
+    {
+      "path": "releases/novelty-vs-feasibility-assessor/1.0.0.json",
+      "sha256": "368302ca21b52b7068eb27d7bdb4ba181f74665bf95d962cafadfb0e99838747"
+    },
+    {
+      "path": "releases/nsfc-grant-writer/1.0.0.json",
+      "sha256": "e4a960523a472da9cdd006584a50855b0a3fdb3e51204ac989274ce38f4a67c1"
+    },
+    {
+      "path": "releases/nvmolkit-usage/1.0.0.json",
+      "sha256": "d8ac76228fc592252d909c268ce070b8358ac110acd80be533ea6c09c7303fe8"
+    },
+    {
+      "path": "releases/open-targets-db/1.0.0.json",
+      "sha256": "3a269113ffa32a0cca760e6c8c45893d6ef19a86f9c2712997944f002bdabd65"
+    },
+    {
+      "path": "releases/openalex-db/1.0.0.json",
+      "sha256": "1fcb3a511ef5d5734ff74aad02eda0e9ffa4ff9a93c2cc752d7e9815a0fb5ae4"
+    },
+    {
+      "path": "releases/openfold2-nim/1.0.0.json",
+      "sha256": "e260acbf355271d084d1fc6e5c40b3941319043d5135366f0443ac920c4fae95"
+    },
+    {
+      "path": "releases/openfold3-nim/1.0.0.json",
+      "sha256": "03b0418e38f22722660bf674f9299b5d93e6507ff259c3806849510bd4eb476e"
+    },
+    {
+      "path": "releases/outcome-extraction-for-clinical-trials/1.0.0.json",
+      "sha256": "5b08b5b124cf7f98698628d5ea1bbe3e4d8210cefb7dd7c626557270fee07b94"
+    },
+    {
+      "path": "releases/outlier-detection-handler/1.0.0.json",
+      "sha256": "a5e3f6f5b421c153ded710e601efc0d7018692f31bedc0cc447ef9e52839ca7e"
+    },
+    {
+      "path": "releases/paper-lookup/1.0.0.json",
+      "sha256": "40e0eb1402948c07d4c44c9ce509f7ead74243487db5863f414b450b8909555d"
+    },
+    {
+      "path": "releases/paper-sprint-review/1.0.0.json",
+      "sha256": "2574826fff58d9380f13982b8d5fd26db244009be19ce0b8f74419a7a969b858"
+    },
+    {
+      "path": "releases/paper-to-claim-verifier/1.0.0.json",
+      "sha256": "5a1adaea4d686bcaaae17b70a71005973b266f1646e94c150583662c83359040"
+    },
+    {
+      "path": "releases/parabricks/1.0.0.json",
+      "sha256": "39246cf916bd9a2c5d3b75ad32c816823ecbe0616a0432a2f83c52517193e1f7"
+    },
+    {
+      "path": "releases/patent-assistant/1.0.0.json",
+      "sha256": "9b5abb54b24a81c4c08bf2e695190909a49917428653aaea4a5f54f85a11e2d3"
+    },
+    {
+      "path": "releases/pathway-introduction-expert/1.0.0.json",
+      "sha256": "31fdfa5f02c6a514d0ba8ca120beb5651052ddca6cde45f3f84f39abe1d8e258"
+    },
+    {
+      "path": "releases/patient-recruitment-ad-gen/1.0.0.json",
+      "sha256": "d8acc0a6b38b438f3c541b481f94cfb3b8e797dd4cf928067610f5d994b43376"
+    },
+    {
+      "path": "releases/pcd-immune-oncology-research-planner/1.0.0.json",
+      "sha256": "8e4ec8855aec6fc550811ac926c46527d21a6c843cb28b12eb68030c5034eadc"
+    },
+    {
+      "path": "releases/pdb-database/1.0.0.json",
+      "sha256": "1bca8a0980e46f7c2eecb497fd58776da631ae49a4afd1fa3135a7a599158577"
+    },
+    {
+      "path": "releases/pdf-extract-experimental-materials/1.0.0.json",
+      "sha256": "4b885d9de1b4893fa0cf624b6a581664ba6230e9fdd3803522ca5a56902edbf0"
+    },
+    {
+      "path": "releases/pdf-extract/1.0.0.json",
+      "sha256": "a08a10b0df5af070f486a68edee4092f0f24f87bc8fab484925f955ff46bdaaa"
+    },
+    {
+      "path": "releases/pdf-ppt/1.0.0.json",
+      "sha256": "f0894a33b2d903c923aaaafc0667f3509a2dba200a844e3ffb92e0b6c7b6c655"
+    },
+    {
+      "path": "releases/peer-review-response-drafter/1.0.0.json",
+      "sha256": "265eb49d82eee0017258c493665d98cf434d896172a7f8fce7c4de77551f13dd"
+    },
+    {
+      "path": "releases/peer-review/1.0.0.json",
+      "sha256": "369f1eec3ca0098cce90fc61306e6dbd67b749f662b323b8deeb0a0f0f8d8bf0"
+    },
+    {
+      "path": "releases/phenotype-introduction/1.0.0.json",
+      "sha256": "e068ea80f669f18a1ab5c020c0d56400c0e54d10af5df02eaacc01facd74d138"
+    },
+    {
+      "path": "releases/phi-prompt-guard/1.0.0.json",
+      "sha256": "eee69f034fef2833d488e99f863e272d4d6ecfa8d04ab450bcec9a22d0be22e1"
+    },
+    {
+      "path": "releases/phylogenetic-tree-styler/1.0.0.json",
+      "sha256": "20f388b6a09c17c4ad9e2e860218c81d3bb70af15501117ac31d817a20c210e8"
+    },
+    {
+      "path": "releases/plotly/1.0.0.json",
+      "sha256": "2ba072ca9f647f7cc67f437e7f6c845971d9088d1172506e6b94d33b20ef9b0f"
+    },
+    {
+      "path": "releases/pmc-official-download/1.0.0.json",
+      "sha256": "ee550d1a09b55732378bb1d6f0a17228eccb618a9cea8cd525203761318b4106"
+    },
+    {
+      "path": "releases/population-gap-detector/1.0.0.json",
+      "sha256": "8ea37a1e5ab8356c09e6594852d97853b0c9fb0d2f5f80cc7acf23e06fcde53d"
+    },
+    {
+      "path": "releases/poster-designer/1.0.0.json",
+      "sha256": "2688e6679b7b9489e25e60b62bdad8a9bce559bfd6e3245c75bb4288a9fdc4d3"
+    },
+    {
+      "path": "releases/poster-layout-planner/1.0.0.json",
+      "sha256": "38980fc112d6ae01e43d4e4de351ae570778ae28f2b443a142470898438feba0"
+    },
+    {
+      "path": "releases/poster-storyline-builder/1.0.0.json",
+      "sha256": "fdfd1f07fc6d8b7e577fbf293a9f5d14fd02918616cf2ce8f93cfe38a6190d8f"
+    },
+    {
+      "path": "releases/pptx-posters/1.0.0.json",
+      "sha256": "e7c2b37fa49eac1479ca01c4ec7faec8f18a8ec4f85eb4e654d0aec90ad554ce"
+    },
+    {
+      "path": "releases/preclinical-pkpd-analyst/1.0.0.json",
+      "sha256": "d004978757087cfb3a05439236d449db56fb59ea0b935a563034e24d0a45c277"
+    },
+    {
+      "path": "releases/presentation-hook/1.0.0.json",
+      "sha256": "77abfa1f3b37420c9028dd9c7b58fb246be1b3add53e1b0a1d60cc190bd61d9c"
+    },
+    {
+      "path": "releases/primary-plan-recommender/1.0.0.json",
+      "sha256": "84991462a0d220ecee7c5887df306b04f1b441620a2d02c92f94a1d1209bc20e"
+    },
+    {
+      "path": "releases/process-related-diagnostic-biomarker-nomogram-research-planner/1.0.0.json",
+      "sha256": "ca610251eb194832522b86cb74e2b3afdea2357713c5b87304d3548c16cae67d"
+    },
+    {
+      "path": "releases/prognostic-biomarker-protocol-designer/1.0.0.json",
+      "sha256": "5c0e67a5b4ce19fc9a4535f63c190ae3cb497092d083e151517d8d4dcde39e7c"
+    },
+    {
+      "path": "releases/prospero-registration-helper/1.0.0.json",
+      "sha256": "b98764dad705cb9beca6c4b3ca85f6862e241cb8416cc4c3f177c9544a99225b"
+    },
+    {
+      "path": "releases/protein-binder-design/1.0.0.json",
+      "sha256": "a8ffe7a6f3003cf2e8ba6962501649d83d281d2652c5182160697784826b0430"
+    },
+    {
+      "path": "releases/proteinmpnn-nim/1.0.0.json",
+      "sha256": "53df6a68d4e85a175164e30830587791e0434a62600441132b2fb9370f6e5597"
+    },
+    {
+      "path": "releases/protocol-deviation-classifier/1.0.0.json",
+      "sha256": "bf3d4f0f1a46ce8be4449c1f6ff45b5145b916b03c5f432922c1784c1cd8e05e"
+    },
+    {
+      "path": "releases/protocol-standardization/1.0.0.json",
+      "sha256": "3756095cc0e7da32a15030236aee29158cca22c03eb5108c9ee5ca71211d5a0c"
+    },
+    {
+      "path": "releases/pubchem-database-skill/1.0.0.json",
+      "sha256": "8e4757e5651fdba23a1e4b30d9e2ef33abe76d399eaa7090c68b5a930a160e77"
+    },
+    {
+      "path": "releases/pubmed-database/1.0.0.json",
+      "sha256": "c57b31077ad7a2018fac518c890e135da31946ec06a95b71e7e00fce4968298f"
+    },
+    {
+      "path": "releases/pubmed-search-specialist/1.0.0.json",
+      "sha256": "e7d31b4a8d0c4c341c86171c4336128dba000af30f674b0c35cc5ff1419925fa"
+    },
+    {
+      "path": "releases/pubmed-topic-recommend/1.0.0.json",
+      "sha256": "77fd05a5be7b58c7dbdf229a680877f5066e0c9ba588139b3314aff8ccb89f02"
+    },
+    {
+      "path": "releases/pydeseq/1.0.0.json",
+      "sha256": "e6a7239b68adedad32c949043cb5a0b739553cac72ae9511460d63a6855ac9e9"
+    },
+    {
+      "path": "releases/pyopenms-skill/1.0.0.json",
+      "sha256": "11fdc989b988ff51b48ece3f12b4be2001a537db89b05dc50f57fb08c679d915"
+    },
+    {
+      "path": "releases/pytdc/1.0.0.json",
+      "sha256": "bcd909b38f20ae7c2cc2fa7a8eac65a6dec5f794bf8ed605056d126e4947d104"
+    },
+    {
+      "path": "releases/q-and-a-prep-partner/1.0.0.json",
+      "sha256": "55f72c2c34518384cd7c30df148f8586f63b3451701852485e555e2f1bc6a7b2"
+    },
+    {
+      "path": "releases/qtl-colocalization-study-planner/1.0.0.json",
+      "sha256": "cbde41ab325b24ced810caff4e632fc08ce23ca02356be89b3ebea4ef4a87f5c"
+    },
+    {
+      "path": "releases/reagent-expiry-alert/1.0.0.json",
+      "sha256": "fa4ed1aa35b3750050e9a0c832a2419a49b333eb49c98c0f45a5c0c89192a564"
+    },
+    {
+      "path": "releases/real-world-evidence-study-designer/1.0.0.json",
+      "sha256": "9c09e32a31dc1547fc907a0fc59e59fcf1a584d1c586f8691116dead2204df24"
+    },
+    {
+      "path": "releases/rebuttal-letter-strategist/1.0.0.json",
+      "sha256": "9db68368a1d0a75b5a06a7eb4f6648d7ca4d6b08c4ae4fbc01a3a43d1dd292de"
+    },
+    {
+      "path": "releases/recommendation-letter-assistant/1.0.0.json",
+      "sha256": "cb8f01d7d4eadbd537090de9cba3a11487eadcbde560f89ed094a41f790a4e9b"
+    },
+    {
+      "path": "releases/reference-finder/1.0.0.json",
+      "sha256": "daf6c4333f42142483bf394024689ebda07859bb2ba96e601dbf982cea01e7d5"
+    },
+    {
+      "path": "releases/reference-integrity-checker/1.0.0.json",
+      "sha256": "826bb4694f9e4e3bcfb8ce344c2d62a9a38412c44aa27bc230172dfa30ab680b"
+    },
+    {
+      "path": "releases/reference-retrieval-skill/1.0.0.json",
+      "sha256": "3cd3ebe75d35bab1c9446aaf0a501800908423ff27862fd8be55939752406717"
+    },
+    {
+      "path": "releases/reference-style-sync/1.0.0.json",
+      "sha256": "43dada88dbe457bf34a159edacdbfba981db341ade5cd9e1809a5b201cfa5a0d"
+    },
+    {
+      "path": "releases/referral-letter-generator/1.0.0.json",
+      "sha256": "0c4441e79ba68ba4f2840ad5837716dc86985d3372f3ea18df4d0a040c69fc44"
+    },
+    {
+      "path": "releases/regulatory-submission/1.0.0.json",
+      "sha256": "a7a30b5c790a7809d0a5cc21c6789f5c870b51ee5e9d9a9068dccd7e029a6787"
+    },
+    {
+      "path": "releases/reporting-guideline-compliance-checker/1.0.0.json",
+      "sha256": "d0a4f7fde5232b7f978c8dfdc8e936c8e424ff5884d4a4cebe833e3304cc19ae"
+    },
+    {
+      "path": "releases/reproducibility-check/1.0.0.json",
+      "sha256": "a63ffa2d6fc0d8e3e1abcdc1571e0e64d21ecb2bb7fcc4fff7595065b519a40a"
+    },
+    {
+      "path": "releases/research-article-weekly/1.0.0.json",
+      "sha256": "1b136831bf227048c8915ee7c081f9533c61e33d1da92316e0f8a74223701dc1"
+    },
+    {
+      "path": "releases/research-grants/1.0.0.json",
+      "sha256": "8dff7c3c13f9b1f1a7e2729f652404b40b9b708f796ea425fac3b1c7fed3bedc"
+    },
+    {
+      "path": "releases/research-hotspot-analysis/1.0.0.json",
+      "sha256": "efb69f8286b444952465c60f9377b09ca48ba30a685b20f35e33ec4e195d950c"
+    },
+    {
+      "path": "releases/research-paper-downloader/1.0.0.json",
+      "sha256": "d90925684ca2e85a85602a2a00252089559642826783542d7a6acfb02c40c2de"
+    },
+    {
+      "path": "releases/residency-interview-prep/1.0.0.json",
+      "sha256": "e33c793f0f8279be9445bafc4652f3ea3604218bd5ffc13f3caaa9f940c0c2f7"
+    },
+    {
+      "path": "releases/result-figure-consistencycheck/1.0.0.json",
+      "sha256": "a96fb0091f820dd362c4aa94bc5f30219447e3ade82528ac2a9d327041108711"
+    },
+    {
+      "path": "releases/result-reliability-checker/1.0.0.json",
+      "sha256": "40cc3020a10cb8015db6f2c926ba23fb9ca4bea3c45def5bce263473b6844d87"
+    },
+    {
+      "path": "releases/results-section-structurer/1.0.0.json",
+      "sha256": "55d7fe88245d5f6377902ae0fa5e8fca197e663db479d28744a003758d93d101"
+    },
+    {
+      "path": "releases/results-section-writer/1.0.0.json",
+      "sha256": "69903c2eac6841c801832324097211e492824d46d5db0990337ff85db8db62c6"
+    },
+    {
+      "path": "releases/retraction-watcher/1.0.0.json",
+      "sha256": "4a087106d984c751b91c3d748b9aa0d7f8250be0bf674d947311108d9e6cfe5f"
+    },
+    {
+      "path": "releases/revision-strategy-planner/1.0.0.json",
+      "sha256": "f0f1767f26abc46858331e2e06047e590bbbffd6b74fa9baed53fc7dd620ec2e"
+    },
+    {
+      "path": "releases/rfdiffusion-nim/1.0.0.json",
+      "sha256": "0e9d803fdc004645f60a16ce2c13948ac36be88437eba3b56945a8835e90dc72"
+    },
+    {
+      "path": "releases/sample-group-sankey-plot/1.0.0.json",
+      "sha256": "f9ac61654ef89275d2c6a7b18d685089a78d113883c3b5fd7e9aed079da2fc70"
+    },
+    {
+      "path": "releases/sample-size-and-power-planning-assistant/1.0.0.json",
+      "sha256": "ea0911bc5c9ac215200071cb4d77698028041bea2b8de5423990f3d0604b30d6"
+    },
+    {
+      "path": "releases/sanger-chromatogram-qa/1.0.0.json",
+      "sha256": "bfd4b2e6c154ebc85c08b2376bcfd7dbe210313c725a322bc6c333f94390d9f4"
+    },
+    {
+      "path": "releases/sci-paper-reviewer/1.0.0.json",
+      "sha256": "ea7d6b9a74f4cbcb405c9320dd90f2581702825961be2ae7ba206b0423be6b8d"
+    },
+    {
+      "path": "releases/science-popularization-article/1.0.0.json",
+      "sha256": "c8a94173a527578e0881ae81e8268ddb8405d79e6a62d6d301394a4b3eea7a9b"
+    },
+    {
+      "path": "releases/scientific-brainstorming/1.0.0.json",
+      "sha256": "4734cc31fb794bba21bd0a4d4dab7bdf6d6f1152ae1122d36ab612f835aadd43"
+    },
+    {
+      "path": "releases/scientific-critical-thinking/1.0.0.json",
+      "sha256": "27f8a29d4b09affc35f87addcce1820222bdcc0fc3f9e39ca6d10e9d7806f2df"
+    },
+    {
+      "path": "releases/scientific-podcast-summary/1.0.0.json",
+      "sha256": "2f9ee604ccd4ce9cc7ac355360d5ed83e8fef58ab39cd70db285671864eec955"
+    },
+    {
+      "path": "releases/scientific-schematics/1.0.0.json",
+      "sha256": "d640fc169dd3e4c2a64edeff5443eb4589d10d7f2cc70731854ba6d7e7a08cb9"
+    },
+    {
+      "path": "releases/scikit-bio/1.0.0.json",
+      "sha256": "f9aca0da274527f0ea9994e359a34e0a475df98e4a5d454e581b80d671f1dc94"
+    },
+    {
+      "path": "releases/scikit-survival/1.0.0.json",
+      "sha256": "024f472615ce4ea2746e6ad44f12c4b9330799e08590f8d9198204bf03e1c80d"
+    },
+    {
+      "path": "releases/scite-database/1.0.0.json",
+      "sha256": "6c146c034f76aec77ea735a05cfd397a2705c902747e6f37d118f89a1cbd7654"
+    },
+    {
+      "path": "releases/scvi-tools/1.0.0.json",
+      "sha256": "369dd853125981948597e51aa39a3d3f5c9b0bfe57b235cf9f858bf2a2a295d2"
+    },
+    {
+      "path": "releases/sds-msds-risk-scanner/1.0.0.json",
+      "sha256": "445c2c06713bd9cc1cace137f95d8bc8d2cdec0a0ad90713f81b468d10eec2a3"
+    },
+    {
+      "path": "releases/seaborn/1.0.0.json",
+      "sha256": "28a6e677aa21f1cf7e2240c07ab2fd10e414f73512c8f22421fdf4c87b7da720"
+    },
+    {
+      "path": "releases/search-pubmed/1.0.0.json",
+      "sha256": "06beb91fc6ce659e28d98293fbc4f0dfa52ce6a042f74b0472fb9352433957ed"
+    },
+    {
+      "path": "releases/semantic-consistency-auditor/1.0.0.json",
+      "sha256": "8b6b3e341b3023d8df7588de18656292e6edba724e488831adfb679c16c591d9"
+    },
+    {
+      "path": "releases/semantic-scholar-database/1.0.0.json",
+      "sha256": "80dc6a18e6a8a96031177b563e34194d7c07d39dc13cddd554a9475b2b6e3b03"
+    },
+    {
+      "path": "releases/sequence-alignment/1.0.0.json",
+      "sha256": "69b12c6cf6e8c16463c1954460bfe9ee83db5cb0d97cc60452681692c5344f21"
+    },
+    {
+      "path": "releases/shift-handover-summarizer/1.0.0.json",
+      "sha256": "63224f882da47ebc8a3884955d4627a32aac79c1d0ce68267e9479f2b3516478"
+    },
+    {
+      "path": "releases/single-cell-research-planner/1.0.0.json",
+      "sha256": "be168b23b253d924ea2bf8277e68c7e1e91f688c2975ab93def86f626d2d2786"
+    },
+    {
+      "path": "releases/single-compound-network-toxicology-disease-link-reference-grounded/1.0.0.json",
+      "sha256": "a7c96158cb434419bc3d0f7c398225eae52d715971d43e501ca8dc6675cd2b96"
+    },
+    {
+      "path": "releases/single-drug-adverse-effect-hub-first-network-pharmacology/1.0.0.json",
+      "sha256": "bae890fc24698591a951acf8cdf0a1c8d63eeeef042351457177aeeb35dab7c6"
+    },
+    {
+      "path": "releases/single-drug-adverse-effect-pathway-anchored-network-pharmacology/1.0.0.json",
+      "sha256": "98bfd94356aa861f1a82530ce96e765bcce797de14ba255486c52070b8f53fa5"
+    },
+    {
+      "path": "releases/single-drug-faers-safety-profile-research-planner/1.0.0.json",
+      "sha256": "764dca58aa7b1f1a46e139db8c2d9be66719d0024f59cd98780d860d1e166a32"
+    },
+    {
+      "path": "releases/single-gene-oncology-reference-grounded-research-planner/1.0.0.json",
+      "sha256": "c3183b3a534305d4f2f5a38b0ca3b5adf67d4d276e18cd64025bb1fe3ac129bc"
+    },
+    {
+      "path": "releases/singlecell-portal/1.0.0.json",
+      "sha256": "75b35d5dab65121922e01da47a61cb5ee1acb34021162755720eb438e73c6371"
+    },
+    {
+      "path": "releases/slide-deck-for-lab-meeting/1.0.0.json",
+      "sha256": "c9e4e561d099e5a2842b66374e0ddc8933006865f1e15c5a1a347e116561ed3b"
+    },
+    {
+      "path": "releases/smart-journal-monitor/1.0.0.json",
+      "sha256": "ed8238bf28fdce69679569e4eb2df75103ace91073840a4188d70be54e6c24d7"
+    },
+    {
+      "path": "releases/spreadsheet-ops/1.0.0.json",
+      "sha256": "eb436e02eaf295a2f195bbeca04fb0efcbcc4f41722ce223dfa7e86c3ce26510"
+    },
+    {
+      "path": "releases/statistical-analysis-advisor/1.0.0.json",
+      "sha256": "adcd78d71f556313dac22c6ce2c42efbc1951f776e374ca84abea1bef1ddafea"
+    },
+    {
+      "path": "releases/study-design-identifier/1.0.0.json",
+      "sha256": "8c6a13aca9f4715a1c2b9755364fb3415d37287f6429e068899796eac3274116"
+    },
+    {
+      "path": "releases/study-design-scale-selector/1.0.0.json",
+      "sha256": "aaf7f3e5a37d0dd36dcf35bd22387bf2aec36115b9f3d61b588488d1ed51dffc"
+    },
+    {
+      "path": "releases/study-limitations-drafter/1.0.0.json",
+      "sha256": "2b08325839f1bfa6d8235b3fc471b6bee309ad2df0e571cc97333bff12715acd"
+    },
+    {
+      "path": "releases/study-objective-refiner/1.0.0.json",
+      "sha256": "773a944de4a864851fedde382e162bf9d2fdb265feef3ddc9d00ce23cc18c13e"
+    },
+    {
+      "path": "releases/style-journal-rewrite/1.0.0.json",
+      "sha256": "edf2c8b683b241beb6c22db550ba5d7865d3d35d572a73eaca1d2278720fcb93"
+    },
+    {
+      "path": "releases/systematic-review-screener/1.0.0.json",
+      "sha256": "c4c2d6826cfa5123541c354f02735a028d941ebfc49b44e4420501b64c77b6be"
+    },
+    {
+      "path": "releases/systematic-review/1.0.0.json",
+      "sha256": "3e5d4c982c86f248523bc62bee6848c06e7306472b5b8e56961af873981c4790"
+    },
+    {
+      "path": "releases/table-1-generator-advanced/1.0.0.json",
+      "sha256": "6f100420c88994eaaf39e879a927c89f54546d9e7ae50b0200ddfd730a985ea5"
+    },
+    {
+      "path": "releases/table-1-generator/1.0.0.json",
+      "sha256": "b1efe585cef84bbb7b9f5381fe6b7d06766f4e28fa0723a4beffc2a6213e1343"
+    },
+    {
+      "path": "releases/table-narrative-writer/1.0.0.json",
+      "sha256": "1b536f5423f44121dc4a1cc1cdc8093dd35e9023675e62a012696aa1710323b0"
+    },
+    {
+      "path": "releases/text-to-technical-roadmap/1.0.0.json",
+      "sha256": "e298db6c95fb00d84cf1f11cdf3cd4fd68aedfe01a2f493ae6b0c6f548bb0f67"
+    },
+    {
+      "path": "releases/title-and-abstract-optimizer/1.0.0.json",
+      "sha256": "f8a3e1be1ac0f936a66d7cadd41e5978b6627c68011677ca38b5c41a96aabcf7"
+    },
+    {
+      "path": "releases/tooluniverse-clinical-trial-matching/1.0.0.json",
+      "sha256": "2bbcfb72cc80f00760ab21d8aca0a0da5395bf2a5d0a65bb9dac174adce2fc52"
+    },
+    {
+      "path": "releases/tooluniverse-literature-deep-research/1.0.0.json",
+      "sha256": "c41f05968295d48149a3ece10534292bcb3a1500010a43528a037f3ab976071e"
+    },
+    {
+      "path": "releases/topic-evidence-mapper/1.0.0.json",
+      "sha256": "8f0612fbb52028b49e2db613a7bcb160b1a8ed126b07e79089ecaad0fa5f4be9"
+    },
+    {
+      "path": "releases/torchdrug-english/1.0.0.json",
+      "sha256": "20c2b1e1582c9c29ad17348a1f56e0915c83b65dfa2336b3d09417d0695cafaa"
+    },
+    {
+      "path": "releases/toxicity-structure-alert/1.0.0.json",
+      "sha256": "4308f55368413e8e95102c50364c96b5e702ffc30d6c8af0e8ececfb60f21d1a"
+    },
+    {
+      "path": "releases/translational-gap-analyzer/1.0.0.json",
+      "sha256": "7828bec357f9e3f4577378fb595b5b7dde0826c23de14fed11048d643bbda852"
+    },
+    {
+      "path": "releases/translational-study-blueprint/1.0.0.json",
+      "sha256": "b7d85dd81710afc8abd2a4e34ff31351378c23dad57aca9c5aecd2a9824fdf8a"
+    },
+    {
+      "path": "releases/treatment-response-predictor-planner/1.0.0.json",
+      "sha256": "9d60497a0cbdf59a5bdc33eda62b43d6496d46184bea4f746de2f17a3dbf7cc6"
+    },
+    {
+      "path": "releases/tumor-immune-infiltration-diagnostic-ml-research-planner/1.0.0.json",
+      "sha256": "6de3d8ab0da6e4d1287143e8a9b1af077e3d949cddbcbf249e35979f4ff067be"
+    },
+    {
+      "path": "releases/two-sample-mr-exposure-screening-reference-grounded/1.0.0.json",
+      "sha256": "43d0348f05a71ba88ecf47b6c55ef326c2f156c11310d15751988abc09486416"
+    },
+    {
+      "path": "releases/two-sample-mr-research-planner/1.0.0.json",
+      "sha256": "2144aa555360fa36cf1204ff428eea073b1b53d8224b2b8d88b4492f6b0762b1"
+    },
+    {
+      "path": "releases/uniprot-database/1.0.0.json",
+      "sha256": "72a046bf52d0113257d7613ee459c55b34f0607f806b098d07f023ea2867d7f1"
+    },
+    {
+      "path": "releases/unmet-clinical-need-extractor/1.0.0.json",
+      "sha256": "158afc63030f58d45970fbcead9dd2eca2c156e18a25c0ac5639d3d9108c56d5"
+    },
+    {
+      "path": "releases/upset-plot-converter/1.0.0.json",
+      "sha256": "c9ccdd9f6696b52d6651ed2c29cf4cccda011d6ca64b52fb09a374c7581f7953"
+    },
+    {
+      "path": "releases/validation-strategy-designer/1.0.0.json",
+      "sha256": "6fba33597f5c6f31175ec0a03793cd358c1797d3e42f05da24971a24c7f94d14"
+    },
+    {
+      "path": "releases/variant-pathogenicity-predictor/1.0.0.json",
+      "sha256": "339e58e6a5763c7c974395665c205b62f31b5d87a62e444e8db046119a486bcd"
+    },
+    {
+      "path": "releases/vector-text-fixer/1.0.0.json",
+      "sha256": "a4cfe49ba7318599c8b30531e73493390fb32ac8ac72264c4e6b7b410b56a887"
+    },
+    {
+      "path": "releases/virtual-patient-roleplay/1.0.0.json",
+      "sha256": "5469ddf1fe844e7a56ddd289f9dc133b0725e6eabf7d2ca82220704ad6def6ad"
+    },
+    {
+      "path": "releases/visual-content-desc/1.0.0.json",
+      "sha256": "5fd8eb7f2fb518683c672c8749e53e4d6f2450ead69b30ed22440e763e68b88b"
+    },
+    {
+      "path": "releases/volcano-plot-script/1.0.0.json",
+      "sha256": "edec7ffbe1245c3e01680e2eaece7f09308aae765c41867e322b58f4378e0538"
+    },
+    {
+      "path": "releases/waste-disposal-guide/1.0.0.json",
+      "sha256": "573fff6d80c9baa76c0e4b7d805fc4e932da194c455971435296f08ec0c828df"
+    },
+    {
+      "path": "releases/zinc-database/1.0.0.json",
+      "sha256": "477d97b6b75c2c8bd0290b9669b0e84823a5bcd629e72f3bd755416773bd6d1a"
+    }
+  ]
+}
