@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "complexa-target",
+    "version": "1.0.0",
+    "display_name": "complexa-target",
+    "summary": "Use this skill whenever the user wants to add, register, edit, list, show, or validate a Proteina-Complexa design target for any pipeline — protein binder (default), ligand binder, or AME / enzyme scaffolding. Triggers include \"add a target\", \"define a new target for binder design\", \"register a hotspot\", \"set up a PDL1 binder target\", \"ligand binder pocket\", \"SMILES target\", \"AME task\", \"enzyme motif\", \"M0024_1nzy\", \"complexa target add\", \"complexa target show\", \"configure target X\", \"what targets are available\", \"where do hotspots live\", \"what does target_input mean\", \"chain-spec syntax\", \"binder length range\", or any question about `configs/targets/{,ligand_}targets_dict.yaml` and `configs/design_tasks/ame_dict_v2.yaml`. Also covers `complexa validate target`. This is the only skill that touches the three targets dict files.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+      "path": "skills/bionemo-agent-toolkit/skills/complexa-target"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE",
+          "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-APACHE-2.0",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/LICENSE-CC-BY-4.0",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        {
+          "url": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit/blob/0e67a612e4045f007e38fa77adc8f3ebfc5616b6/NOTICE",
+          "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned NVIDIA repository LICENSE expressly covers Skill content; LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE retain the applicable grants and NVIDIA attribution. This package contains target-editing instructions, its target schema and ordinary evaluation input, with no bundled model weights or datasets. It requires the separately installed Proteina-Complexa CLI and user target files; it does not reference the missing shared scripts used by other Complexa submissions."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "3f668d79414e327b65e5171dd24179488f0436eeb1464b98e7ea6c78c169452b",
+    "file_count": 7,
+    "uncompressed_bytes": 61959
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "complexa-target"
+  }
+}

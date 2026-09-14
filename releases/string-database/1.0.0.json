@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "string-database",
+    "version": "1.0.0",
+    "display_name": "string-database",
+    "summary": "Query the STRING database for protein-protein interactions (PPIs), functional enrichment, and homology. Use when the user asks about interactions between specific proteins, interaction evidence, confidence scores, protein interaction partners, or pathway enrichments.\n",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/google-deepmind/science-skills",
+      "commit": "0b42509800f49e6eb7809505d96e20a890ef99bd",
+      "path": "skills/string_database"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/google-deepmind/science-skills/blob/0b42509800f49e6eb7809505d96e20a890ef99bd/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned science-skills LICENSE supplies the Apache-2.0 grant; the bundled STRING CLI retains its 2026 Google LLC Apache-2.0 copyright header. All local references and the CLI are present. STRING responses are fetched only at runtime; no database content is bundled. uv, polite-http and network access are runtime prerequisites. No author is inferred from the repository owner."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "631abc2889807bbdac4e3cb58937aae43f271c104b656717fe4dc6441dc38548",
+    "file_count": 8,
+    "uncompressed_bytes": 33032
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "string-database"
+  }
+}

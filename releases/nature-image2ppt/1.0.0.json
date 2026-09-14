@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nature-image2ppt",
+    "version": "1.0.0",
+    "display_name": "nature-image2ppt",
+    "summary": "Convert slide images, screenshots, scanned PDFs, and image-only PPT/PPTX files into high-fidelity object-level editable PowerPoint, including semantic-region mixed reconstruction, measured flowcharts and knowledge graphs, native circle nodes and connectors, single-object thin and filled arrows, speaker-note preservation, and rendered QA. Use for 图片转可编辑PPT、截图还原PPT、扫描PDF恢复、图片型PPTX转换、流程图/知识图谱/复合图形/箭头重建; not for authoring a new deck from notes.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-image2ppt"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/skills/nature-image2ppt/LICENSE",
+          "sha256": "9dcc2f222bd3717345d4a03f9c4a969779fd6f6812d527714b92a9e4810407d0"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The package-local LICENSE is byte-identical to Paul-Jeo/Image2PPT at manifest.source.commit 3bcedf41a277a3a4ae8024f6030437930c969d30 and preserves its complete MIT grant and Image2PPT contributors/ningzimu copyright notices. The Nature repository Apache-2.0 LICENSE is also retained. The self-contained CLI, runtime, references, prompts and schemas contain no presentation input or model assets. External OCR/image services and local rendering dependencies remain optional runtime prerequisites; Codex OAuth transport is host-restricted in the source and was not invoked."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "7d4b66b526c662fca2c9f949607bb4a5bc22520116a0d26a3e7eb717b3037639",
+    "file_count": 87,
+    "uncompressed_bytes": 792860
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "nature-image2ppt"
+  }
+}

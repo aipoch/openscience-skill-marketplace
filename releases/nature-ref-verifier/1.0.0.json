@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nature-ref-verifier",
+    "version": "1.0.0",
+    "display_name": "nature-ref-verifier",
+    "summary": "对学术文献逐条执行多源交叉验证，逐字段对比作者、标题、年份、卷期、页码， 标记卷年/DOI年冲突、作者顺序异常、页码偏差等问题，输出结构化验证报告。 可批量处理整篇论文/开题报告的参考文献列表，也可单条校验，支持与 Zotero 同步修正。",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-ref-verifier"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned Nature repository LICENSE and README license notice apply Apache-2.0 to these six authored reference-verification documentation and routing files. The required common-patterns reference is included. Examples contain bibliographic facts and checking guidance, not bundled articles or figures. External search and optional Zotero integrations are runtime prerequisites; no author is inferred."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "dd390b4e7b0f2bfebf1a2817b05492066bb134be452815ca0fa884474d28a8ea",
+    "file_count": 7,
+    "uncompressed_bytes": 29806
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "nature-ref-verifier"
+  }
+}

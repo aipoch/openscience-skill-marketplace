@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nature-downloader",
+    "version": "1.0.0",
+    "display_name": "nature-downloader",
+    "summary": "Use when a user needs lawful academic full text, CNKI institutional access, English OA retrieval, publisher API access, institutional browser fallback, or supporting information downloads.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-downloader"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/skills/nature-downloader/LICENSE",
+          "sha256": "ebb3defbe421c016c1d5f2ae18c53954a44236b51e81f12fa7aaff57905d3f66"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The package-local LICENSE preserves the complete MIT grant and Copyright (c) 2026 baihe26; the Nature repository Apache-2.0 LICENSE is retained for repository contributions. The package contains downloader source, authored documentation, a project banner and test fixtures, not downloaded papers, user credentials or institutional presets. Node.js, Python and user-authorized browser/API access are runtime prerequisites; imported programs were inspected statically, not run."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "b1b1ebbaeeced8e8017a8f5123a11b8100635e4cf96db4f7e8ad50f78a456dc4",
+    "file_count": 67,
+    "uncompressed_bytes": 451368
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "nature-downloader"
+  }
+}

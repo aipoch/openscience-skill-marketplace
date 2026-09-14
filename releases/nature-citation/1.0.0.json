@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nature-citation",
+    "version": "1.0.0",
+    "display_name": "nature-citation",
+    "summary": "Add strict Nature/CNS citations to manuscript text by splitting long passages into citable segments, searching only accepted flagship and subjournal titles from Nature Portfolio, the AAAS Science family, and Cell Press, filtering by publication time range, and exporting one reference-manager-ready output by default. Use this skill whenever the user asks to input text and automatically get references, add citations to a paragraph/manuscript, find Nature-series or CNS support for statements, create text-to-reference correspondence, \"分段引用\", \"自动给出引用\", \"Nature系列引用\", \"CNS及子刊\", \"支撑文献\", \"补引用\", \"找引用\", or export EndNote/RIS/ENW/Zotero RDF. Also trigger on general academic-writing citation needs even without the word \"Nature\", such as adding references while writing a paper, finding sources/literature for a claim, building a reference list, citation/referencing for academic writing, and Chinese phrasings like 学术写作引用、写论文加引用、写paper找文献、加参考文献、配文献、引用文献、文献支撑.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-citation"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "Yuan1z skill, refactored into static/dynamic layers"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned Nature repository LICENSE and README license notice apply Apache-2.0 to this authored routing documentation, citation metadata/export script and test fixtures. The declared author is preserved as written. All manifest resources are within the package; its manifest explicitly does not depend on nature-shared. Crossref and PubMed access occurs at runtime; no article full texts or copied journal figures are bundled."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "91a4130d07ff842b43ef977f312e1498e99cc9b62fb5d5ecb52a23b0eca7bdeb",
+    "file_count": 16,
+    "uncompressed_bytes": 140666
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "nature-citation"
+  }
+}

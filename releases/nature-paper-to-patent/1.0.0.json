@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nature-paper-to-patent",
+    "version": "1.0.0",
+    "display_name": "nature-paper-to-patent",
+    "summary": "Convert scientific papers, theses, technical reports, source code, figures, inventor notes, or research manuscripts into evidence-grounded Chinese invention patent drafts and attorney-facing technical disclosure materials. Use when an AI agent must mine patent points, draft or revise a Chinese technical disclosure (技术交底书), run prior-art comparison, convert Office project materials, map every claimed feature to source evidence, preserve core formulas as editable Office Math, generate claim-aligned flowcharts and methodology figures, compare a paper with an existing patent, audit support and consistency, or deliver Chinese DOCX patent/disclosure files.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-paper-to-patent"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/skills/nature-paper-to-patent/references/disclosure/patent-disclosure-skill-MIT-LICENSE.txt",
+          "sha256": "d9329ae3b2de58aebaa015d8d1570513d48f1702318e6423896a4620845ab798"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The Nature repository LICENSE supplies Apache-2.0 for its authored patent-drafting router, references and scripts. The bundled patent-disclosure-skill-MIT-LICENSE.txt preserves the complete MIT grant and Copyright (c) 2026 handsomestWei for incorporated disclosure material. The package contains drafting patterns and example/test data, not the source paper/patent corpus. All local routing resources are included; document generation, rendering and patent search dependencies are installed or accessed separately at runtime."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "1437b3fc928dd42c6b109196f3a62b8e31a1bd28ca5ad39dcc601e6fab1fed8b",
+    "file_count": 64,
+    "uncompressed_bytes": 396145
+  },
+  "artifact": {
+    "path": "shards/fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9.zip",
+    "sha256": "fceaf124947b3bba9229b617ba88ec9b6f602135d36368dfff0f5dd5a17764b9",
+    "bytes": 733887,
+    "skill_path": "nature-paper-to-patent"
+  }
+}
