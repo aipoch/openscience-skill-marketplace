@@ -6635,5 +6635,22 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-14",
     "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Preserve the declared Skill author and the original MIT declaration, together with the repository Apache-2.0 notice. The package contains its own workflow references/templates; messaging, scheduling, document-export and literature-service integrations require a configured host environment. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "research-proposal-generator@1.0.0": {
+    "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+    "content_sha256": "0f58190608442368d399862964cf0b3c3f438a301fce67058627df54bce8ab34",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Protocol Design/research-proposal-generator/SKILL.md",
+        "sha256": "bea6f222a5185fa9f711132ee489f98fc39bb24e6377d34c31220f088658d467"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT"
   }
 }
