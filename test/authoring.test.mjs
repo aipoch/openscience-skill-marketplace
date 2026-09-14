@@ -25,6 +25,7 @@ import {
 } from "../scripts/lib/authoring.mjs";
 import { buildCatalog, loadCatalog } from "../scripts/lib/build.mjs";
 import { LIMITS } from "../scripts/lib/package.mjs";
+import { toAppEntry } from "../scripts/lib/protocol.mjs";
 import { readBundle } from "../scripts/lib/bundle.mjs";
 
 const config = parseMetadataJson(
@@ -66,7 +67,12 @@ test("batch CLI combines explicit sources deterministically and rejects incomple
       mkdirSync(join(repo, "skills", id), { recursive: true });
       writeFileSync(
         join(repo, "skills", id, "SKILL.md"),
-        skillText.replace("example-skill", id),
+        skillText
+          .replace("example-skill", id)
+          .replace(
+            "license: MIT\n",
+            id === "gamma-skill" ? "" : "license: MIT\n",
+          ),
       );
     }
     git("add", ".");
@@ -108,6 +114,12 @@ test("batch CLI combines explicit sources deterministically and rejects incomple
   assert.equal(cli(...args([...inputs].reverse())).stdout, inspected.stdout);
   const reviews = parseMetadataJson(inspected.stdout);
   assert.equal(Object.keys(reviews).length, 3);
+  assert.equal("licenseExpression" in reviews["gamma-skill@1.0.0"], false);
+  Object.assign(reviews["gamma-skill@1.0.0"], {
+    licenseExpression: "Unknown",
+    exceptionReason:
+      "Test-only explicit review of an absent declaration and retained evidence.",
+  });
   for (const review of Object.values(reviews)) {
     assert.equal("reviewedBy" in review, false);
     Object.assign(review, {
@@ -128,6 +140,10 @@ test("batch CLI combines explicit sources deterministically and rejects incomple
   assert.deepEqual(
     first.root.skills.map((skill) => skill.id),
     inputs.map((input) => input.manifest.id),
+  );
+  assert.equal(
+    first.root.skills.find((skill) => skill.id === "gamma-skill").license,
+    "Unknown",
   );
   const reversedOutput = join(directory, "reversed");
   assert.equal(build([...inputs].reverse(), reversedOutput).status, 0);
@@ -379,7 +395,8 @@ test("intake rejects malformed metadata, unsafe packages and absent license evid
   for (const text of [
     skillText.replace("example-skill", "another-skill"),
     skillText.replace("description: Example description\n", ""),
-    skillText.replace("license: MIT\n", ""),
+    skillText.replace("license: MIT", "license: null"),
+    skillText.replace("license: MIT", 'license: ""'),
     "---\nname: [\n---\n",
   ])
     assert.throws(
@@ -529,4 +546,114 @@ test("provider intake rejects unsupported supplemental review records", () => {
     () => prepareSubmission(m, snapshot, reviews, config),
     /provider intake does not support/,
   );
+});
+
+test("absent upstream licenses require reviewed Unknown without rewriting source or bypassing evidence", () => {
+  const m = manifest();
+  const original = Buffer.from(skillText.replace("license: MIT\n", ""));
+  const snapshot = fixture([["skills/example-skill/SKILL.md", original]]);
+  const inspected = inspectSubmission(m, snapshot);
+  assert.equal("declaredLicense" in inspected.entry, false);
+  assert.equal("licenseExpression" in inspected.reviewInput, false);
+  assert.equal("reviewedBy" in inspected.reviewInput, false);
+  const reviews = reviewed(m, snapshot);
+  const key = "example-skill@1.0.0";
+  for (const fields of [
+    {},
+    { licenseExpression: "Unknown" },
+    { licenseExpression: "MIT", exceptionReason: "Do not infer MIT" },
+    { licenseExpression: "Unknown", exceptionReason: " " },
+  ]) {
+    assert.throws(
+      () =>
+        prepareSubmission(
+          m,
+          snapshot,
+          { [key]: { ...reviews[key], ...fields } },
+          config,
+        ),
+      /reviewed Unknown/,
+    );
+  }
+  Object.assign(reviews[key], {
+    licenseExpression: "Unknown",
+    exceptionReason:
+      "Test-only evidence review; upstream declaration is absent.",
+  });
+  const candidate = prepareSubmission(m, snapshot, reviews, config);
+  assert.equal(candidate.skill.license.expression, "Unknown");
+  assert.deepEqual(
+    candidate.files.find((f) => f.path === "SKILL.md").bytes,
+    original,
+  );
+  assert.equal(candidate.skill.license.evidence.length, 1);
+  assert.equal("evaluation" in candidate.skill, false);
+  const built = buildCatalog([candidate]);
+  const listing = built.root.skills[0];
+  const detail = JSON.parse(built.objects.get(listing.release.path));
+  assert.equal(toAppEntry(listing).license, "Unknown");
+  assert.equal(toAppEntry(detail.skill).license, "Unknown");
+  assert.deepEqual(
+    detail.skill.license.evidence,
+    candidate.skill.license.evidence,
+  );
+  for (const field of [
+    "reviewedBy",
+    "reviewedOn",
+    "licenseFiles",
+    "contentSha256",
+    "sourceCommit",
+    "manifestSha256",
+  ]) {
+    const changed = structuredClone(reviews);
+    delete changed[key][field];
+    assert.throws(() => prepareSubmission(m, snapshot, changed, config));
+  }
+  assert.throws(
+    () =>
+      prepareSubmission(
+        m,
+        fixture([
+          ["LICENSE", Buffer.from("changed")],
+          ["skills/example-skill/SKILL.md", original],
+        ]),
+        reviews,
+        config,
+      ),
+    /license files differ/,
+  );
+  for (const declaration of ["MIT", "Unknown"]) {
+    const explicit = fixture([
+      [
+        "skills/example-skill/SKILL.md",
+        Buffer.from(
+          skillText.replace("license: MIT", `license: ${declaration}`),
+        ),
+      ],
+    ]);
+    const explicitReviews = reviewed(m, explicit);
+    explicitReviews[key].licenseExpression =
+      declaration === "MIT" ? "Unknown" : "MIT";
+    explicitReviews[key].exceptionReason =
+      "Cannot override an existing declaration";
+    assert.throws(
+      () => prepareSubmission(m, explicit, explicitReviews, config),
+      /declaration differs/,
+    );
+  }
+  for (const text of [
+    skillText.replace(
+      "license: MIT",
+      "license: null\nmetadata:\n  license: MIT",
+    ),
+    skillText.replace("license: MIT", "metadata:\n  license: null"),
+  ])
+    assert.throws(
+      () =>
+        inspectSubmission(
+          m,
+          fixture([["skills/example-skill/SKILL.md", Buffer.from(text)]]),
+        ),
+      /license declaration/,
+    );
 });

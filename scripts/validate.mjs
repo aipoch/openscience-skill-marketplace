@@ -48,5 +48,5 @@ assert.equal(
   false,
 );
 console.log(
-  `Validated 584-member manifest, fixed-source audit, ${selected.length} selected / ${manifest.entries.length - selected.length} deferred original members, ${providers.length} production provider releases, ${submissions.summary.recordCount} provider-qualified submissions, and scored/unscored fixtures. ${report.entries.filter((e) => e.issues.length).length} historical members and ${submissions.summary.blocked} submissions have source blockers; release reviews remain required.`,
+  `Validated 584-member manifest, fixed-source audit, ${selected.length} selected / ${manifest.entries.length - selected.length} deferred original members, ${providers.length} production provider releases, ${submissions.summary.recordCount} provider-qualified submissions, and scored/unscored fixtures. ${report.entries.filter((e) => e.issues.length).length} historical members have source blockers; ${submissions.summary.blocked} submissions retain missing-license intake observations. Production decisions require explicit release reviews.`,
 );

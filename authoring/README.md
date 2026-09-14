@@ -45,8 +45,10 @@ Instructions for using the Skill, followed by any required documentation.
 ```
 
 `name` and `description` are required nonempty strings. A per-Skill license
-declaration is required at `license` or `metadata.license`; naming a license does
-not establish redistribution permission. A nonempty author string at `author`,
+declaration at `license` or `metadata.license` is preserved when present; naming a
+license does not establish redistribution permission. An entirely absent
+declaration may proceed to manual evidence review as described below. Empty, null
+or malformed declarations are rejected. A nonempty author string at `author`,
 `metadata.author` or `metadata.skill-author` is preserved as an attribution claim
 for the maintainer to verify. Description and author limits are 10,000 and 500
 characters respectively. A license declaration is limited to 500 characters.
@@ -110,6 +112,15 @@ An unsupported license additionally requires `exception_reason` under the existi
 [review policy](../skills/README.md). Existing default reviewed expressions are
 MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC and CC0-1.0.
 
+When both upstream license fields are absent, intake omits `license_expression`.
+A maintainer must explicitly set it to `Unknown` and add an `exception_reason`
+explaining the verified redistribution evidence and its scope. All source,
+manifest and evidence hashes, reviewer identity and review date remain required.
+`Unknown` records missing metadata; it is not permission to redistribute. Do not
+use this path to override an existing declaration, resolve conflicting notices,
+or substitute an unrelated repository license. The original `SKILL.md` remains
+byte-for-byte unchanged.
+
 ```bash
 npm run intake:skill -- \
   --manifest /path/to/release.config.json \
@@ -171,10 +182,10 @@ The original single-manifest command remains valid.
 `intake:skill` produces unsigned local artifacts only. Production enrollment is
 explicitly maintained in [`production.json`](production.json): `schema_version: 1`
 and a `releases` array of the same strict release-config objects described above.
-The register selects 394 original members, 13 K-Dense Skills and 25 NVIDIA
-BioNeMo Skills. The 11 newly selected K-Dense entries use commit
-`36d8f13a1e754618794bf42f417884940077b4ae`; earlier releases keep their exact
-sources. Review records remain in `skills/reviews.json` and bind every
+The register selects 394 original members and 46 provider Skills: 14 K-Dense,
+26 NVIDIA BioNeMo, one Google DeepMind and five Nature entries. Eight additions
+with absent per-Skill license declarations have explicit `Unknown` reviews with
+retained license evidence. Earlier releases keep their exact sources. Review records remain in `skills/reviews.json` and bind every
 provider's manifest, source and license bytes. A registration without approved
 review evidence fails the build.
 
