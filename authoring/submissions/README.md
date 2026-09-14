@@ -11,10 +11,10 @@ and path. Skill payloads and archive-added evaluation files are not committed.
 | ------------------ | ------: | -----------------------------: | -------------------: | --------------------: |
 | Google DeepMind    |       7 |                              7 |                    7 |                     0 |
 | K-Dense AI         |      56 |                              2 |                   56 |                    27 |
-| NVIDIA BioNeMo     |      31 |                              6 |                    0 |                    14 |
+| NVIDIA BioNeMo     |      31 |                              6 |                   25 |                    14 |
 | Synthetic Sciences |      78 |                             14 |                   78 |                    63 |
 | Yuan1z0825         |      20 |                             17 |                    0 |                     0 |
-| **Total**          | **192** |                         **46** |              **141** |               **104** |
+| **Total**          | **192** |                         **46** |              **166** |               **104** |
 
 There are 130 unique runtime Skill IDs. All release configs use authoring v1.
 Provider identity and the provider-qualified candidate key exist only in this
@@ -39,3 +39,16 @@ not replace verification against each declared Git commit, legal review, source
 ownership review, security review, content review or client compatibility tests.
 No `reviewed_by`, approval date, signature, catalog membership or publication
 state is recorded here.
+
+The index retains intake observations; production approval is recorded separately
+in `skills/reviews.json` and `authoring/production.json`. The 25 NVIDIA entries
+with per-Skill license declarations are now explicitly registered there. Their
+IDs are occupied in production and therefore carry the collision constraint for
+any further registration. Existing license-policy flags remain traceable; the 14
+combined-license expressions have package-specific review exceptions, with both
+license texts and NVIDIA attribution retained. No global allowlist is expanded.
+
+The three Nature entries declaring MIT (`nature-experiment-log`,
+`nature-literature-pipeline`, `researchwrite`) remain unregistered: their selected
+`LICENSE` evidence at the pinned commit contains Apache-2.0 rather than a complete
+MIT grant. Resolve this evidence mismatch before production review.

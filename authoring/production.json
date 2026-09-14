@@ -3,6 +3,125 @@
   "releases": [
     {
       "schema_version": 1,
+      "id": "boltz2-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/boltz2-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "complexa-binder-design",
+      "version": "1.0.0",
+      "category": "Protocol Design",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/complexa-binder-design"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "diffdock-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/diffdock-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "drug-discovery-pipeline",
+      "version": "1.0.0",
+      "category": "Protocol Design",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/drug-discovery-pipeline"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "evo2-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/evo2-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "genmol-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/genmol-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "genomics-workflow-acceleration",
+      "version": "1.0.0",
+      "category": "Protocol Design",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/genomics-workflow-acceleration"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
       "id": "get-available-resources",
       "version": "1.0.0",
       "category": "Other",
@@ -13,6 +132,312 @@
         "path": "scientific-skills/get-available-resources"
       },
       "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-add-cmim-pretrain",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-add-cmim-pretrain"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-continue-pretrain",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-continue-pretrain"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-embed",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-embed"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-finetune",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-finetune"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-infer",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-infer"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-monitor",
+      "version": "1.0.0",
+      "category": "Other",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-monitor"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-pretrain-scratch",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-pretrain-scratch"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kermt-setup",
+      "version": "1.0.0",
+      "category": "Other",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/kermt-setup"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "molmim-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/molmim-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "msa-search-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/msa-search-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "msa-structure-prediction-pipeline",
+      "version": "1.0.0",
+      "category": "Protocol Design",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/msa-structure-prediction-pipeline"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "nvmolkit-usage",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/nvmolkit-usage"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "openfold2-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/openfold2-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "openfold3-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/openfold3-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "parabricks",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/parabricks"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "protein-binder-design",
+      "version": "1.0.0",
+      "category": "Protocol Design",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/protein-binder-design"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "proteinmpnn-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/proteinmpnn-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "rfdiffusion-nim",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+        "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+        "path": "skills/bionemo-agent-toolkit/skills/rfdiffusion-nim"
+      },
+      "license_files": [
+        "LICENSE",
+        "LICENSE-APACHE-2.0",
+        "LICENSE-CC-BY-4.0",
+        "NOTICE"
+      ]
     },
     {
       "schema_version": 1,

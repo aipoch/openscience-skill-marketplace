@@ -16,7 +16,7 @@ test("queue keeps provider identity outside v1 configs and decodes JSON at the b
   const index = parse(original);
   assert.equal(index.schemaVersion, 1);
   assert.equal(index.summary.recordCount, 192);
-  assert.equal(index.summary.runtimeIdCollisions, 141);
+  assert.equal(index.summary.runtimeIdCollisions, 166);
   assert.equal(index.submissions[0].providerId, "google-deepmind");
   assert.equal(Object.hasOwn(index.submissions[0], "provider_id"), false);
   assert.deepEqual(JSON.parse(metadataJsonBytes(index)), original);
