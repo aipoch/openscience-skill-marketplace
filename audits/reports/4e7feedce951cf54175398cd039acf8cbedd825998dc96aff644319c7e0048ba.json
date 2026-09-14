@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "skill_name": "case-control-study-quality-assessment-nos",
+    "description": "Clinical Research Bias Assessment - Case-Control Study (NOS) v2.3.0. Use when you need to assess the bias of a case-control study using the Newcastle-Ottawa Scale (NOS) criteria, or when evaluating the quality of a medical paper.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Uses established NOS criteria for case-control study quality assessment"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for quality assessment of published studies, not clinical decisions"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on Newcastle-Ottawa Scale, a validated tool for assessing study quality"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "No bundled scripts; assessment workflow is analysis-based using NOS criteria"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive NOS assessment covering Selection (4 items), Comparability (1 item), Exposure (3 items)"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clear NOS criteria and scoring system; minor: no worked examples of completed assessments"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-structured workflow with assessment domains; minor: no reference files for detailed criteria"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear when-to-use guidance, structured output format, NOS domains documented; minor: signaling questions not fully enumerated"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Clear workflow and output format; minor: quick validation mentions scripts/extract_pdf.py that doesn't exist"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security: local analysis only, no network calls, PHI handling warnings included"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 2.3.0 documented, MIT license, clear changelog in POLISH_CHANGELOG.md"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good scope definition and failure handling; minor: escape hatch for studies outside NOS scope not explicit, script reference inconsistency"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 85.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 10,
+      "total": 12
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Assess case-control study using NOS criteria",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core NOS assessment workflow",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Selection domain assessed (4 items)", "result": "PASS", "note": "Case definition, representativeness, control selection, control definition"},
+          {"text": "Comparability domain assessed (1 item)", "result": "PASS", "note": "Controls for important factors"},
+          {"text": "Exposure domain assessed (3 items)", "result": "PASS", "note": "Ascertainment, same method, non-response rate"},
+          {"text": "Structured output format followed", "result": "PASS", "note": "Domain → Item → Comments → Quote → Score pattern"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Evaluate quality with incomplete reporting",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Handling unclear information in study",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Unclear items marked appropriately", "result": "PASS", "note": "NOS allows for unclear/not reported items"},
+          {"text": "Comments explain what information is missing", "result": "PASS", "note": "Guidance to document missing info"},
+          {"text": "Score adjusted for missing information", "result": "PASS", "note": "Partial stars given when appropriate"},
+          {"text": "Limitation section addresses uncertainty", "result": "FAIL", "note": "Output format doesn't explicitly require limitations section"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Scope Boundary",
+        "label": "Assess cohort study using NOS",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly identified as wrong study design",
+        "basic": 34,
+        "specialized": 43,
+        "total": 77,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Case-control design identified in scope", "result": "PASS", "note": "Skill name and description specify case-control studies"},
+          {"text": "Cohort studies outside scope", "result": "PASS", "note": "Different NOS criteria apply to cohort studies"},
+          {"text": "User redirected to appropriate assessment", "result": "FAIL", "note": "No explicit pointer to cohort NOS skill or criteria"},
+          {"text": "Scope boundary clearly stated", "result": "PASS", "note": "When to Use section clarifies case-control focus"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 51.2,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Clear Newcastle-Ottawa Scale implementation with all 8 assessment items (Selection 4, Comparability 1, Exposure 3)",
+    "Structured output format with domain → item → comments → quote → score pattern for reproducibility",
+    "Good version control with v2.3.0 documented and POLISH_CHANGELOG.md tracking changes",
+    "Appropriate practice boundaries with warnings about credentials, privacy, and safety constraints",
+    "Strong security with local-only analysis and PHI handling guidance"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Remove or fix script reference inconsistency",
+      "observed_in": [2],
+      "problem": "Quick Validation section mentions scripts/extract_pdf.py but scripts directory doesn't exist",
+      "root_cause": "Documentation copied from template or previous version with bundled scripts",
+      "fix": "Remove Quick Validation section entirely or update to: 'No scripts required. Provide the study text or PDF and follow the NOS assessment workflow.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit escape hatch for cohort studies",
+      "observed_in": [3],
+      "problem": "Case-control focus clear but no redirect for cohort studies",
+      "root_cause": "Scope boundary lacks alternative tool guidance",
+      "fix": "Add to When to Use: 'For cohort studies, use cohort-study-quality-assessment-nos. For other designs (RCTs, cross-sectional), use design-specific quality assessment tools.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add limitations section to output format",
+      "observed_in": [2],
+      "problem": "No explicit guidance to document assessment limitations when information is unclear",
+      "root_cause": "Output format doesn't include summary/limitations section",
+      "fix": "Add to Output Format: 'After all domains, include: **Assessment Limitations**: Document any unclear items, missing information, or assumptions made during assessment.'"
+    }
+  ]
+}

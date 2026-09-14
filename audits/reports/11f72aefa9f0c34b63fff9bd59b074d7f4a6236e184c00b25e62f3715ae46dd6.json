@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "kermt-monitor",
+    "description": "Check progress for a detached KERMT run (pretrain, finetune, or any kermt_run_detached invocation). Reads run.json, queries docker for container state, tails the pretrain/finetune log, and parses progress lines (epoch, step, val loss).",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete monitoring workflow covering container state, log tailing, progress parsing, and test metrics; works across all KERMT training workflows with graceful degradation for unknown workflows"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Handles container absence gracefully with inspect fallback; works in degraded mode without run.json; minor: no guidance on handling corrupted log files or unparseable progress lines"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent efficiency: 176 lines well within target; explicit line/token budget comment shows awareness; clean single-file structure"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 8-step workflow; both one-shot and streaming modes; JSON output for programmatic use; minor: container_name plumbing issue acknowledged but workaround not fully specified"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent composability with detached KERMT workflows; clear input options (run-dir or --container); stop/cleanup hints provided; no GPU requirements"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Explicit read-only constraint on user data and run.json; never kills container without user instruction; no image modification; proper separation of monitoring from execution"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean single-file structure; workflow dispatch pattern extensible; minor: log file naming convention hardcoded in case statement could be externalized"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Excellent composability as companion skill for all detached KERMT workflows; clear scope (monitoring only); hard rules prevent dangerous operations; lacks explicit idempotency statement; container_name plumbing gap acknowledged"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Monitor running pretrain with run directory",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete monitoring workflow with manifest parsing, container state query, and progress summary",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "run.json manifest located and parsed from run directory",
+            "result": "PASS",
+            "note": "Step 1-2: manifest path constructed and jq used to extract fields"
+          },
+          {
+            "text": "Docker container state queried with docker ps",
+            "result": "PASS",
+            "note": "Step 3: docker ps with name filter"
+          },
+          {
+            "text": "Pretrain log file identified via workflow dispatch",
+            "result": "PASS",
+            "note": "Step 4: continue-pretrain maps to pretrain_ddp.log"
+          },
+          {
+            "text": "Progress parsed with epoch/step/val_loss summary",
+            "result": "PASS",
+            "note": "Step 5: human-friendly summary with ETA"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Monitor completed finetune with test metrics",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Post-completion monitoring with test_result.csv parsing and per-task metrics",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Container exit state detected with docker inspect fallback",
+            "result": "PASS",
+            "note": "Step 3: docker inspect shows State.Status=exited, ExitCode=0"
+          },
+          {
+            "text": "test_result.csv located in fold_* subdirectories",
+            "result": "PASS",
+            "note": "Step 6: checks $RUN_DIR/ckpt/fold_*/test_result.csv"
+          },
+          {
+            "text": "Per-task metrics table generated from test results",
+            "result": "PASS",
+            "note": "Step 6: table shows target names and metric values"
+          },
+          {
+            "text": "Metric column matches args_applied.metric from run.json",
+            "result": "PASS",
+            "note": "Step 6: uses mae/auc based on task type"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Monitor with --follow flag for streaming logs",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Streaming mode with docker logs -f until user interruption",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "--follow flag triggers docker logs -f streaming",
+            "result": "PASS",
+            "note": "Step 7: docker logs -f wraps until ^C"
+          },
+          {
+            "text": "Streaming mode continues until user interruption",
+            "result": "PASS",
+            "note": "Step 7 documents wraps until ^C"
+          },
+          {
+            "text": "Stop/cleanup hints printed in one-shot mode only",
+            "result": "PASS",
+            "note": "Step 8 hints printed at end of one-shot, not in follow mode"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 58.0,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional composability: designed as companion skill for all detached KERMT workflows with unified monitoring interface",
+    "Graceful degradation: works without run.json via --container flag, handles missing logs with most-recent fallback",
+    "Strong read-only design: explicit hard rules prevent modification of user data, container control, or image changes",
+    "Dual-mode operation: one-shot for quick status check, streaming for continuous monitoring",
+    "Comprehensive post-completion analysis: parses test metrics for finetuning with per-task breakdown"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add guidance for corrupted or unparseable log files",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No handling documented for scenarios where log file exists but contains unparseable content or is corrupted",
+      "root_cause": "Assumes log files are well-formed; parsing failures not addressed",
+      "fix": "Add to workflow after step 5: 'If progress parsing fails (malformed lines, unexpected format), show raw tail output with warning: Progress parsing failed, showing raw log. Container may have crashed or log format changed.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Specify container_name fallback workaround",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "Note on container_name plumbing acknowledges run.json doesn't include container name but filesystem-based fallback not fully specified",
+      "root_cause": "Known limitation documented but workaround implementation left vague",
+      "fix": "Expand container_name plumbing note: 'Fallback: list docker ps -a --filter label=kermt.run_dir=<run_dir> if label present, or match container name pattern kermt-<workflow>-* with creation time near run.json started_at timestamp. If multiple matches, prefer most recent.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated monitoring",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running monitor multiple times has side effects or affects running container",
+      "root_cause": "Read-only nature implied by hard rules but not explicitly stated as idempotent",
+      "fix": "Add to Hard rules: 'Idempotency: monitoring is fully read-only and idempotent — running kermt-monitor multiple times has no effect on the running container or training state. Safe to invoke repeatedly or in parallel.'"
+    }
+  ]
+}

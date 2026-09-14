@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "rfdiffusion-nim",
+    "description": "Run RFDiffusion protein backbone design via NVIDIA NIM. Use for de novo protein backbones, motif scaffolding, binder design, hotspot residues, contigs syntax, diffusion steps, hosted NVIDIA API calls, local Docker deployment, and PDB backbone outputs for ProteinMPNN sequence design.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of RFDiffusion design modes: de novo, motif scaffolding, binder design with hotspots; contigs DSL documented with defer to references for full syntax"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation with dummy PDB workaround for hosted de novo; error handling via raise_for_status; minor: no guidance on handling contigs parsing errors beyond generic 422"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Exceptional efficiency: 163 lines with progressive disclosure via 5 reference files; three design modes inline with full contigs reference deferred"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional clarity: dummy PDB inline with rationale (hosted validation requires non-empty input); preflight copy instruction explicit; hotspot_res string format ('A50' not tuple) gotcha documented; handoff to ProteinMPNN clear"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear design mode distinctions; minimum GPU requirement (12GB) documented; downstream validation workflow explicit (ProteinMPNN → Boltz2/OpenFold3)"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Preflight pattern copy instruction prevents key exposure; NGC_API_KEY/NVIDIA_API_KEY fallback robust; local inference no auth header after readiness; warm-cache assumption not made"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean structure with 5 reference files; preflight copy instruction prevents drift; contigs DSL reference separation enables updates without touching main skill"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Excellent trigger precision; perfect composability with ProteinMPNN handoff explicit; dummy PDB pattern exemplary workaround; lacks explicit idempotency statement; troubleshooting concise"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 98.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted de novo backbone with dummy PDB",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete de novo workflow with dummy PDB workaround for hosted validation",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Dummy PDB used for hosted de novo (validation requirement)",
+            "result": "PASS",
+            "note": "Contigs DSL: live hosted validation requires non-empty input_pdb; dummy PDB provided"
+          },
+          {
+            "text": "Contigs syntax '80-120' for length range",
+            "result": "PASS",
+            "note": "De novo pattern shown"
+          },
+          {
+            "text": "diffusion_steps set to 50 for maximum quality",
+            "result": "PASS",
+            "note": "Limits: 50 is maximum quality"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local motif scaffolding with contig syntax",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete motif scaffold with target PDB and contig chain selection",
+        "basic": 38,
+        "specialized": 60,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Target PDB read inline with Path.read_text()",
+            "result": "PASS",
+            "note": "Motif scaffold pattern shows Path().read_text()"
+          },
+          {
+            "text": "Contigs syntax 'A25-35/0 50-80' keeps residues and generates scaffold",
+            "result": "PASS",
+            "note": "Keep chain segment then generate pattern"
+          },
+          {
+            "text": "Local endpoint /biology/ipd/rfdiffusion/generate (no /v1/)",
+            "result": "PASS",
+            "note": "Local inference paths do not include /v1/"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Local inference requests use no auth header after readiness"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Binder design with hotspot residues",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete binder workflow with hotspot targeting and ProteinMPNN handoff",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "hotspot_res uses string format ['A50', 'A51'] not tuples",
+            "result": "PASS",
+            "note": "Limits: hotspot_res uses strings like 'A50', not tuples"
+          },
+          {
+            "text": "Contigs includes both target and binder segments",
+            "result": "PASS",
+            "note": "Binder design pattern: 'A1-100/0 50-100'"
+          },
+          {
+            "text": "Output explicitly fed to ProteinMPNN for sequence design",
+            "result": "PASS",
+            "note": "Save And Interpret: feed backbones to ProteinMPNN for sequence design"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 59.2,
+    "score": 98,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional dummy PDB pattern: elegant workaround for hosted validation requirement with clear inline rationale",
+    "Perfect preflight copy instruction: explicit 'copy exactly' prevents key exposure and configuration drift",
+    "Clear design mode taxonomy: de novo, motif scaffolding, binder design with distinct contigs patterns for each",
+    "Explicit ProteinMPNN handoff: generated backbones clearly marked as intermediate requiring sequence design",
+    "Comprehensive downstream validation guidance: ProteinMPNN → Boltz2/OpenFold3 pipeline documented"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add contigs parsing error diagnostics",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "422 errors mention malformed contigs but no guidance on debugging contig syntax errors (missing chain, wrong range format, chain breaks)",
+      "root_cause": "Assumes users will consult references for full syntax; inline diagnostics missing",
+      "fix": "Add to Troubleshooting: '422 with contig errors → common mistakes: (1) chain ID mismatch (contig 'B1-50' but PDB only has chain A), (2) wrong range format (use '50-80' not '50:80'), (3) missing /0 chain break separator. See references/api.md Contigs Language Reference for full syntax.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for diffusion",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running RFDiffusion with same inputs produces identical backbones",
+      "root_cause": "Stochastic diffusion not explicitly stated",
+      "fix": "Add to Request Pattern: 'Determinism: RFDiffusion is stochastic — same contigs and hotspots will produce different backbones each run (diffusion sampling is non-deterministic). For reproducible campaigns, save generated PDB artifacts rather than regenerating. Use diffusion_steps=50 for consistent quality across runs.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify dummy PDB applicability",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "Dummy PDB documented for de novo but not explicitly stated whether needed for motif/binder modes on hosted",
+      "root_cause": "Workaround specific to de novo but scope not fully bounded",
+      "fix": "Expand dummy PDB note in Contigs DSL: 'Dummy PDB only needed for hosted de novo (input_pdb validation). Motif scaffolding and binder design use real target PDB as input_pdb; no dummy needed for those modes on hosted or any mode on local.'"
+    }
+  ]
+}

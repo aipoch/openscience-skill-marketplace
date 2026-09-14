@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "etetoolkit",
+    "description": "Analyze, manipulate, compare, annotate, and visualize phylogenetic or other hierarchical trees with ETE 4. Use for Newick/Nexus tree I/O, topology edits and pattern matching, Robinson-Foulds comparisons, gene-tree evolutionary events and reconciliation, NCBI/GTDB taxonomy, SmartView exploration, and publication rendering. Do not use it to infer trees from raw sequences; align sequences and infer a tree first.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of ETE 4 capabilities with clear scope boundaries (does not replace sequence alignment or phylogenetic inference)"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for tree analysis and visualization with explicit warnings about evolutionary interpretation (arbitrary polytomy resolution, species-overlap inferences)"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established phylogenetic methods (Robinson-Foulds distance, duplication/speciation inference) with proper scientific caveats"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper ETE 4 API usage and file handling patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of tree operations including I/O, topology comparison, gene tree analysis, taxonomy queries, visualization, with excellent reference organization and bundled helper scripts"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent quality and interpretation checks section covering parser validation, name handling, rooting decisions, and reproducibility requirements"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (327 lines) with clear reference map, 5 comprehensive reference files, and bundled operational scripts"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional scope clarity distinguishing ETE from upstream tools (MAFFT, IQ-TREE); comprehensive ETE 3 to ETE 4 migration warnings; clear reference map for task navigation"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with optional visualization extras; parser selection guidance; bundled scripts with uv run patterns; quick start with file handling best practices"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good file handling patterns with explicit open file objects; taxonomy data disk space warnings; minor: lacks guidance on handling trees from untrusted sources"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 2.0, clear license (GPL-3.0-or-later), 5 comprehensive references, version pinning (ete4 4.4.0, verified July 2026), and authoritative upstream links"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools including Python; bundled scripts for common operations; minor: iterator return values mentioned but memory optimization patterns not fully detailed"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Tree I/O with parser selection and annotation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard tree loading, manipulation, and serialization",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Open file object pattern for tree loading",
+            "result": "PASS",
+            "note": "Quick start explicitly uses 'with Path(...).open()' and reserves strings for Newick text"
+          },
+          {
+            "text": "parser parameter for Newick format selection",
+            "result": "PASS",
+            "note": "Tree(handle, parser=1) pattern with parser deliberation guidance"
+          },
+          {
+            "text": "add_props() for node metadata annotation",
+            "result": "PASS",
+            "note": "focal.add_props(host='human', status='focal') demonstrated in quick start"
+          },
+          {
+            "text": "write() with parser and props parameters",
+            "result": "PASS",
+            "note": "tree.write(outfile=..., parser=1, props=['host', 'status']) shown"
+          },
+          {
+            "text": "Parser mismatch warning for common errors",
+            "result": "PASS",
+            "note": "Explicitly warns 'A parser mismatch is the most common cause of NewickError'"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Topology comparison with Robinson-Foulds distance",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Phylogenetic distance calculation between trees",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "robinson_foulds() method with comprehensive return values",
+            "result": "PASS",
+            "note": "Seven-tuple unpacking (rf, max_rf, common_leaves, edges_a, edges_b, discarded_a, discarded_b) shown"
+          },
+          {
+            "text": "Normalized RF calculation pattern",
+            "result": "PASS",
+            "note": "normalized_rf = rf / max_rf if max_rf else 0.0 pattern demonstrated"
+          },
+          {
+            "text": "Shared leaf label requirement documented",
+            "result": "PASS",
+            "note": "Workflow states 'RF comparison uses shared leaf labels'"
+          },
+          {
+            "text": "Unique name recommendation",
+            "result": "PASS",
+            "note": "Guidance notes 'preferably unique names' for RF comparison"
+          },
+          {
+            "text": "Rooted vs unrooted comparison consideration",
+            "result": "PASS",
+            "note": "Explicitly advises 'Decide explicitly whether rooted or unrooted comparison is scientifically appropriate'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Gene tree analysis with PhyloTree and evolutionary events",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Duplication and speciation inference",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "PhyloTree with sp_naming_function parameter",
+            "result": "PASS",
+            "note": "PhyloTree(..., sp_naming_function=lambda name: name.split('|', 1)[0]) demonstrated"
+          },
+          {
+            "text": "get_descendant_evol_events() for event detection",
+            "result": "PASS",
+            "note": "get_descendant_evol_events(sos_thr=0.0) with event.etype checking shown"
+          },
+          {
+            "text": "Event type interpretation (S for speciation, D for duplication)",
+            "result": "PASS",
+            "note": "Workflow translates etype 'S' to 'speciation/orthology' and implicit D to 'duplication/paralogy'"
+          },
+          {
+            "text": "Scientific caveat about inference vs evidence",
+            "result": "PASS",
+            "note": "Explicitly warns 'Species-overlap calls are inferences...not independent evidence of orthology'"
+          },
+          {
+            "text": "Reconciliation with species tree documented",
+            "result": "FAIL",
+            "note": "gene_tree.reconcile(species_tree) mentioned but not demonstrated with code example"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "NCBI taxonomy query and tree construction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Taxonomy database integration with name resolution",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "NCBITaxa() instantiation and get_name_translator()",
+            "result": "PASS",
+            "note": "ncbi.get_name_translator(names) pattern with name_to_taxids result"
+          },
+          {
+            "text": "Missing name validation pattern",
+            "result": "PASS",
+            "note": "Workflow checks for missing names and raises ValueError with list"
+          },
+          {
+            "text": "get_topology() for taxonomy tree construction",
+            "result": "PASS",
+            "note": "ncbi.get_topology(taxids) demonstrated with sci_name and rank props"
+          },
+          {
+            "text": "GTDBTaxa alternative mentioned",
+            "result": "PASS",
+            "note": "ETE 4 also provides GTDBTaxa with mixing warning"
+          },
+          {
+            "text": "Taxonomy database update and disk space guidance",
+            "result": "FAIL",
+            "note": "References taxonomy.md for disk space but not detailed in main doc"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Large tree operations with bundled scripts and quality checks",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Production workflows with validation but limited performance examples",
+        "basic": 33,
+        "specialized": 44,
+        "total": 77,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Bundled tree_operations.py script for common tasks",
+            "result": "PASS",
+            "note": "Scripts section documents stats, ascii, convert, reroot, prune, compare operations"
+          },
+          {
+            "text": "uv run --with pattern for isolated execution",
+            "result": "PASS",
+            "note": "All script examples use 'uv run --with \"ete4==4.4.0\"' pattern"
+          },
+          {
+            "text": "Quality checks before reporting results",
+            "result": "PASS",
+            "note": "Quality and Interpretation Checks section provides 7-point validation checklist"
+          },
+          {
+            "text": "Iterator performance guidance for large trees",
+            "result": "PASS",
+            "note": "Check 7 states 'Prefer iterators for large trees and get_cached_content() for repeated queries'"
+          },
+          {
+            "text": "Memory optimization patterns demonstrated",
+            "result": "FAIL",
+            "note": "Iterators mentioned but no code example showing iterator vs list tradeoffs"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 54.2,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding scope definition clearly distinguishing tree analysis from upstream inference tools (MAFFT, IQ-TREE) to prevent misuse",
+    "Exceptional version discipline with comprehensive ETE 3 to ETE 4 migration warnings listing specific API breaking changes",
+    "Excellent scientific integrity with explicit caveats about evolutionary interpretation (species-overlap as inference, polytomy resolution as convenience)",
+    "Strong quality assurance with 7-point interpretation checklist covering parser validation, name handling, rooting, and reproducibility requirements",
+    "Comprehensive bundled scripts ecosystem with tree_operations.py and quick_visualize.py enabling command-line workflows"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add iterator vs list performance example for large trees",
+      "observed_in": [5],
+      "problem": "Iterator guidance mentioned but no code demonstrating when to use iterators vs lists",
+      "root_cause": "Performance optimization advice given without illustrative example",
+      "fix": "Add example showing 'for leaf in tree.leaves():' (iterator, memory-efficient) vs 'list(tree.leaves())' (eager, high memory) with guidance on when each is appropriate"
+    },
+    {
+      "priority": "P2",
+      "title": "Add reconciliation code example",
+      "observed_in": [3],
+      "problem": "gene_tree.reconcile(species_tree) mentioned but not demonstrated",
+      "root_cause": "Strict reconciliation referenced as alternative but no usage example",
+      "fix": "Add brief example showing species_tree loading and gene_tree.reconcile(species_tree) usage for formal reconciliation workflow"
+    },
+    {
+      "priority": "P3",
+      "title": "Add guidance for trees from untrusted sources",
+      "observed_in": [],
+      "problem": "No discussion of handling potentially malicious tree files",
+      "root_cause": "Security focuses on file handling pattern without considering adversarial inputs",
+      "fix": "Add security note: 'When loading trees from untrusted sources, validate leaf count and tree depth before processing to prevent resource exhaustion attacks'"
+    }
+  ]
+}

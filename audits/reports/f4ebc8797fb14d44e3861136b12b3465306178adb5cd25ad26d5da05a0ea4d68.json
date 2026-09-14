@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "skill_name": "kermt-finetune",
+    "description": "Finetune a pretrained KERMT encoder on a labeled CSV. The skill validates the input checkpoint (must be a pretrain ckpt — grover_base / cmim / hybrid), validates the labeled CSV, prepares the data (clean + features + optional split), then launches main.py finetune inside the kermt container (detached for hours-scale runs). Hyperparameters come from agent/config/defaults_finetune.json with per-flag CLI override.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 89,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive 9-step workflow covering checkpoint resolution, data validation, auto-split detection, and DDP launch; minor gap: resume-finetune scenario mentioned in errors but not fully addressed"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation with targets confirmation gate (step 7); auto-detection of sibling val/test CSVs; minor: shell metacharacter quoting mentioned but no validation to catch unquoted cases"
+      },
+      "performance_context": {
+        "score": 6,
+        "max": 8,
+        "note": "304 lines exceeds 250-line target; explicit line/token budget awareness shown; step 5 pre-flight and quoting guidance add significant length"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 9-step workflow with targets confirmation gate; DDP vs single-GPU distinction documented; minor: multi-task-specific FFN heads feature complex but no inline example"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good trigger coverage; consent gate documented; targets auto-detection with confirmation; minor: dataset_type defaults to regression which may not be obvious for classification tasks"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Explicit consent gate for model download; never modifies input checkpoint; shell quoting guidance for target names prevents injection; proper path isolation"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Well-structured with clear sections; replayability documented; minor: step 5 pre-flight logic complex and could benefit from extraction to reference file"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good trigger precision; composability via kermt-monitor and kermt-infer handoffs; targets confirmation gate prevents silent mismatches; lacks explicit idempotency statement; no consolidated escape hatches"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 25,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Single-target regression finetune with auto-split",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete 9-step workflow with checkpoint validation, target auto-detection, and scaffold_balanced split",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py validates with --mode finetune_init",
+            "result": "PASS",
+            "note": "Step 3 validation rejects already-finetuned checkpoints"
+          },
+          {
+            "text": "Targets auto-detected and confirmed with user",
+            "result": "PASS",
+            "note": "Step 4 surfaces auto_detected_targets; step 7 requires explicit confirmation"
+          },
+          {
+            "text": "scaffold_balanced split applied when no val/test CSVs provided",
+            "result": "PASS",
+            "note": "Step 5 documents default split_type=scaffold_balanced from defaults"
+          },
+          {
+            "text": "Runner launched detached for hours-scale training",
+            "result": "PASS",
+            "note": "Step 8 uses run_detached not blocking run"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Multi-target classification with pre-split CSVs",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Classification finetune with sibling val.csv/test.csv detection and index_predetermined split",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "dataset_type set to classification for classification tasks",
+            "result": "PASS",
+            "note": "Optional input documents --dataset-type classification"
+          },
+          {
+            "text": "Sibling val.csv and test.csv auto-detected in step 5 pre-flight",
+            "result": "PASS",
+            "note": "Pre-flight checks for canonical-looking siblings before prepare"
+          },
+          {
+            "text": "split_type changed to index_predetermined when siblings found",
+            "result": "PASS",
+            "note": "Step 5 documents setting index_predetermined + passing --val-csv/--test-csv"
+          },
+          {
+            "text": "Multiple targets passed and confirmed before launch",
+            "result": "PASS",
+            "note": "Step 7 targets confirmation gate shows count and list"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Multi-GPU DDP training with task-specific FFN heads",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "DDP workflow with MTL heads but no inline example for complex feature",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "--num-gpus N triggers data-parallel DDP across N GPUs",
+            "result": "PASS",
+            "note": "Hardware requirements and step 8 document DDP with WORLD_SIZE=N"
+          },
+          {
+            "text": "Batch size is per-GPU in DDP mode (effective global = batch_size × N)",
+            "result": "PASS",
+            "note": "Hardware requirements explicitly state per-GPU batch size"
+          },
+          {
+            "text": "Task-specific FFN heads configured with both num_layers and hidden_size",
+            "result": "PASS",
+            "note": "Optional inputs and common errors document both flags required together"
+          },
+          {
+            "text": "Concrete example showing MTL head configuration",
+            "result": "FAIL",
+            "note": "Parameters documented but no example showing when/why to use task-specific heads"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Target names with shell metacharacters",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct shell quoting guidance for special characters in column names",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Shell metacharacter quoting documented in step 5",
+            "result": "PASS",
+            "note": "Quoting target names section shows single-quote pattern"
+          },
+          {
+            "text": "Example provided for problematic characters (>, &, |, $)",
+            "result": "PASS",
+            "note": "Concrete example: --targets 'Log_Caco2_Papp_A>B' 'logD'"
+          },
+          {
+            "text": "Explanation of why quoting needed (shell eating characters)",
+            "result": "PASS",
+            "note": "Notes shell truncation affects prepare_data.json manifest"
+          },
+          {
+            "text": "CSV header reading unaffected by quoting issue",
+            "result": "PASS",
+            "note": "Explicitly states downstream trainer reads CSV directly"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Already-finetuned checkpoint submitted for re-finetuning",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct rejection with redirection to kermt-infer and manual resume guidance",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py detects has_task_ffn=true and rejects",
+            "result": "PASS",
+            "note": "Step 3 validation rejects finetuned checkpoints"
+          },
+          {
+            "text": "User redirected to kermt-infer for inference with existing model",
+            "result": "PASS",
+            "note": "Common errors section provides clear handoff"
+          },
+          {
+            "text": "Manual resume instructions provided for same-dataset continuation",
+            "result": "PASS",
+            "note": "Common errors explains bypassing skill for resume"
+          },
+          {
+            "text": "Explanation of why skill doesn't support resume (task identity verification)",
+            "result": "FAIL",
+            "note": "Reason mentioned briefly but could be clearer about saved-task vs new-data mismatch risk"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Natural language request with ambiguous target count",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Targets confirmation gate catches discrepancy between request and detected targets",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Step 7 targets confirmation gate is mandatory before launch",
+            "result": "PASS",
+            "note": "Hard requirement with explicit count echo"
+          },
+          {
+            "text": "Discrepancy detection when user request doesn't match final list",
+            "result": "PASS",
+            "note": "Example: asked for 2 tasks but list has 4 triggers re-prompt"
+          },
+          {
+            "text": "Never silently proceed on wrong target set",
+            "result": "PASS",
+            "note": "Explicit guardrail against silent mismatch"
+          },
+          {
+            "text": "Wait for explicit confirmation unless --yes flag given",
+            "result": "PASS",
+            "note": "Confirmation required; --yes bypass for non-interactive"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Val/test CSVs in separate directory from train CSV",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct mount guidance for split CSVs in different directories",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Mount note explains --data directory mounting behavior",
+            "result": "PASS",
+            "note": "Step 5 documents parent directory mount at /data"
+          },
+          {
+            "text": "Guidance for val/test in separate splits/ folder",
+            "result": "PASS",
+            "note": "Mount parent of all three using --data <dir> on directory"
+          },
+          {
+            "text": "Val/test CSV references must be in mounted parent directory",
+            "result": "PASS",
+            "note": "Constraint explicitly stated"
+          },
+          {
+            "text": "Example showing directory-based mount for split files",
+            "result": "FAIL",
+            "note": "Guidance present but no concrete example of directory mount vs file mount"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.6,
+    "dynamic_weighted": 53.2,
+    "score": 89,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional safety design with mandatory targets confirmation gate (step 7) preventing silent mismatches between user intent and execution",
+    "Sophisticated auto-detection: targets from CSV columns, sibling val/test CSVs for pre-split datasets",
+    "Comprehensive split strategy support (random, scaffold_balanced, index_predetermined) with clear guidance on when to use each",
+    "Strong security with shell metacharacter quoting guidance and consent gate for model download",
+    "Clear DDP vs single-GPU documentation with per-GPU batch size semantics and multi-model/k-fold CV support"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Move step 5 pre-flight logic to reference file",
+      "observed_in": ["Performance context evaluation"],
+      "problem": "304 lines exceeds target; step 5 pre-flight (sibling CSV detection) and quoting guidance add ~30 lines",
+      "root_cause": "Complex data preparation logic inlined for immediate accessibility",
+      "fix": "Create references/data-preparation.md covering sibling split detection, shell quoting, and mount patterns; keep 2-3 line summary in step 5 with pointer to full guidance"
+    },
+    {
+      "priority": "P2",
+      "title": "Add concrete example for task-specific FFN heads",
+      "observed_in": ["Input 3"],
+      "problem": "Multi-task learning heads feature documented with parameter names but no example showing when/why to use",
+      "root_cause": "Advanced feature assumed to be self-documenting from parameter names",
+      "fix": "Add to Optional inputs after task-specific parameters: 'Example: heterogeneous multi-target finetune with 3 ADME properties and 2 toxicity endpoints → --ffn-num-task-specific-layers 2 --ffn-task-specific-hidden-size 256 gives each target its own 2-layer FFN head for specialized feature learning.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify resume-finetune task identity verification issue",
+      "observed_in": ["Input 5"],
+      "problem": "Common errors mentions skill doesn't support resume because task identity can't be verified but explanation is brief",
+      "root_cause": "Technical constraint documented without full context",
+      "fix": "Expand common errors: 'Resume not supported because saved checkpoint's task FFN heads are sized to the original target columns — if new CSV has different column names, order, or count, loading would fail or silently mismatch. For same-dataset resume, use manual main.py call which skips validation.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated finetunes",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running finetune multiple times with same inputs produces identical results",
+      "root_cause": "Stochasticity from data splitting and weight initialization",
+      "fix": "Add to Hard rules: 'Idempotency: finetuning is stochastic due to random splits (unless index_predetermined) and weight initialization. Same checkpoint and CSV with consistent --seed should produce reproducible results via cmd_replay, but expect minor variation from system-level randomness.'"
+    }
+  ]
+}

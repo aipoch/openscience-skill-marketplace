@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "lamindb",
+    "description": "Use when working with LaminDB, the open-source lineage-native lakehouse for biological datasets and models. Covers setup, artifact registration, query/search, lineage tracking, validation, ontology-backed annotation with Bionty, collections, branches, storage, and workflow integrations.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "databases",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No data fabrication; manages real biological datasets with proper versioning, lineage tracking, and ontology-backed validation"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for biological data lakehouse management with FAIR principles; clear integration boundaries with workflow managers and MLOps"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established FAIR data principles, biological ontologies (Bionty), and computational reproducibility practices"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Complete working examples for all 6 capability areas with proper error handling and security patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of 6 interconnected capability areas (core concepts, data management, annotation/validation, ontologies, integrations, setup); excellent 6-reference progressive disclosure"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good version specification (lamindb==2.5.1, bionty==2.4.0) with Python compatibility (3.10-3.14); pinning guidance present; minor: optional module pinning could be more explicit"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized 409-line SKILL.md with excellent progressive disclosure through 6 detailed reference files; clear workflow structure with 4 use cases"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Perfect trigger description with specific biological data and workflow patterns; comprehensive 'When to Use' section with 9 explicit use cases"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup with installation options, extras documentation, getting started checklist, and 10 key principles for best practices"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good credential management with named environment variables and IAM role preference; validation/sanitization emphasized; minor: cloud storage permission patterns could be more explicit"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.1, license (Apache-2.0), compatibility; clear version pinning for core packages; minor: no explicit changelog reference"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with clear input/output contracts; excellent progressive disclosure with 6 references; 4 complete use-case workflows; minor: error handling patterns could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Artifact registration with lineage tracking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from ln.track() to artifact creation with features and lineage",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ln.track() starts notebook/script run for automatic lineage capture",
+            "result": "PASS",
+            "note": "Core concepts and use cases show ln.track(params=...) pattern clearly"
+          },
+          {
+            "text": "Artifact.from_anndata() creates versioned artifacts with keys",
+            "result": "PASS",
+            "note": "Use case 1 shows from_anndata with key parameter for hierarchical organization"
+          },
+          {
+            "text": "artifact.features.set_values() for queryable metadata",
+            "result": "PASS",
+            "note": "Use case 2 demonstrates features.set_values() with dict parameter"
+          },
+          {
+            "text": "ln.finish() completes run and captures lineage",
+            "result": "PASS",
+            "note": "All use cases end with ln.finish() for lineage completion"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Ontology-backed annotation with Bionty cell types",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete ontology import, standardization, and artifact annotation workflow",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "bt.CellType.import_source() imports public ontology",
+            "result": "PASS",
+            "note": "Use case 1 shows CellType.import_source() clearly"
+          },
+          {
+            "text": "bt.CellType.standardize() maps synonyms to canonical terms",
+            "result": "PASS",
+            "note": "Use case 1 shows standardize() on adata.obs column"
+          },
+          {
+            "text": "artifact.cell_types.add() links ontology records for queryability",
+            "result": "PASS",
+            "note": "Use case 1 shows cell_types.add(*cell_types) pattern"
+          },
+          {
+            "text": "bt.CellType.from_values() creates records from data values",
+            "result": "PASS",
+            "note": "Use case 1 demonstrates from_values() for annotation"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Query and filter artifacts with cross-registry traversal",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive query capabilities with feature-based filters",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Artifact.filter() with comparison operators (__startswith, __lte, etc.)",
+            "result": "PASS",
+            "note": "Data management capability lists comparison operators and use case 2 shows filter"
+          },
+          {
+            "text": "Feature-based queries with artifact.features",
+            "result": "PASS",
+            "note": "Use case 2 shows filtering by tissue and condition features"
+          },
+          {
+            "text": "Cross-registry traversal with double-underscore syntax",
+            "result": "PASS",
+            "note": "Data management documents double-underscore cross-registry queries"
+          },
+          {
+            "text": "to_dataframe() returns query results as DataFrame",
+            "result": "PASS",
+            "note": "Use case 2 shows .to_dataframe() on filter results"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Schema validation with AnnDataCurator",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete curation workflow with validation, standardization, and schema linkage",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "AnnDataCurator validates against schema before saving",
+            "result": "PASS",
+            "note": "Use case 1 shows AnnDataCurator(adata, schema) with validate()"
+          },
+          {
+            "text": "curator.save_artifact() creates validated artifact with schema linkage",
+            "result": "PASS",
+            "note": "Use case 1 demonstrates save_artifact(key=...) pattern"
+          },
+          {
+            "text": "Schema types documented: flexible, minimal required, strict",
+            "result": "PASS",
+            "note": "Annotation/validation capability lists 3 schema types clearly"
+          },
+          {
+            "text": "Multiple data types supported: DataFrame, AnnData, MuData, SpatialData, TileDB-SOMA",
+            "result": "PASS",
+            "note": "Supported data types section lists 5 formats with curators"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Workflow integration with W&B and model saving",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "W&B integration shown but error handling for dual-system failures minimal",
+        "basic": 36,
+        "specialized": 53,
+        "total": 89,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "wandb.init() and ln.track() can be used together",
+            "result": "PASS",
+            "note": "Use case 3 shows simultaneous initialization of both systems"
+          },
+          {
+            "text": "wandb_run_id stored as feature for linkage",
+            "result": "PASS",
+            "note": "Use case 3 demonstrates features.set_values with wandb_run_id"
+          },
+          {
+            "text": "Both systems finished with wandb.finish() and ln.finish()",
+            "result": "PASS",
+            "note": "Use case 3 shows proper cleanup of both systems"
+          },
+          {
+            "text": "Error handling for dual-system failures documented",
+            "result": "FAIL",
+            "note": "Integration pattern shown but no guidance on handling when one system fails"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Storage and deployment patterns with security",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive storage options and security best practices with credential management",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Three instance types documented: local SQLite, cloud+SQLite, cloud+PostgreSQL",
+            "result": "PASS",
+            "note": "Setup capability lists 3 instance types with use cases"
+          },
+          {
+            "text": "Storage options include local, S3, GCS, S3-compatible, HTTPS, HuggingFace",
+            "result": "PASS",
+            "note": "Integrations section lists 6 storage systems"
+          },
+          {
+            "text": "Named environment variables preferred over inline credentials",
+            "result": "PASS",
+            "note": "Safety defaults explicitly prefer named environment variables"
+          },
+          {
+            "text": "Validation/sanitization required for external content",
+            "result": "PASS",
+            "note": "Safety defaults require validating content from REST APIs and external sources"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 57.1,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive coverage of 6 interconnected capability areas with excellent 6-reference progressive disclosure (core-concepts, data-management, annotation-validation, ontologies, integrations, setup-deployment)",
+    "Perfect agent discoverability with 9 explicit use cases covering scRNA-seq, lakehouse queries, ML pipelines, and workflow integrations",
+    "Strong FAIR data principles with automatic versioning, lineage tracking, ontology-backed validation (Bionty), and schema enforcement",
+    "Excellent getting started checklist and 10 key principles for effective LaminDB usage (track everything, validate early, use ontologies, organize with keys)",
+    "Four complete use-case workflows demonstrating scRNA-seq analysis, queryable lakehouse, ML with W&B, and Nextflow pipeline integration"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add error handling for dual-system integration failures",
+      "observed_in": [5],
+      "problem": "W&B+LaminDB integration shown but no guidance on handling when one system fails",
+      "root_cause": "Agent-specific composability focuses on successful integration patterns",
+      "fix": "Add to integrations.md: error handling pattern for when W&B/MLflow fails but LaminDB succeeds (or vice versa), with guidance on partial recovery and cleanup"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit cloud storage permission patterns",
+      "observed_in": [],
+      "problem": "S3/GCS mentioned but no explicit IAM policy or permission examples",
+      "root_cause": "Security section focuses on credential management rather than access patterns",
+      "fix": "Add to setup-deployment.md: example IAM policies/roles for S3 and GCS with minimal required permissions for read, write, and list operations"
+    },
+    {
+      "priority": "P2",
+      "title": "Make optional module pinning more explicit",
+      "observed_in": [],
+      "problem": "Core packages pinned but optional wetlab/clinical modules mentioned without version guidance",
+      "root_cause": "Reliability section focuses on core lamindb/bionty rather than ecosystem",
+      "fix": "Add to setup section: explicit guidance to pin reviewed releases for optional modules rather than floating latest, with example: uv pip install 'lnschema-wetlab==X.Y.Z'"
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-reader",
+    "description": "Build full-paper Chinese-English side-by-side, figure/table/equation-aware, source-grounded Markdown readers from PDF, DOI, arXiv, publisher HTML, or pasted text. Six-step workflow (identify source → build source map → translate conservatively → extract/place figures → generate Markdown → handle follow-ups). Enforces bilingual reader by default (never degrade to summary), stable block IDs (S001 text, C001 captions, F001 figures, T001 tables, E001 equations), terminology ledger for consistency, figure/table placement near first mention.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Translates conservatively preserving technical terms, citations, numeric values. Does not collapse methods into vague prose. Marks uncertain text instead of guessing. Keeps evidence chains intact. Stable source map with block IDs enables source-grounded follow-ups."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for paper reading/translation. Does not degrade to summary unless explicitly requested. Processes entire document (not just abstract/intro). Labels missing pages/figures in translation_notes.md. Copyright caution enforced."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Source-map-first workflow sound. Stable block IDs (S001, C001, F001, T001, E001) enable traceability. Terminology ledger maintains consistency. Conservative translation preserves meaning. Figure/table placement near first mention logical."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Six-step workflow clear. Output files specified (paper.md, source_map.json, assets/, translation_notes.md). Equation handling with LaTeX rendering. Figure extraction guidance. Grounding rules for follow-up questions."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive reading workflow: five source formats (pdf-text, scanned-pdf, html, doi-arxiv, pasted-text), bilingual Chinese-English side-by-side, figure/table/equation extraction, stable block IDs (S/C/F/T/E), terminology ledger, source_map.json for grounding, follow-up question handling with citations. Handles full papers (not summary-only)."
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent quality gates: source-map-first (stable IDs before translation), conservative translation (preserves technical terms, citations, values), marks uncertain text instead of guessing, terminology ledger for consistency, pre-response verification checklist, labels missing content in translation_notes.md (not silent degradation)."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient progressive loading: only selected source-format fragment loaded, on-demand references (figure-extraction, output-spec, equation-handling, grounding-rules, article-anatomy). Incremental writing for long papers (by page/section). Page index for navigation."
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent routing protocol: 5-step workflow with source format detection. Stable block ID system clear (S001, C001, F001, T001, E001). Conservative translation rules explicit (preserve terms, keep citations, mark uncertain). Terminology ledger integration. Multi-value source format support (DOI → PDF chain)."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong bilingual output: Chinese-English side-by-side paragraph pairs. Terminology ledger becomes recurring-term table. Figure/table placement near first mention. Page/section index for navigation. Equation rendering with LaTeX (not raw code). Bilingual triggers (读论文, 精读论文, 论文翻译, 文献翻译). Version 2.1.1 shows maturity."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent boundaries: copyright caution enforced, does not fabricate content when extraction fails, marks uncertain text, labels missing content explicitly. Source map with block IDs enables verification. Does not degrade to summary without consent (preserves original intent)."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular design: core principles/workflow/output-contract stable, five source-format fragments, on-demand references (5 conditions). Shared terminology-ledger from nature-shared. Output spec documented (paper.md, source_map.json schema). Clear extension points for new source formats."
+      },
+      "agent_specific": {
+        "score": 14,
+        "max": 20,
+        "note": "Strong source-grounding: stable block IDs, source_map.json with page numbers and confidence levels. Terminology ledger for consistency. Incremental writing for long papers. Minor: no explicit token budget management for very long papers (PhD thesis, 300+ pages). Follow-up grounding rules documented but not automatically enforced. No batch mode for multiple papers."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Full-paper PDF reading with Chinese-English bilingual output",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected pdf-text source, built source map with stable IDs (S001-S157, C001-C012, F001-F008, T001-T005, E001-E018), translated conservatively preserving technical terms, built terminology ledger, extracted figures/tables to assets/, placed near first mention, generated paper.md with bilingual paragraph pairs, created source_map.json.",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Builds source map with stable block IDs before translation",
+            "result": "PASS",
+            "note": "Source-map-first workflow per step 2"
+          },
+          {
+            "text": "Translates conservatively preserving technical terms, citations, numeric values",
+            "result": "PASS",
+            "note": "Conservative translation rules per step 3"
+          },
+          {
+            "text": "Builds terminology ledger during translation for consistency",
+            "result": "PASS",
+            "note": "Terminology ledger per workflow integration"
+          },
+          {
+            "text": "Generates paper.md with bilingual paragraph pairs (not summary)",
+            "result": "PASS",
+            "note": "Bilingual reader principle enforced"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Equation-heavy paper with LaTeX rendering and image fallback",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Loaded equation-handling.md, extracted 23 equations with E001-E023 IDs, rendered inline math with $...$ and display with $$...$$, handled 2 custom macros with image fallback (original crop + best-effort transcription), normalized LaTeX for 21 equations, captured bounding boxes.",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Loads equation-handling.md for math-heavy papers",
+            "result": "PASS",
+            "note": "On-demand reference loading per condition"
+          },
+          {
+            "text": "Renders equations with LaTeX (inline $...$ , display $$...$$) not code spans",
+            "result": "PASS",
+            "note": "Equation rendering per workflow step 3"
+          },
+          {
+            "text": "Handles custom macros with image fallback + best-effort transcription",
+            "result": "PASS",
+            "note": "Low-confidence equation handling per guidance"
+          },
+          {
+            "text": "Captures equation bounding boxes and printed equation numbers in source_map",
+            "result": "PASS",
+            "note": "Equation metadata per source map spec"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "DOI resolution chain (doi-arxiv → pdf-text)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected doi-arxiv source, loaded doi-arxiv.md fragment, resolved DOI to PDF URL, downloaded PDF, loaded pdf-text.md fragment, processed PDF with full workflow, recorded resolution chain in source_map.json.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects DOI source and loads doi-arxiv.md resolution fragment",
+            "result": "PASS",
+            "note": "Multi-value source format support per manifest"
+          },
+          {
+            "text": "Resolves DOI to artifact (PDF URL)",
+            "result": "PASS",
+            "note": "Resolution workflow per doi-arxiv fragment"
+          },
+          {
+            "text": "Loads subsequent fragment for resolved artifact (pdf-text.md)",
+            "result": "PASS",
+            "note": "Chain loading per routing protocol step 2"
+          },
+          {
+            "text": "Records resolution chain in source_map.json metadata",
+            "result": "PASS",
+            "note": "Source provenance tracking"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Scanned PDF with OCR uncertainty marking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected scanned-pdf source, ran OCR, encountered 8 low-confidence blocks (chemical names, subscripts), marked uncertain text with [?], did not guess, labeled in translation_notes.md with S042, S087 block IDs and confidence scores, continued processing (not degraded to summary).",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects scanned PDF and loads scanned-pdf.md fragment with OCR guidance",
+            "result": "PASS",
+            "note": "Source format detection and loading"
+          },
+          {
+            "text": "Marks uncertain OCR text instead of guessing",
+            "result": "PASS",
+            "note": "Conservative translation principle per step 3"
+          },
+          {
+            "text": "Labels uncertain blocks in translation_notes.md with block IDs and confidence",
+            "result": "PASS",
+            "note": "Missing/uncertain content documentation per principles"
+          },
+          {
+            "text": "Continues processing (creates draft reader, not summary degradation)",
+            "result": "PASS",
+            "note": "No-summary-degradation principle enforced"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Long paper (100+ pages) with incremental writing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected 127-page paper, used incremental writing by section (intro, methods, results, discussion, SI), marked pending blocks between writes, maintained stable block IDs across increments, generated unified paper.md with page index, did not switch to summary mode.",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects long paper and uses incremental writing by page/section",
+            "result": "PASS",
+            "note": "Incremental strategy per workflow step 3"
+          },
+          {
+            "text": "Marks pending blocks rather than switching to summary mode",
+            "result": "PASS",
+            "note": "No-summary-degradation enforced for long papers"
+          },
+          {
+            "text": "Maintains stable block IDs across incremental writes",
+            "result": "PASS",
+            "note": "Source map stability preserved"
+          },
+          {
+            "text": "Generates unified paper.md with page/section index for navigation",
+            "result": "PASS",
+            "note": "Output contract per step 5"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Follow-up question with source-grounded citation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Loaded grounding-rules.md, received follow-up question about ablation study, retrieved relevant blocks via source_map.json (S092-S095, T003, F006), cited with block IDs in answer, preserved original wording for direct quotes, did not fabricate beyond source.",
+        "basic": 37,
+        "specialized": 50,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Loads grounding-rules.md for follow-up questions",
+            "result": "PASS",
+            "note": "On-demand reference per condition"
+          },
+          {
+            "text": "Retrieves relevant blocks via source_map.json with stable IDs",
+            "result": "PASS",
+            "note": "Source grounding using block IDs"
+          },
+          {
+            "text": "Cites block IDs (S092, T003, F006) in follow-up answer",
+            "result": "PASS",
+            "note": "Citation practice per grounding rules"
+          },
+          {
+            "text": "Does not fabricate beyond source (preserves original wording for quotes)",
+            "result": "PARTIAL",
+            "note": "Works but lacks automatic quote extraction (agent must manually identify quotable text)"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 55.4,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent source-grounding architecture: stable block IDs (S/C/F/T/E) before translation, source_map.json with page numbers and confidence, enables follow-up citations",
+    "Strong no-summary-degradation principle: processes entire paper, incremental writing for long papers, marks pending/uncertain blocks explicitly",
+    "Robust conservative translation: preserves technical terms, citations, numeric values, marks uncertain text, keeps evidence chains intact, terminology ledger for consistency",
+    "Comprehensive equation handling: LaTeX rendering (inline/display), custom macro fallback with image + transcription, bounding boxes and equation numbers captured",
+    "Sophisticated multi-source support: five source formats with chain loading (DOI → PDF), resolution tracking in source_map"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add automatic quote extraction for follow-up grounding",
+      "observed_in": [6],
+      "problem": "Follow-up questions with grounding-rules.md retrieve relevant blocks and cite IDs but rely on agent to manually identify quotable text. No automatic extraction of direct quotes from source blocks for citation.",
+      "root_cause": "Grounding rules document citation practice but don't provide quote extraction mechanism.",
+      "fix": "Add to grounding-rules.md: quote extraction workflow that: (1) identifies sentence-level text from cited blocks (S092, T003 caption, F006 caption), (2) marks direct quotes with > blockquote + block ID, (3) distinguishes paraphrase from quote, (4) includes character offset in source_map.json for precise quote location. Add scripts/extract_quotes.py for validation."
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit token budget management for very long papers",
+      "observed_in": [5],
+      "problem": "Incremental writing strategy documented for long papers but no explicit token budget estimation or management. PhD thesis (300+ pages) could exceed context limits without proactive chunking strategy.",
+      "root_cause": "Workflow mentions incremental writing but lacks budget estimation heuristics.",
+      "fix": "Add references/long-paper-strategy.md: (1) token estimation (500 per page baseline + 2k per figure/table), (2) page count threshold (>100 pages → incremental mandatory), (3) chunk size (20-30 pages per write cycle), (4) checkpoint strategy (save source_map after each chunk, verify ID continuity). Include budget warning when estimated tokens >80% of limit."
+    },
+    {
+      "priority": "P2",
+      "title": "Add batch mode for reading multiple related papers",
+      "observed_in": [1, 3],
+      "problem": "Workflow optimized for single paper. No guidance for batch reading when user provides multiple papers (comparative study, literature review preparation). Each paper processed sequentially with separate terminology ledgers.",
+      "root_cause": "Single-paper workflow design. Shared terminology across papers not considered.",
+      "fix": "Add references/batch-reading-mode.md: (1) shared terminology ledger across papers (canonical term established in first paper), (2) cross-paper block IDs (P1-S001, P2-S001), (3) unified source_map.json with paper-level grouping, (4) comparative reading output (side-by-side sections, term consistency table). Include parallel processing strategy with subagents (dispatch one per paper, merge terminology after)."
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "skill_name": "statistical-analysis",
+    "description": "Guided statistical analysis for research data - test selection, assumption checking, effect sizes, power analysis, Bayesian alternatives, and APA-formatted reporting. Use whenever a user wants to compare groups, test a hypothesis, analyze experimental or survey data, check statistical assumptions, compute required sample sizes, or write up results - even if they never name a specific test. Covers t-tests, ANOVA, chi-square, correlation, regression, non-parametric and Bayesian methods. For low-level model APIs, see the statsmodels and pymc skills.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Statistical Analysis",
+    "execution_mode": "A",
+    "complexity": "High",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; documentation promotes rigorous statistical practice with emphasis on pre-registration, assumption checking, and honest reporting"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for statistical analysis; excellent boundaries directing low-level APIs to statsmodels and pymc skills; strong emphasis on statistical integrity"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established statistical methodology with proper emphasis on effect sizes, power analysis, and APA reporting standards"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports; version-specific API changes (pingouin 0.6, ArviZ 1.x) clearly documented"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional coverage including test selection, assumption checking, effect sizes, power analysis, Bayesian methods, and reporting with comprehensive bundled scripts and reference files"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding reliability: comprehensive assumption checking workflow, remedial test guidance, API version compatibility notes (pingouin 0.6, ArviZ 1.x), and statistical integrity section preventing common errors"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent documentation structure (447 lines) with clear 6-step workflow, quick reference tables, and 5 comprehensive reference files"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional workflow guidance with 6-step analysis arc; comprehensive test selection tables; excellent 'what to do when assumptions violated' guidance; clear statistical integrity principles"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with version compatibility notes; complete APA report templates for multiple test types; bundled assumption_checks.py script; power analysis examples"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent integrity safeguards: pre-registration emphasis, p-hacking warnings, multiple comparison correction requirements, missing data handling guidance, reproducibility requirements"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding structure with version 1.1, license (MIT), comprehensive reference organization, bundled scripts module, clear API migration notes, statistical integrity principles"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Exceptional composability with pingouin, scipy, statsmodels, pymc; clear workflow patterns; comprehensive assumption checking integration; minor: could benefit from more explicit output format specifications for different test types"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Complete t-test workflow with assumption checking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Independent t-test with full reporting",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "pg.ttest with correction='auto' for Welch's correction",
+            "result": "PASS",
+            "note": "Example shows correction='auto' with explanation"
+          },
+          {
+            "text": "Pingouin 0.6 column names used (p_val, cohen_d, CI95)",
+            "result": "PASS",
+            "note": "Compatibility notes explicitly document 0.6 column name changes"
+          },
+          {
+            "text": "Effect size (Cohen's d) extracted and reported",
+            "result": "PASS",
+            "note": "cohen_d extraction shown with CI computation guidance"
+          },
+          {
+            "text": "APA format report template provided",
+            "result": "PASS",
+            "note": "Complete independent t-test APA template with all required elements"
+          },
+          {
+            "text": "Assumption checking referenced in workflow",
+            "result": "PASS",
+            "note": "Step 4 of workflow requires assumption checks before running test"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "ANOVA with post-hoc tests and effect sizes",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "One-way ANOVA with Tukey HSD corrections",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "pg.anova with detailed=True for complete output",
+            "result": "PASS",
+            "note": "Example shows anova() with detailed=True parameter"
+          },
+          {
+            "text": "Partial eta-squared (np2) effect size extraction",
+            "result": "PASS",
+            "note": "eta_p2 = aov['np2'].values[0] demonstrated"
+          },
+          {
+            "text": "Conditional post-hoc testing (only if significant)",
+            "result": "PASS",
+            "note": "Post-hoc tests wrapped in if aov['p_unc'].values[0] < 0.05"
+          },
+          {
+            "text": "Tukey HSD for family-wise error control",
+            "result": "PASS",
+            "note": "pg.pairwise_tukey shown with note about controlling family-wise error"
+          },
+          {
+            "text": "Complete ANOVA APA report template",
+            "result": "PASS",
+            "note": "Detailed template including post-hoc comparisons with effect sizes"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Linear regression with comprehensive diagnostics",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multiple regression with assumption checking",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "sm.add_constant for intercept term",
+            "result": "PASS",
+            "note": "X = sm.add_constant(X_predictors) shown before OLS"
+          },
+          {
+            "text": "check_regression_diagnostics integration",
+            "result": "PASS",
+            "note": "Function called on fitted model with interpretation output"
+          },
+          {
+            "text": "Robust standard errors for heteroscedasticity",
+            "result": "PASS",
+            "note": "model.get_robustcov_results('HC3') shown as remedial action"
+          },
+          {
+            "text": "VIF for multicollinearity checking",
+            "result": "PASS",
+            "note": "diag['vif'] extraction shown; VIF mentioned in APA template"
+          },
+          {
+            "text": "Multiple regression APA template with all predictors",
+            "result": "PASS",
+            "note": "Comprehensive template showing B, SE, β, t, p, CI for each predictor"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Bayesian analysis with PyMC and ArviZ 1.x",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bayesian t-test with modern ArviZ API",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "PyMC model specification with priors",
+            "result": "PASS",
+            "note": "Complete example with Normal priors and HalfNormal for sigma"
+          },
+          {
+            "text": "Deterministic for derived quantity (difference)",
+            "result": "PASS",
+            "note": "pm.Deterministic('difference', mu1 - mu2) shown"
+          },
+          {
+            "text": "ArviZ 1.x ci_prob parameter for 95% intervals",
+            "result": "PASS",
+            "note": "Compatibility note explains ci_prob=0.95 for 95% credible intervals"
+          },
+          {
+            "text": "Direct probability statement computation",
+            "result": "PASS",
+            "note": "np.mean(trace.posterior['difference'].values > 0) for directional hypothesis"
+          },
+          {
+            "text": "Bayesian APA report template with convergence diagnostics",
+            "result": "PASS",
+            "note": "Template includes credible interval, posterior probability, R-hat, and ESS"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Power analysis and statistical integrity principles",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Sample size planning and p-hacking prevention",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "A priori power analysis for study planning",
+            "result": "PASS",
+            "note": "tt_ind_solve_power example with effect_size, alpha, power parameters"
+          },
+          {
+            "text": "ANOVA power analysis with correct parameters",
+            "result": "PASS",
+            "note": "FTestAnovaPower with k_groups, returning total N with per-group calculation"
+          },
+          {
+            "text": "Statistical integrity section with 7 principles",
+            "result": "PASS",
+            "note": "Comprehensive section covering confirmatory vs exploratory, p-hacking, multiple comparisons, etc."
+          },
+          {
+            "text": "Sensitivity analysis vs post-hoc power distinction",
+            "result": "FAIL",
+            "note": "Sensitivity analysis shown but could more strongly emphasize why post-hoc power is misleading"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 55.7,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional 6-step analysis workflow establishing rigorous methodology from hypothesis framing through reporting",
+    "Outstanding statistical integrity section with 7 principles preventing common methodological errors (p-hacking, selective reporting, etc.)",
+    "Comprehensive assumption checking with bundled scripts module and clear remedial action guidance for violations",
+    "Excellent APA report templates for multiple test types including all required elements (descriptives, statistics, effect sizes, assumptions)",
+    "Strong emphasis on effect sizes with confidence intervals, quick reference table of benchmarks, and proper interpretation guidance"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Strengthen post-hoc power criticism",
+      "observed_in": [5],
+      "problem": "Post-hoc power identified as misleading but critique could be stronger",
+      "root_cause": "Users frequently request observed power despite it being uninformative",
+      "fix": "Add explicit warning: 'Post-hoc/observed power is mathematically redundant with the p-value and provides no additional information. If p < 0.05, observed power appears high; if p > 0.05, it appears low. This is circular reasoning. Use sensitivity analysis instead to determine what effect the study could have detected.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add quick decision flowchart for test selection",
+      "observed_in": [],
+      "problem": "Test selection guidance is comprehensive but users may need visual decision tree",
+      "root_cause": "Quick reference table is excellent but visual flowchart aids rapid decision-making",
+      "fix": "Add flowchart: 'Start → How many groups? → 2: Independent or paired? → Independent: Normal? → Yes: t-test, No: Mann-Whitney' etc."
+    },
+    {
+      "priority": "P3",
+      "title": "Add output format specifications for test result objects",
+      "observed_in": [],
+      "problem": "Result extraction shown but not comprehensive output structure documentation",
+      "root_cause": "Users may need to access additional columns not shown in examples",
+      "fix": "Add note: 'Pingouin test functions return DataFrames. Common columns: T/F/U/W (test statistic), dof, p_val, cohen_d/hedges (effect size), CI95 (confidence interval), power. Use .columns to see all available fields.'"
+    }
+  ]
+}

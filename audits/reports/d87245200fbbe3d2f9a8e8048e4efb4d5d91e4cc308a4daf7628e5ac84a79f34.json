@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "paper-lookup",
+    "description": "Search 11 academic literature APIs for papers, preprints, citations, and open-access full text with reproducible provenance. Covers PubMed, PMC (full text), Europe PMC (full-text and preprint search), bioRxiv, medRxiv, arXiv, OpenAlex, Crossref, Semantic Scholar, CORE, Unpaywall. Provides database selection guidance, identifier cross-referencing, bundled scripts for pagination and parsing, API rate limiting, and auditable output format.",
+    "evaluated_on": "2026-09-09",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Strong emphasis on reproducibility, provenance documentation, explicit reporting of gaps, and treating API responses as untrusted data"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Clear database selection guide matching use cases to authoritative sources; explicit warnings about API failure modes and silent errors"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on documented APIs from authoritative literature databases; includes verification dates and failure-mode documentation"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready with 4 bundled Python scripts handling pagination, JATS, arXiv XML, and OpenAlex abstracts; comprehensive reference files"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of 11 literature APIs with database selection guide, identifier cross-referencing, bundled scripts, and output format specification"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional error handling guidance: API silent failures documented per database, error recovery workflow, completeness reconciliation, bounded work"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong rate limiting guidance, parallelization rules, request bounds (~1000 records, ~50 calls), and bulk data alternatives; SKILL.md 264 lines well-organized"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding: 6-step core workflow, database selection tables, common identifier format reference, bundled scripts with exit codes, reference file per API"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural triggers (find papers, DOI lookup, citations, full text, preprints), clear use case mapping, explicit scope boundaries"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent: API keys from environment, credential redaction in provenance, untrusted data handling, no shell interpolation of responses, no key echo"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional structure with 11 reference files (one per database), extensibility guidance for new databases, verification dates, hazard documentation"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability across databases; deterministic for same query/time; minor: cross-database deduplication could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.33,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "PubMed keyword search with esearch + esummary",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard biomedical literature search workflow",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "esearch returns PMID list with count for pagination planning",
+            "result": "PASS",
+            "note": "Count-first pattern documented"
+          },
+          {
+            "text": "esummary retrieves metadata for PMID batch",
+            "result": "PASS",
+            "note": "Two-stage retrieval workflow standard"
+          },
+          {
+            "text": "Rate limiting: 3 req/s without key, 10 with NCBI_API_KEY",
+            "result": "PASS",
+            "note": "Rate limits clearly documented with key benefit"
+          },
+          {
+            "text": "Output includes provenance: endpoints, parameters, access date",
+            "result": "PASS",
+            "note": "Reproducibility requirement enforced"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "DOI lookup with Crossref and Unpaywall for OA PDF",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Cross-database query for metadata and open access",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Crossref provides authoritative DOI metadata",
+            "result": "PASS",
+            "note": "Database selection guide correctly routes DOI queries"
+          },
+          {
+            "text": "Unpaywall returns best_oa_location with PDF URL",
+            "result": "PASS",
+            "note": "Open access lookup pattern documented"
+          },
+          {
+            "text": "Unpaywall requires real email parameter, rejects placeholders",
+            "result": "PASS",
+            "note": "API quirk explicitly documented (HTTP 422 on test@example.com)"
+          },
+          {
+            "text": "Cross-database reconciliation by DOI documented",
+            "result": "PASS",
+            "note": "Identifier-based joining guidance provided"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Preprint search via Europe PMC with SRC:PPR filter",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Keyword search across bioRxiv/medRxiv via Europe PMC index",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Europe PMC indexes bioRxiv/medRxiv with keyword search capability",
+            "result": "PASS",
+            "note": "Database selection guide correctly emphasizes Europe PMC for preprint search"
+          },
+          {
+            "text": "SRC:PPR filter limits to preprint sources",
+            "result": "PASS",
+            "note": "Query syntax documented with example"
+          },
+          {
+            "text": "bioRxiv/medRxiv APIs have no keyword search of their own",
+            "result": "PASS",
+            "note": "Critical limitation explicitly stated"
+          },
+          {
+            "text": "DOIs extracted for follow-up to bioRxiv API for preprint-specific metadata",
+            "result": "PASS",
+            "note": "Two-stage workflow pattern clearly explained"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "arXiv search with pagination and XML parsing via bundled script",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Atom XML handling with rate limiting and error detection",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "arXiv rate limit: 1 request per 3 seconds strictly enforced",
+            "result": "PASS",
+            "note": "Slowest API with explicit patience requirement"
+          },
+          {
+            "text": "arxiv_atom.py script handles XML parsing with exit code 3 for error feed",
+            "result": "PASS",
+            "note": "Bundled script detects silent failures (Error entry in 200 response)"
+          },
+          {
+            "text": "URL encoding required for brackets in date ranges",
+            "result": "PASS",
+            "note": "Curl globbing trap documented (exit 3 before sending request)"
+          },
+          {
+            "text": "Version suffix handling for arXiv IDs documented",
+            "result": "PASS",
+            "note": "arxiv_atom.py handles version normalization"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "PMC full text with JATS XML and bodyless-200 trap",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Full text retrieval with silent failure detection",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "eFetch returns XML with HTTP 200 even when body unavailable",
+            "result": "PASS",
+            "note": "Silent failure mode explicitly documented as recurring hazard"
+          },
+          {
+            "text": "jats_to_text.py exits 2 when no <body> element present",
+            "result": "PASS",
+            "note": "Bundled script detects metadata-only responses"
+          },
+          {
+            "text": "Section extraction with --sections parameter",
+            "result": "PASS",
+            "note": "Targeted full-text retrieval documented"
+          },
+          {
+            "text": "Europe PMC provides honest 404 for unavailable full text",
+            "result": "PARTIAL",
+            "note": "Documented but comparison could be more prominent in PMC reference"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Exhaustive retrieval with pagination script and count reconciliation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bounded large-scale retrieval with provenance",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "paginate.py handles bioRxiv, medRxiv, Europe PMC, OpenAlex, Crossref",
+            "result": "PASS",
+            "note": "Multi-API pagination with correct step and rate limits"
+          },
+          {
+            "text": "Exit code 4 when walk ended early (records missing vs reported total)",
+            "result": "PASS",
+            "note": "Distinguishes user-set bound from missing records"
+          },
+          {
+            "text": "Default bounds: ~1000 records, ~50 calls without explicit confirmation",
+            "result": "PASS",
+            "note": "Safety bounds prevent unbounded work"
+          },
+          {
+            "text": "Credential redaction in provenance output",
+            "result": "PARTIAL",
+            "note": "Documented for paginate.py but could be emphasized in manual curl patterns"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 57.8,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional documentation of API failure modes: explicit silent-failure patterns for each database (bodyless 200, error feeds, errCode in 200 body)",
+    "Outstanding security practices: API keys from environment, credential redaction in provenance, untrusted data handling, no response interpolation into commands",
+    "Comprehensive coverage with 11 APIs, database selection guide, identifier format reference, bundled scripts, and one reference file per database",
+    "Strong reproducibility emphasis: provenance requirements, count reconciliation, explicit gap reporting, verification dates for all sources",
+    "Production-ready with 4 bundled scripts handling fragile patterns (pagination, JATS, arXiv XML, OpenAlex abstracts) with meaningful exit codes"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add cross-database deduplication guidance",
+      "observed_in": [2, 3],
+      "problem": "Multi-database queries can return duplicate papers; deduplication strategy not explicitly documented",
+      "root_cause": "Focus on individual database correctness rather than cross-database synthesis",
+      "fix": "Add section 'Cross-Database Deduplication' with DOI-based merge strategy, handling of preprint-publication pairs, and guidance on when to preserve duplicates (e.g., different full-text sources)"
+    },
+    {
+      "priority": "P2",
+      "title": "Strengthen credential redaction emphasis for manual curl patterns",
+      "observed_in": [6],
+      "problem": "Credential redaction documented for paginate.py but manual curl examples could leak api_key/email in logs",
+      "root_cause": "Security guidance concentrated in script documentation rather than prominent in core workflow",
+      "fix": "Add callout box in 'Making API Calls' section: 'When logging or sharing curl commands, redact api_key, email, mailto parameters to prevent credential leakage'"
+    }
+  ]
+}

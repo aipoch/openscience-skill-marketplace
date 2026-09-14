@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "skill_name": "scientific-critical-thinking",
+    "description": "Evaluate scientific claims and evidence quality. Use for assessing experimental design validity, identifying biases and confounders, applying evidence grading frameworks (GRADE, Cochrane Risk of Bias), or teaching critical analysis. Best for understanding evidence quality and identifying flaws. Provides systematic process for evaluating scientific rigor.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Evidence Insight",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated methodological claims; accurate representation of GRADE and Cochrane ROB frameworks"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for critical analysis with clear guidance on constructive, specific, proportionate evaluation"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established evidence-grading frameworks (GRADE, Cochrane) and critical thinking principles"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "No code generation in this analytical guidance skill"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of critical thinking: methodology critique, bias detection, statistical evaluation, evidence quality, logical fallacies"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability with systematic 7-capability framework, application guidelines (constructive, specific, proportionate, consistent)"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with core capabilities documentation, 6 reference files covering methods, biases, statistics, evidence hierarchy, fallacies, design"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with When to Use section, 7-capability framework, clear application guidelines, GRADE/Cochrane framework integration"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Clear guidance structure with application guidelines; minor: no installation or setup section (analytical skill, but clarity could be improved)"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good security with optional figure generation via scientific-schematics (API disclosure); minor: no explicit guidance on handling unpublished data"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.2, MIT license, clear reference structure with 6 topic-specific files"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong with clear trigger (evaluate scientific claims), scientific-schematics integration; minor: boundary to peer-review skill mentioned but criteria for choosing not detailed"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Evaluate experimental design and identify confounders",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core methodology critique workflow",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Methodology critique capability documented", "result": "PASS", "note": "Core capability: design, controls, confounding"},
+          {"text": "Specific, constructive feedback provided", "result": "PASS", "note": "Application guideline: 'Point to specific instances'"},
+          {"text": "Strengths and weaknesses both identified", "result": "PASS", "note": "Be Constructive: 'Identify strengths as well as weaknesses'"},
+          {"text": "Fatal flaws distinguished from limitations", "result": "PASS", "note": "Be Proportionate: 'Distinguish between fatal flaws and minor limitations'"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Apply GRADE framework to systematic review evidence",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Evidence grading with established framework",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "GRADE framework mentioned in description", "result": "PASS", "note": "Explicitly listed as core capability"},
+          {"text": "Evidence quality assessment capability", "result": "PASS", "note": "Core capability 4: study hierarchy, replication, strength of inference"},
+          {"text": "Systematic review use case covered", "result": "PASS", "note": "When to Use: 'Conducting systematic reviews or meta-analyses'"},
+          {"text": "Downgrade/upgrade factors addressed", "result": "PASS", "note": "Evidence hierarchy reference covers GRADE domains"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Identify statistical p-hacking and multiplicity issues",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Statistical pitfall detection",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Statistical analysis evaluation capability", "result": "PASS", "note": "Core capability 3: power, multiplicity, p-value misuse, effect sizes"},
+          {"text": "statistical_pitfalls.md reference available", "result": "PASS", "note": "Dedicated reference file for statistical issues"},
+          {"text": "Multiple testing explicitly mentioned", "result": "PASS", "note": "Multiplicity listed in capability description"},
+          {"text": "Effect size emphasis over p-values", "result": "PASS", "note": "P-value misuse and effect sizes both listed"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Detect logical fallacies in research argument",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Logical reasoning assessment",
+        "basic": 35,
+        "specialized": 49,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Logical fallacy identification capability", "result": "PASS", "note": "Core capability 5: fallacies that recur in scientific argument"},
+          {"text": "logical_fallacies.md reference available", "result": "PASS", "note": "Dedicated reference file"},
+          {"text": "Claim evaluation capability", "result": "PASS", "note": "Core capability 7: separating what was shown from what is asserted"},
+          {"text": "Common scientific fallacy examples provided", "result": "FAIL", "note": "Reference mentioned but specific examples not shown in main SKILL.md"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Scope Boundary",
+        "label": "Write formal peer review report for journal",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly redirected to peer-review skill",
+        "basic": 32,
+        "specialized": 43,
+        "total": 75,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Scope boundary stated in description", "result": "PASS", "note": "'For formal peer review writing use peer-review'"},
+          {"text": "Critical analysis within scope", "result": "PASS", "note": "When to Use: 'Providing critical analysis of research papers'"},
+          {"text": "peer-review skill referenced", "result": "PASS", "note": "Explicit redirection provided"},
+          {"text": "Distinction criteria explained", "result": "FAIL", "note": "Boundary stated but not when to use which skill"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 53.0,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive 7-capability framework covering methodology, bias, statistics, evidence quality, fallacies, design guidance, and claim evaluation",
+    "Excellent application guidelines with 4 clear principles: be constructive, specific, proportionate, and apply consistent standards",
+    "Strong integration of established frameworks (GRADE, Cochrane Risk of Bias) with dedicated reference documentation",
+    "Outstanding systematic approach with 6 topic-specific reference files providing depth beyond main SKILL.md",
+    "Good composability with scientific-schematics skill for optional flowchart/framework diagrams"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add example logical fallacies to main documentation",
+      "observed_in": [4],
+      "problem": "Logical fallacies mentioned but no inline examples provided",
+      "root_cause": "Agent usability: common patterns not immediately accessible",
+      "fix": "Add to ## Core Capabilities: 'Common scientific fallacies: appeal to authority (expert ≠ evidence), post hoc ergo propter hoc (correlation ≠ causation), Texas sharpshooter (cherry-picking data).'"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify critical-thinking vs peer-review skill boundary",
+      "observed_in": [5],
+      "problem": "Boundary stated but decision criteria not provided",
+      "root_cause": "Agent-specific: skill selection guidance incomplete",
+      "fix": "Add note: 'Use scientific-critical-thinking for analyzing methodology and evidence. Use peer-review for structured journal review format with accept/revise/reject framing.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance on handling unpublished data",
+      "observed_in": [3],
+      "problem": "Optional figure generation uses API but data handling not addressed",
+      "root_cause": "Security criterion: sensitive data handling could be more explicit",
+      "fix": "Add to ## Visual Aids disclosure: 'When analyzing unpublished research, do not include proprietary methods, unpublished results, or confidential details in figure prompts sent to external APIs.'"
+    }
+  ]
+}

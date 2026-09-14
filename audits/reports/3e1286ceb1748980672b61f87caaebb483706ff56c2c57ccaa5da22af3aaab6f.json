@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "skill_name": "parabricks",
+    "description": "Route NVIDIA Parabricks pbrun tools, assess GPU/runtime readiness, and provide version-aware command guidance for FASTQ/BAM processing, RNA-seq, variant calling, BAM QC, and GVCF workflows. Do NOT use for inspecting or accelerating whole pipelines — use genomics-workflow-acceleration.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive tool routing coverage with 29 pbrun tools indexed; clear scope separation from genomics-workflow-acceleration; runtime readiness assessment included"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong guardrails against tool substitution and flag invention; version-awareness emphasized; check_parabricks_runtime.py diagnostic script; minor: no fallback for missing reference files"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent efficiency: 161-line SKILL.md with progressive disclosure via 32+ reference files (one per tool); tool index table prevents unnecessary loading"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional routing design: tool index table with 'Use when' column; 4-step workflow from version confirmation through command generation; troubleshooting table covers all common failure modes"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear prerequisites section; explicit scope exclusion (NOT for whole-pipeline work); runtime readiness script with consent requirement"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Strong guardrails: never install/modify packages, never invent sample names/paths/reference builds, runtime probe requires user consent; no credential handling"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent modular structure with per-tool reference files; version-sensitivity documented; minor: 32 reference files require updates when Parabricks releases new versions"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Perfect trigger precision with explicit negative scope (NOT for genomics-workflow-acceleration tasks); excellent composability via tool index; strong guardrails prevent dangerous operations; lacks explicit idempotency statement; version-sensitivity well-documented"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 19
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Route user request to fq2bam for DNA paired-end",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete routing workflow from tool-index.md to pbrun-fq2bam.md with Docker command generation",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Tool index consulted before selecting fq2bam",
+            "result": "PASS",
+            "note": "Workflow step 2: tool discovery → tool-index.md"
+          },
+          {
+            "text": "pbrun-fq2bam.md loaded for specific command details",
+            "result": "PASS",
+            "note": "Table shows reference file for selected tool"
+          },
+          {
+            "text": "Docker command includes explicit mounts and workdir",
+            "result": "PASS",
+            "note": "Command Shape shows --volume and --workdir patterns"
+          },
+          {
+            "text": "Version-specific flag validation emphasized",
+            "result": "PASS",
+            "note": "Check version-specific tool reference before finalizing flags"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Runtime readiness assessment with diagnostic script",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete readiness check using check_parabricks_runtime.py with consent",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "runtime-environment.md consulted for readiness questions",
+            "result": "PASS",
+            "note": "Runtime Readiness section directs to reference file"
+          },
+          {
+            "text": "check_parabricks_runtime.py script invoked",
+            "result": "PASS",
+            "note": "Diagnostic script path provided"
+          },
+          {
+            "text": "User consent required before container probes",
+            "result": "PASS",
+            "note": "Run container probes only with user consent"
+          },
+          {
+            "text": "Path validation with --path flag for filesystem checks",
+            "result": "PASS",
+            "note": "Add --path <dir> for known input/output/tmp paths"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Ambiguous request requiring tool clarification",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct use of tool-index.md for disambiguation with context gathering",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Multiple plausible tools identified from request",
+            "result": "PASS",
+            "note": "Troubleshooting table documents this scenario"
+          },
+          {
+            "text": "User asked for assay, inputs, caller preference, desired output",
+            "result": "PASS",
+            "note": "Prerequisites section lists required context"
+          },
+          {
+            "text": "tool-index.md used for routing heuristics",
+            "result": "PASS",
+            "note": "For routing heuristics when multiple tools could apply"
+          },
+          {
+            "text": "No tool recommendation without sufficient context",
+            "result": "PASS",
+            "note": "Collect missing biological and filesystem context before generating commands"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "RNA-seq specific routing to rna_fq2bam",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Correct routing but guardrail enforcement relies on understanding not blocking",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "rna_fq2bam selected instead of DNA fq2bam",
+            "result": "PASS",
+            "note": "Table shows separate rna_fq2bam for RNA-seq"
+          },
+          {
+            "text": "Guardrail prevents DNA fq2bam substitution for RNA",
+            "result": "PASS",
+            "note": "Do not substitute DNA fq2bam for RNA"
+          },
+          {
+            "text": "Assay type confirmed before tool selection",
+            "result": "PASS",
+            "note": "Confirm DNA/RNA/methylation/long-read/pangenome before routing"
+          },
+          {
+            "text": "Splice-aware alignment (STAR) noted as distinguishing feature",
+            "result": "FAIL",
+            "note": "Table shows use-when but not inline rationale for why RNA needs different tool"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "User requests whole-pipeline acceleration",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct delegation to genomics-workflow-acceleration skill",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Skill description explicitly excludes whole-pipeline work",
+            "result": "PASS",
+            "note": "Do NOT use for inspecting or accelerating whole pipelines"
+          },
+          {
+            "text": "Purpose section reinforces scope restriction",
+            "result": "PASS",
+            "note": "Do not use this skill for whole-workflow inspection, acceleration planning"
+          },
+          {
+            "text": "User redirected to genomics-workflow-acceleration",
+            "result": "PASS",
+            "note": "For pipeline-level work, use genomics-workflow-acceleration"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 55.7,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional routing architecture: comprehensive 29-tool index with 'Use when' column enabling precise tool selection",
+    "Perfect scope separation: explicit exclusion of whole-pipeline work with clear delegation to genomics-workflow-acceleration",
+    "Strong version-awareness: guardrails prevent flag invention and emphasize checking version-specific references",
+    "Excellent progressive disclosure: 161-line SKILL.md with 32+ per-tool reference files loaded on demand",
+    "Comprehensive guardrails: 11 explicit constraints preventing common errors (no tool substitution, no path invention, no parity claims without comparison)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add inline rationale for tool distinctions",
+      "observed_in": ["Input 4"],
+      "problem": "Table shows rna_fq2bam separate from fq2bam but doesn't explain why RNA needs splice-aware alignment inline",
+      "root_cause": "Use-when column describes context but not biological rationale",
+      "fix": "Expand rna_fq2bam table entry: 'RNA-seq FASTQ(s) → splice-aware BAM (STAR alignment) — use instead of fq2bam for RNA because intron-spanning reads require junction-aware aligner'. Similar clarifications for fq2bam_meth (bisulfite conversion), minimap2 (long-read alignment characteristics)."
+    },
+    {
+      "priority": "P2",
+      "title": "Add fallback for missing reference files",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "Workflow assumes all 32 reference files exist; no fallback if pbrun-<tool>.md missing or outdated",
+      "root_cause": "Reference file structure brittle to incomplete installations or version skew",
+      "fix": "Add to Workflow step 2: 'If reference file missing for selected tool, fall back to NVIDIA docs at docs.nvidia.com/clara/parabricks/latest/toolreference.html#<tool> and note reference needs updating. Do not invent flags from tool name alone.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for command execution",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running same pbrun command multiple times produces identical outputs",
+      "root_cause": "Determinism varies by tool (alignment deterministic, variant calling may have stochastic elements)",
+      "fix": "Add to Limitations: 'Idempotency: Most pbrun tools are deterministic (same inputs → same outputs), but some advanced tools may use randomization. Check tool-specific reference for --random-seed or similar flags. For reproducible results, version container tags and reference genome builds.'"
+    }
+  ]
+}

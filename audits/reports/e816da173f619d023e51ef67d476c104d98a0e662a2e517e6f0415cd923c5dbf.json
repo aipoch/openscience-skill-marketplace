@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "skill_name": "scvi-tools",
+    "description": "Deep generative models for single-cell omics. Use when you need probabilistic batch correction (scVI), transfer learning, differential expression with uncertainty, or multi-modal integration (TOTALVI, MultiVI). Best for advanced modeling, batch effects, multimodal data. For standard analysis pipelines use scanpy.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "High",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; documentation accurately represents scvi-tools 1.4.3 capabilities with correct model namespaces and theoretical foundations"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for probabilistic modeling in single-cell genomics; clear boundaries directing standard analysis to scanpy"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established variational inference methods, deep generative models, and peer-reviewed scvi-tools publications"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples follow the correct API pattern (setup_anndata, train, extract); syntactically correct with proper imports"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of scvi-tools ecosystem including RNA-seq, ATAC-seq, multimodal, spatial, and specialized models; excellent reference organization by modality; minor: could benefit from more concrete model selection decision trees"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good guidance on model persistence, batch correction patterns, and theoretical foundations; minor: lacks explicit troubleshooting section for common training failures (convergence, GPU memory errors)"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-structured documentation with clear sections, comprehensive reference files organized by modality (8 files covering all model categories)"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Excellent 'When to Use This Skill' section with clear triggers; strong scope boundaries to scanpy; comprehensive examples; minor: model namespace warning is excellent but could be more prominent"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with Python 3.12+ requirement; excellent workflow example; compute backend options documented; best practices section included"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "No credential exposure; safe data handling patterns; raw counts requirement properly emphasized; no security concerns identified"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, license (BSD-3-Clause), comprehensive reference organization by modality, clear API patterns, version-specific notes (1.4.3)"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with scanpy ecosystem; clear integration with AnnData; theoretical foundations documented; minor: lacks explicit output format specifications for different model types and could benefit from more explicit failure modes"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 20,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Basic scVI workflow with batch correction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard RNA-seq analysis with batch integration",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "setup_anndata correctly registers data with batch_key",
+            "result": "PASS",
+            "note": "Example shows proper registration with layer='counts' and batch_key"
+          },
+          {
+            "text": "Model instantiation and training pattern shown",
+            "result": "PASS",
+            "note": "model = scvi.model.SCVI(adata); model.train() correctly demonstrated"
+          },
+          {
+            "text": "Latent representation extraction documented",
+            "result": "PASS",
+            "note": "get_latent_representation() method properly shown"
+          },
+          {
+            "text": "Integration with scanpy downstream analysis",
+            "result": "PASS",
+            "note": "Storage in adata.obsm['X_scVI'] and scanpy workflow integration shown"
+          },
+          {
+            "text": "Raw counts requirement emphasized",
+            "result": "PASS",
+            "note": "layer='counts' with clear comment about using raw counts not log-normalized"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Multimodal integration with TOTALVI",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "CITE-seq protein and RNA joint modeling",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "totalVI model referenced with correct namespace",
+            "result": "PASS",
+            "note": "Listed under scvi.model namespace in core capabilities"
+          },
+          {
+            "text": "CITE-seq specific use case clearly stated",
+            "result": "PASS",
+            "note": "Multimodal section explicitly covers CITE-seq protein and RNA"
+          },
+          {
+            "text": "Reference file for multimodal integration provided",
+            "result": "PASS",
+            "note": "models-multimodal.md reference file exists and is linked"
+          },
+          {
+            "text": "Unified API pattern applies to multimodal models",
+            "result": "PASS",
+            "note": "Design principles state consistent interface across all models"
+          },
+          {
+            "text": "MultiVI and DIAGVI alternatives documented",
+            "result": "PASS",
+            "note": "MultiVI for paired/unpaired integration, DIAGVI (1.4.3) for unpaired datasets"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Differential expression with uncertainty quantification",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Probabilistic DE analysis using generative models",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "differential_expression method documented",
+            "result": "PASS",
+            "note": "Complete example with groupby, group1, group2 parameters shown"
+          },
+          {
+            "text": "mode parameter for composite hypothesis testing",
+            "result": "PASS",
+            "note": "mode='change' with delta threshold documented"
+          },
+          {
+            "text": "Effect size threshold (delta) usage shown",
+            "result": "PASS",
+            "note": "delta=0.25 for minimum effect size threshold demonstrated"
+          },
+          {
+            "text": "Reference to differential-expression.md provided",
+            "result": "PASS",
+            "note": "Explicit reference to differential-expression.md for methodology"
+          },
+          {
+            "text": "Interpretation guidance for probabilistic results",
+            "result": "FAIL",
+            "note": "Reference mentioned but no inline guidance on interpreting Bayes factors or posterior probabilities"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Model persistence and transfer learning",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Save/load workflow and cross-dataset application",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "model.save() with directory path documented",
+            "result": "PASS",
+            "note": "Save pattern with overwrite=True shown"
+          },
+          {
+            "text": "Model loading requires adata parameter",
+            "result": "PASS",
+            "note": "load() method shows adata=adata parameter requirement"
+          },
+          {
+            "text": "Transfer learning mentioned in use cases",
+            "result": "PASS",
+            "note": "Transfer learning listed as a core use case"
+          },
+          {
+            "text": "scANVI transfer learning workflow documented",
+            "result": "FAIL",
+            "note": "scANVI mentioned for transfer learning but workflow not shown in main SKILL.md"
+          },
+          {
+            "text": "Cross-dataset compatibility considerations",
+            "result": "FAIL",
+            "note": "No guidance on feature matching or preprocessing alignment for transfer"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Model namespace errors and GPU configuration",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Common pitfalls in model selection and compute backend",
+        "basic": 32,
+        "specialized": 43,
+        "total": 75,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Model namespace distinction (scvi.model vs scvi.external) documented",
+            "result": "PASS",
+            "note": "Excellent namespace warning in Overview with comprehensive model list"
+          },
+          {
+            "text": "GPU acceleration mentioned in best practices",
+            "result": "PASS",
+            "note": "accelerator='gpu' parameter shown, automatic GPU utilization noted"
+          },
+          {
+            "text": "Alternative compute backends documented",
+            "result": "PASS",
+            "note": "JAX backend (JaxSCVI) and MLX backend (mlxSCVI) for Apple silicon mentioned"
+          },
+          {
+            "text": "GPU memory troubleshooting or batch size guidance",
+            "result": "FAIL",
+            "note": "No explicit guidance on GPU OOM errors or training batch size adjustment"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 52.4,
+    "score": 90,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional model organization by modality (RNA-seq, ATAC-seq, multimodal, spatial, specialized) with 8 comprehensive reference files",
+    "Clear and prominent model namespace documentation preventing critical import errors (scvi.model vs scvi.external)",
+    "Strong theoretical foundations section grounding the skill in variational inference and deep generative modeling principles",
+    "Excellent unified API pattern documentation (setup → train → extract) consistent across all models",
+    "Outstanding integration with scanpy ecosystem and clear scope boundaries for when to use scvi-tools vs scanpy"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add troubleshooting section for common training failures",
+      "observed_in": [5],
+      "problem": "No guidance on GPU memory errors, convergence issues, or training diagnostics",
+      "root_cause": "Documentation focuses on successful workflows without addressing common failure modes",
+      "fix": "Add troubleshooting section covering: GPU OOM errors and batch size tuning, convergence diagnostics (ELBO plots), NaN losses, and when to adjust learning rates or epochs"
+    },
+    {
+      "priority": "P2",
+      "title": "Expand transfer learning documentation",
+      "observed_in": [4],
+      "problem": "Transfer learning mentioned as use case but workflow not documented",
+      "root_cause": "scANVI transfer learning pattern not shown despite being a key feature",
+      "fix": "Add transfer learning example to main SKILL.md showing: train base model on reference, load for query dataset, handle feature alignment, and extract transferred annotations"
+    },
+    {
+      "priority": "P2",
+      "title": "Add model selection decision tree",
+      "observed_in": [1],
+      "problem": "Many models available but selection criteria spread across descriptions",
+      "root_cause": "Users must read all model descriptions to understand which fits their data type",
+      "fix": "Add decision tree or flowchart: 'Do you have protein data? → Yes: totalVI/MultiVI. Is it paired? → Yes: totalVI, No: MultiVI. Are datasets unpaired? → DIAGVI' etc."
+    }
+  ]
+}

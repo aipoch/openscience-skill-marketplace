@@ -139,6 +139,17 @@ export function s3Store({
   return {
     read,
     putImmutable: (p, b) => upload(p, b, true),
+    async writeAuditCatalog(bytes) {
+      await upload("audits/catalog.json", bytes, false);
+      await run("aws", [
+        "cloudfront",
+        "create-invalidation",
+        "--distribution-id",
+        distributionId,
+        "--paths",
+        `/${cdnPrefix}/audits/catalog.json`,
+      ]);
+    },
     writeRootSignature: (b) => upload("marketplace.json.sig", b, false),
     async writeRoot(bytes) {
       await upload("marketplace.json", bytes, false);

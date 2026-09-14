@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "record_key": "aipoch/deeptools@1.0.0",
+      "id": "deeptools",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Data Analysis/deeptools",
+      "reasons": [
+        "The generic BSD declaration does not identify a precise license and differs from selected repository evidence."
+      ],
+      "resume_conditions": [
+        "Confirm the exact applicable license and preserve its pinned full text."
+      ]
+    },
+    {
+      "record_key": "aipoch/lamindb@1.0.0",
+      "id": "lamindb",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Data Analysis/lamindb",
+      "reasons": [
+        "License declarations and selected evidence require scope reconciliation; copied upstream attribution must be preserved."
+      ],
+      "resume_conditions": [
+        "Review per-component license scope, pin corresponding evidence and preserve original attribution."
+      ]
+    },
+    {
+      "record_key": "aipoch/matplotlib@1.0.0",
+      "id": "matplotlib",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Data Analysis/matplotlib",
+      "reasons": [
+        "The license declaration links to a mutable external main/LICENSE without pinned complete evidence."
+      ],
+      "resume_conditions": [
+        "Pin and preserve complete applicable license evidence."
+      ]
+    },
+    {
+      "record_key": "aipoch/rowan@1.0.0",
+      "id": "rowan",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Data Analysis/rowan",
+      "reasons": [
+        "API access terms and redistribution licensing of the Skill documentation/code are not distinguished."
+      ],
+      "resume_conditions": [
+        "Establish redistribution evidence separately from API access terms."
+      ]
+    },
+    {
+      "record_key": "aipoch/scanpy@1.0.0",
+      "id": "scanpy",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Data Analysis/scanpy",
+      "reasons": [
+        "Per-Skill license declarations conflict with selected evidence; the Synthetic copy contains an SD-3-Clause typo."
+      ],
+      "resume_conditions": [
+        "Confirm the intended license and scope against original evidence, retaining attribution."
+      ]
+    },
+    {
+      "record_key": "aipoch/venue-templates@1.0.0",
+      "id": "venue-templates",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Evidence Insight/venue-templates",
+      "reasons": [
+        "Bundled third-party templates (including LPPL material) are not fully covered by root-license evidence."
+      ],
+      "resume_conditions": [
+        "Inventory third-party template licenses and preserve all required notices and applicable conditions."
+      ]
+    },
+    {
+      "record_key": "aipoch/datamol@1.0.0",
+      "id": "datamol",
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "path": "scientific-skills/Other/datamol",
+      "reasons": [
+        "License declarations and selected evidence require scope reconciliation; copied upstream attribution must be preserved."
+      ],
+      "resume_conditions": [
+        "Review per-component license scope, pin corresponding evidence and preserve original attribution."
+      ]
+    },
+    {
+      "record_key": "k-dense-ai/matplotlib@1.0.0",
+      "id": "matplotlib",
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "path": "skills/matplotlib",
+      "reasons": [
+        "The license declaration links to a mutable external main/LICENSE without pinned complete evidence."
+      ],
+      "resume_conditions": [
+        "Pin and preserve complete applicable license evidence."
+      ]
+    },
+    {
+      "record_key": "k-dense-ai/rowan@1.0.0",
+      "id": "rowan",
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "path": "skills/rowan",
+      "reasons": [
+        "API access terms and redistribution licensing of the Skill documentation/code are not distinguished."
+      ],
+      "resume_conditions": [
+        "Establish redistribution evidence separately from API access terms."
+      ]
+    },
+    {
+      "record_key": "k-dense-ai/venue-templates@1.0.0",
+      "id": "venue-templates",
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "path": "skills/venue-templates",
+      "reasons": [
+        "Bundled third-party templates (including LPPL material) are not fully covered by root-license evidence."
+      ],
+      "resume_conditions": [
+        "Inventory third-party template licenses and preserve all required notices and applicable conditions."
+      ]
+    },
+    {
+      "record_key": "nvidia-bionemo/complexa-design@1.0.0",
+      "id": "complexa-design",
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "path": "skills/bionemo-agent-toolkit/skills/complexa-design",
+      "reasons": [
+        "The standalone package references external _shared/scripts dependencies."
+      ],
+      "resume_conditions": [
+        "Bundle and verify the complete shared dependency closure in an isolated installation; preserve required licenses."
+      ]
+    },
+    {
+      "record_key": "nvidia-bionemo/complexa-evaluate-pdbs@1.0.0",
+      "id": "complexa-evaluate-pdbs",
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "path": "skills/bionemo-agent-toolkit/skills/complexa-evaluate-pdbs",
+      "reasons": [
+        "The standalone package references external _shared/scripts dependencies."
+      ],
+      "resume_conditions": [
+        "Bundle and verify the complete shared dependency closure in an isolated installation; preserve required licenses."
+      ]
+    },
+    {
+      "record_key": "nvidia-bionemo/complexa-setup@1.0.0",
+      "id": "complexa-setup",
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "path": "skills/bionemo-agent-toolkit/skills/complexa-setup",
+      "reasons": [
+        "The standalone package references external _shared/scripts dependencies."
+      ],
+      "resume_conditions": [
+        "Bundle and verify the complete shared dependency closure in an isolated installation; preserve required licenses."
+      ]
+    },
+    {
+      "record_key": "nvidia-bionemo/complexa-sweep@1.0.0",
+      "id": "complexa-sweep",
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "path": "skills/bionemo-agent-toolkit/skills/complexa-sweep",
+      "reasons": [
+        "The standalone package references external _shared/scripts dependencies."
+      ],
+      "resume_conditions": [
+        "Bundle and verify the complete shared dependency closure in an isolated installation; preserve required licenses."
+      ]
+    },
+    {
+      "record_key": "nvidia-bionemo/cuequivariance@1.0.0",
+      "id": "cuequivariance",
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "path": "skills/bionemo-agent-toolkit/skills/cuequivariance",
+      "reasons": [
+        "Original copyright notices need preservation and the original VERSION symlink is unsupported by current packaging."
+      ],
+      "resume_conditions": [
+        "Preserve original notices and review safe regular-file packaging of the pinned symlink target without relaxing archive safety."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/datamol@1.0.0",
+      "id": "datamol",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/chemistry/datamol",
+      "reasons": [
+        "License declarations and selected evidence require scope reconciliation; copied upstream attribution must be preserved."
+      ],
+      "resume_conditions": [
+        "Review per-component license scope, pin corresponding evidence and preserve original attribution."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/deeptools@1.0.0",
+      "id": "deeptools",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/biology/deeptools",
+      "reasons": [
+        "The generic BSD declaration does not identify a precise license and differs from selected repository evidence."
+      ],
+      "resume_conditions": [
+        "Confirm the exact applicable license and preserve its pinned full text."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/lamindb@1.0.0",
+      "id": "lamindb",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/biology/lamindb",
+      "reasons": [
+        "License declarations and selected evidence require scope reconciliation; copied upstream attribution must be preserved."
+      ],
+      "resume_conditions": [
+        "Review per-component license scope, pin corresponding evidence and preserve original attribution."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/matplotlib@1.0.0",
+      "id": "matplotlib",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/visualization/matplotlib",
+      "reasons": [
+        "The license declaration links to a mutable external main/LICENSE without pinned complete evidence."
+      ],
+      "resume_conditions": [
+        "Pin and preserve complete applicable license evidence."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/rowan@1.0.0",
+      "id": "rowan",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/coding/rowan",
+      "reasons": [
+        "API access terms and redistribution licensing of the Skill documentation/code are not distinguished."
+      ],
+      "resume_conditions": [
+        "Establish redistribution evidence separately from API access terms."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/scanpy@1.0.0",
+      "id": "scanpy",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/biology/scanpy",
+      "reasons": [
+        "Per-Skill license declarations conflict with selected evidence; the Synthetic copy contains an SD-3-Clause typo."
+      ],
+      "resume_conditions": [
+        "Confirm the intended license and scope against original evidence, retaining attribution."
+      ]
+    },
+    {
+      "record_key": "synthetic-sciences/venue-templates@1.0.0",
+      "id": "venue-templates",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "path": "backend/cli/skills/writing/venue-templates",
+      "reasons": [
+        "Bundled third-party templates (including LPPL material) are not fully covered by root-license evidence."
+      ],
+      "resume_conditions": [
+        "Inventory third-party template licenses and preserve all required notices and applicable conditions."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-academic-search@1.0.0",
+      "id": "nature-academic-search",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-academic-search",
+      "reasons": [
+        "Redistribution evidence for abstracts in bundled .nbib/.ris examples is unconfirmed."
+      ],
+      "resume_conditions": [
+        "Confirm redistribution evidence or review a replacement of the affected sample material."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-data@1.0.0",
+      "id": "nature-data",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-data",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-figure@1.0.0",
+      "id": "nature-figure",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-figure",
+      "reasons": [
+        "Third-party figures4papers images/scripts lack confirmed redistribution authorization and the package also depends on nature-shared."
+      ],
+      "resume_conditions": [
+        "Resolve third-party redistribution evidence and verify complete shared-resource delivery."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-paper-card@1.0.0",
+      "id": "nature-paper-card",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-paper-card",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-paper2ppt@1.0.0",
+      "id": "nature-paper2ppt",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-paper2ppt",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-polishing@1.0.0",
+      "id": "nature-polishing",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-polishing",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-reader@1.0.0",
+      "id": "nature-reader",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-reader",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-response@1.0.0",
+      "id": "nature-response",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-response",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-reviewer@1.0.0",
+      "id": "nature-reviewer",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-reviewer",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-shared@1.0.0",
+      "id": "nature-shared",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-shared",
+      "reasons": [
+        "Shared reference resource, not a standalone workflow; delivery model remains undecided. This is not file corruption."
+      ],
+      "resume_conditions": [
+        "Approve resource-package delivery with its consumers; do not present it as an independent workflow."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-statistics@1.0.0",
+      "id": "nature-statistics",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-statistics",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    },
+    {
+      "record_key": "yuan1z0825/nature-writing@1.0.0",
+      "id": "nature-writing",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "path": "skills/nature-writing",
+      "reasons": [
+        "The standalone package references ../nature-shared resources that are not installed with it."
+      ],
+      "resume_conditions": [
+        "Define shared-resource delivery and verify all references from an isolated installed package."
+      ]
+    }
+  ]
+}

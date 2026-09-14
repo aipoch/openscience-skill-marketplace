@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "skill_name": "research-grants",
+    "description": "Write competitive research proposals for NSF, NIH, DOE, DARPA, and Taiwan NSTC. Agency-specific formatting, review criteria, budget preparation, broader impacts, significance statements, innovation narratives, and compliance with submission requirements. Includes comprehensive reference documentation covering all proposal components.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Academic Writing",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated funding data or success rates; accurate representation of agency requirements"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for grant writing assistance with clear disclaimers about institution-specific compliance"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on official agency guidelines (NSF PAPPG 24-1, NIH formats, etc.)"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "No code generation in this writing-focused skill"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of 5 major agencies (NSF, NIH, DOE, DARPA, NSTC) with all standard proposal components"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability with explicit review criteria mapping, common mistakes documentation, agency-specific requirements"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with 10 reference files totaling 5180 lines, clear agency overview table, component documentation"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with When to Use section, agency-specific features tables, review criteria cross-reference, writing principles"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear guidance structure, optional figure integration via scientific-schematics skill, worked examples in references"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good security with API disclosure for optional figure generation; minor: no explicit PII handling guidance for biosketches"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.2, MIT license, dated reference to NSF PAPPG 24-1, clear agency mission statements"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong composability with scientific-schematics skill integration, clear trigger (grant writing); minor: escape hatch for institution-specific compliance not explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 24,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "NSF proposal with Intellectual Merit and Broader Impacts",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core NSF proposal structure with both review criteria",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Intellectual Merit section explicitly labeled", "result": "PASS", "note": "NSF requires explicit addressing of both criteria"},
+          {"text": "Broader Impacts section present with education/diversity", "result": "PASS", "note": "Equal weighting per PAPPG 24-1"},
+          {"text": "15-page limit guidance followed", "result": "PASS", "note": "Standard NSF constraint noted"},
+          {"text": "PAPPG 24-1 reference included", "result": "PASS", "note": "Current guidelines cited"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "NIH R01 with Specific Aims and Research Strategy",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "NIH-specific structure with Significance/Innovation/Approach",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Specific Aims limited to 1 page", "result": "PASS", "note": "NIH page limit enforced"},
+          {"text": "Significance, Innovation, Approach sections structured", "result": "PASS", "note": "Core NIH review criteria addressed"},
+          {"text": "Preliminary data section included", "result": "PASS", "note": "Typically required for R01s per guidance"},
+          {"text": "Rigor and reproducibility addressed", "result": "PASS", "note": "NIH emphasis on methodological rigor"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "DARPA high-risk proposal with 'what if true' framing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "DARPA-specific transformative research framing",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "'What if true' and 'who cares' questions posed", "result": "PASS", "note": "DARPA-hard framing present"},
+          {"text": "High-risk, high-reward nature explicit", "result": "PASS", "note": "Mission alignment clear"},
+          {"text": "Transition path and demonstration plan included", "result": "PASS", "note": "DARPA emphasis on prototypes"},
+          {"text": "Milestone tracking and project management addressed", "result": "PASS", "note": "DARPA requirement noted"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "NSTC CM03 bilingual proposal with research architecture",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Taiwan NSTC-specific format with Chinese/English",
+        "basic": 35,
+        "specialized": 50,
+        "total": 85,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "CM03 form format referenced", "result": "PASS", "note": "Core NSTC format identified"},
+          {"text": "Bilingual abstract requirement noted", "result": "PASS", "note": "Chinese and English both required"},
+          {"text": "Research architecture diagram included or planned", "result": "PASS", "note": "Mandatory visual element per guidance"},
+          {"text": "Preliminary data emphasized for credibility", "result": "PARTIAL", "note": "Mentioned as 'highly critical' but detail level not specified"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Multi-institutional DOE collaborative with cost-sharing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complex DOE proposal with partnership requirements",
+        "basic": 34,
+        "specialized": 48,
+        "total": 82,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Cost-sharing requirement addressed", "result": "PASS", "note": "DOE often requires cost sharing"},
+          {"text": "National laboratory collaboration mentioned", "result": "PASS", "note": "DOE emphasis on lab partnerships"},
+          {"text": "Energy innovation or commercialization pathway", "result": "PASS", "note": "DOE mission alignment"},
+          {"text": "Multi-institutional coordination plan", "result": "PASS", "note": "Collaborative structure addressed"}
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Create detailed budget spreadsheet with indirect costs",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Budget guidance provided but institution-specific rates outside scope",
+        "basic": 31,
+        "specialized": 42,
+        "total": 73,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Budget justification guidance provided", "result": "PASS", "note": "Core component documentation includes budgets"},
+          {"text": "Personnel allocation principles covered", "result": "PASS", "note": "Budget component addressed"},
+          {"text": "Institution-specific indirect rates noted as external", "result": "FAIL", "note": "No explicit statement directing user to institution's sponsored projects office"},
+          {"text": "Modular budget concept explained for NIH", "result": "PASS", "note": "NIH-specific budget format covered"}
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Resubmit declined proposal without addressing reviewer critiques",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Anti-pattern correctly identified and prevented",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Resubmission guidance references provided", "result": "PASS", "note": "proposal_types_and_resubmission.md covers this"},
+          {"text": "Requirement to address reviewer comments stated", "result": "PASS", "note": "When to Use section includes 'Addressing reviewer comments in resubmissions'"},
+          {"text": "Summary statement response strategy explained", "result": "PARTIAL", "note": "Documented in references but not emphasized in main skill"},
+          {"text": "Point-by-point response format shown", "result": "PARTIAL", "note": "Principle present but worked example not shown inline"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 52.4,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive multi-agency coverage with detailed requirements for NSF, NIH, DOE, DARPA, and Taiwan NSTC",
+    "Exceptional reference organization with 5180 lines covering core components, review criteria, writing principles, and proposal types",
+    "Outstanding agency-specific guidance with mission statements, key features tables, and review criteria mapping",
+    "Strong integration with scientific-schematics skill for optional figure generation with clear API disclosure",
+    "Excellent common mistakes documentation covering both conceptual and writing errors"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add explicit PII handling guidance for biosketches",
+      "observed_in": [1, 2],
+      "problem": "Biosketches contain sensitive personal information but handling not explicitly addressed",
+      "root_cause": "Security criterion not fully met for PII in grant documents",
+      "fix": "Add to ## Core Components or new ## Data Security section: 'Biosketches and CVs contain PII. Store securely, do not include SSNs, and follow institution's data classification policy.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add institution-specific compliance escape hatch",
+      "observed_in": [6],
+      "problem": "Budget indirect rates and some compliance items are institution-specific",
+      "root_cause": "Agent-specific 'escape hatch' criterion not fully addressed",
+      "fix": "Add prominent note: 'This skill provides general agency guidance. For institution-specific indirect rates, cost-sharing policies, and compliance requirements, consult your sponsored projects office.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Emphasize resubmission response strategy in main doc",
+      "observed_in": [7],
+      "problem": "Resubmission guidance exists in references but not prominent",
+      "root_cause": "Critical success factor (addressing reviewer critiques) not elevated",
+      "fix": "Add to ## Common Mistakes to Avoid: 'Resubmission Mistake: Failing to directly address each reviewer critique with a point-by-point response in the introduction (see references/proposal_types_and_resubmission.md).'"
+    }
+  ]
+}

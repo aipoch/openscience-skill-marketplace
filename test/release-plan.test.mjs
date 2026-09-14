@@ -700,6 +700,10 @@ test("catalog CLI uses the explicit plan and fails the whole selected batch when
     const inputDirectory = join(directory, "input");
     await mkdir(sourceDirectory);
     await mkdir(join(inputDirectory, "skills"), { recursive: true });
+    await writeFile(
+      join(inputDirectory, "skills/publication-holds.json"),
+      metadataJsonBytes({ schemaVersion: 1, entries: [] }),
+    );
     const manifestBytes = await readFile(
       new URL("../skills/manifest.json", import.meta.url),
     );

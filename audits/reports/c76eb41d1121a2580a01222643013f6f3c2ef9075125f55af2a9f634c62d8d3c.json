@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "skill_name": "bioservices",
+    "description": "Unified Python interface to 40+ bioinformatics services. Use when querying multiple databases (UniProt, KEGG, ChEMBL, Reactome) in a single workflow with consistent API. Best for cross-database analysis, ID mapping across services. For quick single-database lookups use gget; for sequence/file manipulation use biopython.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; accurately describes bioservices library access to 40+ bioinformatics web services with correct version warnings"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for multi-database bioinformatics queries; clear boundaries directing to gget for single lookups and biopython for file manipulation"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established bioinformatics databases and services (UniProt, KEGG, ChEMBL, NCBI BLAST) with proper API references"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples executable with proper imports; version compatibility warnings present for API changes"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of 40+ services with protein analysis, pathways, compounds, sequence analysis; version compatibility warnings for API changes; minor: some deprecated methods documented without full migration path"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good version tracking (1.16.0) with API migration warnings for UniProt and ChEMBL; NCBI email requirement documented; minor: error handling patterns not comprehensively covered"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized with clear sections for major service categories; reference files for detailed workflows; could benefit from rate limiting guidance"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Excellent 'When to Use' with 9 specific scenarios; clear scope boundaries to gget and biopython; comprehensive examples; minor: trigger patterns could be more explicit"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear setup with Python version requirements (3.9-3.12), NCBI email environment variable, common workflow patterns documented"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Proper credential handling with NCBI_EMAIL environment variable; openclaw metadata present; no hardcoded credentials; internet access requirement noted"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.3, license (GPLv3), upstream version tracking (1.16.0), API change warnings with migration dates"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and openclaw metadata; cross-database workflow patterns; minor: output format specifications could be more standardized across services"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 23
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Search UniProt and retrieve protein sequence",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Basic UniProt query and retrieval workflow",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "UniProt service initialized with verbose control", "result": "PASS", "note": "u = UniProt(verbose=False)"},
+          {"text": "search() method with format and columns parameters", "result": "PASS", "note": "u.search with frmt='tab', columns specified"},
+          {"text": "retrieve() method for FASTA sequence download", "result": "PASS", "note": "u.retrieve('P43403', 'fasta')"},
+          {"text": "ID mapping between databases documented", "result": "PASS", "note": "u.mapping(fr='UniProtKB_AC-ID', to='KEGG')"},
+          {"text": "Reference to services_reference.md provided", "result": "PASS", "note": "Clear pointer to detailed API documentation"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "KEGG pathway analysis with interaction extraction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Pathway discovery and KGML parsing",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "KEGG service initialized and organism set", "result": "PASS", "note": "k = KEGG(); k.organism = 'hsa'"},
+          {"text": "Pathway search by gene ID", "result": "PASS", "note": "k.get_pathway_by_gene('7535', 'hsa')"},
+          {"text": "KGML pathway parsing for structured data", "result": "PASS", "note": "k.parse_kgml_pathway() for interactions"},
+          {"text": "SIF conversion for network analysis", "result": "PASS", "note": "k.pathway2sif() for interaction format"},
+          {"text": "Workflow patterns reference provided", "result": "PASS", "note": "references/workflow_patterns.md cited"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Cross-database compound ID mapping",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "KEGG to ChEMBL mapping with version caveats",
+        "basic": 35,
+        "specialized": 49,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "KEGG compound search by name", "result": "PASS", "note": "k.find('compound', 'Geldanamycin')"},
+          {"text": "Compound info retrieval with database links", "result": "PASS", "note": "k.get('cpd:C11222') includes external links"},
+          {"text": "UniChem cross-reference documented", "result": "PASS", "note": "u.get_compound_id_from_kegg() shown"},
+          {"text": "Version compatibility warning for UniChem API changes", "result": "FAIL", "note": "Warning present but migration path to new API not fully detailed"},
+          {"text": "Identifier mapping reference provided", "result": "FAIL", "note": "references/identifier_mapping.md mentioned but migration examples sparse"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "NCBI BLAST with email requirement",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Sequence similarity search with proper authentication",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "NCBI_EMAIL environment variable read", "result": "PASS", "note": "email = os.environ['NCBI_EMAIL']"},
+          {"text": "NCBIblast service initialized", "result": "PASS", "note": "s = NCBIblast(verbose=False)"},
+          {"text": "Email requirement documented in compatibility", "result": "PASS", "note": "NCBI BLAST requires email in frontmatter and openclaw metadata"},
+          {"text": "BLAST parameters and database selection shown", "result": "PASS", "note": "Comment indicates BLASTP against UniProtKB"},
+          {"text": "Rate limiting or result parsing documented", "result": "FAIL", "note": "BLAST execution shown but result handling truncated"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Multi-service workflow integration",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Combining multiple services in single analysis",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 2,
+        "assertions_total": 3,
+        "assertions": [
+          {"text": "Multiple service instances managed", "result": "PASS", "note": "UniProt, KEGG, UniChem used together in examples"},
+          {"text": "Data flow between services documented", "result": "PASS", "note": "KEGG ID → UniChem → ChEMBL workflow shown"},
+          {"text": "Error propagation across services handled", "result": "FAIL", "note": "No explicit guidance on handling failures in multi-service pipelines"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 53.0,
+    "score": 90,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional breadth covering 40+ bioinformatics services with unified Python interface",
+    "Excellent scope boundary documentation directing to gget for quick lookups and biopython for file manipulation",
+    "Strong version awareness with explicit API migration warnings for UniProt (1.10+) and ChEMBL (1.6.0+) changes",
+    "Clear cross-database workflow patterns showing real integration scenarios (KEGG → UniChem → ChEMBL)",
+    "Good security practices with NCBI_EMAIL environment variable and openclaw metadata for deployment"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Complete API migration paths for deprecated methods",
+      "observed_in": [3],
+      "problem": "UniChem API change warning present but new API usage not fully demonstrated",
+      "root_cause": "Version caveat mentions get_compound_id_from_kegg removal but replacement pattern incomplete",
+      "fix": "Add complete migration example showing old and new patterns side-by-side: old: u.get_compound_id_from_kegg('C11222'), new: res = u.get_compounds('C11222', source_type='kegg'); chembl_id = res['compounds'][0]['sources']['chembl']"
+    },
+    {
+      "priority": "P2",
+      "title": "Add rate limiting guidance for web services",
+      "observed_in": [4],
+      "problem": "Multiple web service calls shown but no rate limiting or throttling guidance",
+      "root_cause": "Examples focus on individual calls without discussing bulk operations",
+      "fix": "Add best practices section covering rate limiting: NCBI 3 req/s, KEGG REST courtesy delays, batch operation patterns with time.sleep() or asyncio rate limiters"
+    },
+    {
+      "priority": "P2",
+      "title": "Document error handling for multi-service pipelines",
+      "observed_in": [5],
+      "problem": "Cross-service workflows shown but error propagation not addressed",
+      "root_cause": "Examples assume all API calls succeed",
+      "fix": "Add error handling pattern: try/except blocks around each service call, graceful degradation when one service fails, logging for debugging multi-step workflows"
+    }
+  ]
+}

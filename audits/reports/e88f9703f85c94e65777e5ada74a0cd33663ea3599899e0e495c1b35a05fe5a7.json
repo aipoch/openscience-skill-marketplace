@@ -1,0 +1,400 @@
+{
+  "meta": {
+    "skill_name": "biopython",
+    "description": "Comprehensive molecular biology toolkit. Use for sequence manipulation, file parsing (FASTA/GenBank/PDB), phylogenetics, and programmatic NCBI/PubMed access (Bio.Entrez). Best for batch processing, custom bioinformatics pipelines, BLAST automation. For quick lookups use gget; for multi-service integration use bioservices.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; accurately describes Biopython library capabilities with correct version information (1.87) and CVE reference"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for computational biology and bioinformatics analysis; clearly directs to gget for quick lookups and bioservices for multi-service integration"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established bioinformatics methods (BLAST, phylogenetics, sequence alignment, structure analysis) with proper tool references"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports and NCBI Entrez email requirement clearly documented"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional coverage of Biopython capabilities: sequence handling, alignment, databases, BLAST, structure, phylogenetics, motifs with comprehensive reference organization"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability documentation including CVE-2025-68463 security advisory, NCBI rate limiting guidance, version pinning recommendations, error handling patterns"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation with clear modular structure, progressive disclosure through reference files, efficient navigation by capability area"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent 'When to Use This Skill' section with 11 specific scenarios; clear scope boundaries directing to gget and bioservices for alternatives; comprehensive quick examples for each module"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation instructions with version pinning, NCBI setup requirements prominently documented, quick examples for each capability area, external tool dependencies noted"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security practices: CVE advisory with version recommendation, proper NCBI credential management with environment variables, explicit email requirement for NCBI policy compliance"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.2, license (Biopython License Agreement), current upstream version (1.87), comprehensive reference files, Python version support documented"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and openclaw metadata; clear module organization; good escape hatches to gget/bioservices; minor: idempotency not explicitly discussed for file operations"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.1,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 27,
+      "total": 31
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Parse FASTA file and count sequences",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Basic sequence I/O with SeqIO.parse",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "SeqIO.parse correctly imports and calls with file and format",
+            "result": "PASS",
+            "note": "from Bio import SeqIO; SeqIO.parse('sequences.fasta', 'fasta')"
+          },
+          {
+            "text": "Iterator pattern used for memory efficiency",
+            "result": "PASS",
+            "note": "for record in SeqIO.parse() pattern shown"
+          },
+          {
+            "text": "SeqRecord attributes accessed (id, seq, len)",
+            "result": "PASS",
+            "note": "record.id and len(record.seq) correctly demonstrated"
+          },
+          {
+            "text": "File format parameter specified correctly",
+            "result": "PASS",
+            "note": "Format string 'fasta' as second parameter"
+          },
+          {
+            "text": "Reference to sequence_io.md provided",
+            "result": "PASS",
+            "note": "references/sequence_io.md referenced for detailed documentation"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Convert GenBank to FASTA format",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Format conversion with SeqIO.convert",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "SeqIO.convert used for format conversion",
+            "result": "PASS",
+            "note": "SeqIO.convert('input.gb', 'genbank', 'output.fasta', 'fasta')"
+          },
+          {
+            "text": "Input format (genbank) and output format (fasta) specified",
+            "result": "PASS",
+            "note": "Four parameters: input file, input format, output file, output format"
+          },
+          {
+            "text": "Efficient single-pass conversion noted",
+            "result": "PASS",
+            "note": "convert() is more efficient than parse/write loop (implicit)"
+          },
+          {
+            "text": "File format names match Biopython conventions",
+            "result": "PASS",
+            "note": "genbank and fasta format strings are correct Biopython identifiers"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "NCBI PubMed search with Entrez",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Database access with rate limiting awareness",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Entrez.email set before API calls",
+            "result": "PASS",
+            "note": "Entrez.email = 'your.email@example.com' shown as required"
+          },
+          {
+            "text": "esearch called with db and term parameters",
+            "result": "PASS",
+            "note": "Entrez.esearch(db='pubmed', term='biopython', retmax=10)"
+          },
+          {
+            "text": "Handle closed after reading results",
+            "result": "PASS",
+            "note": "handle.close() called after Entrez.read(handle)"
+          },
+          {
+            "text": "NCBI_API_KEY environment variable documented",
+            "result": "PASS",
+            "note": "openclaw metadata includes NCBI_API_KEY for rate limit increase"
+          },
+          {
+            "text": "Rate limiting guidance provided",
+            "result": "PASS",
+            "note": "Installation section mentions API key raises limits to 10 req/s from 3 req/s"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant C",
+        "label": "BLAST search and parse results",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Web BLAST with XML parsing",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "NCBIWWW.qblast called with program, database, sequence",
+            "result": "PASS",
+            "note": "NCBIWWW.qblast('blastn', 'nt', 'ATCGATCGATCG')"
+          },
+          {
+            "text": "NCBIXML.read used to parse result handle",
+            "result": "PASS",
+            "note": "blast_record = NCBIXML.read(result_handle)"
+          },
+          {
+            "text": "Alignments and HSPs accessed correctly",
+            "result": "PASS",
+            "note": "blast_record.alignments[:5] and alignment.hsps[0].expect shown"
+          },
+          {
+            "text": "Top hits filtered by index slicing",
+            "result": "PASS",
+            "note": "[:5] slice used to limit output"
+          },
+          {
+            "text": "E-value filtering documented",
+            "result": "FAIL",
+            "note": "E-value displayed but filtering by threshold not shown in example"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Pairwise sequence alignment with custom parameters",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Global alignment with PairwiseAligner",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "PairwiseAligner instantiated and mode set",
+            "result": "PASS",
+            "note": "aligner = Align.PairwiseAligner(); aligner.mode = 'global'"
+          },
+          {
+            "text": "align method called with two sequences",
+            "result": "PASS",
+            "note": "alignments = aligner.align('ACCGGT', 'ACGGT')"
+          },
+          {
+            "text": "Alignment results indexed to access best alignment",
+            "result": "PASS",
+            "note": "alignments[0] accesses top-scoring alignment"
+          },
+          {
+            "text": "Substitution matrix customization mentioned",
+            "result": "PASS",
+            "note": "references/alignment.md documents BLOSUM and PAM matrices"
+          },
+          {
+            "text": "Alignment scoring parameters documented",
+            "result": "FAIL",
+            "note": "Gap penalties and match/mismatch scores not shown in quick example"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Stress",
+        "label": "Parse PDB structure and calculate distances",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Structural bioinformatics with SMCRA hierarchy",
+        "basic": 35,
+        "specialized": 49,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "PDBParser initialized with QUIET flag",
+            "result": "PASS",
+            "note": "parser = PDBParser(QUIET=True)"
+          },
+          {
+            "text": "Structure loaded with get_structure",
+            "result": "PASS",
+            "note": "structure = parser.get_structure('1crn', '1crn.pdb')"
+          },
+          {
+            "text": "SMCRA hierarchy navigated (Structure/Model/Chain/Residue/Atom)",
+            "result": "PASS",
+            "note": "structure[0]['A'] accesses model 0, chain A; chain[10]['CA'] accesses residue and atom"
+          },
+          {
+            "text": "Distance calculation using atom subtraction operator",
+            "result": "FAIL",
+            "note": "atom1 - atom2 returns distance but operator overload may not be obvious to users"
+          },
+          {
+            "text": "mmCIF format support documented",
+            "result": "FAIL",
+            "note": "mmCIF mentioned in capability list but not shown in quick example"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Scope Boundary",
+        "label": "Quick gene ID lookup (should redirect to gget)",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Tests scope boundary documentation effectiveness",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 2,
+        "assertions_total": 2,
+        "assertions": [
+          {
+            "text": "Biopython can handle via Entrez but gget recommended",
+            "result": "PASS",
+            "note": "Description explicitly states 'For quick lookups use gget'"
+          },
+          {
+            "text": "Scope boundaries clearly documented",
+            "result": "PASS",
+            "note": "Description provides clear guidance: biopython for batch/pipelines, gget for quick lookups, bioservices for multi-service"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 54.1,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security awareness with CVE-2025-68463 advisory and explicit version recommendation (1.87+) for untrusted file parsing",
+    "Outstanding scope boundary documentation directing users to gget for quick lookups and bioservices for multi-service integration",
+    "Comprehensive modular organization covering 7 major capability areas with dedicated reference files for each domain",
+    "Excellent NCBI Entrez compliance guidance with required email setting, API key rate limiting, and tool registration best practices",
+    "Strong version tracking with current upstream version (1.87), Python compatibility (3.10-3.14, PyPy3.10), and reproducibility via version pinning"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add E-value filtering example in BLAST section",
+      "observed_in": [4],
+      "problem": "E-value displayed in results but threshold-based filtering not demonstrated",
+      "root_cause": "Quick example focuses on top-N hits rather than quality thresholds",
+      "fix": "Add filtering example: 'significant_hits = [aln for aln in blast_record.alignments if aln.hsps[0].expect < 1e-5]' with explanation of E-value thresholds"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify alignment scoring parameters",
+      "observed_in": [5],
+      "problem": "Gap penalties and match/mismatch scores not shown in alignment quick example",
+      "root_cause": "Example uses default scoring without showing customization",
+      "fix": "Add note to quick example: 'Customize scoring with aligner.match_score, aligner.mismatch_score, aligner.open_gap_score, aligner.extend_gap_score'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document PDB atom distance calculation operator",
+      "observed_in": [6],
+      "problem": "Atom subtraction operator (atom1 - atom2) for distance may not be obvious",
+      "root_cause": "Operator overload is convenient but non-standard Python",
+      "fix": "Add explanatory comment in example: '# Atom objects support - operator for Euclidean distance calculation' or show alternative: 'distance = (atom1.coord - atom2.coord).norm()'"
+    }
+  ]
+}

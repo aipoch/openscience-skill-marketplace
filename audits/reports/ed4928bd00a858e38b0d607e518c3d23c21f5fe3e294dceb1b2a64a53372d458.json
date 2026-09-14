@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "skill_name": "complexa-target",
+    "description": "Add, register, edit, list, show, or validate a Proteina-Complexa design target for any pipeline — protein binder (default), ligand binder, or AME/enzyme scaffolding. Use when user wants add target, define new target for binder design, register hotspot, set up PDL1 binder target, ligand binder pocket, SMILES target, AME task, enzyme motif, complexa target add/show, configure target X, what targets available, where hotspots live, target_input meaning, chain-spec syntax, binder length range, or questions about targets_dict.yaml, ligand_targets_dict.yaml, ame_dict_v2.yaml.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {"result": "PASS", "detail": "Uses documented schema fields; no fabricated identifiers"},
+      "practice_boundaries": {"result": "PASS", "detail": "Target registration tool with no medical claims"},
+      "methodological_ground": {"result": "PASS", "detail": "Appropriate YAML schema methodology; validation checks scientifically sound"},
+      "code_usability": {"result": "PASS", "detail": "Bash commands syntactically correct; YAML templates valid"}
+    }
+  },
+  "static_score": {
+    "subtotal": 89,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {"score": 12, "max": 12, "note": "Complete 5-step workflow; handles protein, ligand, and AME targets; both file-edit and CLI paths; validation before and after"},
+      "reliability": {"score": 11, "max": 12, "note": "Two-stage validation (show + validate target), collision detection, backup on save; lacks rollback guidance for incorrect edits"},
+      "performance_context": {"score": 7, "max": 8, "note": "237 lines with 1 reference file; CLI vs file-edit decision table and field tables add density"},
+      "agent_usability": {"score": 15, "max": 16, "note": "Clear 5-step structure, excellent CLI vs file-edit decision table, field comparison tables for protein vs ligand; AME partial coverage adds complexity"},
+      "human_usability": {"score": 7, "max": 8, "note": "Good section headers, templates helpful, troubleshooting table covers 8 cases"},
+      "security": {"score": 12, "max": 12, "note": "File edit with validation; no credential handling; backup on save; SMILES shell escaping documented"},
+      "maintainability": {"score": 12, "max": 12, "note": "Excellent modularity with clear schema separation across 3 files; version-tracked via git; template-based editing; references CLI source code"},
+      "agent_specific": {"score": 13, "max": 20, "note": "Good trigger precision; uses AskUserQuestion for fields; prefers file edit over CLI (efficient); emits replayable artifact; references other skills for downstream use"}
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.2,
+    "max": 100,
+    "assertion_pass_rate": {"passed": 19, "total": 19},
+    "inputs": [
+      {"index": 1, "type": "Canonical", "label": "Protein target via file edit", "status": "COMPLETED", "status_flag": "✅", "note": "Standard workflow with direct YAML edit", "basic": 38, "specialized": 52, "total": 90, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output chooses file edit over CLI", "result": "PASS", "note": "Preferred path selected"}, {"text": "Output uses existing entry as template", "result": "PASS", "note": "Copy-paste pattern"}, {"text": "Output appends to target_dict_cfg", "result": "PASS", "note": "Correct location"}, {"text": "Output validates with complexa validate target", "result": "PASS", "note": "Two-stage validation"}]},
+      {"index": 2, "type": "Variant A", "label": "Ligand target with SMILES via CLI", "status": "COMPLETED", "status_flag": "✅", "note": "CLI path with shell escaping", "basic": 38, "specialized": 53, "total": 91, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses ligand_targets_dict.yaml", "result": "PASS", "note": "Correct file for ligand"}, {"text": "Output escapes SMILES in shell", "result": "PASS", "note": "Quoted to prevent bracket expansion"}, {"text": "Output sets ligand key to mark type", "result": "PASS", "note": "Presence of ligand: triggers mode"}, {"text": "Output omits target_input for ligand", "result": "PASS", "note": "Not required for ligands"}]},
+      {"index": 3, "type": "Edge", "label": "AME task lookup only", "status": "COMPLETED", "status_flag": "✅", "note": "Read-only for AME tasks", "basic": 37, "specialized": 52, "total": 89, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output identifies ame_dict_v2.yaml", "result": "PASS", "note": "Correct file for AME"}, {"text": "Output notes CLI does not support AME", "result": "PASS", "note": "File-edit only documented"}, {"text": "Output references contig_atoms field", "result": "PASS", "note": "AME-specific schema"}, {"text": "Output suggests using existing entry as template", "result": "PASS", "note": "Copy pattern for AME"}]},
+      {"index": 4, "type": "Variant B", "label": "Name collision with force flag", "status": "COMPLETED", "status_flag": "✅", "note": "Handles overwrite safely", "basic": 36, "specialized": 51, "total": 87, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output detects existing target via grep or show", "result": "PASS", "note": "Collision check before add"}, {"text": "Output warns about overwrite", "result": "PASS", "note": "User confirmation or --force"}, {"text": "Output mentions .yaml.bak backup", "result": "PASS", "note": "Automatic backup on save"}, {"text": "Output uses --force flag if confirmed", "result": "PASS", "note": "Non-interactive overwrite"}]},
+      {"index": 5, "type": "Stress", "label": "Validation failure with missing PDB", "status": "COMPLETED", "status_flag": "✅", "note": "Troubleshooting path", "basic": 37, "specialized": 53, "total": 90, "assertions_passed": 3, "assertions_total": 3, "assertions": [{"text": "Output runs complexa validate target", "result": "PASS", "note": "Validation executed"}, {"text": "Output detects PDB not found error", "result": "PASS", "note": "File existence check"}, {"text": "Output provides fix guidance", "result": "PASS", "note": "Check source/filename or use target_path"}]}
+    ]
+  },
+  "final": {
+    "static_weighted": 35.6,
+    "dynamic_weighted": 54.1,
+    "score": 90,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent CLI vs file-edit decision table helps agents choose most efficient path per operation",
+    "Strong schema separation across 3 files (protein/ligand/AME) with clear routing logic per pipeline",
+    "Two-stage validation (show + validate target) catches errors before downstream design runs",
+    "Template-based editing with existing entries as copy sources reduces syntax errors",
+    "Comprehensive troubleshooting covering 8 common failure modes with clear fixes"
+  ],
+  "recommendations": [
+    {"priority": "P2", "title": "Add rollback guidance for incorrect edits", "observed_in": [], "problem": "Reliability 2.3 scored 11/12; no explicit undo/rollback strategy if user saves incorrect target definition. Backup exists (.yaml.bak) but recovery not documented.", "root_cause": "File edit preferred but recovery from edit errors not covered.", "fix": "Add to troubleshooting: To rollback incorrect target, restore from .yaml.bak (created automatically on save) or use git checkout configs/targets/targets_dict.yaml if committed. For CLI adds, re-run with --force and corrected fields."},
+    {"priority": "P2", "title": "Improve AME task coverage", "observed_in": [], "problem": "Agent-Specific scored 13/20; AME tasks marked as 'Partial' support with file-edit-only and hand-curated contig_atoms. Less structured than protein/ligand paths.", "root_cause": "AME schema extended and CLI does not support it.", "fix": "Add reference/ame_schema.md with contig_atoms grammar, worked examples, and atom selection guidance. Current note in Step 1 is brief for complex schema."}
+  ]
+}

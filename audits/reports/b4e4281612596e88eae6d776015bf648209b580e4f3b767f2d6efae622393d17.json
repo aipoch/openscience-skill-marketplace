@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "esm",
+    "description": "Use when working directly with the `esm` Python SDK, ESM3 or ESMC model IDs, Forge/Biohub inference clients, or ESMFold2 folding workflows.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Advanced",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of ESM3/ESMC protein language models based on published Science paper (Hayes et al., 2025) and official SDK"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for protein engineering with explicit Responsible Biodesign Framework and biosafety considerations"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established protein language models with peer-reviewed foundation (ESM3 in Science 2025) and validated model architectures"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports and SDK usage patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of ESM capabilities including ESM3 generation, ESMC embeddings, structure prediction, inverse folding, function conditioning, with excellent reference organization"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good best practices for production deployment with error handling, retry logic, and rate limiting; minor: could expand troubleshooting for common API errors"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (335 lines) with clear model selection guide, 5 comprehensive reference files, and workflow patterns"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent capability organization with 'When to use' sections for each major function; clear model selection criteria; comprehensive workflows reference"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with Flash Attention optimization; authentication guidance with environment variable pattern; model selection guide with local vs Forge tradeoffs"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good credential handling with ESM_API_KEY pattern and explicit token protection rules; endpoint validation mentioned; minor: could add more explicit biosafety guidelines for novel protein designs"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, clear license (MIT), 5 comprehensive references, version pinning (esm 3.2.3, Python >=3.12,<3.13), and authoritative resource links"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and async batch processing patterns; clear local vs Forge API distinction; minor: output format schemas not fully specified for embeddings/coordinates"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Sequence generation with ESM3 using masked positions",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard generative workflow for protein design",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "ESM3.from_pretrained() for local model loading",
+            "result": "PASS",
+            "note": "ESM3.from_pretrained('esm3-open').to('cuda') pattern demonstrated"
+          },
+          {
+            "text": "ESMProtein with masked positions using '_' character",
+            "result": "PASS",
+            "note": "ESMProtein(sequence='MPRT___KEND') with '_' representing masked positions clearly shown"
+          },
+          {
+            "text": "GenerationConfig with track parameter",
+            "result": "PASS",
+            "note": "GenerationConfig(track='sequence', num_steps=8) pattern demonstrated"
+          },
+          {
+            "text": "model.generate() interface for completion",
+            "result": "PASS",
+            "note": "model.generate(protein, GenerationConfig(...)) consistently used"
+          },
+          {
+            "text": "Local vs Forge API distinction with same interface",
+            "result": "PASS",
+            "note": "Remote section explicitly states 'Same interface as local ESM3' with token parameter difference"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Structure prediction and inverse folding workflows",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bidirectional structure-sequence modeling",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Structure track for structure prediction from sequence",
+            "result": "PASS",
+            "note": "GenerationConfig(track='structure', num_steps=...) shown for structure prediction"
+          },
+          {
+            "text": "coordinates and to_pdb() for structure access",
+            "result": "PASS",
+            "note": "protein_with_structure.coordinates and to_pdb() methods demonstrated"
+          },
+          {
+            "text": "ESMProtein.from_pdb() for structure loading",
+            "result": "PASS",
+            "note": "ESMProtein.from_pdb('target_structure.pdb') shown in inverse folding example"
+          },
+          {
+            "text": "Inverse folding by removing sequence and generating with structure",
+            "result": "PASS",
+            "note": "protein_with_structure.sequence = None pattern for inverse folding clearly shown"
+          },
+          {
+            "text": "Temperature parameter for diversity control",
+            "result": "PASS",
+            "note": "temperature=0.7 shown in inverse folding with best practices discussing 0.0-1.0 range"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Protein embeddings with ESMC for ML features",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Representation learning for downstream tasks",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "ESMC.from_pretrained() for embedding models",
+            "result": "PASS",
+            "note": "ESMC.from_pretrained('esmc_300m').to('cuda') pattern shown"
+          },
+          {
+            "text": "model.encode() followed by model.logits()",
+            "result": "PASS",
+            "note": "Two-step process model.encode(protein) then model.logits(...) demonstrated"
+          },
+          {
+            "text": "LogitsConfig with return_embeddings parameter",
+            "result": "PASS",
+            "note": "LogitsConfig(sequence=True, return_embeddings=True) shown"
+          },
+          {
+            "text": "Batch processing pattern for multiple proteins",
+            "result": "PASS",
+            "note": "List comprehension batch processing example provided"
+          },
+          {
+            "text": "When to use guidance for embeddings",
+            "result": "PASS",
+            "note": "Clear use cases: ML features, similarity, classification, transfer learning"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Function conditioning and chain-of-thought generation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced multimodal generation with iterative refinement",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "FunctionAnnotation with label, start, end parameters",
+            "result": "PASS",
+            "note": "FunctionAnnotation(label='fluorescent_protein', start=50, end=150) demonstrated"
+          },
+          {
+            "text": "function_annotations list in ESMProtein",
+            "result": "PASS",
+            "note": "ESMProtein(..., function_annotations=[...]) pattern shown"
+          },
+          {
+            "text": "Multi-step refinement with different tracks",
+            "result": "PASS",
+            "note": "Chain-of-thought example shows structure → sequence → function progression"
+          },
+          {
+            "text": "Track switching between generation steps",
+            "result": "PASS",
+            "note": "GenerationConfig(track='structure') then track='sequence' then track='function' shown"
+          },
+          {
+            "text": "Function track prediction capabilities documented",
+            "result": "FAIL",
+            "note": "Function conditioning shown but function prediction from sequence not explicitly demonstrated"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Async batch processing with Forge API and rate limiting",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "High-throughput processing but limited error handling guidance",
+        "basic": 33,
+        "specialized": 45,
+        "total": 78,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "esm.sdk.client() with Forge model IDs",
+            "result": "PASS",
+            "note": "esm.sdk.client('esm3-medium-2024-08', token=...) pattern demonstrated"
+          },
+          {
+            "text": "async_generate() for non-blocking batch processing",
+            "result": "PASS",
+            "note": "client.async_generate() with asyncio.gather() pattern shown"
+          },
+          {
+            "text": "asyncio.run() for executing async batch jobs",
+            "result": "PASS",
+            "note": "asyncio.run(batch_generate(proteins)) execution pattern demonstrated"
+          },
+          {
+            "text": "Rate limiting implementation guidance",
+            "result": "FAIL",
+            "note": "Best practices mention 'implement rate limiting' but no example provided"
+          },
+          {
+            "text": "Error handling for API failures in batch context",
+            "result": "FAIL",
+            "note": "Best practices mention 'error handling and retry logic' but no async error pattern shown"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 54.5,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional coverage of multimodal protein language models with clear distinctions between generative (ESM3) and embedding (ESMC) workflows",
+    "Outstanding model selection guidance with local vs Forge tradeoffs, model sizes, and selection criteria mapped to use cases",
+    "Excellent responsible use framework with explicit references to Responsible Biodesign and biosafety considerations for novel protein designs",
+    "Strong API design consistency with unified interface between local and hosted models (same generate/encode methods)",
+    "Comprehensive chain-of-thought generation workflow demonstrating iterative refinement across structure/sequence/function tracks"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add async error handling patterns for batch processing",
+      "observed_in": [5],
+      "problem": "Async batch processing shown but error handling in async context not demonstrated",
+      "root_cause": "Best practices mention retry logic but no code example for async failure handling",
+      "fix": "Add example with try/except in async function, asyncio.TimeoutError handling, and retry with exponential backoff for Forge API failures"
+    },
+    {
+      "priority": "P2",
+      "title": "Add rate limiting implementation example",
+      "observed_in": [5],
+      "problem": "Best practices recommend rate limiting but no implementation guidance",
+      "root_cause": "Production deployment advice lacks concrete rate limiting pattern",
+      "fix": "Add example using asyncio.Semaphore for concurrent request limiting or reference to Forge API rate limit headers"
+    },
+    {
+      "priority": "P2",
+      "title": "Expand biosafety guidelines for specific protein classes",
+      "observed_in": [],
+      "problem": "Responsible use section provides framework links but limited inline guidance",
+      "root_cause": "Security section defers to external policies without skill-specific warnings",
+      "fix": "Add inline note: 'Exercise caution when designing proteins with potential pathogenic, toxic, or dual-use capabilities; consult institutional biosafety review before experimental validation'"
+    }
+  ]
+}

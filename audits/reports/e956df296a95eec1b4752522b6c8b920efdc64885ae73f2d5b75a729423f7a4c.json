@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "ensembl-database",
+    "description": "Access Ensembl REST API for vertebrate genomic data; use when you need gene/ID lookups, sequence retrieval, variant effect prediction (VEP), or homology/assembly coordinate mapping.",
+    "evaluated_on": "2026-09-04",
+    "category": "Evidence Insight",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate Ensembl documentation"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Genomic research scope appropriate"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Proper genomics methodology"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "CLI script appears runnable"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Core features covered, less detailed than synthetic-sciences version"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Stable patterns"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear but some template verbosity"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural terminology"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Public API, safe"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Modular with script and references"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Good but template structure present"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 12
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Gene lookup by symbol",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard query",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "CLI documented",
+            "result": "PASS",
+            "note": "query_ensembl.py with args"
+          },
+          {
+            "text": "Action parameter clear",
+            "result": "PASS",
+            "note": "lookup/sequence/vep"
+          },
+          {
+            "text": "Species handling",
+            "result": "PASS",
+            "note": "Human example"
+          },
+          {
+            "text": "No fabrication",
+            "result": "PASS",
+            "note": "Real Ensembl"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "VEP prediction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Variant consequence",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "VEP usage documented",
+            "result": "PASS",
+            "note": "HGVS notation"
+          },
+          {
+            "text": "Command syntax correct",
+            "result": "PASS",
+            "note": "CLI example valid"
+          },
+          {
+            "text": "Consequences mentioned",
+            "result": "PASS",
+            "note": "VEP output described"
+          },
+          {
+            "text": "Scope appropriate",
+            "result": "PASS",
+            "note": "Genomic research"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Documentation completeness",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Concise documentation",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Core operations covered",
+            "result": "PASS",
+            "note": "Lookup/sequence/VEP"
+          },
+          {
+            "text": "CLI interface clear",
+            "result": "PASS",
+            "note": "Parameter documentation"
+          },
+          {
+            "text": "Comprehensive examples",
+            "result": "FAIL",
+            "note": "Minimal compared to synthetic-sciences version"
+          },
+          {
+            "text": "Reference doc mentioned",
+            "result": "PASS",
+            "note": "api_endpoints.md"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 55.8,
+    "score": 94,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Clear CLI interface with action-based dispatch",
+    "Focused on core Ensembl operations",
+    "Proper genomic research scope"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add more examples and workflows",
+      "observed_in": [
+        "3"
+      ],
+      "problem": "Only basic CLI examples, lacks comparative genomics and assembly mapping examples",
+      "root_cause": "Minimalist documentation approach",
+      "fix": "Add examples for orthologs, coordinate mapping, batch queries, rate limiting"
+    }
+  ]
+}

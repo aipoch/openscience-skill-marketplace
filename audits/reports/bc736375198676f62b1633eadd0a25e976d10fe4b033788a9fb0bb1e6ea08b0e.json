@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "genmol-nim",
+    "description": "Generate novel drug-like molecules using the GenMol NIM microservice. Use for de novo generation, scaffold decoration, motif extension, lead optimization, SAFE notation, QED or LogP ranking, hosted NVIDIA API calls, or local Docker deployment. GenMol takes SAFE notation in the smiles field, not ordinary SMILES.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research vety"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of de novo, scaffold decoration, motif extension, and lead optimization use cases; SAFE notation requirement clearly documented"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Error handling with raise_for_status; filtering expectation documented; minor gap: no guidance on handling SAFEFragmentationError beyond fallback mention"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent progressive disclosure with 126-line SKILL.md and 5 reference files; efficient context management"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear instructions with SAFE examples; gotchas section highlights common errors; minor: scaffold_to_safe helper referenced but not shown inline"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Rich trigger phrase coverage including SAFE notation, de novo, scaffold decoration; mode selection clear"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Credentials externalized; explicit 'Do not print keys' guidance; no credential logging; input validation deferred to API"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean modular structure with references; easy to update parameters or endpoints; helper functions externalized to examples.md"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good trigger precision; excellent progressive disclosure; composability clear via drug-discovery-pipeline integration; minor: unique=False default may cause confusion; no explicit idempotency statement"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "De novo generation with QED scoring (hosted)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete de novo workflow with SAFE mask notation and QED ranking",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "SAFE notation [*{20-30}] used in smiles field",
+            "result": "PASS",
+            "note": "Correct masked position syntax for de novo generation"
+          },
+          {
+            "text": "temperature and noise passed as strings not floats",
+            "result": "PASS",
+            "note": "Both '1.0' correctly specified as strings per gotchas"
+          },
+          {
+            "text": "scoring parameter set to 'QED' for drug-likeness",
+            "result": "PASS",
+            "note": "Correct scoring metric"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Scaffold decoration with LogP scoring (local)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Scaffold-based generation with lipophilicity optimization on local NIM",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Scaffold converted to SAFE notation before decoration",
+            "result": "PASS",
+            "note": "scaffold_to_safe referenced for SMILES to SAFE conversion"
+          },
+          {
+            "text": "scoring parameter set to 'LogP' for lipophilicity",
+            "result": "PASS",
+            "note": "Alternative scoring metric correctly specified"
+          },
+          {
+            "text": "Local endpoint uses /generate (no /v1/ prefix)",
+            "result": "PASS",
+            "note": "Correct local path"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly omit auth for local mode"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Requesting 100 molecules with unique=True deduplication",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "High molecule count with deduplication enabled and over-request strategy",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "num_molecules within limit (1-1000)",
+            "result": "PASS",
+            "note": "100 molecules requested within valid range"
+          },
+          {
+            "text": "unique=True enables deduplication",
+            "result": "PASS",
+            "note": "Deduplication flag correctly set"
+          },
+          {
+            "text": "Guidance provided for handling fewer molecules than requested",
+            "result": "PASS",
+            "note": "Limits section documents filtering expectation and over-request strategy"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 58.0,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional documentation clarity with 126-line SKILL.md and progressive disclosure via 5 reference files",
+    "Comprehensive SAFE notation guidance covering all major use cases (de novo, scaffold decoration, motif extension, lead optimization)",
+    "Excellent gotchas section proactively highlighting string-typed temperature/noise parameters and filtering behavior",
+    "Strong security posture with explicit 'Do not print keys' guidance and credential externalization",
+    "Perfect dynamic score (96.7/100) across all test inputs with 100% assertion pass rate"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add inline scaffold_to_safe helper or direct safe-mol usage example",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "scaffold_to_safe helper referenced in SAFE Input section but user must navigate to references/examples.md to see implementation",
+      "root_cause": "Progressive disclosure trades off immediate learnability for context efficiency",
+      "fix": "Add minimal inline example after scaffold decoration bullet: 'import safe as sf; safe_input = sf.encode(scaffold_smiles) + \".[*{10-15}]\"' with note that scaffold_to_safe is a convenience wrapper in examples.md"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify unique parameter default and implications",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "unique=False in request pattern may confuse users expecting deduplicated results; no explanation of when to use True vs False",
+      "root_cause": "Default shown without rationale",
+      "fix": "Add to gotchas: 'unique=False returns all generated molecules including duplicates (faster); set unique=True for deduplicated analog libraries when exploring chemical space systematically'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document idempotency behavior for deterministic generation",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No statement on whether same SAFE input with same parameters produces identical outputs across runs",
+      "root_cause": "Stochastic generation model; determinism expectations unclear",
+      "fix": "Add to Limits section: 'GenMol generation is stochastic; identical inputs may produce different molecules across runs. For reproducible results, save and version generated molecule libraries rather than regenerating.'"
+    }
+  ]
+}

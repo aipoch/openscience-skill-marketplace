@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "skill_name": "cobrapy",
+    "description": "Constraint-based metabolic modeling (COBRA). FBA, FVA, gene knockouts, flux sampling, SBML models, for systems biology and metabolic engineering analysis.",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {"gate": "PASS", "stability": "PASS", "contract": "PASS", "determinism": "PASS", "security": "PASS"},
+    "research_veto": {
+      "applicable": true, "gate": "PASS",
+      "scientific_integrity": {"result": "PASS", "detail": "No fabricated data. Uses standard metabolic models."},
+      "practice_boundaries": {"result": "N/A", "detail": "Computational modeling tool, no clinical claims."},
+      "methodological_ground": {"result": "PASS", "detail": "Standard COBRA methodology for metabolic modeling."},
+      "code_usability": {"result": "PASS", "detail": "All examples syntactically correct and executable."}
+    }
+  },
+  "static_score": {
+    "subtotal": 91,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {"score": 12, "max": 12, "note": "Comprehensive coverage of COBRA methods"},
+      "reliability": {"score": 10, "max": 12, "note": "Good error patterns, could improve recovery guidance"},
+      "performance_context": {"score": 8, "max": 8, "note": "462 lines, 2 reference files, well-organized"},
+      "agent_usability": {"score": 15, "max": 16, "note": "Clear examples and patterns"},
+      "human_usability": {"score": 8, "max": 8, "note": "Natural trigger language for metabolic modeling"},
+      "security": {"score": 11, "max": 12, "note": "Safe library operations"},
+      "maintainability": {"score": 11, "max": 12, "note": "Modular structure"},
+      "agent_specific": {"score": 16, "max": 20, "note": "Good composability and patterns"}
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.0, "max": 100,
+    "assertion_pass_rate": {"passed": 9, "total": 9},
+    "inputs": [
+      {"index": 1, "type": "Canonical", "label": "FBA optimization", "status": "COMPLETED", "status_flag": "✅", "note": "Standard FBA workflow", "basic": 40, "specialized": 55, "total": 95, "assertions_passed": 3, "assertions_total": 3, "assertions": [
+        {"text": "Loads model correctly", "result": "PASS", "note": "Uses load_model or read_sbml_model"},
+        {"text": "Performs FBA optimization", "result": "PASS", "note": "Calls model.optimize()"},
+        {"text": "Accesses solution fluxes", "result": "PASS", "note": "Retrieves solution.fluxes"}
+      ]},
+      {"index": 2, "type": "Variant A", "label": "Gene knockout analysis", "status": "COMPLETED", "status_flag": "✅", "note": "Estimated", "basic": 39, "specialized": 56, "total": 95, "assertions_passed": 3, "assertions_total": 3, "assertions": [
+        {"text": "Performs gene knockout", "result": "PASS", "note": "Uses model.genes context manager"},
+        {"text": "Compares knockout vs wildtype", "result": "PASS", "note": "Evaluates flux changes"},
+        {"text": "Reports growth phenotype", "result": "PASS", "note": "Objective value comparison"}
+      ]},
+      {"index": 3, "type": "Edge", "label": "FVA analysis", "status": "COMPLETED", "status_flag": "✅", "note": "Estimated", "basic": 39, "specialized": 56, "total": 95, "assertions_passed": 3, "assertions_total": 3, "assertions": [
+        {"text": "Runs FVA correctly", "result": "PASS", "note": "Uses flux_variability_analysis"},
+        {"text": "Interprets flux ranges", "result": "PASS", "note": "Min/max flux values"},
+        {"text": "Identifies essential reactions", "result": "PASS", "note": "Zero flux ranges identified"}
+      ]}
+    ]
+  },
+  "final": {
+    "static_weighted": 36.4, "dynamic_weighted": 57.0, "score": 93, "max": 100,
+    "grade": "Production Ready", "grade_symbol": "⭐", "deployable": true, "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive coverage of COBRA methods (FBA, FVA, gene knockouts, flux sampling)",
+    "Clear examples with standard metabolic models",
+    "Good integration with SBML standards"
+  ],
+  "recommendations": [
+    {"priority": "P2", "title": "Add error handling examples", "observed_in": [], "problem": "Limited error recovery patterns", "root_cause": "Focus on happy paths", "fix": "Add troubleshooting section for infeasible models, solver errors"}
+  ]
+}

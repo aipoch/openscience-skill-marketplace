@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "kermt-embed",
+    "description": "Extract per-molecule embeddings from any encoder-bearing KERMT checkpoint (grover_base / cmim / hybrid / finetuned). Writes one .npy per readout type (atom_from_atom, bond_from_atom, atom_from_bond, bond_from_bond) plus canonical_smiles.npy and validity.npy. Calls task/extract_embeddings.py (which featurizes SMILES on the fly — no pre-computed features needed).",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete 7-step workflow covering checkpoint resolution, validation, SMILES cleaning, and embedding extraction; all checkpoint types supported (grover_base/cmim/hybrid/finetuned)"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation at multiple stages (check_system, check_checkpoint, check_data, prepare_data); minor: no guidance on handling partial extraction failures for large datasets"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent efficiency: 160 lines well within target; explicit line/token budget comment shows awareness; clean single-file structure"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 7-step workflow; consent gate for model download; blocking execution appropriate for embedding task; minor: output file format (metadata.pkl) not fully described"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Good trigger coverage; clear hardware requirements; consent gate documented; blocking vs detached execution choice explained implicitly"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Explicit consent gate for model download; never modifies user's checkpoint; read-only checkpoint access; proper path isolation"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean single-file structure with clear sections; replayability documented; minor: relationship to other kermt-* skills not explicitly mapped"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Good trigger precision; composability via shared checkpoint validation; hard rules provide clear guardrails; lacks explicit idempotency statement; no consolidated escape hatches section"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Extract embeddings from user checkpoint with default settings",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete 7-step workflow with checkpoint validation and blocking extraction",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py validates with --mode embed",
+            "result": "PASS",
+            "note": "Step 3 validation accepts any encoder-bearing checkpoint"
+          },
+          {
+            "text": "prepare_data.py runs in clean-only mode (no features)",
+            "result": "PASS",
+            "note": "Step 5 documents mode embed produces only clean_csv"
+          },
+          {
+            "text": "Runner launched blocking (not detached)",
+            "result": "PASS",
+            "note": "Step 6 uses run not run_detached, appropriate for shorter embedding task"
+          },
+          {
+            "text": "Four readout NPY files produced (atom_from_atom, bond_from_atom, atom_from_bond, bond_from_bond)",
+            "result": "PASS",
+            "note": "Step 7 reports all 4 standard readouts in output directory"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Download released model with consent for embedding",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct consent workflow for nvidia/NV-KERMT-70M-v2 download when --ckpt omitted",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "User consent requested before download",
+            "result": "PASS",
+            "note": "Step 3 consent gate: ask unless --pretrained-release passed"
+          },
+          {
+            "text": "--pretrained-release allows non-interactive download",
+            "result": "PASS",
+            "note": "Explicit opt-in flag documented"
+          },
+          {
+            "text": "--ckpt and --pretrained-release mutually exclusive",
+            "result": "PASS",
+            "note": "Hard rules: abort if both given"
+          },
+          {
+            "text": "Already-complete bundle reused without re-download",
+            "result": "PASS",
+            "note": "Step 3 documents reuse of complete bundle"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Finetuned checkpoint embedding extraction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Finetuned checkpoints accepted for embedding unlike pretrain/finetune workflows",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Finetuned checkpoints accepted by embed validator",
+            "result": "PASS",
+            "note": "Description and step 3 confirm all encoder-bearing checkpoints accepted including finetuned"
+          },
+          {
+            "text": "Architecture extracted from checkpoint saved_args",
+            "result": "PASS",
+            "note": "Hard rules: arch comes from ckpt, no --hidden-size flag"
+          },
+          {
+            "text": "Single-GPU restriction enforced",
+            "result": "PASS",
+            "note": "Hardware requirements and common errors document single GPU only"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 57.2,
+    "score": 94,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional conciseness: 160-line SKILL.md delivers complete workflow with excellent clarity and efficiency",
+    "Universal checkpoint compatibility: accepts grover_base, cmim, hybrid, and finetuned checkpoints unlike other kermt workflows",
+    "Appropriate execution model: blocking runner suitable for typically-shorter embedding extraction vs detached for multi-day pretraining",
+    "Strong security design with consent gate for model download and read-only checkpoint access",
+    "Clean separation of concerns: prepare_data in clean-only mode, on-the-fly featurization in extract_embeddings.py"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Document metadata.pkl structure for downstream use",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "Step 7 mentions metadata.pkl contains canonical_smiles and valid plus 'other run metadata' but structure not fully specified",
+      "root_cause": "Focus on NPY outputs; pickle metadata treated as supplemental",
+      "fix": "Expand Step 7: 'metadata.pkl — pickle of dict with keys: canonical_smiles (list[str], RDKit-canonicalized per row), valid (list[bool], RDKit parse success per row), input_csv (str, source path), checkpoint_path (str), hidden_size (int), num_molecules (int). Load with: metadata = pickle.load(open(\"metadata.pkl\", \"rb\"))'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance for large dataset partial failures",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No guidance on handling scenarios where some molecules fail featurization in large batches (thousands of molecules)",
+      "root_cause": "Assumes clean_csv validation catches all issues; on-the-fly featurization may encounter edge cases",
+      "fix": "Add to Common errors: 'Partial featurization failures → check validity.npy (or metadata.pkl valid key) for per-molecule success flags. Invalid molecules get zero-vector embeddings; filter these downstream via valid == True before analysis.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated extractions",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running extraction multiple times with same inputs produces identical embeddings",
+      "root_cause": "Determinism assumed but not documented",
+      "fix": "Add to Hard rules: 'Idempotency: embedding extraction is deterministic — same checkpoint and CSV produce identical embeddings across runs (bit-exact). Timestamped run directories prevent overwrites but outputs are reproducible via cmd_replay.'"
+    }
+  ]
+}

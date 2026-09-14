@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "gget",
+    "description": "Fast CLI/Python queries to 20+ bioinformatics databases. Use for quick lookups: gene info, BLAST/BLAT, viral sequence downloads, AlphaFold structures, enrichment analysis, OpenTargets, COSMIC, CELLxGENE, and 8cube mouse specificity/expression data. Best for interactive exploration and simple queries.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "biology",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; queries real bioinformatics databases with proper attribution and version pinning"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for bioinformatics data retrieval; clearly documents when to use alternatives like biopython or bioservices"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established genomic databases (Ensembl, NCBI, AlphaFold, etc.) with proper citation"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Complete working examples for all 23 modules with proper error handling patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of 23 modules across 6 categories; complete CLI and Python interfaces; excellent module catalog and reference documentation"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good database versioning and pinning guidance (gget==0.30.5); documents database update risks; minor: could benefit from more explicit retry/rate-limit guidance"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized 154-line SKILL.md with excellent progressive disclosure through 3 reference files; clear module categories; efficient structure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent trigger description with specific database and use-case patterns; clear when-to-use guidance; explicit alternatives (biopython, bioservices); perfect agent discoverability"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent installation instructions with uv and virtual environment guidance; clear quick start; comprehensive Python version compatibility notes"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good credential handling for COSMIC and OpenAI; environment variable guidance; warnings against hardcoding; minor: no explicit HTTPS-only mention for remote queries"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: version 1.4, clear author, pinned dependencies (gget==0.30.5), official citation, license, and compatibility notes"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with other biology skills; good progressive disclosure with 3 reference files; idempotent queries; minor: workflows could be more explicit about multi-module pipelines"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Gene info lookup and sequence retrieval",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from gene search to sequence extraction with Ensembl",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "gget search finds genes by name or symbol",
+            "result": "PASS",
+            "note": "CLI and Python syntax clearly documented"
+          },
+          {
+            "text": "gget info retrieves comprehensive gene/transcript details",
+            "result": "PASS",
+            "note": "Output format and fields documented"
+          },
+          {
+            "text": "gget seq extracts nucleotide and protein sequences in FASTA",
+            "result": "PASS",
+            "note": "Both isoform and translation retrieval documented"
+          },
+          {
+            "text": "Module chaining workflow clearly demonstrated",
+            "result": "PASS",
+            "note": "Common workflows section shows multi-module pipelines"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "AlphaFold structure prediction workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Setup requirement and multimer prediction correctly documented",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "gget setup alphafold one-time requirement documented",
+            "result": "PASS",
+            "note": "Setup modules clearly listed with Python version constraints"
+          },
+          {
+            "text": "Multimer predictions use -mr flag for higher accuracy",
+            "result": "PASS",
+            "note": "Best practices section documents -mr 20 for multimers"
+          },
+          {
+            "text": "AMBER relaxation with -r flag documented",
+            "result": "PASS",
+            "note": "Structure prediction best practices include relaxation option"
+          },
+          {
+            "text": "PDB database check recommended before prediction",
+            "result": "PASS",
+            "note": "Best practices explicitly suggest checking PDB first"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "CELLxGENE single-cell expression query",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Case-sensitive gene symbols and setup requirements clear",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Gene symbol case sensitivity documented",
+            "result": "PASS",
+            "note": "Best practices explicitly note 'PAX7' vs 'Pax7' case sensitivity"
+          },
+          {
+            "text": "gget setup cellxgene required before first use",
+            "result": "PASS",
+            "note": "Setup requirement listed in module categories and best practices"
+          },
+          {
+            "text": "AnnData output format documented",
+            "result": "PASS",
+            "note": "Output formats section documents AnnData for cellxgene"
+          },
+          {
+            "text": "Census version parameter available",
+            "result": "PASS",
+            "note": "Quick start section mentions --census_version parameter"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Viral sequence download with resume capability",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive guidance on filtering, resuming, and reproducibility",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Restrictive filters recommended before broad viral datasets",
+            "result": "PASS",
+            "note": "Viral data best practices explicitly recommend restrictive filters"
+          },
+          {
+            "text": "command_summary.txt for reproducibility documented",
+            "result": "PASS",
+            "note": "Best practices mention keeping command_summary.txt with results"
+          },
+          {
+            "text": "Resume interrupted downloads with --baseline and --merge-results",
+            "result": "PASS",
+            "note": "Viral data section documents resume pattern clearly"
+          },
+          {
+            "text": "Output includes FASTA/CSV/JSONL folder structure",
+            "result": "PASS",
+            "note": "Output formats section lists all viral output formats"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "COSMIC mutation database with credentials",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Credential handling documented but interactive prompt details minimal",
+        "basic": 35,
+        "specialized": 52,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "COSMIC requires credentials for database download",
+            "result": "PASS",
+            "note": "Module categories note COSMIC prompts for credentials"
+          },
+          {
+            "text": "Environment variable handling for credentials documented",
+            "result": "PASS",
+            "note": "Error handling section mentions keeping credentials in named variables"
+          },
+          {
+            "text": "COSMIC database caching behavior documented",
+            "result": "FAIL",
+            "note": "Module catalog should document COSMIC database location and reuse"
+          },
+          {
+            "text": "Warning against credential logging present",
+            "result": "PASS",
+            "note": "Error handling explicitly warns against writing real credentials to examples"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "When NOT to use gget - alternatives",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clear scope boundaries with specific alternative recommendations",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Batch processing: use biopython instead",
+            "result": "PASS",
+            "note": "Description explicitly recommends biopython for batch processing"
+          },
+          {
+            "text": "Advanced BLAST: use biopython instead",
+            "result": "PASS",
+            "note": "Description mentions biopython for advanced BLAST use"
+          },
+          {
+            "text": "Multi-database Python workflows: use bioservices",
+            "result": "PASS",
+            "note": "Description recommends bioservices for multi-database Python workflows"
+          },
+          {
+            "text": "Best for interactive exploration and simple queries",
+            "result": "PASS",
+            "note": "Description clearly positions gget for interactive use"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 57.4,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive coverage of 23 bioinformatics modules with unified CLI/Python interface across gene info, alignments, structures, expression, and disease data",
+    "Excellent progressive disclosure with clear module catalog and detailed reference documentation for all parameters and workflows",
+    "Strong reproducibility focus with explicit version pinning (gget==0.30.5) and database version documentation",
+    "Clear scope boundaries with explicit recommendations for when to use alternatives (biopython, bioservices)",
+    "Perfect agent discoverability with specific database names and use-case patterns in description"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit COSMIC database caching documentation",
+      "observed_in": [5],
+      "problem": "COSMIC credential flow and database storage location not documented in module catalog",
+      "root_cause": "Security focus on credential handling but missing database reuse details",
+      "fix": "Add to module_catalog.md: COSMIC database download location, cache reuse behavior, and size estimates"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit HTTPS-only statement for remote queries",
+      "observed_in": [],
+      "problem": "No explicit security statement about HTTPS for API queries",
+      "root_cause": "Security section focuses on credentials but not transport security",
+      "fix": "Add to best practices: 'All gget queries use HTTPS for secure communication with remote databases'"
+    },
+    {
+      "priority": "P2",
+      "title": "Expand retry and rate-limiting guidance",
+      "observed_in": [],
+      "problem": "Error handling mentions rate limiting but provides no specific implementation guidance",
+      "root_cause": "Focus on pinning and compatibility rather than runtime error patterns",
+      "fix": "Add to error handling section: specific retry strategies for API failures, recommended rate limits for batch queries, and exponential backoff patterns"
+    }
+  ]
+}

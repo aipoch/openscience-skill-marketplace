@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "skill_name": "anndata",
+    "description": "Data structure for annotated matrices in single-cell analysis. Use when working with .h5ad files or integrating with the scverse ecosystem. This is the data format skill—for analysis workflows use scanpy; for probabilistic models use scvi-tools; for population-scale queries use cellxgene-census.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; documentation accurately represents AnnData library capabilities and scverse ecosystem integration"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for data structure and file I/O operations in single-cell genomics"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established single-cell analysis practices and standardized file formats (h5ad, zarr, 10X)"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct and executable with proper imports and error handling patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of AnnData functionality including I/O, concatenation, manipulation, backed mode, and ecosystem integration with excellent reference organization"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent error handling guidance with troubleshooting section covering memory errors, slow I/O, and index alignment issues; clear deprecated API warnings"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (432 lines) with clear sections, progressive disclosure through reference files, and efficient structure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent 'When to Use This Skill' section with specific triggers; clear scope boundaries directing to scanpy/scvi-tools/cellxgene-census for analysis; comprehensive examples"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation instructions with version pinning; multiple workflow examples; troubleshooting section with actionable solutions"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good practices for data handling; no credential exposure risks; minor: lacks explicit guidance on handling sensitive genomic data or PHI"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, license (BSD-3-Clause), comprehensive reference files, clear deprecation notices, and external resource links"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools specified; clear integration patterns with scverse ecosystem; experimental API warnings present; minor: could benefit from more explicit output format specifications"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Create AnnData from scratch with metadata",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from matrix to annotated object",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "AnnData object created with X matrix",
+            "result": "PASS",
+            "note": "ad.AnnData(X) constructor correctly demonstrated"
+          },
+          {
+            "text": "obs DataFrame with cell metadata added",
+            "result": "PASS",
+            "note": "obs parameter with indexed DataFrame correctly shown"
+          },
+          {
+            "text": "var DataFrame with gene metadata added",
+            "result": "PASS",
+            "note": "var parameter with gene annotations correctly shown"
+          },
+          {
+            "text": "Proper indexing used for obs and var",
+            "result": "PASS",
+            "note": "Custom index names used (cell_i, ENSG format)"
+          },
+          {
+            "text": "Dimensions accessible via n_obs and n_vars",
+            "result": "PASS",
+            "note": "Dimension access pattern demonstrated correctly"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Read h5ad file in backed mode for large dataset",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Backed mode workflow with lazy loading",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "backed='r' parameter used for read-only mode",
+            "result": "PASS",
+            "note": "ad.read_h5ad with backed='r' correctly shown"
+          },
+          {
+            "text": "Metadata filtering performed without loading full data",
+            "result": "PASS",
+            "note": "Filtering on obs before loading demonstrated"
+          },
+          {
+            "text": "to_memory() used to load filtered subset",
+            "result": "PASS",
+            "note": "Conversion from backed to in-memory shown"
+          },
+          {
+            "text": "Chunked processing pattern documented",
+            "result": "PASS",
+            "note": "Loop with chunk_size for processing large files shown"
+          },
+          {
+            "text": "Memory efficiency guidance provided",
+            "result": "PASS",
+            "note": "Troubleshooting section addresses out-of-memory errors"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Concatenate multiple batches with labels",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Batch integration workflow with tracking",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "ad.concat used instead of deprecated AnnData.concatenate",
+            "result": "PASS",
+            "note": "Modern concat function correctly used throughout"
+          },
+          {
+            "text": "label and keys parameters used for batch tracking",
+            "result": "PASS",
+            "note": "label='batch', keys=['batch1', 'batch2', 'batch3'] shown"
+          },
+          {
+            "text": "join parameter specified (inner/outer)",
+            "result": "PASS",
+            "note": "join='inner' parameter documented"
+          },
+          {
+            "text": "Batch correction workflow integrated",
+            "result": "PASS",
+            "note": "sc.pp.combat shown after concatenation"
+          },
+          {
+            "text": "axis parameter documented for obs vs var concatenation",
+            "result": "PASS",
+            "note": "axis=0 for observations, axis=1 for variables clearly stated"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Handle sparse matrices and categorical conversion",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Memory optimization patterns correctly documented",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "csr_matrix conversion shown for sparse data",
+            "result": "PASS",
+            "note": "from scipy.sparse import csr_matrix; adata.X = csr_matrix(adata.X)"
+          },
+          {
+            "text": "strings_to_categoricals() method documented",
+            "result": "PASS",
+            "note": "Method shown in best practices and troubleshooting sections"
+          },
+          {
+            "text": "Compression options documented for write operations",
+            "result": "PASS",
+            "note": "compression='gzip' parameter shown in write_h5ad examples"
+          },
+          {
+            "text": "Zarr v3 settings documented for cloud storage",
+            "result": "PASS",
+            "note": "ad.settings.zarr_write_format = 3 with experimental flag noted"
+          },
+          {
+            "text": "Performance impact of optimization discussed",
+            "result": "FAIL",
+            "note": "Optimizations shown but quantitative performance impact not discussed"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Index alignment and metadata manipulation edge cases",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Common pitfall addressed but could be more comprehensive",
+        "basic": 33,
+        "specialized": 46,
+        "total": 79,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Wrong vs correct index alignment pattern shown",
+            "result": "PASS",
+            "note": "Troubleshooting section shows wrong and correct approaches with set_index and loc"
+          },
+          {
+            "text": "Index name consistency checked (obs_names, var_names)",
+            "result": "PASS",
+            "note": "Examples use obs_names for alignment"
+          },
+          {
+            "text": "Handling of missing indices or mismatches documented",
+            "result": "FAIL",
+            "note": "No explicit guidance on what happens with non-overlapping indices"
+          },
+          {
+            "text": "View vs copy behavior explained for metadata changes",
+            "result": "FAIL",
+            "note": "View vs copy mentioned but not in context of metadata manipulation safety"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 53.3,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional documentation organization with comprehensive reference files for each major capability (data structure, I/O, concatenation, manipulation, best practices)",
+    "Excellent scope boundary definition directing users to appropriate skills (scanpy for analysis, scvi-tools for models, cellxgene-census for population queries)",
+    "Strong version awareness with clear deprecation notices and migration guidance from old to new APIs",
+    "Comprehensive ecosystem integration examples covering Scanpy, Muon, PyTorch (AnnLoader), and backed/lazy operations",
+    "Outstanding troubleshooting section with common issues (OOM, slow I/O, index alignment) and actionable solutions"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add guidance for handling sensitive genomic data",
+      "observed_in": [],
+      "problem": "No explicit discussion of privacy considerations when working with human genomic data or PHI",
+      "root_cause": "Documentation focuses on technical operations without addressing data sensitivity",
+      "fix": "Add security section or note in best practices discussing anonymization requirements, PHI handling, and considerations for cloud storage of sensitive genomic data"
+    },
+    {
+      "priority": "P2",
+      "title": "Quantify performance impact of optimizations",
+      "observed_in": [4],
+      "problem": "Memory optimizations shown but performance benefits not quantified",
+      "root_cause": "Best practices list techniques without explaining when each is worth the tradeoff",
+      "fix": "Add performance notes: e.g., 'sparse matrices reduce memory by 10-100x for typical scRNA-seq data (>95% zeros)', 'categoricals reduce string column memory by 5-10x'"
+    },
+    {
+      "priority": "P2",
+      "title": "Expand index alignment error handling guidance",
+      "observed_in": [5],
+      "problem": "Correct alignment pattern shown but behavior with non-overlapping indices not explained",
+      "root_cause": "Troubleshooting shows what to do but not what happens when alignment fails",
+      "fix": "Add note to troubleshooting: 'Non-overlapping indices will raise KeyError; use .reindex() with fill_value for partial matches or .get() for optional lookups'"
+    }
+  ]
+}

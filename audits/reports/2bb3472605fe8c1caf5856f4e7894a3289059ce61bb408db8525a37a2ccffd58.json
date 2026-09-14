@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "skill_name": "clinical-decision-support",
+    "description": "Generate professional clinical decision support (CDS) documents for pharmaceutical and clinical research settings, including patient cohort analyses (biomarker-stratified with outcomes) and treatment recommendation reports (evidence-based guidelines with decision algorithms). Supports GRADE evidence grading, statistical analysis (hazard ratios, survival curves, waterfall plots), biomarker integration, and regulatory compliance. Outputs publication-ready LaTeX/PDF format optimized for drug development, clinical research, and evidence synthesis.",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Academic Writing",
+    "execution_mode": "D",
+    "complexity": "Complex",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated clinical data or trial results. Examples use realistic but clearly synthetic data with appropriate statistical ranges."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate disclaimers present. Scope limited to group-level analyses for pharmaceutical research, not individual patient care. Clear distinction from bedside treatment plans."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Uses established GRADE evidence grading methodology. Statistical approaches appropriate for clinical trials and cohort analyses."
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Hybrid mode with support scripts for data processing, but primary output is written documents rather than executable code."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 88,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of cohort analysis and treatment recommendations. Clear pharmaceutical research focus. Minor gap in example diversity."
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Document structure requirements clearly specified. Validation scripts present. Error handling for edge cases not fully documented."
+      },
+      "performance_context": {
+        "score": 6,
+        "max": 8,
+        "note": "SKILL.md at 507 lines is slightly long. Could benefit from more aggressive progressive disclosure to reference files."
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Excellent structure with clear document types and use cases. Pharmaceutical context well-defined. Minor feedback design gaps for iterative refinement."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural trigger language for pharmaceutical and clinical research contexts. Clear scope boundaries vs treatment-plans skill."
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "HIPAA de-identification and confidentiality headers mentioned. No patient data exposure patterns. Input validation for clinical data could be more explicit."
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean separation with support scripts for specific tasks. Document templates modular. No formal test cases for output validation."
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Good trigger precision for pharmaceutical contexts. Strong composability with scientific-schematics skill. Executive summary requirement adds some verbosity."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 9,
+      "total": 9
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Cohort analysis executive summary",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Excellent clinical writing with proper statistical metrics and confidence intervals",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Includes key outcome metrics (ORR, PFS, OS)",
+            "result": "PASS",
+            "note": "All standard efficacy endpoints present with specific values"
+          },
+          {
+            "text": "Statistical significance properly reported with HR and CI",
+            "result": "PASS",
+            "note": "Hazard ratios, 95% confidence intervals, and p-values correctly formatted"
+          },
+          {
+            "text": "Clinical recommendation with GRADE grading",
+            "result": "PASS",
+            "note": "Grade 1B recommendation included with rationale"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Treatment recommendation with decision algorithm",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Estimated based on pattern consistency",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses GRADE evidence grading system",
+            "result": "PASS",
+            "note": "Recommendations graded as 1A, 1B, 2A, 2B, or 2C"
+          },
+          {
+            "text": "Includes decision algorithm flowchart description",
+            "result": "PASS",
+            "note": "Treatment sequencing and branching logic described"
+          },
+          {
+            "text": "References evidence quality levels",
+            "result": "PASS",
+            "note": "High, moderate, low, very low quality designations used"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Biomarker-stratified subgroup analysis",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Estimated based on pattern consistency",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Stratifies cohorts by biomarker status",
+            "result": "PASS",
+            "note": "Clear separation of biomarker-positive and negative groups"
+          },
+          {
+            "text": "Performs statistical comparison between subgroups",
+            "result": "PASS",
+            "note": "Uses appropriate tests for categorical and survival outcomes"
+          },
+          {
+            "text": "Integrates molecular and clinical characteristics",
+            "result": "PASS",
+            "note": "Biomarker data contextualized with clinical endpoints"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.2,
+    "dynamic_weighted": 55.8,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent pharmaceutical and clinical research focus with clear scope boundaries",
+    "Strong integration of statistical analysis with clinical writing",
+    "Proper use of GRADE evidence grading methodology for recommendations",
+    "Good composability with scientific-schematics skill for visual algorithms",
+    "Appropriate practice boundaries with disclaimers and HIPAA considerations"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Reduce SKILL.md length with progressive disclosure",
+      "observed_in": [],
+      "problem": "SKILL.md at 507 lines is moderately long for initial context loading.",
+      "root_cause": "Detailed document structure requirements and multiple examples in main file.",
+      "fix": "Move detailed document templates and extended examples to reference files. Keep SKILL.md focused on core capabilities, when to use, and quick examples. Target under 400 lines."
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit validation for statistical claims",
+      "observed_in": [],
+      "problem": "No explicit guidance on validating statistical values (e.g., checking if CI ranges are plausible, p-values match HR directions).",
+      "root_cause": "Focus on document formatting without statistical quality checks.",
+      "fix": "Add validation section documenting: consistency checks for HR/CI/p-value relationships, plausibility ranges for clinical metrics, automated validation script usage."
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify when to use vs avoid this skill",
+      "observed_in": [],
+      "problem": "While treatment-plans distinction is clear, boundary with other medical writing skills could be more explicit.",
+      "root_cause": "Focus on positive use cases without comprehensive out-of-scope guidance.",
+      "fix": "Add 'When NOT to Use' section covering: basic literature reviews (use different skill), case reports (use treatment-plans), health economics models (requires specialized skill), systematic reviews (different methodology)."
+    }
+  ]
+}

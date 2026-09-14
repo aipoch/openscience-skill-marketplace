@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "kermt-setup",
+    "description": "Bootstrap the KERMT agent environment — verify host docker + nvidia-container-toolkit, build the kermt:latest image from the repo's Dockerfile if it doesn't yet exist, and run a GPU smoke test inside the container. Every other kermt-* skill depends on this; invoke it first.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete 5-step bootstrap workflow covering docker verification, GPU passthrough check, image build, and smoke test; all prerequisites for other kermt skills validated"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation at each stage with clear error messages and stop conditions; minor: no rollback guidance if step 3 build succeeds but step 4 smoke test fails"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Exceptional efficiency: 138 lines well within target; explicit line/token budget comment shows awareness; references external documentation appropriately"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Clear 5-step workflow with explicit dependency as prerequisite for all other kermt skills; build time warning before step 3; comprehensive error handling with actionable guidance"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent trigger coverage; first-time setup guidance clear; disk space requirements detailed with explanation of docker image size reporting discrepancy"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Strong guardrails: no image pull/push, no daemon modification, no auto-deletion of existing images, explicit confirmation for forced rebuild"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean single-file structure; delegates to kermt_container.sh for actual operations; forced rebuild process documented; minimal coupling to implementation details"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Perfect trigger precision as prerequisite skill; excellent composability (called by other kermt skills); hard rules prevent dangerous operations; lacks explicit idempotency statement; no consolidated troubleshooting section beyond inline errors"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 98.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "First-time setup on fresh machine",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete bootstrap workflow from docker verification through GPU smoke test",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Docker daemon verified before proceeding",
+            "result": "PASS",
+            "note": "Step 1: check_docker validates installation and daemon reachability"
+          },
+          {
+            "text": "GPU passthrough verified with test container",
+            "result": "PASS",
+            "note": "Step 2: check_gpu runs nvidia-smi in nvidia/cuda base image"
+          },
+          {
+            "text": "Build time warning shown before ensure_image",
+            "result": "PASS",
+            "note": "Step 3: 10-20 minute build time warning required"
+          },
+          {
+            "text": "GPU smoke test validates torch.cuda.is_available()",
+            "result": "PASS",
+            "note": "Step 4: expects cuda_available: True and positive device_count"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Setup with existing kermt:latest image",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Fast-path verification when image already exists",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ensure_image returns immediately when image exists",
+            "result": "PASS",
+            "note": "Step 3: if image already exists, returns immediately without rebuild"
+          },
+          {
+            "text": "GPU smoke test still run even with existing image",
+            "result": "PASS",
+            "note": "Step 4: validates container GPU access regardless of build status"
+          },
+          {
+            "text": "No forced rebuild without explicit user request",
+            "result": "PASS",
+            "note": "Hard rules: don't rebuild when image exists unless user asks"
+          },
+          {
+            "text": "Summary reports existing image details",
+            "result": "PASS",
+            "note": "Step 5: reports tag, ID, size, GPU count"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Forced rebuild after Dockerfile changes",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct confirmation and cleanup for explicit rebuild request",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "User confirmation required before docker image rm",
+            "result": "PASS",
+            "note": "Forced rebuild section documents confirmation requirement"
+          },
+          {
+            "text": "Old image removed before rebuild to ensure clean state",
+            "result": "PASS",
+            "note": "Forced rebuild: docker image rm then ensure_image"
+          },
+          {
+            "text": "Hard rule prevents auto-deletion without explicit request",
+            "result": "PASS",
+            "note": "Hard rules: don't auto-delete older kermt:* tags without user confirmation"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 58.8,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Perfect role as foundational prerequisite: explicitly documented as dependency for all other kermt skills",
+    "Comprehensive validation pipeline: docker, GPU passthrough, image build, and in-container GPU smoke test",
+    "Exceptional conciseness: 138 lines deliver complete bootstrap workflow with excellent clarity",
+    "Strong safety guardrails: no daemon modification, no auto-deletion, explicit confirmation for destructive operations",
+    "Clear error handling with actionable guidance at each validation stage (install toolkit, check nvidia-smi, etc.)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add rollback guidance for failed smoke test after successful build",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "If step 3 build succeeds but step 4 smoke test fails (cuda_available: False), no guidance on whether to keep or remove the potentially-broken image",
+      "root_cause": "Assumes successful build implies working image; partial failure scenario not addressed",
+      "fix": "Add to step 4: 'If smoke test fails after successful build, the image may have CUDA wiring issues. Options: (1) remove image with docker image rm and investigate Dockerfile, or (2) keep for debugging with docker run -it kermt:latest bash. Do not declare environment ready.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated setup",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running kermt-setup multiple times is safe or has side effects",
+      "root_cause": "Idempotency implied by ensure_image fast-path but not explicitly stated",
+      "fix": "Add to Hard rules: 'Idempotency: running kermt-setup multiple times is safe — ensure_image skips rebuild if image exists, and all checks are read-only. Safe to invoke after environment changes or when troubleshooting.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Consolidate troubleshooting guidance",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "Error guidance scattered across workflow steps; no consolidated troubleshooting section for common issues",
+      "root_cause": "Inline error handling sufficient but harder to reference when debugging",
+      "fix": "Add Troubleshooting section after Hard rules: 'Common issues: (1) check_docker fails → install docker, start daemon; (2) check_gpu fails → install nvidia-container-toolkit, verify nvidia-smi on host; (3) build fails → check Dockerfile syntax, disk space; (4) smoke test fails → CUDA wiring issue, check base image CUDA version compatibility.'"
+    }
+  ]
+}

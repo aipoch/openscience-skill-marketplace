@@ -768,3 +768,73 @@ test("GitHub asset API rejects foreign endpoints, oversized replies and rate-lim
     "an explicit rate limit must not trigger release creation",
   );
 });
+
+test("audit transport makes no per-report requests when authenticated evidence is unchanged", async () => {
+  const { publishAuditCatalog, verifyAuditEnvelope } =
+    await import("../scripts/lib/aipoch-audits.mjs");
+  const { generateKeyPairSync } = await import("node:crypto");
+  const registry = JSON.parse(await readFile("audits/registry.json"));
+  const root = {
+    revision: "a".repeat(64),
+    skills: registry.entries.slice(0, 2),
+  };
+  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+  const signing = {
+    privateKey,
+    expectedPublicKey: publicKey
+      .export({ format: "der", type: "spki" })
+      .toString("base64"),
+    keyId: "openscience-skills-test",
+  };
+  const temporary = await mkdtemp(path.join(os.tmpdir(), "audit-transport-"));
+  try {
+    const objects = new Map(),
+      events = [];
+    const store = s3Store({
+      bucket: "example-bucket",
+      baseUrl: "https://cdn.example.com",
+      distributionId: "EXAMPLE",
+      temporary,
+      run: async (command, args) => {
+        const key = args[args.indexOf("--key") + 1];
+        events.push({ action: args[1], key });
+        if (args[1] === "head-object") {
+          if (!objects.has(key)) throw Error("HeadObject (404): Not Found");
+        } else if (args[1] === "put-object") {
+          if (args.includes("--if-none-match") && objects.has(key))
+            throw Error("412 PreconditionFailed");
+          objects.set(key, await readFile(args[args.indexOf("--body") + 1]));
+        }
+        return Buffer.from("");
+      },
+      fetchImpl: async (url) => {
+        const key = new URL(url).pathname.slice(1);
+        events.push({ action: "GET", key });
+        return new Response(objects.get(key));
+      },
+    });
+    const initial = await publishAuditCatalog({ root, store, signing });
+    assert.equal(initial.uploadedReports, 2);
+    events.length = 0;
+    const next = await publishAuditCatalog({
+      root: { ...root, revision: "b".repeat(64) },
+      store,
+      signing,
+    });
+    assert.equal(next.uploadedReports, 0);
+    assert.equal(next.reusedReports, 2);
+    assert.equal(
+      events.some((e) => e.key?.includes("/audits/reports/")),
+      false,
+    );
+    assert.equal(events.filter((e) => e.action === "head-object").length, 1);
+    assert.equal(events.filter((e) => e.action === "GET").length, 1);
+    const catalog = verifyAuditEnvelope(
+      objects.get("open-science/skill-marketplace/v1/audits/catalog.json"),
+      signing.expectedPublicKey,
+    );
+    assert.equal(catalog.catalogRevision, "b".repeat(64));
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
+  }
+});

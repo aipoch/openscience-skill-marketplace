@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "skill_name": "rowan",
+    "description": "Rowan is a cloud-native molecular modeling and medicinal-chemistry workflow platform with a Python API. Use for pKa and macropKa prediction, conformer and tautomer ensembles, docking and analogue docking, protein-ligand cofolding, MSA generation, molecular dynamics, permeability, descriptor workflows, and related small-molecule or protein modeling tasks. Requires API key for cloud-based computation.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of Rowan platform capabilities with proper proprietary license disclosure"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for computational chemistry workflows with clear fit/not-fit guidance"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established molecular modeling methods accessible via cloud API"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples are syntactically correct with proper API authentication patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of medicinal chemistry workflows: pKa, conformers, docking, descriptors, MD, cofolding"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good reliability with authentication verification, quick start validation; minor: error handling patterns not extensively documented"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with clear when-to-use guidance, quick start example, molecule input format documentation"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Strong with clear fit/not-fit guidance, trigger keywords in metadata, authentication patterns; minor: workflow chaining examples limited"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation, API key setup via environment variable, quick start validation with concrete example"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good security with API key environment variable recommendation, proprietary license disclosed; minor: credit consumption/rate limits not documented"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.4, proprietary license clearly stated, openclaw metadata for API key management"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong composability with trigger keywords, clear scope boundaries; minor: escape hatch for API failures not explicit, no offline mode guidance"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 86.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Submit descriptors workflow for aspirin",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core workflow submission with result retrieval",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "API key authentication documented", "result": "PASS", "note": "Environment variable or direct assignment shown"},
+          {"text": "Workflow submission pattern clear", "result": "PASS", "note": "submit_descriptors_workflow with SMILES input"},
+          {"text": "Result retrieval with .result() method", "result": "PASS", "note": "Blocking result fetch documented"},
+          {"text": "Quick start validation successful", "result": "PASS", "note": "Complete example with expected output"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "pKa prediction for ionizable compound",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Batch property prediction workflow",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "pKa workflow identified in capabilities", "result": "PASS", "note": "Listed as core feature"},
+          {"text": "SMILES input format accepted", "result": "PASS", "note": "Preferred molecule format"},
+          {"text": "Workflow naming for tracking", "result": "PASS", "note": "name parameter documented"},
+          {"text": "Result structure documented", "result": "PASS", "note": "Descriptor access pattern shown"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Multi-step workflow: tautomer search then docking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Chained workflow pattern",
+        "basic": 35,
+        "specialized": 50,
+        "total": 85,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Multi-step pipelines identified in use cases", "result": "PASS", "note": "Explicitly listed: 'tautomer search → docking → pose analysis'"},
+          {"text": "Conformer/tautomer ensemble generation available", "result": "PASS", "note": "Listed in capabilities"},
+          {"text": "Docking workflow available", "result": "PASS", "note": "Single-ligand and analogue docking listed"},
+          {"text": "Chaining pattern example provided", "result": "FAIL", "note": "Multi-step workflow code example not shown in main doc"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Batch screening of compound library",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Programmatic batch processing",
+        "basic": 34,
+        "specialized": 48,
+        "total": 82,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Batch workflows explicitly supported", "result": "PASS", "note": "Listed as good fit: 'Batch medicinal-chemistry campaigns'"},
+          {"text": "Scalable infrastructure mentioned", "result": "PASS", "note": "Cloud-native scaling emphasized"},
+          {"text": "Multiple SMILES input pattern available", "result": "PASS", "note": "Programmatic API supports iteration"},
+          {"text": "Result management handled by platform", "result": "PASS", "note": "Infrastructure handles result storage"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Scope Boundary",
+        "label": "Run post-HF ab initio calculation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly identified as out of scope",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Out-of-scope case explicitly listed", "result": "PASS", "note": "'Post-HF ab initio quantum chemistry' in not-the-right-fit list"},
+          {"text": "Alternative scope clearly defined", "result": "PASS", "note": "Quantum chemistry, semiempirical, and NNPs listed as in-scope"},
+          {"text": "User redirected to appropriate tools", "result": "FAIL", "note": "No pointer to Gaussian, ORCA, Molpro, or similar packages"},
+          {"text": "Boundary reasoning clear", "result": "PASS", "note": "Scope distinction between methods is evident"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 51.7,
+    "score": 89,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent scope clarity with explicit 'good fit' and 'not the right fit' lists for appropriate use cases",
+    "Strong authentication guidance with environment variable recommendation and whoami() verification",
+    "Outstanding value proposition for eliminating local HPC/GPU infrastructure maintenance",
+    "Clear trigger keywords in metadata for agent skill selection",
+    "Good quick start validation pattern with concrete aspirin example"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add multi-step workflow chaining example",
+      "observed_in": [3],
+      "problem": "Multi-step pipelines mentioned but no code example provided",
+      "root_cause": "Agent usability could be improved with concrete chaining pattern",
+      "fix": "Add example: 'wf1 = rowan.submit_tautomer_workflow(smiles); tautomers = wf1.result(); wf2 = rowan.submit_docking_workflow(tautomers[0], protein); poses = wf2.result()'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document credit consumption and rate limits",
+      "observed_in": [1, 4],
+      "problem": "API key provides access but cost/quota information not documented",
+      "root_cause": "Security criterion: resource limits not addressed",
+      "fix": "Add to ## User and webhook management: 'Monitor credit usage with user.credits_available_string. Large batch jobs may hit rate limits—contact support for quota increases.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add pointers for out-of-scope quantum chemistry",
+      "observed_in": [5],
+      "problem": "Post-HF methods identified as out-of-scope but no alternative suggested",
+      "root_cause": "Escape hatch: user not directed to appropriate alternative",
+      "fix": "Add to not-the-right-fit list: 'Post-HF ab initio quantum chemistry (use Gaussian, ORCA, Molpro, or Q-Chem instead)'"
+    }
+  ]
+}

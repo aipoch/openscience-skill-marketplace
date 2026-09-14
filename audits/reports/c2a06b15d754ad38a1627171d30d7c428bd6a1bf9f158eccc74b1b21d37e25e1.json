@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "skill_name": "arboreto",
+    "description": "Infer gene regulatory networks (GRNs) from gene expression data using scalable algorithms (GRNBoost2, GENIE3). Use when analyzing transcriptomics data (bulk RNA-seq, single-cell RNA-seq) to identify transcription factor-target gene relationships and regulatory interactions. Supports distributed computation for large-scale datasets.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; accurately describes established GRN inference algorithms (GRNBoost2, GENIE3) from peer-reviewed methods"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for computational GRN inference; does not overstate biological causality from correlation-based methods"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on validated tree-based ensemble regression methods published by Aerts Lab; reproducibility guidance with seed setting included"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are executable with proper imports and multiprocessing guards; includes working script in scripts/ directory"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of GRN inference workflows, algorithm selection, distributed computing, and integration with pySCENIC; minor: lacks explicit statistical significance testing guidance"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good error handling in troubleshooting section covering memory errors, slow performance, Dask issues, empty results, and sparse data; reproducibility guidance strong with seed setting; minor: no explicit retry or failure recovery patterns"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized documentation (268 lines), clear sections with progressive disclosure through reference files; could benefit from performance benchmarks or timing estimates"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear trigger description with specific use cases (transcriptomics, TF-target relationships); good examples; implicit 'When to Use' through description; minor: no explicit 'When NOT to Use' section"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup with installation options (pip, conda), critical multiprocessing guard warning prominently placed, ready-to-run script provided, troubleshooting section actionable"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "No security concerns; computational tool with no credential management, network access, or user input risks; proper data format validation implied"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.0, license (BSD-3-Clause), reference files, scripts directory; notes upstream version (PyPI 0.1.6); missing: changelog or known issues section"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong composability with pySCENIC integration and AnnData conversion; clear output format (TF, target, importance); reproducibility via seed parameter; minor: no explicit idempotency discussion, output format lacks schema validation"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 20,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Basic GRN inference with GRNBoost2",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard workflow from expression matrix to network output",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Expression data loaded as pandas DataFrame with genes as columns",
+            "result": "PASS",
+            "note": "pd.read_csv correctly used with genes as columns format"
+          },
+          {
+            "text": "grnboost2 function called with expression_data parameter",
+            "result": "PASS",
+            "note": "from arboreto.algo import grnboost2; network = grnboost2(expression_data=matrix)"
+          },
+          {
+            "text": "if __name__ == '__main__': guard present",
+            "result": "PASS",
+            "note": "Critical multiprocessing guard correctly shown in all examples"
+          },
+          {
+            "text": "Output DataFrame contains TF, target, importance columns",
+            "result": "PASS",
+            "note": "Output format clearly documented in Output Interpretation section"
+          },
+          {
+            "text": "Network saved to TSV format without header",
+            "result": "PASS",
+            "note": "network.to_csv with sep='\\t', index=False, header=False shown"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Single-cell RNA-seq with importance filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "scRNA-seq workflow with post-hoc filtering",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Single-cell expression matrix format (cells x genes) documented",
+            "result": "PASS",
+            "note": "Example explicitly shows sc_data with cells as rows"
+          },
+          {
+            "text": "Seed parameter used for reproducibility",
+            "result": "PASS",
+            "note": "seed=42 parameter included in example"
+          },
+          {
+            "text": "Post-hoc importance threshold filtering applied",
+            "result": "PASS",
+            "note": "network[network['importance'] > 0.5] filtering shown"
+          },
+          {
+            "text": "High-confidence network output generated",
+            "result": "PASS",
+            "note": "Filtered results saved to grn_high_confidence.tsv"
+          },
+          {
+            "text": "AnnData conversion pattern documented",
+            "result": "PASS",
+            "note": "expression_df = adata.to_df() conversion shown in pySCENIC section"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "TF-filtered inference with custom TF list",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bulk RNA-seq with transcription factor restriction",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "load_tf_names utility function used to load TF list",
+            "result": "PASS",
+            "note": "from arboreto.utils import load_tf_names; tf_names = load_tf_names('human_tfs.txt')"
+          },
+          {
+            "text": "tf_names parameter passed to grnboost2",
+            "result": "PASS",
+            "note": "grnboost2(expression_data=data, tf_names=tf_names, seed=123)"
+          },
+          {
+            "text": "TF name matching validated against expression columns",
+            "result": "PASS",
+            "note": "Troubleshooting mentions verifying TF names match column names"
+          },
+          {
+            "text": "Performance benefit of TF filtering explained",
+            "result": "FAIL",
+            "note": "TF filtering mentioned for speed but quantitative impact not provided"
+          },
+          {
+            "text": "Output limited to TF-target pairs only",
+            "result": "PASS",
+            "note": "Implicit from tf_names parameter behavior"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Distributed computing with custom Dask client",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Local cluster configuration with resource limits",
+        "basic": 35,
+        "specialized": 49,
+        "total": 84,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "LocalCluster initialized with n_workers and memory_limit",
+            "result": "PASS",
+            "note": "LocalCluster(n_workers=10, memory_limit='8GB') shown"
+          },
+          {
+            "text": "Client created from cluster and passed to grnboost2",
+            "result": "PASS",
+            "note": "client = Client(local_cluster); grnboost2(..., client_or_address=client)"
+          },
+          {
+            "text": "Client and cluster properly closed after inference",
+            "result": "PASS",
+            "note": "client.close(); local_cluster.close() cleanup shown"
+          },
+          {
+            "text": "Remote cluster connection documented with tcp:// address",
+            "result": "PASS",
+            "note": "Client('tcp://scheduler:8786') shown for cluster computing"
+          },
+          {
+            "text": "Performance scaling guidance provided",
+            "result": "FAIL",
+            "note": "Distributed computing described but no scaling benchmarks or worker count recommendations"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Consensus network from multiple seed runs",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Robustness analysis with multi-seed aggregation",
+        "basic": 34,
+        "specialized": 47,
+        "total": 81,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Multiple seeds run in loop with distributed client",
+            "result": "PASS",
+            "note": "Loop over seeds = [42, 123, 777] with grnboost2 per seed shown"
+          },
+          {
+            "text": "Networks concatenated and aggregated by TF-target pair",
+            "result": "PASS",
+            "note": "pd.concat(networks) followed by groupby(['TF', 'target']).mean()"
+          },
+          {
+            "text": "Consensus threshold applied to mean importance",
+            "result": "FAIL",
+            "note": "Example shows query('importance > 0.5') but threshold choice not justified"
+          },
+          {
+            "text": "Statistical significance of consensus links discussed",
+            "result": "FAIL",
+            "note": "Aggregation shown but no statistical testing (e.g., permutation tests) mentioned"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 52.3,
+    "score": 89,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Critical multiprocessing guard (if __name__ == '__main__':) prominently documented with rationale, preventing common Dask spawn errors",
+    "Excellent algorithm comparison guidance (GRNBoost2 vs GENIE3) with clear default recommendation for most use cases",
+    "Strong reproducibility practices with seed parameter emphasized throughout examples and dedicated reproducibility section",
+    "Comprehensive distributed computing coverage from local multi-core to remote cluster with concrete Dask patterns",
+    "Clear integration pathway with pySCENIC ecosystem including AnnData conversion and downstream workflow context"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit 'When NOT to Use' section",
+      "observed_in": [],
+      "problem": "Skill lacks boundary documentation for inappropriate use cases",
+      "root_cause": "Description focuses on positive triggers without exclusion criteria",
+      "fix": "Add 'When NOT to Use' section: Do not use for causal inference (use experimental perturbation data), small sample sizes (n<10 observations), or real-time analysis (computationally intensive)"
+    },
+    {
+      "priority": "P2",
+      "title": "Quantify performance benefits of optimizations",
+      "observed_in": [3, 4],
+      "problem": "TF filtering and distributed computing described but performance impact not quantified",
+      "root_cause": "Optimization techniques mentioned without scaling guidance",
+      "fix": "Add performance notes: e.g., 'TF filtering reduces runtime by 5-10x for typical datasets', 'distributed computing scales near-linearly up to ~20 workers for 10k+ observations'"
+    },
+    {
+      "priority": "P2",
+      "title": "Statistical significance testing guidance missing",
+      "observed_in": [5],
+      "problem": "Consensus network aggregation shown but no statistical validation approach",
+      "root_cause": "Importance scores used directly without significance testing framework",
+      "fix": "Add section on statistical validation: permutation tests for null distribution, FDR correction for multiple testing, or reference to external tools like SCENIC's ctx pruning for regulatory evidence"
+    },
+    {
+      "priority": "P2",
+      "title": "Add changelog or known issues section",
+      "observed_in": [],
+      "problem": "Upstream version noted (0.1.6 from 2021) but no maintenance status or known issues documented",
+      "root_cause": "Maintainability affected by lack of version history and issue tracking",
+      "fix": "Add note about upstream maintenance status and link to GitHub issues; document any known limitations with newer Python versions or dependencies"
+    }
+  ]
+}

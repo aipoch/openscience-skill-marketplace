@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "skill_name": "complexa-setup",
+    "description": "First-time setup, environment configuration, and model-weight installation for Proteina-Complexa. Use when user says set up complexa, install complexa, configure environment file, first-time setup, what models installed, download model weights, download Complexa/AF2/RF3/ProteinMPNN/LigandMPNN/ESM2/ESMFold checkpoints, preflight GPU, verify environment, complexa init, complexa download, complexa validate env, or fresh checkout needs to be runnable.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {"result": "PASS", "detail": "No fabricated data; references real NGC URLs and checkpoint files"},
+      "practice_boundaries": {"result": "PASS", "detail": "Setup tool with no medical claims"},
+      "methodological_ground": {"result": "PASS", "detail": "Appropriate setup methodology; validation checks scientifically sound"},
+      "code_usability": {"result": "PASS", "detail": "Bash commands syntactically correct; file edit patterns valid"}
+    }
+  },
+  "static_score": {
+    "subtotal": 88,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {"score": 12, "max": 12, "note": "Complete 6-step setup workflow; handles UV and Docker runtimes; validates before and after"},
+      "reliability": {"score": 11, "max": 12, "note": "Preflight validation, status checks, detailed troubleshooting; lacks retry logic for failed downloads"},
+      "performance_context": {"score": 7, "max": 8, "note": "289 lines acceptable with 2 reference files; clear decision tables reduce cognitive load"},
+      "agent_usability": {"score": 15, "max": 16, "note": "Clear 6-step structure, CLI vs file-edit decision table, download matrix, troubleshooting table"},
+      "human_usability": {"score": 7, "max": 8, "note": "Good section headers, decision tables helpful, hardware requirements clear"},
+      "security": {"score": 12, "max": 12, "note": "Environment variables for all sensitive data; no hardcoded credentials; validates paths"},
+      "maintainability": {"score": 11, "max": 12, "note": "Good modularity with 2 reference files; version-aware via git SHA in manifest"},
+      "agent_specific": {"score": 13, "max": 20, "note": "Good trigger precision; uses AskUserQuestion for runtime; references shared scripts; deterministic via manifest; could improve progressive disclosure"}
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.4,
+    "max": 100,
+    "assertion_pass_rate": {"passed": 19, "total": 19},
+    "inputs": [
+      {"index": 1, "type": "Canonical", "label": "Fresh clone UV setup for protein binder", "status": "COMPLETED", "status_flag": "✅", "note": "Standard first-time setup", "basic": 37, "specialized": 52, "total": 89, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output runs preflight before setup", "result": "PASS", "note": "Preflight executed first"}, {"text": "Output builds venv if missing", "result": "PASS", "note": "Checks .venv existence"}, {"text": "Output creates .env with UV runtime", "result": "PASS", "note": "complexa init or file edit"}, {"text": "Output downloads minimal checkpoint set", "result": "PASS", "note": "--complexa --all for protein binder"}]},
+      {"index": 2, "type": "Variant A", "label": "Docker runtime for Ubuntu 20.04", "status": "COMPLETED", "status_flag": "✅", "note": "Handles GLIBC compatibility", "basic": 38, "specialized": 52, "total": 90, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output detects GLIBC issue", "result": "PASS", "note": "Ubuntu 20.04 flagged"}, {"text": "Output switches to Docker runtime", "result": "PASS", "note": "complexa init --runtime docker"}, {"text": "Output swaps UV/DOCKER prefixes", "result": "PASS", "note": "Prefix swap documented"}, {"text": "Output validates Docker setup", "result": "PASS", "note": "complexa validate env"}]},
+      {"index": 3, "type": "Edge", "label": "Status check without download", "status": "COMPLETED", "status_flag": "✅", "note": "Non-destructive state inspection", "basic": 36, "specialized": 51, "total": 87, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses --status flag", "result": "PASS", "note": "complexa download --status"}, {"text": "Output does not trigger downloads", "result": "PASS", "note": "Read-only operation"}, {"text": "Output reports installed vs missing", "result": "PASS", "note": "Per-ckpt status shown"}, {"text": "Output suggests specific flags for missing", "result": "PASS", "note": "Fix guidance provided"}]},
+      {"index": 4, "type": "Variant B", "label": "All-pipeline setup with everything flag", "status": "COMPLETED", "status_flag": "✅", "note": "Complete installation", "basic": 38, "specialized": 53, "total": 91, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses --everything flag", "result": "PASS", "note": "Downloads all variants + community"}, {"text": "Output warns about disk space", "result": "PASS", "note": "100+ GB noted"}, {"text": "Output validates all checkpoints present", "result": "PASS", "note": "Status check after download"}, {"text": "Output emits setup manifest", "result": "PASS", "note": "Manifest with download commands"}]},
+      {"index": 5, "type": "Stress", "label": "Failed download retry and partial state", "status": "COMPLETED", "status_flag": "✅", "note": "Handles interrupted downloads", "basic": 37, "specialized": 53, "total": 90, "assertions_passed": 3, "assertions_total": 3, "assertions": [{"text": "Output detects partial download via status", "result": "PASS", "note": "Missing ckpts flagged"}, {"text": "Output re-runs specific flag for missing", "result": "PASS", "note": "Targeted re-download"}, {"text": "Output confirms completion with final status check", "result": "PASS", "note": "Verification after retry"}]}
+    ]
+  },
+  "final": {
+    "static_weighted": 35.2,
+    "dynamic_weighted": 53.6,
+    "score": 89,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent CLI vs file-edit decision table helps agents choose efficient path per step",
+    "Comprehensive download matrix with size estimates and unlocked pipelines clearly mapped",
+    "Strong validation workflow with preflight before and validate env after setup",
+    "Clear runtime selection guidance (UV vs Docker) with GLIBC compatibility note",
+    "Emits replayable manifest capturing exact setup commands for reproducibility"
+  ],
+  "recommendations": [
+    {"priority": "P2", "title": "Add download retry logic guidance", "observed_in": [], "problem": "Reliability 2.1 scored 11/12; no explicit retry strategy for network failures during long downloads. References skip-if-present but not resume-from-partial.", "root_cause": "Delegates to download_startup.sh without documenting retry behavior.", "fix": "Add to troubleshooting or reference/downloads.md: complexa download has skip-if-present logic (safe to re-run same flag), but partial files need manual cleanup. Document: rm incomplete .ckpt before retry, or use --force flag if added."},
+    {"priority": "P2", "title": "Improve progressive disclosure", "observed_in": [], "problem": "Agent-Specific 8.2 scored lower (13/20 overall); 289 lines with inline tables could move more to references. Performance/Context scored 7/8.", "root_cause": "Download matrix and env key quick table inline.", "fix": "Move download flag matrix to reference/downloads.md (already exists), move env key decision table to reference/env_keys.md (already exists). Keep only essential workflow in main SKILL.md."}
+  ]
+}

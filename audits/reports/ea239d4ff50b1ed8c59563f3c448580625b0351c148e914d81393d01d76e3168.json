@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "skill_name": "labarchive-integration",
+    "description": "Securely integrate with the official LabArchives ELN REST-like API and Inventory API v1. Use for regional endpoint selection, signed-request construction, user authorization and UID flows, local LA container validation, and verified LabArchives integration workflows.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "infrastructure",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Infrastructure integration skill, not research methodology"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Infrastructure integration skill"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Infrastructure integration skill"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Infrastructure integration skill"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 88,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 10,
+        "max": 12,
+        "note": "Comprehensive ELN and Inventory API coverage with regional endpoints, authentication, LA container validation; 4 reference files; minor gaps: no complete workflow examples, limited error scenario coverage"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good documentation of non-versioned API surface with official page verification requirement; explicit acknowledgment of shared notebook documentation; minor: no explicit retry guidance"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-structured 217-line SKILL.md with 4 reference files; clear API surface distinction; minor: density could be improved with more reference delegation"
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Good trigger description with specific LabArchives patterns; clear API surface distinction; missing: explicit 'When to Use' section, some integration patterns unclear"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup instructions with uv, named environment variables, regional endpoint documentation, and validation scripts"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: HTTPS-only, allowlisted hosts, no credential logging, timeout enforcement, XML/JSON as untrusted, rate limiting, UID binding documented"
+      },
+      "maintainability": {
+        "score": 10,
+        "max": 12,
+        "note": "Good with version 1.1, license, compatibility; dated sources documented; missing: changelog, no upstream SDK version tracking"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability with bundled network-free tools; clear safety rules; minor: workflow orchestration limited, no complete end-to-end examples, integration patterns could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Regional endpoint selection and config validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete regional endpoint documentation with validation workflow",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Five regional API hosts documented separately from browser login",
+            "result": "PASS",
+            "note": "Regional endpoints section lists US/rest of world, Australia/NZ, UK, Europe, Canada"
+          },
+          {
+            "text": "setup_config.py regions command lists current allowlist",
+            "result": "PASS",
+            "note": "Access and credentials section shows regions command"
+          },
+          {
+            "text": "Named environment variables convention documented (LABARCHIVES_*)",
+            "result": "PASS",
+            "note": "5 named environment variables clearly documented with purpose"
+          },
+          {
+            "text": "setup_config.py check validates endpoint and named-variable presence",
+            "result": "PASS",
+            "note": "Check command with --require-user-id documented"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "ELN signed-request construction for entries",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete HMAC-SHA-512 signing algorithm with local planning",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ELN signature algorithm fully documented (5 steps)",
+            "result": "PASS",
+            "note": "Authentication model section documents complete algorithm with epoch time, concatenation, HMAC-SHA-512, base64, URI-encode"
+          },
+          {
+            "text": "Signature uses method name only, not API class (except special cases)",
+            "result": "PASS",
+            "note": "ELN requests section explicitly notes method name only with user auth as exception"
+          },
+          {
+            "text": "entry_operations.py eln-plan creates redacted plans without network",
+            "result": "PASS",
+            "note": "Local request planning shows eln-plan with api-class and api-method parameters"
+          },
+          {
+            "text": "Signatures are fresh per request, never reused",
+            "result": "PASS",
+            "note": "Authentication model requires creating fresh signature for every request"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Inventory API v1 with X-LabArchives headers",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Inventory authentication distinct from ELN with header-based signing",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Inventory API v1 uses X-LabArchives-* headers not query params",
+            "result": "PASS",
+            "note": "Authentication model lists 5 X-LabArchives headers for Inventory"
+          },
+          {
+            "text": "Inventory signs exact relative route with resolved path params",
+            "result": "PASS",
+            "note": "Inventory section documents signing route with resolved params excluding query"
+          },
+          {
+            "text": "LabId required for Inventory requests",
+            "result": "PASS",
+            "note": "Environment variables include LABARCHIVES_INVENTORY_LAB_ID as required"
+          },
+          {
+            "text": "entry_operations.py inventory-plan creates header-based plans",
+            "result": "PASS",
+            "note": "Local request planning shows inventory-plan with --path parameter"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "LA container inspection with safety bounds",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bounded ZIP inspection without extraction with manifest validation",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "LA container is ZIP with lamanifest.xml and application file",
+            "result": "PASS",
+            "note": "Local LA container inspection defines structure clearly"
+          },
+          {
+            "text": "notebook_operations.py inspect bounds size/member count",
+            "result": "PASS",
+            "note": "Inspector section states it bounds archive size/member count"
+          },
+          {
+            "text": "Unsafe member paths rejected",
+            "result": "PASS",
+            "note": "Inspector rejects unsafe member paths as documented"
+          },
+          {
+            "text": "Inspector does not upload, download, or extract content",
+            "result": "PASS",
+            "note": "Explicitly stated inspector does not upload/download/extract"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Operational security rules for remote writes",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Comprehensive security rules but specific error codes and retry logic minimal",
+        "basic": 32,
+        "specialized": 48,
+        "total": 80,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "HTTPS-only with certificate verification enabled",
+            "result": "PASS",
+            "note": "Operational rules explicitly require HTTPS only with cert verification"
+          },
+          {
+            "text": "Five-step dry-run plan required before remote write",
+            "result": "PASS",
+            "note": "Local request planning lists 5 steps before any remote write"
+          },
+          {
+            "text": "Do not automatically retry HTTP 4xx responses",
+            "result": "PASS",
+            "note": "Operational rules prohibit automatic retry of 4xx"
+          },
+          {
+            "text": "Specific retry logic for transient failures documented",
+            "result": "FAIL",
+            "note": "General guidance present but no specific eligible status codes or backoff formula"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "API surface distinction and SDK status",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Clear API surface boundaries but product integration scope unclear",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ELN API vs Inventory API v1 distinction clear with no cross-contamination",
+            "result": "PASS",
+            "note": "Choose correct surface section explicitly separates three interfaces"
+          },
+          {
+            "text": "Product integrations not evidence of general OAuth 2.0 API",
+            "result": "PASS",
+            "note": "API surface section notes product integrations are UI/file workflows not API"
+          },
+          {
+            "text": "No official LabArchives Python SDK identified",
+            "result": "PASS",
+            "note": "Python clients section states no official SDK identified"
+          },
+          {
+            "text": "When to use product integrations vs API automation clarified",
+            "result": "FAIL",
+            "note": "Product integrations listed but guidance on when to automate vs use UI missing"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.2,
+    "dynamic_weighted": 52.9,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Perfect security posture: HTTPS-only, allowlisted hosts, no credential logging, timeouts enforced, XML/JSON untrusted, rate limiting, UID binding documented",
+    "Clear API surface distinction preventing cross-contamination between ELN query-based auth and Inventory header-based auth",
+    "Comprehensive authentication documentation with complete HMAC-SHA-512 algorithm for both ELN and Inventory APIs",
+    "Excellent credential management with 5 named environment variables and bundled network-free validation tools",
+    "Strong emphasis on official page verification before implementation due to non-versioned shared notebook documentation"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add specific retry logic and eligible status codes",
+      "observed_in": [5],
+      "problem": "General retry guidance but no specific eligible transient failure codes or backoff formula",
+      "root_cause": "Security focus on preventing inappropriate retries rather than specifying safe patterns",
+      "fix": "Add to operational rules: eligible retry status codes (502, 503, 504, 429), exponential backoff formula (1s, 2s, 4s), max retry count (3), and safe idempotency checks"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify when to use product integrations vs API automation",
+      "observed_in": [6],
+      "problem": "Product integrations listed but no guidance on automation appropriateness",
+      "root_cause": "Agent usability focuses on API details rather than integration strategy",
+      "fix": "Add to integrations.md: decision criteria for when to use UI-based product integrations (Jupyter, REDCap, etc.) vs building custom API automation"
+    },
+    {
+      "priority": "P2",
+      "title": "Add complete end-to-end workflow examples",
+      "observed_in": [],
+      "problem": "Individual API calls documented but no complete multi-step workflow",
+      "root_cause": "Agent-specific composability focuses on individual operations rather than orchestration",
+      "fix": "Add to api_reference.md: complete example showing config validation → plan generation → approval → execute → verify response for both ELN entry creation and Inventory item query"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit 'When to Use' section",
+      "observed_in": [],
+      "problem": "Trigger description mentions LabArchives but no explicit use-case section",
+      "root_cause": "Agent usability relies on description rather than structured use-case guidance",
+      "fix": "Add section: Use this skill when automating LabArchives notebook entries, retrieving experimental data, integrating with pipelines, or validating LA container exports. Do not use for manual notebook editing or one-off data entry."
+    }
+  ]
+}

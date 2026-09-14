@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "skill_name": "pysam",
+    "description": "Python/HTSlib workflows for genomic files. Use when reading, querying, filtering, or writing SAM/BAM/CRAM, VCF/BCF, FASTA/FASTQ, or tabix data with pysam, including pileup, coverage, indexing, and CRAM references. Provides comprehensive coordinate contract documentation and bundled audit scripts.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated data claims; accurate representation of pysam/HTSlib capabilities"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for bioinformatics file I/O; clear warnings about coordinate systems and format requirements"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established genomic file format standards (SAM/BAM/CRAM, VCF/BCF); proper coordinate semantics"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All 4 bundled scripts are syntactically correct with proper error handling"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 99,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of HTSlib-supported formats with alignment, variant, sequence, and tabix workflows"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability with documented common failure modes, explicit error handling patterns, and validation guidance"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with 9 comprehensive reference files, clear bundled scripts table, performance guidance for threads and CRAM"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with explicit coordinate contract (0-based vs 1-based), First Decide checklist, reference map, and 11-item common failure modes list"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with pinned pysam 0.24.0, all scripts have --help, usage examples throughout"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security posture: local-only file operations, no network calls, bundled scripts refuse to overwrite, proper argument handling"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 2.0, MIT license, migration guide from 0.14, upstream baseline clearly stated (pysam 0.24.0 / HTSlib 1.23.1)"
+      },
+      "agent_specific": {
+        "score": 19,
+        "max": 20,
+        "note": "Strong composability with allowed-tools, clear trigger (genomic file formats), progressive disclosure via reference map; minor: bundled scripts lack inline usage examples"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.1,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 25,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "BAM file filtering by mapping quality and region",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core alignment filtering workflow with quality thresholds",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Coordinate system correctly identified as 0-based", "result": "PASS", "note": "SKILL.md coordinate contract followed"},
+          {"text": "Context manager pattern used for AlignmentFile", "result": "PASS", "note": "Proper resource management"},
+          {"text": "Flag filtering applied (secondary, supplementary)", "result": "PASS", "note": "Standard alignment filtering"},
+          {"text": "Mapping quality threshold enforced", "result": "PASS", "note": "Quality control properly implemented"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "VCF sample subsetting and genotype counting",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Variant file access with sample filtering",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "subset_samples() called before record iteration", "result": "PASS", "note": "Correct ordering per SKILL.md"},
+          {"text": "Genotype access via call.get('GT')", "result": "PASS", "note": "Proper genotype retrieval pattern"},
+          {"text": "Numeric fetch coordinates treated as 0-based", "result": "PASS", "note": "Coordinate contract maintained"},
+          {"text": "Thread parameter used for performance", "result": "PASS", "note": "Performance optimization applied"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "CRAM decoding with explicit reference FASTA",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "CRAM-specific reference handling",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "reference_filename parameter provided", "result": "PASS", "note": "CRAM reference explicitly specified"},
+          {"text": "Mode 'rc' used for CRAM reading", "result": "PASS", "note": "Correct file mode"},
+          {"text": "Warning about self-contained assumption absent", "result": "PASS", "note": "SKILL.md guidance followed: 'Do not assume a CRAM is self-contained'"},
+          {"text": "CRAM 3.1 default noted for writes", "result": "PASS", "note": "Version awareness present"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Pileup with custom quality thresholds",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Per-position coverage with explicit filters",
+        "basic": 36,
+        "specialized": 51,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "truncate=True set for exact interval", "result": "PASS", "note": "Exact-region pileup configured"},
+          {"text": "min_mapping_quality and min_base_quality explicit", "result": "PASS", "note": "Default overrides documented"},
+          {"text": "max_depth raised from default 8000", "result": "PASS", "note": "Depth cap awareness shown"},
+          {"text": "Pileup defaults documented to user", "result": "FAIL", "note": "Common failure mode not surfaced: 'Ignoring pileup defaults such as base quality 13 and depth cap 8000'"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Tabix compression, indexing, and querying",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-step tabix workflow",
+        "basic": 35,
+        "specialized": 49,
+        "total": 84,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "tabix_compress() produces .gz output", "result": "PASS", "note": "BGZF compression step executed"},
+          {"text": "tabix_index() run after compression", "result": "PASS", "note": "Correct two-step ordering"},
+          {"text": "Parser specified (asBed)", "result": "PASS", "note": "Typed interval access"},
+          {"text": "Original file preserved", "result": "PASS", "note": "Non-destructive workflow per SKILL.md"}
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "RNA-seq expression analysis from BAM",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Outside core scope but addressable with pysam + external counting",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Skill recognizes alignment I/O is in scope", "result": "PASS", "note": "BAM reading capability present"},
+          {"text": "Expression quantification noted as external step", "result": "PASS", "note": "Appropriate boundary drawn"},
+          {"text": "Recommended alternative tool mentioned", "result": "FAIL", "note": "No pointer to HTSeq, featureCounts, or similar"},
+          {"text": "Pileup or count_coverage could support basic counting", "result": "PASS", "note": "Partial capability acknowledged"}
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "1-based coordinates in numeric fetch call",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Common failure mode correctly identified and prevented",
+        "basic": 33,
+        "specialized": 45,
+        "total": 78,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Error caught: numeric coordinates are 0-based", "result": "PASS", "note": "Coordinate contract enforced"},
+          {"text": "Reference to common failure modes section", "result": "PASS", "note": "'Treating numeric VariantFile.fetch() coordinates as 1-based' listed"},
+          {"text": "Alternative region string syntax offered", "result": "PASS", "note": "1-based inclusive region string documented"},
+          {"text": "Off-by-one result detected and corrected", "result": "PARTIAL", "note": "Detection present but correction requires user awareness"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.6,
+    "dynamic_weighted": 52.9,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional coordinate contract documentation with explicit 0-based vs 1-based semantics and common failure modes list",
+    "Comprehensive reference organization with 9 detailed files covering all HTSlib formats and migration guidance",
+    "Outstanding agent usability with First Decide checklist, reference map, and clear API distinction patterns",
+    "Excellent security and reliability: local-only operations, no overwrites, proper validation guidance",
+    "Strong bundled tooling with 4 dependency-managed scripts covering inspection, QC, filtering, and summarization"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add inline usage examples to bundled scripts",
+      "observed_in": [1, 2, 4],
+      "problem": "Scripts rely on --help but lack embedded examples for common patterns",
+      "root_cause": "Agent-specific criterion 'Progressive Disclosure' not fully met",
+      "fix": "Add 2-3 example invocations as comments at top of each script, e.g., '# Example: python inspect_hts.py sample.bam --reference ref.fa'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document pileup default behaviors more prominently",
+      "observed_in": [4],
+      "problem": "Pileup defaults (base quality 13, depth 8000) are documented but easy to miss",
+      "root_cause": "Common failure mode listed but not emphasized in main pileup section",
+      "fix": "Add explicit note in ## Alignment Files pileup code block: '# IMPORTANT: pileup() defaults to base quality 13 and max_depth 8000'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add pointer to RNA-seq quantification tools",
+      "observed_in": [6],
+      "problem": "Scope boundary input (RNA-seq expression) lacks redirect to appropriate tools",
+      "root_cause": "Reference map does not include 'what this skill does NOT do' section",
+      "fix": "Add 'Out of Scope' section noting: 'For transcript/gene quantification, use HTSeq, featureCounts, Salmon, or kallisto'"
+    }
+  ]
+}

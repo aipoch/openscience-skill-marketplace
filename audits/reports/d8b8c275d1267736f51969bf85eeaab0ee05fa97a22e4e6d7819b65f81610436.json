@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "geopandas",
+    "description": "Guidance and local audit tools for Python workflows that directly use GeoPandas GeoSeries, GeoDataFrame, spatial operations, or vector-data I/O.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Advanced",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of GeoPandas capabilities with critical CRS semantics (planar operations, geographic angular units) and correctness gates"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for geospatial vector analysis with explicit warnings: GeoPandas is planar, does not transform geodesic arcs, and requires CRS justification for measurements"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established GIS practices with proper CRS management, spatial predicate semantics, and geometry validity handling"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper CRS checks and operation semantics"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 97,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage including GeoDataFrame operations, CRS management, spatial joins, overlay, I/O (GeoPackage/GeoParquet/PostGIS), with excellent reference organization and bundled audit scripts"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional reliability with 8-point correctness gates covering identity/geometry state/CRS/units/transform/topology/cardinality/output contract"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (250 lines) with clear API decisions, migration checklist, 6 comprehensive reference files, and 6 bundled audit CLIs"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional with 8-point correctness gates, CRS/antimeridian rules, core API decisions (data structures/validity/joins/I/O), and comprehensive migration checklist from 0.14"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with full pinned stack (GeoPandas 1.1.4, NumPy 2.5.1, pandas 3.0.5, Shapely 2.1.2); reproducible environment guidance; bundled CLIs with help"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding security: coordinate/address sensitivity warnings, no automatic URL/cloud/geocoding, GDAL driver trust boundary, extension allowlist, secret management, native-code sandbox guidance"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, clear license (MIT), 6 comprehensive references, version pinning (GeoPandas 1.1.4 verified 2026-07-23), SQL injection fix note, migration checklist"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong composability with allowed-tools including Glob/Grep; 6 bundled audit CLIs; dependency-free --help; minor: GeoParquet schema version differences not fully detailed"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "CRS validation and planar measurement with unit checking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Foundational CRS semantics and unit awareness",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "CRS check before planar operations",
+            "result": "PASS",
+            "note": "CRS rules section shows 'if crs is None or crs.is_geographic: raise ValueError'"
+          },
+          {
+            "text": "Unit extraction from CRS axis_info",
+            "result": "PASS",
+            "note": "Example shows '[axis.unit_name for axis in crs.axis_info]'"
+          },
+          {
+            "text": "Area in CRS units, not automatic square meters",
+            "result": "PASS",
+            "note": "Comment explicitly states 'square CRS units, not automatically square metres'"
+          },
+          {
+            "text": "Correctness gate 4 on units and geographic coordinates",
+            "result": "PASS",
+            "note": "Gate 4: 'Geographic coordinates are angular; do not use them directly for buffer, distance, area...'"
+          },
+          {
+            "text": "set_crs vs to_crs distinction",
+            "result": "PASS",
+            "note": "Gate 3 states 'set_crs() assigns metadata; to_crs() transforms coordinates'"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Geometry validity checking and repair with comparison",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Validation workflow with pre/post-repair auditing",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "is_valid and is_valid_reason before repair",
+            "result": "PASS",
+            "note": "API decisions state 'Use is_valid and redacted is_valid_reason() categories before make_valid'"
+          },
+          {
+            "text": "make_valid with method and keep_collapsed parameters",
+            "result": "PASS",
+            "note": "Section shows 'make_valid(method=\"linework\"|\"structure\", keep_collapsed=...)'"
+          },
+          {
+            "text": "Repair side effects documented",
+            "result": "PASS",
+            "note": "Warning: 'Repair can change geometry type or dimension; retain the original and compare counts, area, types, empties, and collapsed parts'"
+          },
+          {
+            "text": "geometry_validity_report.py bundled CLI",
+            "result": "PASS",
+            "note": "Bundled CLIs table lists geometry_validity_report.py for 'Dry-run validity audit'"
+          },
+          {
+            "text": "Correctness gate 2 on geometry state categories",
+            "result": "PASS",
+            "note": "Gate 2: 'count null, empty, invalid, mixed, Z/M, and collapsed geometries separately'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Spatial join with predicate directionality and cardinality audit",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Join semantics with predicate understanding",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Predicate directionality documented",
+            "result": "PASS",
+            "note": "API decisions state 'left.within(right) is not left.contains(right)'"
+          },
+          {
+            "text": "Boundary contact semantics (intersects vs contains vs covers)",
+            "result": "PASS",
+            "note": "Section explains 'intersects includes boundary contact; contains excludes boundary-only points, while covers includes boundary points'"
+          },
+          {
+            "text": "sjoin_nearest equidistant behavior",
+            "result": "PASS",
+            "note": "Warning: 'sjoin_nearest returns all equidistant nearest matches and does not implement a k= parameter'"
+          },
+          {
+            "text": "spatial_join_audit.py for cardinality checking",
+            "result": "PASS",
+            "note": "Bundled CLIs include spatial_join_audit.py with --predicate, --left-id, --right-id parameters"
+          },
+          {
+            "text": "Correctness gate 7 on cardinality expectations",
+            "result": "FAIL",
+            "note": "Gate 7 requires stating cardinality behavior but example doesn't show expected vs actual audit pattern"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "GeoParquet I/O with schema version and CRS null semantics",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Modern columnar format with metadata distinctions",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "GeoParquet schema 1.0.0 vs 1.1.0 distinction",
+            "result": "PASS",
+            "note": "I/O section states 'defaults to stable schema 1.0.0. Native GeoArrow encodings...require schema 1.1.0'"
+          },
+          {
+            "text": "Missing vs explicit null CRS semantics",
+            "result": "PASS",
+            "note": "Section warns 'A missing GeoParquet crs key means OGC:CRS84; explicit crs: null means unknown—do not conflate them'"
+          },
+          {
+            "text": "Reopen and validate every export",
+            "result": "PASS",
+            "note": "I/O section and gate 8 emphasize reopening artifacts"
+          },
+          {
+            "text": "export_plan.py with schema-version parameter",
+            "result": "PASS",
+            "note": "CLI example shows '--schema-version 1.0.0' parameter"
+          },
+          {
+            "text": "GeoArrow encoding interoperability warning",
+            "result": "FAIL",
+            "note": "Schema 1.1.0 features mentioned as 'less interoperable' but specific compatibility issues not detailed"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Privacy controls with coordinate generalization and sensitive data checklist",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Geospatial privacy considerations with audit tooling",
+        "basic": 33,
+        "specialized": 44,
+        "total": 77,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Coordinate/address sensitivity warning",
+            "result": "PASS",
+            "note": "Safety contract: 'Treat exact coordinates, addresses, parcel boundaries, trajectories...as sensitive'"
+          },
+          {
+            "text": "Default to counts/categories/coarse extents",
+            "result": "PASS",
+            "note": "Safety contract: 'Default reports to counts, categories, coarse extents, and redacted identifiers'"
+          },
+          {
+            "text": "sensitive_coordinates_checklist.py CLI",
+            "result": "PASS",
+            "note": "Bundled CLIs include sensitive_coordinates_checklist.py for 'Privacy/generalization release gate'"
+          },
+          {
+            "text": "explore() privacy controls (tiles=None, tooltip/popup=False)",
+            "result": "PASS",
+            "note": "Visualization section warns about attribute exposure and recommends 'tiles=None, tooltip=False, popup=False for a local draft'"
+          },
+          {
+            "text": "Generalization methods documented",
+            "result": "FAIL",
+            "note": "Privacy contract states 'Generalize before publication' but specific generalization techniques not detailed in main doc"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.8,
+    "dynamic_weighted": 53.9,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional correctness discipline with 8-point gates covering identity, geometry state, CRS semantics, units, transform quality, topology, cardinality, and output validation",
+    "Outstanding CRS and measurement guidance with explicit warnings: GeoPandas is planar, geographic coordinates are angular, and Web Mercator is not a general measurement CRS",
+    "Excellent privacy and security posture with coordinate sensitivity warnings, no automatic geocoding/URL loading, GDAL trust boundary, and bundled sensitive_coordinates_checklist.py",
+    "Comprehensive migration guidance from GeoPandas 0.14 with API changes (sjoin op→predicate, unary_union→union_all, engine defaults, explode behavior)",
+    "Strong bundled tooling with 6 dependency-free audit CLIs covering inventory, CRS planning, validity, join auditing, export planning, and privacy checklists"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add generalization technique examples for privacy",
+      "observed_in": [5],
+      "problem": "Privacy contract recommends generalization but methods not detailed",
+      "root_cause": "Safety contract focuses on sensitivity without concrete generalization patterns",
+      "fix": "Add to safety contract or visualization reference: 'Generalization methods: snap to coarse grid, reduce precision (set_precision), aggregate to larger zones (dissolve), use centroids for point patterns, or report only counts per region'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document GeoArrow interoperability limitations",
+      "observed_in": [4],
+      "problem": "Schema 1.1.0 GeoArrow encodings noted as 'less interoperable' without specifics",
+      "root_cause": "Bleeding-edge feature mentioned without compatibility matrix",
+      "fix": "Add note: 'GeoParquet 1.1.0 GeoArrow encodings (WKB→native arrays) not yet supported by GDAL, PostGIS, DuckDB spatial as of 2026-07; prefer WKB encoding (schema 1.0.0) for broad tool support'"
+    },
+    {
+      "priority": "P3",
+      "title": "Add cardinality audit pattern example",
+      "observed_in": [3],
+      "problem": "Gate 7 requires cardinality expectations but audit example doesn't show expected vs actual",
+      "root_cause": "Correctness gate principle stated without illustrative usage",
+      "fix": "Add to spatial_join_audit.py description or example: 'Reports expected one-to-one/one-to-many/many-to-many vs actual counts, unmatched rows, and duplicate join keys'"
+    }
+  ]
+}

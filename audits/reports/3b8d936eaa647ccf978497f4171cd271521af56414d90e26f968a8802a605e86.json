@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "skill_name": "kermt-add-cmim-pretrain",
+    "description": "Convert a grover_base checkpoint (encoder-only or encoder + vocab heads) into a hybrid checkpoint by adding a randomly-initialized cMIM decoder + latent_dist, then continue pretraining on the user's corpus as hybrid (vocab + contrast). Effectively kermt-continue-pretrain with a one-time ckpt-conversion step prepended.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 89,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Complete 9-step workflow covering checkpoint upgrade and continued pretraining; experimental status clearly disclosed; minor gap: no rollback guidance if upgrade produces unusable checkpoint"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation at multiple stages (check_checkpoint, check_data, prepare_data); explicit error scenarios documented; minor: no retry logic for transient Docker failures"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "181 lines within target; no reference files but content well-organized; explicit line/token budget comment shows awareness; minor: could benefit from examples.md for common use cases"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 9-step workflow; hard rules section prevents common errors; minor: --backbone restriction warning mentioned but not shown with example output"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good trigger coverage; experimental status prominently disclosed; when-to-invoke section clear; minor: difference from kermt-continue-pretrain could be more explicit upfront"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Explicit rule never to modify user's input checkpoint; all outputs to isolated run directory; input validation at multiple stages; no credential handling risks"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean single-file structure with clear section boundaries; replayability documented; minor: version dependencies not specified for upgrade_to_hybrid.py script"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Trigger precision good but overlaps with kermt-continue-pretrain; composability via kermt-container.sh clear; hard rules provide escape hatches; lacks idempotency statement for repeated upgrades; no explicit out-of-scope section"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 24,
+      "total": 27
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Upgrade grover_base encoder-only checkpoint with CSV corpus",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete 9-step workflow from validation through detached runner launch",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py validates with --mode upgrade_to_hybrid",
+            "result": "PASS",
+            "note": "Validation step prevents upgrading already-hybrid checkpoints"
+          },
+          {
+            "text": "prepare_data.py invoked without --vocab-dir for fresh vocab build",
+            "result": "PASS",
+            "note": "Correct pattern to build vocab from new corpus"
+          },
+          {
+            "text": "upgrade_to_hybrid.py writes to new file, preserves input checkpoint",
+            "result": "PASS",
+            "note": "Hard rule enforced: never modify user's input ckpt"
+          },
+          {
+            "text": "Upgraded checkpoint passed to run_pretrain_local.py as hybrid",
+            "result": "PASS",
+            "note": "Workflow correctly chains upgrade output to pretrain input"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Upgrade with separate validation CSV and hyperparameter overrides",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Full workflow with optional parameters (--val-csv, --epochs, --batch-size, --wandb-project)",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Separate validation CSV passed to prepare_data.py",
+            "result": "PASS",
+            "note": "--val-csv parameter documented and used"
+          },
+          {
+            "text": "Hyperparameter overrides passed to run_pretrain_local.py",
+            "result": "PASS",
+            "note": "--epochs N --batch-size N ... pattern shown"
+          },
+          {
+            "text": "WandB logging optional with project+run name",
+            "result": "PASS",
+            "note": "Run name honored only alongside project per documentation"
+          },
+          {
+            "text": "Runtime estimation performed before launch",
+            "result": "PASS",
+            "note": "Step 7 requires estimate + user confirmation"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Input checkpoint already has contrast head (hybrid/cmim)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct rejection with redirection to kermt-continue-pretrain",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py rejects checkpoint with existing contrast head",
+            "result": "PASS",
+            "note": "Validation mode upgrade_to_hybrid catches this scenario"
+          },
+          {
+            "text": "User redirected to kermt-continue-pretrain skill",
+            "result": "PASS",
+            "note": "Common errors section documents redirection"
+          },
+          {
+            "text": "Workflow aborts on validation failure before upgrade attempt",
+            "result": "PASS",
+            "note": "Step 3: Abort on ok: false"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Legacy GROVER checkpoint with encoder architecture drift",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Upgrade proceeds with warnings surfaced but no guidance on validating upgraded checkpoint quality",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "upgrade_to_hybrid.py surfaces warnings for encoder-arch drift",
+            "result": "PASS",
+            "note": "Step 6 explicitly mentions surfacing warnings[] to user"
+          },
+          {
+            "text": "Legacy act_func_* keys documented as benign mismatch",
+            "result": "PASS",
+            "note": "Common errors section explains benign unexpected key warning"
+          },
+          {
+            "text": "User asked about non-gtrans backbone restriction",
+            "result": "PASS",
+            "note": "Hard rules: surface warning and ask user, don't auto-relax"
+          },
+          {
+            "text": "Guidance provided for validating upgraded checkpoint before full pretrain",
+            "result": "FAIL",
+            "note": "Experimental status warning mentions downstream validation but no checkpoint quality checks documented"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Finetuned checkpoint with task FFN heads",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct rejection with explanation that workflow requires pretrain checkpoints",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py detects task_ffn=true and rejects",
+            "result": "PASS",
+            "note": "Validation rejects finetuned checkpoints"
+          },
+          {
+            "text": "User informed workflow only supports pretrain checkpoints",
+            "result": "PASS",
+            "note": "Common errors section explains rejection reason"
+          },
+          {
+            "text": "Suggestion to use original pretrain checkpoint provided",
+            "result": "PASS",
+            "note": "Error documentation suggests using pre-finetune checkpoint"
+          },
+          {
+            "text": "Guidance on extracting encoder from finetuned checkpoint",
+            "result": "FAIL",
+            "note": "No documented path for users who only have finetuned checkpoint available"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "User wants to train from scratch instead of upgrading existing checkpoint",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct delegation to kermt-pretrain-scratch for fresh training",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "When-to-invoke section clearly distinguishes from pretrain-scratch",
+            "result": "PASS",
+            "note": "For training fresh model on custom corpus: use kermt-pretrain-scratch"
+          },
+          {
+            "text": "Scope restricted to checkpoint upgrade + continued pretraining",
+            "result": "PASS",
+            "note": "Description and purpose focus on converting existing checkpoints"
+          },
+          {
+            "text": "Redirection guidance provided for from-scratch training",
+            "result": "PASS",
+            "note": "Clear handoff to kermt-pretrain-scratch documented"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Repeated upgrade attempts on same checkpoint in same run directory",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Workflow creates timestamped run directories preventing conflicts but lacks explicit idempotency statement",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Run directory uses timestamp to avoid collisions",
+            "result": "PASS",
+            "note": "RUN_DIR includes $(date -u +%Y-%m-%dT%H-%M-%SZ)"
+          },
+          {
+            "text": "Input checkpoint never modified during upgrade",
+            "result": "PASS",
+            "note": "Hard rule: never modify user's input ckpt"
+          },
+          {
+            "text": "Upgraded checkpoint written to isolated location",
+            "result": "PASS",
+            "note": "Output to <run_dir>/upgraded.pt"
+          },
+          {
+            "text": "Replayability documented for reproducing results",
+            "result": "PASS",
+            "note": "Replayability section documents cmd_replay mechanism"
+          },
+          {
+            "text": "Explicit statement on safety of repeated upgrades with same inputs",
+            "result": "FAIL",
+            "note": "No idempotency guarantee or warning about running multiple times"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.6,
+    "dynamic_weighted": 52.4,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional safety design with hard rule never to modify input checkpoint and all outputs to isolated timestamped run directories",
+    "Comprehensive validation at multiple stages (check_checkpoint, check_data, prepare_data) preventing invalid workflows",
+    "Clear experimental status disclosure with validation recommendations before production use",
+    "Well-documented error scenarios with specific redirection guidance to related skills (kermt-continue-pretrain, kermt-pretrain-scratch)",
+    "Strong composability via kermt-container.sh wrapper and clear integration with broader KERMT ecosystem"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add checkpoint quality validation guidance after upgrade",
+      "observed_in": ["Input 4"],
+      "problem": "Experimental status warns about validating downstream performance but no intermediate checks documented for upgraded checkpoint before multi-day pretraining",
+      "root_cause": "Workflow assumes upgrade always produces valid hybrid checkpoint; no smoke-test recommended",
+      "fix": "Add Step 6.5 after upgrade: 'Recommended: test the upgraded checkpoint with a short pretrain run (--epochs 1 on small subset) to validate hybrid architecture before launching full multi-day pretraining. Check run.json confirms model_type: hybrid and both vocab + contrastive losses present in logs.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document recovery path for finetuned-checkpoint-only scenario",
+      "observed_in": ["Input 5"],
+      "problem": "Workflow rejects finetuned checkpoints but provides no guidance for users who only have post-finetune checkpoint and lost original pretrain version",
+      "root_cause": "Assumes users maintain pretrain checkpoint provenance",
+      "fix": "Add to Common errors section for task_ffn=true rejection: 'If original pretrain checkpoint is unavailable, consider: (1) re-pretraining from scratch with kermt-pretrain-scratch, or (2) advanced: manually strip task_ffn layers from finetuned checkpoint (not officially supported; validate carefully).'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated upgrades",
+      "observed_in": ["Input 7"],
+      "problem": "No explicit guidance on whether running upgrade multiple times with same inputs is safe or produces identical results",
+      "root_cause": "Timestamped run directories prevent overwrites but determinism not documented",
+      "fix": "Add to Hard rules: 'Repeated upgrades: running this workflow multiple times on the same input checkpoint and corpus creates independent timestamped run directories. Each upgrade initializes the cMIM decoder randomly, so upgraded checkpoints from separate runs will differ even with same inputs.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add examples.md reference file for common patterns",
+      "observed_in": ["Performance context evaluation"],
+      "problem": "181-line SKILL.md is efficient but could benefit from concrete examples for common use cases (encoder-only upgrade, encoder+vocab upgrade, legacy GROVER conversion)",
+      "root_cause": "Single-file design trades examples for brevity",
+      "fix": "Create references/examples.md with 3 concrete examples: (1) upgrading encoder-only checkpoint, (2) upgrading encoder+vocab checkpoint, (3) handling legacy GROVER with architecture drift. Reference from When to invoke section."
+    }
+  ]
+}

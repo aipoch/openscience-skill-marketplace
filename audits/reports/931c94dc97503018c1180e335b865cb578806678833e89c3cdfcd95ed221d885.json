@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "pydicom",
+    "description": "Read, inspect, write, transform, and safely preflight local DICOM datasets and pixel data using pydicom 3.0.2. Covers DICOM metadata access, transfer syntaxes, compression/decompression plugins, frame extraction, private elements, DICOM JSON, and bounded de-identification review. Strong PHI safety boundaries with helper CLIs for metadata extraction, inventory, codec inspection, frame planning, rendering, and pseudonymization.",
+    "evaluated_on": "2026-09-09",
+    "category": "biology",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Strong safety boundaries: authorized data only, pydicom not diagnostic viewer, de-identification requires expert verification, never claim compliance"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Clear scope: general DICOM framework not diagnostic tool; pixel output/validation are not diagnostic claims; de-identification is context-specific"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on pydicom 3.0.2 (fixes CVE-2026-32711) with DICOM PS3.3/3.5/3.6/3.15 references, current API patterns, migration notes"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready with 7 helper CLIs (metadata, inventory, codec, frame planning, rendering, anonymization, audit), exact pinning, security guidance"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete DICOM workflow: read with bounds, dataset/sequence access, UID/transfer syntax, pixel/frames, compression, JSON, private tags, de-identification"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent safety: CVE fix documented, explicit input limits, API migration notes (dcmread not read_file), pixel plugin matrix, de-identification warnings"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong optimization: stop_before_pixels, specific_tags, defer_size, frame-specific decoding, iter_pixels for multi-frame; SKILL.md 382 lines well-structured"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding: choose-the-workflow section, 7 CLIs mapped to use cases, 2 reference files, security boundaries upfront, migration notes prominent"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear triggers (DICOM, medical imaging, PACS, de-identification), mandatory safety boundary section first, workflow selector, helper CLI index"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional: PHI handling protocol, never print dataset by default, pseudonymization key as secret, bounded parsing, pickle safety, metadata redaction"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent: 2 reference files (transfer syntaxes, common tags), exact pydicom 3.0.2 pinning, optional plugin pins, migration notes, verification date 2026-07-23"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with medical imaging workflows; deterministic for same input; minor: integration with medical imaging analysis skills could be clearer"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.33,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Safe dataset reading with specific_tags and stop_before_pixels",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard bounded metadata-only reading",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "dcmread with stop_before_pixels=True for metadata-only work",
+            "result": "PASS",
+            "note": "Performance and safety best practice"
+          },
+          {
+            "text": "specific_tags parameter with allowlist for minimum exposure",
+            "result": "PASS",
+            "note": "PHI minimization pattern"
+          },
+          {
+            "text": "Never print(ds), repr(ds), or iterate values into logs on clinical data",
+            "result": "PASS",
+            "note": "Critical PHI protection rule"
+          },
+          {
+            "text": "Returns FileDataset with file_meta, preamble, original encoding",
+            "result": "PASS",
+            "note": "File Format state preservation documented"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Dataset creation with FileMetaDataset and enforce_file_format",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard DICOM file creation workflow",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "FileMetaDataset for group 0002 with Transfer Syntax UID",
+            "result": "PASS",
+            "note": "Correct File Format structure"
+          },
+          {
+            "text": "Consistent SOP UIDs between dataset and file-meta",
+            "result": "PASS",
+            "note": "DICOM conformance requirement"
+          },
+          {
+            "text": "dcmwrite with enforce_file_format=True, overwrite=False",
+            "result": "PASS",
+            "note": "Current API (write_like_original deprecated)"
+          },
+          {
+            "text": "generate_uid() for new instance creation",
+            "result": "PASS",
+            "note": "Standard UID generation pattern"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Pixel data with stable pydicom.pixels API and transforms",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Frame extraction and display preparation",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "pixel_array(path, index=0, raw=False) for single frame",
+            "result": "PASS",
+            "note": "Current stable API with frame-specific reading"
+          },
+          {
+            "text": "Shape semantics documented: (frames, rows, columns) for multi-frame grayscale",
+            "result": "PASS",
+            "note": "Clear dimensional conventions"
+          },
+          {
+            "text": "apply_modality_lut then apply_voi_lut for grayscale display",
+            "result": "PASS",
+            "note": "Correct transform ordering"
+          },
+          {
+            "text": "Never use per-frame min/max normalization for quantitative analysis",
+            "result": "PASS",
+            "note": "Critical data integrity warning"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Compression and decompression with plugin matrix",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Transfer syntax handling with codec dependencies",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Dataset.decompress() changes in place, sets Explicit VR Little Endian",
+            "result": "PASS",
+            "note": "Side effects clearly documented"
+          },
+          {
+            "text": "Dataset.compress(uid) with new SOP Instance UID by default",
+            "result": "PASS",
+            "note": "UID generation behavior documented"
+          },
+          {
+            "text": "Plugin capabilities inspection required before processing",
+            "result": "PASS",
+            "note": "Fail-fast pattern recommended"
+          },
+          {
+            "text": "Lossy compression acceptability outside pydicom scope",
+            "result": "PASS",
+            "note": "Appropriate boundary statement"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "De-identification workflow with UID mapping and key management",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "DICOM PS3.15 Annex E profile with security requirements",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "9-step workflow: purpose definition, profile selection, preserve sources, recursive application, UID replacement, dates, pixels, rebuild meta, audit",
+            "result": "PASS",
+            "note": "Comprehensive de-identification process"
+          },
+          {
+            "text": "Pseudonymization keys are re-identification secrets requiring managed storage",
+            "result": "PASS",
+            "note": "Critical security requirement for deterministic pseudonymization"
+          },
+          {
+            "text": "Bundled script sets PatientIdentityRemoved=NO because cannot establish success",
+            "result": "PASS",
+            "note": "Honest limitation: tool doesn't claim compliance"
+          },
+          {
+            "text": "Never claim DICOM PS3.15, HIPAA, GDPR compliance from tag-removal script",
+            "result": "PARTIAL",
+            "note": "Strongly stated but could be more prominent given high-stakes context"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Helper CLIs with dependency-free help and PHI-safe output",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Production utilities with security boundaries",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "All --help paths dependency-free (no pydicom import required)",
+            "result": "PASS",
+            "note": "Fail-safe design for help access"
+          },
+          {
+            "text": "No network access and emit no DICOM values beyond technical allowlists",
+            "result": "PASS",
+            "note": "PHI protection in CLI output"
+          },
+          {
+            "text": "anonymize_dicom.py with --generate-uid-key for secure key creation",
+            "result": "PASS",
+            "note": "Key generation with owner-only permissions"
+          },
+          {
+            "text": "All 7 CLI scripts verified in scripts/ directory",
+            "result": "PARTIAL",
+            "note": "CLIs documented but directory not fully verified"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 57.8,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional PHI safety: mandatory authorization, never print dataset by default, pseudonymization keys as secrets, bounded parsing, metadata redaction in CLIs",
+    "Outstanding de-identification guidance: 9-step workflow, DICOM PS3.15 grounding, honest limitations (never claim compliance), pixel/overlay/graphics warnings",
+    "Strong security: CVE-2026-32711 fix documented, pickle safety warnings, input limits, plugin trust model, managed key storage requirements",
+    "Excellent API coverage: current pydicom 3.0.2 patterns with migration notes from deprecated APIs (read_file, write_like_original, pixel_data_handlers)",
+    "Production-ready with 7 helper CLIs covering metadata, inventory, codec inspection, frame planning, rendering, anonymization with dependency-free --help"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Elevate compliance claim prohibition to more prominent position",
+      "observed_in": [5],
+      "problem": "Never-claim-compliance statement present but buried in de-identification section; high-stakes context warrants more prominence",
+      "root_cause": "Safety warning integrated into workflow rather than standalone gate",
+      "fix": "Add callout box in Mandatory Safety Boundary section: 'CRITICAL: De-identification is profile-, jurisdiction-, and threat-specific. Never claim that a pydicom script achieves DICOM PS3.15, HIPAA, GDPR, or other compliance without expert privacy verification and documented risk review.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add integration guidance with medical imaging analysis workflows",
+      "observed_in": [3],
+      "problem": "Pixel extraction and transforms documented but connection to downstream analysis (segmentation, registration, ML) not explicit",
+      "root_cause": "Skill focused on DICOM I/O rather than analysis pipelines",
+      "fix": "Add reference/analysis_integration.md showing how to extract pixels, handle coordinate systems, preserve metadata for spatial transforms, and prepare for ML frameworks"
+    }
+  ]
+}

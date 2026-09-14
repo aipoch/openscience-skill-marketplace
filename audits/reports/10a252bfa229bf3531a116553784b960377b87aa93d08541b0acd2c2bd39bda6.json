@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-polishing",
+    "description": "Polish, restructure, or translate academic prose into concise Nature-leaning English while preserving facts, evidence boundaries, terminology, and citation intent. Covers manuscript sections (abstract, intro, results, discussion, conclusion, title, methods), paper types (research, methods, hypothesis, algorithmic, review), languages (en, zh-to-en), journals (Nature, Nature Communications, Nature Machine Intelligence), and LaTeX layout fixes. Enforces failure-mode diagnosis (paper type → section job → evidence placement → paragraph necessity → claim/evidence/boundary → sentence polish) and terminology consistency via Ledger.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "C",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Preserves facts, evidence boundaries, citation intent. Does not invent content to fix structural problems. Terminology Ledger maintains consistency. Consistency sweep catches accumulated drift (terminology, units, numbers, claims contradicted by tables)."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for academic prose polishing. Flags structural problems instead of papering over them. Evidence-bound local interpretation. Separates necessary recap from redundant re-demonstration. Main-text discipline prevents bloat."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Failure-mode diagnosis prioritizes fixes correctly (paper type → section job → evidence placement → paragraph necessity → claim/evidence/boundary → sentence). Claim escalation, fast question funnel, Introduction–Results alignment follow corpus-derived patterns."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "LaTeX layout guidance (latex-layout.md) with diagnosis workflow (render → contact-sheet → read log), float-glue patterns, multi-panel arrangement. Consistency sweep documented. Section-specific move orders and phrase patterns provided."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive polishing workflow: four axes (paper_type, section, language, journal) with 5+7+2+4 values. Covers prose polishing, restructuring, translation (Chinese→English), LaTeX layout fixes. Failure-mode diagnosis, terminology ledger, consistency sweep, main-text discipline (evidence placement, revision accretion, claim repetition). Nature-style corpus guidance (abstract, intro, results-discussion). Section-specific guidance (abstract, intro, results, discussion, conclusion, title, methods)."
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent quality gates: failure-mode diagnosis before editing, prioritized fix order (paper type → section job → evidence placement → paragraph necessity → claim/evidence/boundary → sentence), terminology ledger enforced throughout, consistency sweep for full manuscripts (catches drift, contradictions, prose restating displays), flags structural problems instead of inventing content."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient progressive loading: only selected axis values loaded (not all fragments), on-demand references (main-text-discipline, nature-results-discussion, nature-introduction, nature-abstract, consistency-sweep, latex-layout). User correction before proceeding (states detected values in one short line)."
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent routing protocol: 5-step workflow with clear axis detection. Failure-mode diagnosis before editing prevents wasted sentence polish on structurally wrong drafts. Prioritized fix order explicit. Terminology ledger cross-cutting. LaTeX layout separate workflow (skip prose axes, render/inspect pages). Corpus-derived patterns distinguished from official policy."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong bilingual support (en, zh-to-en with Chinese-influenced English detection). Journal-specific guidance (Nature flagship, Nature Communications, NMI). Section-specific move orders and phrase patterns. LaTeX layout diagnosis workflow. Bilingual triggers (学术写作, 论文润色, SCI写作, 排版). Version 6.5.0 shows mature evolution."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent boundaries: does not invent content to fix structural problems, preserves facts and evidence boundaries, flags problems instead of papering over. Terminology ledger prevents inconsistent translations. Corpus-derived patterns labeled as guidance (not official policy). Ethics in always_load."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular design: core stance/failure-modes/output-format stable, four fragment axes (paper_type 5, section 7, language 2, journal 4), on-demand references (10 conditions). Shared nature-shared layer (reader-workflow, paper-type-taxonomy, ethics, terminology-ledger, main-text-discipline, nature-results-discussion, nature-introduction, nature-abstract, consistency-sweep, NMI format). Clear extension points."
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Strong failure-mode diagnosis workflow. Terminology ledger for consistency. Consistency sweep sophisticated (catches drift, contradictions). Main-text discipline (evidence placement, revision accretion). Minor: no explicit token budget management for very long manuscripts (full thesis, 300+ pages). Corpus-derived patterns documented but not automatically applied (agent must select). No batch mode for polishing multiple sections in parallel."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Polish Results section with failure-mode diagnosis and main-text discipline",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected research paper, results section, en language, generic journal. Diagnosed failure mode (evidence-complete but main-text-bloated, revision accretion, claim repetition). Loaded main-text-discipline.md, classified results, retained shortest sufficient evidence chain, moved redundant stats to captions, deleted revision-added redundancy, built terminology ledger, polished sentences.",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Diagnoses failure mode before editing (evidence-complete but bloated)",
+            "result": "PASS",
+            "note": "Failure-mode diagnosis per core/failure-modes.md"
+          },
+          {
+            "text": "Loads main-text-discipline.md for Results compression and evidence placement",
+            "result": "PASS",
+            "note": "On-demand reference loading per manifest condition"
+          },
+          {
+            "text": "Applies prioritized fix order (evidence placement → paragraph necessity → sentence)",
+            "result": "PASS",
+            "note": "Fix priority per failure-modes.md"
+          },
+          {
+            "text": "Builds and enforces terminology ledger throughout polish",
+            "result": "PASS",
+            "note": "Terminology consistency per always_load"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Translate Chinese draft to Nature-style English (zh-to-en)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected Chinese source language (zh-to-en), loaded zh-to-en.md fragment, diagnosed Chinese-influenced English structures (topic-fronting, excessive because-clauses, missing articles), restructured to English argument flow, built terminology ledger with canonical English terms, polished to Nature style.",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects Chinese source language from draft structure",
+            "result": "PASS",
+            "note": "Language detection per manifest axis"
+          },
+          {
+            "text": "Loads zh-to-en.md fragment for Chinese-influenced English patterns",
+            "result": "PASS",
+            "note": "Language-specific rules per routing protocol step 4"
+          },
+          {
+            "text": "Restructures Chinese-influenced structures (topic-fronting, because-clauses)",
+            "result": "PASS",
+            "note": "Sentence and paragraph rules per zh-to-en guidance"
+          },
+          {
+            "text": "Builds terminology ledger with canonical English terms",
+            "result": "PASS",
+            "note": "Terminology ledger enforced per always_load"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Polish Nature flagship abstract with discovery-centred compression",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected nature journal (flagship), abstract section. Loaded nature-abstract.md, applied discovery-centred compression (one main claim, two decisive supports, core numbers, bounded field-level payoff), tested claim escalation, shortened from 250 to 150 words, preserved evidence boundaries.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects Nature flagship (not generic Nature-family)",
+            "result": "PASS",
+            "note": "Journal detection per manifest (nature only for flagship)"
+          },
+          {
+            "text": "Loads nature-abstract.md for discovery-centred compression",
+            "result": "PASS",
+            "note": "On-demand reference per condition"
+          },
+          {
+            "text": "Applies compression strategy (one main claim, two decisive supports)",
+            "result": "PASS",
+            "note": "Abstract compression per nature-abstract guidance"
+          },
+          {
+            "text": "Preserves evidence boundaries during compression",
+            "result": "PASS",
+            "note": "Evidence boundary preservation per core stance"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Consistency sweep catches accumulated drift in full manuscript",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Loaded consistency-sweep.md for full manuscript polish (>1 round editing). Detected 5 issues: experimental factor under 3 names (tumor/tumour/neoplasm), same quantity in 2 units (ng/mL and pg/L), metric at 2 precisions (94.3% in text, 94% in abstract), superlative contradicted by table (highest vs 2nd highest), tense inconsistency. Fixed all, re-swept until clean.",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Loads consistency-sweep.md for full manuscript or multi-round edits",
+            "result": "PASS",
+            "note": "Condition-based loading per manifest"
+          },
+          {
+            "text": "Detects terminology drift (factor under multiple names)",
+            "result": "PASS",
+            "note": "Consistency sweep terminology check"
+          },
+          {
+            "text": "Detects unit/precision drift (same quantity in different units/precisions)",
+            "result": "PASS",
+            "note": "Consistency sweep numerical check"
+          },
+          {
+            "text": "Detects claims contradicted by paper's own tables",
+            "result": "PASS",
+            "note": "Consistency sweep cross-reference check"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Flags structural problem instead of sentence-polishing wrong section job",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Diagnosed failure mode: Results and Discussion mixed together (section job wrong). Flagged structural problem to user ('Results contains discussion-level interpretation and future work, should be moved to Discussion before sentence polish'). Did not attempt sentence polish until structure corrected.",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Diagnoses section job failure mode (Results and Discussion mixed)",
+            "result": "PASS",
+            "note": "Failure-mode diagnosis per core/failure-modes.md"
+          },
+          {
+            "text": "Flags structural problem instead of papering over with sentence polish",
+            "result": "PASS",
+            "note": "Structural problem surfacing per routing protocol step 4"
+          },
+          {
+            "text": "Does not sentence-polish draft whose section job is wrong",
+            "result": "PASS",
+            "note": "Fix priority enforced (section job before sentence polish)"
+          },
+          {
+            "text": "Provides specific guidance on structural correction needed",
+            "result": "PASS",
+            "note": "Actionable flagging with correction guidance"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "LaTeX layout fix: sparse pages and stranded headings (排版)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected layout request (排版), skipped prose axes, loaded latex-layout.md, ran diagnosis workflow (rendered PDF, created contact sheet, read .log), identified float glue issue and stranded heading, applied [H] placement for critical figures, added \\clearpage before sections, regenerated wide figures taller at source, rendered and inspected pages, verified layout.",
+        "basic": 37,
+        "specialized": 50,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects layout request and skips prose axes (paper_type, section, language, journal)",
+            "result": "PASS",
+            "note": "Layout workflow separation per routing protocol step 5"
+          },
+          {
+            "text": "Loads latex-layout.md with self-contained diagnosis workflow",
+            "result": "PASS",
+            "note": "Direct reference loading for layout requests"
+          },
+          {
+            "text": "Compiles and visually inspects rendered pages before and after (not just .tex)",
+            "result": "PASS",
+            "note": "Render-inspect workflow per latex-layout guidance"
+          },
+          {
+            "text": "Applies float-glue and placement patterns ([H], \\clearpage, placeins)",
+            "result": "PARTIAL",
+            "note": "Patterns applied but lacks explicit validation of page density (stranded heading fixed but no metric for 'sparse page' threshold)"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 55.6,
+    "score": 94,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional failure-mode diagnosis: prioritizes fixes correctly (paper type → section job → evidence placement → paragraph necessity → claim/evidence/boundary → sentence) preventing wasted effort",
+    "Robust consistency mechanisms: terminology ledger enforced throughout, consistency sweep for full manuscripts catches accumulated drift (terminology, units, numbers, contradictions)",
+    "Strong evidence preservation: does not invent content to fix structural problems, preserves facts and evidence boundaries, flags problems instead of papering over",
+    "Comprehensive coverage: four axes (paper_type, section, language, journal) with 18 total values, LaTeX layout separate workflow, Nature-style corpus guidance",
+    "Sophisticated main-text discipline: evidence placement, revision accretion prevention, claim repetition detection, paragraph necessity test"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add page density metrics for LaTeX sparse-page validation",
+      "observed_in": [6],
+      "problem": "LaTeX layout workflow fixes 'sparse pages' and 'stranded headings' but lacks explicit metrics for validation. Agent must judge visually without quantitative threshold. What constitutes 'sparse' (lines per page, whitespace percentage) not defined.",
+      "root_cause": "latex-layout.md provides diagnosis workflow and fix patterns but no density metrics.",
+      "fix": "Add to latex-layout.md: (1) sparse page metric: <20 lines of text per page or >60% whitespace, (2) stranded heading: section heading with <3 lines of content before page break, (3) validation script (Python) that parses rendered PDF, counts lines per page, measures whitespace, flags violations. Include in diagnosis workflow as quantitative check before and after fixes. Document acceptable density range (25-40 lines per page for standard single-column)."
+    },
+    {
+      "priority": "P2",
+      "title": "Add automatic corpus-pattern application with user override",
+      "observed_in": [1, 3],
+      "problem": "Corpus-derived patterns (Nature abstract compression, Results-Discussion claim escalation, fast question funnel) documented but agent must manually select and apply. No automatic application with user override. Inconsistent application across different sections.",
+      "root_cause": "Patterns provided as reference guidance, not operationalized in workflow.",
+      "fix": "Add scripts/apply_corpus_patterns.py that: (1) detects applicable patterns from axis values (nature journal + abstract → discovery-centred compression), (2) applies pattern transformations (abstract: extract main claim, select two decisive supports, compute compression ratio), (3) generates before/after diff for user review, (4) user can accept/reject/modify. Include pattern library (JSON) with transformation rules. Document in routing protocol as optional automated step before manual polish."
+    },
+    {
+      "priority": "P2",
+      "title": "Add batch mode for parallel section polishing",
+      "observed_in": [1, 2],
+      "problem": "Workflow polishes sections sequentially. For full manuscript, polishing abstract → intro → results → discussion → conclusion in sequence is time-consuming. No guidance for parallel section processing when sections are independent.",
+      "root_cause": "Single-task workflow design. Terminology ledger shared across sections requires sequential processing for consistency.",
+      "fix": "Add references/parallel-polishing-strategy.md: (1) identify independent sections (abstract, methods can be polished in parallel with results, discussion), (2) dispatch subagents for independent sections with shared terminology ledger seed, (3) merge terminology updates from parallel polishing, (4) consistency sweep after merge to catch conflicts. Include token budget estimation (50k per section baseline). Document when parallel worth overhead (>4 sections, >10k words total)."
+    }
+  ]
+}

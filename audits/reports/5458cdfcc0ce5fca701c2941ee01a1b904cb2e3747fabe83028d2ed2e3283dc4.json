@@ -1,0 +1,297 @@
+{
+  "meta": {
+    "skill_name": "diffdock-nim",
+    "description": "Run DiffDock molecular docking via NVIDIA NIM to predict small-molecule binding poses against protein targets. Use for DiffDock, molecular docking, ligand docking, blind docking, SMILES or SDF ligands, ranked poses, confidence scores, hosted NVIDIA API, or local Docker deployment.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of hosted/local modes and all ligand formats (SMILES, SDF, MOL2); all instructions accurate and appropriate for molecular docking API task"
+      },
+      "reliability": {
+        "score": 10,
+        "max": 12,
+        "note": "Input validation guidance provided in validation.md but not enforced in main code examples; error reporting relies on HTTP status codes without custom messages"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent progressive disclosure with 119-line SKILL.md and 5 focused reference files; linear workflow with no redundant operations"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear instructions with explicit mode selection; one minor gap: HETATM stripping consequences not explicitly warned"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Description includes natural trigger phrases; strict ATOM-only requirement documented but reduces forgiveness slightly"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Credentials externalized via environment variables; input validation documented but not implemented in code examples"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean modular separation across 6 files; easy to update; examples provided but no formal test cases"
+      },
+      "agent_specific": {
+        "score": 19,
+        "max": 20,
+        "note": "Precise trigger description; excellent progressive disclosure; clean composability with GenMol/OpenFold3; fully idempotent; lacks explicit 'When NOT to use' section"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 100.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 18
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted SMILES docking (aspirin to protein)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete working code with proper ATOM validation, hosted endpoint, and ranked pose saving",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output uses correct hosted endpoint with /v1/ path",
+            "result": "PASS",
+            "note": "Endpoint matches api.md specification"
+          },
+          {
+            "text": "ligand_file_type is 'txt' for SMILES (not 'smiles')",
+            "result": "PASS",
+            "note": "Correctly specified as documented"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          },
+          {
+            "text": "Poses saved with rank and confidence in filename",
+            "result": "PASS",
+            "note": "Naming pattern includes both rank and confidence"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local Docker setup and benzene docking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete Docker preflight copied verbatim from api.md with correct local endpoint",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Local endpoint uses /molecular-docking/diffdock/generate (not /v1/)",
+            "result": "PASS",
+            "note": "Correct path without /v1/ prefix"
+          },
+          {
+            "text": "No Authorization header for local inference requests",
+            "result": "PASS",
+            "note": "Correctly omitted after readiness check"
+          },
+          {
+            "text": "Docker command copied verbatim from api.md",
+            "result": "PASS",
+            "note": "All flags match reference (shm-size, ulimit, NVIDIA_VISIBLE_DEVICES)"
+          },
+          {
+            "text": "Readiness check uses /v1/health/ready endpoint",
+            "result": "PASS",
+            "note": "Correct health endpoint"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "SDF ligand with stereochemistry (20 poses)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct SDF format handling with empty file validation and 20 pose request",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "ligand_file_type set to 'sdf' for SDF input",
+            "result": "PASS",
+            "note": "Correct format specification"
+          },
+          {
+            "text": "num_poses=20 within limit (≤100)",
+            "result": "PASS",
+            "note": "Within documented constraint"
+          },
+          {
+            "text": "Empty ligand file checked before request",
+            "result": "PASS",
+            "note": "Validation present"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Parameter tuning (50 poses, max diffusion settings)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Custom parameters applied correctly within documented limits",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "num_poses=50 within limit (≤100)",
+            "result": "PASS",
+            "note": "Within constraint"
+          },
+          {
+            "text": "time_divisions=20 at maximum",
+            "result": "PASS",
+            "note": "At documented max"
+          },
+          {
+            "text": "steps=18 at maximum",
+            "result": "PASS",
+            "note": "At documented max"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Receptor validation and ATOM record extraction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive validation with HETATM/water/header stripping and clear feedback",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Only ATOM records retained",
+            "result": "PASS",
+            "note": "Filter logic correct"
+          },
+          {
+            "text": "HETATM records stripped",
+            "result": "PASS",
+            "note": "Non-ATOM lines removed"
+          },
+          {
+            "text": "Empty ATOM check raises error",
+            "result": "PASS",
+            "note": "Error handling present"
+          },
+          {
+            "text": "Validation feedback provided",
+            "result": "PASS",
+            "note": "Clear status output"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 60.0,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional documentation structure with progressive disclosure (119-line SKILL.md plus 5 focused reference files)",
+    "Complete dual-mode support (hosted API and local Docker) with correct endpoint differentiation",
+    "Perfect dynamic score (100/100) across all 5 test cases covering canonical, edge, and stress scenarios",
+    "Strong security posture with externalized credentials and comprehensive input validation guidance",
+    "Clear scientific context including confidence score interpretation caveats and handoff guidance to related tools"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit 'When NOT to use' section",
+      "observed_in": ["SKILL.md structure review"],
+      "problem": "Skill documents limits and handoffs but lacks consolidated out-of-scope guidance",
+      "root_cause": "Escape hatch criterion expects explicit 'When NOT to use' signaling",
+      "fix": "Add section after 'Choose Mode': 'When NOT to use: DiffDock confidence scores are not binding affinities (pIC50/Kd); for virtual screening campaigns use orthogonal filters; for multi-conformer receptor ensembles use specialized tools.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Implement input validation in main code examples",
+      "observed_in": ["Input 1", "Input 2", "Input 3", "Input 4"],
+      "problem": "Validation documented in validation.md but not demonstrated in SKILL.md examples",
+      "root_cause": "Main examples focus on happy-path execution without defensive checks",
+      "fix": "Add validation snippet to SKILL.md after 'Prepare Inputs' section: Check ATOM record presence and ligand_file_type matching before API call, with example showing ValueError for empty ATOM records"
+    }
+  ]
+}

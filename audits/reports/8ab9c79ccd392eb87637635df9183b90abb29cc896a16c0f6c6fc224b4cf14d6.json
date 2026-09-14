@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "skill_name": "cuequivariance",
+    "description": "Define custom groups (Irrep subclasses), build segmented tensor products with CG coefficients, create equivariant polynomials and IrDictPolynomials, and use built-in descriptors (linear, tensor products, spherical harmonics). Use when working with cuequivariance group theory, irreps, or segmented polynomials.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {"result": "PASS", "detail": "Mathematical library documentation; no fabricated claims"},
+      "practice_boundaries": {"result": "PASS", "detail": "Technical library with no medical applications"},
+      "methodological_ground": {"result": "PASS", "detail": "Group theory and tensor product mathematics correct"},
+      "code_usability": {"result": "PASS", "detail": "All Python code snippets syntactically valid; proper dataclass usage; correct numpy operations"}
+    }
+  },
+  "static_score": {
+    "subtotal": 84,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {"score": 11, "max": 12, "note": "Comprehensive coverage of group theory, irreps, tensor products, and descriptors; custom group definition complete; missing error handling examples"},
+      "reliability": {"score": 9, "max": 12, "note": "Code examples appear robust; no error handling shown; no troubleshooting section; relies on implicit library validation"},
+      "performance_context": {"score": 2, "max": 8, "note": "417 lines significantly exceeds ideal <150; very dense technical content with no progressive disclosure to reference files"},
+      "agent_usability": {"score": 12, "max": 16, "note": "Clear API reference structure; comprehensive method tables; high technical complexity requires deep understanding of group theory; lacks workflow guidance"},
+      "human_usability": {"score": 5, "max": 8, "note": "Good section headers and code examples; 417 lines requires extensive scrolling; no visual diagrams for complex concepts"},
+      "security": {"score": 12, "max": 12, "note": "Pure mathematical library; no credential handling; no external calls; array operations safe"},
+      "maintainability": {"score": 11, "max": 12, "note": "Clear file location table; well-organized sections; no versioning information; no reference to API documentation"},
+      "agent_specific": {"score": 22, "max": 20, "note": "Excellent trigger precision for technical domain; comprehensive API surface coverage; deterministic mathematical operations; strong composability"}
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 86.7,
+    "max": 100,
+    "assertion_pass_rate": {"passed": 27, "total": 28},
+    "inputs": [
+      {"index": 1, "type": "Canonical", "label": "Define custom Z2 group", "status": "COMPLETED", "status_flag": "✅", "note": "Standard custom irrep implementation", "basic": 37, "specialized": 49, "total": 86, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output implements all required methods", "result": "PASS", "note": "8 required methods present"}, {"text": "Output uses frozen dataclass", "result": "PASS", "note": "Correct decorator"}, {"text": "Output yields trivial irrep first in iterator", "result": "PASS", "note": "False before True"}, {"text": "Output provides correct CG coefficients", "result": "PASS", "note": "Selection rule enforced"}]},
+      {"index": 2, "type": "Variant A", "label": "Build segmented tensor product from scratch", "status": "COMPLETED", "status_flag": "✅", "note": "Low-level STP construction", "basic": 38, "specialized": 50, "total": 88, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses from_subscripts correctly", "result": "PASS", "note": "Einstein notation valid"}, {"text": "Output adds segments with correct shapes", "result": "PASS", "note": "Shape tuples match subscripts"}, {"text": "Output adds path with coefficient", "result": "PASS", "note": "Linking correct"}, {"text": "Output evaluates polynomial", "result": "PASS", "note": "eval_last_operand used"}]},
+      {"index": 3, "type": "Edge", "label": "IrDictPolynomial with split operands", "status": "COMPLETED", "status_flag": "✅", "note": "Advanced descriptor variant", "basic": 36, "specialized": 48, "total": 84, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses _ir_dict descriptor", "result": "PASS", "note": "Correct variant chosen"}, {"text": "Output accesses input_irreps and output_irreps", "result": "PASS", "note": "Metadata present"}, {"text": "Output references pre-split polynomial", "result": "PASS", "note": "Already segmented by irrep"}, {"text": "Output explains mul * ir.dim contract", "result": "PASS", "note": "Size relationship documented"}]},
+      {"index": 4, "type": "Variant B", "label": "Spherical harmonics descriptor", "status": "COMPLETED", "status_flag": "✅", "note": "Built-in descriptor usage", "basic": 37, "specialized": 50, "total": 87, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses spherical_harmonics correctly", "result": "PASS", "note": "Correct function call"}, {"text": "Output specifies irrep and l_max list", "result": "PASS", "note": "Parameters valid"}, {"text": "Output returns EquivariantPolynomial", "result": "PASS", "note": "Type correct"}, {"text": "Output explains coordinate input", "result": "PASS", "note": "Usage pattern shown"}]},
+      {"index": 5, "type": "Stress", "label": "Fully connected tensor product with normalization", "status": "COMPLETED", "status_flag": "✅", "note": "Complex descriptor with many paths", "basic": 36, "specialized": 47, "total": 83, "assertions_passed": 3, "assertions_total": 4, "assertions": [{"text": "Output uses fully_connected_tensor_product", "result": "PASS", "note": "Correct descriptor"}, {"text": "Output specifies three irreps", "result": "PASS", "note": "Weight, input, output"}, {"text": "Output mentions normalize_paths_for_operand", "result": "PASS", "note": "Normalization critical"}, {"text": "Output warns about computational cost", "result": "FAIL", "note": "No warning about O(n²) or path count for large irreps"}]},
+      {"index": 6, "type": "Scope Boundary", "label": "Request for PyTorch/JAX execution", "status": "COMPLETED", "status_flag": "✅", "note": "References sister skills", "basic": 38, "specialized": 51, "total": 89, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output clarifies cuequivariance is numpy-based", "result": "PASS", "note": "Core library scope"}, {"text": "Output references cuequivariance_jax skill", "result": "PASS", "note": "JAX execution separate"}, {"text": "Output mentions squeeze_modes and flatten for JAX prep", "result": "PASS", "note": "Preparation methods shown"}, {"text": "Output does not fabricate execution code", "result": "PASS", "note": "Handoff appropriate"}]},
+      {"index": 7, "type": "Adversarial", "label": "Invalid custom group missing required method", "status": "COMPLETED", "status_flag": "✅", "note": "Validation through required methods list", "basic": 38, "specialized": 52, "total": 90, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output lists all 8 required methods", "result": "PASS", "note": "Complete requirement table"}, {"text": "Output explains method signatures", "result": "PASS", "note": "Return types documented"}, {"text": "Output provides complete Z2 example", "result": "PASS", "note": "Reference implementation"}, {"text": "Output references base class location", "result": "PASS", "note": "File path provided"}]}
+    ]
+  },
+  "final": {
+    "static_weighted": 33.6,
+    "dynamic_weighted": 52.0,
+    "score": 86,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive API reference covering group theory, irreps, tensor products, and all descriptor variants",
+    "Excellent required methods table for custom group implementation with complete Z2 example",
+    "Clear distinction between EquivariantPolynomial and IrDictPolynomial workflows",
+    "Detailed file location table enabling direct source code navigation",
+    "Strong mathematical correctness with proper group theory implementation patterns"
+  ],
+  "recommendations": [
+    {"priority": "P1", "title": "Drastically reduce main SKILL.md length", "observed_in": [], "problem": "417 lines is 2.8× the ideal <150 line target. Performance/Context scored only 2/8. Dense technical content with no progressive disclosure.", "root_cause": "All API documentation inline: descriptor catalog, method tables, code examples, file locations all in main file.", "fix": "Create reference/ directory: api_reference.md (all descriptor signatures), custom_groups.md (Z2 example + required methods), advanced_usage.md (manual STP construction). Keep only essential concepts and common workflows in main SKILL.md. Target <200 lines."},
+    {"priority": "P2", "title": "Add troubleshooting and error handling", "observed_in": [], "problem": "Reliability scored 9/12; no error handling examples, no troubleshooting section. Technical library but no guidance on common errors (shape mismatches, invalid CG coefficients).", "root_cause": "API reference style without operational guidance.", "fix": "Add troubleshooting section: common shape mismatch errors, invalid selection rules, normalization issues, layout confusion (ir_mul vs mul_ir). Add try-except patterns for validation."},
+    {"priority": "P2", "title": "Add computational cost warnings", "observed_in": [5], "problem": "One assertion failed: no warning about computational cost for fully_connected_tensor_product with large irreps. Leads to O(n²) path explosions.", "root_cause": "API documentation without performance considerations.", "fix": "Add performance notes to descriptor catalog: fully_connected scales O(mul1 × mul2 × mul3), channelwise scales O(mul), elementwise scales O(1). Warn when path count exceeds practical thresholds."}
+  ]
+}

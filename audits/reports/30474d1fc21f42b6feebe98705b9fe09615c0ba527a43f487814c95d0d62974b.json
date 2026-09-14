@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "peer-review",
+    "description": "Prepare evidence-bounded, constructive peer-review drafts and structured manuscript assessments for authorized review of scientific manuscripts, protocols, preprints, or research proposals. Covers reporting-guideline selection, claim-evidence checks, methods/statistics/reproducibility critique, ethics/integrity review, figure/table/citation audit, and revision-response planning. Strong confidentiality boundaries and human accountability requirements.",
+    "evaluated_on": "2026-09-09",
+    "category": "writing",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Exceptional integrity framework: mandatory authorization checks, confidentiality boundaries, human accountability, no fabrication, evidence-bounded critique"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Clear scope with 11-point never-do list including no impersonation, no external services without permission, no decision announcements, no fabrication"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on COPE/ICMJE ethical review practices, current reporting guidelines (CONSORT, PRISMA, etc.), statistical reproducibility standards"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready with 7 bundled CLIs (intake validation, guideline selection, claim-evidence matrix, statistics audit, citation check, scaffold, lint)"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete peer review workflow: intake validation, guideline selection, claim-evidence mapping, methods/statistics/ethics review, figure/citation audit, scaffold generation, lint"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent safety with intake gate blocking unauthorized/conflicted/external-service reviews, local-only guarantee, no echo of manuscript text in CLI output"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient local-only processing with bounded JSON/CSV/Markdown inputs, no network/model/API calls; SKILL.md 289 lines well-organized"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding: 11-step workflow, mandatory safety boundary section, intake template, 7 CLI tools with schemas, reference file mapping, actionability structure"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear triggers (peer review, manuscript, protocol, preprint), confidentiality prominent, authorization gate upfront, human accountability emphasized"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional: confidentiality boundaries, no external service upload, no .env/API key reading, no network calls, CLI output redacts manuscript text"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure: 5 reference files, dated source ledger (2026-07-23), 7 CLIs with exit codes documented, templates in assets/, COPE/ICMJE grounding"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with evidence-bounded critique; deterministic tools; minor: integration with literature search could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.67,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Intake validation with authorization and conflict checks",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Gate before any manuscript access",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "validate_review_intake.py blocks until status READY_FOR_LOCAL_REVIEW",
+            "result": "PASS",
+            "note": "Hard gate prevents unauthorized or unsafe reviews"
+          },
+          {
+            "text": "Checks: authorization, accountability, conflicts, venue policy, AI permission, no external services, no reuse, deletion plan",
+            "result": "PASS",
+            "note": "Comprehensive 8-point validation checklist"
+          },
+          {
+            "text": "Validates declarations not truth (human still accountable)",
+            "result": "PASS",
+            "note": "Appropriate scope limitation clearly stated"
+          },
+          {
+            "text": "Template in assets/review_intake_template.json",
+            "result": "PASS",
+            "note": "Starting point provided for completion"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Reporting guideline selection and coverage audit",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Systematic completeness check without scoring",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "select_reporting_guidelines.py with study profile input",
+            "result": "PASS",
+            "note": "Dated selector for current guidelines"
+          },
+          {
+            "text": "Coverage output as CSV with item-by-item assessment",
+            "result": "PASS",
+            "note": "Structured audit format"
+          },
+          {
+            "text": "Critical distinction: completeness ≠ quality/bias/merit",
+            "result": "PASS",
+            "note": "Fundamental misuse prevention explicitly stated"
+          },
+          {
+            "text": "Never convert missing items to automatic score or judgment",
+            "result": "PASS",
+            "note": "Anti-pattern clearly prohibited"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Claim-evidence matrix validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Systematic mapping of claims to supporting evidence",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "validate_claim_evidence.py processes claim matrix CSV",
+            "result": "PASS",
+            "note": "Structured claim tracking"
+          },
+          {
+            "text": "Prioritizes central, causal, mechanistic, safety, diagnostic, prediction, generalization claims",
+            "result": "PASS",
+            "note": "Focus guidance on high-impact claims"
+          },
+          {
+            "text": "Report emits IDs and counts, not claim text (confidentiality)",
+            "result": "PASS",
+            "note": "Privacy-preserving output"
+          },
+          {
+            "text": "Template in assets/claim_evidence_matrix_template.csv",
+            "result": "PASS",
+            "note": "Starting point with required columns"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Statistics and reproducibility audit",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Structured methods/statistics critique",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "audit_statistics_reproducibility.py with JSON input",
+            "result": "PASS",
+            "note": "Systematic reproducibility checklist"
+          },
+          {
+            "text": "9-point assessment: question, design, allocation, sample size, missingness, assumptions, multiplicity, uncertainty, interpretation",
+            "result": "PASS",
+            "note": "Comprehensive statistical review structure"
+          },
+          {
+            "text": "Request specialist review when method exceeds competence",
+            "result": "PASS",
+            "note": "Honest competence boundary acknowledgment"
+          },
+          {
+            "text": "Template in assets/statistical_reproducibility_template.json",
+            "result": "PASS",
+            "note": "Structured input format provided"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Citation audit for Pandoc-style references",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Local citation-reference consistency check",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "audit_citations.py checks [@ref-id] against references CSV",
+            "result": "PASS",
+            "note": "Markdown citation format support"
+          },
+          {
+            "text": "Checks key consistency and identifier format only",
+            "result": "PASS",
+            "note": "Appropriate scope: not verifying source existence or claim support"
+          },
+          {
+            "text": "Template in assets/citation_references_template.csv",
+            "result": "PASS",
+            "note": "Reference list structure provided"
+          },
+          {
+            "text": "Does not verify that source supports claim (outside tool scope)",
+            "result": "PARTIAL",
+            "note": "Limitation stated but human review requirement could be more prominent"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Review scaffold generation and lint with channel separation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Draft generation with actionability and tone checks",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "generate_review_scaffold.py creates separated Markdown draft",
+            "result": "PASS",
+            "note": "Comments to authors and confidential editor sections separated"
+          },
+          {
+            "text": "lint_review.py checks channel separation, placeholders, abusive language, actionability",
+            "result": "PASS",
+            "note": "Quality and safety checks automated"
+          },
+          {
+            "text": "Emits line numbers and rule IDs, not review text (confidentiality)",
+            "result": "PASS",
+            "note": "Privacy-preserving lint output"
+          },
+          {
+            "text": "All 7 CLIs verified in scripts/ directory",
+            "result": "PARTIAL",
+            "note": "CLIs referenced throughout but directory not fully verified"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 58.0,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional ethical framework: mandatory authorization/confidentiality boundaries, 11-point never-do list, intake gate, human accountability, COPE/ICMJE grounding",
+    "Outstanding security and confidentiality: all CLIs redact manuscript text from output, no external service calls, no .env/API key reading, local-only guarantee",
+    "Comprehensive workflow with 7 specialized CLIs covering intake, guidelines, claim-evidence, statistics, citations, scaffold, lint with templates for each",
+    "Strong scientific rigor: critical distinction that completeness ≠ quality, competence-boundary acknowledgment, evidence-bounded critique, anti-fabrication emphasis",
+    "Excellent structure with 11-step workflow, 5 reference files, dated source ledger (2026-07-23), exit code documentation, actionability requirements"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Strengthen integration guidance with paper-lookup skill",
+      "observed_in": [5],
+      "problem": "Citation audit checks format but not whether source supports claim; integration with literature lookup for verification not explicitly guided",
+      "root_cause": "Skills designed independently without cross-skill workflow documentation",
+      "fix": "Add reference/literature_verification.md showing how to use paper-lookup skill to verify citation existence and content without leaking manuscript text (search by DOI/PMID, not claim text)"
+    },
+    {
+      "priority": "P2",
+      "title": "Add prominence to citation audit scope limitation",
+      "observed_in": [5],
+      "problem": "Citation audit checks consistency not claim support; limitation stated but human verification requirement could be clearer",
+      "root_cause": "Tool description focuses on what it does rather than what it doesn't",
+      "fix": "Add callout in audit_citations.py --help and SKILL.md: 'This tool checks citation keys exist in reference list, not whether the cited source actually supports the claim. Reviewers must verify claim-citation alignment independently.'"
+    }
+  ]
+}

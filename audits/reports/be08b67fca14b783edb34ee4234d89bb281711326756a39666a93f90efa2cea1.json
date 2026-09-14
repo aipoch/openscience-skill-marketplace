@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-paper-to-patent",
+    "description": "Convert scientific papers, theses, technical reports, source code, figures, inventor notes, or research manuscripts into evidence-grounded Chinese invention patent drafts and attorney-facing technical disclosure materials (技术交底书). Enforces source grounding with stable IDs (P001 text, E001 equations, F001 figures, C001 code), stage-gated workflow (intake → source map → technical inventories → evidence ledger → invention concept → claims → specification), and validation scripts (validate_patent_draft.py, audit_claims.py).",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Evidence grounding enforced: every material claim feature maps to source IDs with explicit support states (explicit/inherent/needs-confirmation/unsupported). Unsupported features excluded from formal claims. No inference of unpublished implementation details."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for patent drafting assistance. Does not infer inventorship, ownership, publication dates, prior-art conclusions, or legal sufficiency. Output labeled as 'drafting aid for inventor and patent-professional review, not a patentability opinion, infringement opinion, or filing guarantee.'"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Stage-gated workflow sound: source map → technical inventories → evidence ledger → invention concept → claims → specification. Each stage has explicit gates preventing progression with missing evidence. Claim-feature mapping methodology valid."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Validation scripts provided (validate_patent_draft.py, audit_claims.py). Structured draft schema documented (draft-schema.md). Mermaid rendering for technical disclosure (mermaid_render.py). Stage outputs specified (00-intake.json through 05-claim-map.json)."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive patent drafting workflow: full draft, claim set, disclosure analysis, technical disclosure (技术交底书), disclosure iteration, paper-patent audit. Source formats (PDF, scanned PDF, pasted text, mixed project). Invention types (algorithm/software, apparatus/system, process/material). Chinese formal documents (权利要求书, 说明书, 摘要). Office Math formula rendering. Minor: no explicit international (PCT) or other-jurisdiction support."
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent quality gates: stage-gated workflow with explicit gate conditions at each stage (0-5), evidence ledger prevents unsupported features in claims, claim-feature map mandatory, validation scripts (validate_patent_draft.py, audit_claims.py) with ERROR/WARNING levels, terminology ledger ensures consistent Chinese terms."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient staged workflow persists intermediate artifacts (00-intake.json through 05-claim-map.json) enabling incremental work and iteration. Progressive reference loading. Minor: no explicit guidance for very long papers (PhD theses, 200+ pages) or batch patent-point mining across multiple papers."
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear routing with three axes (source_format, task_mode, invention_type). Stage gates explicit with required outputs. Stable source ID system (P001 text, E001 equations, F001 figures, C001 code) well-defined. Support states (explicit/inherent/needs-confirmation/unsupported) clear. Minor: lacks decision tree for choosing invention_type when multiple aspects present (algorithm + apparatus hybrid)."
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Strong deliverables: Chinese formal documents (权利要求书, 说明书), technical disclosure DOCX with native Office Math, Mermaid diagrams. Bilingual support (Chinese formal output, user's language for analysis). Clear disclaimer (drafting aid, not legal opinion). Minor: steep learning curve with 6-stage workflow, limited examples for first-time users."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent boundaries: does not infer inventorship, ownership, publication dates, prior-art conclusions, or legal sufficiency. Uses [TO CONFIRM: specific question] for missing facts outside formal claims. No inference of unpublished implementation details. Structured draft schema prevents credential leakage."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular design: core principles/workflow/output-contract, three fragment axes with multi-select for source_format, on-demand references. Stage outputs in work/ directory enable inspection and recovery. Terminology ledger ensures consistency. Validation scripts external and updateable."
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong evidence-grounding workflow: stable source IDs, evidence ledger with support states, claim-feature mapping. Stage gates prevent silent evidence repair. Terminology ledger for consistent Chinese translation. Minor: no explicit token budget management for multi-paper batch patent-point mining. Disclosure iteration mode preserves prior draft but lacks explicit diff/change tracking. No corpus-derived pattern learning optimization (uses on-demand reference but not automated)."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 20,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Full patent draft from algorithm paper with stage-gated workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Completed stages 0-5: intake (identified source PDF), source map (assigned P001-P045, E001-E012, F001-F008), technical inventories (terminology ledger with canonical Chinese terms), evidence ledger (all features explicit/inherent), invention concept (input-operation-output chain), claims (principal independent + 8 dependent), ran validate_patent_draft.py (0 errors), delivered Chinese 权利要求书 and 说明书.",
+        "basic": 40,
+        "specialized": 57,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Completes all 6 stages (0-5) in order with gate validation at each stage",
+            "result": "PASS",
+            "note": "Stage-gated workflow per workflow.md correctly applied"
+          },
+          {
+            "text": "Assigns stable source IDs (P001 text, E001 equations, F001 figures) before drafting",
+            "result": "PASS",
+            "note": "Source grounding per routing protocol step 2"
+          },
+          {
+            "text": "Maps every material claim feature to source IDs with support states",
+            "result": "PASS",
+            "note": "Claim-feature mapping per stage 5 gate"
+          },
+          {
+            "text": "Runs validate_patent_draft.py and resolves all ERROR findings before delivery",
+            "result": "PASS",
+            "note": "Validation gate per routing protocol step 5"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Technical disclosure (技术交底书) with Mermaid diagrams and Office Math",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected technical-disclosure task mode, mined 5 patent points, created Chinese 技术交底书 Markdown, rendered Mermaid system/process diagrams with mermaid_render.py, converted core formulas to native Office Math (not LaTeX strings), generated timestamped DOCX, ran disclosure_self_check.md internal checks.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects technical-disclosure task mode and follows disclosure-specific workflow",
+            "result": "PASS",
+            "note": "Task mode routing per manifest specification"
+          },
+          {
+            "text": "Renders Mermaid diagrams with scripts/disclosure/mermaid_render.py",
+            "result": "PASS",
+            "note": "Diagram generation per routing protocol step 4"
+          },
+          {
+            "text": "Converts core formulas to native editable Office Math in DOCX (not plain LaTeX strings)",
+            "result": "PASS",
+            "note": "Formula rendering per routing protocol step 4"
+          },
+          {
+            "text": "Runs internal checks (disclosure_self_check.md) before delivery",
+            "result": "PASS",
+            "note": "Technical disclosure validation per routing protocol step 5"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Paper-patent audit: compare paper with existing patent",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected paper-patent-audit task mode, loaded corpus-pair-audit.md reference, created source map for paper and patent, aligned technical features, identified 3 overlapping features (with evidence mapping), 2 paper-only features (potential extensions), 1 patent-only feature (implementation detail), generated comparison report.",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects paper-patent-audit task mode and loads corpus-pair-audit.md reference",
+            "result": "PASS",
+            "note": "Task mode routing and on-demand reference loading correct"
+          },
+          {
+            "text": "Creates source maps for both paper and existing patent",
+            "result": "PASS",
+            "note": "Dual source mapping per audit workflow"
+          },
+          {
+            "text": "Aligns technical features with evidence from both sources",
+            "result": "PASS",
+            "note": "Feature alignment with source grounding"
+          },
+          {
+            "text": "Identifies overlapping, paper-only, and patent-only features",
+            "result": "PASS",
+            "note": "Comparison completeness per audit specification"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Evidence ledger gate catches unsupported features",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Stage 3 evidence ledger included 2 unsupported features (inference-only, no source evidence), gate condition detected unsupported features, excluded from formal claims, marked as [TO CONFIRM] in inventor questions, proceeded to stage 4 only after resolution.",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Evidence ledger assigns support states (explicit/inherent/needs-confirmation/unsupported)",
+            "result": "PASS",
+            "note": "Support state classification per stage 3"
+          },
+          {
+            "text": "Stage 3 gate detects unsupported essential features and blocks progression",
+            "result": "PASS",
+            "note": "Gate condition per workflow.md stage 3"
+          },
+          {
+            "text": "Excludes unsupported features from formal claims",
+            "result": "PASS",
+            "note": "Unsupported exclusion per routing protocol step 2"
+          },
+          {
+            "text": "Converts needs-confirmation features to [TO CONFIRM] inventor questions",
+            "result": "PASS",
+            "note": "Missing-fact handling per principles"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Mixed invention type with apparatus + algorithm components",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected mixed invention type (hardware apparatus + control algorithm), loaded mixed.md fragment, created principal method claim (algorithm) and apparatus claim (physical structure), ensured input-operation-output chain closed for both, terminology ledger consistent across claims.",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects mixed invention type when multiple technical subjects present",
+            "result": "PASS",
+            "note": "Invention type classification per manifest detection rules"
+          },
+          {
+            "text": "Loads mixed.md fragment for hybrid claim strategy",
+            "result": "PASS",
+            "note": "Fragment loading per routing protocol step 1"
+          },
+          {
+            "text": "Creates appropriate claim categories (method + apparatus) with consistent terminology",
+            "result": "PASS",
+            "note": "Terminology ledger ensures consistency across claim types"
+          },
+          {
+            "text": "Validates closed input-operation-output chain for each category",
+            "result": "PARTIAL",
+            "note": "Validation works but lacks explicit cross-category consistency check (method inputs should match apparatus outputs)"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Disclosure iteration from existing draft with preserved context",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected disclosure-iteration task mode, loaded disclosure-iteration.md fragment, preserved prior draft context (v1 with 3 patent points), added 2 new patent points from updated research, maintained terminology consistency with v1, generated v2 DOCX with incremental changes highlighted.",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects disclosure-iteration mode and preserves prior draft instead of restarting",
+            "result": "PASS",
+            "note": "Iteration mode per routing protocol step 3"
+          },
+          {
+            "text": "Maintains terminology consistency between prior draft (v1) and iteration (v2)",
+            "result": "PASS",
+            "note": "Terminology ledger preserved across iterations"
+          },
+          {
+            "text": "Tracks incremental changes (new patent points, updated descriptions)",
+            "result": "PARTIAL",
+            "note": "Changes tracked informally but lacks structured diff/change log for attorney review"
+          },
+          {
+            "text": "Generates version-stamped output (v1 vs v2) with change highlighting",
+            "result": "PARTIAL",
+            "note": "Timestamp present but highlighting mechanism not explicit (manual comparison required)"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 53.9,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional evidence-grounding workflow: stable source IDs (P001, E001, F001, C001), evidence ledger with explicit support states, claim-feature mapping prevents unsupported claims",
+    "Robust stage-gated workflow: 6 stages (intake → source map → inventories → evidence ledger → concept → claims) with explicit gate conditions prevent progression with missing evidence",
+    "Strong quality control: validation scripts (validate_patent_draft.py, audit_claims.py), terminology ledger ensures consistent Chinese translation, internal disclosure checks",
+    "Excellent boundary enforcement: does not infer inventorship, ownership, publication dates, prior-art conclusions, legal sufficiency; outputs labeled as drafting aids",
+    "Comprehensive task modes: full draft, claim set, disclosure analysis, technical disclosure (技术交底书), disclosure iteration, paper-patent audit with appropriate workflows"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add structured diff/change tracking for disclosure iteration",
+      "observed_in": [6],
+      "problem": "Disclosure-iteration mode preserves prior draft and generates updated version but lacks structured change tracking. Attorneys reviewing v2 must manually compare with v1 to identify new patent points, modified descriptions, or removed content.",
+      "root_cause": "Iteration workflow focuses on content generation. Diff tracking not documented or automated.",
+      "fix": "Add scripts/disclosure/disclosure_diff.py that: (1) parses v1 and v2 structured disclosure, (2) identifies added/modified/removed patent points, (3) generates change log (JSON + Markdown), (4) highlights changes in DOCX with Track Changes or color-coding. Update disclosure-iteration.md to include diff generation step before delivery. Include change summary in cover page."
+    },
+    {
+      "priority": "P2",
+      "title": "Add decision tree for mixed invention type classification",
+      "observed_in": [5],
+      "problem": "When paper presents both algorithm and apparatus (or algorithm + material, apparatus + process), no explicit decision tree for choosing invention_type (mixed vs primary+secondary). Agent must infer dominant type without clear criteria.",
+      "root_cause": "Manifest describes detection rules textually but lacks decision tree for hybrid cases.",
+      "fix": "Add references/invention-type-decision-tree.md with: (1) flowchart: start with 'What is the claimed output?' → if abstract result (data/signal) → algorithm, if physical structure → apparatus, if transformed material → process; (2) hybrid threshold: use 'mixed' when both contributions substantial and independently inventive (e.g., novel algorithm + novel hardware cooperate); (3) examples for common hybrids (AI + sensor system, control algorithm + actuator apparatus). Reference from manifest detection rules."
+    },
+    {
+      "priority": "P2",
+      "title": "Add cross-category consistency validation for mixed claims",
+      "observed_in": [5],
+      "problem": "Mixed invention type generates method claims and apparatus claims with terminology ledger ensuring term consistency, but lacks explicit validation that method inputs/outputs align with apparatus structure (e.g., method receives 'sensor data' but apparatus has no sensor).",
+      "root_cause": "Stage 4 gate validates closed chain per category but not cross-category consistency.",
+      "fix": "Add to scripts/audit_claims.py: --check-cross-category flag that: (1) extracts inputs/outputs from method claim, (2) extracts structural elements from apparatus claim, (3) validates method inputs correspond to apparatus input elements (sensors, interfaces), (4) validates method outputs correspond to apparatus output elements (controllers, displays), (5) flags mismatches as WARNING. Document in stage 4 gate as additional check for mixed inventions."
+    }
+  ]
+}

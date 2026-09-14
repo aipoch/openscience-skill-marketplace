@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "skill_name": "evo2-nim",
+    "description": "Generate and analyze DNA sequences using NVIDIA's Evo 2 BioNeMo NIM microservice. Use for Evo2/Evo 2, DNA generation, genomic sequence generation, hosted generation, local Docker deployment, local forward passes, layer outputs, logits, sampled probabilities, and BioNeMo NIM workflows.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 91,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of DNA generation and local forward passes; mode detection logic robust with NIM_API_MODE and EVO2_NIM_URL support"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent input validation with clean_dna function; output alphabet validation; minor gap: no retry logic for transient network failures"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Progressive disclosure with 221-line SKILL.md and 5 reference files; enable_logits conditional guidance prevents unnecessary response bloat"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear mode selection with environment variable precedence; minor inconsistency: GPU requirements documented for local but not validated in code"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good trigger coverage; mode selection requires understanding of NIM_API_MODE vs EVO2_NIM_URL precedence which may be non-obvious"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Credentials externalized; LOCAL_NIM_CACHE set to 700 permissions; input validation prevents injection via DNA sequences; no credential logging"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean modular structure with references; minor: GPU compatibility matrix in prose could be structured data for easier updates"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Good trigger precision; progressive disclosure excellent; composability clear; lacks explicit idempotency guarantee for generation with same seed; escape hatches documented in troubleshooting but not consolidated"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 94.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 19
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted DNA generation with validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete generation workflow with input cleaning, mode detection, and output validation",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Input DNA sequence validated with clean_dna function",
+            "result": "PASS",
+            "note": "Whitespace removed, case normalized, invalid characters rejected"
+          },
+          {
+            "text": "Mode detection uses NIM_API_MODE then EVO2_NIM_URL fallback",
+            "result": "PASS",
+            "note": "Correct precedence order implemented"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          },
+          {
+            "text": "Generated sequence validated for non-ACGT bases",
+            "result": "PASS",
+            "note": "Output alphabet check raises ValueError on unexpected bases"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local generation with EVO2_NIM_URL service discovery",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Local mode with custom NIM URL and no Authorization header",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "EVO2_NIM_URL used for local endpoint construction",
+            "result": "PASS",
+            "note": "nim_url resolves from environment with .rstrip('/')"
+          },
+          {
+            "text": "Local endpoint uses /biology/arc/evo2/generate (no /v1/)",
+            "result": "PASS",
+            "note": "Correct local path"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly omit auth for local mode"
+          },
+          {
+            "text": "Service URL not replaced with localhost when EVO2_NIM_URL is set",
+            "result": "PASS",
+            "note": "Respects configured service URL per troubleshooting guidance"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Local forward pass with layer extraction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Forward-only mode with base64 NPZ decoding and tensor validation",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Forward endpoint restricted to local mode only",
+            "result": "PASS",
+            "note": "Raises RuntimeError if mode != local"
+          },
+          {
+            "text": "Base64 NPZ data decoded and saved to file",
+            "result": "PASS",
+            "note": "base64.b64decode and file write logic present"
+          },
+          {
+            "text": "Tensors loaded with allow_pickle=False for security",
+            "result": "PASS",
+            "note": "np.load explicitly disables pickle"
+          },
+          {
+            "text": "Finite value check performed on loaded arrays",
+            "result": "PASS",
+            "note": "np.isfinite(arr).all() validation included"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "7B variant with single GPU configuration",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Alternative model variant with adjusted GPU requirements",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "NIM_VARIANT=7b documented for smaller model",
+            "result": "PASS",
+            "note": "Export command provided in Docker section"
+          },
+          {
+            "text": "NIM_TEST_GPUS adjusted to single GPU for 7B",
+            "result": "PASS",
+            "note": "Comment documents export NIM_TEST_GPUS=0 for 7B"
+          },
+          {
+            "text": "FP8 GPU requirement documented for both variants",
+            "result": "PASS",
+            "note": "Explicit warning: A100 not compatible, compute capability 8.9+ required"
+          },
+          {
+            "text": "Supported GPUs listed for 7B variant",
+            "result": "PASS",
+            "note": "H100, H200, RTX 6000 Ada, L40S documented"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Invalid DNA input with non-ACGT characters",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Robust input validation catches invalid characters before API call",
+        "basic": 38,
+        "specialized": 52,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "clean_dna raises ValueError on invalid characters",
+            "result": "PASS",
+            "note": "Set difference identifies unexpected characters and lists them in error"
+          },
+          {
+            "text": "Whitespace and case normalization applied before validation",
+            "result": "PASS",
+            "note": "upper() and split() called before character check"
+          },
+          {
+            "text": "Invalid characters reported in error message",
+            "result": "PASS",
+            "note": "Error includes sorted list of invalid characters for debugging"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.4,
+    "dynamic_weighted": 56.4,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional input validation with clean_dna function preventing invalid DNA sequences and providing clear error messages",
+    "Sophisticated mode detection with environment variable precedence (NIM_API_MODE > EVO2_NIM_URL > prompt)",
+    "Strong security posture: credentials externalized, pickle disabled in NumPy loading, LOCAL_NIM_CACHE set to 700 permissions",
+    "Progressive disclosure structure with 221-line SKILL.md and 5 focused reference files",
+    "Comprehensive GPU compatibility guidance with explicit FP8 requirements and multi-variant support (40B and 7B)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Document idempotency guarantees for random_seed",
+      "observed_in": ["Static evaluation"],
+      "problem": "random_seed parameter documented as supporting reproducibility but no explicit statement on whether same seed guarantees identical output across runs",
+      "root_cause": "Agent-specific idempotency criterion expects clear determinism statement",
+      "fix": "Add note after random_seed documentation: 'Given identical sequence, num_tokens, temperature, top_k, top_p, and random_seed, generation is deterministic and will produce the same output across runs. For non-deterministic sampling, omit random_seed or vary it.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add retry logic for transient network failures",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No guidance on handling transient 503 or timeout errors during generation or forward passes",
+      "root_cause": "Assumes network reliability; long-running generation requests may time out",
+      "fix": "Add to Troubleshooting section: 'For timeout errors on long sequences, increase requests timeout parameter or reduce num_tokens. For transient 503 errors, retry with exponential backoff (wait 2s, 4s, 8s between attempts).'"
+    },
+    {
+      "priority": "P2",
+      "title": "Consolidate escape hatches in dedicated section",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "When-not-to-use guidance scattered across troubleshooting; no explicit out-of-scope section",
+      "root_cause": "Escape hatch criterion expects consolidated 'When NOT to use' guidance",
+      "fix": "Add section before 'Choose Mode': 'When NOT to use: For RNA or protein sequence generation use appropriate models; for sequences >10k bases expect longer inference times; for A100 GPUs use hosted mode or switch to supported FP8 hardware.'"
+    }
+  ]
+}

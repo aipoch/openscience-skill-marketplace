@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "skill_name": "drug-discovery-pipeline",
+    "description": "Run a complete computational drug discovery pipeline using NVIDIA BioNeMo NIMs: generate drug-like molecules with GenMol, dock them to a protein target with DiffDock, then predict binding affinity with Boltz2. Use for drug discovery pipeline, hit discovery, lead optimization, virtual screening combining molecule generation, docking, and affinity prediction.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 86,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Complete 3-step pipeline covered; minor gap: no guidance on handling failed intermediate steps or partial results"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Basic error handling with raise_for_status; lacks guidance on GenMol filter failures, empty docking results, or Boltz2 timeouts for long sequences"
+      },
+      "performance_context": {
+        "score": 6,
+        "max": 8,
+        "note": "All content in single 220-line SKILL.md without progressive disclosure; could benefit from reference files for per-NIM details"
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear 3-step structure; pre-flight questions documented; minor inconsistency: temperature/noise documented as strings but not explained why"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Rich trigger phrase coverage; scaffold decoration example present but not fully explained"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Credentials externalized; prominent data transmission warning in description; minor: no validation of target_sequence format"
+      },
+      "maintainability": {
+        "score": 10,
+        "max": 12,
+        "note": "Monolithic structure makes updates harder; no test cases; dependencies across 3 NIMs not versioned"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Good trigger precision; lacks progressive disclosure; composability clear via 3-NIM pipeline; no explicit escape hatches for partial pipeline execution"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.1,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 26
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "De novo hit discovery with hosted NIMs",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete 3-step pipeline with proper SAFE encoding, ATOM-only protein, sequential execution",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "GenMol uses SAFE notation input via safe-mol package",
+            "result": "PASS",
+            "note": "sf.encode used for scaffold, [*{20-30}] for de novo"
+          },
+          {
+            "text": "DiffDock ligand_file_type is 'txt' for SMILES",
+            "result": "PASS",
+            "note": "Correctly specified"
+          },
+          {
+            "text": "Boltz2 predict_affinity=True for affinity prediction",
+            "result": "PASS",
+            "note": "Affinity prediction enabled"
+          },
+          {
+            "text": "Pipeline preserves molecule metadata across steps",
+            "result": "PASS",
+            "note": "QED score and SMILES carried through to final results"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Scaffold decoration with LogP scoring",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Scaffold-based generation with alternative scoring metric",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Scaffold SMILES converted to SAFE notation before decoration",
+            "result": "PASS",
+            "note": "sf.encode(scaffold_smiles) used"
+          },
+          {
+            "text": "Scoring parameter set to 'LogP' instead of 'QED'",
+            "result": "PASS",
+            "note": "Alternative scoring method applied"
+          },
+          {
+            "text": "Results sorted by LogP score for lipophilicity optimization",
+            "result": "PASS",
+            "note": "Ranking logic adapted to scoring metric"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Local Docker deployment with distinct ports",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-NIM local setup with port isolation",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "GenMol local endpoint has no /v1/ prefix",
+            "result": "PASS",
+            "note": "Uses /generate directly"
+          },
+          {
+            "text": "DiffDock local endpoint uses /molecular-docking/diffdock/generate",
+            "result": "PASS",
+            "note": "Correct local path"
+          },
+          {
+            "text": "Boltz2 local endpoint documented",
+            "result": "PASS",
+            "note": "Uses /biology/mit/boltz2/predict"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly set for local mode"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Top-5 docking candidates for affinity screening",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Filtering strategy with top-N selection after docking",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Docking results sorted by confidence before affinity step",
+            "result": "PASS",
+            "note": "docking_results.sort by docking_confidence"
+          },
+          {
+            "text": "Only top-5 docking hits sent to Boltz2",
+            "result": "PASS",
+            "note": "docking_results[:5] slicing applied"
+          },
+          {
+            "text": "Final results ranked by pIC50",
+            "result": "PASS",
+            "note": "affinity_results.sort by pic50"
+          },
+          {
+            "text": "Output includes interpretation guidance for pIC50 values",
+            "result": "FAIL",
+            "note": "Code includes pIC50 output but no inline interpretation; user must refer back to 'Interpreting results' section"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Handling GenMol filter failures and empty results",
+        "status": "PARTIAL",
+        "status_flag": "⚠️",
+        "note": "Basic handling present but lacks graceful degradation for low-yield generation",
+        "basic": 30,
+        "specialized": 46,
+        "total": 76,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Code checks if molecules list is non-empty before sorting",
+            "result": "FAIL",
+            "note": "No empty-list guard; would raise IndexError on molecules_sorted[:20] if generation yields 0 valid molecules"
+          },
+          {
+            "text": "Requested num_molecules=30 with expectation of filtering",
+            "result": "PASS",
+            "note": "Over-generation strategy documented in comment"
+          },
+          {
+            "text": "Print statement reports actual vs requested molecule count",
+            "result": "PASS",
+            "note": "Generated {len(molecules)} valid molecules (requested 30)"
+          },
+          {
+            "text": "Guidance provided for handling <20 valid molecules",
+            "result": "FAIL",
+            "note": "No fallback or warning if valid count < 20"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "User requests only molecule generation without docking",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Skill executes full pipeline even when user needs only Step 1; no modular execution guidance",
+        "basic": 32,
+        "specialized": 48,
+        "total": 80,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Skill description claims full pipeline execution",
+            "result": "PASS",
+            "note": "Description states 'complete computational drug discovery pipeline'"
+          },
+          {
+            "text": "No guidance for executing individual steps independently",
+            "result": "FAIL",
+            "note": "Code structure requires all 3 steps; no modular execution instructions"
+          },
+          {
+            "text": "Skill references individual NIM skills for single-step tasks",
+            "result": "PASS",
+            "note": "Quick reference table lists genmol-nim, diffdock-nim, boltz2-nim"
+          },
+          {
+            "text": "Pre-flight questions establish pipeline scope",
+            "result": "PASS",
+            "note": "Before you start section confirms full pipeline intent"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Temperature and noise parameter type confusion",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct string types documented but reasoning not explained",
+        "basic": 34,
+        "specialized": 52,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Temperature parameter passed as string '1.0' not float 1.0",
+            "result": "PASS",
+            "note": "Correct per API schema; note documents this requirement"
+          },
+          {
+            "text": "Noise parameter passed as string '1.0' not float 1.0",
+            "result": "PASS",
+            "note": "Correct per API schema; note documents this requirement"
+          },
+          {
+            "text": "Comment explains why string type is required",
+            "result": "PASS",
+            "note": "NOTE comments flag the string requirement, though underlying API reason not explained"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 34.4,
+    "dynamic_weighted": 52.3,
+    "score": 87,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Complete end-to-end drug discovery workflow composing three complementary NIMs (GenMol, DiffDock, Boltz2)",
+    "Clear sequential structure with data flow from molecule generation through docking to affinity prediction",
+    "Prominent security warning about data transmission to external APIs in skill description",
+    "Comprehensive result interpretation guidance covering QED, docking confidence, pIC50, and binding probability",
+    "Both de novo and scaffold-based generation patterns documented with examples"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add error handling for empty GenMol results",
+      "observed_in": ["Input 5"],
+      "problem": "Code does not check if molecules list is empty before slicing top_20, causing IndexError if generation yields zero valid molecules",
+      "root_cause": "Assumes GenMol always returns sufficient valid molecules; no guard for low-yield scenarios",
+      "fix": "After molecules_sorted = sorted(...), add: if len(molecules_sorted) < 20: print(f'Warning: only {len(molecules_sorted)} valid molecules generated'); top_20 = molecules_sorted. Document fallback strategy in 'Before you start' section."
+    },
+    {
+      "priority": "P1",
+      "title": "Refactor into progressive disclosure structure",
+      "observed_in": ["Static evaluation"],
+      "problem": "All content in monolithic 220-line SKILL.md; no reference files for per-NIM parameter details, endpoint schemas, or troubleshooting",
+      "root_cause": "Single-file approach acceptable for simple skills but inefficient for complex multi-NIM pipeline",
+      "fix": "Create references/ directory with genmol_reference.md, diffdock_reference.md, boltz2_reference.md for detailed per-service documentation; reduce SKILL.md to high-level workflow and integration points."
+    },
+    {
+      "priority": "P2",
+      "title": "Add modular execution guidance",
+      "observed_in": ["Input 6"],
+      "problem": "No instructions for running individual pipeline steps independently; user wanting only molecule generation must extract code manually",
+      "root_cause": "Skill optimized for full pipeline execution; single-step use cases not addressed",
+      "fix": "Add section 'Running Individual Steps': 'For single-step tasks, use the individual skills: genmol-nim for molecule generation only, diffdock-nim for docking only, boltz2-nim for affinity prediction only. This skill is for full pipeline execution.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add escape hatch for partial pipeline failures",
+      "observed_in": ["Static evaluation", "Input 5"],
+      "problem": "No guidance on recovering from mid-pipeline failures (e.g., all docking jobs fail, Boltz2 timeout)",
+      "root_cause": "Happy-path focus; intermediate failure scenarios not documented",
+      "fix": "Add 'Troubleshooting' section: document strategies for GenMol low-yield (increase num_molecules), DiffDock batch failures (retry with simplified parameters), Boltz2 long-sequence timeouts (split into shorter fragments or fall back to docking confidence ranking only)."
+    }
+  ]
+}

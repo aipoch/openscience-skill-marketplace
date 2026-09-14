@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "skill_name": "benchling-integration",
+    "description": "Benchling Python SDK and REST API integration for registry entities, inventory, ELN entries, workflows, Benchling Apps, and Data Warehouse queries. Use when automating lab data with benchling-sdk or the v2 API.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; accurately describes Benchling SDK and API capabilities for lab data management"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for LIMS integration and lab automation workflows"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established lab data management practices and Benchling platform capabilities"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports and authentication patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of Benchling SDK including registry, inventory, ELN, workflows, events, and data warehouse; excellent reference organization with 7 capability areas"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent error handling with automatic retry strategy documentation; pagination efficiency patterns; forward compatibility handling for unknown enum values"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized documentation (230 lines) with clear sections and progressive disclosure through reference files; could benefit from performance benchmarks for bulk operations"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent 'When to Use This Skill' section with 8 specific trigger scenarios; clear scope covering SDK and API integration; comprehensive use case examples"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear authentication setup with multiple methods (API key, OAuth); security considerations prominently documented; common use cases with actionable code"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security practices: explicit warnings against committing credentials, environment variable usage, minimal permissions guidance, key rotation recommendations, OAuth for production apps"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.4, license (MIT), comprehensive reference files, SDK version noted (1.25.0); minor: no changelog section"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools specified and openclaw metadata for environment variables; clear integration patterns; pagination generators for efficiency; minor: output format specifications could be more explicit for structured data"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Initialize SDK with API key authentication",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard authentication and client setup",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Environment variables read for tenant URL and API key",
+            "result": "PASS",
+            "note": "BENCHLING_TENANT_URL and BENCHLING_API_KEY documented in openclaw metadata"
+          },
+          {
+            "text": "Benchling client initialized with ApiKeyAuth",
+            "result": "PASS",
+            "note": "Benchling(url=tenant_url, auth_method=ApiKeyAuth(api_key)) pattern shown"
+          },
+          {
+            "text": "Retry strategy configurable for reliability",
+            "result": "PASS",
+            "note": "RetryStrategy(max_retries=3) parameter documented"
+          },
+          {
+            "text": "Security best practices documented",
+            "result": "PASS",
+            "note": "Security Considerations section covers credential management comprehensively"
+          },
+          {
+            "text": "Multiple authentication methods documented",
+            "result": "PASS",
+            "note": "Both API key and OAuth referenced with authentication.md reference"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Bulk import DNA sequences from FASTA",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Registry entity creation with external data source",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "BioPython integration for FASTA parsing",
+            "result": "PASS",
+            "note": "from Bio import SeqIO; SeqIO.parse() correctly used"
+          },
+          {
+            "text": "DnaSequenceCreate model used for entity creation",
+            "result": "PASS",
+            "note": "DnaSequenceCreate with name, bases, is_circular, folder_id shown"
+          },
+          {
+            "text": "Batch creation pattern with loop over records",
+            "result": "PASS",
+            "note": "for record in SeqIO.parse loop with benchling.dna_sequences.create()"
+          },
+          {
+            "text": "Folder organization with folder_id parameter",
+            "result": "PASS",
+            "note": "folder_id='fld_abc123' parameter included"
+          },
+          {
+            "text": "Error handling for batch operations implicit",
+            "result": "PASS",
+            "note": "Retry strategy applies to all API calls including create operations"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Inventory audit with location filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Container listing with pagination",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "containers.list() called with parent_storage_id filter",
+            "result": "PASS",
+            "note": "benchling.containers.list(parent_storage_id='box_abc123')"
+          },
+          {
+            "text": "Pagination handled with nested loop pattern",
+            "result": "PASS",
+            "note": "for page in containers: for container in page pattern shown"
+          },
+          {
+            "text": "Container properties accessed (name, barcode)",
+            "result": "PASS",
+            "note": "container.name and container.barcode accessed in example"
+          },
+          {
+            "text": "Generator-based pagination documented",
+            "result": "PASS",
+            "note": "Best practices section explicitly covers generator-based iteration"
+          },
+          {
+            "text": "Estimated count method mentioned for efficiency",
+            "result": "PASS",
+            "note": "list().estimated_count() documented in pagination efficiency section"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Workflow automation with status updates",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Task filtering and conditional updates",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "workflow_tasks.list() with workflow_id and status filters",
+            "result": "PASS",
+            "note": "benchling.workflow_tasks.list(workflow_id='wf_abc123', status='pending')"
+          },
+          {
+            "text": "Conditional logic for automated validation",
+            "result": "PASS",
+            "note": "if auto_validate(task) pattern shown"
+          },
+          {
+            "text": "WorkflowTaskUpdate model used for status changes",
+            "result": "PASS",
+            "note": "WorkflowTaskUpdate(status_id='status_complete') shown"
+          },
+          {
+            "text": "Task update operation performed via SDK",
+            "result": "PASS",
+            "note": "benchling.workflow_tasks.update(task_id, workflow_task) called"
+          },
+          {
+            "text": "Error handling for failed updates documented",
+            "result": "FAIL",
+            "note": "Automatic retry covers network errors but validation failures not explicitly handled"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Data export with schema filtering to CSV",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Large-scale data extraction and transformation",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "All sequences iterated with pagination",
+            "result": "PASS",
+            "note": "for page in sequences: for seq in page pattern for full dataset"
+          },
+          {
+            "text": "Schema-based filtering applied (schema_id)",
+            "result": "PASS",
+            "note": "if seq.schema_id == 'target_schema_id' conditional shown"
+          },
+          {
+            "text": "Data transformed to export format (dict list)",
+            "result": "PASS",
+            "note": "export_data.append with id, name, bases, length fields"
+          },
+          {
+            "text": "Memory efficiency for large exports discussed",
+            "result": "FAIL",
+            "note": "Example loads all data to memory; streaming CSV write pattern not shown"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 53.8,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security documentation with explicit credential management guidelines, environment variable patterns, and minimal permissions principle",
+    "Excellent SDK reliability features documented: automatic retry with exponential backoff, forward compatibility with unknown types, configurable retry strategy",
+    "Comprehensive reference architecture with 7 capability areas and dedicated files for authentication, SDK, API endpoints, and EventBridge integration",
+    "Strong openclaw integration with complete environment variable metadata for seamless deployment configuration",
+    "Practical use case examples covering bulk import, inventory audit, workflow automation, and data export with real BioPython integration"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add validation error handling guidance",
+      "observed_in": [4],
+      "problem": "Automatic retry covers network errors but validation failures in workflow updates not explicitly handled",
+      "root_cause": "Error handling focuses on transient failures; semantic validation errors need different treatment",
+      "fix": "Add error handling example showing try/except for ValidationError or APIException with logging and graceful degradation for invalid task state transitions"
+    },
+    {
+      "priority": "P2",
+      "title": "Document memory-efficient export patterns",
+      "observed_in": [5],
+      "problem": "Data export example loads all sequences to memory before writing CSV",
+      "root_cause": "Example prioritizes simplicity over scalability",
+      "fix": "Add note or alternative example showing streaming pattern: open CSV writer before loop, write rows incrementally without accumulating in export_data list"
+    },
+    {
+      "priority": "P2",
+      "title": "Add changelog section",
+      "observed_in": [],
+      "problem": "Version 1.4 noted but no information about changes from previous versions",
+      "root_cause": "Maintainability affected by lack of version history",
+      "fix": "Add changelog section documenting major changes, especially breaking changes between skill versions or SDK version compatibility updates"
+    }
+  ]
+}

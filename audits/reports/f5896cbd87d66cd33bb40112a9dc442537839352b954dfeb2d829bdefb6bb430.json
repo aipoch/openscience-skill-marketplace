@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "deeptools",
+    "description": "NGS analysis toolkit. BAM to bigWig conversion, QC (correlation, PCA, fingerprints), heatmaps/profiles (TSS, peaks), for ChIP-seq, RNA-seq, ATAC-seq visualization.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Advanced",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of deepTools suite and NGS analysis methods; normalization formulas and genome sizes match established references"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for NGS data processing with experiment-specific guidance (ChIP-seq, RNA-seq, ATAC-seq)"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established NGS analysis practices with validated normalization methods (RPGC, CPM, RPKM) and standard QC metrics"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All command examples are syntactically correct with proper parameters and validation scripts provided"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of NGS workflows including BAM/bigWig processing, QC, visualization, with excellent reference organization and helper scripts"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent troubleshooting with validation script, common error solutions, and file checking guidance; proactive error prevention emphasized"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (413 lines) with clear workflow guidance, comprehensive references, and helper scripts for validation and generation"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional 'When to Use This Skill' with natural language triggers; detailed 'Handling User Requests' section with interaction patterns; workflow generator for automation"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with conda/PyPI options; quick start guide with validation; workflow generator for template creation; comprehensive best practices by experiment type"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "File validation before operations; output path management implicit; minor: lacks explicit guidance on PHI/sensitive genomic data handling"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.2, clear license (BSD), comprehensive references (4 files), helper scripts (2), assets, and effective genome size tables"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and samtools integration; workflow generator enables automation; example interactions provided; minor: output format schemas not fully specified"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "BAM to bigWig conversion with normalization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard coverage track generation workflow",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "bamCoverage command structure demonstrated",
+            "result": "PASS",
+            "note": "bamCoverage with normalization and output format shown throughout"
+          },
+          {
+            "text": "Normalization method selection guidance",
+            "result": "PASS",
+            "note": "Quick selection guide provides RPGC/CPM recommendations by experiment type"
+          },
+          {
+            "text": "Effective genome size parameter usage",
+            "result": "PASS",
+            "note": "--effectiveGenomeSize parameter with organism-specific table provided"
+          },
+          {
+            "text": "Common parameters (numberOfProcessors, extendReads) documented",
+            "result": "PASS",
+            "note": "Common Parameters Across Tools section covers performance and read processing"
+          },
+          {
+            "text": "Experiment-specific best practices (ChIP vs RNA-seq)",
+            "result": "PASS",
+            "note": "Separate best practice sections for ChIP-seq, RNA-seq, and ATAC-seq"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "ChIP-seq quality control workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "QC assessment with correlation and fingerprint analysis",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "plotFingerprint for enrichment assessment",
+            "result": "PASS",
+            "note": "Best practices state 'Check enrichment first: Run plotFingerprint before detailed analysis'"
+          },
+          {
+            "text": "multiBamSummary for sample correlation",
+            "result": "PASS",
+            "note": "Handling User Requests section recommends multiBamSummary + plotCorrelation"
+          },
+          {
+            "text": "File validation before analysis",
+            "result": "PASS",
+            "note": "Quick Start emphasizes validate_files.py usage; Best Practices section leads with file validation"
+          },
+          {
+            "text": "Workflow generator for ChIP-seq QC",
+            "result": "PASS",
+            "note": "chipseq_qc workflow template generation documented with parameters"
+          },
+          {
+            "text": "Read filtering parameters (ignoreDuplicates, minMappingQuality)",
+            "result": "PASS",
+            "note": "Common Parameters section documents read filtering options"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Heatmap generation around genomic features",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Two-step matrix computation and visualization",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Two-step process: computeMatrix → plotHeatmap",
+            "result": "PASS",
+            "note": "Example Interactions explicitly states 'two-step process: computeMatrix → plotHeatmap'"
+          },
+          {
+            "text": "Matrix mode selection (reference-point vs scale-regions)",
+            "result": "PASS",
+            "note": "Example interaction mentions 'reference-point mode at TSS' with mode choice guidance"
+          },
+          {
+            "text": "TSS analysis pattern documented",
+            "result": "PASS",
+            "note": "Example Interactions shows 'Create a heatmap around TSS' workflow"
+          },
+          {
+            "text": "Clustering and visualization options mentioned",
+            "result": "PASS",
+            "note": "Example interaction suggests 'clustering if dataset is large'"
+          },
+          {
+            "text": "Detailed parameters for plotHeatmap",
+            "result": "FAIL",
+            "note": "Main doc references tools_reference.md but doesn't show inline parameter examples"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "ATAC-seq with Tn5 correction and fragment filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Specialized processing for ATAC-seq data",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "alignmentSieve with --ATACshift parameter",
+            "result": "PASS",
+            "note": "ATAC-seq best practices state 'Apply Tn5 correction: Use alignmentSieve with --ATACshift'"
+          },
+          {
+            "text": "ATACshift shift values explained",
+            "result": "PASS",
+            "note": "--ATACshift documented as 'equivalent to --shift 4 -5 5 -4'"
+          },
+          {
+            "text": "Fragment length filtering for ATAC-seq",
+            "result": "PASS",
+            "note": "ATAC-seq best practices mention 'Fragment filtering: Set appropriate min/max fragment lengths'"
+          },
+          {
+            "text": "Nucleosome pattern validation",
+            "result": "PASS",
+            "note": "Best practices note 'Check nucleosome pattern: Fragment size plot should show ladder pattern'"
+          },
+          {
+            "text": "ATAC-seq workflow generator available",
+            "result": "FAIL",
+            "note": "atacseq workflow listed but parameters not detailed in main SKILL.md"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Multi-sample comparison with memory optimization",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Performance optimization for large-scale analyses",
+        "basic": 33,
+        "specialized": 44,
+        "total": 77,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Regional processing for memory-limited systems",
+            "result": "PASS",
+            "note": "Performance Optimization and Troubleshooting show --region for chromosome-specific processing"
+          },
+          {
+            "text": "Parallel processing with numberOfProcessors",
+            "result": "PASS",
+            "note": "Common Parameters and Best Practices emphasize --numberOfProcessors usage"
+          },
+          {
+            "text": "Bin size adjustment for file size management",
+            "result": "PASS",
+            "note": "Performance Optimization recommends 'Increase bin size for faster processing and smaller files'"
+          },
+          {
+            "text": "Pre-filtering strategy with alignmentSieve",
+            "result": "FAIL",
+            "note": "Mentioned in Performance Optimization but not demonstrated with example"
+          },
+          {
+            "text": "Batch processing pattern for multiple samples",
+            "result": "FAIL",
+            "note": "Multi-sample mentioned but no explicit batch processing script pattern shown"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 53.6,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding user interaction guidance with natural language trigger mapping and detailed example interaction patterns for common requests",
+    "Exceptional tool ecosystem with validation script (validate_files.py) and workflow generator (workflow_generator.py) enabling automated template creation",
+    "Excellent experiment-specific guidance with separate best practice sections for ChIP-seq, RNA-seq, and ATAC-seq workflows",
+    "Comprehensive reference organization covering tools (21 tools documented), workflows (6 complete analyses), normalization methods, and effective genome sizes",
+    "Strong error prevention strategy with proactive file validation and troubleshooting guidance integrated throughout"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add inline examples for key visualization parameters",
+      "observed_in": [3],
+      "problem": "computeMatrix and plotHeatmap parameters delegated entirely to reference files without inline examples",
+      "root_cause": "Main doc focuses on workflow structure rather than parameter details",
+      "fix": "Add brief inline example showing computeMatrix reference-point --referencePoint TSS and plotHeatmap --colorMap parameter to complement reference documentation"
+    },
+    {
+      "priority": "P2",
+      "title": "Add batch processing pattern for multi-sample workflows",
+      "observed_in": [5],
+      "problem": "Multi-sample comparison mentioned but no bash loop or batch script pattern shown",
+      "root_cause": "Documentation assumes users will adapt single-sample commands",
+      "fix": "Add example showing 'for bam in *.bam; do bamCoverage ...; done' pattern or reference to workflow_generator for batch template creation"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance for sensitive genomic data handling",
+      "observed_in": [],
+      "problem": "No discussion of PHI or sensitive genomic data considerations",
+      "root_cause": "Documentation focuses on technical operations without addressing data sensitivity",
+      "fix": "Add security note about PHI in genomic data, avoiding accidental sharing of BAM files with identifiable information, and institutional data management requirements"
+    }
+  ]
+}

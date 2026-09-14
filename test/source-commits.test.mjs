@@ -102,6 +102,10 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
     const workspace = join(directory, "input");
     await mkdir(upstream);
     await mkdir(join(workspace, "skills"), { recursive: true });
+    await writeFile(
+      join(workspace, "skills/publication-holds.json"),
+      metadataJsonBytes({ schemaVersion: 1, entries: [] }),
+    );
     await mkdir(join(workspace, "authoring"));
     await writeFile(
       join(workspace, "authoring/production.json"),

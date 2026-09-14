@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "gtars",
+    "description": "Use Gtars for local genomic interval models and set algebra, overlaps and counts, consensus and coverage, tokenization, fragment processing, and refget/BEDbase planning across Python, Rust, and the CLI. Native-code trust gate with exact version pins required.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "biology",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No data fabrication; operates on real genomic intervals with proper coordinate system documentation"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for genomic interval operations; clear boundaries for assembly, coordinate systems, and strand handling"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established BED format standards and genomic interval algebra; proper coordinate system (0-based, half-open)"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Complete working examples with native-code trust gate and 6 bundled deterministic validation CLIs"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive genomic interval operations with Python, Rust, and CLI interfaces; excellent 6-reference progressive disclosure; minor: CLI examples could be more explicit for 0.9.0 surface"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: explicit version pinning (Python 0.9.2, Rust 0.9.0), SHA-256 checksums, lockfile guidance, and stale-pattern migration warnings"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-structured 283-line SKILL.md with 6 reference files; clear sections; minor: density could be reduced with more reference delegation"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Strong trigger description with specific genomic operations; clear when-to-use patterns; minor: could benefit from explicit 'When NOT to Use' section"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent installation with uv, SHA-256 verification, native-code trust gate, and exact version pins; comprehensive safety protocols"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: native-code trust gate, network/cache controls, sensitive metadata guidance, patient split-leakage warnings, and bundled network-free validators"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.2, license notes, compatibility; migration traps documented; minor: no explicit changelog reference"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with genomic data contract; excellent validation CLIs; good progressive disclosure; minor: tokenizer/refget workflows could be more explicit about approval gates"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 94.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Local BED interval overlap and count operations",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete Python workflow with RegionSet construction and overlap operations",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "RegionSet construction from regions and vectors documented",
+            "result": "PASS",
+            "note": "Current Python core section shows from_regions and from_vectors clearly"
+          },
+          {
+            "text": "Overlap operations return correct types (counts, flags, indices, pieces)",
+            "result": "PASS",
+            "note": "count_overlaps, any_overlaps, find_overlaps, intersect_all all documented with return types"
+          },
+          {
+            "text": "Coordinate system (0-based, half-open) enforced",
+            "result": "PASS",
+            "note": "Genomic data contract explicitly documents [start, end) coordinate system"
+          },
+          {
+            "text": "BED validator script checks coordinate bounds",
+            "result": "PASS",
+            "note": "Bundled bed_validator.py with --require-sorted and coordinate checks"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Assembly-aware validation with chrom-sizes",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive assembly and contig contract enforcement",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Assembly accession recording required",
+            "result": "PASS",
+            "note": "Genomic data contract requires assembly accession/version and SHA-256 of chrom-sizes"
+          },
+          {
+            "text": "Contig name exact matching enforced (chr1 vs 1 not interchangeable)",
+            "result": "PASS",
+            "note": "Data contract explicitly states '1' and 'chr1' are not interchangeable"
+          },
+          {
+            "text": "bed_validator.py accepts assembly and chrom-sizes parameters",
+            "result": "PASS",
+            "note": "Example shows --assembly GRCh38.p14 --chrom-sizes flags"
+          },
+          {
+            "text": "u32 coordinate limit (4,294,967,295) documented",
+            "result": "PASS",
+            "note": "Coordinate section explicitly mentions u32 limit"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Tokenizer from local BED with universe",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Local tokenizer construction with network gate for remote pretrained models",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Tokenizer.from_bed(local-path) documented for local construction",
+            "result": "PASS",
+            "note": "Tokenizers section shows from_bed with local reviewed universe"
+          },
+          {
+            "text": "Tokenizer.from_pretrained contacts Hugging Face and requires approval",
+            "result": "PASS",
+            "note": "Explicitly documented with approval gate and immutable revision requirement"
+          },
+          {
+            "text": "Tokenize and encoding operations return input_ids",
+            "result": "PASS",
+            "note": "Example shows tokenize() and __call__ with input_ids extraction"
+          },
+          {
+            "text": "Network/cache gate documents side effects",
+            "result": "PASS",
+            "note": "Network gate section lists from_pretrained cache write side effect"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Consensus across multiple RegionSets",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Consensus in separate module with reduce/merge adjacency rules",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Consensus imported from gtars.genomic_distributions",
+            "result": "PASS",
+            "note": "Current Python core shows import from genomic_distributions"
+          },
+          {
+            "text": "Consensus returns list of dicts with chr, start, end, count",
+            "result": "PASS",
+            "note": "Example shows exact return structure with count field"
+          },
+          {
+            "text": "reduce() merges overlapping AND adjacent intervals documented",
+            "result": "PASS",
+            "note": "Data contract duplicates/adjacency section explains reduce() behavior"
+          },
+          {
+            "text": "Half-open overlap does not treat [0,10) and [10,20) as overlapping",
+            "result": "PASS",
+            "note": "Data contract explicitly notes adjacency is not overlap in ordinary operations"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Sensitive metadata leakage prevention",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Comprehensive leakage guidance but split policy could be more prominent",
+        "basic": 35,
+        "specialized": 52,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Genomic intervals and barcodes identified as sensitive",
+            "result": "PASS",
+            "note": "Sensitive metadata section explicitly lists intervals, barcodes, sample names as identifying"
+          },
+          {
+            "text": "Freeze splits by patient/donor first documented",
+            "result": "PASS",
+            "note": "Leakage section documents freezing splits before technical replicates"
+          },
+          {
+            "text": "Universe creation from all samples leaks validation/test support",
+            "result": "PASS",
+            "note": "Explicitly warns against creating universe from all samples then splitting"
+          },
+          {
+            "text": "Bundled reports redact paths and emit only counts/checksums",
+            "result": "FAIL",
+            "note": "Statement present but not demonstrated in all 6 bundled CLI descriptions"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Native-code trust gate and stale-pattern migration",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Excellent native-code trust gate and comprehensive stale-pattern warnings",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Native-code trust gate with SHA-256 verification documented",
+            "result": "PASS",
+            "note": "Trust gate section requires SHA-256 review before installing native wheel/binary"
+          },
+          {
+            "text": "Lockfile and artifact hash guidance provided",
+            "result": "PASS",
+            "note": "Trust gate explicitly mentions keeping lockfile and artifact hashes"
+          },
+          {
+            "text": "Stale patterns from older versions documented for removal",
+            "result": "PASS",
+            "note": "Migration traps section lists 10+ stale patterns with specific names"
+          },
+          {
+            "text": "Isolation and resource limits for builds recommended",
+            "result": "PASS",
+            "note": "Trust gate requires CPU/RAM/disk/time limits for untrusted builds"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 56.5,
+    "score": 94,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security posture with native-code trust gate, SHA-256 verification, network/cache controls, and patient split-leakage prevention",
+    "Perfect reliability with exact version pinning (Python 0.9.2, Rust 0.9.0), lockfile guidance, and comprehensive stale-pattern migration warnings",
+    "Comprehensive genomic data contract with assembly, coordinate system, contig, sorting, strand, and adjacency rules clearly documented",
+    "Six bundled deterministic, network-free validation CLIs (bed_validator, execution_plan, tokenizer_manifest, refget_digest_plan, coverage_preflight, artifact_inspector)",
+    "Excellent progressive disclosure with 6 focused reference files covering Python API, overlap, coverage, tokenizers, refget, and CLI"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit 'When NOT to Use' section",
+      "observed_in": [],
+      "problem": "No explicit scope exclusions for when gtars is inappropriate",
+      "root_cause": "Focus on safe usage patterns rather than scope boundaries",
+      "fix": "Add section: Do not use gtars for: layout-aware PDF visualization, gene expression analysis (use scanpy/anndata), phylogenetic trees (use etetoolkit), or chemical structure alignment"
+    },
+    {
+      "priority": "P2",
+      "title": "Demonstrate redaction in all bundled CLI descriptions",
+      "observed_in": [5],
+      "problem": "Redaction claim in sensitive metadata section but not shown in tool descriptions",
+      "root_cause": "Security statement not reinforced in tool reference",
+      "fix": "Add to each of the 6 CLI help outputs: explicit note that paths are redacted and only counts/checksums/hashes are emitted"
+    },
+    {
+      "priority": "P2",
+      "title": "Add changelog reference or version history link",
+      "observed_in": [],
+      "problem": "Version 1.2 specified but no changelog or version history location",
+      "root_cause": "Maintainability section missing explicit changelog pointer",
+      "fix": "Add to references section: link to skill changelog or note that upstream docs changelog stops at 0.5.1 and source tags should be consulted"
+    }
+  ]
+}

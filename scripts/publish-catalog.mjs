@@ -21,6 +21,7 @@ import { createPrivateKey } from "node:crypto";
 import { readBundle } from "./lib/bundle.mjs";
 import { signRoot } from "./lib/signing.mjs";
 import { publishSnapshot } from "./lib/publish.mjs";
+import { publishAuditCatalog } from "./lib/aipoch-audits.mjs";
 import {
   githubStore,
   s3Store,
@@ -122,6 +123,15 @@ try {
     baseRevision: context.baseRevision,
     history,
   });
+  const auditResult = await publishAuditCatalog({
+    root: candidate.root,
+    store: cdn,
+    signing: {
+      privateKey,
+      expectedPublicKey: pin,
+      keyId: process.env.SKILL_MARKETPLACE_KEY_ID,
+    },
+  });
   await writeFile(
     path.join(values.candidate, "marketplace.json.sig"),
     jsonBytes(signature),
@@ -132,7 +142,7 @@ try {
       `revision=${candidate.root.revision}\n`,
       { flag: "a" },
     );
-  process.stdout.write(metadataJsonBytes(result));
+  process.stdout.write(metadataJsonBytes({ ...result, ...auditResult }));
 } finally {
   await rm(temporary, { recursive: true, force: true });
 }
