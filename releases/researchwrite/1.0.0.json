@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "researchwrite",
+    "version": "1.0.0",
+    "display_name": "researchwrite",
+    "summary": "Proposal-first scientific writing pipeline, installed under the compatibility trigger researchwrite and the repository package name nature-proposal-writer. Use for composing, revising, or auditing research proposals, opening reports, research plans, and evidence-grounded scientific writing. Three modes (compose/revise/hybrid) with a four-layer QA pipeline. Enforces evidence-before-prose, argument-before-sections, and contracts-before-paragraphs.\n",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-proposal-writer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/skills/nature-proposal-writer/SKILL.md",
+          "sha256": "aed7568f8e9fc99e7dad2d2257d2beadd47570b875071cadb29406f2c84a9c2c"
+        },
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Preserve the declared Skill author and the original MIT declaration, together with the repository Apache-2.0 notice. The package contains its own workflow references/templates; messaging, scheduling, document-export and literature-service integrations require a configured host environment. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "d54969f0aadd551324ec628105a7916d050c184aba7445748a98d24a72d6f4f9",
+    "file_count": 35,
+    "uncompressed_bytes": 114294
+  },
+  "artifact": {
+    "path": "shards/fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70.zip",
+    "sha256": "fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70",
+    "bytes": 244577,
+    "skill_path": "researchwrite"
+  }
+}

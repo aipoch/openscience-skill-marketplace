@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "datamol",
+    "version": "1.0.0",
+    "display_name": "datamol",
+    "summary": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3D conformers, parallel processing. Returns native rdkit.Chem.Mol objects. For advanced control or custom parameters, use rdkit directly.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/datamol"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "Apache-2.0 license",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/skills/datamol/SKILL.md",
+          "sha256": "41062cea6b8a15e33910984321e6572e189df539b5303af5fe258df6af449ff2"
+        },
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "b6cd9bb189f2d3f7ddf8b957fed17ffed61c21cb049aa03121dd0d2f45291094",
+    "file_count": 10,
+    "uncompressed_bytes": 58368
+  },
+  "artifact": {
+    "path": "shards/fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70.zip",
+    "sha256": "fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70",
+    "bytes": 244577,
+    "skill_path": "datamol"
+  }
+}

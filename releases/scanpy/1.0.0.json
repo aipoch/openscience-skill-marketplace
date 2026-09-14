@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "scanpy",
+    "version": "1.0.0",
+    "display_name": "scanpy",
+    "summary": "Standard single-cell RNA-seq analysis pipeline. Use for QC, normalization, dimensionality reduction (PCA/UMAP/t-SNE), clustering, differential expression, visualization, and converting R-friendly single-cell formats such as Seurat or SingleCellExperiment RDS files into h5ad for Scanpy. Best for exploratory scRNA-seq analysis with established workflows. For deep learning models use scvi-tools; for data format questions use anndata.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/scanpy"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "BSD-3-Clause",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/skills/scanpy/SKILL.md",
+          "sha256": "3ca2db22fb47dff7f49504816dba3f4600e1290c4731459b44355837955ed9ba"
+        },
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "bc9aee5c5b41bf0d58f861583a1097bdcddce952a61479ba6aa6b3fcb9f52736",
+    "file_count": 26,
+    "uncompressed_bytes": 122831
+  },
+  "artifact": {
+    "path": "shards/fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70.zip",
+    "sha256": "fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70",
+    "bytes": 244577,
+    "skill_path": "scanpy"
+  }
+}

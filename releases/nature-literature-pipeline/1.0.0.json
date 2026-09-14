@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "nature-literature-pipeline",
+    "version": "1.0.0",
+    "display_name": "nature-literature-pipeline",
+    "summary": "Complete automated literature discovery pipeline: multi-source search → six-dimension scoring → fine reading → formatted delivery → archival.\nCombines a configurable engine with daily cron-driven application layer. Works with Feishu, Telegram, or any messaging platform.\n",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "path": "skills/nature-literature-pipeline"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "Jiahao8595"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/skills/nature-literature-pipeline/SKILL.md",
+          "sha256": "1dcaa692457ec9c2be409cb7777f834a2db833788b2e9b680baf0e961126b01a"
+        },
+        {
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/558eae555d64e09b152efc449ca274bbd7747947/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Preserve the declared Skill author and the original MIT declaration, together with the repository Apache-2.0 notice. The package contains its own workflow references/templates; messaging, scheduling, document-export and literature-service integrations require a configured host environment. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "5cc59159299e144677783f716f981895d7655dc660ba2e223a17e5b73d4b1966",
+    "file_count": 13,
+    "uncompressed_bytes": 48236
+  },
+  "artifact": {
+    "path": "shards/fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70.zip",
+    "sha256": "fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70",
+    "bytes": 244577,
+    "skill_path": "nature-literature-pipeline"
+  }
+}

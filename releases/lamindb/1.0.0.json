@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "lamindb",
+    "version": "1.0.0",
+    "display_name": "lamindb",
+    "summary": "Use when working with LaminDB, the open-source lineage-native lakehouse for biological datasets and models. Covers setup, artifact registration, query/search, lineage tracking, validation, ontology-backed annotation with Bionty, collections, branches, storage, and workflow integrations.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/lamindb"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "Apache-2.0 license",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/skills/lamindb/SKILL.md",
+          "sha256": "68822136d375fd36aac118081b82443d7062e9ea310d49a692a910b05329ac1b"
+        },
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "23ea6afd6b793863a6807f60cf5ed1d848c7f00d29b23240d22fb81d00bb8c0c",
+    "file_count": 8,
+    "uncompressed_bytes": 94257
+  },
+  "artifact": {
+    "path": "shards/fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70.zip",
+    "sha256": "fbeb5f12afe3c0c6924b0974d44144de230c07662f05cd53d487f267a6a0eb70",
+    "bytes": 244577,
+    "skill_path": "lamindb"
+  }
+}
