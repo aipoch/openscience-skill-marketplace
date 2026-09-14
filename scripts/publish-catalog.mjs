@@ -9,7 +9,10 @@ import {
   assertReleaseSelection,
 } from "./lib/release-plan.mjs";
 import { validateManifest } from "./lib/catalog.mjs";
-import { readProductionProviders } from "./lib/production-providers.mjs";
+import {
+  readProductionProviders,
+  assertProviderHistory,
+} from "./lib/production-providers.mjs";
 import { parseArgs } from "node:util";
 import { readFile, writeFile, mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
@@ -73,11 +76,12 @@ const selected = selectReleaseEntries(
   manifest.entries,
   config.source,
 );
-const providers = await readProductionProviders(manifest.entries);
+const providers = await readProductionProviders(selected);
 assertReleaseSelection(candidate.root, selected, config.source, providers);
 const state = await publishedState();
 const metadata = state ? publishedMetadata(state) : new Map();
 const history = await publicationParent(candidate, metadata, pin);
+assertProviderHistory(providers, history);
 if (candidate.objects.size + 2 > 1000)
   throw new Error("snapshot exceeds the 1000-asset publication limit");
 const privateKey = createPrivateKey({

@@ -1,7 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { parseProductionProviders } from "../scripts/lib/production-providers.mjs";
+import {
+  parseProductionProviders,
+  assertProviderHistory,
+} from "../scripts/lib/production-providers.mjs";
 import { metadataJsonBytes } from "../scripts/lib/metadata-json.mjs";
 
 const release = {
@@ -57,14 +60,68 @@ test("production registration rejects malformed, implicit, duplicate and legacy 
   );
 });
 
-test("registered providers remain disjoint from the frozen original authority", async () => {
+test("registered providers remain disjoint from selected original IDs", async () => {
   const manifest = JSON.parse(
     await readFile(new URL("../skills/manifest.json", import.meta.url)),
   );
+  const plan = JSON.parse(
+    await readFile(new URL("../skills/release_plan.json", import.meta.url)),
+  );
   const releases = parseProductionProviders(
     await readFile(new URL("../authoring/production.json", import.meta.url)),
-    manifest.entries,
+    plan.selected,
   );
   assert.equal(manifest.entries.length, 584);
   assert.equal(new Set(releases.map((r) => r.id)).size, releases.length);
+});
+
+test("deferred IDs can select a source but authenticated published IDs cannot change origin", () => {
+  const selectedOriginals = [{ id: "already-selected" }];
+  assert.deepEqual(parse(register(), selectedOriginals), [release]);
+  assert.throws(
+    () =>
+      parse(
+        register([{ ...release, id: "already-selected" }]),
+        selectedOriginals,
+      ),
+    /duplicate/,
+  );
+  const history = {
+    root: { skills: [] },
+    objects: new Map([
+      [
+        "releases/provider-skill/1.0.0.json",
+        Buffer.from(JSON.stringify({ skill: release })),
+      ],
+    ]),
+  };
+  assert.doesNotThrow(() => assertProviderHistory([release], history));
+  assert.doesNotThrow(() =>
+    assertProviderHistory(
+      [
+        {
+          ...release,
+          version: "2.0.0",
+          source: { ...release.source, commit: "b".repeat(40) },
+        },
+      ],
+      history,
+    ),
+  );
+  assert.doesNotThrow(() =>
+    assertProviderHistory([{ ...release, id: "never-published" }], history),
+  );
+  for (const source of [
+    { ...release.source, repository: "https://github.com/another/skills" },
+    { ...release.source, path: "skills/another-directory" },
+  ]) {
+    assert.throws(
+      () =>
+        assertProviderHistory(
+          [{ ...release, version: "2.0.0", source }],
+          history,
+        ),
+      /published Skill source cannot be replaced/,
+    );
+  }
 });

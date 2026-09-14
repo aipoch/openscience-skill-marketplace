@@ -30,10 +30,10 @@ const selected = selectReleaseEntries(
   config.source,
 );
 const fixtures = await readBundle("protocol/fixtures/snapshot");
-const providers = await readProductionProviders(manifest.entries);
+const providers = await readProductionProviders(selected);
 const submissions = parseSubmissionIndex(
   await readFile("authoring/submissions/index.json"),
-  manifest.entries,
+  selected,
   providers,
 );
 assert.equal(fixtures.root.skills.length, 2);

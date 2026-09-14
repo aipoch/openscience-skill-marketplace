@@ -171,18 +171,24 @@ The original single-manifest command remains valid.
 `intake:skill` produces unsigned local artifacts only. Production enrollment is
 explicitly maintained in [`production.json`](production.json): `schema_version: 1`
 and a `releases` array of the same strict release-config objects described above.
-The register currently selects `scientific-brainstorming` and
-`get-available-resources` from the fixed K-Dense source, alongside the 394 selected
-original members. It also registers 25 reviewed NVIDIA BioNeMo Skills at commit
-`0e67a612e4045f007e38fa77adc8f3ebfc5616b6`. Review records remain in `skills/reviews.json` and bind every
+The register selects 394 original members, 13 K-Dense Skills and 25 NVIDIA
+BioNeMo Skills. The 11 newly selected K-Dense entries use commit
+`36d8f13a1e754618794bf42f417884940077b4ae`; earlier releases keep their exact
+sources. Review records remain in `skills/reviews.json` and bind every
 provider's manifest, source and license bytes. A registration without approved
 review evidence fails the build.
 
-Registered Skill IDs must be unique and disjoint from all 584 original manifest members,
-including deferred members. Two IDs cannot register the same provider directory.
+Registered Skill IDs must be unique and disjoint from the selected original
+members. An ID deferred in the historical manifest and never published may
+explicitly select a reviewed provider source. Two IDs cannot register the same
+provider directory.
 Do not rename an existing Skill to evade this gate: check semantic duplicates
 and original-name aliases during maintainer review. The original authority and
-its deferrals remain unchanged. Files under `authoring/submissions/` are never
+its deferrals remain unchanged as observations of those original source bytes.
+Authenticated publication history prevents replacing the repository or directory
+of any published ID, including retained releases absent from the current listing.
+A new commit from the same source still requires a reviewed package version;
+immutable published releases cannot be overwritten. Files under `authoring/submissions/` are never
 automatically enrolled. Adding a new provider remains a maintainer decision.
 
 The shared validation/publication commands read this explicit register:
@@ -259,7 +265,7 @@ Do not combine same-name alternatives by overwriting review records. The queue
 does not alter existing authoring, production, or public protocol versions.
 
 Queue validation checks config references, provider/source identities, counters,
-states and runtime-ID collisions against the historical authority and production
+states and runtime-ID collisions against the selected originals and production
 register. License blockers and review flags are recorded review observations;
 index validation does not inspect upstream license bytes or grant approval.
 

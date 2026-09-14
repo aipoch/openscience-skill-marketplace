@@ -7,16 +7,16 @@ import { metadataJsonBytes } from "../scripts/lib/metadata-json.mjs";
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url));
 const original = JSON.parse(read("authoring/submissions/index.json"));
-const authority = JSON.parse(read("skills/manifest.json")).entries;
+const selectedOriginals = JSON.parse(read("skills/release_plan.json")).selected;
 const production = JSON.parse(read("authoring/production.json")).releases;
 const parse = (wire, releases = production) =>
-  parseSubmissionIndex(JSON.stringify(wire), authority, releases);
+  parseSubmissionIndex(JSON.stringify(wire), selectedOriginals, releases);
 
 test("queue keeps provider identity outside v1 configs and decodes JSON at the boundary", () => {
   const index = parse(original);
   assert.equal(index.schemaVersion, 1);
   assert.equal(index.summary.recordCount, 192);
-  assert.equal(index.summary.runtimeIdCollisions, 166);
+  assert.equal(Object.hasOwn(index.summary, "runtime_id_collisions"), false);
   assert.equal(index.submissions[0].providerId, "google-deepmind");
   assert.equal(Object.hasOwn(index.submissions[0], "provider_id"), false);
   assert.deepEqual(JSON.parse(metadataJsonBytes(index)), original);

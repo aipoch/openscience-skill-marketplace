@@ -30,7 +30,7 @@ const commits = new Set([
   config.source.commit,
   ...selected.map((entry) => entry.sourceCommit ?? config.source.commit),
 ]);
-const providers = await readProductionProviders(manifest.entries);
+const providers = await readProductionProviders(selected);
 function ensureCommit(directory, repository, commit) {
   const args = ["-C", directory];
   const existing = spawnSync("git", [...args, "cat-file", "-t", commit], {
