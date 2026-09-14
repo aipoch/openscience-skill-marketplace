@@ -173,7 +173,8 @@ explicitly maintained in [`production.json`](production.json): `schema_version: 
 and a `releases` array of the same strict release-config objects described above.
 The register currently selects `scientific-brainstorming` and
 `get-available-resources` from the fixed K-Dense source, alongside the 394 selected
-original members. Review records remain in `skills/reviews.json` and bind every
+original members. It also registers 25 reviewed NVIDIA BioNeMo Skills at commit
+`0e67a612e4045f007e38fa77adc8f3ebfc5616b6`. Review records remain in `skills/reviews.json` and bind every
 provider's manifest, source and license bytes. A registration without approved
 review evidence fails the build.
 

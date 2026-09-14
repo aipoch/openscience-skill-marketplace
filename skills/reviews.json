@@ -5239,5 +5239,769 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-13",
     "exception_reason": "The original K-Dense Skill explicitly declares \"MIT license\" and credits K-Dense Inc.; LICENSE.md at the same pinned commit supplies its complete MIT grant and copyright notice. Preserve the literal declaration and original payload; this spelling exception does not substitute another license. The build retains LICENSE.md under LICENSES by its digest."
+  },
+  "boltz2-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/boltz2-nim",
+    "manifest_sha256": "204ffb144e76c6525c522fde1ae91b4ae9b2b97a464e89c66ced7c2d9ede4c97",
+    "content_sha256": "6028b2a6779016c86c5dc2a9483313b67dedd9e6570af7f3cf32abc9739207db",
+    "file_count": 10,
+    "total_bytes": 29657,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "complexa-binder-design@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/complexa-binder-design",
+    "manifest_sha256": "8273a0af8ac72fcb52e52171b786642acbc2d29369be1aadfedb79e385215868",
+    "content_sha256": "c9d6de07bb0fc4d3952ee2f0efb24b6c9ed157285f6fc12d5784aa6ff1a01b5d",
+    "file_count": 36,
+    "total_bytes": 292412,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "diffdock-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/diffdock-nim",
+    "manifest_sha256": "a4799a165990d447b89e68258429b391847c9fd5aee5a1e054ce194e216a4aec",
+    "content_sha256": "c2ee9458d12ddfa6608f3364fce8063454914faa75f1cfa3ec6c2c695376827e",
+    "file_count": 11,
+    "total_bytes": 280274,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data. Bundled PDB fixtures match the official RCSB downloads byte-for-byte (1M17 or 1R42); PDB archive data are CC0 under https://www.wwpdb.org/about/usage-policies. Their original headers and attribution remain intact."
+  },
+  "drug-discovery-pipeline@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/drug-discovery-pipeline",
+    "manifest_sha256": "31e8ff370544692eb5c111a46d3e087675dbec0a1dea953247fbc9f12774826d",
+    "content_sha256": "df29dc43ea301109128184e076f1428be3fd545dadf55f283fa40a85ddd24a81",
+    "file_count": 4,
+    "total_bytes": 272659,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data. Bundled PDB fixtures match the official RCSB downloads byte-for-byte (1M17 or 1R42); PDB archive data are CC0 under https://www.wwpdb.org/about/usage-policies. Their original headers and attribution remain intact."
+  },
+  "evo2-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/evo2-nim",
+    "manifest_sha256": "142a0f502366905a0ec98593952336761bddba771ad660512a8c29bbb16025e4",
+    "content_sha256": "70812f93c07370d1b21eefcdbb971e961279a280c7c01eba47f48e6c119e8656",
+    "file_count": 10,
+    "total_bytes": 34106,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "genmol-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/genmol-nim",
+    "manifest_sha256": "603b2bf76c08d4a24966dd2de71ef3390d9080a4c2a1647a7b06d03ca454f0a4",
+    "content_sha256": "44f8a9a89514eab92b1a2e9245aeed52cec5e2cd737bbc4d9c68150f14ee1668",
+    "file_count": 10,
+    "total_bytes": 28503,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "genomics-workflow-acceleration@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/genomics-workflow-acceleration",
+    "manifest_sha256": "47981e339cc2e25dad82f6ec96059455b900b5273a5e180c7e0990cb53644ebc",
+    "content_sha256": "9ac0f8b3348d88aa3400df38e0af0e450dd800bdd74292a206330f4aa5abb320",
+    "file_count": 9,
+    "total_bytes": 40847,
+    "license_expression": "CC-BY-4.0 AND Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "kermt-add-cmim-pretrain@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-add-cmim-pretrain",
+    "manifest_sha256": "eaa8d698b0551d14877b117be09121be225535942acadb7998ef3c66ff3e0b15",
+    "content_sha256": "5734461cf76797382ab9d48ce37f9ca65047f5cacf121596d7503700767814f3",
+    "file_count": 2,
+    "total_bytes": 14043,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-continue-pretrain@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-continue-pretrain",
+    "manifest_sha256": "8cb92e462040d83611f2ce624489945e51e4656571aadaee19bdadcd368942f5",
+    "content_sha256": "44ce39d82ba452975341884e07e2d5054cdaffbe7738474c3b1dfde5317ac078",
+    "file_count": 2,
+    "total_bytes": 23147,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-embed@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-embed",
+    "manifest_sha256": "8509b6a81dbc54609fd9c7b0d7235f5236309cfecf41882f0e13822b19001fcb",
+    "content_sha256": "e3b9613f4875a9fdc3e97cb67dd83b71b4041e92bc5b96b5b2e653998a45ad01",
+    "file_count": 2,
+    "total_bytes": 13764,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-finetune@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-finetune",
+    "manifest_sha256": "f82abe8352a5f25b9d1af503667239915a19e14aebe164b2b8c7159d963ff414",
+    "content_sha256": "896b7104716077608cd36009117c8ac68234d2d6fd98c3a31a87e930cc70b73d",
+    "file_count": 2,
+    "total_bytes": 23039,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-infer@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-infer",
+    "manifest_sha256": "16f6b5ec9cd9edfdf6772614c2de5b5fb4ae4af4f16c50e96460bc477d1dbde9",
+    "content_sha256": "5110ed1ea2d52e4dfedf979a06a026ebaa25615322e8e203cecdfb542693641c",
+    "file_count": 2,
+    "total_bytes": 11318,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-monitor@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-monitor",
+    "manifest_sha256": "491c0c59fc476a123b3e77ab441001fabb3504268504456c9c17626fffe263da",
+    "content_sha256": "5859c8ae1ef9a096e8e6203a46b879dc1d9724885f0fe4f55d5c5f87381f0a01",
+    "file_count": 2,
+    "total_bytes": 11787,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-pretrain-scratch@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-pretrain-scratch",
+    "manifest_sha256": "7e975b25e5d6935cd60b0ef1e56706a1ed1f0a398e778e051460dda448f42acf",
+    "content_sha256": "e52af2fd130762b30d3169300350f220e4d921512d028beecc0e1ae240cd19f8",
+    "file_count": 2,
+    "total_bytes": 14930,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "kermt-setup@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/kermt-setup",
+    "manifest_sha256": "861d22cc02c5368134577046440674d1fe6055314dac1678c6b5590a9b8a5708",
+    "content_sha256": "028e8d3c2fca34f3987a1203630a15e2ee0cc0626bd2dd1a2cfd25448aa16156",
+    "file_count": 2,
+    "total_bytes": 10882,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "molmim-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/molmim-nim",
+    "manifest_sha256": "417230f21c73ca6c80aeddd9d4adc3321922b6625483e666fd5bee5652cfa16f",
+    "content_sha256": "12822f9f87da712487ab437dac90b8f072b94dd10e566d98199a2ba6d4734aa1",
+    "file_count": 10,
+    "total_bytes": 31369,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "msa-search-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/msa-search-nim",
+    "manifest_sha256": "beedd6c127a439035c6fadfba2e70d58b452972402a66765357ab84fcc933889",
+    "content_sha256": "e7ff11fba32a4a019879dbf5bcaa0fd3941ef058773ad7138b70802fd70adc24",
+    "file_count": 10,
+    "total_bytes": 42354,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "msa-structure-prediction-pipeline@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/msa-structure-prediction-pipeline",
+    "manifest_sha256": "ac401f0422290a875b56f394107754774a0375c042244e0a2be799aeac908c34",
+    "content_sha256": "626d8baa59dfb1a62db0ebdaf810d045ba4918366d2e494c07a2190470423de9",
+    "file_count": 2,
+    "total_bytes": 16301,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "nvmolkit-usage@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/nvmolkit-usage",
+    "manifest_sha256": "5fa1b2959ee0e5fef121ab96ff40980284b9111bca32c1bd99fbf6d45b14fecb",
+    "content_sha256": "eedb257f6ff13ef2fa0f6baaed259446878ba4e4e0898933b85c6bd01db20ad0",
+    "file_count": 6,
+    "total_bytes": 53178,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "openfold2-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/openfold2-nim",
+    "manifest_sha256": "1d360c98002f802d8278bfb9796c965b8599d1456cae2d928a302268bd3aee12",
+    "content_sha256": "6d6955b9f1149c0e904d7797d864820efe9de8e5c456f4df21b7005f6277dc79",
+    "file_count": 10,
+    "total_bytes": 32315,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "openfold3-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/openfold3-nim",
+    "manifest_sha256": "26c8daa097f121b6d16377f81b1c3181ecb03e3b146f923fae84abe15aa2d5a2",
+    "content_sha256": "fcedaa5ac08ab25a182edc866861d0048535bbc74573d7720060d4de60deac03",
+    "file_count": 9,
+    "total_bytes": 34579,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "parabricks@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/parabricks",
+    "manifest_sha256": "02be795eb4ef0f5b471ee79f2cbb73e54e244131af12c6973134457331a45ff3",
+    "content_sha256": "48a325059a901c1a2a62faf426f67598ee947af5b900dc90eec8e2c50086cd4f",
+    "file_count": 36,
+    "total_bytes": 210948,
+    "license_expression": "CC-BY-4.0 AND Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "protein-binder-design@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/protein-binder-design",
+    "manifest_sha256": "461838e2eae3cda6483634d7cbb3a22dea219ed872fa565c8168ac9525f158a2",
+    "content_sha256": "53ae5f16f62b1b77c7aaccc61040bc82355ad6d8f2d60138463288c55fb660e1",
+    "file_count": 15,
+    "total_bytes": 53580,
+    "license_expression": "Apache-2.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "proteinmpnn-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/proteinmpnn-nim",
+    "manifest_sha256": "df0cba4cc5bf454970f11411bb0b22b6f835b291b336d10d3527a2f1d5df461a",
+    "content_sha256": "781dd043d64a880cfc16414fc973de37c65e7a01c98f1c116b9c6e70c2763339",
+    "file_count": 18,
+    "total_bytes": 1048534,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data. Bundled PDB fixtures match the official RCSB downloads byte-for-byte (1M17 or 1R42); PDB archive data are CC0 under https://www.wwpdb.org/about/usage-policies. Their original headers and attribution remain intact."
+  },
+  "rfdiffusion-nim@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/rfdiffusion-nim",
+    "manifest_sha256": "4b20f843a342244ae25f422a7babdd48c1a98d2e8b5fe98d7ff4e10f5a86f8b2",
+    "content_sha256": "a1c85142a2207f7937071622381d93a5210ce9441e3a956e4bc0972647bec67f",
+    "file_count": 10,
+    "total_bytes": 24170,
+    "license_expression": "Apache-2.0 AND CC-BY-4.0",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
   }
 }
