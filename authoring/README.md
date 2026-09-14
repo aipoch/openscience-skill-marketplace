@@ -45,8 +45,12 @@ Instructions for using the Skill, followed by any required documentation.
 ```
 
 `name` and `description` are required nonempty strings. A per-Skill license
-declaration at `license` or `metadata.license` is preserved when present; naming a
-license does not establish redistribution permission. An entirely absent
+declaration at `license` or `metadata.license` is the primary declaration when
+present. Include that `SKILL.md` in `license_files` when it establishes the
+package-specific declaration. A different repository-root license alone does not
+reject or relabel the Skill; retain applicable root and third-party notices with
+their own scope. Preserve non-SPDX labels verbatim rather than inferring a variant.
+Naming a license does not establish permission for unrelated third-party content. An entirely absent
 declaration may proceed to manual evidence review as described below. Empty, null
 or malformed declarations are rejected. A nonempty author string at `author`,
 `metadata.author` or `metadata.skill-author` is preserved as an attribution claim
@@ -182,8 +186,8 @@ The original single-manifest command remains valid.
 `intake:skill` produces unsigned local artifacts only. Production enrollment is
 explicitly maintained in [`production.json`](production.json): `schema_version: 1`
 and a `releases` array of the same strict release-config objects described above.
-The register selects 394 original members and 51 provider Skills: 19 K-Dense,
-26 NVIDIA BioNeMo, one Google DeepMind and five Nature entries. Eight additions
+The register selects 394 original members and 58 provider Skills: 23 K-Dense,
+26 NVIDIA BioNeMo, one Google DeepMind and eight Nature entries. Eight additions
 with absent per-Skill license declarations have explicit `Unknown` reviews with
 retained license evidence. Five database Skills additionally preserve their original
 K-Dense `Unknown` declarations, authors and MIT evidence at

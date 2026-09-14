@@ -10,11 +10,11 @@ and path. Skill payloads and archive-added evaluation files are not committed.
 | Provider           | Records | Missing Skill license (intake) | Runtime-ID collision | License-policy review |
 | ------------------ | ------: | -----------------------------: | -------------------: | --------------------: |
 | Google DeepMind    |       7 |                              7 |                    7 |                     0 |
-| K-Dense AI         |      56 |                              2 |                   49 |                    27 |
+| K-Dense AI         |      56 |                              2 |                   53 |                    27 |
 | NVIDIA BioNeMo     |      31 |                              6 |                   26 |                    14 |
-| Synthetic Sciences |      78 |                             14 |                   71 |                    63 |
-| Yuan1z0825         |      20 |                             17 |                    5 |                     0 |
-| **Total**          | **192** |                         **46** |              **158** |               **104** |
+| Synthetic Sciences |      78 |                             14 |                   75 |                    63 |
+| Yuan1z0825         |      20 |                             17 |                    8 |                     0 |
+| **Total**          | **192** |                         **46** |              **169** |               **104** |
 
 There are 130 unique runtime Skill IDs. All release configs use authoring v1.
 Provider identity and the provider-qualified candidate key exist only in this
@@ -51,9 +51,10 @@ combined-license expressions have package-specific review exceptions, with both
 license texts and NVIDIA attribution retained. No global allowlist is expanded.
 
 The three Nature entries declaring MIT (`nature-experiment-log`,
-`nature-literature-pipeline`, `researchwrite`) remain unregistered: their selected
-`LICENSE` evidence at the pinned commit contains Apache-2.0 rather than a complete
-MIT grant. Resolve this evidence mismatch before production review.
+`nature-literature-pipeline`, `researchwrite`) are now registered using their
+specific `SKILL.md` declarations as primary evidence. The repository Apache-2.0
+notice is retained as an upstream notice; it does not replace the MIT declarations.
+Each declaration and notice is hashed at the fixed source commit.
 
 Eleven never-published IDs now select K-Dense at
 `36d8f13a1e754618794bf42f417884940077b4ae`: `clinical-decision-support`,
@@ -67,17 +68,23 @@ statically, not executed; scientific dependencies and external service credentia
 remain runtime prerequisites.
 
 All 44 K-Dense/Synthetic alternatives for the 25 previously unpublished IDs were
-inspected at their configured commits. Seven IDs in that comparison remain unregistered after the reviewed additions
-and original-source selections below:
+inspected at their configured commits. Three IDs in that comparison remain
+unregistered after the reviewed additions and original-source selections below:
 
-| IDs                  | Unresolved evidence at the pinned sources                                                                                                                                                                                                      |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `datamol`, `lamindb` | K-Dense declares Apache-2.0 but supplies a root MIT notice. Synthetic supplies Apache-2.0, but shared or substantially overlapping K-Dense reference files lack corresponding K-Dense attribution; resolve provenance and license scope first. |
-| `deeptools`          | Ambiguous `BSD license` declaration with MIT (K-Dense) or Apache-2.0 (Synthetic) evidence.                                                                                                                                                     |
-| `matplotlib`         | Per-Skill license points to an unpinned external license directory; selected root evidence does not establish the declared license scope.                                                                                                      |
-| `rowan`              | Both variants declare proprietary API terms without a corresponding content redistribution grant.                                                                                                                                              |
-| `scanpy`             | K-Dense declares BSD-3-Clause but supplies MIT evidence; Synthetic declares the unresolved literal `SD-3-Clause license` and supplies Apache-2.0.                                                                                              |
-| `venue-templates`    | K-Dense includes Elsevier LPPL bibliography/style templates beyond its root MIT notice; complete applicable license evidence is missing. Synthetic lacks a per-Skill declaration.                                                              |
+| IDs               | Remaining issue at the pinned sources                                                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `matplotlib`      | The declaration points to an external license directory rather than concrete terms retained at the Skill commit; the applicable evidence still needs to be pinned and packaged. |
+| `rowan`           | The specific declaration is `Proprietary (API key required)`; it does not supply content redistribution terms.                                                                  |
+| `venue-templates` | The MIT Skill includes separately licensed Elsevier LPPL bundle files; the applicable complete redistribution evidence remains unresolved.                                      |
+
+`datamol`, `lamindb`, `scanpy` and `deeptools` now select the original K-Dense
+source with `SKILL.md` as primary license evidence and the unchanged root MIT
+notice retained for upstream attribution. Their exact declarations remain
+`Apache-2.0 license`, `Apache-2.0 license`, `BSD-3-Clause` and `BSD license`.
+The last label does not specify a BSD variant; no variant is inferred. A different
+root notice alone is not a rejection reason or permission to replace a per-Skill
+expression. These packages contain guides, examples and helpers; the scientific
+libraries remain external dependencies.
 
 These are source-review observations, not a finding that the upstream software is
 unusable or a new publication-state enum. The original missing-license and policy
@@ -131,8 +138,15 @@ source, and no additional runtime ID is introduced outside the PR #32 list.
 External database access, endpoint availability, credentials and Python libraries
 remain runtime prerequisites, not independently verified Marketplace guarantees.
 
-The queue now has 103 of its 130 distinct IDs in production and 27 still deferred.
+The queue now has 110 of its 130 distinct IDs in production and 20 still deferred.
 The NVIDIA cuEquivariance original source was also examined at the aggregation's
 referenced commit `37e2dfea9bdca4b84bfedeb2da7433bf5a484a6e`; its package directory
 contains a `VERSION` symlink, which the current portable package contract rejects.
 It is not silently resolved or removed to make the package pass.
+
+The seven entries admitted under per-Skill license priority form one combined
+release, with no fixed-size batch cap. Their source bytes and actual authors are
+preserved; no evaluation is fabricated. Root notices remain supplemental evidence,
+while independently licensed third-party materials keep their own requirements.
+This review changes catalog membership and evidence selection only, without
+changing schemas, App states or dependency installation behavior.
