@@ -1304,6 +1304,11 @@
       "version": "1.0.0"
     },
     {
+      "id": "research-proposal-generator",
+      "version": "1.0.0",
+      "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
+    },
+    {
       "id": "residency-interview-prep",
       "version": "1.0.0"
     },
@@ -1682,7 +1687,7 @@
     {
       "id": "discharge-summary-writer",
       "version": "1.0.0",
-      "reason": "Documented package references are absent from the pinned Skill directory: references/medical_terms.js. Source completeness review is pending."
+      "reason": "The main JSON-to-summary command exists and does not load the absent terminology file, but the documented --template is unsupported and --language is accepted without affecting the generated text. Verify the advertised template/language contract before publication."
     },
     {
       "id": "graph-interpretation",
@@ -1707,7 +1712,7 @@
     {
       "id": "linkedin-optimizer",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/linkedin_optimizer.py, references/linkedin-examples.md, references/keywords-by-specialty.json (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The documented linkedin_optimizer.py API is absent. scripts/main.py accepts no user input and always renders a fixed cardiology profile with invented publication and clinical-trial achievements. Verify real profile input handling before publication."
     },
     {
       "id": "literature-review",
@@ -1727,7 +1732,7 @@
     {
       "id": "meta-manuscript-generator",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/writing-guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The available helper searches a hardcoded 2020-2025 window despite the rolling five-year instruction. Reference insertion also renumbers standalone numeric brackets throughout the article, including Methods/Results that SKILL.md requires preserving. Verify these behavior contracts before publication; writing-guide-en.md is present."
     },
     {
       "id": "method-writing",
@@ -1752,7 +1757,7 @@
     {
       "id": "personal-statement",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/personal-statement-examples.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The documented personal_statement_writer.py API is absent. scripts/main.py accepts no user input and always renders a fixed patient-care example. Verify the advertised input and generation contract before publication."
     },
     {
       "id": "prior-auth-letter-drafter",
@@ -1777,7 +1782,7 @@
     {
       "id": "sample-size-power-calculator",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/main.py, references/audit-reference.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Recovered d915031495e1c755d272c3de817ee3fc012e8b7b restores main.py, but the documented --test ttest is unsupported (the CLI accepts ttest-ind/ttest-paired), and --test noninf reaches an unassigned result variable. Verify the actual supported calculation and CLI contract before publication."
     },
     {
       "id": "target-journal-matcher",
@@ -1977,7 +1982,7 @@
     {
       "id": "model-calibration-curve",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/install_dependencies.R. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Bundled tests/data/sample_clinical_survival_data.csv contains TCGA identifiers, survival outcomes and derived risk scores. Establish its dataset origin, transformations and redistribution evidence before publication; illustrative SAMPLE IDs in SKILL.md do not establish that the bundled data are synthetic."
     },
     {
       "id": "neoantigen-predictor",
@@ -1987,7 +1992,7 @@
     {
       "id": "nomogram-construction",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/install_dependencies.R. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Bundled tests/data/yuhou_cli_data.csv contains TCGA identifiers, survival outcomes and derived risk scores, with serialized expected model/data outputs. Establish dataset origin, transformations and redistribution evidence before publication."
     },
     {
       "id": "pathml",
@@ -2087,7 +2092,7 @@
     {
       "id": "spatial-transcriptomics-mapper",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/generate_test_data.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The absent generate_test_data.py is only a test-data helper. The actual implementation silently skips Xenium multi-gene rendering because _plot_gene_on_axis and _plot_genes_overlay return for non-Visium data, despite the documented Xenium multi-gene example. Verify the advertised rendering paths before publication."
     },
     {
       "id": "ssgsea-immune-infiltration-analysis",
@@ -2147,7 +2152,7 @@
     {
       "id": "wgcna-analysis",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/diagnosis-report.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Bundled tests/data/expression.csv and group.csv contain TCGA sample identifiers, expression values and assigned Case/Control groups. Establish dataset origins, transformations, group-label evidence and redistribution terms before publication."
     },
     {
       "id": "xgboost-analysis",
@@ -2362,7 +2367,7 @@
     {
       "id": "bmi-bsa-calculator",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/bsa_formulas_comparison.md, references/pediatric_norms.md, references/chemotherapy_dosing.md (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The Skill advertises pediatric percentiles and several BSA formulas through scripts.calculator, but that module is absent and main.py implements only adult BMI and DuBois BSA. The referenced pediatric norms are also absent. Verify the advertised clinical calculation scope before publication."
     },
     {
       "id": "chemical-structure-converter",
@@ -2417,12 +2422,12 @@
     {
       "id": "literature-management",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/requirements.txt, scripts/import_library.py, references/examples.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The default snapshot omits the importer. Recovered d915031495e1c755d272c3de817ee3fc012e8b7b gives non-PDF records without DOI/title-year a random dedup key instead of the documented file-hash fallback, so repeated imports duplicate them; its CSV parser also splits quoted commas. Verify deduplication and parsing before publication."
     },
     {
       "id": "literature-statistics",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/process_references.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The PDF implementation treats metadata /Subject or /Title as a journal, and still counts an ambiguous year/journal as the first match despite instructions to mark ambiguous values unknown. Resolve metadata accuracy and ambiguity handling before publication; process_references.py is only a conditional example."
     },
     {
       "id": "mendel",
@@ -2502,7 +2507,7 @@
     {
       "id": "clinic-research-design",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/calculators/sample_size.py, scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "Recovered d915031495e1c755d272c3de817ee3fc012e8b7b restores the scripts, but the primary command uses unsupported --study_design, and documented --alpha/--power are absent. Its calculator halves alpha before looking it up in an already two-sided table, silently falling back to 1.96 for alpha=0.01. Verify the CLI and calculation contract before publication."
     },
     {
       "id": "clinical-trial-protocol-skill",
@@ -2518,11 +2523,6 @@
       "id": "randomization-gen",
       "version": "1.0.0",
       "reason": "The CLI exposes blocked allocation only and outputs a plain CSV, despite documented stratification, seed and sealed-allocation claims. Verify the supported interface and concealment claims before publication."
-    },
-    {
-      "id": "research-proposal-generator",
-      "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
       "id": "sample-size-basic",

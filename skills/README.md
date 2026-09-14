@@ -54,11 +54,20 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-394 reviewed Skills, retaining all 392 previously selected members and adding
-`hypothesis-generation` and `research-grants` at `1.0.0`. Both retain their entire
-source package and the AIPOCH and original K-Dense MIT notices. The other 190
-members remain explicitly deferred; 177 have asset, attribution,
-source-completeness or implementation follow-ups. The original 13
+395 reviewed Skills, retaining all 394 previous members and adding
+`research-proposal-generator` at `1.0.0`. It pins the complete Medical snapshot
+`d915031495e1c755d272c3de817ee3fc012e8b7b`, which includes the required
+`references/prompts.md`; its original Skill instructions, prompt text and
+self-assessment remain byte-for-byte intact. The MIT declaration in SKILL.md and
+repository MIT notice are both bound into the release evidence. Its budget prompt
+provides a framework rather than a complete cost schedule; generated proposals
+must state assumptions and require domain review. No evaluated Skill version or
+independent safety approval is inferred.
+
+The other 189 original members remain explicitly deferred; 176 have asset,
+attribution, source-completeness or implementation follow-ups. This review replaces
+13 generic missing-file reasons with concrete source or implementation findings.
+The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
