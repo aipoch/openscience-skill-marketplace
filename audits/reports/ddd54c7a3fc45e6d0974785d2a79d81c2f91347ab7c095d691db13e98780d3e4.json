@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "skill_name": "dual-disease-transcriptomic-ml-planner",
+    "description": "Generates complete dual-disease transcriptomic + machine learning research designs from a user-provided disease pair. Use when users want to identify shared DEGs, common hub genes, cross-disease biomarkers, or shared molecular mechanisms between two diseases using public GEO data. Triggers: 'shared biomarker study for two diseases', 'dual-disease transcriptomic ML paper', 'identify common DEGs between disease A and B', 'cross-disease hub gene discovery', 'shared DEG + PPI + ROC design', 'immune infiltration shared biomarker', or 'I want to study disease X and Y together'. Always outputs four workload configurations (Lite / Standard / Advanced / Publication+) with a recommended primary plan, step-by-step workflow, figure plan, validation strategy, minimal executable version, and publication upgrade path.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Protocol Design",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated DOI/PMID numbers, clinical trial results, sample sizes, p-values, or efficacy data. All GEO references are clearly labeled as examples (GSE48350, GSE7621). All statistical thresholds are field-standard (logFC > 1, adj.p < 0.05, AUC > 0.70, STRING confidence > 0.4)."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "No direct diagnostic or prescriptive medical conclusions. Skill generates research protocols for comparative transcriptomic analysis, not clinical decisions. Proper disclaimers included (GEO data de-identified, no IRB required). No unapproved treatment recommendations."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "No principled methodological fallacies. Ethical compliance clearly stated (GEO data = de-identified, no IRB required). Tissue compatibility issues explicitly addressed with resolution strategies (T2D/NAFLD liver tissue, COVID-19 data availability warnings). Validation strategies are methodologically sound (discovery + validation cohorts, cross-platform reproducibility, bootstrap CI)."
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "No code generated. Mode A execution (direct instruction following). Skill references standard bioinformatics tools (limma, clusterProfiler, STRING, CytoHubba, CIBERSORT) but does not generate runnable code."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of dual-disease transcriptomic research design: DEG identification, PPI analysis, hub gene discovery, ROC validation, immune infiltration, figure planning, and 4 workload tiers. Methods are scientifically sound using established tools."
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent fault tolerance with explicit zero-DEG recovery logic (relax threshold → top-500 → WGCNA), tissue-tool mismatch handling, and data availability warnings. Clear error reporting for impossible scenarios."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Comprehensive output (~3-5k tokens typical) well-structured and necessary for research planning. Reference files reduce redundancy. Minor deduction for token cost."
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent learnability with clear trigger phrases and comprehensive when-to-use section. Consistent 9-step output format with uniform terminology. Each step includes rationale and field-standard justifications. Strong error prevention with input validation and escape hatches."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent discoverability with comprehensive description and multiple trigger examples. Forgiving design offers alternatives when pairing is inappropriate and provides upgrade paths."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "No credentials required, uses only public GEO data. Strong input validation for disease appropriateness and tissue compatibility. No PHI handling."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modularity with well-separated reference files (tissue_and_tool_decisions.md, geo_search_and_tools.md, figure_plan_template.md, upgrade_path.md). Easy to update thresholds, tools, or add new disease classes. Clear expected outputs enable testability."
+      },
+      "agent_specific": {
+        "score": 19,
+        "max": 20,
+        "note": "Multiple precise trigger examples provided. Excellent progressive disclosure via 4 workload tiers. High composability with literature search and statistical analysis skills. Idempotent design produces consistent plan structure. Good escape hatch for out-of-scope requests. Minor deduction: could be more explicit about single-disease alternatives."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.9,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 33,
+      "total": 33
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "AD vs PD shared biomarkers",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core dual-disease protocol generation",
+        "basic": 39,
+        "specialized": 60,
+        "total": 99,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output provides 4 workload configurations (Lite/Standard/Advanced/Publication+)",
+            "result": "PASS",
+            "note": "All 4 configurations present with effort estimates"
+          },
+          {
+            "text": "Output includes 9-step structure per skill instructions",
+            "result": "PASS",
+            "note": "All 9 steps completed"
+          },
+          {
+            "text": "Tissue compatibility addressed (both use brain tissue)",
+            "result": "PASS",
+            "note": "Brain tissue selected with rationale"
+          },
+          {
+            "text": "Figure plan matches reference template",
+            "result": "PASS",
+            "note": "6 figures for Standard tier per template"
+          },
+          {
+            "text": "Validation strategy included (discovery + validation cohorts)",
+            "result": "PASS",
+            "note": "External validation cohorts specified"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "T2D vs NAFLD with tissue mismatch",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Cross-tissue challenge resolved",
+        "basic": 39,
+        "specialized": 59,
+        "total": 98,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output provides 4 workload configurations",
+            "result": "PASS",
+            "note": "All 4 present"
+          },
+          {
+            "text": "9-step structure followed",
+            "result": "PASS",
+            "note": "Complete"
+          },
+          {
+            "text": "Tissue compatibility issue identified and resolved (liver for both)",
+            "result": "PASS",
+            "note": "Cross-tissue issue flagged, liver tissue chosen with rationale"
+          },
+          {
+            "text": "Limitation explicitly stated (hepatic focus only)",
+            "result": "PASS",
+            "note": "Clear limitation statement provided"
+          },
+          {
+            "text": "Validation strategy included",
+            "result": "PASS",
+            "note": "Discovery + validation cohorts specified"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "COVID-19 ARDS vs IPF with data availability concerns",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Edge case with limited GEO data",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output provides 4 workload configurations",
+            "result": "PASS",
+            "note": "All 4 present"
+          },
+          {
+            "text": "9-step structure followed",
+            "result": "PASS",
+            "note": "Complete"
+          },
+          {
+            "text": "Data availability risk explicitly flagged (COVID-19 limited datasets)",
+            "result": "PASS",
+            "note": "Warning section included with n ≥ 5 relaxation"
+          },
+          {
+            "text": "User warned to verify GEO coverage before committing",
+            "result": "PASS",
+            "note": "Explicit warning to search GEO carefully"
+          },
+          {
+            "text": "Alternative approach suggested if data insufficient",
+            "result": "PASS",
+            "note": "IPF + other fibrotic disease alternative offered"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "RA vs SLE with immune infiltration focus",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "User-requested immune module as core",
+        "basic": 39,
+        "specialized": 60,
+        "total": 99,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output provides 4 workload configurations, Advanced recommended per user request",
+            "result": "PASS",
+            "note": "Advanced explicitly recommended"
+          },
+          {
+            "text": "9-step structure followed",
+            "result": "PASS",
+            "note": "Complete"
+          },
+          {
+            "text": "Immune infiltration module integrated as core (not optional)",
+            "result": "PASS",
+            "note": "Module 6 labeled as 'Core' with primary focus statement"
+          },
+          {
+            "text": "CIBERSORT tool selection justified per reference files",
+            "result": "PASS",
+            "note": "Tool choice explicitly referenced to tissue_and_tool_decisions.md"
+          },
+          {
+            "text": "Advanced configuration recommended matching user's immune focus",
+            "result": "PASS",
+            "note": "8-10 week timeline with immune module"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "CRC vs UC publication-grade comprehensive study",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-part complex request",
+        "basic": 38,
+        "specialized": 59,
+        "total": 97,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output provides all 4 configurations, Publication+ recommended",
+            "result": "PASS",
+            "note": "Publication+ explicitly recommended"
+          },
+          {
+            "text": "9-step structure followed",
+            "result": "PASS",
+            "note": "Complete with extensive detail"
+          },
+          {
+            "text": "All user-requested modules included (DEG, PPI, hub, ROC, immune, validation)",
+            "result": "PASS",
+            "note": "All modules explicitly addressed"
+          },
+          {
+            "text": "Mini-signature and drug target analysis included (Publication+ tier)",
+            "result": "PASS",
+            "note": "Both modules present with detailed methods"
+          },
+          {
+            "text": "Cross-platform validation strategy included",
+            "result": "PASS",
+            "note": "Module 9 + Validation Cohort 2 detailed"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "3-disease comparison request",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Out of scope, redirected appropriately",
+        "basic": 40,
+        "specialized": 30,
+        "total": 70,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Correctly identified 3-disease request as out of scope",
+            "result": "PASS",
+            "note": "Clear statement that skill handles two diseases only"
+          },
+          {
+            "text": "Explained why dual-disease skill cannot handle 3 diseases",
+            "result": "PASS",
+            "note": "Pairwise structure and statistical differences explained"
+          },
+          {
+            "text": "Offered alternative approaches (pairwise, multi-disease skill)",
+            "result": "PASS",
+            "note": "Three alternatives provided"
+          },
+          {
+            "text": "Asked clarifying question to help user proceed",
+            "result": "PASS",
+            "note": "Offered to help with pairwise comparison"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Depression vs happiness invalid input",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Invalid input, validation successful",
+        "basic": 40,
+        "specialized": 30,
+        "total": 70,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Correctly identified 'happiness' as not a disease",
+            "result": "PASS",
+            "note": "Explicit statement with explanation"
+          },
+          {
+            "text": "Explained depression transcriptomics limitations",
+            "result": "PASS",
+            "note": "Brain tissue limitations and blood alternative discussed"
+          },
+          {
+            "text": "Offered alternative research questions (depression vs other psychiatric disorders)",
+            "result": "PASS",
+            "note": "Three alternative research questions provided"
+          },
+          {
+            "text": "Asked clarifying question to help user reformulate request",
+            "result": "PASS",
+            "note": "Multiple clarifying questions offered"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 53.9,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive 9-step workflow structure covering all aspects of dual-disease transcriptomic research design (tissue selection, DEG analysis, PPI networks, hub genes, ROC validation, immune infiltration, figure planning, validation strategy, upgrade paths)",
+    "Excellent reference file system with 4 specialized reference files providing tissue-tool decisions, GEO search strategies, figure templates, and upgrade paths that reduce redundancy and improve maintainability",
+    "Strong fault tolerance with explicit zero-DEG recovery logic (relax threshold → top-500 → WGCNA), tissue mismatch handling, and data availability warnings for edge cases",
+    "Progressive disclosure via 4 workload tiers (Lite/Standard/Advanced/Publication+) with clear effort estimates (2-3 weeks to 12-16 weeks) and upgrade paths addressing specific reviewer concerns",
+    "Robust scope boundary and input validation correctly identifying and redirecting out-of-scope requests (3-disease comparison) and invalid inputs (non-disease comparators) with helpful alternative suggestions"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Enhance cross-platform validation guidance",
+      "observed_in": [5],
+      "problem": "Cross-platform validation (microarray → RNA-seq) is mentioned in Publication+ tier but detailed guidance on platform-specific normalization differences and batch correction strategies is not provided in reference files",
+      "root_cause": "Reference files focus on tool selection (GPL platforms, CytoHubba algorithms) but not cross-platform harmonization best practices",
+      "fix": "Add section to geo_search_and_tools.md titled 'Cross-Platform Comparison Best Practices' covering: (1) Microarray-to-RNA-seq normalization differences (RMA/MAS5 vs TPM/FPKM), (2) Batch effect correction strategies (ComBat for cross-platform), (3) Gene ID mapping (probe ID to gene symbol), (4) Expected concordance thresholds (≥80% for hub genes)"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit single-disease alternative in escape hatch",
+      "observed_in": [7],
+      "problem": "When user provides one disease + invalid comparator (e.g., depression vs happiness), skill redirects to alternative dual-disease pairings but does not explicitly point to single-disease analysis skills or standard DEG workflows",
+      "root_cause": "Escape hatch section focuses on dual-disease alternatives (other valid disease pairs) but not single-disease alternatives",
+      "fix": "Add to 'When NOT to Use' section: 'For single-disease analysis (one disease vs healthy controls), this skill is not appropriate. Use a single-disease transcriptomic analysis skill or conduct standard DEG analysis workflow (disease vs control, no cross-disease comparison).'"
+    }
+  ]
+}

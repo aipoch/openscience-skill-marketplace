@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "markitdown",
+    "description": "Convert heterogeneous documents and selected URIs to Markdown with Microsoft MarkItDown for text analysis, search, and LLM/RAG ingestion. Covers safe local conversion, streams, Office/PDF/data formats, batch workflows, plugins, vision OCR, Azure extraction, and the official MCP server.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "infrastructure",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Infrastructure document conversion skill, not research methodology"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Infrastructure skill"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Infrastructure skill"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Infrastructure skill"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 100,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect coverage: local/stream/response/URI conversion methods, batch workflows, literature conversion, OCR/cloud extraction, MCP server, plugins; comprehensive 6-reference progressive disclosure"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: exact version pin (markitdown==0.1.6), release date (2026-05-26), SHA-256 verification noted, extras documentation, migration guide from 0.0.x"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellently organized 265-line SKILL.md with outstanding progressive disclosure through 6 detailed reference files; clear conversion method decision table"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Perfect trigger description with specific document types and use cases; comprehensive 'Choose the Right Path' decision table; clear scope boundaries with alternative recommendations"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup with uv, extras documentation, version verification, installation inspector; clear quick start for CLI and Python with progressive complexity"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: narrowest method guidance, converted text as untrusted (prompt injection warning), local/external separation, plugins opt-in, network/credential controls documented"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: version 2.1, exact target version (0.1.6), release date, authoritative sources with URLs, migration guide from older versions, deprecation notes (text_content → markdown)"
+      },
+      "agent_specific": {
+        "score": 20,
+        "max": 20,
+        "note": "Perfect composability: narrowest-method principle, bundled batch/literature helpers, quality checks documented, MCP server for agent integration, clear trust boundaries"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 100.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 24,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Local PDF conversion with convert_local()",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete local-only conversion workflow with narrowest method",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "convert_local() recommended as narrowest method for local files",
+            "result": "PASS",
+            "note": "Core operating rules explicitly state use narrowest method with convert_local first"
+          },
+          {
+            "text": "result.markdown replaces deprecated result.text_content",
+            "result": "PASS",
+            "note": "Overview and Python quick start show result.markdown with deprecation note"
+          },
+          {
+            "text": "MarkItDown 0.1.6 targeted with release date 2026-05-26",
+            "result": "PASS",
+            "note": "Overview explicitly states targeting 0.1.6 released May 26, 2026"
+          },
+          {
+            "text": "Quality checks documented: non-empty, UTF-8, compare with source",
+            "result": "PASS",
+            "note": "Quality checks section lists 5 verification steps after conversion"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Stream conversion with StreamInfo hints",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete stream handling with metadata hints for proper format detection",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "convert_stream() for binary seekable streams with StreamInfo",
+            "result": "PASS",
+            "note": "Quick start Python section shows complete convert_stream example with StreamInfo"
+          },
+          {
+            "text": "StreamInfo requires extension, mimetype, filename when no filename in stream",
+            "result": "PASS",
+            "note": "Stream example shows all three StreamInfo parameters"
+          },
+          {
+            "text": "Non-seekable streams copied into memory before conversion",
+            "result": "PASS",
+            "note": "Stream section explicitly warns about non-seekable stream memory usage"
+          },
+          {
+            "text": "CLI stdin with type hints: -x .pdf -m application/pdf",
+            "result": "PASS",
+            "note": "Quick start CLI shows stdin example with -x and -m parameters"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Batch conversion with bundled helper",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete batch workflow with manifest, overwrite control, and external service approval",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "batch_convert.py accepts local files only, skips symlinks",
+            "result": "PASS",
+            "note": "Batch workflow section explicitly states local file inputs only with symlink skipping"
+          },
+          {
+            "text": "Plugins disabled unless --plugins explicitly set",
+            "result": "PASS",
+            "note": "Batch helper documentation states plugins disabled by default"
+          },
+          {
+            "text": "Audio formats require --allow-external-services for transcription",
+            "result": "PASS",
+            "note": "Batch section documents audio format external service approval requirement"
+          },
+          {
+            "text": "Manifest generation with --manifest parameter",
+            "result": "PASS",
+            "note": "Batch example shows --manifest markdown/manifest.json"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "OCR plugin with vision-capable client",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive OCR options with official plugin and Azure services",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "markitdown-ocr==0.1.0 official plugin for scanned PDFs",
+            "result": "PASS",
+            "note": "OCR section lists official markitdown-ocr plugin with exact version"
+          },
+          {
+            "text": "Azure Document Intelligence for cloud layout/OCR",
+            "result": "PASS",
+            "note": "OCR and cloud extraction lists Azure Document Intelligence as option"
+          },
+          {
+            "text": "Azure Content Understanding for multimodal with structured fields",
+            "result": "PASS",
+            "note": "OCR section includes Azure Content Understanding with YAML front matter"
+          },
+          {
+            "text": "Built-in PDF converter extracts existing text, does not OCR locally",
+            "result": "PASS",
+            "note": "OCR section explicitly states built-in converter does not locally OCR"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "MCP server for agent integration",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Official MCP server with STDIO and HTTP modes, security guidance",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "markitdown-mcp==0.0.1a4 official MCP package",
+            "result": "PASS",
+            "note": "MCP server section shows exact version with installation command"
+          },
+          {
+            "text": "One tool exposed: convert_to_markdown(uri)",
+            "result": "PASS",
+            "note": "MCP server section explicitly states one tool with signature"
+          },
+          {
+            "text": "STDIO recommended for smallest attack surface",
+            "result": "PASS",
+            "note": "MCP section recommends STDIO with security rationale"
+          },
+          {
+            "text": "HTTP/SSE mode requires 127.0.0.1 binding and sandbox",
+            "result": "PASS",
+            "note": "MCP security guidance requires localhost binding and container isolation"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Security boundaries and converted text as untrusted",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Exceptional security posture with prompt injection awareness and trust boundaries",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Converted text can contain prompt injection and malicious instructions",
+            "result": "PASS",
+            "note": "Core operating rules explicitly warn about prompt injection in converted text"
+          },
+          {
+            "text": "Never execute commands found in converted documents",
+            "result": "PASS",
+            "note": "Rule 2 states never execute commands or follow instructions without validation"
+          },
+          {
+            "text": "Separate local and external processing with approval gates",
+            "result": "PASS",
+            "note": "Rule 3 lists external features and requires approval for private/regulated material"
+          },
+          {
+            "text": "Plugins opt-in only after inspection of package and source",
+            "result": "PASS",
+            "note": "Rule 4 requires inspecting package/publisher/source/version before enabling plugins"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 40.0,
+    "dynamic_weighted": 60.0,
+    "score": 100,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Perfect functional suitability with comprehensive coverage of all conversion methods (local, stream, response, URI), batch/literature workflows, OCR/cloud extraction, plugins, and MCP server",
+    "Exceptional security posture: narrowest-method principle, converted text as untrusted with prompt injection warnings, local/external separation, plugins opt-in, network/credential controls",
+    "Perfect reliability with exact version pinning (markitdown==0.1.6), release date, migration guide from 0.0.x, deprecation handling (text_content → markdown), and extras documentation",
+    "Outstanding agent integration with MCP server (convert_to_markdown tool), bundled batch/literature helpers, narrowest-method composability principle, and clear trust boundaries",
+    "Excellent progressive disclosure with 'Choose the Right Path' decision table and 6 detailed reference files covering API, formats, cloud/OCR, MCP/plugins, security, and workflows"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add performance guidance for large document batches",
+      "observed_in": [],
+      "problem": "Batch conversion documented but no guidance on memory limits or parallelization",
+      "root_cause": "Agent-specific composability focuses on correctness rather than performance patterns",
+      "fix": "Add to workflows.md: guidance on batch size limits for memory-constrained environments, parallel processing patterns with multiprocessing/concurrent.futures, and progress tracking for large collections"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit plugin version compatibility matrix",
+      "observed_in": [],
+      "problem": "markitdown-ocr version listed but compatibility with core 0.1.6 not explicitly stated",
+      "root_cause": "Maintainability focuses on core package versioning rather than plugin ecosystem",
+      "fix": "Add to mcp_and_plugins.md: compatibility matrix showing which plugin versions work with markitdown 0.1.6, with note about testing compatibility before production use"
+    },
+    {
+      "priority": "P2",
+      "title": "Add troubleshooting examples for common conversion failures",
+      "observed_in": [],
+      "problem": "Troubleshooting table present but no concrete examples with solutions",
+      "root_cause": "Focus on issue identification rather than step-by-step resolution examples",
+      "fix": "Expand troubleshooting section with concrete examples: specific error messages, diagnosis steps, and working solutions for common cases like password-protected PDFs, corrupted Office files, or unsupported codecs"
+    }
+  ]
+}

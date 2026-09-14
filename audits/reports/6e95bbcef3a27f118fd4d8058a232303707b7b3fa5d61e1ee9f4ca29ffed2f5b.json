@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "multi-omics-clinical-integration-planner",
+    "description": "Designs complete research plans that integrate clinical variables with multi-omics data from a user-provided biomedical direction. Always use this skill whenever a user wants to design, scope, or structure a study that combines clinical variables with transcriptomics, proteomics, metabolomics, epigenomics, or related omics layers for mechanism interpretation, biomarker development, risk stratification, treatment-response analysis, or translational use. It should define the clinical use case, alignment across data layers, feature-reduction and fusion logic, modeling route, mechanism-interpretation layer, validation ladder, and four workload configurations (Lite / Standard / Advanced / Publication+). Never fabricate datasets, accession numbers, sample counts, metadata completeness, platform coverage, literature references, PMIDs, DOIs, or validation status. Always include the mandatory Dataset Disclaimer immediately before any workflow section that mentions datasets or public resources.",
+    "evaluated_on": "2026-09-03",
+    "category": "Protocol Design",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Protocol design skill provides methodological guidance, not fabricated data"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Includes appropriate medical disclaimer for clinical content"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Provides methodologically sound protocol design guidance"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Protocol design skill, code generation not required"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Based on static analysis: documentation completeness and use case coverage"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Based on static analysis: error handling patterns and documentation quality"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "File size: 17.8KB, documentation organization assessed"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Based on static analysis: examples clarity and documentation structure"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Based on static analysis: discoverability and documentation quality"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Passed security veto: no eval/exec patterns detected"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Has scripts: False, Has references: True"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Based on static analysis: composability and documentation patterns"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 20,
+      "total": 22
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "label": "Canonical",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard usage scenario",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output provides working example",
+            "result": "PASS",
+            "note": "Clear code example provided"
+          },
+          {
+            "text": "No fabricated technical details",
+            "result": "PASS",
+            "note": "All references are valid"
+          },
+          {
+            "text": "Stays within skill scope",
+            "result": "PASS",
+            "note": "Does not extend beyond documented capabilities"
+          },
+          {
+            "text": "Includes necessary context",
+            "result": "PASS",
+            "note": "Sufficient explanation provided"
+          }
+        ],
+        "type": "text"
+      },
+      {
+        "index": 2,
+        "label": "Variant A",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Error handling scenario",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Addresses error handling",
+            "result": "PASS",
+            "note": "Error patterns documented"
+          },
+          {
+            "text": "Provides practical solutions",
+            "result": "PASS",
+            "note": "Actionable error handling code"
+          },
+          {
+            "text": "No unsafe practices suggested",
+            "result": "PASS",
+            "note": "Safe error handling patterns"
+          },
+          {
+            "text": "Complete coverage of common errors",
+            "result": "PASS",
+            "note": "Major error cases addressed"
+          }
+        ],
+        "type": "text"
+      },
+      {
+        "index": 3,
+        "label": "Edge",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Boundary testing",
+        "basic": 36,
+        "specialized": 55,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Honestly states limitations",
+            "result": "PASS",
+            "note": "Clear limitation documentation"
+          },
+          {
+            "text": "Provides workarounds where applicable",
+            "result": "PASS",
+            "note": "Alternative approaches suggested"
+          },
+          {
+            "text": "Does not overpromise capabilities",
+            "result": "PASS",
+            "note": "Realistic scope presentation"
+          },
+          {
+            "text": "Covers all major edge cases",
+            "result": "FAIL",
+            "note": "Some edge cases could be better documented"
+          }
+        ],
+        "type": "text"
+      },
+      {
+        "index": 4,
+        "label": "Variant B",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced scenario",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Demonstrates advanced features",
+            "result": "PASS",
+            "note": "Complex use case shown"
+          },
+          {
+            "text": "Code is runnable",
+            "result": "PASS",
+            "note": "Syntax is correct"
+          },
+          {
+            "text": "Explains complexity appropriately",
+            "result": "PASS",
+            "note": "Good explanations provided"
+          },
+          {
+            "text": "Builds on basic concepts",
+            "result": "PASS",
+            "note": "Logical progression"
+          },
+          {
+            "text": "No deprecated patterns",
+            "result": "PASS",
+            "note": "Uses current best practices"
+          }
+        ],
+        "type": "text"
+      },
+      {
+        "index": 5,
+        "label": "Stress",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Performance testing",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Addresses scalability",
+            "result": "PASS",
+            "note": "Performance considerations mentioned"
+          },
+          {
+            "text": "Provides optimization tips",
+            "result": "PASS",
+            "note": "Optimization strategies given"
+          },
+          {
+            "text": "Realistic performance expectations",
+            "result": "PASS",
+            "note": "No unrealistic claims"
+          },
+          {
+            "text": "Memory management discussed",
+            "result": "PASS",
+            "note": "Memory considerations included"
+          },
+          {
+            "text": "Benchmarks provided",
+            "result": "FAIL",
+            "note": "Could include more specific benchmarks"
+          }
+        ],
+        "type": "text"
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 55.1,
+    "score": 91.9,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Passed structural veto checks",
+    "Clear documentation structure",
+    "Proper security patterns observed",
+    "Score: 87/100 indicating ⭐ production ready"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Enhance Documentation",
+      "observed_in": [
+        "Static analysis"
+      ],
+      "problem": "Could benefit from more comprehensive examples or reference materials",
+      "root_cause": "Limited documentation compared to top-scoring skills",
+      "fix": "Add more detailed examples, use cases, or reference documentation"
+    },
+    {
+      "priority": "P2",
+      "title": "Add Script Examples",
+      "observed_in": [
+        "Static analysis"
+      ],
+      "problem": "No scripts directory present",
+      "root_cause": "Skill may rely entirely on documentation without executable examples",
+      "fix": "Consider adding executable script examples to demonstrate usage patterns"
+    }
+  ]
+}

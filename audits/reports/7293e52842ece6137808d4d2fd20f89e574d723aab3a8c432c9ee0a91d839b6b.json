@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "exploratory-data-analysis",
+    "description": "Perform bounded, local exploratory analysis of explicitly supported scientific files. Use for redacted CSV/TSV/JSON profiles; optional NumPy, HDF5, FASTA/FASTQ, and basic image metadata inspection; missingness/leakage audits; outlier and transformation sensitivity; and rigorous EDA report scaffolds. Other domain formats are reference-only and unknown formats fail closed.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Outstanding methodological discipline with explicit warnings against causal claims from EDA, clear boundary between exploratory and confirmatory analysis, and comprehensive statistical rigor requirements"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Exceptional scope definition: does not certify files, infer scientific meaning, or support every format; clear fail-closed policy for unknown formats"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established statistical practices (NIST EDA handbook, FDA E9(R1), EPA detection limits, scikit-learn leakage guidance) with authoritative source citations"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with comprehensive security boundaries and safe I/O patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 97,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage with exact capability matrix, automated core (CSV/TSV/JSON), optional formats (NPY/HDF5/FASTA/image), reference-only domain formats, and fail-closed policy"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional reliability with 8-point safe I/O contract, bounded execution guarantees, atomic outputs, and explicit output interpretation guidance"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (280 lines) with capability matrix, 6 domain-specific reference files, and workflow structure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with exact capability matrix, 10-rule EDA reasoning framework, workflow steps, and clear reference selection guidance ('Do not load every reference')"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation for optional capabilities only; workflow with authorization confirmation; bundled scripts with --root pattern; report scaffold generator"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional security: comprehensive untrusted data warnings, safe I/O contract rejecting URLs/symlinks/special files, no pickle/eval/macros, bounded reads, identifier redaction, fail-closed policy"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, clear license (MIT), 6 comprehensive references, version baseline (verified 2026-07-23), pinned dependencies with publication dates, and authoritative source citations"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong composability with allowed-tools including Glob; capability_manifest.py for format detection; deterministic outputs; minor: specific output schemas for JSON reports not fully detailed"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "CSV tabular profiling with bounded reads and missingness detection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard tabular EDA workflow with safety boundaries",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "--root parameter for authorized directory constraint",
+            "result": "PASS",
+            "note": "All script examples consistently use --root /approved/project"
+          },
+          {
+            "text": "tabular_profile.py for schema and distribution analysis",
+            "result": "PASS",
+            "note": "Workflow step 3 demonstrates tabular_profile.py with --missing-token parameter"
+          },
+          {
+            "text": "Bounded execution with --max-rows parameter",
+            "result": "PASS",
+            "note": "eda_analyzer.py example shows --max-rows 100000 for size limits"
+          },
+          {
+            "text": "Authorization confirmation before analysis",
+            "result": "PASS",
+            "note": "Workflow step 1: 'Confirm authorization and root' with explicit stop-and-ask policy"
+          },
+          {
+            "text": "Identifier redaction by default",
+            "result": "PASS",
+            "note": "Safe I/O contract point 6: 'emits strict JSON or Markdown with tokenized identifiers by default'"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Missingness and leakage audit with group/split/time structure",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Structured data validation for ML pipeline integrity",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "missingness_leakage_audit.py with structural column parameters",
+            "result": "PASS",
+            "note": "Workflow shows --group-column, --entity-column, --split-column, --time-column parameters"
+          },
+          {
+            "text": "Train/validation/test boundary detection",
+            "result": "PASS",
+            "note": "Required EDA reasoning section explicitly lists 'train/validation/test boundaries'"
+          },
+          {
+            "text": "Split-before-fitting principle documented",
+            "result": "PASS",
+            "note": "Rule 6: 'Split subjects/groups/time before fitting imputers, scalers, encoders...'"
+          },
+          {
+            "text": "Leakage flags as diagnostic, not proof",
+            "result": "PASS",
+            "note": "Output interpretation states 'A missingness gap or split overlap is a diagnostic flag, not proof of bias or leakage'"
+          },
+          {
+            "text": "Pairing and clustering structure preservation",
+            "result": "PASS",
+            "note": "Rule 7: 'Preserve repeated measures/pairing/clustering; do not treat rows...as independent subjects'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Distribution sensitivity and outlier analysis without automatic filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Statistical robustness checks with no data modification",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "distribution_sensitivity.py for transformation analysis",
+            "result": "PASS",
+            "note": "Workflow step 3 demonstrates distribution_sensitivity.py with --column parameter"
+          },
+          {
+            "text": "Mean/SD vs median/IQR comparison guidance",
+            "result": "PASS",
+            "note": "Rule 4: 'Compare mean/SD with median/IQR/MAD and show outlier influence'"
+          },
+          {
+            "text": "No automatic outlier deletion policy",
+            "result": "PASS",
+            "note": "Scope states 'do not automatically delete outliers' and Rule 4: 'Flags are not deletion rules'"
+          },
+          {
+            "text": "Transformation rationale and raw-scale preservation",
+            "result": "PASS",
+            "note": "Rule 5: 'Record transformation formula/rationale and raw-scale results'"
+          },
+          {
+            "text": "Specific sensitivity metrics documented",
+            "result": "FAIL",
+            "note": "IQR fences, MAD, trimmed/winsorized means mentioned in interpretation but not in main workflow"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Multi-format capability detection with fail-closed policy",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Format registry and safe rejection of unsupported types",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "capability_manifest.py for format detection",
+            "result": "PASS",
+            "note": "Capability matrix section shows list and inspect commands"
+          },
+          {
+            "text": "Three-tier support model (automated/reference-only/unsupported)",
+            "result": "PASS",
+            "note": "Capability matrix clearly delineates automated core, automated optional, reference-only, and unsupported"
+          },
+          {
+            "text": "Fail-closed policy for unknown formats",
+            "result": "PASS",
+            "note": "Unsupported row: 'Fail closed; ask for format/specification and add reviewed support before reading content'"
+          },
+          {
+            "text": "Reference-only routing to domain tooling",
+            "result": "PASS",
+            "note": "Workflow step 2: 'If status is reference_only, do not run eda_analyzer.py. Read the matching reference'"
+          },
+          {
+            "text": "Format signature verification without content sniffing",
+            "result": "FAIL",
+            "note": "Safe I/O contract point 4 mentions signature verification but detection method not detailed"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "HDF5 and NPZ inspection with security boundaries",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Complex format handling with strict limitations but limited examples",
+        "basic": 33,
+        "specialized": 43,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "HDF5 metadata-only inspection without value decoding",
+            "result": "PASS",
+            "note": "Capability matrix: 'Bounded hierarchy/dataset metadata only; no values/attributes...'"
+          },
+          {
+            "text": "NPZ security preflight (ZIP traversal, encryption, size ratio)",
+            "result": "PASS",
+            "note": "NPZ row: 'ZIP traversal/encryption/member/size/ratio preflight, then one array at a time'"
+          },
+          {
+            "text": "No pickle/object dtype policy",
+            "result": "PASS",
+            "note": "Scope prohibits 'pickle/joblib/dill, allow_pickle=True' and NPY/NPZ rows state 'no object dtype/pickle'"
+          },
+          {
+            "text": "HDF5/NPZ inspection script usage examples",
+            "result": "FAIL",
+            "note": "Security boundaries documented but no inline usage example for h5py or npz inspection"
+          },
+          {
+            "text": "Soft/external link rejection documented",
+            "result": "FAIL",
+            "note": "HDF5 row mentions 'no soft/external links' but handling not demonstrated"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.8,
+    "dynamic_weighted": 53.5,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security posture with comprehensive untrusted data framework, safe I/O contract (8 rules), no pickle/eval/macros policy, and fail-closed principle for unknown formats",
+    "Outstanding methodological rigor with 10-rule EDA reasoning framework covering data preservation, missingness distinction, outlier influence, transformation documentation, and train/test splitting",
+    "Excellent scope discipline with exact capability matrix distinguishing automated/reference-only/unsupported tiers and explicit warnings against certification claims or causal inference",
+    "Strong regulatory and statistical foundation citing NIST EDA handbook, FDA E9(R1), EPA detection limits, scikit-learn leakage guidance, and FAIR principles",
+    "Comprehensive format coverage with core (CSV/JSON), optional (NumPy/HDF5/FASTA/image), and reference-only domains (PDB/BAM/VCF/DICOM/mzML/etc.) with clear routing guidance"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add inline HDF5 and NPZ inspection examples",
+      "observed_in": [5],
+      "problem": "Security boundaries for HDF5/NPZ well-documented but no usage examples in main workflow",
+      "root_cause": "Capability matrix defines constraints without demonstrating safe inspection pattern",
+      "fix": "Add brief example showing h5py metadata-only traversal and npz member inspection in workflow or create dedicated optional format workflow section"
+    },
+    {
+      "priority": "P2",
+      "title": "Document sensitivity metrics in main workflow",
+      "observed_in": [3],
+      "problem": "IQR fences, MAD, trimmed/winsorized means mentioned in interpretation but not workflow",
+      "root_cause": "Sensitivity analysis described without specifying output metrics upfront",
+      "fix": "Add to distribution_sensitivity.py description: 'Reports IQR fences, MAD-based outliers, trimmed mean (5%/10%), winsorized mean, log-transform diagnostics'"
+    },
+    {
+      "priority": "P3",
+      "title": "Clarify format signature verification method",
+      "observed_in": [4],
+      "problem": "Safe I/O contract mentions signature verification without explaining detection approach",
+      "root_cause": "Security guarantee stated without implementation transparency",
+      "fix": "Add note: 'Signature verification uses file extension + magic number validation where unambiguous (e.g., PNG header); ambiguous formats require explicit manifest confirmation'"
+    }
+  ]
+}

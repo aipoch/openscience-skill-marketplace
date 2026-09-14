@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "pyhealth",
+    "description": "Build clinical and healthcare deep-learning pipelines with PyHealth 2.0 covering the complete dataset → task → model → trainer → metrics workflow. Supports EHR datasets (MIMIC-III/IV, eICU, OMOP, EHRShot), signal data (SleepEDF, SHHS, ISRUC), imaging (ChestXray14, COVID19-CXR), clinical prediction tasks (mortality, readmission, length-of-stay, drug recommendation, sleep staging, ICD coding), clinical models (Transformer, RETAIN, GAMENet, SafeDrug, MICRON, StageNet, AdaCare), and medical code utilities (ICD/ATC/NDC/RxNorm lookup and cross-mapping).",
+    "evaluated_on": "2026-09-09",
+    "category": "ml-training",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Strong methodological guidance: split by patient not sample to prevent leakage, match task to dataset, pick monitor metric appropriately"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Clear scope: clinical/healthcare ML pipelines following dataset → task → model → trainer → metrics pattern; not general PyTorch on tabular data"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on PyHealth 2.0 from pyhealth.dev with stable 5-stage pipeline architecture; references established clinical datasets and models"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready with <20 line canonical pipeline, copy-pasteable starter, 5 reference files mapping use cases to API modules"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete clinical ML pipeline: datasets (EHR/signal/imaging), tasks (prediction/recommendation/staging/coding), models (clinical architectures), trainer, metrics, medical codes"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent guidance with 'Critical things to get right' section addressing common failures: BaseDataset vs SampleDataset, split leakage, task-dataset matching, monitor selection"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Good optimization guidance: cache_dir for reuse, GPU/CPU tips; SKILL.md 125 lines concise; could expand on multi-GPU/distributed training"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding: <20 line canonical pipeline, critical-mistakes section, reference file mapping table, copy-pasteable starter in assets/, 5 focused reference files"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear triggers (PyHealth, MIMIC, eICU, EHR, clinical prediction, medical codes), when-to-use section, scope statement about pipeline fit"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good practices: synthetic MIMIC option for demos, credentialing guidance; minor: MIMIC access requirements could emphasize data use agreements more"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure: 5 reference files with clear use-case mapping, version pinning (2.0, Python 3.12-3.14), uv-based reproducible install, starter in assets/"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability within PyHealth ecosystem; deterministic with fixed seeds; minor: cross-skill integration (with visualization, statistics) could be stronger"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.67,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "MIMIC-III mortality prediction with 5-stage pipeline",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard clinical prediction workflow with current API",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "BaseDataset → set_task → SampleDataset → Model pipeline enforced",
+            "result": "PASS",
+            "note": "Critical distinction explicitly taught"
+          },
+          {
+            "text": "split_by_patient prevents train/test leakage from same patient",
+            "result": "PASS",
+            "note": "Methodological best practice enforced"
+          },
+          {
+            "text": "Model initialized with SampleDataset not BaseDataset",
+            "result": "PASS",
+            "note": "Most common error prevented by clear documentation"
+          },
+          {
+            "text": "Trainer with monitor='pr_auc' for binary classification",
+            "result": "PASS",
+            "note": "Appropriate metric selection guidance"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "MIMIC-IV with ehr_root parameter",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "API inconsistency handling",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "MIMIC-IV uses ehr_root= not root= parameter",
+            "result": "PASS",
+            "note": "Critical API inconsistency explicitly documented"
+          },
+          {
+            "text": "Task must match dataset: MortalityPredictionMIMIC4 not MIMIC3 version",
+            "result": "PASS",
+            "note": "Dataset-specific task requirement enforced"
+          },
+          {
+            "text": "cache_dir recommended for reproducible work",
+            "result": "PASS",
+            "note": "Performance and reproducibility best practice"
+          },
+          {
+            "text": "Synthetic MIMIC-III available for demos without credentialing",
+            "result": "PASS",
+            "note": "Low-barrier entry path provided"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Drug recommendation with multilabel metrics",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-label task with appropriate evaluation",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Drug recommendation models: GAMENet, SafeDrug",
+            "result": "PASS",
+            "note": "Domain-specific architectures documented"
+          },
+          {
+            "text": "Monitor metric: pr_auc_samples or jaccard_samples for multilabel",
+            "result": "PASS",
+            "note": "Correct multilabel metric selection guidance"
+          },
+          {
+            "text": "Wrong monitor saves wrong epoch checkpoint",
+            "result": "PASS",
+            "note": "Consequence of metric mismatch explicitly stated"
+          },
+          {
+            "text": "Task definition in references/tasks.md with dataset mapping",
+            "result": "PASS",
+            "note": "Progressive disclosure to detailed reference"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Medical code lookup and cross-mapping",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "ICD/ATC/NDC/RxNorm utilities",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Medical code utilities: ICD-9-CM, ICD-10-CM, ATC, NDC, RxNorm, CCS",
+            "result": "PASS",
+            "note": "Comprehensive code system support"
+          },
+          {
+            "text": "Cross-mapping between code systems documented",
+            "result": "PASS",
+            "note": "Clinical data integration utility"
+          },
+          {
+            "text": "Reference file references/medcode.md for detailed API",
+            "result": "PASS",
+            "note": "Modular documentation structure"
+          },
+          {
+            "text": "Tokenizers for medical codes included",
+            "result": "PASS",
+            "note": "Complete utility set for code handling"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Sleep staging with signal datasets",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Physiological signal analysis workflow",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Signal datasets: SleepEDF, SHHS, ISRUC supported",
+            "result": "PASS",
+            "note": "Physiological signal domain coverage"
+          },
+          {
+            "text": "Sleep staging task with multiclass classification",
+            "result": "PASS",
+            "note": "Domain-specific task definition"
+          },
+          {
+            "text": "Monitor metrics: accuracy or f1_macro for multiclass",
+            "result": "PASS",
+            "note": "Appropriate evaluation for sleep stages"
+          },
+          {
+            "text": "Same 5-stage pipeline applies to signal data",
+            "result": "PARTIAL",
+            "note": "Unified pipeline claimed but signal-specific preprocessing not detailed"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Installation with uv and Python version pinning",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Reproducible environment setup",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "uv-based installation with Python 3.12-3.14 requirement",
+            "result": "PASS",
+            "note": "Modern reproducible tooling"
+          },
+          {
+            "text": "uv python pin 3.12 for project-level version locking",
+            "result": "PASS",
+            "note": "Version control best practice"
+          },
+          {
+            "text": "Legacy 1.x line available with pyhealth==1.16 for Python 3.9+",
+            "result": "PASS",
+            "note": "Migration path for older environments"
+          },
+          {
+            "text": "Copy-pasteable starter in assets/starter_pipeline.py verified",
+            "result": "PARTIAL",
+            "note": "Referenced but file not verified in directory listing"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 58.0,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding pedagogical structure with 'Critical things to get right' section addressing 6 most common failures before they happen",
+    "Excellent unified 5-stage pipeline (dataset → task → model → trainer → metrics) consistently applied across EHR, signal, and imaging modalities",
+    "Strong methodological guidance: split by patient to prevent leakage, match task to dataset, select appropriate monitor metric for task type",
+    "Comprehensive domain coverage: EHR (MIMIC-III/IV, eICU, OMOP), signals (sleep staging), imaging, with medical code utilities (ICD/ATC/NDC/RxNorm)",
+    "Production-ready with <20 line canonical example, copy-pasteable starter, reference file mapping table, uv-based reproducible installation"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Expand signal preprocessing guidance",
+      "observed_in": [5],
+      "problem": "Signal datasets (SleepEDF, SHHS, ISRUC) follow same 5-stage pipeline but signal-specific preprocessing not detailed",
+      "root_cause": "Documentation optimized for EHR workflows which dominate use cases",
+      "fix": "Add references/signal_preprocessing.md covering resampling, filtering, epoching, artifact rejection, channel selection for physiological signals"
+    },
+    {
+      "priority": "P2",
+      "title": "Strengthen data use agreement emphasis for MIMIC access",
+      "observed_in": [2],
+      "problem": "MIMIC credentialing mentioned but data use agreement requirements not prominent",
+      "root_cause": "Focus on technical access rather than ethical/legal requirements",
+      "fix": "Add callout in references/installation.md: 'MIMIC datasets require human subjects training and signed data use agreement. Never share MIMIC data or derivatives outside authorized project scope.'"
+    }
+  ]
+}

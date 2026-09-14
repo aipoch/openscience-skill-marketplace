@@ -1,0 +1,385 @@
+{
+  "meta": {
+    "skill_name": "boltz2-nim",
+    "description": "Use Boltz2 NIM for biomolecular structure prediction and binding affinity. Invoke for Boltz2, protein structures, protein-ligand/DNA/RNA complexes, SMILES or CCD ligands, pIC50/IC50 affinity scoring, mmCIF output, hosted NVIDIA API calls, or local Docker deployment.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "D",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No DOIs, PMIDs, or clinical trial IDs cited; all quantitative values are simulated examples for demonstration; uses valid biological sequences (KRAS), correct SMILES notation, and standard CCD codes (ATP, GTP, HEM)"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Not a medical skill; focuses on computational structure prediction; Output 2 includes appropriate disclaimer that model estimates should be validated experimentally"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Appropriate use of Boltz2 for structure prediction; method matches data type; confidence scores interpreted correctly with lower confidence for complex systems explained; operates on sequence data without patient data or human subjects research"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All Python code syntactically valid; no syntax errors, infinite loops, or logical bugs detected; dependencies (os, requests>=2.28) documented and installable; code runnable with documented prerequisites (NGC_API_KEY, Docker setup)"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of Docker setup, request patterns, MSA handling, affinity prediction, output saving, validation, and troubleshooting; reference files provide deeper details via progressive disclosure"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Documents common 422 errors, provides readiness checks, includes timeout settings; no retry logic for transient failures or graceful degradation patterns"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Main SKILL.md is 147 lines with excellent progressive disclosure via 5 reference files; first Docker startup downloads 30GB (documented)"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear structure with progressive disclosure, consistent patterns, explicit decision tree (hosted vs local), preflight script prevents common setup errors; no progress indicators for long-running predictions"
+      },
+      "human_usability": {
+        "score": 6,
+        "max": 8,
+        "note": "Clear section headers and reference file pointers; hosted vs local decision is prominent; some advanced features (constraints, modifications) require reference diving"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Environment variables for API keys, .env file support, no hardcoded secrets, proper Docker secret passing with -e NGC_API_KEY, server-side input validation, proper cache scoping"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent modularity with main SKILL.md and 5 reference files; API endpoint is a variable, version pinned in Docker image (1.6.0), parameter defaults are clear; no unit tests or mock responses for CI/CD"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Excellent trigger precision with comprehensive list in description; perfect progressive disclosure (147-line main file + references); explicit handoffs to MSA-Search, GenMol, DiffDock; warning about not overwriting samples in loops; AskUserQuestion allowed for hosted vs local choice"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 28,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "KRAS protein structure prediction via hosted API",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clean execution, appropriate confidence score, proper validation steps included",
+        "basic": 39,
+        "specialized": 53,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output includes structure prediction with confidence score",
+            "result": "PASS",
+            "note": "Confidence 0.85 present"
+          },
+          {
+            "text": "Output saves mmCIF format file correctly",
+            "result": "PASS",
+            "note": "File saved to kras_structure.cif"
+          },
+          {
+            "text": "Output includes validation checks",
+            "result": "PASS",
+            "note": "Multiple validation checkmarks present"
+          },
+          {
+            "text": "Output provides visualization guidance",
+            "result": "PASS",
+            "note": "PyMOL command included"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Protein-ligand complex with affinity prediction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Proper affinity handling, includes scientific disclaimer, validates ligand ID matches",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output includes affinity prediction fields (pIC50, binding probability)",
+            "result": "PASS",
+            "note": "All three affinity fields present"
+          },
+          {
+            "text": "Output validates ligand ID matches request",
+            "result": "PASS",
+            "note": "Explicitly validates L1 match"
+          },
+          {
+            "text": "Output includes scientific disclaimer about model estimates",
+            "result": "PASS",
+            "note": "Clear disclaimer present"
+          },
+          {
+            "text": "Output does not treat pIC50 as measured IC50",
+            "result": "PASS",
+            "note": "Appropriately framed as model estimate"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Multi-chain protein-DNA complex via local Docker",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly handles multi-chain complex, distinguishes local vs hosted auth patterns",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Output correctly uses local endpoint without auth header",
+            "result": "PASS",
+            "note": "Explicitly confirms no Authorization header"
+          },
+          {
+            "text": "Output handles two polymer chains correctly",
+            "result": "PASS",
+            "note": "Both chains A (protein) and B (DNA) confirmed"
+          },
+          {
+            "text": "Output validates molecule types",
+            "result": "PASS",
+            "note": "Protein and DNA types confirmed"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "MSA-assisted structure prediction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly uses validated MSA schema, explains confidence boost from evolutionary data",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output uses validated MSA schema (alignment, not data field)",
+            "result": "PASS",
+            "note": "Explicitly validates 'alignment' usage"
+          },
+          {
+            "text": "Output validates MSA sequence matches polymer sequence",
+            "result": "PASS",
+            "note": "Explicit check included"
+          },
+          {
+            "text": "Output explains confidence improvement from MSA",
+            "result": "PASS",
+            "note": "Higher confidence (0.91) explained"
+          },
+          {
+            "text": "Output specifies A3M format correctly",
+            "result": "PASS",
+            "note": "format: a3m specified"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Multi-ligand complex with pocket constraints",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Handles multiple ligands, constraints, explains confidence drop for complex system",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output handles multiple ligands correctly",
+            "result": "PASS",
+            "note": "All 3 ligands (ATP, ethanol, heme) included"
+          },
+          {
+            "text": "Output applies pocket constraint correctly",
+            "result": "PASS",
+            "note": "Constraint for residue 45 confirmed"
+          },
+          {
+            "text": "Output validates ligand count within API limits",
+            "result": "PASS",
+            "note": "Confirms 3 < 20 limit"
+          },
+          {
+            "text": "Output explains confidence variation for complex systems",
+            "result": "PASS",
+            "note": "Lower confidence explained"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Very short peptide sequence (20 residues)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Accepts edge case, provides scientific context, warns about limitations per science.md",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output completes prediction despite short sequence",
+            "result": "PASS",
+            "note": "Structure prediction completed"
+          },
+          {
+            "text": "Output warns about scientific limitations of very short sequences",
+            "result": "PASS",
+            "note": "Explicit warning present"
+          },
+          {
+            "text": "Output provides guidance for better results",
+            "result": "PASS",
+            "note": "Recommends ≥50 residues"
+          },
+          {
+            "text": "Output does not fabricate structural claims",
+            "result": "PASS",
+            "note": "Appropriately cautious about limited structure"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Conflicting requirements (multiple affinity ligands)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Excellent error prevention, references documented limits, provides actionable workaround",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output detects conflicting requirements before API call",
+            "result": "PASS",
+            "note": "Conflict identified upfront"
+          },
+          {
+            "text": "Output references documented API constraints",
+            "result": "PASS",
+            "note": "One affinity ligand limit cited"
+          },
+          {
+            "text": "Output provides actionable resolution strategy",
+            "result": "PASS",
+            "note": "Two-run approach clearly described"
+          },
+          {
+            "text": "Output does not attempt to execute invalid request",
+            "result": "PASS",
+            "note": "Prevents 422 error proactively"
+          },
+          {
+            "text": "Output maintains scope (does not fabricate capabilities)",
+            "result": "PASS",
+            "note": "Respects API limitations"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 57.0,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Progressive disclosure excellence: 147-line main SKILL.md covers 80% of use cases; reference files provide depth only when needed",
+    "Validated MSA schema: Uses correct 'alignment' field (not deprecated 'data'), preventing 422 errors",
+    "Exceptional error prevention: Detects conflicting requirements before API calls (multiple affinity ligands)",
+    "Clear mode distinction: Hosted vs local Docker paths are explicit, with proper auth handling for each",
+    "Scientific rigor: Includes appropriate disclaimers for model estimates, explains confidence variation"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Enhance retry logic for transient failures",
+      "observed_in": [],
+      "problem": "No retry logic for transient API failures (network timeouts, 5xx errors). Single requests.post() call with raise_for_status() but no retry wrapper.",
+      "root_cause": "Static evaluation identified gap in fault tolerance (Reliability 2.1 scored 9/12).",
+      "fix": "Add example retry logic in main SKILL.md or references/examples.md using requests.Session with HTTPAdapter and Retry configuration (total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])."
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit seed/reproducibility guidance",
+      "observed_in": [],
+      "problem": "Stochastic sampling parameters mentioned but no seed parameter documented. Unclear whether exact reproducibility is achievable.",
+      "root_cause": "Static evaluation identified gap in idempotency (Agent-Specific 8.4 scored 3/4).",
+      "fix": "Clarify in parameters.md or main SKILL.md whether step_scale or other parameters control determinism, or if API supports a seed parameter for exact reproducibility across runs with identical inputs."
+    },
+    {
+      "priority": "P2",
+      "title": "Expand escape hatch patterns",
+      "observed_in": [],
+      "problem": "No explicit 'beyond my scope' pattern for requests outside Boltz2 capabilities. Handoffs section in science.md could be more prominent.",
+      "root_cause": "Static evaluation identified gap in escape hatches (Agent-Specific 8.5 scored 3/4).",
+      "fix": "Add to main SKILL.md after 'Choose Mode' section: Out of Scope section listing what this skill is NOT appropriate for (virtual screening of large compound libraries → use DiffDock; protein design/sequence optimization → use ProteinMPNN or RFdiffusion; molecular dynamics simulations → use external MD packages). Instruct agent to ask user to clarify intent if request matches these patterns."
+    }
+  ]
+}

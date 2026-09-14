@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "skill_name": "bioservices",
+    "description": "Unified Python interface to 40+ bioinformatics services. Use when querying multiple databases (UniProt, KEGG, ChEMBL, Reactome) in a single workflow with consistent API. Best for cross-database analysis, ID mapping across services. For quick single-database lookups use gget; for sequence/file manipulation use biopython.",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated identifiers or data. All examples use valid protein IDs and standard bioinformatics operations."
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Database access wrapper skill, no medical claims or clinical recommendations."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Cross-database mapping and pathway analysis patterns follow established bioinformatics workflows."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples syntactically correct with proper error handling patterns."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of multi-database integration use cases. Examples accurate and appropriate for cross-service workflows."
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Asynchronous BLAST patterns documented. Error handling shown but could be more comprehensive across all services."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent progressive disclosure with 360-line SKILL.md and 3 focused reference files. Efficient organization by service type."
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear service-based organization. Consistent patterns across services. Good feedback design with status checking for async operations."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural trigger language for cross-database tasks. Clear scope boundaries distinguishing from gget and biopython."
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Email requirement documented for NCBI services. No credential exposure. Input validation delegated to service APIs."
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean modular separation by service type across 3 reference files. No formal test cases provided."
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good trigger precision and composability. Progressive disclosure effective. Escape hatches present with gget/biopython boundaries."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 9,
+      "total": 9
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "UniProt search with KEGG pathway mapping",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Excellent integration showing UniProt search, FASTA retrieval, KEGG mapping, and pathway discovery",
+        "basic": 40,
+        "specialized": 57,
+        "total": 97,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses UniProt.search with correct parameters",
+            "result": "PASS",
+            "note": "Correct frmt and columns parameters for tabular output"
+          },
+          {
+            "text": "Maps UniProt ID to KEGG using UniProt.mapping",
+            "result": "PASS",
+            "note": "Correct fr/to database identifiers for cross-database mapping"
+          },
+          {
+            "text": "Retrieves KEGG pathways for gene",
+            "result": "PASS",
+            "note": "Uses KEGG.get_pathway_by_gene with organism and gene number"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Compound ID mapping across databases",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Estimated based on pattern consistency",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Searches KEGG compound database",
+            "result": "PASS",
+            "note": "Uses KEGG.find with compound type and name"
+          },
+          {
+            "text": "Cross-references using UniChem",
+            "result": "PASS",
+            "note": "Maps KEGG compound IDs to ChEMBL identifiers"
+          },
+          {
+            "text": "Handles compound information retrieval",
+            "result": "PASS",
+            "note": "Uses KEGG.get for compound details"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Asynchronous BLAST search",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Estimated based on pattern consistency",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Submits BLAST job with required email",
+            "result": "PASS",
+            "note": "NCBIblast.run with email parameter as required by NCBI"
+          },
+          {
+            "text": "Checks job status before retrieval",
+            "result": "PASS",
+            "note": "Uses getStatus to check asynchronous job completion"
+          },
+          {
+            "text": "Retrieves BLAST results correctly",
+            "result": "PASS",
+            "note": "Uses getResult with job ID and output format"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 57.6,
+    "score": 94,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent scope definition distinguishing from gget (quick lookups) and biopython (file manipulation)",
+    "Strong cross-database integration examples showing UniProt-KEGG-ChEMBL workflows",
+    "Clear service organization with 40+ services grouped by functionality type",
+    "Good handling of asynchronous operations with status checking patterns",
+    "Effective progressive disclosure with focused reference files for specific workflow types"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add comprehensive error handling patterns",
+      "observed_in": [],
+      "problem": "Error handling mentioned but not demonstrated consistently across all service types.",
+      "root_cause": "Focus on successful workflows without extensive failure mode coverage.",
+      "fix": "Add error handling section to each reference file covering: network timeouts, invalid IDs, service unavailability, rate limiting, empty result sets with retry strategies."
+    },
+    {
+      "priority": "P2",
+      "title": "Document rate limiting for different services",
+      "observed_in": [],
+      "problem": "NCBI email requirement documented but rate limits for other services not explicitly covered.",
+      "root_cause": "Service-specific rate limits not consolidated in one location.",
+      "fix": "Add rate limiting reference section documenting: requests per second for each major service, batch size recommendations, exponential backoff patterns for retries."
+    },
+    {
+      "priority": "P2",
+      "title": "Add service availability and fallback guidance",
+      "observed_in": [],
+      "problem": "No guidance on handling service outages or using alternative services for same data type.",
+      "root_cause": "Single-path workflows without fallback options.",
+      "fix": "Add service alternatives table showing: which services provide similar data types, when to use local vs remote BLAST, fallback strategies when primary service unavailable."
+    }
+  ]
+}

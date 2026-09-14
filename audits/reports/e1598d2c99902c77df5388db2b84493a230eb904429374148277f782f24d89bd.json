@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "benchling-integration",
+    "description": "Integrate with the Benchling R&D platform when you need to programmatically manage registry entities, inventory, ELN entries, workflows, events, or data warehouse analytics via API/SDK.",
+    "evaluated_on": "2026-09-04",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Lab data scope"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Proper patterns"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code correct"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good coverage but less comprehensive than synthetic-sciences version"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Retry documented"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient patterns"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Template structure slightly verbose"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Generic template language"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Good security"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "References mentioned but structure generic"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Good but template boilerplate present"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 12
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Create DNA sequence",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard operation",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Working code",
+            "result": "PASS",
+            "note": "Syntax correct"
+          },
+          {
+            "text": "Auth documented",
+            "result": "PASS",
+            "note": "Env vars"
+          },
+          {
+            "text": "No hardcoded creds",
+            "result": "PASS",
+            "note": "Safe"
+          },
+          {
+            "text": "In scope",
+            "result": "PASS",
+            "note": "Lab data"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Inventory ops",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Container management",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Inventory covered",
+            "result": "PASS",
+            "note": "Complete"
+          },
+          {
+            "text": "Transfer example",
+            "result": "PASS",
+            "note": "Shown"
+          },
+          {
+            "text": "Schema fields",
+            "result": "PASS",
+            "note": "Helper"
+          },
+          {
+            "text": "Safe patterns",
+            "result": "PASS",
+            "note": "No issues"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Template verbosity",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Generic template structure",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Complete coverage",
+            "result": "PASS",
+            "note": "All ops"
+          },
+          {
+            "text": "Clear examples",
+            "result": "PASS",
+            "note": "Working code"
+          },
+          {
+            "text": "Concise documentation",
+            "result": "FAIL",
+            "note": "Template boilerplate verbose"
+          },
+          {
+            "text": "Safety rules",
+            "result": "PASS",
+            "note": "Well documented"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 54.0,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive SDK coverage",
+    "Strong security practices",
+    "Clear validation rules"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Reduce template boilerplate",
+      "observed_in": [
+        "3"
+      ],
+      "problem": "Generic template sections add verbosity without value",
+      "root_cause": "Template-generated structure",
+      "fix": "Remove generic workflow sections, keep only Benchling-specific content"
+    }
+  ]
+}

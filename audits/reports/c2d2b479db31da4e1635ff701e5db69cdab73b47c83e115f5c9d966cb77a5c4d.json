@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "skill_name": "pytdc",
+    "description": "Use Therapeutics Data Commons through the PyTDC Python package for registry discovery, approved dataset access, task-aware splits, evaluator metrics, benchmark groups, and bounded molecular-oracle workflows. Provides comprehensive network/storage policy and bundled audit scripts.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of PyTDC capabilities with explicit uncertainty documentation for upstream gaps"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for therapeutic ML dataset access with clear warnings about data leakage and license verification requirements"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established ML split methods with explicit caveats against overclaiming leakage control"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All 5 bundled scripts are syntactically correct with proper lazy imports and safety guards"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of TDC workflows: registry discovery, dataset loading, splits, evaluators, benchmarks, and oracles"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional reliability with non-negotiable data/network policy, explicit approval gates, bounded outputs, cache audit tooling"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with 4 reference files, 5 bundled scripts, clear cache/cost behavior documentation"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with discover-first policy, exact workflow ordering (discover → plan → ask → execute), split caveats, evaluator registry"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with CPython 3.11 pinning, setuptools compatibility fix, uv-based ephemeral commands, all scripts have --help"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security: explicit --execute and --download flags, no implicit downloads, bounded outputs, safe cache paths, oracle restrictions"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.1, MIT license, verified snapshot with research date, known upstream gaps documented"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with allowed-tools, clear trigger (TDC/PyTDC), progressive disclosure via metadata-first; minor: fuzzy matching behavior could be more prominent"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 26,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Metadata-only discovery of ADME datasets",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core registry discovery without download",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "discover_metadata.py used without --execute", "result": "PASS", "note": "Metadata-only operation confirmed"},
+          {"text": "No loader constructor instantiated", "result": "PASS", "note": "Non-negotiable policy step 1 followed"},
+          {"text": "Exact task/dataset names returned", "result": "PASS", "note": "Fuzzy matching avoided"},
+          {"text": "JSON output bounded and structured", "result": "PASS", "note": "Safe output format"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Load ADME dataset with scaffold split after approval",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete dataset workflow with split",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Plan step executed without --execute first", "result": "PASS", "note": "Policy step 2: plan before download"},
+          {"text": "User approval requested before --execute", "result": "PASS", "note": "Policy step 3: ask before downloading"},
+          {"text": "Scaffold split method documented with caveats", "result": "PASS", "note": "Leakage control not overclaimed"},
+          {"text": "Seed behavior documented (validation uses fixed random_state=1)", "result": "PASS", "note": "Non-obvious API behavior surfaced"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Benchmark group evaluation with leaderboard aggregation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-run benchmark evaluation",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "admet_group imported from tdc.benchmark_group", "result": "PASS", "note": "Correct specialized class used, not deprecated BenchmarkGroup"},
+          {"text": "evaluate_many receives list of ≥5 predictions", "result": "PASS", "note": "Leaderboard requirement documented"},
+          {"text": "Group download approval requested before construction", "result": "PASS", "note": "Network policy enforced"},
+          {"text": "Test labels not used to derive dummy predictions", "result": "PASS", "note": "Anti-pattern avoided"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Cold split with multi-column entity separation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-instance split API",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "method='cold_split' with column_name parameter", "result": "PASS", "note": "Multi-instance API correctly invoked"},
+          {"text": "Warning about row discard and fraction deviation", "result": "PASS", "note": "Split caveat documented"},
+          {"text": "Entity overlap audit recommended", "result": "PASS", "note": "Leakage verification emphasized"},
+          {"text": "PyTDC version and parameters recorded", "result": "PASS", "note": "Reproducibility guidance followed"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Molecular oracle scoring with checkpoint download",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Oracle workflow with approval gates",
+        "basic": 35,
+        "specialized": 50,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Oracle discovery run before instantiation", "result": "PASS", "note": "Metadata-first policy followed"},
+          {"text": "Both --execute and --download flags required", "result": "PASS", "note": "Dual approval mechanism enforced"},
+          {"text": "Remote services and docking refused", "result": "PASS", "note": "Bounded oracle scope maintained"},
+          {"text": "Input order preserved in output", "result": "PASS", "note": "No silent reordering"}
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Train a molecule generator model",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Outside scope: PyTDC provides corpora and oracles, not training",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Scope boundary clearly stated", "result": "PASS", "note": "SKILL.md: 'does not train or provide a generic molecule generator'"},
+          {"text": "MolGen corpus access documented", "result": "PASS", "note": "Data component within scope"},
+          {"text": "Recommended alternative tools mentioned", "result": "FAIL", "note": "No pointer to REINVENT, GuacaMol, MOSES, or similar frameworks"},
+          {"text": "Oracle evaluation capability offered", "result": "PASS", "note": "Evaluation component within scope"}
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Use undocumented 'temporal' split method",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Undocumented API correctly rejected",
+        "basic": 33,
+        "specialized": 45,
+        "total": 78,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Warning issued against undocumented methods", "result": "PASS", "note": "SKILL.md: 'Do not use undocumented cold_drug_target, temporal, or stratified=True'"},
+          {"text": "Correct alternative documented (method='time')", "result": "PASS", "note": "Verified API spelling provided"},
+          {"text": "Specific verified example given (BindingDB_Patent)", "result": "PASS", "note": "Concrete safe usage shown"},
+          {"text": "Error handling for invalid method shown", "result": "PARTIAL", "note": "Rejection mechanism implied but not explicitly shown"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 53.6,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional data governance with non-negotiable 5-step policy (discover → plan → ask → execute → bounded outputs) enforced via --execute and --download flags",
+    "Outstanding transparency about upstream gaps: documented ReadTheDocs version mismatch, no maintained changelog, setuptools 82 incompatibility",
+    "Excellent split methodology guidance with explicit anti-overclaiming: 'scaffold does NOT prove absence of analog, duplicate, label, temporal, or provenance leakage'",
+    "Strong security posture: lazy imports, safe cache paths, bounded outputs, oracle restrictions, no implicit downloads",
+    "Comprehensive bundled tooling with 5 scripts covering discovery, loading, evaluation, oracles, and cache auditing"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Emphasize fuzzy matching behavior earlier",
+      "observed_in": [1, 7],
+      "problem": "Fuzzy matching note appears late in metadata workflow section",
+      "root_cause": "Agent-specific 'trigger precision' could be more prominent",
+      "fix": "Add note to ## Start with metadata-only discovery: 'IMPORTANT: Use exact returned names. PyTDC performs fuzzy matching internally but can select wrong dataset/oracle.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add molecule generation framework pointers",
+      "observed_in": [6],
+      "problem": "Scope boundary (training) lacks redirect to appropriate tools",
+      "root_cause": "Out-of-scope capability not explicitly routed",
+      "fix": "Add to ## Molecular generation and oracles: 'For de novo molecule generation training, use REINVENT, GuacaMol, MOSES, or transformer-based frameworks. PyTDC provides corpora and evaluation oracles.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document error handling for invalid API parameters",
+      "observed_in": [7],
+      "problem": "Undocumented method rejection mechanism not shown",
+      "root_cause": "Warning states what not to use but not what happens if used",
+      "fix": "Add example: 'Undocumented methods may raise KeyError, ValueError, or silently fall back to defaults—verify against 1.1.15 source before use.'"
+    }
+  ]
+}

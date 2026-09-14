@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-data",
+    "description": "Prepare, audit, or revise Nature-ready Data Availability statements, data repository plans, dataset citations, and FAIR metadata checklists for manuscripts. Supports Chinese-to-English data availability wording and bilingual operation for Nature-family submissions.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "C",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Does not invent DOIs, accession numbers, or identifiers. Flags 'available upon request' as weak. Requires explicit dataset-to-location mapping."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for data availability statement preparation. Enforces Nature/Springer Nature data-sharing policies. FAIR principles aligned with community standards."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Access route classification (public/controlled/third-party/restricted) follows established data governance. Repository selection hierarchy is evidence-based (DOI > accession > stable URL)."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Clear 8-step workflow with ready-to-paste output format. References include statement patterns and checklist templates."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete data availability workflow: dataset inventory, access route classification, repository selection, statement drafting, dataset citation, FAIR audit. Handles auditing existing statements and preparing new ones."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong quality gates: no invented identifiers, explicit dataset-to-location mapping required, FAIR audit before finalization. Flags weak patterns like 'available upon request'. Minor: lacks validation for identifier format correctness."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient on-demand loading for policy/repository/FAIR references. Core workflow lean. Minor: no guidance for handling very large dataset inventories (100+ datasets)."
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 4-step routing protocol. Manifest-driven always_load. Runtime parameter detection (journal, language, access route) handled inline. Minor: access route classification could use decision tree guidance."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent bilingual support with 中文核对 block. Ready-to-paste output format. Clear separation of statement text, actions, and missing information. Comprehensive Chinese trigger phrases."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Does not handle or expose sensitive data directly. Flags restricted/controlled access appropriately. Prompts for ethics approvals and access committees rather than inventing them. No credential leakage risk."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular design. Core stance, Chinese mode, and workflow separated. Policy/repository/FAIR references on-demand. Journal-specific requirements cleanly isolated (nature-article-requirements.md, NMI via nature-shared)."
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong parameterized workflow. Inline journal/language detection efficient. Clear 8-step process. Minor: lacks explicit guidance for multi-dataset deduplication. Missing examples of complex access route combinations."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Draft Data Availability statement for Nature Article with public repository data",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Inventoried datasets, classified as public repository, selected DOI-based identifiers, drafted statement with explicit mapping, added dataset citations, passed FAIR audit.",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Inventories all datasets (raw, processed, figure source, secondary, software outputs)",
+            "result": "PASS",
+            "note": "Comprehensive dataset inventory per workflow step 2"
+          },
+          {
+            "text": "Classifies datasets into correct access route (public repository)",
+            "result": "PASS",
+            "note": "Access route classification working correctly"
+          },
+          {
+            "text": "Drafts statement with explicit dataset-to-location mapping (no vague 'data available')",
+            "result": "PASS",
+            "note": "Specific mapping per workflow step 5"
+          },
+          {
+            "text": "Runs FAIR audit and includes metadata completeness check",
+            "result": "PASS",
+            "note": "FAIR audit executed per workflow step 7"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Chinese user preparing 数据可用性声明 for Nature submission",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected Chinese mode, accepted Chinese dataset descriptions, drafted English statement with precise term conversion, added 中文核对 block for author confirmation.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects Chinese language and triggers chinese-mode.md guidelines",
+            "result": "PASS",
+            "note": "Bilingual operation mode correctly activated"
+          },
+          {
+            "text": "Accepts Chinese input and drafts English Data Availability statement",
+            "result": "PASS",
+            "note": "Chinese-to-English conversion working as designed"
+          },
+          {
+            "text": "Converts terms precisely (数据仓库→repository, 可用性→availability)",
+            "result": "PASS",
+            "note": "Term mapping accurate per chinese-author-alignment.md"
+          },
+          {
+            "text": "Includes 中文核对 block listing fields author must confirm",
+            "result": "PASS",
+            "note": "Output format per workflow.md includes Chinese verification section"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Audit existing statement with 'available upon request' weakness",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Flagged 'available upon request' as weak, identified missing specific restriction justification, provided revised statement with controlled-access repository recommendation.",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Flags 'available upon request' as weak pattern",
+            "result": "PASS",
+            "note": "Quality gate per workflow step 5 guideline"
+          },
+          {
+            "text": "Identifies missing justification (legal/ethical/commercial restriction)",
+            "result": "PASS",
+            "note": "Access route classification requires explicit justification"
+          },
+          {
+            "text": "Leads with blocking issues first before providing revised version",
+            "result": "PASS",
+            "note": "Audit output format per workflow.md"
+          },
+          {
+            "text": "Recommends controlled-access repository as alternative",
+            "result": "PASS",
+            "note": "Repository selection hierarchy correctly applied"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Mixed access routes: public + controlled + third-party restricted datasets",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Classified each dataset independently, drafted statement with clear route separation, flagged third-party data source and contact information as required.",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Classifies each dataset into independent access route",
+            "result": "PASS",
+            "note": "Multi-route handling per workflow step 3"
+          },
+          {
+            "text": "Drafts statement with clear separation of access routes",
+            "result": "PASS",
+            "note": "Explicit dataset-to-location mapping maintained across routes"
+          },
+          {
+            "text": "Flags third-party data source and contact information as required",
+            "result": "PASS",
+            "note": "Third-party restricted route correctly handled"
+          },
+          {
+            "text": "Provides specific actions for each route (deposit, request access, cite source)",
+            "result": "PASS",
+            "note": "Repository and citation actions section populated correctly"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Nature Machine Intelligence with Code availability section requirement",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Loaded NMI-specific requirements via nature-shared, enforced separate Code availability section after Data Availability, checked Software Submission Checklist for central code.",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects NMI target and loads journal-specific requirements",
+            "result": "PASS",
+            "note": "On-demand loading of ../nature-shared/journal-formats/nature-machine-intelligence.md"
+          },
+          {
+            "text": "Enforces separate Code availability section after Data Availability",
+            "result": "PASS",
+            "note": "NMI-specific structure requirement applied"
+          },
+          {
+            "text": "Checks Software Submission Checklist for newly developed central code",
+            "result": "PASS",
+            "note": "NMI central-code review access requirement verified"
+          },
+          {
+            "text": "Validates repository/identifier quality for both data and code",
+            "result": "PARTIAL",
+            "note": "Basic validation works but lacks format-specific identifier checks (e.g., GitHub release DOI vs commit hash)"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "FAIR metadata audit for dataset with incomplete provenance and license",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Ran FAIR checklist, flagged missing provenance metadata and license specification, provided DataCite field recommendations, suggested README template.",
+        "basic": 37,
+        "specialized": 50,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Runs FAIR checklist covering metadata completeness",
+            "result": "PASS",
+            "note": "FAIR audit per workflow step 7 using fair-metadata-checklist.md"
+          },
+          {
+            "text": "Flags missing provenance metadata (data collection method, processing pipeline)",
+            "result": "PASS",
+            "note": "Provenance check correctly identifies gaps"
+          },
+          {
+            "text": "Flags missing license specification and recommends appropriate license",
+            "result": "PASS",
+            "note": "License check working, provides recommendations"
+          },
+          {
+            "text": "Provides actionable remediation steps (README template, DataCite fields)",
+            "result": "PARTIAL",
+            "note": "Recommendations present but lack prioritization (P0 vs P1) for blocking vs optional metadata"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 55.3,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent quality control: no invented identifiers, explicit dataset-to-location mapping required, 'available upon request' flagged as weak",
+    "Strong bilingual support with 中文核对 block for Chinese-speaking authors preparing English submissions",
+    "Comprehensive access route classification (public/controlled/third-party/restricted/justified-request) with clear guidance",
+    "Clean integration of journal-specific requirements (Nature Article mandatory deposition, NMI Code availability section)",
+    "Robust FAIR metadata audit covering provenance, license, README, DataCite fields, and file organization"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add identifier format validation",
+      "observed_in": [1, 5],
+      "problem": "Skill checks for presence of DOIs/accession numbers but doesn't validate format correctness (e.g., DOI regex 10.\\d{4,}/\\S+, NCBI accession patterns, GitHub release vs commit hash).",
+      "root_cause": "Repository-and-identifiers.md describes identifier hierarchy but lacks format validation rules.",
+      "fix": "Add identifier format validation step before finalizing statement. Include regex patterns for common identifiers (DOI, PMID, GEO accession, PDB ID, GitHub release DOI). Flag format errors in 'Missing information / risk flags' section."
+    },
+    {
+      "priority": "P2",
+      "title": "Add access route decision tree guidance",
+      "observed_in": [3, 4],
+      "problem": "Access route classification (workflow step 3) relies on agent judgment without explicit decision tree. Complex cases (e.g., sensitive data with possible anonymization, third-party data with reuse permissions) lack structured guidance.",
+      "root_cause": "Workflow describes routes but not decision logic for edge cases.",
+      "fix": "Create references/access-route-decision-tree.md with flowchart: Start with data sensitivity → Check legal/ethical restrictions → Evaluate anonymization feasibility → Determine public vs controlled vs restricted. Include examples for common edge cases."
+    },
+    {
+      "priority": "P2",
+      "title": "Prioritize FAIR audit findings (P0/P1/P2)",
+      "observed_in": [6],
+      "problem": "FAIR audit flags missing metadata comprehensively but doesn't prioritize blocking issues (e.g., missing license preventing reuse) vs nice-to-have metadata (e.g., detailed provenance narrative).",
+      "root_cause": "fair-metadata-checklist.md lists checks without severity levels.",
+      "fix": "Add priority levels to FAIR audit: P0 (blocking: license, access conditions), P1 (critical for findability: DOI, title, authors), P2 (enhances reusability: detailed provenance, code comments). Report P0 issues first in 'Missing information / risk flags'."
+      }
+  ]
+}

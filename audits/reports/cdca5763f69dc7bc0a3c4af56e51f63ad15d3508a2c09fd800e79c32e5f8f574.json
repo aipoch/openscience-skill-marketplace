@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "kermt-infer",
+    "description": "Run predictions with a finetuned KERMT checkpoint on a SMILES-only CSV. The skill validates that the input ckpt has task FFN heads (refuses pretrain ckpts with a redirect to kermt-finetune), validates the CSV, prepares the data (clean + rdkit_2d features), then launches main.py predict inside the kermt container (blocking, minutes-scale).",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete 7-step workflow for inference with finetuned checkpoint; clear scope restriction to finetuned-only with redirect to kermt-finetune for pretrain checkpoints"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation at multiple stages (check_system, check_checkpoint, check_data, prepare_data); minor: no guidance on handling large batch inference failures or memory exhaustion"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent efficiency: 138 lines well within target; explicit line/token budget comment shows awareness; clean single-file structure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Clear 7-step workflow; blocking execution appropriate for minutes-scale inference; validation enforces correct checkpoint type; all error scenarios documented"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent trigger coverage; clear hardware requirements; SMILES-only input requirement explicit; blocking vs detached choice appropriate for task duration"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Never modifies user's checkpoint; read-only checkpoint access via symlink; proper path isolation; no credential handling risks"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean single-file structure with clear sections; replayability documented; relationship to kermt-finetune explicitly mapped; minimal dependencies"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Excellent trigger precision; clear scope boundary (finetuned only); composability via kermt-finetune handoff; hard rules provide guardrails; lacks explicit idempotency statement; no consolidated escape hatches section"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Inference with finetuned checkpoint on SMILES CSV",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete 7-step workflow with checkpoint validation and blocking inference",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py validates with --mode inference",
+            "result": "PASS",
+            "note": "Step 3 validation requires has_task_ffn=true"
+          },
+          {
+            "text": "prepare_data.py runs in inference mode (clean + rdkit_2d features)",
+            "result": "PASS",
+            "note": "Step 5 produces clean_csv + clean_npz with rdkit_2d_normalized"
+          },
+          {
+            "text": "Runner launched blocking (not detached) for minutes-scale task",
+            "result": "PASS",
+            "note": "Step 6 uses run not run_detached, appropriate for inference duration"
+          },
+          {
+            "text": "Predictions CSV contains smiles + per-target columns",
+            "result": "PASS",
+            "note": "Step 7 reports predictions.csv format"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Pretrain checkpoint submitted for inference",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct rejection with redirection to kermt-finetune",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_checkpoint.py detects has_task_ffn=false and rejects",
+            "result": "PASS",
+            "note": "Step 3 validation rejects pretrain checkpoints"
+          },
+          {
+            "text": "User redirected to kermt-finetune for model preparation",
+            "result": "PASS",
+            "note": "Common errors section provides clear handoff"
+          },
+          {
+            "text": "Workflow aborts on validation failure before data preparation",
+            "result": "PASS",
+            "note": "Step 3: Abort on ok: false"
+          },
+          {
+            "text": "Error message explains checkpoint type mismatch",
+            "result": "PASS",
+            "note": "Common errors: inference requires finetuned ckpt with task FFN heads"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Large batch inference with custom batch size and seed",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Optional parameters applied for deterministic large-scale inference",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "--batch-size N overrides default 32",
+            "result": "PASS",
+            "note": "Optional input and step 6 document batch size override"
+          },
+          {
+            "text": "--seed N ensures deterministic featurization",
+            "result": "PASS",
+            "note": "Optional input documents seed for deterministic paths"
+          },
+          {
+            "text": "Single-GPU restriction enforced",
+            "result": "PASS",
+            "note": "Hardware requirements and common errors document single GPU only"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 58.0,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional conciseness and clarity: 138-line SKILL.md delivers complete workflow with excellent efficiency",
+    "Perfect scope restriction: validates checkpoint has task FFN heads and redirects pretrain checkpoints to kermt-finetune",
+    "Appropriate execution model: blocking runner for minutes-scale inference vs detached for hours/days training",
+    "Strong validation pipeline with clear error messages and recovery guidance for each failure mode",
+    "Clean separation from training workflows with explicit handoff documentation"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add guidance for large batch inference failures",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No guidance on handling memory exhaustion or partial failures when running inference on large datasets (thousands to millions of molecules)",
+      "root_cause": "Assumes batch size adjustment sufficient; doesn't address chunking strategy",
+      "fix": "Add to Common errors: 'OOM or CUDA out of memory → reduce --batch-size (try 16 or 8 for low VRAM). For very large CSVs (>100k molecules), consider splitting input into chunks and running inference separately on each, then concatenating predictions.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document predictions.csv structure for downstream use",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "Step 7 mentions predictions.csv contains smiles + per-target columns but structure not fully specified",
+      "root_cause": "Output format treated as self-documenting",
+      "fix": "Expand Step 7: 'predictions.csv — one row per input molecule with columns: smiles (canonical), <target1>, <target2>, ... (predicted values for each task the model was finetuned on). Target column names match the original finetune CSV. Load with: pd.read_csv(\"predictions.csv\")'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated inference",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running inference multiple times with same inputs produces identical predictions",
+      "root_cause": "Determinism via --seed mentioned but not consolidated into idempotency guarantee",
+      "fix": "Add to Hard rules: 'Idempotency: inference is deterministic when --seed N is set (same checkpoint and CSV produce identical predictions across runs). Without --seed, minor stochastic variation may occur in featurization. Timestamped run directories prevent overwrites; outputs are reproducible via cmd_replay.'"
+    }
+  ]
+}

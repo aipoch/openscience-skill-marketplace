@@ -1,0 +1,338 @@
+{
+  "meta": {
+    "skill_name": "nature-image2ppt",
+    "description": "Convert slide images, screenshots, scanned PDFs, and image-only PPT/PPTX files into high-fidelity object-level editable PowerPoint, including semantic-region mixed reconstruction, measured flowcharts and knowledge graphs, native circle nodes and connectors, single-object thin and filled arrows, speaker-note preservation, and rendered QA. Requires Python 3.10+ with deterministic CLI-driven workflow.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {"result": "N/A", "detail": "N/A"},
+      "practice_boundaries": {"result": "N/A", "detail": "N/A"},
+      "methodological_ground": {"result": "N/A", "detail": "N/A"},
+      "code_usability": {"result": "N/A", "detail": "N/A"}
+    }
+  },
+  "static_score": {
+    "subtotal": 88,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive conversion workflow: semantic-region decomposition, measured flowcharts/knowledge graphs, native shapes (circles, connectors), single-object arrows (thin/filled), speaker-note preservation, rendered QA. Handles slides, screenshots, scanned PDFs, image-only PPTX. Minor: no explicit video/animation recovery mentioned."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent quality gates: formula rendering hard gate, visual-review-evidence with hash-bound checks, page validation before record, final deck revalidation, arrow atomicity verification. Single source of truth enforced (page_jobs.json, manifest.json, deck_manifest.json). Minor: no automatic rollback on finalize failure."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient parallel page dispatch up to capacity in page_jobs.json. Progressive reference loading (workflow.md always, others on-demand). Minor: no guidance for very large decks (100+ slides) or memory-constrained environments."
+      },
+      "agent_usability": {
+        "score": 13,
+        "max": 16,
+        "note": "Clear deterministic CLI workflow. Authoritative file ownership map excellent. Single entrypoint enforced (cli/image2ppt/cli.py). Page-worker prompt generation separate. Minor: complex lifecycle (prepare → next → dispatch → build → record → finalize) could benefit from state machine diagram. No discovery of other skills enforced but reason unclear."
+      },
+      "human_usability": {
+        "score": 6,
+        "max": 8,
+        "note": "Comprehensive contracts (workflow.md, page-decision-tree.md, manifest-schema.md, qa-contract.md). Bilingual triggers (图片转可编辑PPT). Minor: steep learning curve with 13 references, complex page lifecycle, required visual-review-evidence template completion. Limited examples for first-time users."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent boundary enforcement: page build writes only inside page directory, no traversal/absolute escapes/symlinks allowed. Image backend selection provider-neutral with explicit provenance recording. Optional Baidu AI Studio token for OCR with offline fallback. No credential exposure in manifests."
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent single-source-of-truth principle: authoritative files clearly defined, forbidden parallel state explicitly listed. Schema version 2 for manifests. Ownership map clear. Pre-migration behavior preservation documented. Minor: lacks version migration guide for schema_version 1→2 upgrade."
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong deterministic workflow with CLI-driven lifecycle. Hash-bound visual-review-evidence prevents stale checks. Region decomposition evidence in manifest. Image backend abstraction (builtin-imagegen vs CLI contract). Minor: worker prompt generation separate but lacks explicit context-size management guidance. No discovery of other skills rule seems overly restrictive for potential integrations (e.g., nature-figure for diagrams)."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Convert simple slide image to editable PPTX with native shapes",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Ran doctor, prepared run with builtin-imagegen, decomposed into 3 semantic regions, measured shapes natively (circles, rectangles), built page, completed visual-review-evidence.json, passed QA, recorded, finalized, delivered PPTX.",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Runs doctor preflight check and reports OCR backend status",
+            "result": "PASS",
+            "note": "Preflight per workflow step 1"
+          },
+          {
+            "text": "Decomposes slide into 3-5 semantic regions with independent routing",
+            "result": "PASS",
+            "note": "Region decomposition per reconstruction guidance"
+          },
+          {
+            "text": "Measures shapes natively (circles, cards, connectors) without flattening",
+            "result": "PASS",
+            "note": "Measured compound diagrams principle correctly applied"
+          },
+          {
+            "text": "Completes hash-bound visual-review-evidence.json before record",
+            "result": "PASS",
+            "note": "Visual-review gate enforced per QA contract"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Convert knowledge graph with arrows (thin and filled) to native objects",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected flowchart pattern, measured nodes and relations, represented thin arrows as connectors with arrowheads, filled arrows as Arrow AutoShapes with centered labels, validated arrow atomicity in final QA, no line+triangle constructions.",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Represents thin arrows as single connectors with arrowheads (not line+triangle)",
+            "result": "PASS",
+            "note": "Arrow reconstruction per specification"
+          },
+          {
+            "text": "Represents filled arrows as single Arrow AutoShapes with centered label text",
+            "result": "PASS",
+            "note": "Single-object filled arrow principle correctly applied"
+          },
+          {
+            "text": "Validates arrow atomicity (no multi-object arrow constructions) in final QA",
+            "result": "PASS",
+            "note": "Arrow verification per final QA script"
+          },
+          {
+            "text": "Uses manifest-arrow-extension.md for complex arrow routing",
+            "result": "PASS",
+            "note": "Progressive reference loading working correctly"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Convert scanned PDF with speaker notes preservation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Prepared from PDF input, normalized to slide images, ran OCR (Paddle with PADDLE_OCR_TOKEN), extracted speaker notes from source, reconstructed slides, finalize preserved notes in output PPTX, verified note integrity in final QA.",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Normalizes PDF input to slide images per input normalization",
+            "result": "PASS",
+            "note": "Input handling per workflow ownership map"
+          },
+          {
+            "text": "Extracts and preserves source speaker notes during reconstruction",
+            "result": "PASS",
+            "note": "Speaker notes preservation per final assembly specification"
+          },
+          {
+            "text": "Verifies speaker-note integrity in final QA (notes match source)",
+            "result": "PASS",
+            "note": "Final QA checks per run_final_image2ppt_qa.py"
+          },
+          {
+            "text": "Uses Paddle OCR with PADDLE_OCR_TOKEN when configured",
+            "result": "PARTIAL",
+            "note": "OCR working but lacks explicit fallback confirmation message when token missing"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Formula rendering hard gate scenario (missing LaTeX engine)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected formulas in slide, attempted LaTeX compilation, engine missing, kept page failed status, asked user for approval with approval_note, user approved exception, recorded user_approved_exception: true in manifest, proceeded with image fallback.",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects formula rendering requirement and attempts compilation",
+            "result": "PASS",
+            "note": "Formula gate per reconstruction guidance"
+          },
+          {
+            "text": "Keeps page failed when engine/converter missing (hard gate enforced)",
+            "result": "PASS",
+            "note": "Formula rendering hard gate correctly applied"
+          },
+          {
+            "text": "Requires explicit user approval with approval_note for formula exceptions",
+            "result": "PASS",
+            "note": "Exception approval workflow per specification"
+          },
+          {
+            "text": "Records both user_approved_exception and approval_note in manifest",
+            "result": "PARTIAL",
+            "note": "Approval recorded but lacks concrete quality_evidence observation for this exception"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Parallel page dispatch for multi-slide deck",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Prepared 10-slide deck, ran next to get pending pages, dispatched 4 workers up to capacity in page_jobs.json, each worker claimed page with dispatch, built independently, recorded results, finalize assembled deck from page manifests.",
+        "basic": 37,
+        "specialized": 50,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Dispatches independent page workers up to capacity in page_jobs.json",
+            "result": "PASS",
+            "note": "Parallel dispatch per workflow step 3"
+          },
+          {
+            "text": "Each worker builds page independently without interfering with other pages",
+            "result": "PASS",
+            "note": "Page isolation per boundary enforcement (writes only inside page directory)"
+          },
+          {
+            "text": "Finalize assembles deck from page manifests (not intermediate files)",
+            "result": "PASS",
+            "note": "Final assembly per authoritative files specification"
+          },
+          {
+            "text": "Handles worker failure gracefully (retry via reset → dispatch → record)",
+            "result": "PARTIAL",
+            "note": "Retry lifecycle documented but lacks explicit timeout/zombie worker detection"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Image backend selection: builtin-imagegen vs CLI contract with provenance",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Prepared with --image-backend builtin-imagegen (preferred), worker inspected edit inputs, imported explicit local result, recorded producer in imagegen-jobs.json. Separate run with --image-backend openai-compatible-api for auditable third-party provenance.",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Prefers builtin-imagegen when agent runtime exposes image_gen.imagegen",
+            "result": "PASS",
+            "note": "Image backend selection per specification"
+          },
+          {
+            "text": "Falls back to CLI image contract only for documented reasons (unavailable, errors, no output)",
+            "result": "PASS",
+            "note": "Fallback authorization controlled, not automatic for convenience"
+          },
+          {
+            "text": "Records actual producer and permitted fallback reason in imagegen-jobs.json",
+            "result": "PASS",
+            "note": "Provenance tracking per image backend selection"
+          },
+          {
+            "text": "Pins third-party provider/model explicitly for auditable provenance when requested",
+            "result": "PARTIAL",
+            "note": "Provenance pinning works but lacks validation that recorded IMAGE2PPT_IMAGE_MODEL matches actual API calls"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.2,
+    "dynamic_weighted": 52.7,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent single-source-of-truth principle: authoritative files clearly defined (page_jobs.json, manifest.json, deck_manifest.json), forbidden parallel state explicitly listed",
+    "Strong boundary enforcement: page writes only inside page directory, no traversal/absolute escapes/symlinks, prevents accidental file corruption",
+    "Robust quality gates: formula rendering hard gate, hash-bound visual-review-evidence prevents stale checks, arrow atomicity verification, final deck revalidation",
+    "Sophisticated reconstruction: semantic-region decomposition with independent routing, measured compound diagrams native (not flattened), single-object arrows",
+    "Clean deterministic workflow: CLI-driven lifecycle with explicit state files, parallel page dispatch, provenance tracking for image backend"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add state machine diagram for page lifecycle",
+      "observed_in": [1, 5],
+      "problem": "Complex page lifecycle (prepare → next → dispatch → build → QA → record → finalize) with multiple states (pending, claimed, building, failed, recorded) documented textually but lacks visual state machine diagram showing transitions and terminal states.",
+      "root_cause": "Workflow.md describes sequence linearly. State transitions implicit in CLI commands. New users struggle to understand valid state transitions and recovery paths.",
+      "fix": "Add references/page-lifecycle-state-machine.md with: (1) state diagram showing all valid transitions, (2) terminal states (recorded_success, failed_permanent), (3) recovery paths (reset → dispatch for failed pages), (4) invalid transitions explicitly marked. Include in workflow.md 'Always read' section."
+    },
+    {
+      "priority": "P1",
+      "title": "Add timeout and zombie worker detection",
+      "observed_in": [5],
+      "problem": "Parallel page dispatch can have workers that hang indefinitely (network issues, infinite loops, resource exhaustion). No explicit timeout or zombie detection mechanism documented. 'Do not reset a live worker merely because it is slow' leaves ambiguity on when reset is justified.",
+      "root_cause": "Dispatch lease in page_jobs.json lacks timeout field. No monitoring for worker health beyond manual inspection.",
+      "fix": "Add dispatch_timeout_seconds to page_jobs.json (default 1800s for complex pages). Add 'run check-workers <run>' command that: (1) checks dispatch timestamp, (2) flags zombies exceeding timeout, (3) provides reset recommendation with reason. Update workflow step 3 with: 'Run check-workers periodically for long-running decks. Reset zombies only after timeout confirmed.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add schema version migration guide",
+      "observed_in": [1, 2],
+      "problem": "Manifest schema version 2 required for new pages, but no documented migration path for existing schema_version 1 manifests. Users with old runs cannot upgrade without manual rewrite.",
+      "root_cause": "Schema evolution mentioned (schema_version: 2) but breaking changes from v1→v2 not documented. No migration script provided.",
+      "fix": "Add references/schema-migration.md documenting: (1) v1 vs v2 differences (structured visual_inventory with kind/representation, explicit quality_evidence), (2) migration script scripts/migrate_manifest_v1_to_v2.py that upgrades fields and adds required quality_evidence placeholders, (3) validation that upgraded manifest builds correctly. Include 'not backward compatible' warning."
+    }
+  ]
+}

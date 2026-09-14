@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "datamol",
+    "description": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3D conformers, parallel processing. Returns native rdkit.Chem.Mol objects. For advanced control or custom parameters, use rdkit directly.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of datamol library and RDKit cheminformatics methods; no fabricated capabilities"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for drug discovery cheminformatics with clear boundaries directing to rdkit for advanced control"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established RDKit library with validated molecular fingerprints, descriptors, and conformer generation methods"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports and error handling patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of cheminformatics workflows including standardization, descriptors, fingerprints, clustering, scaffolds, conformers, and reactions with excellent reference organization"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good troubleshooting section covering parsing failures, memory errors, slow conformers, and remote file access; minor: could expand validation patterns"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (201 lines main + 8 comprehensive reference files) with clear modular structure and progressive disclosure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent capability mapping table (10 workflow areas); clear scope boundary to rdkit for advanced control; comprehensive reference navigation"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with automatic RDKit dependency; optional cloud storage backends documented; parallelization guidance with n_jobs parameter"
+      },
+      "security": {
+        "score": 10,
+        "max": 12,
+        "note": "Cloud I/O requires user confirmation; credential handling noted for fsspec backends; minor: lacks explicit guidance on proprietary compound library handling"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, clear license (Apache-2.0), 8 comprehensive reference files, version notes, and external resource links"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and third-party library boundaries (scipy, scikit-learn); parallelization support; minor: output format schemas not fully specified"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 91.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "SMILES parsing and standardization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core molecule handling with error checking",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "dm.to_mol() used for SMILES to molecule conversion",
+            "result": "PASS",
+            "note": "dm.to_mol(smiles) pattern clearly demonstrated as primary interface"
+          },
+          {
+            "text": "None checking after molecule parsing",
+            "result": "PASS",
+            "note": "Best practices section explicitly shows 'if mol is None' pattern"
+          },
+          {
+            "text": "dm.standardize_mol() with full parameter set",
+            "result": "PASS",
+            "note": "disconnect_metals, normalize, reionize parameters documented in best practices"
+          },
+          {
+            "text": "Native rdkit.Chem.Mol compatibility emphasized",
+            "result": "PASS",
+            "note": "Overview clearly states 'native rdkit.Chem.Mol instances' for full RDKit ecosystem compatibility"
+          },
+          {
+            "text": "Error handling pattern with try-except demonstrated",
+            "result": "PASS",
+            "note": "Error Handling section shows safe_to_mol() function with exception handling"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Fingerprint computation and similarity search",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Molecular fingerprinting and distance calculations",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "dm.to_fp() for fingerprint generation",
+            "result": "PASS",
+            "note": "dm.to_fp(mol) shown in ML integration section"
+          },
+          {
+            "text": "Multiple fingerprint types documented",
+            "result": "PASS",
+            "note": "Best practices list ECFP (Morgan), MACCS, and Atom pairs with use cases"
+          },
+          {
+            "text": "Pairwise distance calculation support",
+            "result": "PASS",
+            "note": "Workflow table lists 'pairwise and cross-set distances' with Tanimoto note"
+          },
+          {
+            "text": "Parallelization via n_jobs parameter",
+            "result": "PASS",
+            "note": "dm.pdist(..., n_jobs=-1) listed in parallelization section"
+          },
+          {
+            "text": "Tanimoto distance relationship to similarity explained",
+            "result": "PASS",
+            "note": "Workflow table notes 'Tanimoto distance = 1 − similarity'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Descriptor computation and batch processing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Parallel descriptor calculation for feature generation",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "dm.descriptors.batch_compute_many_descriptors() function",
+            "result": "PASS",
+            "note": "Function shown in parallelization section and ML integration"
+          },
+          {
+            "text": "n_jobs parameter for parallel computation",
+            "result": "PASS",
+            "note": "batch_compute_many_descriptors(..., n_jobs=-1) explicitly documented"
+          },
+          {
+            "text": "DataFrame output for ML pipeline integration",
+            "result": "PASS",
+            "note": "ML integration shows desc_df.values for scikit-learn X matrix"
+          },
+          {
+            "text": "Descriptor reference file for detailed API",
+            "result": "PASS",
+            "note": "descriptors_viz.md listed in reference documentation"
+          },
+          {
+            "text": "Integration with numpy and scikit-learn",
+            "result": "PASS",
+            "note": "ML integration section shows numpy array conversion and RandomForestRegressor usage"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Cloud I/O with S3/GCS and large dataset handling",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Remote file operations with fsspec backends",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "fsspec backend installation guidance",
+            "result": "PASS",
+            "note": "Installation section lists s3fs and gcsfs with use case mapping"
+          },
+          {
+            "text": "Remote path syntax demonstrated",
+            "result": "PASS",
+            "note": "Best practices show s3://bucket/compounds.sdf example"
+          },
+          {
+            "text": "User confirmation required for remote writes",
+            "result": "PASS",
+            "note": "Best practices state 'Use cloud I/O only when requested — confirm remote write paths'"
+          },
+          {
+            "text": "Scale limitations documented for clustering",
+            "result": "PASS",
+            "note": "Best practices note 'Butina clustering: ~1,000 molecules (full distance matrix)'"
+          },
+          {
+            "text": "Alternative methods for large datasets",
+            "result": "FAIL",
+            "note": "pick_diverse mentioned in troubleshooting but not in main best practices as proactive guidance"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Scaffold analysis and train/test splitting",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Scaffold operations for ML dataset preparation",
+        "basic": 33,
+        "specialized": 46,
+        "total": 79,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Scaffold extraction documented",
+            "result": "PASS",
+            "note": "Workflow table lists Bemis-Murcko scaffolds with grouping and counting"
+          },
+          {
+            "text": "Scaffold-disjoint splitting for ML",
+            "result": "PASS",
+            "note": "Workflow table mentions 'scaffold-disjoint train/test splits' and best practices recommend it"
+          },
+          {
+            "text": "Reference file for detailed scaffold API",
+            "result": "PASS",
+            "note": "fragments_scaffolds.md listed in reference documentation"
+          },
+          {
+            "text": "Best practice guidance for ML train/test",
+            "result": "PASS",
+            "note": "Best practices include 'Scaffold splitting for ML: Ensure proper train/test separation by scaffold'"
+          },
+          {
+            "text": "Code examples for scaffold splitting workflow",
+            "result": "FAIL",
+            "note": "Scaffold splitting mentioned but no inline code example in main SKILL.md"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 55.0,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional modular organization with 8 comprehensive reference files covering all major cheminformatics workflows",
+    "Outstanding capability mapping with clear 10-workflow table directing users to appropriate reference materials",
+    "Excellent performance optimization with built-in parallelization (n_jobs parameter) and progress bars for batch operations",
+    "Strong integration story with clear boundaries to RDKit for advanced control and explicit third-party library dependencies (scipy, scikit-learn)",
+    "Cloud-native design with fsspec support for S3/GCS/HTTP while requiring user confirmation for remote writes"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add proactive guidance for large dataset handling",
+      "observed_in": [4],
+      "problem": "Scale limitations and alternative methods only mentioned in troubleshooting section",
+      "root_cause": "Best practices focus on standard workflows without discussing when to switch approaches",
+      "fix": "Add to best practices: 'For datasets >1,000 molecules: use dm.pick_diverse() instead of full clustering; for >10,000 molecules consider hierarchical clustering or external tools'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add inline scaffold splitting example",
+      "observed_in": [5],
+      "problem": "Scaffold splitting mentioned in best practices and workflow table but no code example in main doc",
+      "root_cause": "Delegated entirely to reference files without showcasing common pattern",
+      "fix": "Add brief scaffold splitting example in main SKILL.md or Integration with Machine Learning section showing dm.scaffold_split() usage"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance for proprietary compound library handling",
+      "observed_in": [],
+      "problem": "No discussion of security considerations for proprietary molecular structures",
+      "root_cause": "Documentation focuses on technical operations without addressing IP protection",
+      "fix": "Add security note about protecting proprietary compounds, avoiding accidental cloud uploads without approval, and checking licenses before sharing SDF files"
+    }
+  ]
+}

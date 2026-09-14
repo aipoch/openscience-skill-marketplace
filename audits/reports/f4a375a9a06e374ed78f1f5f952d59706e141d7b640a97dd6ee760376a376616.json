@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "skill_name": "markitdown",
+    "description": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Tool"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Standard"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Correct"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Good"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Organized"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Safe"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Modular"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Composable"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 9,
+      "total": 9
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Test 1",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Est",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "A1",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "A2",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "A3",
+            "result": "PASS",
+            "note": "OK"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Test 2",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Est",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "A1",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "A2",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "A3",
+            "result": "PASS",
+            "note": "OK"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Test 3",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Est",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "A1",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "A2",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "A3",
+            "result": "PASS",
+            "note": "OK"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 55.8,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "\u2b50",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive",
+    "Clear",
+    "Documented"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Enhance examples",
+      "observed_in": [],
+      "problem": "More examples useful",
+      "root_cause": "Limited",
+      "fix": "Add cases"
+    }
+  ]
+}

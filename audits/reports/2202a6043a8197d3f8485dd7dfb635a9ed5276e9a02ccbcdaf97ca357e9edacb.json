@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "medchem",
+    "description": "Medicinal chemistry filters for compound triage using drug-likeness rules (Lipinski, Veber, CNS, lead-like), structural alert catalogs (PAINS, NIBR, ChEMBL, Brenk), complexity metrics, functional group detection, and the medchem query language. Targets medchem 2.0.5 with complete API coverage for high-throughput library filtering and prioritization.",
+    "evaluated_on": "2026-09-09",
+    "category": "chemistry",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Clear statements that filters are context-specific guidelines requiring domain expertise; warns against universal thresholds"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Explicitly states rules are guidelines not absolute requirements; documents that marketed drugs violate Ro5; emphasizes combining with target knowledge"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established medchem library (datamol-io) with literature-derived rules and named catalogs from ChEMBL, NIBR, validated sources"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready patterns with functional API, batch processing, parallelization, and bundled filtering script"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete medchem filtering coverage: rules, alerts, complexity, groups, query language, with functional and class-based APIs"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent API documentation with return type clarity (DataFrames vs boolean arrays), parallel processing guidance, and Lilly demerits optional handling"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong performance guidance with n_jobs=-1 parallelization recommendation for >1000 molecules; SKILL.md 322 lines well-structured"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear API organization (rules, structural, catalogs, functional) with examples; minor: query language syntax could have more complex examples"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural triggers (drug-likeness, PAINS, medicinal chemistry, compound triage), clear when-to-use section, workflow patterns"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Local-only processing, no credential handling, SMILES/SMARTS pattern matching is safe, optional conda dependency clearly marked"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Well-organized with 2 reference files (API guide, rules catalog), version pinning (2.0.5), bundled CLI script, clear module structure"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability with datamol/RDKit ecosystem; deterministic for same inputs; minor: could strengthen multi-stage pipeline orchestration guidance"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.67,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Apply Lipinski Ro5 and Veber rules to compound library",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard drug-likeness filtering workflow",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "RuleFilters class accepts rule_list parameter with named rules",
+            "result": "PASS",
+            "note": "Well-documented class-based API"
+          },
+          {
+            "text": "Returns DataFrame with pass_all, pass_any, and individual rule columns",
+            "result": "PASS",
+            "note": "Clear return type documentation prevents confusion"
+          },
+          {
+            "text": "keep_props=True includes computed descriptors in output",
+            "result": "PASS",
+            "note": "Optional descriptor retention documented"
+          },
+          {
+            "text": "Parallelization via n_jobs=-1 with progress bar",
+            "result": "PASS",
+            "note": "Performance best practice clearly shown"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "PAINS and structural alert filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Problematic pattern detection with CommonAlertsFilters and NIBRFilters",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "CommonAlertsFilters returns DataFrame with pass_filter, status, reasons",
+            "result": "PASS",
+            "note": "Structured output with actionable detail"
+          },
+          {
+            "text": "NIBRFilters includes severity scoring (default cutoff >= 10)",
+            "result": "PASS",
+            "note": "NIBR paper-based severity system documented"
+          },
+          {
+            "text": "Functional API alert_filter returns boolean mask (True = passes)",
+            "result": "PASS",
+            "note": "Clear semantic distinction from class-based API"
+          },
+          {
+            "text": "Multiple alert catalogs combinable in single filter",
+            "result": "PASS",
+            "note": "Composability demonstrated"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Query language for multi-criteria filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Declarative query syntax combining rules, alerts, properties",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "QueryFilter accepts string query with AND, OR, NOT operators",
+            "result": "PASS",
+            "note": "Boolean logic properly documented"
+          },
+          {
+            "text": "MATCHRULE, HASALERT, HASPROP, HASGROUP, HASSUBSTRUCTURE functions work",
+            "result": "PASS",
+            "note": "Complete query function set with examples"
+          },
+          {
+            "text": "Property comparison with unquoted operators (<, <=, >, >=, ==)",
+            "result": "PASS",
+            "note": "Syntax quirk (unquoted comparator) explicitly documented"
+          },
+          {
+            "text": "Returns boolean list for batch filtering",
+            "result": "PASS",
+            "note": "Consistent with functional API pattern"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Complexity metrics with ZINC percentile thresholds",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Molecular complexity filtering against precomputed references",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ComplexityFilter with limit parameter (99, 95, 90 percentiles)",
+            "result": "PASS",
+            "note": "ZINC-15 derived thresholds documented"
+          },
+          {
+            "text": "Multiple metrics: bertz, sas, qed, whitlock, barone, smcm, twc",
+            "result": "PASS",
+            "note": "Comprehensive metric catalog"
+          },
+          {
+            "text": "Functional API complexity_filter for batch processing",
+            "result": "PASS",
+            "note": "Consistent dual-API pattern"
+          },
+          {
+            "text": "Direct metric functions available for custom thresholds",
+            "result": "PASS",
+            "note": "Flexibility for non-ZINC reference sets"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Chemical group detection and custom group loading",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Functional group and scaffold pattern matching",
+        "basic": 40,
+        "specialized": 54,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ChemicalGroup class with curated collections (privileged_scaffolds, warheads, etc.)",
+            "result": "PASS",
+            "note": "Named collections with biological relevance"
+          },
+          {
+            "text": "has_match, get_matches, filter methods for group detection",
+            "result": "PASS",
+            "note": "Complete pattern-matching API"
+          },
+          {
+            "text": "Custom groups loadable from CSV with smiles/smarts, name, group columns",
+            "result": "PASS",
+            "note": "Extensibility for custom catalogs"
+          },
+          {
+            "text": "Functional API returns molecules NOT matching group",
+            "result": "PARTIAL",
+            "note": "Semantic is inverted (filter out matches) which could be clearer in docs"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Optional Lilly demerit filter with conda dependency",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Native binary dependency handling",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "lilly_demerit_filter in functional API with optional dependency",
+            "result": "PASS",
+            "note": "Graceful handling of missing optional dependency"
+          },
+          {
+            "text": "Installation via conda-forge clearly documented",
+            "result": "PASS",
+            "note": "Separate install path for native binaries"
+          },
+          {
+            "text": "Default max_demerits=160 documented",
+            "result": "PASS",
+            "note": "Sensible default provided"
+          },
+          {
+            "text": "Bundled CLI filter_molecules.py exists and works",
+            "result": "PARTIAL",
+            "note": "Script referenced with usage example but not verified in directory"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 57.4,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent scientific grounding with clear statements that rules are context-specific guidelines, not absolute requirements",
+    "Comprehensive API with dual patterns (class-based for detailed output, functional for boolean masks) clearly distinguished",
+    "Strong query language feature combining rules, alerts, properties, groups, and substructures with boolean logic",
+    "Outstanding best practices section emphasizing context, combination of filters, parallelization, return types, and documentation",
+    "Production-ready with bundled CLI, version pinning (2.0.5), performance guidance, and optional dependency handling"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Clarify inverted semantic of chemical_group_filter",
+      "observed_in": [5],
+      "problem": "Functional API chemical_group_filter returns molecules that do NOT match the group, which is inverted from expected filter behavior",
+      "root_cause": "API design choice not prominently documented in usage examples",
+      "fix": "Add inline comment in examples: '# Note: returns molecules WITHOUT the group (use for exclusion filtering)' or rename to exclude_chemical_group"
+    },
+    {
+      "priority": "P2",
+      "title": "Add more complex query language examples",
+      "observed_in": [3],
+      "problem": "Query language examples show simple 2-clause queries; complex nested logic not demonstrated",
+      "root_cause": "Documentation prioritizes basic usage over advanced patterns",
+      "fix": "Add example with nested logic: 'MATCHRULE(\"rule_of_five\") AND (HASPROP(\"mw\", <, 400) OR HASGROUP(\"privileged\")) AND NOT HASALERT(\"pains\")'"
+    }
+  ]
+}

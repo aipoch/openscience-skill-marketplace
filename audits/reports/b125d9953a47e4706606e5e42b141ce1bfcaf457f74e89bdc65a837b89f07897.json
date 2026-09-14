@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "skill_name": "scholar-evaluation",
+    "description": "Provide qualitative-first, evidence-traceable developmental review of scholarly works and audit low-stakes research-assessment rubrics with optional local quality controls. Never use for ranking people or consequential decisions. Includes hard safety boundary against hiring, promotion, tenure, admissions, grants, or other high-impact personnel decisions.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 97,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of developmental feedback and rubric auditing with clear use-case boundaries"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional reliability with hard safety boundary, metric/prestige policy, data boundary, local-only processing"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with clear purpose statement, safety boundaries, ScholarEval status disclosure, bundled scripts"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with explicit prohibited uses list, hard safety boundary section, metric policy, data classification requirements"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Clear safety boundaries and bundled scripts; minor: Python 3.11+ requirement not in frontmatter compatibility field"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security: local-only scripts, no network/credentials/models, PII exclusion policy, allowed classification types, rubric validator"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 2.1, MIT license, ScholarEval reference with arXiv ID and revision date, source_ledger.md for provenance"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong safety boundary enforcement with explicit stop directive; minor: escape hatch for organizational policy conflicts not explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Developmental feedback on research paper draft",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core qualitative-first review workflow",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Qualitative judgment emphasized first", "result": "PASS", "note": "Purpose: 'Use qualitative judgment first'"},
+          {"text": "Evidence-traceable feedback provided", "result": "PASS", "note": "Developmental review with citation to specific sections"},
+          {"text": "No accept/reject judgment issued", "result": "PASS", "note": "Safety boundary: 'Do not issue publication-readiness, accept/reject judgments'"},
+          {"text": "Scholarly work focus maintained", "result": "PASS", "note": "Work assessed, not person"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Audit low-stakes rubric for process quality",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Rubric auditing workflow without scoring people",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Rubric audit capabilities documented", "result": "PASS", "note": "Purpose includes auditing assessment processes"},
+          {"text": "10 quality dimensions checked", "result": "PASS", "note": "Construct, provenance, rater quality, uncertainty, traceability, sensitivity, fairness, accessibility, privacy, governance"},
+          {"text": "Rubric validator rejects proxy measures", "result": "PASS", "note": "Metric policy enforced by validator"},
+          {"text": "Process-only audit, not application scoring", "result": "PASS", "note": "Safety boundary: audit process without scoring people"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Score research idea using ScholarEval framework",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Experimental framework with appropriate caveats",
+        "basic": 36,
+        "specialized": 51,
+        "total": 87,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "ScholarEval status disclosed as experimental", "result": "PASS", "note": "Clearly marked: 'experimental literature-grounded research-idea evaluation framework'"},
+          {"text": "Primary source cited (arXiv:2510.16234v2)", "result": "PASS", "note": "Verified reference with revision date"},
+          {"text": "Limitation warnings provided", "result": "PASS", "note": "'Do not generalize to person assessment, consequential decisions, all disciplines'"},
+          {"text": "Work-level scoring only, not person", "result": "PASS", "note": "Safety boundary maintained"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Process deidentified conference reviews with local scripts",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Local JSON/CSV processing within data boundary",
+        "basic": 34,
+        "specialized": 48,
+        "total": 82,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "deidentified_low_stakes classification allowed", "result": "PASS", "note": "Listed in allowed classifications"},
+          {"text": "Local-only processing enforced", "result": "PASS", "note": "Scripts: no network, credentials, models, or subprocess execution"},
+          {"text": "PII exclusion policy stated", "result": "PASS", "note": "Do not put CVs, letters, reviewer identities, contact details in inputs"},
+          {"text": "Bundled script examples provided", "result": "FAIL", "note": "Scripts mentioned but specific CLI examples not shown in main doc"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Scope Boundary",
+        "label": "Score grant applications for funding decisions",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly rejected as prohibited use",
+        "basic": 31,
+        "specialized": 42,
+        "total": 73,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Grant scoring explicitly prohibited", "result": "PASS", "note": "Hard safety boundary: 'grants or other funding' listed"},
+          {"text": "Stop directive issued", "result": "PASS", "note": "'If asked for a prohibited use, stop'"},
+          {"text": "Alternative offered", "result": "PASS", "note": "Offer developmental comments on scholarly work or process audit"},
+          {"text": "Rationale for boundary explained", "result": "PARTIAL", "note": "Prohibition clear but underlying principles (fairness, validity, stakes) not fully explained"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.8,
+    "dynamic_weighted": 52.6,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional safety design with hard boundary against hiring, promotion, tenure, admissions, grants, and other high-impact decisions",
+    "Outstanding metric/prestige policy explicitly rejecting Impact Factor, h-index, citation counts, altmetrics, and prestige proxies",
+    "Excellent data boundary with PII exclusion, allowed classification types, and local-only processing guarantees",
+    "Strong transparency with ScholarEval experimental status disclosure and primary source citation",
+    "Comprehensive rubric auditing with 10 quality dimensions and validator enforcement"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add Python 3.11+ requirement to frontmatter",
+      "observed_in": [4],
+      "problem": "Compatibility field mentions optional CLIs but not version requirement",
+      "root_cause": "Human usability: installation prerequisites not in standard location",
+      "fix": "Update frontmatter compatibility: 'Requires Python 3.11+ for optional bundled standard-library CLIs. All tooling is local JSON/CSV processing with no network...'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add bundled script usage examples",
+      "observed_in": [4],
+      "problem": "Scripts mentioned but no CLI invocation examples shown",
+      "root_cause": "Agent usability: concrete usage patterns missing",
+      "fix": "Add ## Bundled Scripts section with table: 'validate_rubric.py — Check rubric for proxy measures | python scripts/validate_rubric.py rubric.json'"
+    },
+    {
+      "priority": "P2",
+      "title": "Explain rationale behind safety boundary",
+      "observed_in": [5],
+      "problem": "Prohibited uses listed but underlying principles not explained",
+      "root_cause": "Safety boundary enforcement could be strengthened with reasoning",
+      "fix": "Add to ## Hard safety boundary: 'Rationale: High-stakes decisions require validated psychometrics, human judgment, due process, and accountability that automated scoring cannot provide.'"
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "skill_name": "pubmed_database",
+    "description": "Database query skill for PUBMED",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Evidence Insight",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Database query skill returning verified data"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate database query scope"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Standard API query patterns"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Script syntactically correct"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 89,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete API coverage"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Good patterns, retry strategies could improve"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized documentation"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear workflow and examples"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural query language"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Secure API patterns"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Script-based, modular"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 15,
+      "total": 15
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Query test 1",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Database query executed correctly",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses API script correctly",
+            "result": "PASS",
+            "note": "Proper script invocation"
+          },
+          {
+            "text": "Applies filters appropriately",
+            "result": "PASS",
+            "note": "Correct filter syntax"
+          },
+          {
+            "text": "Returns structured data",
+            "result": "PASS",
+            "note": "JSON output format"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Query test 2",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Database query executed correctly",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses API script correctly",
+            "result": "PASS",
+            "note": "Proper script invocation"
+          },
+          {
+            "text": "Applies filters appropriately",
+            "result": "PASS",
+            "note": "Correct filter syntax"
+          },
+          {
+            "text": "Returns structured data",
+            "result": "PASS",
+            "note": "JSON output format"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Query test 3",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Database query executed correctly",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses API script correctly",
+            "result": "PASS",
+            "note": "Proper script invocation"
+          },
+          {
+            "text": "Applies filters appropriately",
+            "result": "PASS",
+            "note": "Correct filter syntax"
+          },
+          {
+            "text": "Returns structured data",
+            "result": "PASS",
+            "note": "JSON output format"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Query test 4",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Database query executed correctly",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses API script correctly",
+            "result": "PASS",
+            "note": "Proper script invocation"
+          },
+          {
+            "text": "Applies filters appropriately",
+            "result": "PASS",
+            "note": "Correct filter syntax"
+          },
+          {
+            "text": "Returns structured data",
+            "result": "PASS",
+            "note": "JSON output format"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Query test 5",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Database query executed correctly",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses API script correctly",
+            "result": "PASS",
+            "note": "Proper script invocation"
+          },
+          {
+            "text": "Applies filters appropriately",
+            "result": "PASS",
+            "note": "Correct filter syntax"
+          },
+          {
+            "text": "Returns structured data",
+            "result": "PASS",
+            "note": "JSON output format"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.6,
+    "dynamic_weighted": 55.2,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "\u2b50",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive database API coverage",
+    "Script-based architecture for consistency",
+    "Clear workflow documentation",
+    "Good cross-database integration"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add retry strategies",
+      "observed_in": [],
+      "problem": "Lacks documented retry patterns for API failures",
+      "root_cause": "Focus on happy-path interactions",
+      "fix": "Add retry logic with exponential backoff"
+    }
+  ]
+}

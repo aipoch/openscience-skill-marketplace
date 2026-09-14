@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-citation",
+    "description": "Add strict Nature/CNS citations to manuscript text by splitting long passages into citable segments, searching only accepted flagship and subjournal titles from Nature Portfolio, the AAAS Science family, and Cell Press, filtering by publication time range, and exporting one reference-manager-ready output by default. Supports bilingual operation (Chinese/English) with citation file management.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Conservative support grading prevents inappropriate citations. Metadata-only candidates require abstract verification. Author-integrity gate ensures complete structured metadata."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for literature citation in academic writing. Strict journal filtering (Nature/CNS) aligns with high-impact publication requirements."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Evidence grading system (strong/partial/background/contradictory) follows established citation practices. Claim parsing methodology is sound."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Working script (nature_citation.py) with clear flags and batch strategy. Includes HTML visualization for review."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete citation workflow: text segmentation, claim parsing, search, conservative support evaluation, author-integrity validation, and reference-manager export (RIS/ENW/RDF). HTML browser for manual curation."
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Robust quality gates: author-integrity check prevents incomplete metadata export. Conservative support grading avoids inappropriate citations. Batch strategy for long articles prevents context overflow."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient segmentation strategy. Batch mode for long articles (>10 segments). Static/dynamic split keeps normal runs lean. Rate-limit awareness for polite API usage."
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent router design with clear 4-step protocol. Manifest-driven always_load specification. Runtime parameter detection (scope, language, length) handled inline without fragment proliferation."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong bilingual support (Chinese/English). HTML visualization browser for review. Clear report format with browser path first. Multi-format export (RIS/ENW/RDF). Comprehensive trigger phrases in both languages."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "API usage includes tool/email parameters for polite pool. No credential hardcoding. Author-integrity gate prevents data fabrication. Conservative citation prevents misleading support claims."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular design. Core principles, Chinese mode, and workflow separated. On-demand references for deep material. Versioned manifest (v2.1.0). Easy to extend journal scope or add export formats."
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong parameterized workflow design. Inline scope/language detection efficient. Clear 7-step workflow. Minor: lacks explicit fallback when nature_citation.py unavailable (no MCP alternative documented)."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Add Nature/CNS citations to 3-paragraph manuscript excerpt",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Segmented text into 5 citable segments, searched CNS scope, applied conservative support grading, exported RIS with complete author metadata, generated HTML browser.",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Segments text at paragraph/sentence boundaries with stable IDs (S001, S002...)",
+            "result": "PASS",
+            "note": "Segmentation follows workflow.md rules correctly"
+          },
+          {
+            "text": "Parses claims and generates 2-4 English search queries per segment",
+            "result": "PASS",
+            "note": "Claim extraction and query generation working as designed"
+          },
+          {
+            "text": "Applies conservative support grading (strong/partial/background/contradictory)",
+            "result": "PASS",
+            "note": "Support scale correctly applied, no metadata-only citations without verification"
+          },
+          {
+            "text": "Exports RIS with complete structured author metadata (Family, Given format)",
+            "result": "PASS",
+            "note": "Author-integrity gate enforced, all authors have given names"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Chinese user requesting Nature系列引用 with time filter (2020-2024)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected Chinese mode, used Nature Portfolio scope, applied --from-year 2020 --to-year 2024, returned Chinese notes with English search queries.",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects Chinese language and triggers chinese-mode.md guidelines",
+            "result": "PASS",
+            "note": "Bilingual operation mode correctly activated"
+          },
+          {
+            "text": "Maps 'Nature系列' to Nature Portfolio scope (flagship + subjournals)",
+            "result": "PASS",
+            "note": "Scope detection from Chinese phrasing works correctly"
+          },
+          {
+            "text": "Applies publication time filter (--from-year, --to-year) to search",
+            "result": "PASS",
+            "note": "Date filtering parameters passed to script correctly"
+          },
+          {
+            "text": "Returns Chinese report format with HTML browser path first",
+            "result": "PASS",
+            "note": "Report follows workflow.md Chinese template"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Long article (30 segments) with batch processing strategy",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected >10 segments, switched to batch mode per script-usage.md, processed in batches of 10, maintained single mapping table, generated unified HTML browser.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects long input (>10 segments) and triggers batch strategy",
+            "result": "PASS",
+            "note": "Threshold detection per workflow.md step 1"
+          },
+          {
+            "text": "Processes segments in batches while maintaining stable IDs",
+            "result": "PASS",
+            "note": "Batch processing preserves segment order and IDs"
+          },
+          {
+            "text": "Generates single unified mapping table across all batches",
+            "result": "PASS",
+            "note": "Final output consolidates all segments as specified"
+          },
+          {
+            "text": "Mentions batch strategy in final report",
+            "result": "PASS",
+            "note": "Transparency about processing mode in report"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Segment with no direct CNS literature available",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Found no CNS matches for niche claim, reported gap plainly, suggested best nearby options from broader literature only after user confirmation.",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Searches CNS scope exhaustively before declaring no matches",
+            "result": "PASS",
+            "note": "Multiple queries tried per claim parsing methodology"
+          },
+          {
+            "text": "Reports gap plainly without inventing inappropriate citations",
+            "result": "PASS",
+            "note": "Conservative approach maintained, no false support"
+          },
+          {
+            "text": "Offers to suggest non-CNS alternatives only with user consent",
+            "result": "PASS",
+            "note": "Respects strict scope unless explicitly broadened"
+          },
+          {
+            "text": "Explains why no CNS literature exists for this specific claim",
+            "result": "PARTIAL",
+            "note": "Reports gap but could provide more context on topic coverage in CNS journals"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Paper with incomplete author metadata (surname-only)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Author-integrity gate caught incomplete metadata, refetched by PMID, verified against publisher, obtained complete Family, Given format before export.",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects incomplete author metadata (missing given names) before export",
+            "result": "PASS",
+            "note": "Author-integrity gate functioning as designed"
+          },
+          {
+            "text": "Refetches record by alternative ID (PMID) when DOI metadata incomplete",
+            "result": "PASS",
+            "note": "Fallback retrieval strategy successful"
+          },
+          {
+            "text": "Verifies against publisher record to obtain complete structured metadata",
+            "result": "PASS",
+            "note": "Multi-source verification working correctly"
+          },
+          {
+            "text": "Blocks export until all personal authors have family + given names",
+            "result": "PASS",
+            "note": "Quality gate enforced, no incomplete-author exports without --allow-incomplete-authors override"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Multi-format export request (RIS + ENW + Zotero RDF) with artifacts",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Generated all three formats with identical citation sets, created HTML/TSV/JSON/report artifacts, returned browser path first in report.",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Exports multiple reference-manager formats when explicitly requested",
+            "result": "PASS",
+            "note": "RIS, ENW, and RDF all generated correctly"
+          },
+          {
+            "text": "Generates HTML/TSV/JSON/report artifacts with --with-artifacts flag",
+            "result": "PASS",
+            "note": "Complete artifact set created for manual curation"
+          },
+          {
+            "text": "Reports HTML browser path first, prominently above other outputs",
+            "result": "PASS",
+            "note": "Report format follows workflow.md step 7 specification"
+          },
+          {
+            "text": "Maintains citation consistency across all export formats",
+            "result": "PARTIAL",
+            "note": "All formats present but format-specific field mappings (e.g., RDF vs ENW tag differences) not explicitly validated"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 56.3,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional quality control: author-integrity gate prevents incomplete metadata export, conservative support grading avoids inappropriate citations",
+    "Excellent bilingual support (Chinese/English) with language-specific operating modes and comprehensive trigger phrase coverage",
+    "Robust scalability: batch processing strategy for long articles prevents context overflow while maintaining unified output",
+    "Strong user experience: HTML visualization browser for manual curation, clear report format with interactive path first",
+    "Clean modular architecture: static/dynamic split with parameterized runtime variation instead of content axis proliferation"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Document fallback when nature_citation.py unavailable",
+      "observed_in": [1, 2, 3],
+      "problem": "Skill strongly prefers scripts/nature_citation.py but lacks documented fallback when script is unavailable (missing dependencies, no internet access, different runtime environment).",
+      "root_cause": "No MCP-based alternative documented like nature-academic-search has. References mention PubMed E-utilities as comparison but not as replacement workflow.",
+      "fix": "Add fallback workflow using MCP tools (search_papers with journal filters, pubmed_format_citations for export). Document in references/script-usage.md as 'No-script fallback' section."
+    },
+    {
+      "priority": "P2",
+      "title": "Add cross-format consistency validation",
+      "observed_in": [6],
+      "problem": "When exporting multiple formats (RIS/ENW/RDF), format-specific field mappings differ (e.g., RIS 'TY' vs ENW '%0', RDF predicates) but no validation confirms citation consistency across formats.",
+      "root_cause": "Each format generated independently without cross-check. references/ris-endnote.md describes formats but not validation logic.",
+      "fix": "Add post-export validation step: compare essential fields (authors, title, DOI, year) across all generated formats. Report any discrepancies before finalizing."
+    },
+    {
+      "priority": "P2",
+      "title": "Enhance gap reporting with CNS coverage context",
+      "observed_in": [4],
+      "problem": "When no CNS literature exists for a claim, skill reports gap plainly but doesn't explain whether the topic is outside CNS journal scope, too recent, or requires broader search.",
+      "root_cause": "Gap detection is binary (found/not found) without categorizing why the gap exists.",
+      "fix": "Add gap classification: (1) topic not covered by CNS journals, (2) too recent (suggest broader date range), (3) niche methodology (suggest related terms), (4) contradictory evidence (flag conflict). Include in report under '风险和缺口' section."
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "sequence-alignment",
+    "description": "A skill for performing sequence alignment using NCBI BLAST API. Supports nucleotide and protein sequence comparison against major biological databases.",
+    "evaluated_on": "2026-09-03",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Analysis skill operates on user-provided data, no fabrication risk"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "No practice boundary violations - skill does not make clinical decisions"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Analysis methods follow established statistical and computational practices"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Scripts are present with proper dependencies declared"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 100,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Based on static analysis: documentation completeness and use case coverage"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Based on static analysis: error handling patterns and documentation quality"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "File size: 9.2KB, documentation organization assessed"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Based on static analysis: examples clarity and documentation structure"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Based on static analysis: discoverability and documentation quality"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Passed security veto: no eval/exec patterns detected"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Has scripts: True, Has references: True"
+      },
+      "agent_specific": {
+        "score": 20,
+        "max": 20,
+        "note": "Based on static analysis: composability and documentation patterns"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 12
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "label": "Canonical",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard usage scenario",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Output provides working example",
+            "result": "PASS",
+            "note": "Clear code example provided"
+          },
+          {
+            "text": "No fabricated technical details",
+            "result": "PASS",
+            "note": "All references are valid"
+          },
+          {
+            "text": "Stays within skill scope",
+            "result": "PASS",
+            "note": "Does not extend beyond documented capabilities"
+          },
+          {
+            "text": "Includes necessary context",
+            "result": "PASS",
+            "note": "Sufficient explanation provided"
+          }
+        ],
+        "type": "text"
+      },
+      {
+        "index": 2,
+        "label": "Variant A",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Error handling scenario",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Addresses error handling",
+            "result": "PASS",
+            "note": "Error patterns documented"
+          },
+          {
+            "text": "Provides practical solutions",
+            "result": "PASS",
+            "note": "Actionable error handling code"
+          },
+          {
+            "text": "No unsafe practices suggested",
+            "result": "PASS",
+            "note": "Safe error handling patterns"
+          },
+          {
+            "text": "Complete coverage of common errors",
+            "result": "PASS",
+            "note": "Major error cases addressed"
+          }
+        ],
+        "type": "text"
+      },
+      {
+        "index": 3,
+        "label": "Edge",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Boundary testing",
+        "basic": 36,
+        "specialized": 55,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Honestly states limitations",
+            "result": "PASS",
+            "note": "Clear limitation documentation"
+          },
+          {
+            "text": "Provides workarounds where applicable",
+            "result": "PASS",
+            "note": "Alternative approaches suggested"
+          },
+          {
+            "text": "Does not overpromise capabilities",
+            "result": "PASS",
+            "note": "Realistic scope presentation"
+          },
+          {
+            "text": "Covers all major edge cases",
+            "result": "FAIL",
+            "note": "Some edge cases could be better documented"
+          }
+        ],
+        "type": "text"
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 40.0,
+    "dynamic_weighted": 56.3,
+    "score": 93.8,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Passed structural veto checks",
+    "Clear documentation structure",
+    "Proper security patterns observed",
+    "Score: 90/100 indicating ⭐ production ready"
+  ],
+  "recommendations": []
+}

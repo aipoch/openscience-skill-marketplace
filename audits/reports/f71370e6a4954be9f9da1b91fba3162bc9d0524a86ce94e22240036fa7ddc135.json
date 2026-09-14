@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "latex-posters",
+    "description": "Create professional research posters in LaTeX using beamerposter, tikzposter, or baposter. Support for conference presentations, academic posters, and scientific communication. Includes layout design, color schemes, multi-column formats, figure integration, and poster-specific best practices for visual communication.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "writing",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Writing and visualization skill, not research methodology"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Writing skill"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Writing skill"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Writing skill"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of 3 poster packages (beamerposter, tikzposter, baposter), 6-stage workflow, AI-powered visual generation with hard limits, and 8 detailed reference files"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good documentation of LaTeX compilation with overflow checks and QC procedure; version 1.6; minor: no explicit LaTeX distribution version requirements"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-structured 370-line SKILL.md with excellent progressive disclosure through 8 reference files; minor: density high, some content could move to references"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Perfect trigger description with specific conference poster patterns; comprehensive 'When to Use' section with 8 use cases; mandatory AI graphics workflow clearly documented"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup instructions with package installation (tlmgr/MiKTeX), system dependencies (pandoc, LaTeX), and complete 6-stage workflow from planning to delivery"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good handling of poster files and compilation; OpenRouter API key for AI generation noted; minor: no explicit guidance on handling malicious .tex files or template sources"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: version 1.6, license metadata, openclaw API key declaration, comprehensive reference structure with 8 files, templates in assets/"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with scientific-schematics skill integration; excellent progressive disclosure with 8 references; mandatory AI graphics workflow with hard limits; minor: error recovery for overflow could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "AI-powered poster with mandatory visual elements",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow with mandatory AI graphics generation before LaTeX assembly",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "MANDATORY: Every poster MUST include 1-2 AI-generated figures",
+            "result": "PASS",
+            "note": "Visual enhancement section explicitly states mandatory requirement with warning symbol"
+          },
+          {
+            "text": "Target: 60-70% poster area AI-generated visuals, 30-40% text",
+            "result": "PASS",
+            "note": "AI-powered section clearly states 60-70% visual target"
+          },
+          {
+            "text": "generate_schematic.py workflow documented for creating figures",
+            "result": "PASS",
+            "note": "Stage 2 shows complete generate_schematic.py commands with examples"
+          },
+          {
+            "text": "Two mandatory review gates: before generating and after generating",
+            "result": "PASS",
+            "note": "Hard limits section documents two gates explicitly with failure consequences"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Hard limits for AI graphics to prevent overflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive hard limits table with specific constraints and enforcement",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "3-4 elements maximum per AI graphic documented as hard limit",
+            "result": "PASS",
+            "note": "Hard limits table specifies 3-4 maximum elements per graphic"
+          },
+          {
+            "text": "10 words maximum per graphic enforced",
+            "result": "PASS",
+            "note": "Hard limits table and prompts specify 10 word maximum"
+          },
+          {
+            "text": "50% white space minimum required (60% better)",
+            "result": "PASS",
+            "note": "Hard limits table and all example prompts include white space requirement"
+          },
+          {
+            "text": "Font sizes: 120pt+ for numbers, 80pt+ for labels",
+            "result": "PASS",
+            "note": "Hard limits table specifies exact font size minimums"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Overflow detection and QC workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Explicit overflow detection as error not warning with QC procedure",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Overflow is an error, not a warning - explicitly stated",
+            "result": "PASS",
+            "note": "Hard limits section states 'Overflow is an error, not a warning' directly"
+          },
+          {
+            "text": "grep -i overfull poster.log command documented for checking",
+            "result": "PASS",
+            "note": "After compiling section shows exact grep command"
+          },
+          {
+            "text": "Inspect all four edges at 100% zoom required",
+            "result": "PASS",
+            "note": "Overflow section requires inspecting all four edges at 100%"
+          },
+          {
+            "text": "Reference to compilation_and_quality_control.md for full QC",
+            "result": "PASS",
+            "note": "Overflow section references compilation QC documentation"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Three poster packages comparison and selection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clear package comparison with selection criteria and templates",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "beamerposter: Beamer syntax, institutional themes",
+            "result": "PASS",
+            "note": "Core capabilities and workflow stage 1 describe beamerposter characteristics"
+          },
+          {
+            "text": "tikzposter: modern, colorful, flexible designs",
+            "result": "PASS",
+            "note": "Package comparison clearly states tikzposter features"
+          },
+          {
+            "text": "baposter: structured, professional multi-column layouts",
+            "result": "PASS",
+            "note": "Package descriptions include baposter structured layouts"
+          },
+          {
+            "text": "Templates available in assets/ for all three packages",
+            "result": "PASS",
+            "note": "Templates section lists templates for beamerposter, tikzposter, baposter"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "AI graphic prompts with POSTER FORMAT specifications",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Comprehensive prompt examples but failure recovery workflow minimal",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Every prompt must include 'POSTER FORMAT for A0'",
+            "result": "PASS",
+            "note": "Hard limits require including poster format in every prompt"
+          },
+          {
+            "text": "Explicit element count (ONLY 3 icons) required in prompts",
+            "result": "PASS",
+            "note": "All example prompts show explicit element counts"
+          },
+          {
+            "text": "Font size specifications (GIANT 120pt+) required in prompts",
+            "result": "PASS",
+            "note": "Example prompts include font size specifications"
+          },
+          {
+            "text": "What to do if AI generates more elements than requested",
+            "result": "FAIL",
+            "note": "Review gates check results but no explicit retry/regeneration workflow"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Integration with scientific-schematics skill",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clear integration with scientific-schematics as primary diagram generation tool",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "scientific-schematics listed as CRITICAL integration",
+            "result": "PASS",
+            "note": "Integration section marks scientific-schematics as CRITICAL with emphasis"
+          },
+          {
+            "text": "Use for all poster diagrams and flowcharts recommended",
+            "result": "PASS",
+            "note": "Integration section states use for generating all poster diagrams"
+          },
+          {
+            "text": "Nano Banana Pro for stylized graphics and summary visuals",
+            "result": "PASS",
+            "note": "AI-powered section mentions Nano Banana Pro for graphics"
+          },
+          {
+            "text": "Recommended workflow: generate figures BEFORE creating LaTeX",
+            "result": "PASS",
+            "note": "Integration section explicitly recommends generating visuals before LaTeX"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 57.0,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional AI graphics integration with mandatory visual elements (60-70% poster area), hard limits table (3-4 elements, 10 words, 50% white space), and two review gates",
+    "Comprehensive 6-stage workflow from planning through delivery with clear decision points for package selection (beamerposter, tikzposter, baposter)",
+    "Excellent progressive disclosure with 8 detailed reference files covering AI graphics, LaTeX packages, compilation QC, poster patterns, layout, design principles, and content",
+    "Explicit overflow detection as error not warning with grep command and 100% zoom inspection requirement",
+    "Perfect integration with scientific-schematics skill marked as CRITICAL with generate-before-assemble workflow"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add explicit AI graphic regeneration workflow for failures",
+      "observed_in": [5],
+      "problem": "Review gates check results but no explicit retry/regeneration workflow when AI produces wrong element count",
+      "root_cause": "Agent-specific composability focuses on success paths rather than failure recovery",
+      "fix": "Add to ai_graphics_for_posters.md: explicit regeneration workflow when AI ignores constraints (e.g., generates 7 elements instead of 3) with prompt adjustment strategies (add 'SIMPLER', 'EXACTLY 3 items', increase white space)"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit LaTeX distribution version requirements",
+      "observed_in": [],
+      "problem": "Package installation shown but no minimum TeX Live or MiKTeX version specified",
+      "root_cause": "Reliability section focuses on compilation process rather than environment requirements",
+      "fix": "Add to package installation section: minimum TeX Live version (e.g., 2022+) or MiKTeX version with rationale, and note about older distributions missing required packages"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance on handling malicious .tex templates",
+      "observed_in": [],
+      "problem": "Templates in assets/ mentioned but no security validation for external templates",
+      "root_cause": "Security section focuses on compilation but not template sourcing",
+      "fix": "Add to security section: guidance on validating external poster templates for \\write18 commands, \\input of external files, or other potentially dangerous LaTeX constructs"
+    }
+  ]
+}

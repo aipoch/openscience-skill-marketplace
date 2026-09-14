@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "skill_name": "citation-management",
+    "description": "Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Academic Writing",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; emphasizes metadata validation and verification against multiple sources (CrossRef, PubMed, OpenAlex)"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for citation management and bibliography generation; integration with scientific-schematics for diagrams shows clear boundaries"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established citation standards (BibTeX format) and authoritative sources (CrossRef, PubMed, OpenAlex)"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Scripts documented with proper command-line interfaces; security warning about shell injection present"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of citation workflow: discovery (OpenAlex/PubMed/Scholar), extraction (DOI/PMID/arXiv), enrichment, formatting, validation with venue standards"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability: mandatory metadata enrichment phase, validation with exit codes, DOI verification, duplicate detection, incomplete field logging"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with clear 4-phase workflow, reference files for detailed strategies, rate limiting guidance for Google Scholar"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent 'When to Use' with 10 specific scenarios; clear integration with literature-review and scientific-schematics skills; comprehensive workflow documentation"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear setup with Python 3.9+, dependency documentation, network access requirements, environment variables for rate limits, opt-in file writing"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional security awareness: explicit shell injection warning with mitigation strategies (subprocess argument lists, quote escaping), citation key validation regex"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 2.0, license (MIT), comprehensive scripts directory; minor: changelog for version 2.0 not included"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools (WebSearch, WebFetch) and openclaw metadata; clear output formats; minor: idempotency of validation not explicitly documented"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Search OpenAlex and extract metadata",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard paper discovery workflow",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "search_openalex.py script with query and output parameters", "result": "PASS", "note": "python scripts/search_openalex.py with --limit and --output"},
+          {"text": "OpenAlex recommended as primary source", "result": "PASS", "note": "250M works, no API key, documented REST API emphasized"},
+          {"text": "Multi-database search encouraged", "result": "PASS", "note": "Explicit guidance to search more than one database to avoid bias"},
+          {"text": "Rate limiting considerations documented", "result": "PASS", "note": "OPENALEX_EMAIL for polite pool in openclaw metadata"},
+          {"text": "Output format (JSON) suitable for downstream processing", "result": "PASS", "note": "JSON output enables pipeline integration"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Convert DOI to BibTeX with validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Metadata extraction from identifier",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "doi_to_bibtex.py script for single DOI conversion", "result": "PASS", "note": "Quick single DOI conversion documented"},
+          {"text": "extract_metadata.py supports multiple identifier types", "result": "PASS", "note": "DOI/PMID/PMCID/arXiv/URL all supported"},
+          {"text": "Batch processing with input file supported", "result": "PASS", "note": "--input identifiers.txt --output citations.bib"},
+          {"text": "CrossRef identified as primary DOI source", "result": "PASS", "note": "CrossRef explicitly stated as primary for DOIs"},
+          {"text": "Citation key deduplication across sources", "result": "PASS", "note": "Same paper produces same key regardless of source"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Mandatory metadata enrichment via web search",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Fill incomplete API records",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Phase 2.5 marked as MANDATORY in workflow", "result": "PASS", "note": "Explicit MANDATORY designation for enrichment phase"},
+          {"text": "Incomplete @article criteria defined", "result": "PASS", "note": "Missing volume, pages, or doi identified as incomplete"},
+          {"text": "WebSearch/WebFetch tools specified for enrichment", "result": "PASS", "note": "allowed-tools includes WebSearch and WebFetch"},
+          {"text": "Logging requirements for enrichment documented", "result": "PASS", "note": "Log what was found and where"},
+          {"text": "note field required when field cannot be found", "result": "PASS", "note": "Record explanation for gaps rather than silent absence"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Security validation against shell injection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Treat extracted metadata as untrusted",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Explicit warning about shell injection risks", "result": "PASS", "note": "Title with $(...), backtick, or quote becomes shell syntax"},
+          {"text": "subprocess argument list recommended over shell strings", "result": "PASS", "note": "Pass metadata as subprocess argument list"},
+          {"text": "Quote escaping guidance provided", "result": "PASS", "note": "Single-quote and escape embedded quotes as '\\''"},
+          {"text": "Citation key validation regex provided", "result": "PASS", "note": "Validate against ^[A-Za-z0-9]+$ before path usage"},
+          {"text": "Example of safe vs unsafe command construction", "result": "FAIL", "note": "Warning clear but no side-by-side safe/unsafe example"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Citation validation with venue standards and manuscript checking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive validation workflow",
+        "basic": 35,
+        "specialized": 47,
+        "total": 82,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "validate_citations.py with multiple check modes", "result": "PASS", "note": "--report, --venue, --manuscript, --check-dois options"},
+          {"text": "Exit code indicates validation success/failure", "result": "PASS", "note": "Non-zero exit on high-severity errors for CI integration"},
+          {"text": "Venue reference count standards documented", "result": "FAIL", "note": "Mentioned as rules of thumb but standards not detailed"},
+          {"text": "Manuscript cross-reference checking implemented", "result": "FAIL", "note": "--manuscript option shown but unresolved citation detection not explained"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 54.2,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security awareness with explicit shell injection warning and concrete mitigation strategies (subprocess lists, quote escaping, regex validation)",
+    "Outstanding workflow design with mandatory metadata enrichment phase (Phase 2.5) to address API incompleteness",
+    "Excellent multi-source strategy emphasizing OpenAlex and PubMed as primary sources with Google Scholar as supplement due to scraping fragility",
+    "Strong validation framework with exit codes, venue standards, manuscript checking, and DOI verification for CI/CD integration",
+    "Clear integration with complementary skills (literature-review for research, scientific-schematics for diagrams)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add safe vs unsafe command construction examples",
+      "observed_in": [4],
+      "problem": "Shell injection warning clear but no demonstrative safe/unsafe code comparison",
+      "root_cause": "Security guidance is textual without concrete code examples",
+      "fix": "Add example: Unsafe: os.system(f'grep {title} file'); Safe: subprocess.run(['grep', title, 'file'])"
+    },
+    {
+      "priority": "P2",
+      "title": "Document venue reference count standards",
+      "observed_in": [5],
+      "problem": "Venue validation mentioned but specific standards not provided",
+      "root_cause": "references/validation_rules.md likely contains details but not shown in excerpt",
+      "fix": "Add note in main SKILL.md: 'Typical venue standards: Nature/Science ~50 refs, PLOS ONE no limit, Cell ~100 refs. See references/validation_rules.md for complete list.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add changelog for version 2.0",
+      "observed_in": [],
+      "problem": "Version 2.0 noted but breaking changes or new features not documented",
+      "root_cause": "Major version bump without migration guidance",
+      "fix": "Add changelog section documenting what changed from 1.x to 2.0, especially any script API changes or new validation rules"
+    }
+  ]
+}

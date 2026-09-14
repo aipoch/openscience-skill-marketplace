@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "proteinmpnn-nim",
+    "description": "Run ProteinMPNN inverse folding via NVIDIA NIM to design protein sequences for a target backbone. Use for ProteinMPNN, inverse folding, sequence design, backbone redesign, fixed chains/residues, omit_AAs, sampling temperature, soluble model, hosted NVIDIA API, local Docker, PDB input, and multi-FASTA output.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of ProteinMPNN inverse folding: backbone redesign, chain selection, amino acid constraints, sampling temperature, soluble model; all use cases documented"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong input validation (PDB content read inline, not file path); error handling via raise_for_status; minor: no guidance on handling large multi-chain complexes (memory/timeout)"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Exceptional efficiency: 114 lines with progressive disclosure via 5 reference files; common controls inline with defer to references for deep parameters"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent clarity: sampling_temp always-list gotcha prominent; cache mount path distinct (/home/nvs/.cache/nim) from other NIMs; mode detection pattern consistent with other NIMs; validation handoff clear"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear trigger coverage; minimal GPU requirement (3GB); soluble model option documented; validation via structure prediction handoff to Boltz2/OpenFold3 explicit"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "NGC_API_KEY/NVIDIA_API_KEY preflight consistent; credentials externalized; no auth header for local inference after readiness; warm-cache key-free startup not assumed"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean single-file structure with 5 reference files; Docker reference copy instruction prevents drift; cache mount path explicitly documented"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Excellent trigger precision; clear composability with Boltz2/OpenFold3 for validation; native/WT row exclusion documented; lacks explicit idempotency statement; troubleshooting concise"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 98.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted redesign with multiple sampling temperatures",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow with PDB inline read and multi-temp sampling",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "PDB content read inline with Path.read_text() (not file path)",
+            "result": "PASS",
+            "note": "Request Pattern: Read PDB content inline; do not send only a file path"
+          },
+          {
+            "text": "sampling_temp as list [0.1, 0.3, 0.5] (not bare floats)",
+            "result": "PASS",
+            "note": "Gotcha documented: sampling_temp must be a list"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          },
+          {
+            "text": "mfasta saved excluding native/WT row",
+            "result": "PASS",
+            "note": "Save And Report: pair scores only with designed (non-native/WT) rows"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local Docker with soluble model and chain selection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete local setup with solubility bias and chain-specific redesign",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Local endpoint /biology/ipd/proteinmpnn/predict (no /v1/)",
+            "result": "PASS",
+            "note": "Choose Mode: Local inference paths do not include /v1/"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Local inference requests use no auth header after readiness"
+          },
+          {
+            "text": "use_soluble_model set to True for solubility bias",
+            "result": "PASS",
+            "note": "Common controls: Solubility bias documented"
+          },
+          {
+            "text": "input_pdb_chains restricts redesign to specified chains",
+            "result": "PASS",
+            "note": "Common controls: Redesign only chain A pattern shown"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Amino acid exclusion (omit cysteines)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Constraint-based design with omit_AAs",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "omit_AAs parameter uses list of single-letter codes",
+            "result": "PASS",
+            "note": "Common controls: omit_AAs: ['C'] or ['M']"
+          },
+          {
+            "text": "Cysteine exclusion useful for avoiding unwanted disulfides",
+            "result": "PASS",
+            "note": "Example shows ['C'] exclusion pattern"
+          },
+          {
+            "text": "Designed sequences validated to confirm omitted residues absent",
+            "result": "PASS",
+            "note": "Save And Report: validate promising designs with structure prediction"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 58.8,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional clarity with sampling_temp always-list gotcha prominently documented to prevent common API errors",
+    "Explicit cache mount path documentation: /home/nvs/.cache/nim distinct from other NIMs prevents configuration errors",
+    "Strong validation handoff: explicit guidance to validate designs with Boltz2/OpenFold3 structure prediction",
+    "Clean native/WT row exclusion guidance: save only designed sequences, not the input",
+    "Minimal resource requirements: 3GB GPU VRAM makes ProteinMPNN accessible on smaller GPUs"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add guidance for large multi-chain complexes",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No guidance on handling large multi-chain complexes (>10 chains, >1000 residues total) which may cause memory or timeout issues",
+      "root_cause": "Assumes typical monomer/dimer inputs; edge cases not addressed",
+      "fix": "Add to Limits: 'Large complexes (>10 chains or >1000 residues): may require increased timeout (>300s) or input_pdb_chains to redesign subset. For very large assemblies, consider redesigning chains iteratively rather than entire complex at once.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for sampling",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running ProteinMPNN with same backbone and temperature produces identical sequences",
+      "root_cause": "Stochastic sampling not explicitly stated",
+      "fix": "Add to Request Pattern: 'Sampling: ProteinMPNN is stochastic — same backbone and sampling_temp will produce different sequences each run (no seed control via API). For reproducible designs, save and version mfasta output rather than regenerating. Lower temperatures (0.1) yield more conservative designs; higher (0.5+) increase diversity.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify num_seq_per_target vs sampling_temp interaction",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "num_seq_per_target and sampling_temp both affect output count but interaction not explained (10 seqs × 3 temps = 30 total?)",
+      "root_cause": "Two parameters control output size; combined behavior not documented",
+      "fix": "Add to Common controls: 'Output count: num_seq_per_target × len(sampling_temp) = total sequences. Example: num_seq_per_target=10 with sampling_temp=[0.1, 0.3, 0.5] yields 30 sequences (10 per temperature). mfasta contains all temperatures interleaved.'"
+    }
+  ]
+}

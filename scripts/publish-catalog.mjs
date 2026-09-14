@@ -21,6 +21,7 @@ import { createPrivateKey } from "node:crypto";
 import { readBundle } from "./lib/bundle.mjs";
 import { signRoot } from "./lib/signing.mjs";
 import { publishSnapshot } from "./lib/publish.mjs";
+import { publishAuditCatalog } from "./lib/aipoch-audits.mjs";
 import {
   githubStore,
   s3Store,
@@ -121,6 +122,15 @@ try {
     cdn,
     baseRevision: context.baseRevision,
     history,
+  });
+  await publishAuditCatalog({
+    root: candidate.root,
+    store: cdn,
+    signing: {
+      privateKey,
+      expectedPublicKey: pin,
+      keyId: process.env.SKILL_MARKETPLACE_KEY_ID,
+    },
   });
   await writeFile(
     path.join(values.candidate, "marketplace.json.sig"),

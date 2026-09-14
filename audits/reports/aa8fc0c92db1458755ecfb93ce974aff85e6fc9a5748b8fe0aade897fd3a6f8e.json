@@ -1,0 +1,338 @@
+{
+  "meta": {
+    "skill_name": "adaptyv",
+    "description": "How to use the Adaptyv Bio Foundry API and Python SDK for protein experiment design, submission, and results retrieval. Use this skill whenever the user mentions Adaptyv, Foundry API, protein binding assays, protein screening experiments, BLI/SPR assays, thermostability assays, or wants to submit protein sequences for experimental characterization.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication of experimental data; clear documentation that experiments are submitted to real lab facility"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for API integration and experiment submission workflow"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established protein characterization methods (BLI, SPR, thermostability)"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Complete working code examples with proper error handling and authentication patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive API coverage including all experiment types, lifecycle states, and workflows; minor gaps in edge case documentation for failed experiments"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good error handling documentation with request_id tracking; webhook patterns for async workflows; missing explicit retry guidance for transient failures"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized documentation (241 lines), clear sections, efficient structure; could benefit from quick-reference table of contents"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Excellent trigger description with multiple specific patterns; clear workflow examples; when-to-use implicit but strong; minor: no explicit 'When NOT to Use' section"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup instructions, clear authentication guidance, multiple installation patterns, environment variable best practices"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect credential management: environment variables, .env file support, explicit warnings against hardcoding, token attenuation and revocation documented"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version field (1.2) and license; clear references to external docs; missing changelog or version history"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with clear input/output contracts; good progressive disclosure; idempotency considerations present; dependency on beta SDK (not on PyPI) is minor risk"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 86.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 23
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Submit EGFR binding screen",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from target search to experiment submission",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "FoundryClient initialized with environment variable for API key",
+            "result": "PASS",
+            "note": "Code correctly uses os.environ for credential management"
+          },
+          {
+            "text": "Target search and selection workflow completed",
+            "result": "PASS",
+            "note": "targets.list() with search parameter correctly demonstrated"
+          },
+          {
+            "text": "Cost estimate performed before experiment creation",
+            "result": "PASS",
+            "note": "experiments.cost_estimate() called with complete experiment_spec"
+          },
+          {
+            "text": "Experiment created with correct structure and submitted",
+            "result": "PASS",
+            "note": "experiments.create() and experiments.submit() workflow correct"
+          },
+          {
+            "text": "Result retrieval pattern documented",
+            "result": "PASS",
+            "note": "experiments.get_results() shown for completed experiments"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Thermostability assay submission",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Target-free experiment type handled correctly",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Thermostability experiment type documented as target-free",
+            "result": "PASS",
+            "note": "Experiment types table correctly shows thermostability requires no target"
+          },
+          {
+            "text": "Experiment spec excludes target_id for thermostability",
+            "result": "PASS",
+            "note": "Documentation implies correct structure without target_id"
+          },
+          {
+            "text": "Sequences formatted correctly for submission",
+            "result": "PASS",
+            "note": "Both simple and rich format documented with examples"
+          },
+          {
+            "text": "Multi-chain sequences supported with colon separator",
+            "result": "PASS",
+            "note": "Multi-chain format explicitly documented as 'MVLS:EVQL'"
+          },
+          {
+            "text": "Valid amino acid constraints enforced",
+            "result": "FAIL",
+            "note": "Documentation lists valid amino acids but no validation code example shown"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Automated pipeline with webhooks",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced workflow with skip_draft and auto_accept_quote",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "skip_draft option documented and functional",
+            "result": "PASS",
+            "note": "Automated pipeline example shows skip_draft: True"
+          },
+          {
+            "text": "auto_accept_quote option documented and functional",
+            "result": "PASS",
+            "note": "Automated pipeline example shows auto_accept_quote: True"
+          },
+          {
+            "text": "Webhook URL can be configured for status notifications",
+            "result": "PASS",
+            "note": "webhook_url parameter documented with payload description"
+          },
+          {
+            "text": "Webhook payload structure documented",
+            "result": "PASS",
+            "note": "Description states webhook POSTs experiment ID, previous and new status"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Complex filtering and pagination query",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "S-expression filtering syntax correctly documented",
+        "basic": 34,
+        "specialized": 48,
+        "total": 82,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "S-expression filter syntax documented with examples",
+            "result": "PASS",
+            "note": "Comprehensive filter operators listed with syntax examples"
+          },
+          {
+            "text": "Pagination parameters (limit, offset) documented",
+            "result": "PASS",
+            "note": "limit 1-100 default 50, offset documented"
+          },
+          {
+            "text": "Sorting syntax with asc/desc documented",
+            "result": "PASS",
+            "note": "Sort syntax shown with example: desc(created_at),asc(name)"
+          },
+          {
+            "text": "JSONB field access with at() operator shown",
+            "result": "PASS",
+            "note": "at(field,key) syntax documented for metadata queries"
+          },
+          {
+            "text": "Type casting functions documented",
+            "result": "FAIL",
+            "note": "Cast functions listed but no usage example provided"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Token attenuation and security management",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Token management described but implementation details sparse",
+        "basic": 30,
+        "specialized": 43,
+        "total": 73,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Token attenuation endpoint documented",
+            "result": "PASS",
+            "note": "POST /tokens/attenuate mentioned with scope capabilities"
+          },
+          {
+            "text": "Token revocation with cascade behavior documented",
+            "result": "PASS",
+            "note": "POST /tokens/revoke with descendant revocation described"
+          },
+          {
+            "text": "Biscuit-based attenuation request format shown",
+            "result": "FAIL",
+            "note": "Concept mentioned but no code example for creating attenuated tokens"
+          },
+          {
+            "text": "Scope restriction examples provided",
+            "result": "FAIL",
+            "note": "Scopes mentioned (org, resource type, actions) but no concrete example"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 51.8,
+    "score": 89,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent security practices with comprehensive credential management guidance and token attenuation support",
+    "Clear multi-pattern API usage documentation (decorator pattern, client pattern, direct REST) accommodates different developer preferences",
+    "Complete experiment lifecycle documentation with status transitions and actor responsibilities",
+    "Strong composability with webhook support for async workflows and integration with automated pipelines",
+    "Comprehensive filtering and query syntax documentation with s-expression DSL for complex queries"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add explicit 'When NOT to Use' section",
+      "observed_in": [],
+      "problem": "Skill lacks explicit boundary documentation for when Adaptyv is not appropriate",
+      "root_cause": "Trigger conditions are comprehensive but scope exclusions are implicit",
+      "fix": "Add 'When NOT to Use' section: Do not use for local-only sequence analysis, immediate results (21-day turnaround), or when computational prediction is sufficient without experimental validation"
+    },
+    {
+      "priority": "P2",
+      "title": "Token attenuation examples missing",
+      "observed_in": [5],
+      "problem": "Token management concepts described but no working code examples provided",
+      "root_cause": "Security section mentions Biscuit-based attenuation but lacks implementation guidance",
+      "fix": "Add code example showing POST /tokens/attenuate request body structure with organization, resource type, and expiry scoping"
+    },
+    {
+      "priority": "P2",
+      "title": "Sequence validation code example absent",
+      "observed_in": [2],
+      "problem": "Valid amino acid constraints documented but no validation logic shown",
+      "root_cause": "Documentation lists constraints but assumes SDK handles validation",
+      "fix": "Add example showing how to validate sequences before submission, either using SDK validation or simple regex pattern"
+    },
+    {
+      "priority": "P2",
+      "title": "Missing changelog or version history",
+      "observed_in": [],
+      "problem": "Version 1.2 specified but no information about changes from previous versions",
+      "root_cause": "Maintainability affected by lack of version history documentation",
+      "fix": "Add changelog section documenting changes between versions, or reference external changelog location"
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-downloader",
+    "description": "Lawful academic full-text downloader supporting open-access retrieval, publisher API access (Elsevier, Springer Nature, IEEE), CNKI institutional access for Chinese literature, and institutional browser-based fallback. Requires Node.js 22+ and Python 3. Uses only lawful OA, publisher API, and user-authorized institutional access.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Uses only lawful OA sources (PMC, Unpaywall, arXiv, publisher OA pages) and legitimate institutional access. Does not bypass paywalls or DRM. Clear audit trail with manifest tracking."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for academic literature access. Respects institutional authorization boundaries. Does not export credentials or attempt unauthorized access. User handoff for identity-bearing secrets."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Access routing logic sound (OA first, then API, then institutional). Publisher API fallback to OA is methodologically correct. Verification-first rule for CAPTCHA bounded and reasonable."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Working batch_download.mjs orchestration script. Configuration tools (configure_school.py, configure_credentials.py) provided. Clear preconditions and status categories."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage: OA retrieval, publisher APIs (Elsevier/Springer Nature/IEEE), CNKI for Chinese literature, institutional browser fallback, Supporting Information downloads. Handles DOI, PMID, title, URL inputs. Batch and single-paper modes."
+      },
+      "reliability": {
+        "score": 10,
+        "max": 12,
+        "note": "Robust routing logic with fallback chain (API → OA → institutional). Format principle prevents HTML/login-page mis-saves. Verification-first for CAPTCHA bounded. Manifest tracking. Minor: verification-first rule limited to 2 attempts could fail on transient network issues."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient fast-batch path keeps large DOMs/PDFs outside agent context. Provider-friendly pacing. Token discipline enforced. Minor: no explicit guidance for very large batches (100+ papers) or rate-limit recovery strategies."
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear routing logic with decision tree. Comprehensive status categories (30+). Configuration tools well-documented. SI confirmation gate enforced before download. Minor: complex preconditions (7 items) could benefit from automated health-check script. Browser-state principle excellent but lacks fallback when CDP unavailable."
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Bilingual operation (Chinese/English). Clear configuration wizards. Manifest output with typed failures. User handoff for identity secrets excellent. Minor: institutional URL triage classification could use visual decision tree for non-technical users."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security practices: no credential export, browser-state principle respects authentication, API keys stored with 0600 permissions, save-on-receipt pattern prevents key exposure in logs. User handoff for 2FA/OTP. Does not bypass DRM or paywalls."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular architecture: separate modules for school config, credentials, metadata resolution, provider downloads, content validation. Advanced routes in references/ on-demand. Token discipline prevents context pollution. Clear status taxonomy."
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong orchestration design with batch_download.mjs keeping large data in scripts. Token discipline excellent. SI confirmation gate prevents ambiguous runs. Verification-first rule bounds CAPTCHA attempts. Minor: lacks explicit guidance for CDP attach failure recovery beyond asking user to check checkbox."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 20,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Download English paper via OA route (PMC/Unpaywall)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Normalized DOI, checked legitimate OA sources, downloaded from PMC, verified PDF format, recorded open_access_downloaded in manifest.",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Normalizes DOI and identifies language/publisher before routing",
+            "result": "PASS",
+            "note": "Metadata lookup per main workflow specification"
+          },
+          {
+            "text": "Checks legitimate OA sources (PMC, Unpaywall, arXiv, publisher OA)",
+            "result": "PASS",
+            "note": "OA resolution executed correctly"
+          },
+          {
+            "text": "Verifies downloaded file is valid PDF (%PDF signature)",
+            "result": "PASS",
+            "note": "Format principle enforced, no HTML/login-page mis-save"
+          },
+          {
+            "text": "Records open_access_downloaded status and source in manifest",
+            "result": "PASS",
+            "note": "Manifest tracking working as designed"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Download Elsevier paper via publisher API with fallback to OA",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Tried publisher API first, API returned no entitlement, automatically fell back to OA sources, downloaded from Unpaywall, manifest shows api_not_entitled → open_access_downloaded.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Identifies Elsevier publisher and tries API first (if credentials configured)",
+            "result": "PASS",
+            "note": "API-first logic per workflow specification"
+          },
+          {
+            "text": "Automatically falls back to OA after API failure (no user confirmation needed)",
+            "result": "PASS",
+            "note": "Publisher API fallback section correctly implemented"
+          },
+          {
+            "text": "Preserves failed API attempt in manifest before OA success",
+            "result": "PASS",
+            "note": "Manifest tracks full access attempt chain"
+          },
+          {
+            "text": "Does not request Web Access confirmation after successful OA fallback",
+            "result": "PASS",
+            "note": "api_fallback_confirmation_required only needed when both API and OA fail"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Download Chinese literature via CNKI with SI confirmation gate",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Asked SI confirmation first, user requested --no-si, identified Chinese title, routed to CNKI via configured cnki_url, reused Chrome login state, downloaded PDF, verified format.",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Asks SI confirmation before downloading (SI confirmation gate enforced)",
+            "result": "PASS",
+            "note": "Gate per router specification, script requires --si or --no-si"
+          },
+          {
+            "text": "Identifies Chinese title and routes to CNKI (not OA)",
+            "result": "PASS",
+            "note": "Chinese literature CNKI-only principle correctly applied"
+          },
+          {
+            "text": "Reuses user's authenticated Chrome session via browser-state principle",
+            "result": "PASS",
+            "note": "CDP attaches to logged-in browser, no fresh profile"
+          },
+          {
+            "text": "Downloads PDF from CNKI without exporting cookies or credentials",
+            "result": "PASS",
+            "note": "Security boundary respected"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Batch download with automatic CAPTCHA solving (verification-first rule)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Encountered CNKI puzzle slider, attempted bounded drag (2 attempts), passed verification automatically, continued download, recorded verification_auto_passed.",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Attempts visible verification control automatically before user handoff",
+            "result": "PASS",
+            "note": "Verification-first rule correctly applied"
+          },
+          {
+            "text": "Bounds automatic attempts (at most 2 on one tab)",
+            "result": "PASS",
+            "note": "Bounded attempt prevents infinite loops"
+          },
+          {
+            "text": "Records verification_auto_passed when successful, continues download",
+            "result": "PASS",
+            "note": "Status taxonomy correctly used"
+          },
+          {
+            "text": "Falls back to user handoff after 2 failed attempts with tab kept open",
+            "result": "PARTIAL",
+            "note": "Handoff works but lacks explicit guidance for re-entry after user manual solve"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Library no permission scenario (institutional access denied)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "OA not found, tried Web Access via configured library, publisher page showed no institutional entitlement, recorded library_no_permission, reported plainly to user without retrying.",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects clear 'no entitlement' message from library/publisher",
+            "result": "PASS",
+            "note": "Status detection working correctly"
+          },
+          {
+            "text": "Records library_no_permission status and stops retry",
+            "result": "PASS",
+            "note": "Does not treat as transient network issue"
+          },
+          {
+            "text": "Reports to user plainly that library lacks permission",
+            "result": "PASS",
+            "note": "Clear communication per status category guidance"
+          },
+          {
+            "text": "Suggests alternative routes (OA sources, ILL, author request)",
+            "result": "PARTIAL",
+            "note": "Stops correctly but lacks constructive next-step suggestions in output"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Batch download with mixed routes (OA + API + CNKI + SI) and manifest tracking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Processed 5 papers: 2 OA, 1 Springer API, 1 CNKI, 1 with SI. Generated manifest with route, access mode, OA evidence, format, SHA-256, SI choice. All large data kept in scripts.",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Routes each paper independently based on language/publisher/access",
+            "result": "PASS",
+            "note": "Mixed-route handling working correctly"
+          },
+          {
+            "text": "Generates comprehensive manifest with route, access mode, SHA-256, SI choice",
+            "result": "PASS",
+            "note": "Manifest structure per specification"
+          },
+          {
+            "text": "Keeps large PDFs/DOMs/SI bytes outside agent context (token discipline)",
+            "result": "PASS",
+            "note": "Fast-batch path correctly used, only compact status surfaced"
+          },
+          {
+            "text": "Organizes output by type (PDFs/, CNKI/, SupportingInformation/, FullText/)",
+            "result": "PARTIAL",
+            "note": "Directory structure works but lacks README explaining organization and manifest schema"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 53.9,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent security design: browser-state principle, no credential export, API keys stored securely (0600), user handoff for identity secrets",
+    "Comprehensive lawful access routing: OA → publisher API → institutional fallback with proper prioritization and automatic fallback logic",
+    "Strong token discipline: fast-batch path keeps large data in scripts, surfaces only compact status, prevents context pollution",
+    "Robust verification-first rule: bounded CAPTCHA attempts (max 2) before user handoff, maintains authenticated tab state",
+    "Clear manifest tracking: route, access mode, OA evidence, format, SHA-256, typed failures provide complete audit trail"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add automated precondition health-check script",
+      "observed_in": [3, 4],
+      "problem": "Seven preconditions (browser state, school config, login, CDP, Node.js, Python, web-access proxy) must be verified manually. Failures often only discovered during download attempt.",
+      "root_cause": "Preconditions listed in documentation but no single health-check command validates all conditions before batch run.",
+      "fix": "Create scripts/health-check.mjs that verifies: (1) Node.js 22+ available, (2) Python 3 available, (3) school.json exists and valid, (4) CDP proxy reachable, (5) browser remote debugging enabled, (6) test CDP target attach. Exit with specific error codes and remediation suggestions."
+    },
+    {
+      "priority": "P1",
+      "title": "Add verification re-entry guidance after user manual solve",
+      "observed_in": [4],
+      "problem": "When verification-first rule hands off to user after 2 failed CAPTCHA attempts, no explicit guidance for agent to re-enter workflow after user manually solves challenge in kept-open tab.",
+      "root_cause": "User handoff documented but re-entry workflow missing. Agent must infer how to continue from verification_auto_failed status.",
+      "fix": "Add to references/delivery-verification-and-failures.md: 'After user handoff for verification_auto_failed, (1) confirm user has solved challenge, (2) re-check page state from same CDP target, (3) if challenge cleared, retry download from current page, (4) update status to retry_after_user_verification → downloaded. Include example sequence.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add output directory README with manifest schema",
+      "observed_in": [6],
+      "problem": "Batch downloads create organized directory structure (PDFs/, CNKI/, SupportingInformation/, FullText/) with manifest.json but no README explaining organization or manifest schema for users inspecting output.",
+      "root_cause": "Output structure documented in skill but not in generated output directory itself.",
+      "fix": "Generate README.md in output directory with: (1) directory organization explanation, (2) manifest.json schema (status categories, route types, access modes), (3) file naming conventions, (4) SHA-256 verification instructions. Include link to full documentation."
+    }
+  ]
+}

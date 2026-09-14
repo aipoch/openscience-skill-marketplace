@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "skill_name": "genomics-workflow-acceleration",
+    "description": "Use when accelerating existing genomics workflows with NVIDIA Parabricks, improving runtime or price/performance, converting pipeline steps to GPUs, or comparing CPU and GPU workflow outputs. Adds optional GPU steps in-place with runtime toggles (default off). Do NOT use for individual pbrun command routing — use parabricks.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 88,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive workflow acceleration coverage across 4 frameworks (Nextflow, Snakemake, WDL, Python); minor gap: no guidance for CWL or DSL2-specific patterns beyond generic Nextflow"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong guardrails against destructive actions and clinical overreach; A/B comparison required before production; minor: no guidance on handling Parabricks version mismatches between environments"
+      },
+      "performance_context": {
+        "score": 6,
+        "max": 8,
+        "note": "307-line SKILL.md with 7 reference files; progressive disclosure present but SKILL.md exceeds 250-line target for complex skills; could benefit from moving framework-specific patterns to references"
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear 9-step workflow with decision trees; excellent guardrails; minor inconsistency: reference files listed at top but some inline tables duplicate reference content"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good trigger coverage; report-only mode documented; minor: toggle naming conventions (use_parabricks vs accelerated) not consolidated into single recommendation"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Explicit guardrails against secret exposure and destructive cleanup; git branch recommendation before edits; minor: no validation guidance for user-provided workflow paths (path traversal risk)"
+      },
+      "maintainability": {
+        "score": 10,
+        "max": 12,
+        "note": "Good modular structure with 7 reference files; framework patterns isolated; minor: tool mapping tables in both SKILL.md and references create update burden"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Excellent trigger precision with explicit negative case (NOT for individual pbrun routing); strong composability with parabricks skill; clear escape hatches in troubleshooting; minor: no idempotency statement for repeated acceleration attempts"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.1,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 24,
+      "total": 27
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Nextflow nf-core pipeline inspection (report-only)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete inspection workflow with framework detection, tool mapping, and toggle design without file modification",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Framework detected from workflow markers (main.nf, modules/)",
+            "result": "PASS",
+            "note": "Nextflow identified correctly"
+          },
+          {
+            "text": "CPU steps mapped to nf-core Parabricks modules",
+            "result": "PASS",
+            "note": "parabricks_fq2bam and parabricks_haplotypecaller referenced from nf-core map"
+          },
+          {
+            "text": "No files modified in report-only mode",
+            "result": "PASS",
+            "note": "Honors 'don't edit files' instruction"
+          },
+          {
+            "text": "Toggle proposed with default false",
+            "result": "PASS",
+            "note": "params.use_parabricks = false documented"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Snakemake in-place acceleration with config toggle",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "In-place implementation with parallel CPU/GPU rules and config-based branching",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "use_parabricks: false added to config.yaml",
+            "result": "PASS",
+            "note": "Default toggle in config file"
+          },
+          {
+            "text": "Parallel rules for CPU and GPU paths created",
+            "result": "PASS",
+            "note": "Both branches maintained"
+          },
+          {
+            "text": "Original CPU steps not deleted",
+            "result": "PASS",
+            "note": "Default path preserved"
+          },
+          {
+            "text": "ACCELERATION.md documents both run commands",
+            "result": "PASS",
+            "note": "snakemake --config use_parabricks=true documented"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "WDL workflow with Boolean input toggle",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "WDL branching implemented but GPU runtime blocks lack explicit resource specifications",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Boolean use_parabricks input with false default added",
+            "result": "PASS",
+            "note": "WDL workflow input correctly specified"
+          },
+          {
+            "text": "Conditional branching with if/else for GPU vs CPU tasks",
+            "result": "PASS",
+            "note": "WDL if (use_parabricks) { call ... } else { call ... } pattern used"
+          },
+          {
+            "text": "GPU runtime attributes only on Parabricks tasks",
+            "result": "PASS",
+            "note": "Runtime blocks isolated to GPU branch"
+          },
+          {
+            "text": "Downstream tasks wired to consume outputs from either branch",
+            "result": "FAIL",
+            "note": "Output name matching documented but example shows separate CPU/GPU task names without output unification strategy"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Python CLI with --use-parabricks flag",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Python implementation with argparse flag and subprocess branching",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "--use-parabricks CLI flag with default False added",
+            "result": "PASS",
+            "note": "Argparse argument with action='store_true' and default=False"
+          },
+          {
+            "text": "Subprocess branches to pbrun container vs CPU commands",
+            "result": "PASS",
+            "note": "Conditional logic routes to docker run ... pbrun or existing tools"
+          },
+          {
+            "text": "Both invocations documented in ACCELERATION.md",
+            "result": "PASS",
+            "note": "python pipeline.py (default CPU) and python pipeline.py --use-parabricks documented"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "No workflow path provided (intake failure)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct refusal with clarifying question rather than fabricating pipeline",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Skill does not fabricate pipeline structure",
+            "result": "PASS",
+            "note": "Guardrail 'Do not invent pipeline structure' enforced"
+          },
+          {
+            "text": "Agent asks for workflow path and framework",
+            "result": "PASS",
+            "note": "Intake step requires inspectable workflow"
+          },
+          {
+            "text": "No acceleration implementation without concrete workflow",
+            "result": "PASS",
+            "note": "Does not proceed to step mapping without path"
+          },
+          {
+            "text": "Troubleshooting table documents this scenario",
+            "result": "FAIL",
+            "note": "Table shows 'Ask for repo, directory...' but does not explicitly prevent generic CPU optimization advice as alternative"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "User requests single pbrun command routing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct delegation to parabricks skill per scope restriction",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Skill description explicitly excludes individual pbrun routing",
+            "result": "PASS",
+            "note": "Do NOT use for individual pbrun command routing — use parabricks"
+          },
+          {
+            "text": "Agent delegates to parabricks skill for single-command queries",
+            "result": "PASS",
+            "note": "References parabricks skill in Prerequisites and Limitations"
+          },
+          {
+            "text": "Scope restricted to workflow-level acceleration",
+            "result": "PASS",
+            "note": "Purpose section emphasizes in-place workflow modification"
+          },
+          {
+            "text": "Clear handoff guidance provided",
+            "result": "PASS",
+            "note": "For deep runtime diagnostics... use the parabricks skill"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Consolidation request without prior A/B comparison",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct requirement for validation before consolidation",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Consolidation documented as post-comparison step",
+            "result": "PASS",
+            "note": "Step 7: After A/B comparison, review whether GPU branch can merge adjacent steps"
+          },
+          {
+            "text": "Only GPU branch modified during consolidation",
+            "result": "PASS",
+            "note": "Edit only the GPU branch... remove superseded GPU sub-steps"
+          },
+          {
+            "text": "Re-comparison required after consolidation",
+            "result": "PASS",
+            "note": "Remind the user to re-run toggle-off vs toggle-on comparison"
+          },
+          {
+            "text": "Consolidation blocked if comparison not completed",
+            "result": "FAIL",
+            "note": "Step 7 assumes comparison done but does not explicitly check or enforce prerequisite"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.2,
+    "dynamic_weighted": 52.9,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive multi-framework support (Nextflow, Snakemake, WDL, Python) with concrete implementation patterns for each",
+    "Strong safety-first design with default-off toggles, git branch recommendations, and mandatory A/B comparison before production",
+    "Excellent guardrails preventing clinical overreach, destructive operations, and fabrication of pipeline structures",
+    "Clear scope boundaries with explicit exclusion of single-command routing and delegation to parabricks skill",
+    "Detailed 9-step workflow from intake through consolidation with framework-specific guidance and troubleshooting table"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Enforce A/B comparison prerequisite before consolidation",
+      "observed_in": ["Input 7"],
+      "problem": "Step 7 consolidation assumes comparison completed but does not validate or block if comparison not run",
+      "root_cause": "Sequential step design assumes linear workflow but agent could jump to consolidation prematurely",
+      "fix": "Add to Step 7 first paragraph: 'Before consolidating, verify A/B comparison completed (check ACCELERATION.md for comparison results). If comparison section is empty or comparison not run, prompt user to complete Step 8 first.'"
+    },
+    {
+      "priority": "P1",
+      "title": "Move framework-specific patterns to reference files",
+      "observed_in": ["Performance context evaluation"],
+      "problem": "307-line SKILL.md exceeds target for complex skills; implementation patterns tables could move to references",
+      "root_cause": "Inline pattern tables for 4 frameworks add bulk to main instruction flow",
+      "fix": "Create references/framework-patterns.md with detailed toggle and wiring examples for each framework; keep only 1-2 line summaries in SKILL.md Step 6 table; reference full patterns document for details"
+    },
+    {
+      "priority": "P2",
+      "title": "Add path validation guidance to security section",
+      "observed_in": ["Security evaluation"],
+      "problem": "User-provided workflow paths not validated for traversal attacks or non-existent locations",
+      "root_cause": "Assumes paths are trustworthy; no defensive validation documented",
+      "fix": "Add to Prerequisites: 'Validate workflow path exists and is within expected project boundaries before reading. Reject paths containing .. or absolute paths outside project root unless explicitly authorized.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Consolidate toggle naming recommendation",
+      "observed_in": ["Human usability evaluation", "Input 1", "Input 2"],
+      "problem": "Both use_parabricks and accelerated shown as alternatives without clear guidance on which to prefer",
+      "root_cause": "Framework table shows two naming patterns without declaring one canonical",
+      "fix": "In Step 6 Toggle contract table header, add note: 'Prefer use_parabricks for consistency across all frameworks; accelerated is acceptable alternative but maintain single convention within a project.'"
+    }
+  ]
+}

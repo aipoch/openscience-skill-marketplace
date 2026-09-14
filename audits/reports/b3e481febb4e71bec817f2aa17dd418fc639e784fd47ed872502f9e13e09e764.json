@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "literature-review",
+    "description": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature reviews, meta-analyses, research synthesis, or comprehensive literature searches across biomedical, scientific, and technical domains. Creates professionally formatted markdown documents and PDFs with verified citations in multiple citation styles (APA, Nature, Vancouver, etc.).",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "writing",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; systematic methodology with documented searches, citation verification, and reproducible search strategies"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for systematic literature reviews with PRISMA guidance; clear integration boundaries with database skills (gget, bioservices)"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established systematic review methodology (PRISMA, Cochrane), multi-database search strategies, and citation verification"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Complete working examples for all workflow phases with bundled scripts for citation verification and document generation"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive 7-phase workflow (planning, search, screening, extraction, synthesis, verification, document generation) with 3 bundled scripts and integration with parallel-web, gget, bioservices"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good documentation of search reproducibility with date/query recording; version 1.7; dependency checks available; minor: no explicit guidance on handling API failures across multiple databases"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized 264-line SKILL.md with progressive disclosure through 2 reference files plus templates; clear 7-phase structure with integration points"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Perfect trigger description with specific literature review patterns; comprehensive 'When to Use' section with 7 use cases; clear integration with parallel-web as primary search tool"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup instructions with parallel-cli, Python packages (requests), system tools (pandoc, LaTeX), dependency check script, and complete workflow guidance"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good credential handling for parallel-cli authentication and OpenRouter API; citation verification prevents fabrication; minor: no explicit guidance on handling potentially malicious PDFs during full-text screening"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.7, license, openclaw API key declaration, 3 bundled scripts, reference files; minor: no explicit changelog reference"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with parallel-web (primary), gget, bioservices, venue-templates; excellent integration guidance; mandatory visual elements with scientific-schematics; minor: error handling for multi-database failures could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Systematic search with parallel-web and multi-database coverage",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete systematic search workflow with parallel-cli as primary tool and database integration",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "parallel-cli search as PRIMARY web search tool documented",
+            "result": "PASS",
+            "note": "Overview and best practices explicitly state parallel-web as primary tool"
+          },
+          {
+            "text": "Minimum 3 databases required for systematic reviews",
+            "result": "PASS",
+            "note": "Best practices state 'Use multiple databases (minimum 3)' twice for emphasis"
+          },
+          {
+            "text": "parallel-cli counts as one source in multi-database requirement",
+            "result": "PASS",
+            "note": "Best practices explicitly state 'parallel-web counts as one source'"
+          },
+          {
+            "text": "Document search strings, dates, result counts for reproducibility",
+            "result": "PASS",
+            "note": "Best practices require documenting everything with save to sources/ directory"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "PRISMA flow with screening and selection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete PRISMA-compliant workflow with mandatory visual element",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "MANDATORY: Every literature review MUST include 1-2 AI-generated figures",
+            "result": "PASS",
+            "note": "Visual enhancement section states this is MANDATORY and not optional"
+          },
+          {
+            "text": "PRISMA flow diagram recommended for systematic reviews",
+            "result": "PASS",
+            "note": "Visual enhancement lists PRISMA flow as first example, external resources reference PRISMA"
+          },
+          {
+            "text": "Title → Abstract → Full text screening documented",
+            "result": "PASS",
+            "note": "Screening and selection best practices document systematic screening sequence"
+          },
+          {
+            "text": "Record exclusion reasons required",
+            "result": "PASS",
+            "note": "Best practices explicitly state 'Document exclusions: Record reasons for excluding studies'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Citation verification with verify_citations.py",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete citation verification workflow preventing fabrication",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "verify_citations.py script verifies DOIs and generates formatted citations",
+            "result": "PASS",
+            "note": "Bundled resources section lists verify_citations.py with DOI verification"
+          },
+          {
+            "text": "Verify all citations required in quality best practices",
+            "result": "PASS",
+            "note": "Quality and reproducibility section states 'Verify all citations: Run verify_citations.py script'"
+          },
+          {
+            "text": "Multiple citation styles supported (APA, Nature, Vancouver, Chicago, IEEE)",
+            "result": "PASS",
+            "note": "Description and references list 5 citation styles with detailed guide"
+          },
+          {
+            "text": "Unverified citations listed as common pitfall",
+            "result": "PASS",
+            "note": "Common pitfalls include 'Unverified citations: Leads to errors; always run verify_citations.py'"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Thematic synthesis with cross-study comparison",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive synthesis guidance with thematic organization",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Organize thematically, NOT by individual studies",
+            "result": "PASS",
+            "note": "Synthesis best practices state 'Organize thematically: Group by themes, NOT by individual studies'"
+          },
+          {
+            "text": "Synthesize across studies with compare, contrast, identify patterns",
+            "result": "PASS",
+            "note": "Synthesis section lists 'Synthesize across studies: Compare, contrast, identify patterns'"
+          },
+          {
+            "text": "Study-by-study summary listed as common pitfall",
+            "result": "PASS",
+            "note": "Common pitfalls explicitly warn against 'Study-by-study summary: Lacks synthesis'"
+          },
+          {
+            "text": "Core workflow phase 5 dedicated to synthesis and analysis",
+            "result": "PASS",
+            "note": "7-phase workflow includes 'Synthesis and analysis — thematic or quantitative synthesis'"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Integration with venue-templates for journal-specific styles",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Venue-specific style guidance present but integration workflow minimal",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "venue-templates skill listed in integration section",
+            "result": "PASS",
+            "note": "Writing skills integration includes venue-templates for style guides"
+          },
+          {
+            "text": "Venue-specific writing styles section with 4 reference files",
+            "result": "PASS",
+            "note": "Dedicated section lists venue_writing_styles.md and 3 venue-specific guides"
+          },
+          {
+            "text": "Nature/Science, Cell Press, and medical journal styles documented",
+            "result": "PASS",
+            "note": "Venue section lists Nature/Science, Cell Press, and medical journal style guides"
+          },
+          {
+            "text": "Workflow for adapting review to specific venue documented",
+            "result": "FAIL",
+            "note": "Venue styles listed but no explicit workflow showing when/how to apply them"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Integration with database skills and parallel-web boundaries",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clear integration boundaries with parallel-web as primary and database skills as supplementary",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "parallel-web skill PRIMARY for broad academic literature discovery",
+            "result": "PASS",
+            "note": "Integration section explicitly marks parallel-web as PRIMARY with capitals"
+          },
+          {
+            "text": "gget for PubMed, bioRxiv, COSMIC, AlphaFold, Ensembl, UniProt",
+            "result": "PASS",
+            "note": "Database access skills section lists gget with 6 specific databases"
+          },
+          {
+            "text": "bioservices for ChEMBL, KEGG, Reactome, UniProt, PubChem",
+            "result": "PASS",
+            "note": "Database skills section lists bioservices with 5 databases"
+          },
+          {
+            "text": "parallel-cli extract for fetching full content from URLs",
+            "result": "PASS",
+            "note": "Web search & extraction section documents parallel-cli extract usage"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 57.0,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive 7-phase systematic review workflow (planning, search, screening, extraction, synthesis, verification, document generation) following PRISMA and Cochrane methodology",
+    "Excellent integration strategy with parallel-web as PRIMARY search tool supplemented by specialized database skills (gget, bioservices, datacommons-client)",
+    "Strong quality assurance with mandatory citation verification (verify_citations.py), reproducible search documentation, and common pitfalls section",
+    "Mandatory visual elements with scientific-schematics integration for PRISMA flow diagrams, thematic synthesis diagrams, and research gap visualizations",
+    "Perfect agent discoverability with 7 explicit use cases, clear when-to-use guidance, and comprehensive integration with 9+ other skills"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add explicit workflow for adapting review to specific venue",
+      "observed_in": [5],
+      "problem": "Venue-specific style guides listed but no workflow showing when/how to apply them during review preparation",
+      "root_cause": "Agent-specific composability focuses on venue-templates availability rather than integration workflow",
+      "fix": "Add to core_workflow.md or new venue_adaptation.md: workflow showing when to consult venue-templates (after synthesis, before document generation), how to adapt abstract format, structure, and tone to match target venue"
+    },
+    {
+      "priority": "P2",
+      "title": "Add error handling for multi-database API failures",
+      "observed_in": [],
+      "problem": "Multiple databases recommended but no guidance on handling when one API fails during search",
+      "root_cause": "Reliability section focuses on reproducibility rather than runtime failures",
+      "fix": "Add to best practices or troubleshooting: pattern for handling API failures (continue with available databases, document failed sources, adjust synthesis to note coverage limitations)"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance on handling potentially malicious PDFs during screening",
+      "observed_in": [],
+      "problem": "Full-text screening involves downloading PDFs but no security guidance on malicious documents",
+      "root_cause": "Security section focuses on credentials rather than file handling",
+      "fix": "Add to security section: guidance on PDF sandboxing during full-text screening, using PDF preview/readers with security features, avoiding automatic script execution"
+    }
+  ]
+}
