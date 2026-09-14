@@ -83,7 +83,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/abstract-trimmer@1.0.0",
@@ -122,7 +123,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/academic-abstract-refiner@1.0.0",
@@ -161,7 +163,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/academic-highlight-generator@1.0.0",
@@ -200,7 +203,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/adverse-event-narrative@1.0.0",
@@ -241,7 +245,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/anatomy-quiz-master@1.0.0",
@@ -280,7 +285,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/anki-card-creator@1.0.0",
@@ -319,7 +325,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/arxiv-preflight@1.0.0",
@@ -358,7 +365,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/author-response-builder@1.0.0",
@@ -397,7 +405,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/authorship-credit-gen@1.0.0",
@@ -438,7 +447,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/automated-soap-note-generator@1.0.0",
@@ -477,7 +487,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biomed-outline-generator@1.0.0",
@@ -516,7 +527,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biotech-pitch-deck-narrative@1.0.0",
@@ -555,7 +567,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/blind-review-sanitizer@1.0.0",
@@ -594,7 +607,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/citation-formatter@1.0.0",
@@ -635,7 +649,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/claim-strength-calibrator@1.0.0",
@@ -674,7 +689,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-decision-support@1.0.0",
@@ -715,7 +731,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conference-abstract-adaptor@1.0.0",
@@ -754,7 +771,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conference-abstract-writer@1.0.0",
@@ -793,7 +811,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conference-poster-pitch@1.0.0",
@@ -832,7 +851,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/consistency-checker-across-manuscript@1.0.0",
@@ -871,7 +891,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cover-letter-drafter@1.0.0",
@@ -910,7 +931,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cover-letter-generator@1.0.0",
@@ -949,7 +971,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/dei-statement-drafter@1.0.0",
@@ -988,7 +1011,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/digital-twin-discharge-drafter@1.0.0",
@@ -1029,7 +1053,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/discharge-summary-writer@1.0.0",
@@ -1070,7 +1095,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/discussion-composer@1.0.0",
@@ -1109,7 +1135,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/discussion-section-architect@1.0.0",
@@ -1148,7 +1175,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ectd-xml-compiler@1.0.0",
@@ -1187,7 +1215,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ehr-semantic-compressor@1.0.0",
@@ -1226,7 +1255,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/faq-generator@1.0.0",
@@ -1265,7 +1295,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/figure-legend-gen@1.0.0",
@@ -1304,7 +1335,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/figure-legend-writer@1.0.0",
@@ -1343,7 +1375,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/figure-reference-checker@1.0.0",
@@ -1382,7 +1415,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/find-paper-references@1.0.0",
@@ -1421,7 +1455,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/format-references-endnote@1.0.0",
@@ -1462,7 +1497,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/format-references-zotero@1.0.0",
@@ -1503,7 +1539,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/grant-budget-justification@1.0.0",
@@ -1542,7 +1579,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/grant-mock-reviewer@1.0.0",
@@ -1581,7 +1619,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/grant-proposal-assistant@1.0.0",
@@ -1620,7 +1659,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/grant-specific-aims-writer@1.0.0",
@@ -1659,7 +1699,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/graph-interpretation@1.0.0",
@@ -1700,7 +1741,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/graphical-abstract-generator@1.0.0",
@@ -1739,7 +1781,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hipaa-compliance-auditor@1.0.0",
@@ -1780,7 +1823,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/iacuc-protocol-drafter@1.0.0",
@@ -1819,7 +1863,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/introduction-logic-builder@1.0.0",
@@ -1858,7 +1903,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/introduction-section-writer@1.0.0",
@@ -1897,7 +1943,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/irb-application-assistant@1.0.0",
@@ -1938,7 +1985,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-club-presenter@1.0.0",
@@ -1977,7 +2025,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-cover-prompter@1.0.0",
@@ -2018,7 +2067,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/labarchive-integration@1.0.0",
@@ -2057,7 +2107,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/latex-manuscript-format-converter@1.0.0",
@@ -2096,7 +2147,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/latex-posters@1.0.0",
@@ -2135,7 +2187,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lay-press-release-writer@1.0.0",
@@ -2174,7 +2227,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lay-summary-for-cross-disciplinary-teams@1.0.0",
@@ -2213,7 +2267,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lay-summary-gen@1.0.0",
@@ -2252,7 +2307,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/limitation-and-risk-writer@1.0.0",
@@ -2291,7 +2347,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/linkedin-optimizer@1.0.0",
@@ -2332,7 +2389,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-review@1.0.0",
@@ -2373,7 +2431,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/market-access-value@1.0.0",
@@ -2412,7 +2471,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-cv-resume-builder@1.0.0",
@@ -2451,7 +2511,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-device-mdr-auditor@1.0.0",
@@ -2490,7 +2551,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-email-polisher@1.0.0",
@@ -2529,7 +2591,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-english-precision-editor@1.0.0",
@@ -2568,7 +2631,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-imaging-review@1.0.0",
@@ -2607,7 +2671,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-review-writer-architect@1.0.0",
@@ -2648,7 +2713,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-scribe-dictation@1.0.0",
@@ -2689,7 +2755,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-translation@1.0.0",
@@ -2728,7 +2795,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medication-adherence-message-gen@1.0.0",
@@ -2767,7 +2835,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meeting-minutes@1.0.0",
@@ -2806,7 +2875,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-analysis-methods-generator@1.0.0",
@@ -2845,7 +2915,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-baseline-generator@1.0.0",
@@ -2884,7 +2955,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-manuscript-generator@1.0.0",
@@ -2925,7 +2997,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-results-forest-plot-analyzer@1.0.0",
@@ -2964,7 +3037,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-results-funnel-plot-generator@1.0.0",
@@ -3003,7 +3077,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-results-risk-of-bias@1.0.0",
@@ -3042,7 +3117,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-results-sensitivity-analysis@1.0.0",
@@ -3081,7 +3157,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/method-writing@1.0.0",
@@ -3122,7 +3199,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/methods-section-writer@1.0.0",
@@ -3163,7 +3241,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/microbiome-diversity-reporter@1.0.0",
@@ -3202,7 +3281,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/moa-explainer@1.0.0",
@@ -3241,7 +3321,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/molecular-review-workflow@1.0.0",
@@ -3282,7 +3363,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/networking-email-drafter@1.0.0",
@@ -3321,7 +3403,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/nih-biosketch-builder@1.0.0",
@@ -3360,7 +3443,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/nsfc-grant-writer@1.0.0",
@@ -3399,7 +3483,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/paper-sprint-review@1.0.0",
@@ -3438,7 +3523,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/paper-web@1.0.0",
@@ -3479,7 +3565,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/patent-assistant@1.0.0",
@@ -3518,7 +3605,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/patient-recruitment-ad-gen@1.0.0",
@@ -3557,7 +3645,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/peer-review@1.0.0",
@@ -3596,7 +3685,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/peer-review-response-drafter@1.0.0",
@@ -3635,7 +3725,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/personal-statement@1.0.0",
@@ -3676,7 +3767,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/poster-layout-planner@1.0.0",
@@ -3715,7 +3807,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/poster-storyline-builder@1.0.0",
@@ -3754,7 +3847,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/presentation-hook@1.0.0",
@@ -3793,7 +3887,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/prior-auth-letter-drafter@1.0.0",
@@ -3834,7 +3929,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/q-and-a-prep-partner@1.0.0",
@@ -3873,7 +3969,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/radiology-image-quiz@1.0.0",
@@ -3914,7 +4011,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/rebuttal-letter-strategist@1.0.0",
@@ -3953,7 +4051,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/recommendation-letter-assistant@1.0.0",
@@ -3992,7 +4091,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reference-integrity-checker@1.0.0",
@@ -4031,7 +4131,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reference-style-sync@1.0.0",
@@ -4070,7 +4171,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/referral-letter-generator@1.0.0",
@@ -4109,7 +4211,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/regulatory-submission@1.0.0",
@@ -4148,7 +4251,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reporting-guideline-compliance-checker@1.0.0",
@@ -4187,7 +4291,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/residency-interview-prep@1.0.0",
@@ -4226,7 +4331,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/response-letter@1.0.0",
@@ -4267,7 +4373,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/response-tone-polisher@1.0.0",
@@ -4308,7 +4415,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/results-section-structurer@1.0.0",
@@ -4347,7 +4455,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/results-section-writer@1.0.0",
@@ -4386,7 +4495,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/revision-strategy-planner@1.0.0",
@@ -4425,7 +4535,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sample-size-power-calculator@1.0.0",
@@ -4466,7 +4577,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/semantic-consistency-auditor@1.0.0",
@@ -4505,7 +4617,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/slide-deck-for-lab-meeting@1.0.0",
@@ -4544,7 +4657,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/study-limitations-drafter@1.0.0",
@@ -4583,7 +4697,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/style-journal-rewrite@1.0.0",
@@ -4622,7 +4737,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/systematic-review@1.0.0",
@@ -4661,7 +4777,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/table-narrative-writer@1.0.0",
@@ -4700,7 +4817,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/target-journal-matcher@1.0.0",
@@ -4741,7 +4859,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/title-and-abstract-optimizer@1.0.0",
@@ -4780,7 +4899,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tone-adjuster@1.0.0",
@@ -4821,7 +4941,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/usmle-case-generator@1.0.0",
@@ -4862,7 +4983,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/visual-content-desc@1.0.0",
@@ -4901,7 +5023,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/adme-property-predictor@1.0.0",
@@ -4940,7 +5063,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/anndata@1.0.0",
@@ -4979,7 +5103,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/baseline-extraction-for-clinical-trials@1.0.0",
@@ -5018,7 +5143,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/batch-effect-correction@1.0.0",
@@ -5059,7 +5185,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bio-causal-genomics-mediation-analysis@1.0.0",
@@ -5098,7 +5225,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bio-causal-genomics-pleiotropy-detection@1.0.0",
@@ -5137,7 +5265,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython@1.0.0",
@@ -5176,7 +5305,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython-advanced@1.0.0",
@@ -5215,7 +5345,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython-alignment@1.0.0",
@@ -5254,7 +5385,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython-phylo@1.0.0",
@@ -5293,7 +5425,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython-sequence-io@1.0.0",
@@ -5332,7 +5465,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython-structure@1.0.0",
@@ -5371,7 +5505,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bioservices@1.0.0",
@@ -5410,7 +5545,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/case-control-study-quality-assessment-nos@1.0.0",
@@ -5451,7 +5587,8 @@
           "score": 85.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cerna-analysis@1.0.0",
@@ -5492,7 +5629,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cibersort-immune-infiltration-analysis@1.0.0",
@@ -5533,7 +5671,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/circos-plot-generator@1.0.0",
@@ -5574,7 +5713,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-data-cleaner@1.0.0",
@@ -5615,7 +5755,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cnv-caller-plotter@1.0.0",
@@ -5656,7 +5797,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cobrapy@1.0.0",
@@ -5695,7 +5837,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/code-refactor-for-reproducibility@1.0.0",
@@ -5736,7 +5879,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cohort-study-quality-assessment-nos@1.0.0",
@@ -5777,7 +5921,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/consensus-clustering-analysis@1.0.0",
@@ -5818,7 +5963,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/crispr-screen-analyzer@1.0.0",
@@ -5859,7 +6005,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/d-molecule-ray-tracer@1.0.0",
@@ -5898,7 +6045,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/data-stats-analysis@1.0.0",
@@ -5937,7 +6085,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/data-transform@1.0.0",
@@ -5976,7 +6125,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/decision-curve-analysis@1.0.0",
@@ -6017,7 +6167,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/decision-tree-analysis@1.0.0",
@@ -6058,7 +6209,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/deeptools@1.0.0",
@@ -6099,7 +6251,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/deg-screening-analysis@1.0.0",
@@ -6140,7 +6293,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/diagnostic-study-quality-assessment-quadas@1.0.0",
@@ -6181,7 +6335,8 @@
           "score": 88.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/differential-expression-analysis@1.0.0",
@@ -6222,7 +6377,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/dnanexus-integration@1.0.0",
@@ -6263,7 +6419,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/elastic-net-feature-selection@1.0.0",
@@ -6304,7 +6461,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/epidemiology@1.0.0",
@@ -6343,7 +6501,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/estimate-immune-score-analysis@1.0.0",
@@ -6384,7 +6543,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/etetoolkit@1.0.0",
@@ -6423,7 +6583,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/experimental-data-analysis@1.0.0",
@@ -6462,7 +6623,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/exploratory-data-analysis@1.0.0",
@@ -6501,7 +6663,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/external-model-validation@1.0.0",
@@ -6542,7 +6705,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/facs-gating-viz-style@1.0.0",
@@ -6581,7 +6745,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/fastqc-report-interpreter@1.0.0",
@@ -6622,7 +6787,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/flowio@1.0.0",
@@ -6661,7 +6827,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/forest-plot-styler@1.0.0",
@@ -6702,7 +6869,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gene-protein-expression-matrix-normalization@1.0.0",
@@ -6743,7 +6911,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gene-structure-mapper@1.0.0",
@@ -6782,7 +6951,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/geniml@1.0.0",
@@ -6821,7 +6991,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/geopandas@1.0.0",
@@ -6860,7 +7031,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gokegg-analysis@1.0.0",
@@ -6901,7 +7073,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/graphical-abstract-wizard@1.0.0",
@@ -6942,7 +7115,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gsea@1.0.0",
@@ -6983,7 +7157,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gsva-analysis-and-visualization@1.0.0",
@@ -7024,7 +7199,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gtars@1.0.0",
@@ -7063,7 +7239,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/heatmap-beautifier@1.0.0",
@@ -7102,7 +7279,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hierarchical-clustering-plot@1.0.0",
@@ -7143,7 +7321,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/histolab@1.0.0",
@@ -7182,7 +7361,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/immune-pathway-analysis@1.0.0",
@@ -7223,7 +7403,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/km-survival-curve@1.0.0",
@@ -7264,7 +7445,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/knn-imputation@1.0.0",
@@ -7305,7 +7487,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lab-budget-forecaster@1.0.0",
@@ -7344,7 +7527,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lamindb@1.0.0",
@@ -7385,7 +7569,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/lasso-logistics-analysis@1.0.0",
@@ -7426,7 +7611,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lightgbm-analysis@1.0.0",
@@ -7467,7 +7653,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lipinski-rule-filter@1.0.0",
@@ -7506,7 +7693,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lncrna-regulatory-network-construction-analysis@1.0.0",
@@ -7547,7 +7735,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/matchms@1.0.0",
@@ -7586,7 +7775,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/matplotlib@1.0.0",
@@ -7627,7 +7817,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/mechanism-flowchart@1.0.0",
@@ -7666,7 +7857,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mendelian-randomisation@1.0.0",
@@ -7707,7 +7899,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-abstract-screener@1.0.0",
@@ -7746,7 +7939,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-analysis@1.0.0",
@@ -7787,7 +7981,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-baujat-plot@1.0.0",
@@ -7826,7 +8021,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-criteria-generator@1.0.0",
@@ -7865,7 +8061,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-feasibility-analyzer@1.0.0",
@@ -7904,7 +8101,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-forest-binary-plot@1.0.0",
@@ -7943,7 +8141,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-forest-continuous-plot@1.0.0",
@@ -7982,7 +8181,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-forest-model-plot@1.0.0",
@@ -8021,7 +8221,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-funnel-plot@1.0.0",
@@ -8060,7 +8261,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-picos-generator@1.0.0",
@@ -8099,7 +8301,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-radial-plot@1.0.0",
@@ -8138,7 +8341,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-rob-plot@1.0.0",
@@ -8177,7 +8381,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-screening-fulltext@1.0.0",
@@ -8216,7 +8421,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-sensitivity-plot@1.0.0",
@@ -8255,7 +8461,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-title-generator@1.0.0",
@@ -8294,7 +8501,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/metabolomics-workbench-database@1.0.0",
@@ -8335,7 +8543,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/metagenomic-krona-chart@1.0.0",
@@ -8376,7 +8585,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/model-calibration-curve@1.0.0",
@@ -8417,7 +8627,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/motif-logo-generator@1.0.0",
@@ -8456,7 +8667,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/neoantigen-predictor@1.0.0",
@@ -8497,7 +8709,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/neurokit@1.0.0",
@@ -8536,7 +8749,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/neuropixels-analysis@1.0.0",
@@ -8575,7 +8789,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/nomogram-construction@1.0.0",
@@ -8616,7 +8831,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/outcome-extraction-for-clinical-trials@1.0.0",
@@ -8655,7 +8871,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/outlier-detection-handler@1.0.0",
@@ -8694,7 +8911,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pathml@1.0.0",
@@ -8735,7 +8953,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pathology-roi-selector@1.0.0",
@@ -8776,7 +8995,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pca-dimensionality-reduction@1.0.0",
@@ -8817,7 +9037,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/phylogenetic-tree-styler@1.0.0",
@@ -8856,7 +9077,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ppi-network-analysis@1.0.0",
@@ -8897,7 +9119,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/preclinical-pkpd-analyst@1.0.0",
@@ -8936,7 +9159,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/probast-quality-assessment-for-prediction-model-studies@1.0.0",
@@ -8977,7 +9201,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/protocol-deviation-classifier@1.0.0",
@@ -9016,7 +9241,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pseudotime-trajectory-viz@1.0.0",
@@ -9057,7 +9283,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pydeseq@1.0.0",
@@ -9096,7 +9323,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pydicom@1.0.0",
@@ -9137,7 +9365,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pyhealth@1.0.0",
@@ -9178,7 +9407,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pyopenms-skill@1.0.0",
@@ -9217,7 +9447,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pysam@1.0.0",
@@ -9258,7 +9489,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/quadas-c-assessment-for-diagnostic-accuracy-studies@1.0.0",
@@ -9299,7 +9531,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/quality-assessment@1.0.0",
@@ -9340,7 +9573,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/quapas-quality-assessment-for-prognosis-studies@1.0.0",
@@ -9381,7 +9615,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/rct-bias-assessment-rob@1.0.0",
@@ -9422,7 +9657,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/rf-model-importance-analysis@1.0.0",
@@ -9463,7 +9699,8 @@
           "score": 88.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/roc-diagnostic-performance@1.0.0",
@@ -9504,7 +9741,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/rowan@1.0.0",
@@ -9545,7 +9783,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/sample-correlation-analysis@1.0.0",
@@ -9586,7 +9825,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sample-group-sankey-plot@1.0.0",
@@ -9625,7 +9865,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sanger-chromatogram-qa@1.0.0",
@@ -9664,7 +9905,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scanpy@1.0.0",
@@ -9705,7 +9947,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/scikit-bio@1.0.0",
@@ -9744,7 +9987,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scikit-survival@1.0.0",
@@ -9783,7 +10027,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scrna-cell-type-annotator@1.0.0",
@@ -9824,7 +10069,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scvi-tools@1.0.0",
@@ -9863,7 +10109,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/seaborn@1.0.0",
@@ -9902,7 +10149,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sequence-alignment@1.0.0",
@@ -9941,7 +10189,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/shap@1.0.0",
@@ -9982,7 +10231,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/singlecell-portal@1.0.0",
@@ -10021,7 +10271,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/smiles-de-salter@1.0.0",
@@ -10062,7 +10313,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/spatial-transcriptomics-mapper@1.0.0",
@@ -10103,7 +10355,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ssgsea-immune-infiltration-analysis@1.0.0",
@@ -10144,7 +10397,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/statistical-analysis@1.0.0",
@@ -10185,7 +10439,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/statistical-analysis-advisor@1.0.0",
@@ -10224,7 +10479,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/study-design-scale-selector@1.0.0",
@@ -10263,7 +10519,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/survival-analysis-km@1.0.0",
@@ -10304,7 +10561,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/survival-curve-risk-table@1.0.0",
@@ -10345,7 +10603,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/svm-model-importance-analysis@1.0.0",
@@ -10386,7 +10645,8 @@
           "score": 92.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/table-1-generator@1.0.0",
@@ -10425,7 +10685,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/table-1-generator-advanced@1.0.0",
@@ -10464,7 +10725,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tf-target-gene-regulatory-network@1.0.0",
@@ -10505,7 +10767,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/time-dependent-roc@1.0.0",
@@ -10546,7 +10809,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tooluniverse-statistical-modeling@1.0.0",
@@ -10587,7 +10851,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/torchdrug-english@1.0.0",
@@ -10626,7 +10891,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/toxicity-structure-alert@1.0.0",
@@ -10665,7 +10931,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/umap-tsne-analysis@1.0.0",
@@ -10706,7 +10973,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/univariate-multivariable-cox-regression@1.0.0",
@@ -10747,7 +11015,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/upset-plot-converter@1.0.0",
@@ -10786,7 +11055,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/variant-pathogenicity-predictor@1.0.0",
@@ -10825,7 +11095,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/volcano-plot-labeler@1.0.0",
@@ -10866,7 +11137,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/volcano-plot-script@1.0.0",
@@ -10905,7 +11177,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/western-blot-quantifier@1.0.0",
@@ -10946,7 +11219,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/wgcna-analysis@1.0.0",
@@ -10987,7 +11261,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/xgboost-analysis@1.0.0",
@@ -11028,7 +11303,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/acronym-unpacker@1.0.0",
@@ -11067,7 +11343,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/alphafold-db@1.0.0",
@@ -11108,7 +11385,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/arboreto@1.0.0",
@@ -11147,7 +11425,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/arxiv-database@1.0.0",
@@ -11186,7 +11465,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/basic-discovery-translational-opportunity-finder@1.0.0",
@@ -11225,7 +11505,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bio-ontology-mapper@1.0.0",
@@ -11266,7 +11547,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biogrid-orcs@1.0.0",
@@ -11305,7 +11587,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bioinformatics-translational-opportunity-finder@1.0.0",
@@ -11344,7 +11627,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biomarker-landscape-scanner@1.0.0",
@@ -11383,7 +11667,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biomedical-search-strategy-builder@1.0.0",
@@ -11422,7 +11707,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biopython-entrez@1.0.0",
@@ -11461,7 +11747,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biorxiv-database@1.0.0",
@@ -11500,7 +11787,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/blockbuster-therapy-predictor@1.0.0",
@@ -11541,7 +11829,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/brenda-database@1.0.0",
@@ -11580,7 +11869,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cellosaurus-api@1.0.0",
@@ -11619,7 +11909,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cellxgene-census@1.0.0",
@@ -11658,7 +11949,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/chea-api@1.0.0",
@@ -11697,7 +11989,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/chembl-database@1.0.0",
@@ -11736,7 +12029,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/citation-chasing-mapping@1.0.0",
@@ -11777,7 +12071,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/citation-management@1.0.0",
@@ -11816,7 +12111,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/citation-network@1.0.0",
@@ -11855,7 +12151,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-question-clarifier@1.0.0",
@@ -11894,7 +12191,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-study-info-extractor@1.0.0",
@@ -11933,7 +12231,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-trial-finder@1.0.0",
@@ -11974,7 +12273,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinicaltrials-database@1.0.0",
@@ -12013,7 +12313,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinicaltrials-db@1.0.0",
@@ -12052,7 +12353,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinicaltrials-gov-parser@1.0.0",
@@ -12091,7 +12393,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinpgx-database@1.0.0",
@@ -12132,7 +12435,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinvar-database@1.0.0",
@@ -12171,7 +12475,8 @@
           "score": 94,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/comparison-table-gen@1.0.0",
@@ -12210,7 +12515,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/competitor-trial-monitor@1.0.0",
@@ -12249,7 +12555,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/concept-explainer@1.0.0",
@@ -12288,7 +12595,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/contradictory-findings-resolver@1.0.0",
@@ -12327,7 +12635,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cosmic-database@1.0.0",
@@ -12366,7 +12675,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cross-disciplinary-bridge-finder@1.0.0",
@@ -12407,7 +12717,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/crossref-database@1.0.0",
@@ -12446,7 +12757,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ctd-api@1.0.0",
@@ -12485,7 +12797,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/diagnostic-study-quality-assessment-quadas-2@1.0.0",
@@ -12526,7 +12839,8 @@
           "score": 88.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/diffdock-molecular-docking@1.0.0",
@@ -12567,7 +12881,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/disease-mechanism-evidence-map@1.0.0",
@@ -12606,7 +12921,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/drug-interaction-checker@1.0.0",
@@ -12647,7 +12963,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/drug-target-evidence-landscape@1.0.0",
@@ -12686,7 +13003,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/drugbank-database@1.0.0",
@@ -12725,7 +13043,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/emerging-topic-scout@1.0.0",
@@ -12766,7 +13085,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ena-database@1.0.0",
@@ -12805,7 +13125,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/encode-api@1.0.0",
@@ -12844,7 +13165,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/encori-api@1.0.0",
@@ -12883,7 +13205,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ensembl-database@1.0.0",
@@ -12922,7 +13245,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/evidence-level-ranker@1.0.0",
@@ -12961,7 +13285,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/fda-database@1.0.0",
@@ -13002,7 +13327,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/fda-guideline-search@1.0.0",
@@ -13043,7 +13369,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/figure-first-paper-reader@1.0.0",
@@ -13082,7 +13409,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/funding-trend-forecaster@1.0.0",
@@ -13123,7 +13451,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gene-database@1.0.0",
@@ -13162,7 +13491,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gene-info@1.0.0",
@@ -13201,7 +13531,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/geo-search-api@1.0.0",
@@ -13240,7 +13571,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gget@1.0.0",
@@ -13279,7 +13611,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/grant-funding-scout@1.0.0",
@@ -13320,7 +13653,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/grant-gantt-chart-gen@1.0.0",
@@ -13359,7 +13693,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/gwas-database@1.0.0",
@@ -13400,7 +13735,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hgnc-api@1.0.0",
@@ -13439,7 +13775,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/high-value-paper-screener@1.0.0",
@@ -13478,7 +13815,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hmdb-database@1.0.0",
@@ -13517,7 +13855,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ib-summarizer@1.0.0",
@@ -13556,7 +13895,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/jaspar-api@1.0.0",
@@ -13595,7 +13935,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-impact-factor-trend@1.0.0",
@@ -13636,7 +13977,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-latest-issue@1.0.0",
@@ -13677,7 +14019,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-matchmaker@1.0.0",
@@ -13718,7 +14061,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-skills@1.0.0",
@@ -13757,7 +14101,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/kegg-api@1.0.0",
@@ -13798,7 +14143,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/kegg-database@1.0.0",
@@ -13837,7 +14183,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/key-takeaways@1.0.0",
@@ -13878,7 +14225,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/keyword-velocity-tracker@1.0.0",
@@ -13917,7 +14265,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/litbase@1.0.0",
@@ -13958,7 +14307,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-close-read@1.0.0",
@@ -13997,7 +14347,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-experiment-extract@1.0.0",
@@ -14036,7 +14387,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-extensive-read@1.0.0",
@@ -14075,7 +14427,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-filtering@1.0.0",
@@ -14114,7 +14467,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medchem@1.0.0",
@@ -14153,7 +14507,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-research-gap-finder@1.0.0",
@@ -14192,7 +14547,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-research-literature-reader-pro@1.0.0",
@@ -14231,7 +14587,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-topic-saturation-and-whitespace-checker@1.0.0",
@@ -14270,7 +14627,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-vector-search@1.0.0",
@@ -14309,7 +14667,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/method-gap-detector@1.0.0",
@@ -14348,7 +14707,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/methodology-extractor@1.0.0",
@@ -14387,7 +14747,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/methods-reverse-engineer@1.0.0",
@@ -14426,7 +14787,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/multi-database-literature-collector@1.0.0",
@@ -14465,7 +14827,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/novelty-vs-feasibility-assessor@1.0.0",
@@ -14504,7 +14867,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/open-access-scout@1.0.0",
@@ -14545,7 +14909,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/open-source-license-check@1.0.0",
@@ -14586,7 +14951,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/open-targets-db@1.0.0",
@@ -14625,7 +14991,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/openalex-db@1.0.0",
@@ -14664,7 +15031,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/paper-lookup@1.0.0",
@@ -14703,7 +15071,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/paper-to-claim-verifier@1.0.0",
@@ -14742,7 +15111,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/patent-claim-mapper@1.0.0",
@@ -14783,7 +15153,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/patent-landscape@1.0.0",
@@ -14824,7 +15195,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pathway-introduction-expert@1.0.0",
@@ -14863,7 +15235,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pdb-database@1.0.0",
@@ -14902,7 +15275,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pdf-extract-experimental-materials@1.0.0",
@@ -14941,7 +15315,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/phenotype-introduction@1.0.0",
@@ -14980,7 +15355,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pmc-official-download@1.0.0",
@@ -15019,7 +15395,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/population-gap-detector@1.0.0",
@@ -15058,7 +15435,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/preprint-surveillance-finder@1.0.0",
@@ -15099,7 +15477,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pubchem-database-skill@1.0.0",
@@ -15138,7 +15517,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pubmed-database@1.0.0",
@@ -15177,7 +15557,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pubmed-search-specialist@1.0.0",
@@ -15216,7 +15597,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pubmed-topic-recommend@1.0.0",
@@ -15255,7 +15637,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pytdc@1.0.0",
@@ -15294,7 +15677,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/rare-disease-hpo-mapper@1.0.0",
@@ -15335,7 +15719,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/rct-bias-assessment-rob2@1.0.0",
@@ -15376,7 +15761,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reactome-skill@1.0.0",
@@ -15417,7 +15803,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reagent-substitute-scout@1.0.0",
@@ -15458,7 +15845,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reference-finder@1.0.0",
@@ -15497,7 +15885,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reference-retrieval-skill@1.0.0",
@@ -15536,7 +15925,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reference-search@1.0.0",
@@ -15577,7 +15967,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/research-article-weekly@1.0.0",
@@ -15616,7 +16007,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/research-hotspot-analysis@1.0.0",
@@ -15655,7 +16047,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/research-paper-downloader@1.0.0",
@@ -15694,7 +16087,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/result-reliability-checker@1.0.0",
@@ -15733,7 +16127,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/retraction-watcher@1.0.0",
@@ -15772,7 +16167,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scholar-evaluation@1.0.0",
@@ -15813,7 +16209,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scientific-critical-thinking@1.0.0",
@@ -15852,7 +16249,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scientific-podcast-summary@1.0.0",
@@ -15891,7 +16289,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scite-database@1.0.0",
@@ -15930,7 +16329,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sds-msds-risk-scanner@1.0.0",
@@ -15969,7 +16369,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/semantic-scholar-database@1.0.0",
@@ -16008,7 +16409,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/smart-journal-monitor@1.0.0",
@@ -16047,7 +16449,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/string-database@1.0.0",
@@ -16088,7 +16491,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/study-design-identifier@1.0.0",
@@ -16127,7 +16531,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/systematic-review-screener@1.0.0",
@@ -16166,7 +16571,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/target-novelty-scorer@1.0.0",
@@ -16207,7 +16613,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tooluniverse-clinical-trial-matching@1.0.0",
@@ -16246,7 +16653,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tooluniverse-literature-deep-research@1.0.0",
@@ -16285,7 +16693,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/topic-evidence-mapper@1.0.0",
@@ -16324,7 +16733,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/translational-gap-analyzer@1.0.0",
@@ -16363,7 +16773,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/uniprot-database@1.0.0",
@@ -16402,7 +16813,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/unmet-clinical-need-extractor@1.0.0",
@@ -16441,7 +16853,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/unstructured-medical-text-miner@1.0.0",
@@ -16482,7 +16895,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/variant-annotation@1.0.0",
@@ -16523,7 +16937,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/venue-templates@1.0.0",
@@ -16564,7 +16979,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/zinc-database@1.0.0",
@@ -16603,7 +17019,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/academic-cv-generator@1.0.0",
@@ -16642,7 +17059,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/academic-norm-review@1.0.0",
@@ -16683,7 +17101,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/academic-poster-generator@1.0.0",
@@ -16724,7 +17143,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/adaptyv@1.0.0",
@@ -16763,7 +17183,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/article-format-adjustment@1.0.0",
@@ -16802,7 +17223,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/benchling-integration@1.0.0",
@@ -16841,7 +17263,8 @@
           "score": 90,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bianque@1.0.0",
@@ -16880,7 +17303,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bib-formatter@1.0.0",
@@ -16921,7 +17345,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bibliography@1.0.0",
@@ -16960,7 +17385,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/biodbnet-api@1.0.0",
@@ -16999,7 +17425,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bmi-bsa-calculator@1.0.0",
@@ -17040,7 +17467,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/buffer-calculator@1.0.0",
@@ -17079,7 +17507,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/chart-style-unifier@1.0.0",
@@ -17118,7 +17547,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/chemical-storage-sorter@1.0.0",
@@ -17157,7 +17587,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/chemical-structure-converter@1.0.0",
@@ -17198,7 +17629,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinic-sample-size@1.0.0",
@@ -17237,7 +17669,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-diagnostic-reasoning@1.0.0",
@@ -17276,7 +17709,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-reports@1.0.0",
@@ -17317,7 +17751,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/co-tank-monitor@1.0.0",
@@ -17356,7 +17791,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cold-chain-risk-calculator@1.0.0",
@@ -17395,7 +17831,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conference-tweet-generator@1.0.0",
@@ -17436,7 +17873,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conflict-of-interest-checker@1.0.0",
@@ -17475,7 +17913,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/content-proofreading@1.0.0",
@@ -17514,7 +17953,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/datamol@1.0.0",
@@ -17555,7 +17995,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "aipoch/date-calculator@1.0.0",
@@ -17594,7 +18035,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/dicom-anonymizer@1.0.0",
@@ -17635,7 +18077,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/docx-feedback-tracker@1.0.0",
@@ -17674,7 +18117,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/dpi-upscaler-checker@1.0.0",
@@ -17713,7 +18157,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ebm-calculator@1.0.0",
@@ -17752,7 +18197,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/equipment-maintenance-log@1.0.0",
@@ -17791,7 +18237,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/experiment-detail-comparator@1.0.0",
@@ -17832,7 +18279,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/expert-interview-generator@1.0.0",
@@ -17871,7 +18319,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/expert-interview-topics@1.0.0",
@@ -17910,7 +18359,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/file-security-toolkit@1.0.0",
@@ -17949,7 +18399,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/fulltext-fetcher@1.0.0",
@@ -17988,7 +18439,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hippocrates@1.0.0",
@@ -18027,7 +18479,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/html-to-pdf@1.0.0",
@@ -18068,7 +18521,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/icd10-cpt-coding-assistant@1.0.0",
@@ -18109,7 +18563,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/image-ocr@1.0.0",
@@ -18148,7 +18603,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/image-processing@1.0.0",
@@ -18187,7 +18643,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/iso-certification@1.0.0",
@@ -18228,7 +18685,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/journal-recommender@1.0.0",
@@ -18267,7 +18725,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/knowledge-base-search@1.0.0",
@@ -18306,7 +18765,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lab-inventory-predictor@1.0.0",
@@ -18345,7 +18805,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lab-prep-calculations@1.0.0",
@@ -18384,7 +18845,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/lab-result-interpretation@1.0.0",
@@ -18425,7 +18887,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-management@1.0.0",
@@ -18466,7 +18929,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literature-statistics@1.0.0",
@@ -18507,7 +18971,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/literatureimages-interpretation@1.0.0",
@@ -18546,7 +19011,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/markitdown@1.0.0",
@@ -18585,7 +19051,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-case-interpreter@1.0.0",
@@ -18624,7 +19091,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-case-report-generator@1.0.0",
@@ -18663,7 +19131,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-unit-converter@1.0.0",
@@ -18702,7 +19171,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medication-reconciliation@1.0.0",
@@ -18741,7 +19211,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mendel@1.0.0",
@@ -18782,7 +19253,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-search-builder@1.0.0",
@@ -18821,7 +19293,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/microscopy-scale-bar-adder@1.0.0",
@@ -18860,7 +19333,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mindmap@1.0.0",
@@ -18899,7 +19373,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mindmap-helper@1.0.0",
@@ -18938,7 +19413,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mindmap-html-generator@1.0.0",
@@ -18979,7 +19455,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/multi-panel-figure-assembler@1.0.0",
@@ -19018,7 +19495,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/paper-tweet-generator@1.0.0",
@@ -19059,7 +19537,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/patient-consent-simplifier@1.0.0",
@@ -19100,7 +19579,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pdf-extract@1.0.0",
@@ -19139,7 +19619,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pdf-ppt@1.0.0",
@@ -19178,7 +19659,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pdf-processor@1.0.0",
@@ -19219,7 +19701,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pdf-to-ppt-pack@1.0.0",
@@ -19260,7 +19743,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/phi-prompt-guard@1.0.0",
@@ -19299,7 +19783,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/plotly@1.0.0",
@@ -19338,7 +19823,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/postdoc-fellowship-matcher@1.0.0",
@@ -19379,7 +19865,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/poster-designer@1.0.0",
@@ -19418,7 +19905,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ppt@1.0.0",
@@ -19459,7 +19947,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/ppt-master@1.0.0",
@@ -19500,7 +19989,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pptx-posters@1.0.0",
@@ -19539,7 +20029,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pptx-skill@1.0.0",
@@ -19580,7 +20071,8 @@
           "score": 88.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reagent-expiry-alert@1.0.0",
@@ -19619,7 +20111,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/reproducibility-check@1.0.0",
@@ -19658,7 +20151,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/resubmission-deadline-tracker@1.0.0",
@@ -19699,7 +20193,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/result-figure-consistencycheck@1.0.0",
@@ -19738,7 +20233,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sci-paper-reviewer@1.0.0",
@@ -19777,7 +20273,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/science-popularization-article@1.0.0",
@@ -19816,7 +20313,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/scientific-schematics@1.0.0",
@@ -19855,7 +20353,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/search-pubmed@1.0.0",
@@ -19894,7 +20393,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/shift-handover-summarizer@1.0.0",
@@ -19933,7 +20433,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/slide-deck-images@1.0.0",
@@ -19974,7 +20475,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/spreadsheet-ops@1.0.0",
@@ -20013,7 +20515,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/symptom-checker-triage@1.0.0",
@@ -20054,7 +20557,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/text-format-organizer@1.0.0",
@@ -20095,7 +20599,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/text-to-technical-roadmap@1.0.0",
@@ -20134,7 +20639,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/treatment-plans@1.0.0",
@@ -20175,7 +20681,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/uspto-database@1.0.0",
@@ -20216,7 +20723,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/vector-text-fixer@1.0.0",
@@ -20255,7 +20763,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/virtual-patient-roleplay@1.0.0",
@@ -20294,7 +20803,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/waste-disposal-guide@1.0.0",
@@ -20333,7 +20843,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/word-read-write@1.0.0",
@@ -20374,7 +20885,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/active-comparator-single-soc-faers-safety-comparison@1.0.0",
@@ -20413,7 +20925,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/adaptive-trial-simulator@1.0.0",
@@ -20452,7 +20965,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/aim-and-hypothesis-designer@1.0.0",
@@ -20491,7 +21005,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/animal-and-cell-validation-planner@1.0.0",
@@ -20530,7 +21045,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/basic-research-design@1.0.0",
@@ -20569,7 +21085,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bidirectional-multi-phenotype-mr-research-planner@1.0.0",
@@ -20608,7 +21125,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bioinfo-analysis-plan@1.0.0",
@@ -20649,7 +21167,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/bulk-omics-integrative-planner@1.0.0",
@@ -20688,7 +21207,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/case-control-study-planner@1.0.0",
@@ -20727,7 +21247,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinic-research-design@1.0.0",
@@ -20768,7 +21289,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-cohort-protocol-designer@1.0.0",
@@ -20807,7 +21329,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/clinical-trial-protocol-skill@1.0.0",
@@ -20848,7 +21371,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/comorbidity-common-immune-biomarker-research-planner@1.0.0",
@@ -20887,7 +21411,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/comparative-network-toxicology-shared-mechanism-reference-grounded@1.0.0",
@@ -20926,7 +21451,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/confounder-and-bias-control-planner@1.0.0",
@@ -20965,7 +21491,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conventional-non-oncology-hub-gene-research-planner@1.0.0",
@@ -21004,7 +21531,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/conventional-oncology-hub-gene-research-planner@1.0.0",
@@ -21043,7 +21571,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/cross-disease-shared-biomarker-network-research-planner@1.0.0",
@@ -21082,7 +21611,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/drug-repurposing-study-planner@1.0.0",
@@ -21121,7 +21651,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/dual-disease-shared-transcriptome-biomarker-research-planner@1.0.0",
@@ -21160,7 +21691,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/dual-disease-transcriptomic-ml-planner@1.0.0",
@@ -21199,7 +21731,8 @@
           "score": 89.9,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/endpoint-definition-designer@1.0.0",
@@ -21238,7 +21771,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/esm@1.0.0",
@@ -21277,7 +21811,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/experiment-design@1.0.0",
@@ -21316,7 +21851,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/faers-multi-drug-soc-planner@1.0.0",
@@ -21355,7 +21891,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/faers-pharmacovigilance-disproportionality-research-planner@1.0.0",
@@ -21394,7 +21931,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/feasibility-aware-study-planner@1.0.0",
@@ -21433,7 +21971,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/generic-phenotype-scoring-research-planner@1.0.0",
@@ -21472,7 +22011,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hypogenic@1.0.0",
@@ -21511,7 +22051,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/hypothesis-generation@1.0.0",
@@ -21550,7 +22091,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/inclusion-criteria-gen@1.0.0",
@@ -21591,7 +22133,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/inclusion-exclusion-criteria-builder@1.0.0",
@@ -21630,7 +22173,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/inplasy-registration-helper@1.0.0",
@@ -21669,7 +22213,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mechanism-to-validation-planner@1.0.0",
@@ -21708,7 +22253,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-research-algorithm-matcher@1.0.0",
@@ -21747,7 +22293,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/medical-research-gap-to-study-planner@1.0.0",
@@ -21786,7 +22333,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mendelian-randomization-protocol-designer@1.0.0",
@@ -21825,7 +22373,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/meta-protocol-writer@1.0.0",
@@ -21864,7 +22413,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/mr-scrna-research-planner@1.0.0",
@@ -21903,7 +22453,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/multi-omics-clinical-integration-planner@1.0.0",
@@ -21942,7 +22493,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/network-tox-docking-research-planner@1.0.0",
@@ -21981,7 +22533,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/nhanes-clinical-retrospective-biomarker-research-planner@1.0.0",
@@ -22020,7 +22573,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/non-tumor-mechanism-guided-diagnostic-ml-research-planner@1.0.0",
@@ -22059,7 +22613,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/non-tumor-ml-research-planner@1.0.0",
@@ -22098,7 +22653,8 @@
           "score": 88,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/pcd-immune-oncology-research-planner@1.0.0",
@@ -22137,7 +22693,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/primary-plan-recommender@1.0.0",
@@ -22176,7 +22733,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/process-related-diagnostic-biomarker-nomogram-research-planner@1.0.0",
@@ -22215,7 +22773,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/prognostic-biomarker-protocol-designer@1.0.0",
@@ -22254,7 +22813,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/prospero-registration-helper@1.0.0",
@@ -22293,7 +22853,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/protocol-standardization@1.0.0",
@@ -22332,7 +22893,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/qtl-colocalization-study-planner@1.0.0",
@@ -22371,7 +22933,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/randomization-gen@1.0.0",
@@ -22412,7 +22975,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/real-world-evidence-study-designer@1.0.0",
@@ -22451,7 +23015,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/research-grants@1.0.0",
@@ -22490,7 +23055,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/research-proposal-generator@1.0.0",
@@ -22531,7 +23097,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sample-size-and-power-planning-assistant@1.0.0",
@@ -22570,7 +23137,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sample-size-basic@1.0.0",
@@ -22611,7 +23179,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/single-cell-research-planner@1.0.0",
@@ -22650,7 +23219,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/single-compound-network-toxicology-disease-link-reference-grounded@1.0.0",
@@ -22689,7 +23259,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/single-drug-adverse-effect-hub-first-network-pharmacology@1.0.0",
@@ -22728,7 +23299,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/single-drug-adverse-effect-pathway-anchored-network-pharmacology@1.0.0",
@@ -22767,7 +23339,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/single-drug-faers-safety-profile-research-planner@1.0.0",
@@ -22806,7 +23379,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/single-gene-oncology-reference-grounded-research-planner@1.0.0",
@@ -22845,7 +23419,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/sop-writer@1.0.0",
@@ -22886,7 +23461,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/study-objective-refiner@1.0.0",
@@ -22925,7 +23501,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tooluniverse-clinical-trial-design@1.0.0",
@@ -22966,7 +23543,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/translational-study-blueprint@1.0.0",
@@ -23005,7 +23583,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/treatment-response-predictor-planner@1.0.0",
@@ -23044,7 +23623,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/tumor-immune-infiltration-diagnostic-ml-research-planner@1.0.0",
@@ -23083,7 +23663,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/two-sample-mr-exposure-screening-reference-grounded@1.0.0",
@@ -23122,7 +23703,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/two-sample-mr-research-planner@1.0.0",
@@ -23161,7 +23743,8 @@
           "score": 90,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/validation-strategy-designer@1.0.0",
@@ -23200,7 +23783,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/chembl-database@1.0.0",
@@ -23239,7 +23823,8 @@
           "score": 91,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/clinvar-database@1.0.0",
@@ -23278,7 +23863,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/ensembl-database@1.0.0",
@@ -23317,7 +23903,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/pdb-database@1.0.0",
@@ -23356,7 +23943,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/pubmed-database@1.0.0",
@@ -23395,7 +23983,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/string-database@1.0.0",
@@ -23434,7 +24023,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "google-deepmind/uniprot-database@1.0.0",
@@ -23473,7 +24063,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/adaptyv@1.0.0",
@@ -23512,7 +24103,8 @@
           "score": 86.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/anndata@1.0.0",
@@ -23551,7 +24143,8 @@
           "score": 88.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/arboreto@1.0.0",
@@ -23590,7 +24183,8 @@
           "score": 87.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/benchling-integration@1.0.0",
@@ -23629,7 +24223,8 @@
           "score": 89.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/biopython@1.0.0",
@@ -23668,7 +24263,8 @@
           "score": 90.1,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/bioservices@1.0.0",
@@ -23707,7 +24303,8 @@
           "score": 88.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/cellxgene-census@1.0.0",
@@ -23746,7 +24343,8 @@
           "score": 89.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/citation-management@1.0.0",
@@ -23785,7 +24383,8 @@
           "score": 90.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/clinical-decision-support@1.0.0",
@@ -23824,7 +24423,8 @@
           "score": 88.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/clinical-reports@1.0.0",
@@ -23863,7 +24463,8 @@
           "score": 87.9,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/cobrapy@1.0.0",
@@ -23902,7 +24503,8 @@
           "score": 90.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/datamol@1.0.0",
@@ -23941,7 +24543,8 @@
           "score": 91.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "k-dense-ai/deeptools@1.0.0",
@@ -23980,7 +24583,8 @@
           "score": 89.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "k-dense-ai/dnanexus-integration@1.0.0",
@@ -24019,7 +24623,8 @@
           "score": 88.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/esm@1.0.0",
@@ -24058,7 +24663,8 @@
           "score": 90.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/etetoolkit@1.0.0",
@@ -24097,7 +24703,8 @@
           "score": 90.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/exploratory-data-analysis@1.0.0",
@@ -24136,7 +24743,8 @@
           "score": 89.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/flowio@1.0.0",
@@ -24175,7 +24783,8 @@
           "score": 91,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/geniml@1.0.0",
@@ -24214,7 +24823,8 @@
           "score": 88.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/geopandas@1.0.0",
@@ -24253,7 +24863,8 @@
           "score": 89.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/gget@1.0.0",
@@ -24292,7 +24903,8 @@
           "score": 95.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/gtars@1.0.0",
@@ -24331,7 +24943,8 @@
           "score": 94.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/histolab@1.0.0",
@@ -24370,7 +24983,8 @@
           "score": 95,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/hypogenic@1.0.0",
@@ -24409,7 +25023,8 @@
           "score": 91.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/hypothesis-generation@1.0.0",
@@ -24448,7 +25063,8 @@
           "score": 96.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/labarchive-integration@1.0.0",
@@ -24487,7 +25103,8 @@
           "score": 88.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/lamindb@1.0.0",
@@ -24526,7 +25143,8 @@
           "score": 95.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "k-dense-ai/latex-posters@1.0.0",
@@ -24565,7 +25183,8 @@
           "score": 95,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/literature-review@1.0.0",
@@ -24604,7 +25223,8 @@
           "score": 95,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/markitdown@1.0.0",
@@ -24643,7 +25263,8 @@
           "score": 100,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/matchms@1.0.0",
@@ -24682,7 +25303,8 @@
           "score": 95,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/matplotlib@1.0.0",
@@ -24721,7 +25343,8 @@
           "score": 95.33,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "k-dense-ai/medchem@1.0.0",
@@ -24760,7 +25383,8 @@
           "score": 95.67,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/neuropixels-analysis@1.0.0",
@@ -24799,7 +25423,8 @@
           "score": 96,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/paper-lookup@1.0.0",
@@ -24838,7 +25463,8 @@
           "score": 96.33,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/pathml@1.0.0",
@@ -24877,7 +25503,8 @@
           "score": 96.33,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/peer-review@1.0.0",
@@ -24916,7 +25543,8 @@
           "score": 96.67,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/pptx-posters@1.0.0",
@@ -24955,7 +25583,8 @@
           "score": 95.33,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/pydicom@1.0.0",
@@ -24994,7 +25623,8 @@
           "score": 96.33,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/pyhealth@1.0.0",
@@ -25033,7 +25663,8 @@
           "score": 96.67,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/pysam@1.0.0",
@@ -25072,7 +25703,8 @@
           "score": 88.1,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/pytdc@1.0.0",
@@ -25111,7 +25743,8 @@
           "score": 89.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/research-grants@1.0.0",
@@ -25150,7 +25783,8 @@
           "score": 87.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/rowan@1.0.0",
@@ -25189,7 +25823,8 @@
           "score": 86.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "k-dense-ai/scanpy@1.0.0",
@@ -25228,7 +25863,8 @@
           "score": 90.1,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "k-dense-ai/scholar-evaluation@1.0.0",
@@ -25267,7 +25903,8 @@
           "score": 87.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/scientific-critical-thinking@1.0.0",
@@ -25306,7 +25943,8 @@
           "score": 88.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/scientific-schematics@1.0.0",
@@ -25345,7 +25983,8 @@
           "score": 88.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/scikit-bio@1.0.0",
@@ -25384,7 +26023,8 @@
           "score": 87.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/scikit-survival@1.0.0",
@@ -25423,7 +26063,8 @@
           "score": 89.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/scvi-tools@1.0.0",
@@ -25462,7 +26103,8 @@
           "score": 87.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/seaborn@1.0.0",
@@ -25501,7 +26143,8 @@
           "score": 89.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/shap@1.0.0",
@@ -25540,7 +26183,8 @@
           "score": 91.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/statistical-analysis@1.0.0",
@@ -25579,7 +26223,8 @@
           "score": 92.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/treatment-plans@1.0.0",
@@ -25618,7 +26263,8 @@
           "score": 90.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/venue-templates@1.0.0",
@@ -25657,7 +26303,8 @@
           "score": 88.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "nvidia-bionemo/boltz2-nim@1.0.0",
@@ -25696,7 +26343,8 @@
           "score": 95,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/complexa-binder-design@1.0.0",
@@ -25735,7 +26383,8 @@
           "score": 89.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/complexa-design@1.0.0",
@@ -25774,7 +26423,8 @@
           "score": 87.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "nvidia-bionemo/complexa-evaluate-pdbs@1.0.0",
@@ -25813,7 +26463,8 @@
           "score": 88.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "nvidia-bionemo/complexa-setup@1.0.0",
@@ -25852,7 +26503,8 @@
           "score": 89.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "nvidia-bionemo/complexa-sweep@1.0.0",
@@ -25891,7 +26543,8 @@
           "score": 88,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "nvidia-bionemo/complexa-target@1.0.0",
@@ -25930,7 +26583,8 @@
           "score": 90.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/cuequivariance@1.0.0",
@@ -25969,7 +26623,8 @@
           "score": 86.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "nvidia-bionemo/diffdock-nim@1.0.0",
@@ -26008,7 +26663,8 @@
           "score": 100,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/drug-discovery-pipeline@1.0.0",
@@ -26047,7 +26703,8 @@
           "score": 87.1,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/evo2-nim@1.0.0",
@@ -26086,7 +26743,8 @@
           "score": 94,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/genmol-nim@1.0.0",
@@ -26125,7 +26783,8 @@
           "score": 96.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/genomics-workflow-acceleration@1.0.0",
@@ -26164,7 +26823,8 @@
           "score": 88.1,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-add-cmim-pretrain@1.0.0",
@@ -26203,7 +26863,8 @@
           "score": 87.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-continue-pretrain@1.0.0",
@@ -26242,7 +26903,8 @@
           "score": 89.9,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-embed@1.0.0",
@@ -26281,7 +26943,8 @@
           "score": 95.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-finetune@1.0.0",
@@ -26320,7 +26983,8 @@
           "score": 88.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-infer@1.0.0",
@@ -26359,7 +27023,8 @@
           "score": 96.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-monitor@1.0.0",
@@ -26398,7 +27063,8 @@
           "score": 96.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-pretrain-scratch@1.0.0",
@@ -26437,7 +27103,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/kermt-setup@1.0.0",
@@ -26476,7 +27143,8 @@
           "score": 98,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/molmim-nim@1.0.0",
@@ -26515,7 +27183,8 @@
           "score": 91.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/msa-search-nim@1.0.0",
@@ -26554,7 +27223,8 @@
           "score": 88.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/msa-structure-prediction-pipeline@1.0.0",
@@ -26593,7 +27263,8 @@
           "score": 89.6,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/nvmolkit-usage@1.0.0",
@@ -26632,7 +27303,8 @@
           "score": 90.4,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/openfold2-nim@1.0.0",
@@ -26671,7 +27343,8 @@
           "score": 96.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/openfold3-nim@1.0.0",
@@ -26710,7 +27383,8 @@
           "score": 98,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/parabricks@1.0.0",
@@ -26749,7 +27423,8 @@
           "score": 92.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/protein-binder-design@1.0.0",
@@ -26788,7 +27463,8 @@
           "score": 90.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/proteinmpnn-nim@1.0.0",
@@ -26827,7 +27503,8 @@
           "score": 98,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "nvidia-bionemo/rfdiffusion-nim@1.0.0",
@@ -26866,7 +27543,8 @@
           "score": 98.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/adaptyv@1.0.0",
@@ -26905,7 +27583,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/anndata@1.0.0",
@@ -26944,7 +27623,8 @@
           "score": 96.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/arboreto@1.0.0",
@@ -26983,7 +27663,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/benchling-integration@1.0.0",
@@ -27022,7 +27703,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/biopython@1.0.0",
@@ -27061,7 +27743,8 @@
           "score": 95.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/biorxiv-database@1.0.0",
@@ -27100,7 +27783,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/bioservices@1.0.0",
@@ -27139,7 +27823,8 @@
           "score": 96,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/brenda-database@1.0.0",
@@ -27178,7 +27863,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/cellxgene-census@1.0.0",
@@ -27217,7 +27903,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/chembl-database@1.0.0",
@@ -27256,7 +27943,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/citation-management@1.0.0",
@@ -27295,7 +27983,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/clinical-decision-support@1.0.0",
@@ -27334,7 +28023,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/clinical-reports@1.0.0",
@@ -27373,7 +28063,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/clinicaltrials-database@1.0.0",
@@ -27412,7 +28103,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/clinpgx-database@1.0.0",
@@ -27451,7 +28143,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/clinvar-database@1.0.0",
@@ -27490,7 +28183,8 @@
           "score": 96.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/cobrapy@1.0.0",
@@ -27529,7 +28223,8 @@
           "score": 95,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/cosmic-database@1.0.0",
@@ -27568,7 +28263,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/datamol@1.0.0",
@@ -27607,7 +28303,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/deeptools@1.0.0",
@@ -27646,7 +28343,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/dnanexus-integration@1.0.0",
@@ -27685,7 +28383,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/drugbank-database@1.0.0",
@@ -27724,7 +28423,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/ena-database@1.0.0",
@@ -27763,7 +28463,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/ensembl-database@1.0.0",
@@ -27802,7 +28503,8 @@
           "score": 94,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/esm@1.0.0",
@@ -27841,7 +28543,8 @@
           "score": 94,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/etetoolkit@1.0.0",
@@ -27880,7 +28583,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/exploratory-data-analysis@1.0.0",
@@ -27919,7 +28623,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/fda-database@1.0.0",
@@ -27958,7 +28663,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/flowio@1.0.0",
@@ -27997,7 +28703,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/gene-database@1.0.0",
@@ -28036,7 +28743,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/geniml@1.0.0",
@@ -28075,7 +28783,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/geopandas@1.0.0",
@@ -28114,7 +28823,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/gget@1.0.0",
@@ -28153,7 +28863,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/gtars@1.0.0",
@@ -28192,7 +28903,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/gwas-database@1.0.0",
@@ -28231,7 +28943,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/histolab@1.0.0",
@@ -28270,7 +28983,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/hmdb-database@1.0.0",
@@ -28309,7 +29023,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/hypogenic@1.0.0",
@@ -28348,7 +29063,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/hypothesis-generation@1.0.0",
@@ -28387,7 +29103,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/kegg-database@1.0.0",
@@ -28426,7 +29143,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/labarchive-integration@1.0.0",
@@ -28465,7 +29183,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/lamindb@1.0.0",
@@ -28504,7 +29223,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/latex-posters@1.0.0",
@@ -28543,7 +29263,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/literature-review@1.0.0",
@@ -28582,7 +29303,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/markitdown@1.0.0",
@@ -28621,7 +29343,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/matchms@1.0.0",
@@ -28660,7 +29383,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/matplotlib@1.0.0",
@@ -28699,7 +29423,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/medchem@1.0.0",
@@ -28738,7 +29463,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/metabolomics-workbench-database@1.0.0",
@@ -28777,7 +29503,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/neuropixels-analysis@1.0.0",
@@ -28816,7 +29543,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pathml@1.0.0",
@@ -28855,7 +29583,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pdb-database@1.0.0",
@@ -28894,7 +29623,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/peer-review@1.0.0",
@@ -28933,7 +29663,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/plotly@1.0.0",
@@ -28972,7 +29703,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pptx-posters@1.0.0",
@@ -29011,7 +29743,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pubmed-database@1.0.0",
@@ -29050,7 +29783,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pydicom@1.0.0",
@@ -29089,7 +29823,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pyhealth@1.0.0",
@@ -29128,7 +29863,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pysam@1.0.0",
@@ -29167,7 +29903,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/pytdc@1.0.0",
@@ -29206,7 +29943,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/research-grants@1.0.0",
@@ -29245,7 +29983,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/rowan@1.0.0",
@@ -29284,7 +30023,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/scanpy@1.0.0",
@@ -29323,7 +30063,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/scholar-evaluation@1.0.0",
@@ -29362,7 +30103,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/scientific-critical-thinking@1.0.0",
@@ -29401,7 +30143,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/scientific-schematics@1.0.0",
@@ -29440,7 +30183,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/scikit-bio@1.0.0",
@@ -29479,7 +30223,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/scikit-survival@1.0.0",
@@ -29518,7 +30263,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/scvi-tools@1.0.0",
@@ -29557,7 +30303,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/seaborn@1.0.0",
@@ -29596,7 +30343,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/shap@1.0.0",
@@ -29635,7 +30383,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/statistical-analysis@1.0.0",
@@ -29674,7 +30423,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/string-database@1.0.0",
@@ -29713,7 +30463,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/treatment-plans@1.0.0",
@@ -29752,7 +30503,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/uniprot-database@1.0.0",
@@ -29791,7 +30543,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/uspto-database@1.0.0",
@@ -29830,7 +30583,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "synthetic-sciences/venue-templates@1.0.0",
@@ -29869,7 +30623,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "synthetic-sciences/zinc-database@1.0.0",
@@ -29908,7 +30663,8 @@
           "score": 93,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-academic-search@1.0.0",
@@ -29947,7 +30703,8 @@
           "score": 91.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-citation@1.0.0",
@@ -29986,7 +30743,8 @@
           "score": 93.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-data@1.0.0",
@@ -30025,7 +30783,8 @@
           "score": 92.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-downloader@1.0.0",
@@ -30064,7 +30823,8 @@
           "score": 89.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-experiment-log@1.0.0",
@@ -30103,7 +30863,8 @@
           "score": 90.5,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-figure@1.0.0",
@@ -30142,7 +30903,8 @@
           "score": 94.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-image2ppt@1.0.0",
@@ -30181,7 +30943,8 @@
           "score": 87.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-literature-pipeline@1.0.0",
@@ -30220,7 +30983,8 @@
           "score": 90.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-paper-card@1.0.0",
@@ -30259,7 +31023,8 @@
           "score": 91.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-paper-to-patent@1.0.0",
@@ -30298,7 +31063,8 @@
           "score": 89.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-paper2ppt@1.0.0",
@@ -30337,7 +31103,8 @@
           "score": 91.5,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-polishing@1.0.0",
@@ -30376,7 +31143,8 @@
           "score": 92.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-reader@1.0.0",
@@ -30415,7 +31183,8 @@
           "score": 92.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-ref-verifier@1.0.0",
@@ -30454,7 +31223,8 @@
           "score": 88.8,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-response@1.0.0",
@@ -30493,7 +31263,8 @@
           "score": 91,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-reviewer@1.0.0",
@@ -30532,7 +31303,8 @@
           "score": 90.7,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-shared@1.0.0",
@@ -30571,7 +31343,8 @@
           "score": 92,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-statistics@1.0.0",
@@ -30610,7 +31383,8 @@
           "score": 89.3,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/nature-writing@1.0.0",
@@ -30649,7 +31423,8 @@
           "score": 93.2,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     },
     {
       "record_key": "yuan1z0825/researchwrite@1.0.0",
@@ -30688,7 +31463,8 @@
           "score": 88.5,
           "max_score": 100
         }
-      }
+      },
+      "publication_status": "temporarily-withheld"
     }
   ]
 }

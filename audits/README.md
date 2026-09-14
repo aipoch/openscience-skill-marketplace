@@ -43,6 +43,25 @@ node scripts/import-full-aipoch-assessments.mjs \
   --archive /path/to/open-science-skills-20260911.zip
 ```
 
+### Temporary publication holds
+
+`skills/publication-holds.json` temporarily withholds **41 source records covering
+27 Skill names**, including same-name copies in AIPOCH, K-Dense and Synthetic
+collections. All 776 records and their scores remain in `full-inclusion.json`:
+41 have `publication_status: temporarily-withheld`; the other 735 have
+`publication_status: requires-review`, not an approval or installability claim.
+
+These are conservative release holds based on the supplied issue list, not newly
+established legal conclusions. Each record includes the reason and conditions for
+resuming review. Shared-resource packages are not labelled corrupt. No Skill
+payload, license declaration or original report is rewritten to remove a blocker.
+
+Production fetch/build/validation/signing entry points reject held source
+repository/directory pairs. New versions or commits do not automatically clear a
+hold. A follow-up reviewed change must resolve the evidence/dependency issue and
+remove the hold deliberately. No current production releases match these holds,
+so this change does not remove existing installed packages or historical releases.
+
 ### Currently bound display subset
 
 `registry.json` records 430 reports from `open-science-skills-20260911.zip`:

@@ -2,6 +2,11 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { parseReleaseConfig } from "./authoring.mjs";
 import { sha256, utf8Compare } from "./common.mjs";
+import { parseMetadataJson } from "./metadata-json.mjs";
+import {
+  readPublicationHolds,
+  assertNoPublicationHolds,
+} from "./publication-holds.mjs";
 
 // Explicit production enrollment, separate from the immutable original authority.
 export function parseProductionProviders(bytes, selectedOriginals) {
@@ -31,10 +36,24 @@ export function parseProductionProviders(bytes, selectedOriginals) {
 }
 
 export async function readProductionProviders(selectedOriginals) {
-  return parseProductionProviders(
+  const providers = parseProductionProviders(
     await readFile("authoring/production.json"),
     selectedOriginals,
   );
+  const config = parseMetadataJson(await readFile("marketplace.config.json"));
+  assertNoPublicationHolds(
+    [
+      ...selectedOriginals.map((entry) => ({
+        source: {
+          repository: config.source.repository,
+          path: entry.sourcePath,
+        },
+      })),
+      ...providers,
+    ],
+    await readPublicationHolds(),
+  );
+  return providers;
 }
 
 export function providerDirectory(root, repository) {

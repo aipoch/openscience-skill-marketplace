@@ -6,6 +6,10 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 import { jsonBytes, sha256 } from "./lib/common.mjs";
 import { reportEvaluation } from "./lib/aipoch-audits.mjs";
+import {
+  readPublicationHolds,
+  publicationHoldFor,
+} from "./lib/publication-holds.mjs";
 
 const { values } = parseArgs({
   options: { material: { type: "string" }, archive: { type: "string" } },
@@ -73,6 +77,7 @@ for (const submission of queue.submissions) {
   });
 }
 const entries = [];
+const holds = await readPublicationHolds();
 const reports = new Map();
 for (const item of items) {
   const prefix = `skills/${item.source.repository.replace("https://github.com/", "").replace("/", "__")}/${item.source.path}`;
@@ -106,6 +111,9 @@ for (const item of items) {
   );
   entries.push({
     ...item,
+    publication_status: publicationHoldFor(item.source, holds)
+      ? "temporarily-withheld"
+      : "requires-review",
     material_skill_path: `${prefix}/SKILL.md`,
     material_skill_sha256: sha256(skillBytes),
     report_path: `audits/reports/${reportHash}.json`,
