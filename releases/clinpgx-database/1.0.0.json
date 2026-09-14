@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "clinpgx-database",
+    "version": "1.0.0",
+    "display_name": "clinpgx-database",
+    "summary": "Access ClinPGx pharmacogenomics data (successor to PharmGKB). Query gene-drug interactions, CPIC guidelines, allele functions, for precision medicine and genotype-guided dosing decisions.",
+    "category": "Evidence Insight",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "71add644263a56368f8680d68df504c6674dc1e5",
+      "path": "scientific-skills/clinpgx-database"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/71add644263a56368f8680d68df504c6674dc1e5/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-14",
+        "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains the original ClinPGx guide, API reference and query helper; no clinical datasets or patient records are bundled. Python requests/pandas and permitted ClinPGx API access are runtime prerequisites."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "37501ed3d48459d039cac290b77b1b6aa53e8da9344e1bedf8914de014493924",
+    "file_count": 4,
+    "uncompressed_bytes": 53671
+  },
+  "artifact": {
+    "path": "shards/fcd3eaa3439234f967f6835adacfe5bd6e8cacef5cbe5da7a06ffa4dec4f4973.zip",
+    "sha256": "fcd3eaa3439234f967f6835adacfe5bd6e8cacef5cbe5da7a06ffa4dec4f4973",
+    "bytes": 110833,
+    "skill_path": "clinpgx-database"
+  }
+}
