@@ -14,6 +14,7 @@ test("metadata boundaries translate nested fields while preserving identifiers a
       sourcePath: "Skills/MySkill",
       licenseFiles: [{ path: "LICENSE", sha256: "b".repeat(64) }],
       additionalLicenseFiles: [],
+      packageLicenseExpression: "MIT AND CC-BY-4.0",
       reviewedBy: "CamelCase Name",
       reviewedOn: "2026-09-12",
     },
@@ -25,6 +26,7 @@ test("metadata boundaries translate nested fields while preserving identifiers a
       source_path: "Skills/MySkill",
       license_files: [{ path: "LICENSE", sha256: "b".repeat(64) }],
       additional_license_files: [],
+      package_license_expression: "MIT AND CC-BY-4.0",
       reviewed_by: "CamelCase Name",
       reviewed_on: "2026-09-12",
     },
@@ -56,6 +58,7 @@ test("old and mixed camelCase input is rejected without a compatibility alias", 
     { "example@1.0.0": { reviewedBy: "Reviewer" } },
     { baseRevision: null },
     { additionalLicenseFiles: [] },
+    { packageLicenseExpression: "MIT AND CC-BY-4.0" },
     { source_commit: "new", sourceCommit: "old" },
   ])
     assert.throws(

@@ -46,6 +46,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "adverse-event-narrative",
+      "version": "1.0.0"
+    },
+    {
       "id": "aim-and-hypothesis-designer",
       "version": "1.0.0"
     },
@@ -101,6 +105,10 @@
       "id": "basic-research-design",
       "version": "1.0.0",
       "source_commit": "d915031495e1c755d272c3de817ee3fc012e8b7b"
+    },
+    {
+      "id": "batch-effect-correction",
+      "version": "1.0.0"
     },
     {
       "id": "benchling-integration",
@@ -219,6 +227,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "cerna-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "chart-style-unifier",
       "version": "1.0.0"
     },
@@ -256,6 +268,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "clinical-data-cleaner",
+      "version": "1.0.0"
+    },
+    {
       "id": "clinical-diagnostic-reasoning",
       "version": "1.0.0"
     },
@@ -265,6 +281,10 @@
     },
     {
       "id": "clinical-study-info-extractor",
+      "version": "1.0.0"
+    },
+    {
+      "id": "clinical-trial-protocol-skill",
       "version": "1.0.0"
     },
     {
@@ -325,6 +345,10 @@
     },
     {
       "id": "conference-poster-pitch",
+      "version": "1.0.0"
+    },
+    {
+      "id": "conference-tweet-generator",
       "version": "1.0.0"
     },
     {
@@ -397,7 +421,31 @@
       "version": "1.0.0"
     },
     {
+      "id": "decision-curve-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "decision-tree-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "deg-screening-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "dei-statement-drafter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "diagnostic-study-quality-assessment-quadas",
+      "version": "1.0.0"
+    },
+    {
+      "id": "diagnostic-study-quality-assessment-quadas-2",
+      "version": "1.0.0"
+    },
+    {
+      "id": "differential-expression-analysis",
       "version": "1.0.0"
     },
     {
@@ -418,6 +466,10 @@
     },
     {
       "id": "dpi-upscaler-checker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "drug-interaction-checker",
       "version": "1.0.0"
     },
     {
@@ -453,6 +505,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "emerging-topic-scout",
+      "version": "1.0.0"
+    },
+    {
       "id": "ena-database",
       "version": "1.0.0"
     },
@@ -485,6 +541,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "estimate-immune-score-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "etetoolkit",
       "version": "1.0.0"
     },
@@ -494,6 +554,10 @@
     },
     {
       "id": "experiment-design",
+      "version": "1.0.0"
+    },
+    {
+      "id": "experiment-detail-comparator",
       "version": "1.0.0"
     },
     {
@@ -510,6 +574,10 @@
     },
     {
       "id": "exploratory-data-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "external-model-validation",
       "version": "1.0.0"
     },
     {
@@ -573,6 +641,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "gene-protein-expression-matrix-normalization",
+      "version": "1.0.0"
+    },
+    {
       "id": "gene-structure-mapper",
       "version": "1.0.0"
     },
@@ -621,6 +693,18 @@
       "version": "1.0.0"
     },
     {
+      "id": "graphical-abstract-wizard",
+      "version": "1.0.0"
+    },
+    {
+      "id": "gsea",
+      "version": "1.0.0"
+    },
+    {
+      "id": "gsva-analysis-and-visualization",
+      "version": "1.0.0"
+    },
+    {
       "id": "gtars",
       "version": "1.0.0"
     },
@@ -649,6 +733,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "html-to-pdf",
+      "version": "1.0.0"
+    },
+    {
       "id": "hypogenic",
       "version": "1.0.0"
     },
@@ -674,6 +762,14 @@
       "version": "1.0.0"
     },
     {
+      "id": "immune-pathway-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "inclusion-criteria-gen",
+      "version": "1.0.0"
+    },
+    {
       "id": "inclusion-exclusion-criteria-builder",
       "version": "1.0.0"
     },
@@ -690,11 +786,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "iso-certification",
+      "version": "1.0.0"
+    },
+    {
       "id": "jaspar-api",
       "version": "1.0.0"
     },
     {
       "id": "journal-club-presenter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "journal-matchmaker",
       "version": "1.0.0"
     },
     {
@@ -706,11 +810,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "kegg-api",
+      "version": "1.0.0"
+    },
+    {
       "id": "kegg-database",
       "version": "1.0.0"
     },
     {
       "id": "keyword-velocity-tracker",
+      "version": "1.0.0"
+    },
+    {
+      "id": "km-survival-curve",
+      "version": "1.0.0"
+    },
+    {
+      "id": "knn-imputation",
       "version": "1.0.0"
     },
     {
@@ -754,11 +870,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "lightgbm-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "limitation-and-risk-writer",
       "version": "1.0.0"
     },
     {
       "id": "lipinski-rule-filter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "litbase",
       "version": "1.0.0"
     },
     {
@@ -779,6 +903,10 @@
     },
     {
       "id": "literatureimages-interpretation",
+      "version": "1.0.0"
+    },
+    {
+      "id": "lncrna-regulatory-network-construction-analysis",
       "version": "1.0.0"
     },
     {
@@ -847,6 +975,10 @@
     },
     {
       "id": "medical-research-literature-reader-pro",
+      "version": "1.0.0"
+    },
+    {
+      "id": "medical-scribe-dictation",
       "version": "1.0.0"
     },
     {
@@ -976,11 +1108,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "method-writing",
+      "version": "1.0.0"
+    },
+    {
       "id": "methodology-extractor",
       "version": "1.0.0"
     },
     {
       "id": "methods-reverse-engineer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "methods-section-writer",
       "version": "1.0.0"
     },
     {
@@ -1001,6 +1141,10 @@
     },
     {
       "id": "moa-explainer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "model-calibration-curve",
       "version": "1.0.0"
     },
     {
@@ -1045,6 +1189,10 @@
     },
     {
       "id": "nih-biosketch-builder",
+      "version": "1.0.0"
+    },
+    {
+      "id": "nomogram-construction",
       "version": "1.0.0"
     },
     {
@@ -1104,6 +1252,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "pca-dimensionality-reduction",
+      "version": "1.0.0"
+    },
+    {
       "id": "pcd-immune-oncology-research-planner",
       "version": "1.0.0"
     },
@@ -1156,6 +1308,10 @@
       "version": "1.0.0"
     },
     {
+      "id": "postdoc-fellowship-matcher",
+      "version": "1.0.0"
+    },
+    {
       "id": "poster-designer",
       "version": "1.0.0"
     },
@@ -1176,11 +1332,23 @@
       "version": "1.0.0"
     },
     {
+      "id": "preprint-surveillance-finder",
+      "version": "1.0.0"
+    },
+    {
       "id": "presentation-hook",
       "version": "1.0.0"
     },
     {
       "id": "primary-plan-recommender",
+      "version": "1.0.0"
+    },
+    {
+      "id": "prior-auth-letter-drafter",
+      "version": "1.0.0"
+    },
+    {
+      "id": "probast-quality-assessment-for-prediction-model-studies",
       "version": "1.0.0"
     },
     {
@@ -1201,6 +1369,10 @@
     },
     {
       "id": "protocol-standardization",
+      "version": "1.0.0"
+    },
+    {
+      "id": "pseudotime-trajectory-viz",
       "version": "1.0.0"
     },
     {
@@ -1240,6 +1412,30 @@
       "version": "1.0.0"
     },
     {
+      "id": "quadas-c-assessment-for-diagnostic-accuracy-studies",
+      "version": "1.0.0"
+    },
+    {
+      "id": "quality-assessment",
+      "version": "1.0.0"
+    },
+    {
+      "id": "quapas-quality-assessment-for-prognosis-studies",
+      "version": "1.0.0"
+    },
+    {
+      "id": "rare-disease-hpo-mapper",
+      "version": "1.0.0"
+    },
+    {
+      "id": "rct-bias-assessment-rob",
+      "version": "1.0.0"
+    },
+    {
+      "id": "rct-bias-assessment-rob2",
+      "version": "1.0.0"
+    },
+    {
       "id": "reagent-expiry-alert",
       "version": "1.0.0"
     },
@@ -1265,6 +1461,10 @@
     },
     {
       "id": "reference-retrieval-skill",
+      "version": "1.0.0"
+    },
+    {
+      "id": "reference-search",
       "version": "1.0.0"
     },
     {
@@ -1313,6 +1513,11 @@
       "version": "1.0.0"
     },
     {
+      "id": "resubmission-deadline-tracker",
+      "version": "1.0.0",
+      "source_commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d"
+    },
+    {
       "id": "result-figure-consistencycheck",
       "version": "1.0.0"
     },
@@ -1334,6 +1539,14 @@
     },
     {
       "id": "revision-strategy-planner",
+      "version": "1.0.0"
+    },
+    {
+      "id": "rf-model-importance-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "sample-correlation-analysis",
       "version": "1.0.0"
     },
     {
@@ -1449,7 +1662,15 @@
       "version": "1.0.0"
     },
     {
+      "id": "smiles-de-salter",
+      "version": "1.0.0"
+    },
+    {
       "id": "spreadsheet-ops",
+      "version": "1.0.0"
+    },
+    {
+      "id": "ssgsea-immune-infiltration-analysis",
       "version": "1.0.0"
     },
     {
@@ -1477,6 +1698,14 @@
       "version": "1.0.0"
     },
     {
+      "id": "survival-curve-risk-table",
+      "version": "1.0.0"
+    },
+    {
+      "id": "svm-model-importance-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "systematic-review",
       "version": "1.0.0"
     },
@@ -1497,11 +1726,27 @@
       "version": "1.0.0"
     },
     {
+      "id": "target-journal-matcher",
+      "version": "1.0.0"
+    },
+    {
       "id": "text-to-technical-roadmap",
       "version": "1.0.0"
     },
     {
+      "id": "tf-target-gene-regulatory-network",
+      "version": "1.0.0"
+    },
+    {
+      "id": "time-dependent-roc",
+      "version": "1.0.0"
+    },
+    {
       "id": "title-and-abstract-optimizer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "tooluniverse-clinical-trial-design",
       "version": "1.0.0"
     },
     {
@@ -1549,11 +1794,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "umap-tsne-analysis",
+      "version": "1.0.0"
+    },
+    {
       "id": "uniprot-database",
       "version": "1.0.0"
     },
     {
       "id": "unmet-clinical-need-extractor",
+      "version": "1.0.0"
+    },
+    {
+      "id": "unstructured-medical-text-miner",
       "version": "1.0.0"
     },
     {
@@ -1565,11 +1818,19 @@
       "version": "1.0.0"
     },
     {
+      "id": "variant-annotation",
+      "version": "1.0.0"
+    },
+    {
       "id": "variant-pathogenicity-predictor",
       "version": "1.0.0"
     },
     {
       "id": "vector-text-fixer",
+      "version": "1.0.0"
+    },
+    {
+      "id": "venue-templates",
       "version": "1.0.0"
     },
     {
@@ -1581,11 +1842,31 @@
       "version": "1.0.0"
     },
     {
+      "id": "volcano-plot-labeler",
+      "version": "1.0.0"
+    },
+    {
       "id": "volcano-plot-script",
       "version": "1.0.0"
     },
     {
       "id": "waste-disposal-guide",
+      "version": "1.0.0"
+    },
+    {
+      "id": "western-blot-quantifier",
+      "version": "1.0.0"
+    },
+    {
+      "id": "wgcna-analysis",
+      "version": "1.0.0"
+    },
+    {
+      "id": "word-read-write",
+      "version": "1.0.0"
+    },
+    {
+      "id": "xgboost-analysis",
       "version": "1.0.0"
     },
     {
@@ -1612,7 +1893,7 @@
     {
       "id": "hierarchical-clustering-plot",
       "version": "1.0.0",
-      "reason": "Per-Skill license declaration and redistribution evidence are missing."
+      "reason": "Published through the existing provider Unknown intake from the same immutable Medical source; no frontmatter license was invented. DESCRIPTION MIT declaration is retained as hashed evidence."
     },
     {
       "id": "lasso-logistics-analysis",
@@ -1658,11 +1939,6 @@
       "id": "paper-tweet-generator",
       "version": "1.0.0",
       "reason": "Bundled extracted_text.txt identifies its article as CC BY-NC-ND 4.0, distinct from the Skill MIT declaration; redistribution review and permission resolution are pending."
-    },
-    {
-      "id": "adverse-event-narrative",
-      "version": "1.0.0",
-      "reason": "Bundled CIOMS/MedDRA reference material and sample cases require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "authorship-credit-gen",
@@ -1725,24 +2001,9 @@
       "reason": "Bundled scripts/check_section.py (line 64) and scripts/pubmed_search.py (line 95) fail static Python syntax parsing. Correct the pinned upstream executables before publication."
     },
     {
-      "id": "medical-scribe-dictation",
-      "version": "1.0.0",
-      "reason": "Bundled medical-abbreviations.json needs terminology provenance and notice review; terminology-sources.md names external standards with separate terms."
-    },
-    {
       "id": "meta-manuscript-generator",
       "version": "1.0.0",
       "reason": "The available helper searches a hardcoded 2020-2025 window despite the rolling five-year instruction. Reference insertion also renumbers standalone numeric brackets throughout the article, including Methods/Results that SKILL.md requires preserving. Verify these behavior contracts before publication; writing-guide-en.md is present."
-    },
-    {
-      "id": "method-writing",
-      "version": "1.0.0",
-      "reason": "Bundled reporting_guidelines.md includes multiple third-party reporting checklists; attribution and redistribution evidence need review."
-    },
-    {
-      "id": "methods-section-writer",
-      "version": "1.0.0",
-      "reason": "Bundled reporting_guidelines.md includes multiple third-party reporting checklists; attribution and redistribution evidence need review."
     },
     {
       "id": "molecular-review-workflow",
@@ -1752,17 +2013,12 @@
     {
       "id": "paper-web",
       "version": "1.0.0",
-      "reason": "Original K-Dense scientific-skills/paper-2-web/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares Unknown, while the aggregation declares MIT. Resolve original content licensing before publication; scientific-schematics is a separate dependency."
+      "reason": "The original K-Dense Unknown declaration and complete MIT notice at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f are verified. Original instructions use --output-dir and --generate-website/--generate-poster, but documented Paper2All pipeline 0639654f6dc023c0372de5e7f0484e03e5b25c25 uses --output_dir and selects components via --model-choice. Resolve the CLI contract and separately review modified aggregation content before selection."
     },
     {
       "id": "personal-statement",
       "version": "1.0.0",
       "reason": "The documented personal_statement_writer.py API is absent. scripts/main.py accepts no user input and always renders a fixed patient-care example. Verify the advertised input and generation contract before publication."
-    },
-    {
-      "id": "prior-auth-letter-drafter",
-      "version": "1.0.0",
-      "reason": "Bundled carrier_requirements.json insurance requirements require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "radiology-image-quiz",
@@ -1785,11 +2041,6 @@
       "reason": "Recovered d915031495e1c755d272c3de817ee3fc012e8b7b restores main.py, but the documented --test ttest is unsupported (the CLI accepts ttest-ind/ttest-paired), and --test noninf reaches an unassigned result variable. Verify the actual supported calculation and CLI contract before publication."
     },
     {
-      "id": "target-journal-matcher",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/journals.json."
-    },
-    {
       "id": "tone-adjuster",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/tone_adjuster.py. Verify whether these are required package files, generated examples or external dependencies before selection."
@@ -1800,34 +2051,19 @@
       "reason": "Bundled references/topics.json is invalid JSON (unquoted expressions such as 1-2 abnormal). Verify the configuration and case-generation input contract before publication."
     },
     {
-      "id": "batch-effect-correction",
-      "version": "1.0.0",
-      "reason": "Bundled expression_matrix_merged.csv and sample_info.csv include GEO GSM sample identifiers and identify GSE114007 as a batch. Verify dataset origins, transformations and redistribution evidence before publication."
-    },
-    {
       "id": "case-control-study-quality-assessment-nos",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/extract_pdf.py, scripts/format_nos_table.py, references/nos_criteria_prompts.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "cerna-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled miRDB, miRTarBase and starBase databases require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
       "id": "cibersort-immune-infiltration-analysis",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/LM22.txt, tests/data/expression_matrix.csv, tests/data/group_info.csv."
+      "reason": "Bundled tests/data/LM22.txt is the 22-cell-type CIBERSORT signature matrix. Its distribution is associated with Stanford CIBERSORT license restrictions, rather than an unidentified sample dataset. Obtain applicable redistribution authorization for this exact matrix before releasing; do not infer permission from Unknown."
     },
     {
       "id": "circos-plot-generator",
       "version": "1.0.0",
       "reason": "With a relative --output such as ./plots, scripts/main.py passes plots/circos.conf to Circos while also setting cwd=plots, duplicating the output directory in the resolved path. Verify the documented rendering workflow and existing provenance concerns before publication."
-    },
-    {
-      "id": "clinical-data-cleaner",
-      "version": "1.0.0",
-      "reason": "Bundled SDTM guidance, domain definitions and clinical outlier thresholds require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "cnv-caller-plotter",
@@ -1855,49 +2091,14 @@
       "reason": "scripts/main.py sorts p-values for its FDR calculation, then assigns that sorted vector to the original sgRNA order without restoring the index mapping. Verify statistical correctness and the existing third-party provenance concern before publication."
     },
     {
-      "id": "decision-curve-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/dca_data.csv."
-    },
-    {
-      "id": "decision-tree-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled dt_sample1.csv and dt_sample2.csv contain TCGA sample identifiers, survival status and expression values; dt_sample3.txt also contains expression data. Establish dataset origins, transformations and redistribution evidence before publication."
-    },
-    {
       "id": "deeptools",
       "version": "1.0.0",
       "reason": "Original K-Dense scientific-skills/deeptools/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"BSD license\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
     },
     {
-      "id": "deg-screening-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/oa_exp.csv, tests/data/oa_group.csv."
-    },
-    {
-      "id": "diagnostic-study-quality-assessment-quadas",
-      "version": "1.0.0",
-      "reason": "Bundled QUADAS-2 criteria need source attribution and redistribution evidence review."
-    },
-    {
-      "id": "differential-expression-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled Combined_Datasets_Matrix_mus.csv expression data require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
       "id": "dnanexus-integration",
       "version": "1.0.0",
       "reason": "Original K-Dense scientific-skills/dnanexus-integration/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Unknown\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
-    },
-    {
-      "id": "estimate-immune-score-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv."
-    },
-    {
-      "id": "external-model-validation",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/BRCA_clinic.csv, tests/data/BRCA_coef.csv, tests/data/BRCA_data.csv."
     },
     {
       "id": "fastqc-report-interpreter",
@@ -1910,59 +2111,14 @@
       "reason": "The default package omits scripts/main.py. Recovered d915031495e1c755d272c3de817ee3fc012e8b7b documents an audit command with --format json and a literal prose input, but its CLI accepts only png/pdf/svg and requires an existing CSV/Excel file. Correct the runnable validation example and finish sample-data provenance review before publication."
     },
     {
-      "id": "gene-protein-expression-matrix-normalization",
-      "version": "1.0.0",
-      "reason": "references/cli-guide.md explicitly identifies the bundled expression_matrix.csv as real data derived from GEO GSE150613. Verify the source supplement, transformations and redistribution evidence before publication."
-    },
-    {
       "id": "gokegg-analysis",
       "version": "1.0.0",
-      "reason": "The package also bundles assets/KEGG_pathway_name.txt (81,701 bytes), beyond the minimal test gene list. Verify that mapping table origin, applicable terms and redistribution evidence before publication."
-    },
-    {
-      "id": "graphical-abstract-wizard",
-      "version": "1.0.0",
-      "reason": "Third-party collection attribution in SKILL.md:206 requires original license and notice evidence review."
-    },
-    {
-      "id": "gsea",
-      "version": "1.0.0",
-      "reason": "Bundled ssGSEA.rds gene-set data require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "gsva-analysis-and-visualization",
-      "version": "1.0.0",
-      "reason": "Bundled GSE44076-derived expression data require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "immune-pathway-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv, tests/data/immune_genesets.csv, tests/data/immune_genesets_minimal.csv."
-    },
-    {
-      "id": "km-survival-curve",
-      "version": "1.0.0",
-      "reason": "Bundled tests/data/km_sample1.txt, km_sample2.txt and km_sample3.txt contain TCGA sample identifiers with follow-up, outcome, risk-score and expression columns. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames."
-    },
-    {
-      "id": "knn-imputation",
-      "version": "1.0.0",
-      "reason": "Bundled expression matrix and sample-group tables require individual origin, applicable license and redistribution evidence review before selection."
+      "reason": "Bundled assets/KEGG_pathway_name.txt is a KEGG mapping table. KEGG specifies commercial/service-provider licensing (https://www.genome.jp/kegg/legal.html and https://www.pathway.jp/en/licensing.html); no unrestricted CDN distribution authorization is recorded."
     },
     {
       "id": "lamindb",
       "version": "1.0.0",
       "reason": "Original K-Dense scientific-skills/lamindb/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Apache-2.0 license\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
-    },
-    {
-      "id": "lightgbm-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt."
-    },
-    {
-      "id": "lncrna-regulatory-network-construction-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled miRDB, miRTarBase and starBase databases require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "matplotlib",
@@ -1980,19 +2136,9 @@
       "reason": "scripts/main.py:75-77 derives Kraken2 taxonomy depth from whitespace before the whole row rather than the indented name column, losing the parent hierarchy. The same file credits OpenClaw. Verify correct report parsing, example taxonomy data provenance and original redistribution notices before selection."
     },
     {
-      "id": "model-calibration-curve",
-      "version": "1.0.0",
-      "reason": "Bundled tests/data/sample_clinical_survival_data.csv contains TCGA identifiers, survival outcomes and derived risk scores. Establish its dataset origin, transformations and redistribution evidence before publication; illustrative SAMPLE IDs in SKILL.md do not establish that the bundled data are synthetic."
-    },
-    {
       "id": "neoantigen-predictor",
       "version": "1.0.0",
       "reason": "The implementation uses simulated NetMHC binding scores and mock protein/peptide sequences. Verify real prediction inputs and implementation before publication."
-    },
-    {
-      "id": "nomogram-construction",
-      "version": "1.0.0",
-      "reason": "Bundled tests/data/yuhou_cli_data.csv contains TCGA identifiers, survival outcomes and derived risk scores, with serialized expected model/data outputs. Establish dataset origin, transformations and redistribution evidence before publication."
     },
     {
       "id": "pathml",
@@ -2003,21 +2149,6 @@
       "id": "pathology-roi-selector",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
-      "id": "pca-dimensionality-reduction",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/sample_pca_1.csv, tests/data/sample_pca_2.csv, tests/data/sample_pca_3.csv."
-    },
-    {
-      "id": "probast-quality-assessment-for-prediction-model-studies",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
-      "id": "pseudotime-trajectory-viz",
-      "version": "1.0.0",
-      "reason": "The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices."
     },
     {
       "id": "pydicom",
@@ -2035,39 +2166,9 @@
       "reason": "The original K-Dense Skill declares MIT, but pinned SKILL.md:214 passes a samtools region string as the positional contig argument in samfile.fetch(\"chr1:1000-2000\"); pysam requires the region keyword for this syntax. Correct source guidance and original redistribution notices remain required before selection."
     },
     {
-      "id": "quadas-c-assessment-for-diagnostic-accuracy-studies",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
-      "id": "quality-assessment",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
-      "id": "quapas-quality-assessment-for-prognosis-studies",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
-      "id": "rct-bias-assessment-rob",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
-      "id": "rf-model-importance-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv."
-    },
-    {
       "id": "rowan",
       "version": "1.0.0",
       "reason": "Original K-Dense scientific-skills/rowan/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Proprietary (API key required)\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
-    },
-    {
-      "id": "sample-correlation-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled tests/data/sample_correlation_2.csv contains TCGA sample identifiers alongside drug-response columns, and sample_correlation_3.csv contains GEO sample identifiers. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames."
     },
     {
       "id": "scanpy",
@@ -2085,19 +2186,9 @@
       "reason": "Referenced paths are absent from the pinned package: references/explainers.md, references/plots.md, references/workflows.md (and 1 more). Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "smiles-de-salter",
-      "version": "1.0.0",
-      "reason": "SKILL.md and scripts/main.py credit OpenClaw Skill Hub in addition to the AIPOCH frontmatter; verify original attribution and redistribution notices."
-    },
-    {
       "id": "spatial-transcriptomics-mapper",
       "version": "1.0.0",
       "reason": "The absent generate_test_data.py is only a test-data helper. The actual implementation silently skips Xenium multi-gene rendering because _plot_gene_on_axis and _plot_genes_overlay return for non-Visium data, despite the documented Xenium multi-gene example. Verify the advertised rendering paths before publication."
-    },
-    {
-      "id": "ssgsea-immune-infiltration-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled expression data and Charoentong 2017-derived immune gene sets require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "statistical-analysis",
@@ -2110,64 +2201,19 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "survival-curve-risk-table",
-      "version": "1.0.0",
-      "reason": "The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices."
-    },
-    {
-      "id": "svm-model-importance-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv."
-    },
-    {
-      "id": "tf-target-gene-regulatory-network",
-      "version": "1.0.0",
-      "reason": "Bundled DoRothEA RDS databases and generated RData/XLSX results require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "time-dependent-roc",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/time_roc_sample1.txt, tests/data/time_roc_sample2.txt, tests/data/time_roc_sample3.txt."
-    },
-    {
       "id": "tooluniverse-statistical-modeling",
       "version": "1.0.0",
       "reason": "The inline ANOVA workflow selects features by matching an expected benchmark F-statistic range, rather than specifying the scientific feature before testing; its aggregate example also flattens repeated feature measurements into independent observations. Resolve methodological guidance and original source notices before publication."
     },
     {
-      "id": "umap-tsne-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: dependencies.lock.tsv, tests/data/group_info.csv, tests/data/otu_table.csv."
-    },
-    {
-      "id": "volcano-plot-labeler",
-      "version": "1.0.0",
-      "reason": "The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices."
-    },
-    {
-      "id": "western-blot-quantifier",
-      "version": "1.0.0",
-      "reason": "SKILL.md includes an OpenClaw Skills attribution; verify original source and required redistribution notices."
-    },
-    {
-      "id": "wgcna-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled tests/data/expression.csv and group.csv contain TCGA sample identifiers, expression values and assigned Case/Control groups. Establish dataset origins, transformations, group-label evidence and redistribution terms before publication."
-    },
-    {
-      "id": "xgboost-analysis",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt."
-    },
-    {
       "id": "alphafold-db",
       "version": "1.0.0",
-      "reason": "Bundled AlphaFold CIF/PDB files carry CC-BY-4.0 notices; review data attribution and mixed-license projection before selection."
+      "reason": "Pinned CIF/PDB files explicitly grant CC BY 4.0 with DeepMind attribution; exact evidence and official license text are recorded in reviews.json. Mixed-license display support is prepared, but references/api_reference.md labels mouse accession P00520 as ABL1_HUMAN/taxId 9606 and uses the human sequence length. This remains in Medical commit 63c61d38c6c4bba5128f98f0b225aa44e3fe748d. Await the upstream species-example correction and review its fixed commit before publication."
     },
     {
       "id": "bio-ontology-mapper",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/mesh_sample.json, references/snomed_sample.json, references/synonyms.json."
+      "reason": "Bundled references/snomed_sample.json contains SNOMED CT concepts. SNOMED International requires affiliate/sublicense terms for distributed products (https://docs.snomed.org/snomed-ct-practical-guides/vendor-introduction-to-snomed-ct/7-licensing); unrestricted CDN redistribution is not established. Unknown is not a substitute for those terms."
     },
     {
       "id": "blockbuster-therapy-predictor",
@@ -2195,24 +2241,9 @@
       "reason": "SKILL.md imports scripts.interdisciplinary.CollaborationFinder and documents expert/funding searches, but the package has no interdisciplinary.py or CollaborationFinder; scripts/main.py implements a different domain-bridge model. Resolve the documented API and missing references before publication."
     },
     {
-      "id": "diagnostic-study-quality-assessment-quadas-2",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
       "id": "diffdock-molecular-docking",
       "version": "1.0.0",
       "reason": "Referenced paths are absent from the pinned package: references/workflows_examples.md. Verify whether these are required package files, generated examples or external dependencies before selection."
-    },
-    {
-      "id": "drug-interaction-checker",
-      "version": "1.0.0",
-      "reason": "Bundled drug-interaction database, CYP450 substrate data and severity criteria require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "emerging-topic-scout",
-      "version": "1.0.0",
-      "reason": "Package content credits OpenClaw Skills Collection; verify original attribution, license evidence, and required redistribution notices before selection."
     },
     {
       "id": "fda-database",
@@ -2250,24 +2281,9 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/journal_digest.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "journal-matchmaker",
-      "version": "1.0.0",
-      "reason": "Bundled journal catalog and scoring metadata require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "kegg-api",
-      "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/KEGG_API_Manual.txt."
-    },
-    {
       "id": "key-takeaways",
       "version": "1.0.0",
       "reason": "SKILL.md documents Key_Takeaways.process/export and file/batch CLI options, but scripts/main.py exposes KeyTakeaways.extract only and always processes a fixed demonstration string. Correct the documented interface and real input handling before publication; missing references remain unresolved."
-    },
-    {
-      "id": "litbase",
-      "version": "1.0.0",
-      "reason": "The package includes populated research memory, reading notes and search_config.json alongside empty core templates. Verify their provenance and intended redistribution before publication."
     },
     {
       "id": "open-access-scout",
@@ -2277,7 +2293,7 @@
     {
       "id": "open-source-license-check",
       "version": "1.0.0",
-      "reason": "The bundled software-license lookup table requires individual source and accuracy verification before publication."
+      "reason": "Static inspection confirms scripts/main.py hardcodes bowtie2 as MIT/non-copyleft and prints Safe; the official Bowtie 2 manual specifies GPLv3 (https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml). This is incorrect core license-advice output, not missing package-license metadata. Upstream correction is required."
     },
     {
       "id": "patent-claim-mapper",
@@ -2290,34 +2306,14 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/patent_landscape.py, references/ipc-classifications.md, references/patent-search-strategies.md. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "preprint-surveillance-finder",
-      "version": "1.0.0",
-      "reason": "data/history.json contains repeated arXiv abstract excerpts for arXiv:2602.09248, not an empty history template. Verify the cached content redistribution evidence before publication."
-    },
-    {
-      "id": "rare-disease-hpo-mapper",
-      "version": "1.0.0",
-      "reason": "The bundled phenotype-to-gene lookup data requires source, scope and redistribution evidence review."
-    },
-    {
-      "id": "rct-bias-assessment-rob2",
-      "version": "1.0.0",
-      "reason": "Bundled assessment criteria require individual source and redistribution evidence review."
-    },
-    {
       "id": "reactome-skill",
       "version": "1.0.0",
-      "reason": "Original K-Dense scientific-skills/reactome-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares Unknown, while the aggregation declares MIT. Resolve original content licensing and required notices before publication."
+      "reason": "The original K-Dense Unknown declaration and complete MIT notice at c61a6a2ee035720b59f9be6c8cec9db8398d9442 are verified. The aggregation omits scripts/reactome_query.py; the original helper can overwrite a gene-list input whose path lacks .txt when saving analysis results. Resolve package completeness and output-path safety before selection."
     },
     {
       "id": "reagent-substitute-scout",
       "version": "1.0.0",
       "reason": "The example configuration contains placeholders only, but scripts/main.py ignores the formula-only query and application filter, uses a hardcoded substitute table and labels PubMed search-hit counts as citations/validation. Verify actual substitute evidence and input handling before publication."
-    },
-    {
-      "id": "reference-search",
-      "version": "1.0.0",
-      "reason": "Blank CSV templates are reviewable, but inputs/query.json contains a full PDAC review abstract without its origin or redistribution evidence. Resolve that bundled text before publication."
     },
     {
       "id": "scholar-evaluation",
@@ -2335,21 +2331,6 @@
       "reason": "SKILL.md credits the OpenClaw Bioinformatics Skills Collection and the search implementation generates simulated literature counts; verify attribution and real-data behavior."
     },
     {
-      "id": "unstructured-medical-text-miner",
-      "version": "1.0.0",
-      "reason": "The MIMIC-IV-oriented example discharge summary requires explicit provenance and redistribution evidence before selection."
-    },
-    {
-      "id": "variant-annotation",
-      "version": "1.0.0",
-      "reason": "Bundled ACMG guideline material requires separate source and redistribution evidence review."
-    },
-    {
-      "id": "venue-templates",
-      "version": "1.0.0",
-      "reason": "Bundled journal/conference/grant LaTeX templates and style guides require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
       "id": "academic-norm-review",
       "version": "1.0.0",
       "reason": "The older d915031495e1c755d272c3de817ee3fc012e8b7b snapshot restores the guide and checklist, but SKILL.md labels an already defined large language models (LLM) abbreviation as a high-priority undefined abbreviation while its own evidence acknowledges the definition. Resolve this contradictory review example before publication."
@@ -2362,7 +2343,7 @@
     {
       "id": "bib-formatter",
       "version": "1.0.0",
-      "reason": "Bundled CSL styles carry separate CC BY-SA notices; review authorship, license evidence and mixed-license projection."
+      "reason": "All three CSL styles explicitly grant CC BY-SA 3.0 with preserved attribution; exact evidence and the official license text are recorded in reviews.json. The documented citations mode calls bibliography.cite(citation, warn=True), but citeproc-py exposes cite(citation, callback). This remains in Medical commit 63c61d38c6c4bba5128f98f0b225aa44e3fe748d. Await the upstream API-call correction and review its fixed commit before publication."
     },
     {
       "id": "bmi-bsa-calculator",
@@ -2380,11 +2361,6 @@
       "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
     },
     {
-      "id": "conference-tweet-generator",
-      "version": "1.0.0",
-      "reason": "The bundled drug dictionary requires individual source and redistribution evidence review."
-    },
-    {
       "id": "datamol",
       "version": "1.0.0",
       "reason": "Original K-Dense scientific-skills/datamol/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares \"Apache-2.0 license\", while the pinned aggregation declares MIT. Resolve the applicable content redistribution terms and required notices before selection; the collection root MIT notice is not a blanket grant and does not resolve differing individual declarations."
@@ -2395,24 +2371,9 @@
       "reason": "references/phi_tags.json contains Python-like assignments and comments rather than JSON. Verify its intended format and documented consumption before publication."
     },
     {
-      "id": "experiment-detail-comparator",
-      "version": "1.0.0",
-      "reason": "Bundled full article text and extracted derivatives with independent content licenses require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "html-to-pdf",
-      "version": "1.0.0",
-      "reason": "Bundled large vendored dependency tree require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
       "id": "icd10-cpt-coding-assistant",
       "version": "1.0.0",
-      "reason": "Bundled assets require individual provenance review before selection: references/common_mappings.json, references/cpt_common_codes.json, references/icd10_common_codes.json."
-    },
-    {
-      "id": "iso-certification",
-      "version": "1.0.0",
-      "reason": "Bundled ISO 13485 requirements and checklists require separate source and redistribution evidence review."
+      "reason": "Bundled references/cpt_common_codes.json contains CPT codes and descriptions. AMA requires a distribution license for products containing CPT content (https://www.ama-assn.org/practice-management/cpt/cpt-licensing-frequently-asked-questions-faqs); no such authorization is recorded. Unknown does not remove this requirement."
     },
     {
       "id": "lab-result-interpretation",
@@ -2455,24 +2416,14 @@
       "reason": "The default package contains only SKILL.md while its workflow requires tools/extract_pdf_figures.py, tools/build_cell_reports_ppt_offline.py and a ppt/ layout framework, in addition to the absent scripts/validate_skill.py. Verify a complete distributable pipeline before publication."
     },
     {
-      "id": "postdoc-fellowship-matcher",
-      "version": "1.0.0",
-      "reason": "The bundled fellowship database requires source and currency verification before publication."
-    },
-    {
       "id": "ppt",
       "version": "1.0.0",
-      "reason": "The bundled presentation content and framework require individual provenance review before selection."
+      "reason": "Static Python parsing fails in framework/converter/layout.py:73 due to an unterminated string literal in the converter. Unknown cannot resolve this executable syntax defect; upstream correction is required."
     },
     {
       "id": "ppt-master",
       "version": "1.0.0",
-      "reason": "Bundled more than 12,000 template/dependency files require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "resubmission-deadline-tracker",
-      "version": "1.0.0",
-      "reason": "The available 63c61d38c6c4bba5128f98f0b225aa44e3fe748d snapshot repairs --timezone and UTC deadline calculation, but still bundles populated data/deadlines.json manuscript titles, journals and reviewer notes without evidence identifying them as redistributable examples. Resolve those records and the unsourced journal timing reference before publication."
+      "reason": "Static Python parsing fails in 15 helper modules, including scripts/config.py:50, scripts/image_sources/provider_common.py:117 and scripts/project_utils.py:81. Required conversion/configuration paths contain malformed definitions or empty blocks. Unknown cannot resolve these executable syntax defects; upstream correction is required."
     },
     {
       "id": "slide-deck-images",
@@ -2500,24 +2451,9 @@
       "reason": "Original K-Dense scientific-skills/uspto-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares Unknown, while the aggregation declares MIT. Resolve original content licensing and required notices before publication."
     },
     {
-      "id": "word-read-write",
-      "version": "1.0.0",
-      "reason": "Bundled Office schemas and helper sources require individual third-party origin and redistribution notice review."
-    },
-    {
       "id": "clinic-research-design",
       "version": "1.0.0",
       "reason": "Recovered d915031495e1c755d272c3de817ee3fc012e8b7b restores the scripts, but the primary command uses unsupported --study_design, and documented --alpha/--power are absent. Its calculator halves alpha before looking it up in an already two-sided table, silently falling back to 1.96 for alpha=0.01. Verify the CLI and calculation contract before publication."
-    },
-    {
-      "id": "clinical-trial-protocol-skill",
-      "version": "1.0.0",
-      "reason": "Bundled FDA protocol template and detailed operational reference material require individual origin, applicable license and redistribution evidence review before selection."
-    },
-    {
-      "id": "inclusion-criteria-gen",
-      "version": "1.0.0",
-      "reason": "Bundled eligibility templates, feasibility data and regulatory guidance require individual origin, applicable license and redistribution evidence review before selection."
     },
     {
       "id": "randomization-gen",
@@ -2533,11 +2469,6 @@
       "id": "sop-writer",
       "version": "1.0.0",
       "reason": "The bundled CLI always uses fixed demo procedure steps and leaves materials/QC placeholders despite the documented complete SOP output; verify real procedure input handling and output claims before publication."
-    },
-    {
-      "id": "tooluniverse-clinical-trial-design",
-      "version": "1.0.0",
-      "reason": "The bundled trial report and example implementation require individual provenance review before selection."
     }
   ]
 }

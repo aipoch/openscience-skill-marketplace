@@ -607,7 +607,7 @@ test("committed release retains prior members and pins the repaired skill separa
     "volcano-plot-script",
   );
   const selectedIds = selected.map(({ id }) => id).sort();
-  assert.equal(selected.length, 395);
+  assert.equal(selected.length, 465);
   assert.ok(selectedIds.includes("research-grants"));
   const completeSnapshots = [
     "research-proposal-generator",
@@ -634,7 +634,12 @@ test("committed release retains prior members and pins the repaired skill separa
   );
   assert.ok(
     selected
-      .filter(({ id }) => id !== repaired.id && !completeSnapshots.includes(id))
+      .filter(
+        ({ id }) =>
+          id !== repaired.id &&
+          id !== "resubmission-deadline-tracker" &&
+          !completeSnapshots.includes(id),
+      )
       .every(({ sourceCommit }) => sourceCommit === config.source.commit),
   );
   assert.ok(selectedIds.includes("paper-lookup"));

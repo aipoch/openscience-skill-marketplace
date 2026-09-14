@@ -204,6 +204,91 @@ const originalEvidence = {
   sha256: sha256(originalNotice),
 };
 
+test("reviewed package terms reach listing and detail without rewriting the primary declaration", () => {
+  for (const expression of ["MIT AND CC-BY-4.0", "MIT AND CC-BY-SA-3.0"]) {
+    const input = reviewInput();
+    const previous = buildCatalog([input.prepare()]);
+    input.review.packageLicenseExpression = expression;
+    input.review.exceptionReason = "Test-only component attribution review";
+    input.review.additionalLicenseFiles = [originalEvidence];
+    input.licenseCopies.set(originalEvidence.sha256, originalNotice);
+    const prepared = input.prepare();
+    const built = buildCatalog([prepared]);
+    const listing = built.root.skills[0];
+    const detail = JSON.parse(built.objects.get(listing.release.path));
+    assert.equal(input.review.licenseExpression, "MIT");
+    assert.equal(toAppEntry(listing).license, expression);
+    assert.equal(toAppEntry(detail.skill).license, expression);
+    const zip = unzipSync(built.objects.get(detail.artifact.path));
+    assert.deepEqual(
+      Buffer.from(zip["alpha/SKILL.md"]),
+      input.candidate.files[0].bytes,
+    );
+    assert.deepEqual(
+      Buffer.from(zip[`alpha/LICENSES/${originalEvidence.sha256}.txt`]),
+      originalNotice,
+    );
+    assert.throws(
+      () =>
+        buildCatalog([prepared], {
+          history: previous.objects,
+          previousRoot: previous.root,
+        }),
+      /immutable/,
+    );
+    const added = makeCandidate("another-skill");
+    const increment = buildCatalog([prepared, added], {
+      history: built.objects,
+      previousRoot: built.root,
+    });
+    for (const [path, bytes] of built.objects)
+      if (path.startsWith("releases/") || path.startsWith("shards/"))
+        assert.deepEqual(increment.objects.get(path), bytes, path);
+  }
+});
+
+test("package terms cannot replace the source declaration or bypass evidence and review", () => {
+  const input = reviewInput();
+  input.review.additionalLicenseFiles = [originalEvidence];
+  input.licenseCopies.set(originalEvidence.sha256, originalNotice);
+  input.review.exceptionReason = "Test-only component attribution review";
+  for (const expression of [
+    null,
+    42,
+    "",
+    "MIT",
+    "CC-BY-4.0",
+    "Apache-2.0 AND CC-BY-4.0",
+    "MIT OR CC-BY-4.0",
+    "MIT AND ",
+    "MIT AND MIT",
+    "MIT AND (CC-BY-4.0)",
+    `MIT AND ${"A".repeat(500)}`,
+  ]) {
+    input.review.packageLicenseExpression = expression;
+    assert.throws(input.prepare, /package license composition/);
+  }
+  input.review.packageLicenseExpression = "MIT AND CC-BY-4.0";
+  input.review.exceptionReason = " ";
+  assert.throws(input.prepare, /package license composition/);
+  input.review.exceptionReason = "Test-only review";
+  input.review.additionalLicenseFiles = [];
+  assert.throws(input.prepare, /package license composition/);
+  input.review.additionalLicenseFiles = [originalEvidence];
+  input.review.licenseExpression = "Apache-2.0";
+  assert.throws(input.prepare, /license declaration differs/);
+  input.review.licenseExpression = "MIT";
+  input.licenseCopies.clear();
+  assert.throws(
+    input.prepare,
+    /missing or changed additional license evidence/,
+  );
+  input.review.reviewedBy = "";
+  assert.throws(input.prepare, (error) =>
+    error.blockers.some((b) => b.code === "missing-review"),
+  );
+});
+
 test("third-party notices and authors survive listing, detail, ZIP and incremental history", async (t) => {
   const directory = await mkdtemp(join(tmpdir(), "skill-license-"));
   t.after(() => rm(directory, { recursive: true, force: true }));
@@ -361,4 +446,47 @@ test("supplemental notices share deduplication and collision gates with source e
   collision.review.additionalLicenseFiles = [originalEvidence];
   collision.licenseCopies.set(originalEvidence.sha256, originalNotice);
   assert.throws(collision.prepare, /duplicate or case-colliding/);
+});
+
+test("reviewed Unknown projects to listing and detail without replacing source bytes or evidence", () => {
+  const input = reviewInput();
+  const before = buildCatalog([input.prepare()]);
+  input.review.packageLicenseExpression = "Unknown";
+  assert.throws(input.prepare, /explicit review explanation/);
+  input.review.exceptionReason =
+    "Maintainer accepts unresolved example-data provenance; Unknown is not a permission grant.";
+  const prepared = input.prepare();
+  const built = buildCatalog([prepared]);
+  const listing = built.root.skills[0];
+  const detail = JSON.parse(built.objects.get(listing.release.path));
+  assert.equal(listing.license, "Unknown");
+  assert.equal(toAppEntry(detail.skill).license, "Unknown");
+  assert.deepEqual(toAppEntry(listing), toAppEntry(detail.skill));
+  assert.equal(input.review.licenseExpression, "MIT");
+  assert.deepEqual(
+    detail.skill.license.evidence,
+    JSON.parse(before.objects.get(before.root.skills[0].release.path)).skill
+      .license.evidence,
+  );
+  const zip = unzipSync(built.objects.get(detail.artifact.path));
+  assert.deepEqual(
+    Buffer.from(zip["alpha/SKILL.md"]),
+    input.candidate.files[0].bytes,
+  );
+  assert.deepEqual(Buffer.from(zip[`alpha/${licensePath}`]), licenseBytes);
+  assert.throws(
+    () =>
+      buildCatalog([prepared], {
+        history: before.objects,
+        previousRoot: before.root,
+      }),
+    /immutable/,
+  );
+  input.review.licenseExpression = "Unknown";
+  assert.throws(input.prepare, /license declaration differs/);
+  input.review.licenseExpression = "MIT";
+  input.review.licenseFiles[0].sha256 = "0".repeat(64);
+  assert.throws(input.prepare, /license evidence changed/);
+  input.review.licenseFiles = [];
+  assert.throws(input.prepare, /invalid reviewed evidence/);
 });

@@ -62,18 +62,6 @@
       ]
     },
     {
-      "record_key": "aipoch/venue-templates@1.0.0",
-      "id": "venue-templates",
-      "repository": "https://github.com/aipoch/medical-research-skills",
-      "path": "scientific-skills/Evidence Insight/venue-templates",
-      "reasons": [
-        "Bundled third-party templates (including LPPL material) are not fully covered by root-license evidence."
-      ],
-      "resume_conditions": [
-        "Inventory third-party template licenses and preserve all required notices and applicable conditions."
-      ]
-    },
-    {
       "record_key": "aipoch/datamol@1.0.0",
       "id": "datamol",
       "repository": "https://github.com/aipoch/medical-research-skills",
@@ -263,18 +251,6 @@
       ],
       "resume_conditions": [
         "Inventory third-party template licenses and preserve all required notices and applicable conditions."
-      ]
-    },
-    {
-      "record_key": "yuan1z0825/nature-academic-search@1.0.0",
-      "id": "nature-academic-search",
-      "repository": "https://github.com/Yuan1z0825/nature-skills",
-      "path": "skills/nature-academic-search",
-      "reasons": [
-        "Redistribution evidence for abstracts in bundled .nbib/.ris examples is unconfirmed."
-      ],
-      "resume_conditions": [
-        "Confirm redistribution evidence or review a replacement of the affected sample material."
       ]
     },
     {

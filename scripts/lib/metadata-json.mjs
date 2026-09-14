@@ -51,6 +51,7 @@ const fields = [
   "manifestSha256",
   "contentSha256",
   "licenseExpression",
+  "packageLicenseExpression",
   "licenseFiles",
   "additionalLicenseFiles",
   "reviewedBy",

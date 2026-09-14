@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "hierarchical-clustering-plot",
+  "version": "1.0.0",
+  "category": "Data Analysis",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "path": "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot"
+  },
+  "license_files": [
+    "LICENSE",
+    "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot/SKILL.md",
+    "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot/DESCRIPTION"
+  ]
+}

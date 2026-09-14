@@ -16980,7 +16980,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "aipoch/zinc-database@1.0.0",
@@ -30704,7 +30704,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-citation@1.0.0",

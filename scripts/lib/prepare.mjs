@@ -5,6 +5,41 @@ import { contentDigest, inspectSkill } from "./package.mjs";
 import { evaluationToWire } from "./protocol.mjs";
 import { sourceUrl } from "./catalog.mjs";
 
+function packageLicenseExpression(review) {
+  if (!Object.hasOwn(review, "packageLicenseExpression"))
+    return review.licenseExpression;
+  const expression = review.packageLicenseExpression;
+  if (expression === "Unknown") {
+    if (
+      typeof review.exceptionReason !== "string" ||
+      !review.exceptionReason.trim()
+    )
+      throw new Error(
+        "Unknown package license requires an explicit review explanation",
+      );
+    return expression;
+  }
+  const parts = typeof expression === "string" ? expression.split(" AND ") : [];
+  if (
+    typeof expression !== "string" ||
+    expression.length > 500 ||
+    parts.length < 2 ||
+    parts[0] !== review.licenseExpression ||
+    parts.some((part) => !/^[A-Za-z0-9][A-Za-z0-9.+-]*$/.test(part)) ||
+    new Set(parts).size !== parts.length ||
+    typeof review.exceptionReason !== "string" ||
+    !review.exceptionReason.trim() ||
+    new Set([
+      ...review.licenseFiles.map((file) => file.sha256),
+      ...additionalLicenseFiles(review).map((file) => file.sha256),
+    ]).size < 2
+  )
+    throw new Error(
+      "package license composition requires the unchanged primary license, additional terms, distinct evidence and an explicit review explanation",
+    );
+  return expression;
+}
+
 function additionalLicenseFiles(review) {
   if (!Object.hasOwn(review, "additionalLicenseFiles")) return [];
   if (!Array.isArray(review.additionalLicenseFiles))
@@ -107,6 +142,7 @@ export function prepareCandidates(
       throw new Error(`invalid reviewed evidence: ${entry.id}`);
     if (review.licenseExpression !== entry.declaredLicense)
       throw new Error(`license declaration differs from review: ${entry.id}`);
+    const expression = packageLicenseExpression(review);
     if (
       ![
         "MIT",
@@ -197,7 +233,7 @@ export function prepareCandidates(
         publisher: config.publisher,
         ...(entry.authors ? { authors: entry.authors } : {}),
         license: {
-          expression: review.licenseExpression,
+          expression,
           evidence,
           review: {
             reviewed_by: review.reviewedBy,
