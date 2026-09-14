@@ -6003,5 +6003,205 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-13",
     "exception_reason": "Preserve the upstream per-Skill combined Apache-2.0/CC-BY-4.0 declaration. The same pinned NVIDIA commit supplies LICENSE, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE; retain all four documents, attribution, source link and unmodified payload bytes in the distributed package. This review accepts the combined expression for this package only; it does not change the default allowlist or license external NIM services, model weights or user data."
+  },
+  "clinical-decision-support@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/clinical-decision-support",
+    "manifest_sha256": "7f06f02007d411b9e3415bc7e00f4cf96fcee5983f4452e80debc580c72d1166",
+    "content_sha256": "e2fd6c3187d4b12643c5b726a0325e197d4f22b96852560618c8df3177170920",
+    "file_count": 28,
+    "total_bytes": 195066,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "clinical-reports@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/clinical-reports",
+    "manifest_sha256": "dfe947a1e3fcfce3a47928b677b4b052d7b64517b704819c7dcc5405537f22db",
+    "content_sha256": "3e4c913163820f5ca7d1a89901e83dd5572b923daa5fbb9681938b5eefd35f55",
+    "file_count": 36,
+    "total_bytes": 193278,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "dnanexus-integration@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/dnanexus-integration",
+    "manifest_sha256": "6907327dd5cb8a4a6e328ab10bb08a22d4765b967a11b74a48d8903982265fbf",
+    "content_sha256": "40c0e7bc7443d4b1624a1d29d9f8ec5ea04a208be2c7693fbb7651f13e0d4826",
+    "file_count": 12,
+    "total_bytes": 147915,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "literature-review@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/literature-review",
+    "manifest_sha256": "48c176c239d9f5df5aa325214d746383a698b328bb2574017c76de8b55bf6d0b",
+    "content_sha256": "25be1612bd24b9575fc00f3ce2f9e840706399d8e6ba85758a85d1fa25c3186b",
+    "file_count": 12,
+    "total_bytes": 132869,
+    "license_expression": "MIT license",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "The upstream Skill declares the literal expression \"MIT license\". Reviewed the complete MIT grant and K-Dense Inc. copyright in LICENSE.md at this fixed commit; retain that notice in the package and preserve the original declaration. This exception applies only to these reviewed bytes and does not expand the global license allowlist."
+  },
+  "pathml@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/pathml",
+    "manifest_sha256": "c152964c53de6b423e1ce4ed9b7653394582382260a028061b7ddec17d456e60",
+    "content_sha256": "ce25c4702538c40e7924ed14f399eea470fa33231ccda2f1ac685cd4ff32ee54",
+    "file_count": 13,
+    "total_bytes": 150823,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "pydicom@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/pydicom",
+    "manifest_sha256": "277567e3b0cf573ae13d429711d18b24aeb66d6b1c2a4f055b93edd3c475ad7f",
+    "content_sha256": "daf8028d64e20b15b05c371fcaf7980a3c6a04587e92bc108fdd7e0736d88608",
+    "file_count": 13,
+    "total_bytes": 176335,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "pysam@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/pysam",
+    "manifest_sha256": "f15aee7d013adb643ac4f26eb114401dac62c656b42335388f79bc4a2e339a68",
+    "content_sha256": "169e79c8c5355c6d1b8149c88376930f1ee10bf908778318d46191976b1c14e5",
+    "file_count": 14,
+    "total_bytes": 137720,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "scholar-evaluation@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/scholar-evaluation",
+    "manifest_sha256": "6b9516ac1134096a55b5b66841d00af7d7e88dd3baab94275b7dad1cfe7d73e4",
+    "content_sha256": "e814c6e70058f105d1f689c071fe28a5dd31c8d8dc9f2f9467d73d5acef0f971",
+    "file_count": 19,
+    "total_bytes": 156748,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "shap@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/shap",
+    "manifest_sha256": "679c4aa855334ddfb23c36334edb5c9c335efd185ec92723ca9fdfe78abc800c",
+    "content_sha256": "be1d00fcd87a07c0e79f9903b1f100cd7e0a2fa42a519b87e9a9e3b427c28b82",
+    "file_count": 10,
+    "total_bytes": 120100,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
+  },
+  "statistical-analysis@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/statistical-analysis",
+    "manifest_sha256": "4a91f1ac0a014353387d20fa012830ac315e6cde9979cec900d9d2796f02b729",
+    "content_sha256": "515e0993b285f2fecafcd429ab893f86bb69559a1e406bf05489fc876532a639",
+    "file_count": 7,
+    "total_bytes": 116973,
+    "license_expression": "MIT license",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13",
+    "exception_reason": "The upstream Skill declares the literal expression \"MIT license\". Reviewed the complete MIT grant and K-Dense Inc. copyright in LICENSE.md at this fixed commit; retain that notice in the package and preserve the original declaration. This exception applies only to these reviewed bytes and does not expand the global license allowlist."
+  },
+  "treatment-plans@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/treatment-plans",
+    "manifest_sha256": "e978d80f368ebe210ba2b8c59473cf997258a50c00f99a564742d5d5f60f984a",
+    "content_sha256": "13695a53e77274d8f59c7d62e1c1e1086c15f2e6e4a3b62ac23099043704ced1",
+    "file_count": 23,
+    "total_bytes": 153828,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-13"
   }
 }

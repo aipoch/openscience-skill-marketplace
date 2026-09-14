@@ -9,6 +9,7 @@ import { buildCatalog } from "./lib/build.mjs";
 import { readBundle, writeBundle } from "./lib/bundle.mjs";
 import {
   readProductionProviders,
+  assertProviderHistory,
   providerDirectory,
 } from "./lib/production-providers.mjs";
 import { submissionSnapshot, prepareSubmission } from "./lib/authoring.mjs";
@@ -31,7 +32,7 @@ const selected = selectReleaseEntries(
   config.source,
 );
 const reviews = parseMetadataJson(await readFile("skills/reviews.json"));
-const providers = await readProductionProviders(manifest.entries);
+const providers = await readProductionProviders(selected);
 await mkdir(values.output, { recursive: true });
 try {
   const licenseCopies = await loadAdditionalLicenses(
@@ -70,6 +71,7 @@ try {
       pin: process.env.SKILL_MARKETPLACE_PUBLIC_KEY,
     });
   }
+  assertProviderHistory(providers, history);
   const built = buildCatalog(candidates, {
     history: history?.objects,
     previousRoot: history?.root,

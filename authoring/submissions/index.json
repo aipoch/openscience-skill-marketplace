@@ -10,7 +10,7 @@
     "unique_skill_ids": 130,
     "pending_review": 146,
     "blocked": 46,
-    "runtime_id_collisions": 166,
+    "runtime_id_collisions": 143,
     "missing_skill_licenses": 46,
     "license_policy_reviews": 104
   },
@@ -114,7 +114,7 @@
       "release_config": "authoring/submissions/google-deepmind/string-database/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": []
     },
     {
@@ -244,7 +244,7 @@
       "release_config": "authoring/submissions/k-dense-ai/datamol/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -254,7 +254,7 @@
       "release_config": "authoring/submissions/k-dense-ai/deeptools/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -394,7 +394,7 @@
       "release_config": "authoring/submissions/k-dense-ai/lamindb/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -444,7 +444,7 @@
       "release_config": "authoring/submissions/k-dense-ai/matplotlib/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -524,7 +524,7 @@
       "release_config": "authoring/submissions/k-dense-ai/pyhealth/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": []
     },
     {
@@ -564,7 +564,7 @@
       "release_config": "authoring/submissions/k-dense-ai/rowan/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -574,7 +574,7 @@
       "release_config": "authoring/submissions/k-dense-ai/scanpy/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": []
     },
     {
@@ -684,7 +684,7 @@
       "release_config": "authoring/submissions/k-dense-ai/venue-templates/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1144,7 +1144,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/clinpgx-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1184,7 +1184,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/datamol/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1194,7 +1194,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/deeptools/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1274,7 +1274,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/fda-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1344,7 +1344,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/gwas-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1414,7 +1414,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/lamindb/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1464,7 +1464,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/matplotlib/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1484,7 +1484,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/metabolomics-workbench-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1574,7 +1574,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/pyhealth/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1614,7 +1614,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/rowan/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1624,7 +1624,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/scanpy/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1724,7 +1724,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/string-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1754,7 +1754,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/uspto-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1764,7 +1764,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/venue-templates/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": ["runtime-id-collision"],
+      "publication_constraints": [],
       "review_flags": []
     },
     {

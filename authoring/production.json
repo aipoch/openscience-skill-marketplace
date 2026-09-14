@@ -20,6 +20,30 @@
     },
     {
       "schema_version": 1,
+      "id": "clinical-decision-support",
+      "version": "1.0.0",
+      "category": "Academic Writing",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/clinical-decision-support"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "clinical-reports",
+      "version": "1.0.0",
+      "category": "Other",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/clinical-reports"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "complexa-binder-design",
       "version": "1.0.0",
       "category": "Protocol Design",
@@ -51,6 +75,18 @@
         "LICENSE-CC-BY-4.0",
         "NOTICE"
       ]
+    },
+    {
+      "schema_version": 1,
+      "id": "dnanexus-integration",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/dnanexus-integration"
+      },
+      "license_files": ["LICENSE.md"]
     },
     {
       "schema_version": 1,
@@ -271,6 +307,18 @@
     },
     {
       "schema_version": 1,
+      "id": "literature-review",
+      "version": "1.0.0",
+      "category": "Academic Writing",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/literature-review"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "molmim-nim",
       "version": "1.0.0",
       "category": "Data Analysis",
@@ -390,6 +438,18 @@
     },
     {
       "schema_version": 1,
+      "id": "pathml",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/pathml"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "protein-binder-design",
       "version": "1.0.0",
       "category": "Protocol Design",
@@ -424,6 +484,30 @@
     },
     {
       "schema_version": 1,
+      "id": "pydicom",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/pydicom"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "pysam",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/pysam"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "rfdiffusion-nim",
       "version": "1.0.0",
       "category": "Data Analysis",
@@ -441,6 +525,18 @@
     },
     {
       "schema_version": 1,
+      "id": "scholar-evaluation",
+      "version": "1.0.0",
+      "category": "Evidence Insight",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/scholar-evaluation"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
       "id": "scientific-brainstorming",
       "version": "1.0.0",
       "category": "Protocol Design",
@@ -449,6 +545,42 @@
         "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
         "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
         "path": "scientific-skills/scientific-brainstorming"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "shap",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/shap"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "statistical-analysis",
+      "version": "1.0.0",
+      "category": "Data Analysis",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/statistical-analysis"
+      },
+      "license_files": ["LICENSE.md"]
+    },
+    {
+      "schema_version": 1,
+      "id": "treatment-plans",
+      "version": "1.0.0",
+      "category": "Other",
+      "source": {
+        "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+        "path": "skills/treatment-plans"
       },
       "license_files": ["LICENSE.md"]
     }

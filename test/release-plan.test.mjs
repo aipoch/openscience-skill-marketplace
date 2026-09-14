@@ -656,7 +656,7 @@ test("committed release retains prior members and pins the repaired skill separa
   );
   const providers = parseProductionProviders(
     await readFile(new URL("../authoring/production.json", import.meta.url)),
-    manifest.entries,
+    selected,
   );
   assert.deepEqual(
     Object.entries(reviews)

@@ -35,14 +35,14 @@ const validate = ajv.compile(
   ),
 );
 
-export function parseSubmissionIndex(bytes, authority, production) {
+export function parseSubmissionIndex(bytes, selectedOriginals, production) {
   if (!validate(JSON.parse(bytes)))
     throw new Error(
       `invalid submission index: ${ajv.errorsText(validate.errors)}`,
     );
   const index = parseMetadataJson(bytes);
   const occupiedIds = new Set(
-    [...authority, ...production].map((entry) => entry.id),
+    [...selectedOriginals, ...production].map((entry) => entry.id),
   );
   const providerById = new Map(
     index.providers.map((provider) => [provider.id, provider]),
