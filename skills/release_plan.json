@@ -1742,7 +1742,7 @@
     {
       "id": "molecular-review-workflow",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/pubmed_api.py, scripts/validate_skill.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The default package omits scripts/pubmed_api.py. In recovered d915031495e1c755d272c3de817ee3fc012e8b7b, the documented --help validation command is treated as a PubMed query because the script reads sys.argv[1] directly. Correct the CLI/validation contract before publication."
     },
     {
       "id": "paper-web",
@@ -1902,7 +1902,7 @@
     {
       "id": "forest-plot-styler",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/main.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The default package omits scripts/main.py. Recovered d915031495e1c755d272c3de817ee3fc012e8b7b documents an audit command with --format json and a literal prose input, but its CLI accepts only png/pdf/svg and requires an existing CSV/Excel file. Correct the runnable validation example and finish sample-data provenance review before publication."
     },
     {
       "id": "gene-protein-expression-matrix-normalization",
@@ -2067,7 +2067,7 @@
     {
       "id": "scanpy",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/scanpy/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f literally declares SD-3-Clause license, while the aggregation declares MIT. Clarify the applicable terms without silently correcting or replacing the original declaration, and retain required notices before publication."
     },
     {
       "id": "scrna-cell-type-annotator",
@@ -2187,7 +2187,7 @@
     {
       "id": "cross-disciplinary-bridge-finder",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "SKILL.md imports scripts.interdisciplinary.CollaborationFinder and documents expert/funding searches, but the package has no interdisciplinary.py or CollaborationFinder; scripts/main.py implements a different domain-bridge model. Resolve the documented API and missing references before publication."
     },
     {
       "id": "diagnostic-study-quality-assessment-quadas-2",
@@ -2257,7 +2257,7 @@
     {
       "id": "key-takeaways",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/guide.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "SKILL.md documents Key_Takeaways.process/export and file/batch CLI options, but scripts/main.py exposes KeyTakeaways.extract only and always processes a fixed demonstration string. Correct the documented interface and real input handling before publication; missing references remain unresolved."
     },
     {
       "id": "litbase",
@@ -2302,7 +2302,7 @@
     {
       "id": "reactome-skill",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/reactome-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares Unknown, while the aggregation declares MIT. Resolve original content licensing and required notices before publication."
     },
     {
       "id": "reagent-substitute-scout",
@@ -2322,7 +2322,7 @@
     {
       "id": "string-database",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/string-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares Unknown, while the aggregation declares MIT. Separate STRING database data terms do not establish the original Skill content license; resolve content licensing and notices before publication."
     },
     {
       "id": "target-novelty-scorer",
@@ -2347,7 +2347,7 @@
     {
       "id": "academic-norm-review",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: references/guide.md, assets/academic_compliance_checklist.md. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The older d915031495e1c755d272c3de817ee3fc012e8b7b snapshot restores the guide and checklist, but SKILL.md labels an already defined large language models (LLM) abbreviation as a high-priority undefined abbreviation while its own evidence acknowledges the definition. Resolve this contradictory review example before publication."
     },
     {
       "id": "academic-poster-generator",
@@ -2442,12 +2442,12 @@
     {
       "id": "pdf-processor",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/requirements.txt, references/examples.md, scripts/pdf_tool.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The default package omits its executable. In the recovered d915031495e1c755d272c3de817ee3fc012e8b7b snapshot, SKILL.md uses --inputs/--output for split and extraction, but scripts/pdf_tool.py requires --input and, for split/tables, --output-dir. Align the primary documented commands and implementation before publication."
     },
     {
       "id": "pdf-to-ppt-pack",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/validate_skill.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The default package contains only SKILL.md while its workflow requires tools/extract_pdf_figures.py, tools/build_cell_reports_ppt_offline.py and a ppt/ layout framework, in addition to the absent scripts/validate_skill.py. Verify a complete distributable pipeline before publication."
     },
     {
       "id": "postdoc-fellowship-matcher",
@@ -2467,12 +2467,12 @@
     {
       "id": "resubmission-deadline-tracker",
       "version": "1.0.0",
-      "reason": "SKILL.md documents --timezone, but scripts/main.py does not accept that option and calculate_remaining_time ignores the stored timezone. Resolve deadline calculation and bundled record provenance before publication."
+      "reason": "The available 63c61d38c6c4bba5128f98f0b225aa44e3fe748d snapshot repairs --timezone and UTC deadline calculation, but still bundles populated data/deadlines.json manuscript titles, journals and reviewer notes without evidence identifying them as redistributable examples. Resolve those records and the unsourced journal timing reference before publication."
     },
     {
       "id": "slide-deck-images",
       "version": "1.0.0",
-      "reason": "scripts/generate_svg.py uses double-escaped whitespace patterns that do not parse the documented outline headings. Verify the renderer input contract and bundled design-reference provenance before publication."
+      "reason": "The available 63c61d38c6c4bba5128f98f0b225aa44e3fe748d snapshot repairs outline parsing and XML escaping. Its renderer still ignores style instructions and renders every prompt using fixed configuration despite documented selective regeneration and style behavior; bundled design-reference provenance also remains unresolved."
     },
     {
       "id": "symptom-checker-triage",
@@ -2482,17 +2482,17 @@
     {
       "id": "text-format-organizer",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/init_run.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "The default package omits scripts/init_run.py. The recovered d915031495e1c755d272c3de817ee3fc012e8b7b snapshot contains it, but TextFormatter.format applies rstrip() to every line and joins without separators, collapsing line and Markdown paragraph boundaries by default. Correct the formatter before publication."
     },
     {
       "id": "treatment-plans",
       "version": "1.0.0",
-      "reason": "Referenced paths are absent from the pinned package: scripts/generate_schematic.py. Verify whether these are required package files, generated examples or external dependencies before selection."
+      "reason": "SKILL.md documents timeline_generator.py --plan ... --output timeline.pdf, but the script writes a text timeline unless --visual is supplied; the documented command therefore creates text with a PDF extension. Align output instructions before publication and complete template/reference provenance review; the optional schematic helper is a separate concern."
     },
     {
       "id": "uspto-database",
       "version": "1.0.0",
-      "reason": "Package content credits K-Dense Inc.; verify original attribution, license evidence, and required redistribution notices before selection."
+      "reason": "Original K-Dense scientific-skills/uspto-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares Unknown, while the aggregation declares MIT. Resolve original content licensing and required notices before publication."
     },
     {
       "id": "word-read-write",
