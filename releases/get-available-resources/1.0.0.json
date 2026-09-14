@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "get-available-resources",
+    "version": "1.0.0",
+    "display_name": "Compute Resource Detection",
+    "summary": "This skill should be used at the start of any computationally intensive scientific task to detect and report available system resources (CPU cores, GPUs, memory, disk space). It creates a JSON file with resource information and strategic recommendations that inform computational approach decisions such as whether to use parallel processing (joblib, multiprocessing), out-of-core computing (Dask, Zarr), GPU acceleration (PyTorch, JAX), or memory-efficient strategies. Use this skill before running analyses, training models, processing large datasets, or any task where resource constraints matter.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+      "path": "scientific-skills/get-available-resources"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT license",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13",
+        "exception_reason": "The original K-Dense Skill explicitly declares \"MIT license\" and credits K-Dense Inc.; LICENSE.md at the same pinned commit supplies its complete MIT grant and copyright notice. Preserve the literal declaration and original payload; this spelling exception does not substitute another license. The build retains LICENSE.md under LICENSES by its digest."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "8cdf54661d79283177adb06c6685a70e9c2629c28b6fe26736a811a076574334",
+    "file_count": 3,
+    "uncompressed_bytes": 24986
+  },
+  "artifact": {
+    "path": "shards/99a60df6cc99b54f308f288ccebccde256dcc3925503b3cde49ceadd90857ec9.zip",
+    "sha256": "99a60df6cc99b54f308f288ccebccde256dcc3925503b3cde49ceadd90857ec9",
+    "bytes": 18851,
+    "skill_path": "get-available-resources"
+  }
+}

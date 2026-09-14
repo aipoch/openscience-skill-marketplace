@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "scientific-brainstorming",
+    "version": "1.0.0",
+    "display_name": "Scientific Brainstorming",
+    "summary": "Creative research ideation and exploration. Use for open-ended brainstorming sessions, exploring interdisciplinary connections, challenging assumptions, or identifying research gaps. Best for early-stage research planning when you do not have specific observations yet. For formulating testable hypotheses from data use hypothesis-generation.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+      "path": "scientific-skills/scientific-brainstorming"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT license",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13",
+        "exception_reason": "The original K-Dense Skill explicitly declares \"MIT license\" and credits K-Dense Inc.; LICENSE.md at the same pinned commit supplies its complete MIT grant and copyright notice. Preserve the literal declaration and original payload; this spelling exception does not substitute another license. The build retains LICENSE.md under LICENSES by its digest."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "5613d5a1687a07c4632ef63c156ae4b81649a7a2ef77d365ec7d87b069cdec61",
+    "file_count": 3,
+    "uncompressed_bytes": 21312
+  },
+  "artifact": {
+    "path": "shards/99a60df6cc99b54f308f288ccebccde256dcc3925503b3cde49ceadd90857ec9.zip",
+    "sha256": "99a60df6cc99b54f308f288ccebccde256dcc3925503b3cde49ceadd90857ec9",
+    "bytes": 18851,
+    "skill_path": "scientific-brainstorming"
+  }
+}
