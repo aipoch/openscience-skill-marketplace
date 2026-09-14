@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "hypogenic",
+  "version": "1.0.0",
+  "category": "Protocol Design",
+  "source": {
+    "repository": "https://github.com/synthetic-sciences/openscience",
+    "commit": "aa243cfa3ad3605bc7a66b439766e14e6fb638e2",
+    "path": "backend/cli/skills/chemistry/hypogenic"
+  },
+  "license_files": ["LICENSE", "NOTICE"]
+}

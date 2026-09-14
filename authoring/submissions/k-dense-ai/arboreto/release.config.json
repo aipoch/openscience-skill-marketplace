@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "arboreto",
+  "version": "1.0.0",
+  "category": "Evidence Insight",
+  "source": {
+    "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "path": "skills/arboreto"
+  },
+  "license_files": ["LICENSE.md"]
+}

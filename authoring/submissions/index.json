@@ -1,0 +1,1981 @@
+{
+  "schema_version": 1,
+  "selection_input": {
+    "archive_name": "open-science-skills-20260911.zip",
+    "archive_sha256": "c8ac63eecc2b1fb2e712aba667be51c829faf7db9d5124853500a1f7db2c3146"
+  },
+  "summary": {
+    "record_count": 192,
+    "provider_count": 5,
+    "unique_skill_ids": 130,
+    "pending_review": 146,
+    "blocked": 46,
+    "runtime_id_collisions": 141,
+    "missing_skill_licenses": 46,
+    "license_policy_reviews": 104
+  },
+  "providers": [
+    {
+      "id": "google-deepmind",
+      "name": "Google DeepMind",
+      "url": "https://github.com/google-deepmind",
+      "repository": "https://github.com/google-deepmind/science-skills",
+      "commit": "0b42509800f49e6eb7809505d96e20a890ef99bd",
+      "record_count": 7
+    },
+    {
+      "id": "k-dense-ai",
+      "name": "K-Dense AI",
+      "url": "https://github.com/K-Dense-AI",
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "record_count": 56
+    },
+    {
+      "id": "nvidia-bionemo",
+      "name": "NVIDIA BioNeMo",
+      "url": "https://github.com/NVIDIA-BioNeMo",
+      "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+      "commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+      "record_count": 31
+    },
+    {
+      "id": "synthetic-sciences",
+      "name": "Synthetic Sciences",
+      "url": "https://github.com/synthetic-sciences",
+      "repository": "https://github.com/synthetic-sciences/openscience",
+      "commit": "aa243cfa3ad3605bc7a66b439766e14e6fb638e2",
+      "record_count": 78
+    },
+    {
+      "id": "yuan1z0825",
+      "name": "Yuan1z0825",
+      "url": "https://github.com/Yuan1z0825",
+      "repository": "https://github.com/Yuan1z0825/nature-skills",
+      "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+      "record_count": 20
+    }
+  ],
+  "submissions": [
+    {
+      "submission_key": "google-deepmind/chembl-database@1.0.0",
+      "skill_id": "chembl-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/chembl-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "google-deepmind/clinvar-database@1.0.0",
+      "skill_id": "clinvar-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/clinvar-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "google-deepmind/ensembl-database@1.0.0",
+      "skill_id": "ensembl-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/ensembl-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "google-deepmind/pdb-database@1.0.0",
+      "skill_id": "pdb-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/pdb-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "google-deepmind/pubmed-database@1.0.0",
+      "skill_id": "pubmed-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/pubmed-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "google-deepmind/string-database@1.0.0",
+      "skill_id": "string-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/string-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "google-deepmind/uniprot-database@1.0.0",
+      "skill_id": "uniprot-database",
+      "provider_id": "google-deepmind",
+      "release_config": "authoring/submissions/google-deepmind/uniprot-database/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/adaptyv@1.0.0",
+      "skill_id": "adaptyv",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/adaptyv/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/anndata@1.0.0",
+      "skill_id": "anndata",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/anndata/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/arboreto@1.0.0",
+      "skill_id": "arboreto",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/arboreto/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/benchling-integration@1.0.0",
+      "skill_id": "benchling-integration",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/benchling-integration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/biopython@1.0.0",
+      "skill_id": "biopython",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/biopython/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/bioservices@1.0.0",
+      "skill_id": "bioservices",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/bioservices/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/cellxgene-census@1.0.0",
+      "skill_id": "cellxgene-census",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/cellxgene-census/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/citation-management@1.0.0",
+      "skill_id": "citation-management",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/citation-management/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/clinical-decision-support@1.0.0",
+      "skill_id": "clinical-decision-support",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/clinical-decision-support/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/clinical-reports@1.0.0",
+      "skill_id": "clinical-reports",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/clinical-reports/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/cobrapy@1.0.0",
+      "skill_id": "cobrapy",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/cobrapy/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/datamol@1.0.0",
+      "skill_id": "datamol",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/datamol/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/deeptools@1.0.0",
+      "skill_id": "deeptools",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/deeptools/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/dnanexus-integration@1.0.0",
+      "skill_id": "dnanexus-integration",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/dnanexus-integration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/esm@1.0.0",
+      "skill_id": "esm",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/esm/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/etetoolkit@1.0.0",
+      "skill_id": "etetoolkit",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/etetoolkit/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/exploratory-data-analysis@1.0.0",
+      "skill_id": "exploratory-data-analysis",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/exploratory-data-analysis/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/flowio@1.0.0",
+      "skill_id": "flowio",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/flowio/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/geniml@1.0.0",
+      "skill_id": "geniml",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/geniml/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/geopandas@1.0.0",
+      "skill_id": "geopandas",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/geopandas/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/gget@1.0.0",
+      "skill_id": "gget",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/gget/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/gtars@1.0.0",
+      "skill_id": "gtars",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/gtars/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/histolab@1.0.0",
+      "skill_id": "histolab",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/histolab/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/hypogenic@1.0.0",
+      "skill_id": "hypogenic",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/hypogenic/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/hypothesis-generation@1.0.0",
+      "skill_id": "hypothesis-generation",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/hypothesis-generation/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/labarchive-integration@1.0.0",
+      "skill_id": "labarchive-integration",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/labarchive-integration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/lamindb@1.0.0",
+      "skill_id": "lamindb",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/lamindb/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/latex-posters@1.0.0",
+      "skill_id": "latex-posters",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/latex-posters/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/literature-review@1.0.0",
+      "skill_id": "literature-review",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/literature-review/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/markitdown@1.0.0",
+      "skill_id": "markitdown",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/markitdown/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/matchms@1.0.0",
+      "skill_id": "matchms",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/matchms/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/matplotlib@1.0.0",
+      "skill_id": "matplotlib",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/matplotlib/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/medchem@1.0.0",
+      "skill_id": "medchem",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/medchem/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/neuropixels-analysis@1.0.0",
+      "skill_id": "neuropixels-analysis",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/neuropixels-analysis/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/paper-lookup@1.0.0",
+      "skill_id": "paper-lookup",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/paper-lookup/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/pathml@1.0.0",
+      "skill_id": "pathml",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/pathml/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/peer-review@1.0.0",
+      "skill_id": "peer-review",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/peer-review/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/pptx-posters@1.0.0",
+      "skill_id": "pptx-posters",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/pptx-posters/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/pydicom@1.0.0",
+      "skill_id": "pydicom",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/pydicom/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/pyhealth@1.0.0",
+      "skill_id": "pyhealth",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/pyhealth/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/pysam@1.0.0",
+      "skill_id": "pysam",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/pysam/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/pytdc@1.0.0",
+      "skill_id": "pytdc",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/pytdc/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/research-grants@1.0.0",
+      "skill_id": "research-grants",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/research-grants/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/rowan@1.0.0",
+      "skill_id": "rowan",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/rowan/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/scanpy@1.0.0",
+      "skill_id": "scanpy",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scanpy/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/scholar-evaluation@1.0.0",
+      "skill_id": "scholar-evaluation",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scholar-evaluation/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/scientific-critical-thinking@1.0.0",
+      "skill_id": "scientific-critical-thinking",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scientific-critical-thinking/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/scientific-schematics@1.0.0",
+      "skill_id": "scientific-schematics",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scientific-schematics/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/scikit-bio@1.0.0",
+      "skill_id": "scikit-bio",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scikit-bio/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/scikit-survival@1.0.0",
+      "skill_id": "scikit-survival",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scikit-survival/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/scvi-tools@1.0.0",
+      "skill_id": "scvi-tools",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/scvi-tools/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/seaborn@1.0.0",
+      "skill_id": "seaborn",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/seaborn/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/shap@1.0.0",
+      "skill_id": "shap",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/shap/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/statistical-analysis@1.0.0",
+      "skill_id": "statistical-analysis",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/statistical-analysis/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "k-dense-ai/treatment-plans@1.0.0",
+      "skill_id": "treatment-plans",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/treatment-plans/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "k-dense-ai/venue-templates@1.0.0",
+      "skill_id": "venue-templates",
+      "provider_id": "k-dense-ai",
+      "release_config": "authoring/submissions/k-dense-ai/venue-templates/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/boltz2-nim@1.0.0",
+      "skill_id": "boltz2-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/boltz2-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/complexa-binder-design@1.0.0",
+      "skill_id": "complexa-binder-design",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/complexa-binder-design/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/complexa-design@1.0.0",
+      "skill_id": "complexa-design",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/complexa-design/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/complexa-evaluate-pdbs@1.0.0",
+      "skill_id": "complexa-evaluate-pdbs",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/complexa-evaluate-pdbs/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/complexa-setup@1.0.0",
+      "skill_id": "complexa-setup",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/complexa-setup/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/complexa-sweep@1.0.0",
+      "skill_id": "complexa-sweep",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/complexa-sweep/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/complexa-target@1.0.0",
+      "skill_id": "complexa-target",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/complexa-target/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/cuequivariance@1.0.0",
+      "skill_id": "cuequivariance",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/cuequivariance/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/diffdock-nim@1.0.0",
+      "skill_id": "diffdock-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/diffdock-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/drug-discovery-pipeline@1.0.0",
+      "skill_id": "drug-discovery-pipeline",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/drug-discovery-pipeline/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/evo2-nim@1.0.0",
+      "skill_id": "evo2-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/evo2-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/genmol-nim@1.0.0",
+      "skill_id": "genmol-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/genmol-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/genomics-workflow-acceleration@1.0.0",
+      "skill_id": "genomics-workflow-acceleration",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/genomics-workflow-acceleration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-add-cmim-pretrain@1.0.0",
+      "skill_id": "kermt-add-cmim-pretrain",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-add-cmim-pretrain/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-continue-pretrain@1.0.0",
+      "skill_id": "kermt-continue-pretrain",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-continue-pretrain/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-embed@1.0.0",
+      "skill_id": "kermt-embed",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-embed/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-finetune@1.0.0",
+      "skill_id": "kermt-finetune",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-finetune/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-infer@1.0.0",
+      "skill_id": "kermt-infer",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-infer/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-monitor@1.0.0",
+      "skill_id": "kermt-monitor",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-monitor/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-pretrain-scratch@1.0.0",
+      "skill_id": "kermt-pretrain-scratch",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-pretrain-scratch/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/kermt-setup@1.0.0",
+      "skill_id": "kermt-setup",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/kermt-setup/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/molmim-nim@1.0.0",
+      "skill_id": "molmim-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/molmim-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/msa-search-nim@1.0.0",
+      "skill_id": "msa-search-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/msa-search-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/msa-structure-prediction-pipeline@1.0.0",
+      "skill_id": "msa-structure-prediction-pipeline",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/msa-structure-prediction-pipeline/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/nvmolkit-usage@1.0.0",
+      "skill_id": "nvmolkit-usage",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/nvmolkit-usage/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/openfold2-nim@1.0.0",
+      "skill_id": "openfold2-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/openfold2-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/openfold3-nim@1.0.0",
+      "skill_id": "openfold3-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/openfold3-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/parabricks@1.0.0",
+      "skill_id": "parabricks",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/parabricks/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/protein-binder-design@1.0.0",
+      "skill_id": "protein-binder-design",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/protein-binder-design/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "nvidia-bionemo/proteinmpnn-nim@1.0.0",
+      "skill_id": "proteinmpnn-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/proteinmpnn-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "nvidia-bionemo/rfdiffusion-nim@1.0.0",
+      "skill_id": "rfdiffusion-nim",
+      "provider_id": "nvidia-bionemo",
+      "release_config": "authoring/submissions/nvidia-bionemo/rfdiffusion-nim/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/adaptyv@1.0.0",
+      "skill_id": "adaptyv",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/adaptyv/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/anndata@1.0.0",
+      "skill_id": "anndata",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/anndata/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/arboreto@1.0.0",
+      "skill_id": "arboreto",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/arboreto/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/benchling-integration@1.0.0",
+      "skill_id": "benchling-integration",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/benchling-integration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/biopython@1.0.0",
+      "skill_id": "biopython",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/biopython/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/biorxiv-database@1.0.0",
+      "skill_id": "biorxiv-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/biorxiv-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/bioservices@1.0.0",
+      "skill_id": "bioservices",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/bioservices/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/brenda-database@1.0.0",
+      "skill_id": "brenda-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/brenda-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/cellxgene-census@1.0.0",
+      "skill_id": "cellxgene-census",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/cellxgene-census/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/chembl-database@1.0.0",
+      "skill_id": "chembl-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/chembl-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/citation-management@1.0.0",
+      "skill_id": "citation-management",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/citation-management/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/clinical-decision-support@1.0.0",
+      "skill_id": "clinical-decision-support",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/clinical-decision-support/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/clinical-reports@1.0.0",
+      "skill_id": "clinical-reports",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/clinical-reports/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/clinicaltrials-database@1.0.0",
+      "skill_id": "clinicaltrials-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/clinicaltrials-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/clinpgx-database@1.0.0",
+      "skill_id": "clinpgx-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/clinpgx-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/clinvar-database@1.0.0",
+      "skill_id": "clinvar-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/clinvar-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/cobrapy@1.0.0",
+      "skill_id": "cobrapy",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/cobrapy/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/cosmic-database@1.0.0",
+      "skill_id": "cosmic-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/cosmic-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/datamol@1.0.0",
+      "skill_id": "datamol",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/datamol/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/deeptools@1.0.0",
+      "skill_id": "deeptools",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/deeptools/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/dnanexus-integration@1.0.0",
+      "skill_id": "dnanexus-integration",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/dnanexus-integration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/drugbank-database@1.0.0",
+      "skill_id": "drugbank-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/drugbank-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/ena-database@1.0.0",
+      "skill_id": "ena-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/ena-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/ensembl-database@1.0.0",
+      "skill_id": "ensembl-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/ensembl-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/esm@1.0.0",
+      "skill_id": "esm",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/esm/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/etetoolkit@1.0.0",
+      "skill_id": "etetoolkit",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/etetoolkit/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/exploratory-data-analysis@1.0.0",
+      "skill_id": "exploratory-data-analysis",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/exploratory-data-analysis/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/fda-database@1.0.0",
+      "skill_id": "fda-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/fda-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/flowio@1.0.0",
+      "skill_id": "flowio",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/flowio/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/gene-database@1.0.0",
+      "skill_id": "gene-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/gene-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/geniml@1.0.0",
+      "skill_id": "geniml",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/geniml/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/geopandas@1.0.0",
+      "skill_id": "geopandas",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/geopandas/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/gget@1.0.0",
+      "skill_id": "gget",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/gget/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/gtars@1.0.0",
+      "skill_id": "gtars",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/gtars/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/gwas-database@1.0.0",
+      "skill_id": "gwas-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/gwas-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/histolab@1.0.0",
+      "skill_id": "histolab",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/histolab/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/hmdb-database@1.0.0",
+      "skill_id": "hmdb-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/hmdb-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/hypogenic@1.0.0",
+      "skill_id": "hypogenic",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/hypogenic/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/hypothesis-generation@1.0.0",
+      "skill_id": "hypothesis-generation",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/hypothesis-generation/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/kegg-database@1.0.0",
+      "skill_id": "kegg-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/kegg-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/labarchive-integration@1.0.0",
+      "skill_id": "labarchive-integration",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/labarchive-integration/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/lamindb@1.0.0",
+      "skill_id": "lamindb",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/lamindb/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/latex-posters@1.0.0",
+      "skill_id": "latex-posters",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/latex-posters/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/literature-review@1.0.0",
+      "skill_id": "literature-review",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/literature-review/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/markitdown@1.0.0",
+      "skill_id": "markitdown",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/markitdown/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/matchms@1.0.0",
+      "skill_id": "matchms",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/matchms/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/matplotlib@1.0.0",
+      "skill_id": "matplotlib",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/matplotlib/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/medchem@1.0.0",
+      "skill_id": "medchem",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/medchem/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/metabolomics-workbench-database@1.0.0",
+      "skill_id": "metabolomics-workbench-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/metabolomics-workbench-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/neuropixels-analysis@1.0.0",
+      "skill_id": "neuropixels-analysis",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/neuropixels-analysis/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pathml@1.0.0",
+      "skill_id": "pathml",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pathml/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pdb-database@1.0.0",
+      "skill_id": "pdb-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pdb-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/peer-review@1.0.0",
+      "skill_id": "peer-review",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/peer-review/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/plotly@1.0.0",
+      "skill_id": "plotly",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/plotly/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pptx-posters@1.0.0",
+      "skill_id": "pptx-posters",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pptx-posters/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/pubmed-database@1.0.0",
+      "skill_id": "pubmed-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pubmed-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pydicom@1.0.0",
+      "skill_id": "pydicom",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pydicom/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pyhealth@1.0.0",
+      "skill_id": "pyhealth",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pyhealth/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pysam@1.0.0",
+      "skill_id": "pysam",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pysam/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/pytdc@1.0.0",
+      "skill_id": "pytdc",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/pytdc/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/research-grants@1.0.0",
+      "skill_id": "research-grants",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/research-grants/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/rowan@1.0.0",
+      "skill_id": "rowan",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/rowan/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/scanpy@1.0.0",
+      "skill_id": "scanpy",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scanpy/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/scholar-evaluation@1.0.0",
+      "skill_id": "scholar-evaluation",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scholar-evaluation/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/scientific-critical-thinking@1.0.0",
+      "skill_id": "scientific-critical-thinking",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scientific-critical-thinking/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/scientific-schematics@1.0.0",
+      "skill_id": "scientific-schematics",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scientific-schematics/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/scikit-bio@1.0.0",
+      "skill_id": "scikit-bio",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scikit-bio/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/scikit-survival@1.0.0",
+      "skill_id": "scikit-survival",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scikit-survival/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/scvi-tools@1.0.0",
+      "skill_id": "scvi-tools",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/scvi-tools/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/seaborn@1.0.0",
+      "skill_id": "seaborn",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/seaborn/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/shap@1.0.0",
+      "skill_id": "shap",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/shap/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/statistical-analysis@1.0.0",
+      "skill_id": "statistical-analysis",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/statistical-analysis/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/string-database@1.0.0",
+      "skill_id": "string-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/string-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/treatment-plans@1.0.0",
+      "skill_id": "treatment-plans",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/treatment-plans/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/uniprot-database@1.0.0",
+      "skill_id": "uniprot-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/uniprot-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/uspto-database@1.0.0",
+      "skill_id": "uspto-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/uspto-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "synthetic-sciences/venue-templates@1.0.0",
+      "skill_id": "venue-templates",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/venue-templates/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": []
+    },
+    {
+      "submission_key": "synthetic-sciences/zinc-database@1.0.0",
+      "skill_id": "zinc-database",
+      "provider_id": "synthetic-sciences",
+      "release_config": "authoring/submissions/synthetic-sciences/zinc-database/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": ["runtime-id-collision"],
+      "review_flags": ["license-policy-exception"]
+    },
+    {
+      "submission_key": "yuan1z0825/nature-academic-search@1.0.0",
+      "skill_id": "nature-academic-search",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-academic-search/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-citation@1.0.0",
+      "skill_id": "nature-citation",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-citation/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-data@1.0.0",
+      "skill_id": "nature-data",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-data/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-downloader@1.0.0",
+      "skill_id": "nature-downloader",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-downloader/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-experiment-log@1.0.0",
+      "skill_id": "nature-experiment-log",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-experiment-log/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-figure@1.0.0",
+      "skill_id": "nature-figure",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-figure/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-image2ppt@1.0.0",
+      "skill_id": "nature-image2ppt",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-image2ppt/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-literature-pipeline@1.0.0",
+      "skill_id": "nature-literature-pipeline",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-literature-pipeline/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-paper-card@1.0.0",
+      "skill_id": "nature-paper-card",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-paper-card/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-paper-to-patent@1.0.0",
+      "skill_id": "nature-paper-to-patent",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-paper-to-patent/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-paper2ppt@1.0.0",
+      "skill_id": "nature-paper2ppt",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-paper2ppt/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-polishing@1.0.0",
+      "skill_id": "nature-polishing",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-polishing/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-reader@1.0.0",
+      "skill_id": "nature-reader",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-reader/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-ref-verifier@1.0.0",
+      "skill_id": "nature-ref-verifier",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-ref-verifier/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-response@1.0.0",
+      "skill_id": "nature-response",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-response/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-reviewer@1.0.0",
+      "skill_id": "nature-reviewer",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-reviewer/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-shared@1.0.0",
+      "skill_id": "nature-shared",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-shared/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-statistics@1.0.0",
+      "skill_id": "nature-statistics",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-statistics/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/nature-writing@1.0.0",
+      "skill_id": "nature-writing",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/nature-writing/release.config.json",
+      "state": "blocked",
+      "blockers": ["missing-skill-license"],
+      "publication_constraints": [],
+      "review_flags": []
+    },
+    {
+      "submission_key": "yuan1z0825/researchwrite@1.0.0",
+      "skill_id": "researchwrite",
+      "provider_id": "yuan1z0825",
+      "release_config": "authoring/submissions/yuan1z0825/researchwrite/release.config.json",
+      "state": "pending-review",
+      "blockers": [],
+      "publication_constraints": [],
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cobrapy",
+  "version": "1.0.0",
+  "category": "Data Analysis",
+  "source": {
+    "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "path": "skills/cobrapy"
+  },
+  "license_files": ["LICENSE.md"]
+}

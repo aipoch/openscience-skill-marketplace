@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "chembl-database",
+  "version": "1.0.0",
+  "category": "Evidence Insight",
+  "source": {
+    "repository": "https://github.com/google-deepmind/science-skills",
+    "commit": "0b42509800f49e6eb7809505d96e20a890ef99bd",
+    "path": "skills/chembl_database"
+  },
+  "license_files": ["LICENSE"]
+}

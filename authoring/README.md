@@ -177,7 +177,7 @@ original members. Review records remain in `skills/reviews.json` and bind every
 provider's manifest, source and license bytes. A registration without approved
 review evidence fails the build.
 
-Provider IDs must be unique and disjoint from all 584 original manifest members,
+Registered Skill IDs must be unique and disjoint from all 584 original manifest members,
 including deferred members. Two IDs cannot register the same provider directory.
 Do not rename an existing Skill to evade this gate: check semantic duplicates
 and original-name aliases during maintainer review. The original authority and
@@ -242,3 +242,31 @@ them in `license_files`. The supplemental copies used by the historical catalog
 are maintainer-controlled repository inputs; `additional_license_files` is not
 part of the provider manifest, and intake rejects this field in review records
 rather than ignoring notices. See [catalog review records](../skills/README.md#original-notices-from-another-repository).
+
+## Third-party review queue
+
+[`submissions/index.json`](submissions/index.json) tracks 192 candidate records
+from five source providers. Each referenced release config uses the existing
+**authoring v1** format. Provider identity belongs to the queue index, where
+`<provider-id>/<skill-id>@<version>` identifies each candidate independently.
+This queue key is not an intake review key or a public Skill ID.
+
+Inspect same-name alternatives in separate intake invocations and review files;
+`intake:skill` continues using `<skill-id>@<version>` and rejects duplicate Skill
+IDs in a batch. Select and review one eligible source before production enrollment.
+Do not combine same-name alternatives by overwriting review records. The queue
+does not alter existing authoring, production, or public protocol versions.
+
+Queue validation checks config references, provider/source identities, counters,
+states and runtime-ID collisions against the historical authority and production
+register. License blockers and review flags are recorded review observations;
+index validation does not inspect upstream license bytes or grant approval.
+
+Ordinary PR CI validates and builds the registered production selection without
+publishing. After approved enrollment, the protected `publish.yml` Action fetches
+the selected upstream Git commits, reads the exact Skill directories, verifies
+review evidence, builds ZIP shards and signed metadata, then uploads new immutable
+objects and updates the CDN catalog. Existing published objects are reused.
+Queue entries are neither fetched nor published automatically. ZIP URLs come from
+the catalog's release metadata (`shards/<sha256>.zip`); there is no per-provider
+upload or fixed `skill.zip` URL. See [publication](../docs/publication.md).

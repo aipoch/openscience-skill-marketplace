@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "nature-citation",
+  "version": "1.0.0",
+  "category": "Academic Writing",
+  "source": {
+    "repository": "https://github.com/Yuan1z0825/nature-skills",
+    "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "path": "skills/nature-citation"
+  },
+  "license_files": ["LICENSE"]
+}
