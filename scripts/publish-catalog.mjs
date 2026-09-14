@@ -123,7 +123,7 @@ try {
     baseRevision: context.baseRevision,
     history,
   });
-  await publishAuditCatalog({
+  const auditResult = await publishAuditCatalog({
     root: candidate.root,
     store: cdn,
     signing: {
@@ -142,7 +142,7 @@ try {
       `revision=${candidate.root.revision}\n`,
       { flag: "a" },
     );
-  process.stdout.write(metadataJsonBytes(result));
+  process.stdout.write(metadataJsonBytes({ ...result, ...auditResult }));
 } finally {
   await rm(temporary, { recursive: true, force: true });
 }

@@ -23999,7 +23999,7 @@
       },
       "authority": "authoring/submissions/google-deepmind/string-database/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/google-deepmind__science-skills/skills/string_database/SKILL.md",
       "material_skill_sha256": "6de0f5994327052e6ab59f232698e4275fff552ec712fba435f9951f3e473ecf",
       "report_path": "audits/reports/3acb41b30998607281ca195dc0a9601bf1e4daeb373c4238ab8612899ec6c3c0.json",
@@ -24519,7 +24519,7 @@
       },
       "authority": "authoring/submissions/k-dense-ai/datamol/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/K-Dense-AI__scientific-agent-skills/skills/datamol/SKILL.md",
       "material_skill_sha256": "41062cea6b8a15e33910984321e6572e189df539b5303af5fe258df6af449ff2",
       "report_path": "audits/reports/389916da44deeaba82ddb7c1927bff9ca644982ea8733ff61c0497005eb04ad8.json",
@@ -24544,7 +24544,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/deeptools@1.0.0",
@@ -24559,7 +24559,7 @@
       },
       "authority": "authoring/submissions/k-dense-ai/deeptools/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/K-Dense-AI__scientific-agent-skills/skills/deeptools/SKILL.md",
       "material_skill_sha256": "2724906bdf23e60fe15aa5e7bb9af2bf36cab82d9e8640de847a69523c0a334a",
       "report_path": "audits/reports/f5896cbd87d66cd33bb40112a9dc442537839352b954dfeb2d829bdefb6bb430.json",
@@ -24584,7 +24584,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/dnanexus-integration@1.0.0",
@@ -25119,7 +25119,7 @@
       },
       "authority": "authoring/submissions/k-dense-ai/lamindb/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/K-Dense-AI__scientific-agent-skills/skills/lamindb/SKILL.md",
       "material_skill_sha256": "68822136d375fd36aac118081b82443d7062e9ea310d49a692a910b05329ac1b",
       "report_path": "audits/reports/ba9365e095f531f0b542d940363b375200f7ccd7a897faa71725981995b1b6ee.json",
@@ -25144,7 +25144,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/latex-posters@1.0.0",
@@ -25639,7 +25639,7 @@
       },
       "authority": "authoring/submissions/k-dense-ai/pyhealth/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/K-Dense-AI__scientific-agent-skills/skills/pyhealth/SKILL.md",
       "material_skill_sha256": "d4900cf9974e00724e11b92118396793804b5b65574fae3271f7ca4b73e114dc",
       "report_path": "audits/reports/834ae6149fd9df325d97c8ad3d5e091f06b49ea6eb0726f3974f9d963f5b9144.json",
@@ -25839,7 +25839,7 @@
       },
       "authority": "authoring/submissions/k-dense-ai/scanpy/release.config.json",
       "review_state": "pending-review",
-      "review_notes": [],
+      "review_notes": ["runtime-id-collision"],
       "material_skill_path": "skills/K-Dense-AI__scientific-agent-skills/skills/scanpy/SKILL.md",
       "material_skill_sha256": "3ca2db22fb47dff7f49504816dba3f4600e1290c4731459b44355837955ed9ba",
       "report_path": "audits/reports/f4bd93a502973037a5afe1785d0e7f32045ef7970b6d734402a595d69bef8d05.json",
@@ -25864,7 +25864,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "k-dense-ai/scholar-evaluation@1.0.0",
@@ -26559,7 +26559,7 @@
       },
       "authority": "authoring/submissions/nvidia-bionemo/complexa-target/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/NVIDIA-BioNeMo__bionemo-agent-toolkit/skills/bionemo-agent-toolkit/skills/complexa-target/SKILL.md",
       "material_skill_sha256": "9960f8c0041586bfdf9bd269f7754a41882b47482fc2b481365036405ab1f916",
       "report_path": "audits/reports/ed4928bd00a858e38b0d607e518c3d23c21f5fe3e294dceb1b2a64a53372d458.json",
@@ -28119,7 +28119,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/clinpgx-database/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/databases/clinpgx-database/SKILL.md",
       "material_skill_sha256": "56555fad2af3d0c64a0567e179d14f52b02822ff96b5121ca135161bdaa41ce8",
       "report_path": "audits/reports/d992fcdf21b9e8bda8027f2ed5030c588664c3da76c6b9c1349706927464ea4c.json",
@@ -28279,7 +28279,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/datamol/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/chemistry/datamol/SKILL.md",
       "material_skill_sha256": "a375b76fbc6540b77f3136a5afddeccdb26ff94d13d67de06208fcd82d9f4020",
       "report_path": "audits/reports/6bf14dd7176013fd552d315b2cb6ee43e9e4faa72d434d3f84cb670095f151ed.json",
@@ -28319,7 +28319,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/deeptools/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/biology/deeptools/SKILL.md",
       "material_skill_sha256": "153da92fdc4327e28945fdc16b88708830dce4baa1d0ab46a9726dec8ed41ade",
       "report_path": "audits/reports/53838652b7a166620ca083dd94165f462eaaf988796813e7f559933f24b758b0.json",
@@ -28639,7 +28639,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/fda-database/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/databases/fda-database/SKILL.md",
       "material_skill_sha256": "c72f5ef9e93c67a5419982da84e4bbbd485917accc45ad2c66b26d820056839e",
       "report_path": "audits/reports/f1159f667684e4d32e4ba5af44dfd4b08b122d452a113be6cf40bae0361b8beb.json",
@@ -28919,7 +28919,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/gwas-database/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/databases/gwas-database/SKILL.md",
       "material_skill_sha256": "4f45fdc43ad70589fc460034655a3625aa7d14b8b726ec1db88ea5740630844a",
       "report_path": "audits/reports/fcc92458ec53baee5d9fa1d5ce4d3d97ca12cb3fb9883449355dc075cc4e5952.json",
@@ -29199,7 +29199,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/lamindb/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/biology/lamindb/SKILL.md",
       "material_skill_sha256": "56544c9ad56771b795dfca2a1d83a0c35b4b1d2e678e8c6752f8546f8166501c",
       "report_path": "audits/reports/b7903396f5c73a1d2649e0fa1a15fb10f7fd957fde68bab8288b1138b1f218fe.json",
@@ -29479,7 +29479,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/metabolomics-workbench-database/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/databases/metabolomics-workbench-database/SKILL.md",
       "material_skill_sha256": "0c03da928dd31896d0bf4dc1f3ae0b1bb8151a9dea21720680221f7d9dff8959",
       "report_path": "audits/reports/af8c82536a066fa795642b2704e003f287bac6640cd7185ff8409d71d98cb5a9.json",
@@ -29839,7 +29839,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/pyhealth/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/biology/pyhealth/SKILL.md",
       "material_skill_sha256": "a308632a4bb501ee7ffd3f9965ec84e9773a0ab7754e0438c2147773c3d9b921",
       "report_path": "audits/reports/936ef03a635b191a97552e98aab4ec01b0196accc545fa69934fce0b62259719.json",
@@ -30039,7 +30039,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/scanpy/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/biology/scanpy/SKILL.md",
       "material_skill_sha256": "a4c3d02370115fc669df7e6f11f3a9230ac8b8018ab9441bbb1244f285bee7d1",
       "report_path": "audits/reports/87750f851e70d4733187e302325f3986d89d40ff44cec76620d5605dc29b70c1.json",
@@ -30439,7 +30439,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/string-database/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/databases/string-database/SKILL.md",
       "material_skill_sha256": "da9eb33a5eb506d9f7d1322d4ed77167d65a9e04f9f75958f9e7f8870b40847a",
       "report_path": "audits/reports/fd04ffac251e456377c04bf242c500442359ac51d5c04688159a6f3bf3f4e7f9.json",
@@ -30559,7 +30559,7 @@
       },
       "authority": "authoring/submissions/synthetic-sciences/uspto-database/release.config.json",
       "review_state": "pending-review",
-      "review_notes": ["license-policy-exception"],
+      "review_notes": ["runtime-id-collision", "license-policy-exception"],
       "material_skill_path": "skills/synthetic-sciences__openscience/backend/cli/skills/databases/uspto-database/SKILL.md",
       "material_skill_sha256": "bd952d4ad127ecbe6a3765675cef2c0d97b307b37111ae045e36598677f81037",
       "report_path": "audits/reports/682f58f99c3ff6e68effa6b959db9fe393e34c2996ed92133f253a60de15e6fe.json",
@@ -30719,7 +30719,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-citation/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-citation/SKILL.md",
       "material_skill_sha256": "ada5720816a45e85d3b8c96eedf04255b814cf8bbc6f177d1f12639a2409ed85",
       "report_path": "audits/reports/c6daf11660b93100684bc7a58710cb3ca15097d4ed64c5e6c2a1dc94a9a9572c.json",
@@ -30799,7 +30799,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-downloader/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-downloader/SKILL.md",
       "material_skill_sha256": "0351f9069e77a4b027893592d295f3c511301bc7d2ec7d299ab49ee2c106be54",
       "report_path": "audits/reports/d5569d974eb2cd4a6488b35008c628c5a21daaa87b20f2b89ee1c5b27a2877cf.json",
@@ -30839,7 +30839,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-experiment-log/release.config.json",
       "review_state": "pending-review",
-      "review_notes": [],
+      "review_notes": ["runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-experiment-log/SKILL.md",
       "material_skill_sha256": "1f7fffcbc950d4f60fcb5ad9f2aabe82246ebbd83bf29621a0e90c9ff4ec4b8b",
       "report_path": "audits/reports/9da3875eb39a4aa615b14aa401184db3ad3eaa5dca3b490912969ffc84241bde.json",
@@ -30864,7 +30864,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-figure@1.0.0",
@@ -30919,7 +30919,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-image2ppt/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-image2ppt/SKILL.md",
       "material_skill_sha256": "27eb02056403da56fc04543bcd2faf39a2d90fcf625005987a63ca0d8ffdb37f",
       "report_path": "audits/reports/e4567d82cfb4973996fb79afa6280371834cec6a34a7018c5fe324ed8cb95eea.json",
@@ -30959,7 +30959,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-literature-pipeline/release.config.json",
       "review_state": "pending-review",
-      "review_notes": [],
+      "review_notes": ["runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-literature-pipeline/SKILL.md",
       "material_skill_sha256": "1dcaa692457ec9c2be409cb7777f834a2db833788b2e9b680baf0e961126b01a",
       "report_path": "audits/reports/5145c224f1e9b5cd77b68acb6175ccaf08b43c83cdc0c804a8d42646d2de97fb.json",
@@ -30984,7 +30984,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     },
     {
       "record_key": "yuan1z0825/nature-paper-card@1.0.0",
@@ -31039,7 +31039,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-paper-to-patent/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-paper-to-patent/SKILL.md",
       "material_skill_sha256": "1a57ae613bb545debba02ce4d9d36a53974e717cdafb1a5feb2cbd341bcf36b0",
       "report_path": "audits/reports/be08b67fca14b783edb34ee4234d89bb281711326756a39666a93f90efa2cea1.json",
@@ -31199,7 +31199,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/nature-ref-verifier/release.config.json",
       "review_state": "blocked",
-      "review_notes": ["missing-skill-license"],
+      "review_notes": ["missing-skill-license", "runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-ref-verifier/SKILL.md",
       "material_skill_sha256": "6a975074d7a1c62c00dd9e8c7367cd2af0ef9d573d6d6ce5ea12f70d9320a516",
       "report_path": "audits/reports/642cea43c735b1b7f96d930396d3847fcb53831f815bca2b4fe9df6531181eda.json",
@@ -31439,7 +31439,7 @@
       },
       "authority": "authoring/submissions/yuan1z0825/researchwrite/release.config.json",
       "review_state": "pending-review",
-      "review_notes": [],
+      "review_notes": ["runtime-id-collision"],
       "material_skill_path": "skills/Yuan1z0825__nature-skills/skills/nature-proposal-writer/SKILL.md",
       "material_skill_sha256": "aed7568f8e9fc99e7dad2d2257d2beadd47570b875071cadb29406f2c84a9c2c",
       "report_path": "audits/reports/b04f92d4347920cf551e4045108ec13c1b913fa6dbc5eaa92e20f0cbb6125b39.json",
@@ -31464,7 +31464,7 @@
           "max_score": 100
         }
       },
-      "publication_status": "temporarily-withheld"
+      "publication_status": "requires-review"
     }
   ]
 }

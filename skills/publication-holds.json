@@ -86,42 +86,6 @@
       ]
     },
     {
-      "record_key": "k-dense-ai/datamol@1.0.0",
-      "id": "datamol",
-      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "path": "skills/datamol",
-      "reasons": [
-        "License declarations and selected evidence require scope reconciliation; copied upstream attribution must be preserved."
-      ],
-      "resume_conditions": [
-        "Review per-component license scope, pin corresponding evidence and preserve original attribution."
-      ]
-    },
-    {
-      "record_key": "k-dense-ai/deeptools@1.0.0",
-      "id": "deeptools",
-      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "path": "skills/deeptools",
-      "reasons": [
-        "The generic BSD declaration does not identify a precise license and differs from selected repository evidence."
-      ],
-      "resume_conditions": [
-        "Confirm the exact applicable license and preserve its pinned full text."
-      ]
-    },
-    {
-      "record_key": "k-dense-ai/lamindb@1.0.0",
-      "id": "lamindb",
-      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "path": "skills/lamindb",
-      "reasons": [
-        "License declarations and selected evidence require scope reconciliation; copied upstream attribution must be preserved."
-      ],
-      "resume_conditions": [
-        "Review per-component license scope, pin corresponding evidence and preserve original attribution."
-      ]
-    },
-    {
       "record_key": "k-dense-ai/matplotlib@1.0.0",
       "id": "matplotlib",
       "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
@@ -143,18 +107,6 @@
       ],
       "resume_conditions": [
         "Establish redistribution evidence separately from API access terms."
-      ]
-    },
-    {
-      "record_key": "k-dense-ai/scanpy@1.0.0",
-      "id": "scanpy",
-      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "path": "skills/scanpy",
-      "reasons": [
-        "Per-Skill license declarations conflict with selected evidence; the Synthetic copy contains an SD-3-Clause typo."
-      ],
-      "resume_conditions": [
-        "Confirm the intended license and scope against original evidence, retaining attribution."
       ]
     },
     {
@@ -338,18 +290,6 @@
       ]
     },
     {
-      "record_key": "yuan1z0825/nature-experiment-log@1.0.0",
-      "id": "nature-experiment-log",
-      "repository": "https://github.com/Yuan1z0825/nature-skills",
-      "path": "skills/nature-experiment-log",
-      "reasons": [
-        "MIT Skill declarations and Apache-2.0 selected evidence require reconciliation."
-      ],
-      "resume_conditions": [
-        "Confirm license scope and preserve corresponding evidence."
-      ]
-    },
-    {
       "record_key": "yuan1z0825/nature-figure@1.0.0",
       "id": "nature-figure",
       "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -359,18 +299,6 @@
       ],
       "resume_conditions": [
         "Resolve third-party redistribution evidence and verify complete shared-resource delivery."
-      ]
-    },
-    {
-      "record_key": "yuan1z0825/nature-literature-pipeline@1.0.0",
-      "id": "nature-literature-pipeline",
-      "repository": "https://github.com/Yuan1z0825/nature-skills",
-      "path": "skills/nature-literature-pipeline",
-      "reasons": [
-        "MIT Skill declarations and Apache-2.0 selected evidence require reconciliation."
-      ],
-      "resume_conditions": [
-        "Confirm license scope and preserve corresponding evidence."
       ]
     },
     {
@@ -479,18 +407,6 @@
       ],
       "resume_conditions": [
         "Define shared-resource delivery and verify all references from an isolated installed package."
-      ]
-    },
-    {
-      "record_key": "yuan1z0825/researchwrite@1.0.0",
-      "id": "researchwrite",
-      "repository": "https://github.com/Yuan1z0825/nature-skills",
-      "path": "skills/nature-proposal-writer",
-      "reasons": [
-        "MIT Skill declarations and Apache-2.0 selected evidence require reconciliation."
-      ],
-      "resume_conditions": [
-        "Confirm license scope and preserve corresponding evidence."
       ]
     }
   ]

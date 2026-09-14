@@ -8,6 +8,8 @@ import {
   buildAuditCatalog,
   reportEvaluation,
   publishAuditCatalog,
+  verifyAuditEnvelope,
+  parseAuditRegistry,
 } from "../scripts/lib/aipoch-audits.mjs";
 import { verifyRoot } from "../scripts/lib/signing.mjs";
 import { jsonBytes } from "../scripts/lib/common.mjs";
@@ -125,14 +127,217 @@ test("reports precede a single signed envelope without altering the install cata
       keyId: "openscience-skills-test",
     },
     store: {
+      read: async () => undefined,
       putImmutable: async (p) => writes.push(p),
       writeAuditCatalog: async (bytes) => {
         assert.equal(writes.length, 430);
-        const { catalog, signature } = JSON.parse(bytes);
-        assert.ok(verifyRoot(jsonBytes(catalog), signature, expectedPublicKey));
-        assert.equal(catalog.catalog_revision, root.revision);
+        const catalog = verifyAuditEnvelope(bytes, expectedPublicKey);
+        assert.equal(catalog.catalogRevision, root.revision);
       },
     },
   });
   assert.deepEqual(jsonBytes(root), before);
+});
+
+test("registry rejects unknown/mixed fields before publishing them", async () => {
+  for (const mutate of [
+    (r) => {
+      r.unknown = true;
+    },
+    (r) => {
+      r.entries[0].content_sha256 = [r.entries[0].content_sha256];
+    },
+    (r) => {
+      r.entries[0].source.commit = [r.entries[0].source.commit];
+    },
+    (r) => {
+      r.schemaVersion = 1;
+    },
+    (r) => {
+      r.entries[0].displayName = "unexpected";
+    },
+    (r) => {
+      r.entries[0].extra_field = true;
+    },
+    (r) => {
+      r.entries[0].source.extra_field = true;
+    },
+    (r) => {
+      delete r.entries[0].report_sha256;
+    },
+    (r) => {
+      r.entries.push(r.entries[0]);
+    },
+  ]) {
+    const input = structuredClone(registry);
+    mutate(input);
+    assert.throws(() => parseAuditRegistry(jsonBytes(input)));
+  }
+  const parsed = parseAuditRegistry(jsonBytes(registry));
+  assert.equal(
+    parsed.entries[0].contentSha256,
+    registry.entries[0].content_sha256,
+  );
+  assert.equal("content_sha256" in parsed.entries[0], false);
+});
+
+test("envelope authenticates original bytes before parsing and rejects old draft/unknown fields", async () => {
+  const { signRoot } = await import("../scripts/lib/signing.mjs");
+  const { metadataJsonBytes } =
+    await import("../scripts/lib/metadata-json.mjs");
+  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+  const pin = publicKey
+    .export({ type: "spki", format: "der" })
+    .toString("base64");
+  const signing = {
+    privateKey,
+    expectedPublicKey: pin,
+    keyId: "openscience-skills-test",
+  };
+  const { catalog } = await buildAuditCatalog(root);
+  // Authenticated arbitrary JSON whitespace is preserved, not normalized for verification.
+  const payload = Buffer.from(
+    " \n" + metadataJsonBytes(catalog).toString() + "\t",
+  );
+  const signature = signRoot(payload, signing);
+  const envelope = { payload_base64: payload.toString("base64"), signature };
+  assert.deepEqual(verifyAuditEnvelope(jsonBytes(envelope), pin), catalog);
+  assert.equal(verifyRoot(metadataJsonBytes(catalog), signature, pin), false);
+  assert.throws(() =>
+    verifyAuditEnvelope(jsonBytes({ ...envelope, unknown: true }), pin),
+  );
+  assert.throws(() =>
+    verifyAuditEnvelope(jsonBytes({ catalog, signature }), pin),
+  );
+  assert.throws(
+    () => verifyAuditEnvelope(jsonBytes(envelope), "wrong-pin"),
+    /signature/,
+  );
+  assert.throws(
+    () =>
+      verifyAuditEnvelope(
+        jsonBytes({
+          ...envelope,
+          payload_base64: Buffer.from("not JSON").toString("base64"),
+        }),
+        pin,
+      ),
+    /signature/,
+  );
+  assert.throws(
+    () =>
+      verifyAuditEnvelope(
+        jsonBytes({
+          ...envelope,
+          payload_base64: envelope.payload_base64 + "\n",
+        }),
+        pin,
+      ),
+    /signature|encoding/,
+  );
+  const invalid = JSON.parse(metadataJsonBytes(catalog));
+  invalid.entries[0].evaluation.unexpected = true;
+  const badBytes = jsonBytes(invalid);
+  assert.throws(
+    () =>
+      verifyAuditEnvelope(
+        jsonBytes({
+          payload_base64: badBytes.toString("base64"),
+          signature: signRoot(badBytes, signing),
+        }),
+        pin,
+      ),
+    /fields/,
+  );
+});
+
+test("authenticated audit history skips unchanged reports across catalog revisions", async () => {
+  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+  const signing = {
+    privateKey,
+    expectedPublicKey: publicKey
+      .export({ type: "spki", format: "der" })
+      .toString("base64"),
+    keyId: "openscience-skills-test",
+  };
+  let envelope,
+    writes = 0,
+    reads = 0;
+  const store = {
+    read: async (p) => {
+      assert.equal(p, "audits/catalog.json");
+      reads++;
+      return envelope;
+    },
+    putImmutable: async () => {
+      writes++;
+    },
+    writeAuditCatalog: async (bytes) => {
+      envelope = bytes;
+    },
+  };
+  const publish = (root) => publishAuditCatalog({ root, store, signing });
+  const first = await publish(root);
+  assert.equal(first.uploadedReports, 430);
+  writes = 0;
+  const second = await publish({ ...root, revision: "b".repeat(64) });
+  assert.equal(writes, 0);
+  assert.equal(second.reusedReports, 430);
+  assert.equal(reads, 2);
+  assert.equal(
+    verifyAuditEnvelope(envelope, signing.expectedPublicKey).catalogRevision,
+    "b".repeat(64),
+  );
+  envelope = Buffer.from("{}");
+  await assert.rejects(publish(root), /fields/);
+  assert.equal(writes, 0);
+});
+
+test("new reports alone are uploaded, and failed publication never advances trusted history", async () => {
+  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+  const signing = {
+    privateKey,
+    expectedPublicKey: publicKey
+      .export({ type: "spki", format: "der" })
+      .toString("base64"),
+    keyId: "openscience-skills-test",
+  };
+  const objects = new Map();
+  let envelope,
+    fail = false;
+  const writes = [];
+  const store = {
+    read: async () => envelope,
+    putImmutable: async (p, b) => {
+      writes.push(p);
+      if (fail) throw Error("upload failed");
+      objects.set(p, b);
+    },
+    writeAuditCatalog: async (b) => {
+      envelope = b;
+    },
+  };
+  const firstRoot = { ...root, skills: root.skills.slice(0, 1) };
+  await publishAuditCatalog({ root: firstRoot, store, signing });
+  const before = envelope;
+  writes.length = 0;
+  fail = true;
+  const nextRoot = {
+    ...root,
+    revision: "c".repeat(64),
+    skills: root.skills.slice(0, 2),
+  };
+  await assert.rejects(
+    publishAuditCatalog({ root: nextRoot, store, signing }),
+    /upload failed/,
+  );
+  assert.equal(envelope, before);
+  assert.equal(writes.length, 1);
+  writes.length = 0;
+  fail = false;
+  const result = await publishAuditCatalog({ root: nextRoot, store, signing });
+  assert.equal(result.uploadedReports, 1);
+  assert.equal(result.reusedReports, 1);
+  assert.equal(writes.length, 1);
+  assert.equal(objects.size, 2);
 });

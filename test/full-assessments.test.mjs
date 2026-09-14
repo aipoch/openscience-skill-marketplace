@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { sha256, assertSource, assertPath } from "../scripts/lib/common.mjs";
+import { metadataJsonBytes } from "../scripts/lib/metadata-json.mjs";
 import { reportEvaluation } from "../scripts/lib/aipoch-audits.mjs";
 const read = async (p) => JSON.parse(await readFile(p, "utf8"));
 const register = await read("audits/full-inclusion.json");
@@ -42,7 +43,10 @@ test("full submission includes all 776 provider-qualified Skills, with 776 valid
       entry.identity_review_required,
       report.meta.skill_name !== entry.skill_id,
     );
-    assert.deepEqual(entry.evaluation, reportEvaluation(report));
+    assert.deepEqual(
+      entry.evaluation,
+      JSON.parse(metadataJsonBytes(reportEvaluation(report))),
+    );
     const prefix = `skills/${entry.source.repository.replace("https://github.com/", "").replace("/", "__")}/${entry.source.path}`;
     assert.equal(entry.material_skill_path, `${prefix}/SKILL.md`);
     assert.ok(entry.report_archive_path.startsWith(`${prefix}/`));

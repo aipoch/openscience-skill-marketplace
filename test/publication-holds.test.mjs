@@ -10,21 +10,21 @@ import { readProductionProviders } from "../scripts/lib/production-providers.mjs
 import { parseMetadataJson } from "../scripts/lib/metadata-json.mjs";
 import { selectReleaseEntries } from "../scripts/lib/release-plan.mjs";
 
-test("41 provider-qualified records are withheld without deleting any of the 776 scores", async () => {
+test("34 provider-qualified records are withheld without deleting any of the 776 scores", async () => {
   const holds = await readPublicationHolds();
   const full = JSON.parse(await readFile("audits/full-inclusion.json"));
-  assert.equal(holds.length, 41);
-  assert.equal(new Set(holds.map((h) => h.id)).size, 27);
+  assert.equal(holds.length, 34);
+  assert.equal(new Set(holds.map((h) => h.id)).size, 24);
   assert.equal(full.entries.length, 776);
   assert.equal(
     full.entries.filter((e) => e.publication_status === "temporarily-withheld")
       .length,
-    41,
+    34,
   );
   assert.equal(
     full.entries.filter((e) => e.publication_status === "requires-review")
       .length,
-    735,
+    742,
   );
   for (const e of full.entries) {
     assert.equal(typeof e.evaluation.score, "number");
@@ -83,9 +83,11 @@ test("current production selection contains no withheld source directories", asy
     manifest.entries,
     config.source,
   );
-  await readProductionProviders(selected);
+  const providers = await readProductionProviders(selected);
   const hold = (await readPublicationHolds()).find(
-    (h) => h.repository === config.source.repository,
+    (h) =>
+      h.repository === config.source.repository &&
+      !providers.some((p) => p.id === h.id),
   );
   await assert.rejects(
     readProductionProviders([
