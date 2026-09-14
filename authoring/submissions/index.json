@@ -10,7 +10,7 @@
     "unique_skill_ids": 130,
     "pending_review": 146,
     "blocked": 46,
-    "runtime_id_collisions": 143,
+    "runtime_id_collisions": 153,
     "missing_skill_licenses": 46,
     "license_policy_reviews": 104
   },
@@ -114,7 +114,7 @@
       "release_config": "authoring/submissions/google-deepmind/string-database/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -524,7 +524,7 @@
       "release_config": "authoring/submissions/k-dense-ai/pyhealth/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -754,7 +754,7 @@
       "release_config": "authoring/submissions/nvidia-bionemo/complexa-target/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -1574,7 +1574,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/pyhealth/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1724,7 +1724,7 @@
       "release_config": "authoring/submissions/synthetic-sciences/string-database/release.config.json",
       "state": "pending-review",
       "blockers": [],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": ["license-policy-exception"]
     },
     {
@@ -1794,7 +1794,7 @@
       "release_config": "authoring/submissions/yuan1z0825/nature-citation/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -1814,7 +1814,7 @@
       "release_config": "authoring/submissions/yuan1z0825/nature-downloader/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -1844,7 +1844,7 @@
       "release_config": "authoring/submissions/yuan1z0825/nature-image2ppt/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -1874,7 +1874,7 @@
       "release_config": "authoring/submissions/yuan1z0825/nature-paper-to-patent/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {
@@ -1914,7 +1914,7 @@
       "release_config": "authoring/submissions/yuan1z0825/nature-ref-verifier/release.config.json",
       "state": "blocked",
       "blockers": ["missing-skill-license"],
-      "publication_constraints": [],
+      "publication_constraints": ["runtime-id-collision"],
       "review_flags": []
     },
     {

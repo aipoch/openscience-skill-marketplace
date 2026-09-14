@@ -6203,5 +6203,181 @@
     ],
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-13"
+  },
+  "complexa-target@1.0.0": {
+    "source_repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
+    "source_commit": "0e67a612e4045f007e38fa77adc8f3ebfc5616b6",
+    "source_path": "skills/bionemo-agent-toolkit/skills/complexa-target",
+    "manifest_sha256": "aa5a1a563190f3e84ca28fdaa33591503dc6e2e2c03263ee9e2821724732cc56",
+    "content_sha256": "c2bd6671a5140abebc7fce46d2d05688b16c8d213c7db21953783448a9005ebf",
+    "file_count": 3,
+    "total_bytes": 30116,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c6f56faa0b56f11c688317652434603d968e98cc60f15002a9a9119c3cd90ec2"
+      },
+      {
+        "path": "LICENSE-APACHE-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "LICENSE-CC-BY-4.0",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "path": "NOTICE",
+        "sha256": "4c45a2a32ae39e890bb7c78c89fe57ab911903d8913a8681e1fbc566546ed2bb"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned NVIDIA repository LICENSE expressly covers Skill content; LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0 and NOTICE retain the applicable grants and NVIDIA attribution. This package contains target-editing instructions, its target schema and ordinary evaluation input, with no bundled model weights or datasets. It requires the separately installed Proteina-Complexa CLI and user target files; it does not reference the missing shared scripts used by other Complexa submissions."
+  },
+  "nature-citation@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-citation",
+    "manifest_sha256": "ca7a39c4cdc43d2a90fd9ecc84dac21da06d784df01b8a6c3ce396d45945ed9f",
+    "content_sha256": "b8d75312823408c2a3a609239433e325408c4207f5d940709f1e0ee6bb4440c6",
+    "file_count": 15,
+    "total_bytes": 129309,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned Nature repository LICENSE and README license notice apply Apache-2.0 to this authored routing documentation, citation metadata/export script and test fixtures. The declared author is preserved as written. All manifest resources are within the package; its manifest explicitly does not depend on nature-shared. Crossref and PubMed access occurs at runtime; no article full texts or copied journal figures are bundled."
+  },
+  "nature-downloader@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-downloader",
+    "manifest_sha256": "d3bc1f25af23d9f8f130952d113c7ddacdc0d5c2aeee0d01c16fab10d72834cf",
+    "content_sha256": "815d5b8080037fe3dec76f581de716c61437d5dd642b9c769508e2f052e9fc6d",
+    "file_count": 66,
+    "total_bytes": 440011,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "skills/nature-downloader/LICENSE",
+        "sha256": "ebb3defbe421c016c1d5f2ae18c53954a44236b51e81f12fa7aaff57905d3f66"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The package-local LICENSE preserves the complete MIT grant and Copyright (c) 2026 baihe26; the Nature repository Apache-2.0 LICENSE is retained for repository contributions. The package contains downloader source, authored documentation, a project banner and test fixtures, not downloaded papers, user credentials or institutional presets. Node.js, Python and user-authorized browser/API access are runtime prerequisites; imported programs were inspected statically, not run."
+  },
+  "nature-image2ppt@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-image2ppt",
+    "manifest_sha256": "329a0fa3525526c5b054c8309037b26ac23c3b48d9d08084f546fb15bebba6f0",
+    "content_sha256": "56d415a15a60ae87e169c341c8e94d907c25b72b750a745b2b812135a9801176",
+    "file_count": 86,
+    "total_bytes": 781503,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "skills/nature-image2ppt/LICENSE",
+        "sha256": "9dcc2f222bd3717345d4a03f9c4a969779fd6f6812d527714b92a9e4810407d0"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The package-local LICENSE is byte-identical to Paul-Jeo/Image2PPT at manifest.source.commit 3bcedf41a277a3a4ae8024f6030437930c969d30 and preserves its complete MIT grant and Image2PPT contributors/ningzimu copyright notices. The Nature repository Apache-2.0 LICENSE is also retained. The self-contained CLI, runtime, references, prompts and schemas contain no presentation input or model assets. External OCR/image services and local rendering dependencies remain optional runtime prerequisites; Codex OAuth transport is host-restricted in the source and was not invoked."
+  },
+  "nature-paper-to-patent@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-paper-to-patent",
+    "manifest_sha256": "97ff80b6a5d6fcd318cbaf9d801e8721c1b6a759e1ca68d1b4f775496bdbc6c7",
+    "content_sha256": "ae3f8ce33b67c0a0df50990e2138bba08a7e25b0d682b56b6c662bd53a27b616",
+    "file_count": 63,
+    "total_bytes": 384788,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "skills/nature-paper-to-patent/references/disclosure/patent-disclosure-skill-MIT-LICENSE.txt",
+        "sha256": "d9329ae3b2de58aebaa015d8d1570513d48f1702318e6423896a4620845ab798"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The Nature repository LICENSE supplies Apache-2.0 for its authored patent-drafting router, references and scripts. The bundled patent-disclosure-skill-MIT-LICENSE.txt preserves the complete MIT grant and Copyright (c) 2026 handsomestWei for incorporated disclosure material. The package contains drafting patterns and example/test data, not the source paper/patent corpus. All local routing resources are included; document generation, rendering and patent search dependencies are installed or accessed separately at runtime."
+  },
+  "nature-ref-verifier@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-ref-verifier",
+    "manifest_sha256": "e306c21e28e702b63c953456be92146383cf08b5677b4439cb55fcd9055c5dba",
+    "content_sha256": "816a367dbd20188c02ac2605f62dc6887f4de67aa6fd433b90e324e6554740f0",
+    "file_count": 6,
+    "total_bytes": 18449,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned Nature repository LICENSE and README license notice apply Apache-2.0 to these six authored reference-verification documentation and routing files. The required common-patterns reference is included. Examples contain bibliographic facts and checking guidance, not bundled articles or figures. External search and optional Zotero integrations are runtime prerequisites; no author is inferred."
+  },
+  "pyhealth@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/pyhealth",
+    "manifest_sha256": "26d28b4681921771ee62fe9fdca8ec2133917a4c2073e4fa1b3be14f91f45622",
+    "content_sha256": "e94eb37dea61d12c5fbe3d028949aba93917e4c5aac4db9a415f3c260991e57d",
+    "file_count": 8,
+    "total_bytes": 39928,
+    "license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned K-Dense LICENSE.md grants MIT redistribution of the repository content and retains Copyright (c) 2025 K-Dense Inc. This package contains PyHealth guidance, references and one starter script, with no bundled clinical dataset. The declared K-Dense Inc. author is retained. PyHealth and optional demonstration-data access are runtime prerequisites."
+  },
+  "string-database@1.0.0": {
+    "source_repository": "https://github.com/google-deepmind/science-skills",
+    "source_commit": "0b42509800f49e6eb7809505d96e20a890ef99bd",
+    "source_path": "skills/string_database",
+    "manifest_sha256": "2d29877937563034efbbb03c0b189ef517715806d5ef54f8bbca1f9625646d0f",
+    "content_sha256": "9b8535645747b28ca061f2663f1af4ce36be93601634e71553675a4fc3b83964",
+    "file_count": 7,
+    "total_bytes": 21674,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ],
+    "license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "SKILL.md has no license or metadata.license declaration; Unknown records that absence without rewriting upstream bytes. The pinned science-skills LICENSE supplies the Apache-2.0 grant; the bundled STRING CLI retains its 2026 Google LLC Apache-2.0 copyright header. All local references and the CLI are present. STRING responses are fetched only at runtime; no database content is bundled. uv, polite-http and network access are runtime prerequisites. No author is inferred from the repository owner."
   }
 }

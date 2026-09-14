@@ -96,10 +96,18 @@ export function inspectSubmission(manifest, snapshot) {
   const { data } = inspectFrontmatter(
     contents.get(prefix + "SKILL.md").toString(),
   );
-  const license = data.license ?? data.metadata?.license;
-  if (typeof license !== "string" || !license.trim() || license.length > 500)
+  const hasLicense =
+    Object.hasOwn(data, "license") ||
+    Object.hasOwn(data.metadata ?? {}, "license");
+  const license = Object.hasOwn(data, "license")
+    ? data.license
+    : data.metadata?.license;
+  if (
+    hasLicense &&
+    (typeof license !== "string" || !license.trim() || license.length > 500)
+  )
     throw new Error(
-      "SKILL.md requires a per-Skill license declaration (at most 500 characters)",
+      "SKILL.md license declaration must be a nonempty string (at most 500 characters)",
     );
   if (data.description.length > 10000)
     throw new Error("SKILL.md description exceeds protocol limit");
@@ -128,7 +136,7 @@ export function inspectSubmission(manifest, snapshot) {
       category: manifest.category,
       source: manifest.source,
       description: data.description,
-      declaredLicense: license,
+      ...(hasLicense ? { declaredLicense: license } : {}),
       ...(typeof author === "string" && author.trim()
         ? { authors: [{ name: author }] }
         : {}),
@@ -143,7 +151,7 @@ export function inspectSubmission(manifest, snapshot) {
       contentSha256: metrics.contentSha256,
       fileCount: metrics.fileCount,
       totalBytes: metrics.totalBytes,
-      licenseExpression: license,
+      ...(hasLicense ? { licenseExpression: license } : {}),
       licenseFiles,
     },
   };
@@ -171,5 +179,18 @@ export function prepareSubmission(manifest, snapshot, reviews, config) {
     )
   )
     throw new Error("reviewed license files differ from submission");
+  // Missing upstream metadata is not permission to infer a license. The existing
+  // review gate still requires exact evidence, reviewer identity and an exception.
+  if (!Object.hasOwn(entry, "declaredLicense")) {
+    if (
+      review.licenseExpression !== "Unknown" ||
+      typeof review.exceptionReason !== "string" ||
+      !review.exceptionReason.trim()
+    )
+      throw new Error(
+        "missing license declaration requires reviewed Unknown and an evidence explanation",
+      );
+    entry.declaredLicense = "Unknown";
+  }
   return prepareCandidates({ entries: [entry] }, reviews, config, snapshot)[0];
 }
