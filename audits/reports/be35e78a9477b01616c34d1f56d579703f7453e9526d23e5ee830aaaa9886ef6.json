@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "skill_name": "scientific-schematics",
+    "description": "Create publication-quality scientific diagrams using Nano Banana 2 AI with smart iterative refinement. Uses Gemini 3.6 Flash for quality review. Only regenerates if quality is below threshold for your document type. Specialized in neural network architectures, system diagrams, flowcharts, biological pathways, and complex scientific visualizations.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category 5 (Other) - research veto not applicable"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive diagram generation with smart iteration, quality thresholds per document type, version tracking, review logging"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good reliability with iterative refinement, quality review, versioned outputs, review error handling; minor: no offline fallback"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with quality threshold table, workflow explanation, output format disclosure (PNG raster only)"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with effective/ineffective prompt examples, document-type thresholds, smart iteration benefits, clear workflow steps"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear quick start with examples, API key setup, OpenRouter key link, prompt best practices"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good security with data transmission disclosure, unpublished data warning; minor: no rate limit or quota documentation"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.6, MIT license, openclaw metadata for API key management, clear model versions (Nano Banana 2, Gemini 3.6 Flash)"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability (used by other skills), clear trigger; minor: escape hatch for API failures limited, version control integration not documented"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 12
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Generate CONSORT flowchart for journal paper",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "High-quality threshold with smart iteration",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Journal threshold 8.5/10 applied", "result": "PASS", "note": "Highest quality standard for peer-reviewed publication"},
+          {"text": "Smart iteration stops early if quality met", "result": "PASS", "note": "Saves API calls when first generation is good"},
+          {"text": "Versioned outputs with review log", "result": "PASS", "note": "name_v1.png, name_v2.png, name_review_log.json"},
+          {"text": "Final image copied to requested path", "result": "PASS", "note": "Winner placed at -o path"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Generate transformer architecture for presentation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Lower threshold for faster turnaround",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Presentation threshold 6.5/10 applied", "result": "PASS", "note": "Lower bar appropriate for slides"},
+          {"text": "Neural network architecture in capabilities", "result": "PASS", "note": "Specialized diagram type listed"},
+          {"text": "Effective prompt example provided", "result": "PASS", "note": "Specific components described: encoder, decoder, attention"},
+          {"text": "Faster turnaround benefit documented", "result": "PASS", "note": "Lower threshold = fewer iterations"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Handle review API failure gracefully",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Error handling preserves image despite review failure",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Image still generated and saved", "result": "PASS", "note": "Generation succeeds even if review fails"},
+          {"text": "Review error logged with null score", "result": "PASS", "note": "reviewed: false, review_error recorded"},
+          {"text": "User warned quality not verified", "result": "PASS", "note": "'Review unavailable — image kept, quality not verified'"},
+          {"text": "Retry guidance provided", "result": "FAIL", "note": "Mentioned as 'worth a try' but no specific retry command shown"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 53.0,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent smart iteration system with document-type thresholds (journal 8.5/10 down to presentation 6.5/10)",
+    "Outstanding prompt guidance with specific good/bad examples showing effective vs vague descriptions",
+    "Strong transparency with explicit data transmission disclosure and unpublished data warnings",
+    "Good error resilience with graceful handling of review API failures while preserving generated images",
+    "Strong composability as this skill is explicitly integrated by research-grants and scientific-critical-thinking skills"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Document rate limits and API quota management",
+      "observed_in": [1, 2],
+      "problem": "OpenRouter API usage documented but no rate limit or cost guidance",
+      "root_cause": "Security criterion: resource consumption not addressed",
+      "fix": "Add to ## Configuration: 'OpenRouter has per-key rate limits. Monitor usage at openrouter.ai/activity. Iterative refinement can consume 2-3 image generations per diagram.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit retry command for review failures",
+      "observed_in": [3],
+      "problem": "Retry mentioned as 'worth a try' but no command shown",
+      "root_cause": "Agent-specific escape hatch: recovery path not explicit",
+      "fix": "Add to review failure section: 'To retry: re-run the same generate_schematic.py command. Transient API errors often resolve on retry.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document vector format conversion workflow",
+      "observed_in": [1],
+      "problem": "PNG-only output disclosed but conversion process not detailed",
+      "root_cause": "Functional suitability: journal requirements for vector formats",
+      "fix": "Add section: '## Vector Conversion: For journals requiring PDF/EPS: convert name.png -density 300 name.pdf (ImageMagick) or use Inkscape for PNG→SVG tracing. Check result at print size.'"
+    }
+  ]
+}

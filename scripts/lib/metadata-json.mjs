@@ -4,6 +4,9 @@ import { jsonBytes } from "./common.mjs";
 // JSON Schema keywords, package manifests or upstream payloads with this codec.
 // Explicit field names preserve dictionary keys such as example@1.0.0-RC.1.
 const fields = [
+  "recordKey",
+  "resumeConditions",
+  "publicationStatus",
   "schemaVersion",
   "selectionInput",
   "archiveName",

@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "skill_name": "scikit-survival",
+    "description": "Build, evaluate, and audit right-censored or competing-risk survival workflows with scikit-survival, including leakage-safe preprocessing, model selection, probability prediction, and censoring-aware metrics. Provides comprehensive guidance on Cox PH, survival trees/forests, and proper evaluation with time-dependent metrics.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of scikit-survival capabilities with proper disclaimers against clinical advice claims"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for survival analysis with explicit warnings: 'Do not present model output as clinical advice, causal evidence, or proof of clinical utility'"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established survival analysis methods with comprehensive non-negotiable workflow preventing data leakage"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples are syntactically correct with proper leakage-safe pipeline patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of survival workflows: Cox PH, forests, boosting, SVMs, competing risks, time-dependent prediction, censoring-aware metrics"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional reliability with 10-point non-negotiable workflow preventing common pitfalls (leakage, metric misuse, competing risk errors)"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with scope statement, current release details, workflow checklist, bundled CLIs mentioned"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with non-negotiable workflow, estimand definition requirement, leakage prevention, metric matching guidance"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with Python 3.11+, pinned dependencies, uv venv setup, GPL-3.0 upstream license noted"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security with local-only processing, bundled CLIs network-free by default, clinical advice disclaimer"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.1, MIT license (skill), GPL-3.0-or-later upstream noted, verified 2026-07-23, scikit-survival 0.28.0 documented"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong with clear scope, non-negotiable workflow, leakage-safe patterns; minor: competing-risk workflow examples limited"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Build Cox PH model with leakage-safe preprocessing pipeline",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core survival workflow with proper train/test split",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Split before preprocessing (workflow step 3)", "result": "PASS", "note": "train_test_split before pipeline fitting"},
+          {"text": "Preprocessing inside pipeline (workflow step 4)", "result": "PASS", "note": "ColumnTransformer with imputer and scaler in pipeline"},
+          {"text": "Structured outcome array with Surv.from_arrays", "result": "PASS", "note": "Two-field array: boolean event, float time"},
+          {"text": "Stratified split by event status", "result": "PASS", "note": "stratify=y['event'] documented"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Evaluate model with censoring-aware concordance",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "IPCW concordance with training censoring distribution",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "IPCW concordance receives survival_train (workflow step 6)", "result": "PASS", "note": "Training data used for censoring distribution, not pooled"},
+          {"text": "Higher-is-riskier scores for concordance (workflow step 8)", "result": "PASS", "note": "Risk scores match metric expectations"},
+          {"text": "Discrimination metric used appropriately", "result": "PASS", "note": "Concordance separate from calibration and prediction error"},
+          {"text": "Time-dependent AUC available", "result": "PASS", "note": "Dynamic AUC listed in scope"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Handle competing risks with cumulative incidence",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Nonparametric CIF workflow",
+        "basic": 36,
+        "specialized": 53,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Competing risk CIF in scope", "result": "PASS", "note": "Nonparametric cumulative incidence listed"},
+          {"text": "Integer event vector required (0=censored, 1..K=causes)", "result": "PASS", "note": "Workflow step 2: separate integer event vector"},
+          {"text": "Warning against 1 - Kaplan-Meier for competing events (workflow step 9)", "result": "PASS", "note": "Explicit anti-pattern documented"},
+          {"text": "Fine-Gray regression limitation noted", "result": "PASS", "note": "Built-in support is nonparametric, does not provide Fine-Gray"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Nested cross-validation for tuned model evaluation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Proper evaluation without reusing data",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Tune without reusing evaluation data (workflow step 5)", "result": "PASS", "note": "Nested CV or truly untouched holdout required"},
+          {"text": "Model selection mentioned in scope", "result": "PASS", "note": "Leakage-safe preprocessing, model selection listed"},
+          {"text": "scikit-learn pipeline integration", "result": "PASS", "note": "Pipelines documented in scope and examples"},
+          {"text": "Nested CV code example provided", "result": "FAIL", "note": "Principle stated but nested CV pattern not shown"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Scope Boundary",
+        "label": "Derive treatment recommendation from survival model",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly rejected as clinical advice",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Clinical advice disclaimer explicit", "result": "PASS", "note": "'Do not present model output as clinical advice, causal evidence, or proof of clinical utility'"},
+          {"text": "Limitations documented (workflow step 10)", "result": "PASS", "note": "Discrimination, calibration, prediction error separate from decision utility"},
+          {"text": "Scope boundary clearly stated", "result": "PASS", "note": "Predictive modeling within scope, clinical decisions outside"},
+          {"text": "Alternative for clinical use suggested", "result": "FAIL", "note": "What is NOT in scope stated but no guidance on validated clinical decision support"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 53.8,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional methodological rigor with 10-point non-negotiable workflow preventing data leakage, metric misuse, and competing risk errors",
+    "Outstanding leakage prevention with explicit guidance: split before preprocessing, fit preprocessing inside pipeline, no evaluation data reuse",
+    "Excellent practice boundary with clinical advice disclaimer and competing risks anti-pattern (no 1 - Kaplan-Meier)",
+    "Strong censoring-aware metrics guidance with IPCW concordance receiving training censoring distribution",
+    "Comprehensive scope covering Cox PH, survival trees/forests/boosting, time-dependent prediction, and nonparametric competing risks CIF"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add nested cross-validation code example",
+      "observed_in": [4],
+      "problem": "Nested CV principle stated but pattern not shown",
+      "root_cause": "Agent usability: model selection workflow not demonstrated",
+      "fix": "Add to workflow section: 'from sklearn.model_selection import cross_val_score, GridSearchCV; inner_cv = ...; outer_cv = ...; scores = cross_val_score(GridSearchCV(..., cv=inner_cv), X, y, cv=outer_cv)'"
+    },
+    {
+      "priority": "P2",
+      "title": "Expand competing-risk workflow examples",
+      "observed_in": [3],
+      "problem": "CIF mentioned but limited code examples",
+      "root_cause": "Agent-specific: competing risk patterns less detailed than right-censored",
+      "fix": "Add ## Competing Risks section with full example: event vector construction, CIF estimation, cause-specific hazard vs CIF interpretation"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance for validated clinical decision support",
+      "observed_in": [5],
+      "problem": "Clinical advice boundary clear but no alternative path suggested",
+      "root_cause": "Practice boundary: what IS appropriate for clinical use not specified",
+      "fix": "Add to scope: 'For clinical decision support, models require prospective validation, regulatory approval, bias audits, and integration into workflow with clinician oversight—consult institutional compliance.'"
+    }
+  ]
+}

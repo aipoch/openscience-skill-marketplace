@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "skill_name": "msa-structure-prediction-pipeline",
+    "description": "Run a complete protein structure prediction pipeline using NVIDIA BioNeMo NIMs: search for MSA alignments with MSA-Search (ColabFold), then predict the structure with OpenFold3 using the retrieved alignments. Use for MSA-informed structure prediction with maximum accuracy using evolutionary information. This pipeline chains MSA-Search and OpenFold3.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 85,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Complete 2-step pipeline with MSA search and structure prediction; paired MSA for complexes documented; minor gap: no guidance on handling Step 1 failures before attempting Step 2"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Basic error handling with raise_for_status; MSA sequence count validation; missing: no retry logic for transient API failures, no validation that MSA depth is sufficient before structure prediction, no timeout handling for long OpenFold3 runs"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "197 lines within reasonable range; no reference files but content well-organized; minor: local Docker port conflict warning important but could be in troubleshooting section"
+      },
+      "agent_usability": {
+        "score": 13,
+        "max": 16,
+        "note": "Clear 2-step pipeline structure; MSA-informed vs single-sequence comparison documented; missing: no inline guidance on interpreting confidence scores, no decision tree for when to use pipeline vs individual skills"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good trigger coverage; security warning about data transmission prominent; minor: 1.4TB storage requirement mentioned but not emphasized enough as barrier to local deployment"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Prominent security warning about data transmission to external APIs in description; credentials externalized; no credential logging; proper separation of hosted vs local modes"
+      },
+      "maintainability": {
+        "score": 10,
+        "max": 12,
+        "note": "Clean single-file structure; clear delegation to component skills; minor: MSA structure format (uniref30/colabfold_env keys) hardcoded without schema reference"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Excellent trigger precision; clear composability via msa-search-nim and openfold3-nim integration; pipeline rationale well-explained; lacks explicit idempotency statement; no consolidated troubleshooting beyond inline notes"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 19
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted MSA-informed structure prediction for single protein",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete 2-step pipeline with A3M retrieval and MSA-informed OpenFold3 prediction",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Step 1 MSA-Search retrieves A3M alignment from Uniref30_2302",
+            "result": "PASS",
+            "note": "Correct database name and format specification"
+          },
+          {
+            "text": "A3M alignment saved to file and sequence count validated",
+            "result": "PASS",
+            "note": "count('>') provides homolog count"
+          },
+          {
+            "text": "Step 2 OpenFold3 receives MSA via nested msa_data structure",
+            "result": "PASS",
+            "note": "Correct uniref30.a3m.alignment nesting"
+          },
+          {
+            "text": "Confidence metrics reported (confidence_score, pLDDT, pTM)",
+            "result": "PASS",
+            "note": "All three metrics extracted and printed"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local Docker pipeline with distinct ports",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Local mode with proper URL switching and no Authorization headers",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "HOSTED flag switches both MSA and OpenFold3 URLs",
+            "result": "PASS",
+            "note": "Conditional URL assignment for both steps"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly omit auth when HOSTED=False"
+          },
+          {
+            "text": "Port conflict warning documented",
+            "result": "PASS",
+            "note": "Before you start: do not assume both on localhost:8000 concurrently"
+          },
+          {
+            "text": "A3M file handoff enables sequential container execution",
+            "result": "PASS",
+            "note": "Save query_msa.a3m allows stopping MSA container before starting OpenFold3"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Paired MSA for protein complex structure prediction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Paired MSA endpoint and multi-chain workflow documented",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Paired MSA endpoint /paired/predict used for complexes",
+            "result": "PASS",
+            "note": "Correct endpoint documented in protein complexes section"
+          },
+          {
+            "text": "Multiple sequences passed in array",
+            "result": "PASS",
+            "note": "sequences: [chain_A_sequence, chain_B_sequence]"
+          },
+          {
+            "text": "Per-chain MSA and paired_msa fields documented",
+            "result": "PASS",
+            "note": "Section mentions passing each chain's alignment to corresponding molecule"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "MSA impact comparison (with vs without evolutionary context)",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Minimal MSA pattern for single-sequence comparison provided but interpretation guidance missing",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Minimal MSA pattern for single-sequence baseline provided",
+            "result": "PASS",
+            "note": "Minimal MSA section shows >query\\n{query_sequence} format"
+          },
+          {
+            "text": "Comparison rationale explained (larger MSA = higher pLDDT)",
+            "result": "PASS",
+            "note": "Section explains typical quality improvement from MSA"
+          },
+          {
+            "text": "Both predictions executed with same OpenFold3 parameters",
+            "result": "PASS",
+            "note": "Only msa field differs between runs"
+          },
+          {
+            "text": "Quantitative threshold for significant MSA impact provided",
+            "result": "FAIL",
+            "note": "No guidance on interpreting pLDDT/pTM differences (e.g., >5 point improvement = significant)"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Empty MSA result from Step 1",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Sequence count validation present but no handling for zero-homolog case",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "MSA sequence count extracted and reported",
+            "result": "PASS",
+            "note": "n_seqs = a3m_alignment.count('>') provides count"
+          },
+          {
+            "text": "Count printed for user awareness",
+            "result": "PASS",
+            "note": "Print statement shows found {n_seqs} homologous sequences"
+          },
+          {
+            "text": "Empty MSA detection logic present",
+            "result": "PASS",
+            "note": "Count mechanism would show 0 for no homologs"
+          },
+          {
+            "text": "Warning shown if MSA depth insufficient",
+            "result": "FAIL",
+            "note": "No conditional check or warning for low n_seqs before proceeding to Step 2"
+          },
+          {
+            "text": "Fallback to single-sequence prediction suggested",
+            "result": "PASS",
+            "note": "Minimal MSA pattern documented as alternative approach"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 34.0,
+    "dynamic_weighted": 53.8,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Clear pipeline rationale: explains why MSA-Search before OpenFold3 improves accuracy via evolutionary context",
+    "Prominent security warning about data transmission to external APIs in skill description",
+    "Excellent composability: explicit delegation to msa-search-nim and openfold3-nim component skills with endpoint references",
+    "MSA impact comparison documented with minimal MSA pattern for baseline",
+    "Practical local Docker guidance: port conflict warning and A3M file handoff strategy"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add MSA quality gate before Step 2",
+      "observed_in": ["Input 5"],
+      "problem": "No validation that MSA depth is sufficient before proceeding to structure prediction; empty or very sparse MSAs pass through silently",
+      "root_cause": "Assumes MSA-Search always returns useful alignments",
+      "fix": "Add after Step 1 count print: 'if n_seqs < 10: print(\"Warning: very sparse MSA ({n_seqs} sequences). Consider: (1) relaxing e_value to 0.001, (2) adding more databases, or (3) using single-sequence prediction if no homologs exist.\")'"
+    },
+    {
+      "priority": "P1",
+      "title": "Add quantitative guidance for MSA impact interpretation",
+      "observed_in": ["Input 4"],
+      "problem": "Comparison section explains larger MSA typically yields higher pLDDT but no threshold for significant improvement",
+      "root_cause": "Qualitative guidance without quantitative benchmarks",
+      "fix": "Expand comparison section: 'Significant MSA impact typically shows: pLDDT improvement >5 points, pTM improvement >0.05, especially for disordered regions or domains with many homologs. If difference <2 points, MSA provided minimal new information (sequence may be orphan or MSA too sparse).'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add consolidated troubleshooting section",
+      "observed_in": ["Agent-specific evaluation", "Reliability evaluation"],
+      "problem": "Error scenarios scattered (port conflict in Before you start, storage in overview); no centralized recovery guidance",
+      "root_cause": "Inline notes sufficient for small issues but harder to reference when debugging",
+      "fix": "Add Troubleshooting section: '(1) Step 1 timeout → reduce max_msa_sequences or use smaller database subset; (2) Step 1 empty MSA → sequence too short (<30aa), all X's, or true orphan with no homologs; (3) Step 2 timeout → reduce diffusion_samples or switch to faster model; (4) Local port conflict → use distinct ports or run sequentially with file handoff.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for pipeline execution",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running pipeline multiple times with same sequence produces identical structures",
+      "root_cause": "Determinism of each step not consolidated at pipeline level",
+      "fix": "Add note after Overview: 'Pipeline determinism: MSA-Search is deterministic (same sequence/databases → same alignment); OpenFold3 with diffusion_samples=1 is deterministic. Multiple runs produce identical structures. For stochastic diversity, increase diffusion_samples >1.'"
+    }
+  ]
+}

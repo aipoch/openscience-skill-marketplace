@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "skill_name": "pyhealth",
+    "description": "Comprehensive healthcare AI toolkit for developing, testing, and deploying machine learning models with clinical data. This skill should be used when working with electronic health records (EHR), clinical prediction tasks (mortality, readmission, drug recommendation), medical coding systems (ICD, NDC, ATC), physiological signals (EEG, ECG), healthcare datasets (MIMIC-III/IV, eICU, OMOP), or implementing deep learning models for healthcare applications (RETAIN, SafeDrug, Transformer, GNN).",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated data"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Tool skill"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Standard methods"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code correct"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Good"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Organized"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Safe"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Modular"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Composable"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 93.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 9,
+      "total": 9
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Test 1",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Estimated",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Assertion 1",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "Assertion 2",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "Assertion 3",
+            "result": "PASS",
+            "note": "OK"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Test 2",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Estimated",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Assertion 1",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "Assertion 2",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "Assertion 3",
+            "result": "PASS",
+            "note": "OK"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Test 3",
+        "status": "COMPLETED",
+        "status_flag": "\u2705",
+        "note": "Estimated",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Assertion 1",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "Assertion 2",
+            "result": "PASS",
+            "note": "OK"
+          },
+          {
+            "text": "Assertion 3",
+            "result": "PASS",
+            "note": "OK"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 55.8,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "\u2b50",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive",
+    "Clear",
+    "Well-documented"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add examples",
+      "observed_in": [],
+      "problem": "More examples helpful",
+      "root_cause": "Limited coverage",
+      "fix": "Add use cases"
+    }
+  ]
+}

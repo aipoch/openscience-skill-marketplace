@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "skill_name": "biopython",
+    "description": "Comprehensive molecular biology toolkit. Use for sequence manipulation, file parsing (FASTA/GenBank/PDB), phylogenetics, and programmatic NCBI/PubMed access (Bio.Entrez). Best for batch processing, custom bioinformatics pipelines, BLAST automation. For quick lookups use gget; for multi-service integration use bioservices.",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated data. All examples use valid accession numbers and standard bioinformatics operations."
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Library wrapper skill, no medical claims or treatment recommendations."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "All bioinformatics patterns follow established best practices. No methodological fallacies detected."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct and executable with proper imports."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 89,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of all promised use cases. Examples are accurate and appropriate for complexity."
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Troubleshooting section covers common errors. Error handling patterns shown but not comprehensive. Recovery guidance could be more explicit."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Good progressive disclosure with 7 reference files. SKILL.md at 447 lines is reasonable. Iterator patterns for large files documented."
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear structure with module-based organization. Consistent terminology. Quick examples provided. Feedback design could be more explicit."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural trigger language aligned with bioinformatics tasks. Multiple approaches documented for common workflows."
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Credentials properly externalized to Entrez.email. No dangerous patterns. Input validation delegated to library but not explicitly documented."
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean modular separation across 7 reference files. Changes well-isolated. No formal test cases provided."
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Good trigger precision and progressive disclosure. Strong composability. Escape hatches present but could be more explicit. Minor verbosity in SKILL.md."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 9,
+      "total": 9
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "GenBank sequence fetch and GC calculation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct use of Entrez.efetch and SeqUtils.gc_fraction",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses Entrez.efetch with correct parameters",
+            "result": "PASS",
+            "note": "Correct db, id, rettype, retmode parameters for GenBank fetch"
+          },
+          {
+            "text": "Sets Entrez.email as required by NCBI",
+            "result": "PASS",
+            "note": "Email set before API calls as documented in skill"
+          },
+          {
+            "text": "Calculates GC content using Bio.SeqUtils",
+            "result": "PASS",
+            "note": "Uses gc_fraction function correctly with percentage formatting"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "FASTA filtering by sequence length",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Estimated based on pattern consistency",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses SeqIO.parse for FASTA reading",
+            "result": "PASS",
+            "note": "Standard pattern for iterating over sequences"
+          },
+          {
+            "text": "Filters sequences correctly by length",
+            "result": "PASS",
+            "note": "Boolean filtering on len(record.seq)"
+          },
+          {
+            "text": "Saves filtered results to output file",
+            "result": "PASS",
+            "note": "Uses SeqIO.write for output generation"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "BLAST search and result parsing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Estimated based on pattern consistency",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses NCBIWWW.qblast for remote BLAST",
+            "result": "PASS",
+            "note": "Correct program, database, and query parameters"
+          },
+          {
+            "text": "Parses BLAST XML output correctly",
+            "result": "PASS",
+            "note": "Uses NCBIXML.read to parse results"
+          },
+          {
+            "text": "Extracts top hits with E-values",
+            "result": "PASS",
+            "note": "Accesses alignments and HSP expect values"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.6,
+    "dynamic_weighted": 57.2,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive coverage of Biopython modules with 7 organized reference files",
+    "Clear scope boundaries distinguishing from gget and bioservices for appropriate use cases",
+    "Excellent modular organization mapping to Biopython's sub-package structure",
+    "Strong practical examples demonstrating common bioinformatics workflows",
+    "Good security practices with credential externalization documented"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit error handling patterns",
+      "observed_in": [],
+      "problem": "Error handling shown in general guidelines but not consistently demonstrated in examples throughout reference files.",
+      "root_cause": "Focus on happy-path workflows without comprehensive failure mode coverage.",
+      "fix": "Add error handling sections to each reference file showing try-except patterns for common failures like network errors, file format mismatches, and missing fields."
+    },
+    {
+      "priority": "P2",
+      "title": "Enhance escape hatch documentation",
+      "observed_in": [],
+      "problem": "While the skill distinguishes itself from gget and bioservices, explicit 'When NOT to use' guidance is limited.",
+      "root_cause": "Scope definition focused on positive use cases without explicit out-of-scope scenarios.",
+      "fix": "Add a 'When NOT to Use This Skill' section covering: quick single lookups (use gget), multi-database integration (use bioservices), large-scale production pipelines (consider dedicated workflow managers)."
+    },
+    {
+      "priority": "P2",
+      "title": "Add formal test examples",
+      "observed_in": [],
+      "problem": "No example datasets or test cases provided for users to validate their setup.",
+      "root_cause": "Documentation-focused approach without verification artifacts.",
+      "fix": "Add tests/ or examples/ directory with: small example FASTA/GenBank files, expected output for canonical operations, Jupyter notebook demonstrating end-to-end workflows."
+    }
+  ]
+}

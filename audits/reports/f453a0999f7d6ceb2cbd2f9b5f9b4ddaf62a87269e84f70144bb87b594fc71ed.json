@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "dnanexus-integration",
+    "description": "Build and operate reproducible genomics workloads on DNAnexus with the dx CLI, dxpy, apps/applets, native workflows, dxCompiler, and Nextflow. Use for DNAnexus data transfers, dxapp.json development, execution monitoring, workflow import, and project automation.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Advanced",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of DNAnexus platform capabilities verified against dxpy 0.410.0 and 2026 documentation baseline"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for DNAnexus cloud platform operations with clear security and cost control boundaries"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on official DNAnexus SDK, CLI, and documented platform semantics with version-specific verification"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper security controls and error handling patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of DNAnexus operations including CLI, dxpy, apps/applets, workflows, with excellent reference organization and validation helpers"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent error prevention with validation scripts, safe preflight checks, explicit state verification, and comprehensive operations/troubleshooting reference"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (326 lines) with clear navigation table, 8 comprehensive reference files, and bundled validation/inspection helpers"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional guidance with 'Choose the Right Path' decision table mapping goals to references; clear operating contract for safety-critical operations"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with uv tool install; interactive login guidance; safe preflight checklist; Upload/Download Agent recommendations for scale"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding security with explicit operating contract: credential protection rules, PHI/TRE respect, confirmation requirements, read-only first principle, and egress controls"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 2.0, clear license (MIT), 8 comprehensive references, 2 validation helpers, version baseline (2026-07-23), and authoritative source tracking"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and explicit subprocess safety; job chaining pattern without polling; minor: could specify more output format schemas for API responses"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "File upload with metadata and project targeting",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard data transfer with property annotation",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "dx upload with --path for project targeting",
+            "result": "PASS",
+            "note": "Core workflow shows dx upload with --path 'project-xxxx:/raw/sample.fastq.gz'"
+          },
+          {
+            "text": "Property annotation with --property parameter",
+            "result": "PASS",
+            "note": "Upload example includes --property 'sample_id=S001'"
+          },
+          {
+            "text": "Upload Agent recommendation for large files",
+            "result": "PASS",
+            "note": "Transfer data section recommends Upload Agent 'above 50 MB'"
+          },
+          {
+            "text": "Compression behavior documented",
+            "result": "PASS",
+            "note": "Upload Agent 'compresses uncompressed inputs by default and appends .gz' with --do-not-compress option"
+          },
+          {
+            "text": "User confirmation for material egress",
+            "result": "PASS",
+            "note": "Operating Contract rule 2 requires confirmation 'before...upload or download with material egress'"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "dxpy file search with glob matching and state filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Accurate search pattern with proper name_mode usage",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "find_data_objects with classname filtering",
+            "result": "PASS",
+            "note": "Search workflow shows classname='file' for file-specific search"
+          },
+          {
+            "text": "name_mode='glob' required for wildcard patterns",
+            "result": "PASS",
+            "note": "Explicitly warns 'Do not pass \"*.bam\" without name_mode=\"glob\"'"
+          },
+          {
+            "text": "State filtering (closed vs open files)",
+            "result": "PASS",
+            "note": "Example shows state='closed' parameter"
+          },
+          {
+            "text": "Describe fields optimization",
+            "result": "PASS",
+            "note": "describe={'fields': {'name': True, 'size': True, 'archivalState': True}} shown"
+          },
+          {
+            "text": "Search bounding with limit parameter",
+            "result": "PASS",
+            "note": "Example includes limit=100 and text recommends 'Bound broad searches with...limit'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Applet build with validation and regional configuration",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "App development workflow with validation helper",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "dx-app-wizard for interactive setup",
+            "result": "PASS",
+            "note": "Build workflow starts with dx-app-wizard command"
+          },
+          {
+            "text": "validate_dxapp.py helper script usage",
+            "result": "PASS",
+            "note": "Validation shown with --kind applet --strict parameters"
+          },
+          {
+            "text": "dx build for applet vs --create-app for versioned app",
+            "result": "PASS",
+            "note": "Two build forms clearly distinguished in workflow"
+          },
+          {
+            "text": "Modern configuration guidance (Ubuntu 24.04, regionalOptions)",
+            "result": "PASS",
+            "note": "Current guidance recommends Ubuntu 24.04 and regionalOptions.<region>.systemRequirements"
+          },
+          {
+            "text": "Deprecated configuration patterns flagged",
+            "result": "FAIL",
+            "note": "Deprecation noted but validator capabilities not fully detailed in main doc"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Job execution with cost limits and safe preflight checks",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Controlled launch with cost constraints",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "dx run -h for executable inspection before launch",
+            "result": "PASS",
+            "note": "Launch workflow states 'First inspect the executable: dx run \"applet-xxxx\" -h'"
+          },
+          {
+            "text": "--cost-limit parameter for budget control",
+            "result": "PASS",
+            "note": "Example shows --cost-limit 25 in dx run command"
+          },
+          {
+            "text": "Confirmation requirement for billable launches",
+            "result": "PASS",
+            "note": "Operating Contract rule 2 requires confirmation 'before a billable launch'"
+          },
+          {
+            "text": "Safe preflight checklist before mutations",
+            "result": "PASS",
+            "note": "Dedicated Safe Preflight section with context gathering steps"
+          },
+          {
+            "text": "Cost limit behavior and enforcement documented",
+            "result": "FAIL",
+            "note": "Cost limit parameter shown but behavior when exceeded not explained in main doc"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Job chaining with output references and error handling",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Dependency management without polling but limited error handling examples",
+        "basic": 33,
+        "specialized": 43,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "get_output_ref() for job-based output references",
+            "result": "PASS",
+            "note": "Chain executions workflow shows qc_job.get_output_ref('filtered_reads')"
+          },
+          {
+            "text": "Downstream job waiting_on_input state explained",
+            "result": "PASS",
+            "note": "Workflow states 'downstream job remains waiting_on_input until the referenced output is ready'"
+          },
+          {
+            "text": "DXJobFailureError exception handling mentioned",
+            "result": "PASS",
+            "note": "Monitor section notes 'wait_on_done() can raise DXJobFailureError'"
+          },
+          {
+            "text": "Retry policy and execution restart handling",
+            "result": "FAIL",
+            "note": "Automatic scale-up and restart policy mentioned but not demonstrated with code example"
+          },
+          {
+            "text": "Error recovery pattern for chained failures",
+            "result": "FAIL",
+            "note": "Individual job failure mentioned but chain-wide error recovery not shown"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 53.2,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding security posture with comprehensive 8-rule Operating Contract covering credential protection, PHI/TRE respect, cost controls, and read-only-first principle",
+    "Exceptional decision support with 'Choose the Right Path' table mapping user goals directly to appropriate reference documentation",
+    "Excellent safety engineering with Safe Preflight checklist, validation helpers, and explicit confirmation requirements for destructive operations",
+    "Strong version discipline with verified baseline (2026-07-23, dxpy 0.410.0) and authoritative source tracking in references/sources.md",
+    "Clear platform guidance on current best practices (Ubuntu 24.04, regionalOptions, dynamic instance selection) with deprecation warnings"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add inline error recovery patterns for job chains",
+      "observed_in": [5],
+      "problem": "DXJobFailureError mentioned but error recovery workflow not demonstrated",
+      "root_cause": "Documentation focuses on happy path chaining without failure handling",
+      "fix": "Add example showing try/except with DXJobFailureError, re-describe for classification, and decision logic for retry vs abort in chained workflows"
+    },
+    {
+      "priority": "P2",
+      "title": "Document cost limit enforcement behavior",
+      "observed_in": [4],
+      "problem": "--cost-limit parameter shown but what happens when limit is reached not explained",
+      "root_cause": "Parameter usage demonstrated without behavioral specification",
+      "fix": "Add note: 'Jobs exceeding --cost-limit are terminated with DXJobFailureError; set cost_limit higher than expected with headroom for retries'"
+    },
+    {
+      "priority": "P3",
+      "title": "Expand validator capabilities documentation",
+      "observed_in": [3],
+      "problem": "validate_dxapp.py usage shown but what it checks not fully detailed in main doc",
+      "root_cause": "Helper script referenced without inline capability summary",
+      "fix": "Add brief list in main doc: 'Validator checks: deprecated runSpec placement, broad network access, missing regional requirements, retired instance types'"
+    }
+  ]
+}

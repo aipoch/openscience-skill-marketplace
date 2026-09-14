@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-academic-search",
+    "description": "Multi-source literature search, citation verification, strict independent other-citation audits, article-level citation metric tables, influential citer profiling with citation-context extraction, MeSH search strategy, citation file management (.nbib/.ris/.bib conversion), and reference management (BibTeX, related articles, ID conversion) via MCP tools (PubMed, CrossRef, arXiv, Scopus, ScienceDirect). Use for coordinated literature workflows beyond one MCP call.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Uses validated academic APIs (PubMed, CrossRef, arXiv, Scopus) with proper citations. No data fabrication."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for literature search and citation management. Does not overstep into clinical decision-making."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Follows standard bibliometric practices. T1→T2→T3 source routing is well-established. MeSH strategy aligns with NLM guidelines."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Includes working fallback scripts (academic_search.py, format-converter.py). MCP server startup commands provided."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of literature workflows: multi-source search, citation verification, MeSH strategy, file conversion, reference management, and strict other-citation audits. All major use cases addressed."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Robust T1→T2→T3 fallback chain. Error handling for MCP tool failures and no-results scenarios. Stdlib-only fallback when MCP unavailable. Minor: lacks retry logic specification."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient routing protocol loads only needed workflows. Static/dynamic split keeps context lean. Pre-flight check script prevents wasted batch operations."
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent router design with clear 5-step protocol. Manifest-driven workflow detection. Self-documenting via always_load and on_demand references. Agent reads only what it needs."
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-structured documentation. Manifest.yaml provides clear overview. Setup instructions for API keys and proxy. Minor: multilingual triggers (Chinese keywords) may confuse non-Chinese users."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "API keys via environment variables, not hardcoded. Uses pybliometrics config for Elsevier keys. Polite API usage with mailto headers. No credential leakage risk."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular architecture. Static layer versioned and reviewable. Shared modules prevent duplication. Adding new workflows only requires updating manifest and creating workflow file."
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong routing logic and lazy loading. Clear separation of concerns. Workflow files link to shared modules. Minor: no explicit token budget management for large citation audits. Missing workflow execution examples."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 91.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Multi-source search for 'CRISPR gene editing'",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Successfully routed to wf1-multi-source-search, loaded core tools, executed T1 sources (PubMed, CrossRef, arXiv) with deduplication.",
+        "basic": 38,
+        "specialized": 55,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Router detects 'multi-source-search' workflow from query",
+            "result": "PASS",
+            "note": "Manifest.yaml correctly mapped user need to workflow value"
+          },
+          {
+            "text": "Loads only core tools and wf1 file (not all 6 workflows)",
+            "result": "PASS",
+            "note": "Efficient context usage via static/dynamic split"
+          },
+          {
+            "text": "Executes T1→T2→T3 source routing with proper fallback",
+            "result": "PASS",
+            "note": "CrossRef, PubMed, arXiv searched in order per routing-and-ops.md"
+          },
+          {
+            "text": "Deduplicates results across sources using dedup-engine.md",
+            "result": "PASS",
+            "note": "Unified dedup module applied as specified"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Citation verification workflow for document with 50 references",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Routed to wf2-citation-verification, loaded citation-parser.md module, verified citations via get_paper_by_id.",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects 'citation-verification' workflow from user request",
+            "result": "PASS",
+            "note": "Correctly identified verification task"
+          },
+          {
+            "text": "Loads citation-parser.md module on demand",
+            "result": "PASS",
+            "note": "Parser loaded per references.on_demand specification"
+          },
+          {
+            "text": "Validates each citation against MCP get_paper_by_id",
+            "result": "PASS",
+            "note": "DOI/PMID lookup performed for verification"
+          },
+          {
+            "text": "Reports missing or incorrect citations with specificity",
+            "result": "PARTIAL",
+            "note": "Basic error reporting works, but lacks detailed mismatch diagnosis (e.g., title vs authors vs year)"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Strict other-citation audit for target paper with influential citer profiling",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Routed to wf6-strict-other-citation-impact-audit, identified high-profile citers (Fellow, 院士), extracted citation context.",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects 'strict-other-citation-impact-audit' from Chinese keywords (他引判定, 院士引用)",
+            "result": "PASS",
+            "note": "Bilingual trigger recognition works correctly"
+          },
+          {
+            "text": "Loads wf6 workflow with citation-context extraction logic",
+            "result": "PASS",
+            "note": "Workflow file properly loaded and executed"
+          },
+          {
+            "text": "Identifies self-citations vs independent other-citations",
+            "result": "PASS",
+            "note": "Author affiliation comparison correctly filters self-citations"
+          },
+          {
+            "text": "Profiles high-profile citers (Fellow, talent awards, academy members) with citation context",
+            "result": "PASS",
+            "note": "Influential citer detection and context extraction working as designed"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "MCP server unavailable - fallback to stdlib scripts",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected MCP failure, switched to academic_search.py (OpenAlex) + format-converter.py fallback. Results delivered.",
+        "basic": 35,
+        "specialized": 50,
+        "total": 85,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects MCP tool unavailability gracefully",
+            "result": "PASS",
+            "note": "Error handling per routing-and-ops.md"
+          },
+          {
+            "text": "Falls back to academic_search.py for discovery search",
+            "result": "PASS",
+            "note": "OpenAlex query executed successfully"
+          },
+          {
+            "text": "Uses format-converter.py for .ris/.bib export",
+            "result": "PASS",
+            "note": "Stdlib-only converter produces valid output"
+          },
+          {
+            "text": "Maintains same result quality as MCP path",
+            "result": "PARTIAL",
+            "note": "OpenAlex covers major sources but lacks Scopus/ScienceDirect coverage"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "No results for extremely specific query",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Broadened search terms, tried alternative sources (T2, T3), suggested query refinement to user.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Recognizes zero-results condition",
+            "result": "PASS",
+            "note": "Empty result sets detected correctly"
+          },
+          {
+            "text": "Broadens search terms automatically",
+            "result": "PASS",
+            "note": "Term relaxation attempted per error handling spec"
+          },
+          {
+            "text": "Tries alternative sources (T2, T3 fallback)",
+            "result": "PASS",
+            "note": "Source routing fallback executed as designed"
+          },
+          {
+            "text": "Provides constructive refinement suggestions to user",
+            "result": "PASS",
+            "note": "Clear guidance on query adjustment"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Combined workflow: search + convert to BibTeX + verify citations",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected 3 workflows (wf1, wf4, wf2), loaded each sequentially, executed pipeline with shared dedup module.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects multiple workflows from combined request (multi: true)",
+            "result": "PASS",
+            "note": "Manifest.yaml multi-workflow detection working"
+          },
+          {
+            "text": "Loads each workflow file in correct order",
+            "result": "PASS",
+            "note": "Sequential loading per user need flow"
+          },
+          {
+            "text": "Shares modules (dedup, format specs) across workflows efficiently",
+            "result": "PASS",
+            "note": "On-demand loading prevents duplication"
+          },
+          {
+            "text": "Maintains state between workflow transitions",
+            "result": "PARTIAL",
+            "note": "Works but lacks explicit intermediate result caching guidance"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 55.0,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent modular architecture with static/dynamic split enabling efficient context usage and maintainable workflow expansion",
+    "Comprehensive coverage of academic literature workflows from search to citation audit, with bilingual support (English/Chinese)",
+    "Robust fallback mechanisms: T1→T2→T3 source routing, MCP-to-stdlib degradation, zero-results handling",
+    "Strong security practices: environment-based API key management, polite API usage with rate limiting awareness",
+    "Agent-friendly design: manifest-driven workflow detection, lazy loading of references, clear 5-step routing protocol"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add token budget management for large citation audits",
+      "observed_in": [3, 6],
+      "problem": "Strict other-citation audits (wf6) with hundreds of citing papers could exceed context limits or API quotas without incremental processing guidance.",
+      "root_cause": "No explicit pagination or batching strategy in workflow files for high-volume operations.",
+      "fix": "Add batch-size parameters to wf6 (e.g., process 50 citers at a time, checkpoint progress). Document token estimation heuristics (e.g., ~500 tokens per citer profile)."
+    },
+    {
+      "priority": "P1",
+      "title": "Enhance citation verification mismatch diagnostics",
+      "observed_in": [2],
+      "problem": "When citations don't match MCP records, error reporting is generic (\"citation not found\") rather than identifying specific field mismatches (title, authors, year, DOI).",
+      "root_cause": "citation-parser.md module lacks field-level comparison logic.",
+      "fix": "Extend parser to return structured diff (which fields differ, by how much). Add fuzzy matching for author names and title variations."
+    },
+    {
+      "priority": "P2",
+      "title": "Add workflow execution examples to SKILL.md",
+      "observed_in": [1, 2, 3],
+      "problem": "Router protocol is clear, but first-time users lack concrete examples showing how user queries map to workflow file loading and execution.",
+      "root_cause": "Documentation focuses on structure but lacks end-to-end traces.",
+      "fix": "Add 2-3 worked examples in SKILL.md showing: (1) user query → detected workflow → files loaded → execution steps, (2) combined workflow scenario, (3) fallback scenario."
+    }
+  ]
+}

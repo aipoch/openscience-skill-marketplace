@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "skill_name": "seaborn",
+    "description": "Statistical visualization with pandas integration. Use for quick exploration of distributions, relationships, and categorical comparisons with attractive defaults. Best for box plots, violin plots, pair plots, heatmaps. Built on matplotlib. For interactive plots use plotly; for publication styling use scientific-visualization.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Visualization",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; documentation accurately represents seaborn 0.13.2 API with clear version-specific notes on API changes"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for statistical visualization; clear boundaries to plotly for interactivity and scientific-visualization for publication styling"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established statistical graphics principles and dataset-oriented plotting methodology"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports; API changes from 0.12/0.13 clearly documented"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of seaborn capabilities including function interface, objects interface, data structure requirements, plotting types, grids, and theming with excellent reference organization"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent API change documentation for 0.12/0.13 transitions; patterns and troubleshooting reference provided; minor: lacks explicit error handling patterns for common failures"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (255 lines) with clear sections and progressive disclosure through 6 reference files"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent design philosophy section; clear guidance on function vs objects interface; strong semantic mapping explanations; comprehensive best practices with plot type selection guide"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with version pinning (0.13.2); quick start example; data structure requirements well explained; saving figures documented"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good practice noting sns.load_dataset() downloads public data and recommending local files for private work; minor: could emphasize data anonymization for visualization of sensitive data"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.2, license (BSD-3-Clause), comprehensive reference files, clear API migration notes, allowed-tools specified"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with pandas and matplotlib; clear when-to-use guidance for function vs objects interface; experimental API warning for objects interface; minor: output format specifications could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Basic scatterplot with semantic mapping",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Dataset-oriented plotting with hue mapping",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "DataFrame-based data parameter usage",
+            "result": "PASS",
+            "note": "Quick start shows data=df with named columns"
+          },
+          {
+            "text": "Semantic mapping with hue parameter",
+            "result": "PASS",
+            "note": "hue='day' correctly demonstrated in quick start"
+          },
+          {
+            "text": "Keyword argument requirement for variables",
+            "result": "PASS",
+            "note": "Current API Notes explicitly states keyword arguments required"
+          },
+          {
+            "text": "matplotlib integration for display",
+            "result": "PASS",
+            "note": "plt.show() shown in quick start example"
+          },
+          {
+            "text": "Proper imports documented",
+            "result": "PASS",
+            "note": "Recommended imports section includes sns, plt, pd, np"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Figure-level plot with faceting",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Using relplot for multi-panel visualization",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "relplot function usage for figure-level plotting",
+            "result": "PASS",
+            "note": "relplot with col parameter shown in best practices"
+          },
+          {
+            "text": "col and col_wrap parameters for faceting",
+            "result": "PASS",
+            "note": "col='category', col_wrap=3 demonstrated"
+          },
+          {
+            "text": "Figure-level vs axes-level distinction explained",
+            "result": "PASS",
+            "note": "Reference to grids_and_levels.md provided"
+          },
+          {
+            "text": "Saving figure-level plots documented",
+            "result": "PASS",
+            "note": "fig.savefig() with dpi and format options shown"
+          },
+          {
+            "text": "Recommendation to use figure-level for faceting",
+            "result": "PASS",
+            "note": "Best practice #3 explicitly recommends figure-level for faceting"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Statistical estimation with error bars",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Using lineplot/barplot with automatic aggregation",
+        "basic": 37,
+        "specialized": 53,
+        "total": 90,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "errorbar parameter replaces old ci parameter",
+            "result": "PASS",
+            "note": "Current API Notes clearly states errorbar replaces ci"
+          },
+          {
+            "text": "lineplot computes mean and 95% CI by default",
+            "result": "PASS",
+            "note": "Best practice #5 documents default behavior"
+          },
+          {
+            "text": "errorbar='sd' alternative documented",
+            "result": "PASS",
+            "note": "Example shows errorbar='sd' for standard deviation"
+          },
+          {
+            "text": "barplot estimator parameter customization",
+            "result": "PASS",
+            "note": "estimator='median' example shown"
+          },
+          {
+            "text": "Bootstrapped CI syntax shown",
+            "result": "PASS",
+            "note": "errorbar=('ci', 95) tuple syntax demonstrated"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Long-form vs wide-form data handling",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Data structure transformation and flexibility",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Long-form data structure explained with example",
+            "result": "PASS",
+            "note": "Complete long-form example with subject/condition/measurement shown"
+          },
+          {
+            "text": "Wide-form data structure and use cases documented",
+            "result": "PASS",
+            "note": "Wide-form example with use cases (time series, heatmaps) provided"
+          },
+          {
+            "text": "melt() conversion from wide to long shown",
+            "result": "PASS",
+            "note": "df.melt() with var_name and value_name demonstrated"
+          },
+          {
+            "text": "Advantages of long-form clearly stated",
+            "result": "PASS",
+            "note": "Four advantages listed (works with all functions, easy remapping, etc.)"
+          },
+          {
+            "text": "When to prefer wide-form guidance",
+            "result": "FAIL",
+            "note": "Use cases listed but no decision criteria for when wide-form is actually better"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Objects interface and API change navigation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Modern composable API and deprecation handling",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Objects interface import and usage shown",
+            "result": "PASS",
+            "note": "from seaborn import objects as so with chaining example"
+          },
+          {
+            "text": "Experimental status of objects interface disclosed",
+            "result": "PASS",
+            "note": "Explicitly states 'experimental and incomplete in 0.13.2'"
+          },
+          {
+            "text": "When to use objects vs function interface guidance",
+            "result": "PASS",
+            "note": "Clear use case lists for both interfaces with recommendation"
+          },
+          {
+            "text": "Comprehensive API change documentation for 0.12/0.13",
+            "result": "FAIL",
+            "note": "Key changes listed but not all documented (e.g., specific parameter renames in violinplot/boxenplot shown but not comprehensively covered)"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 53.8,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional documentation of API changes between versions 0.12/0.13 preventing common migration errors",
+    "Clear design philosophy section explaining dataset-oriented approach and semantic mapping principles",
+    "Excellent best practices section with plot type selection guide organized by data type combinations",
+    "Strong distinction between function interface (traditional) and objects interface (modern) with clear use case guidance",
+    "Outstanding integration documentation with pandas (data input) and matplotlib (customization)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add common error handling patterns",
+      "observed_in": [],
+      "problem": "No explicit guidance on handling common plotting failures",
+      "root_cause": "Patterns and troubleshooting reference mentioned but not inline examples",
+      "fix": "Add troubleshooting section covering: 'KeyError: column not found', empty plots from incorrect data types, memory issues with large datasets, and categorical encoding errors"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify wide-form decision criteria",
+      "observed_in": [4],
+      "problem": "Use cases for wide-form listed but no clear guidance on when to prefer it",
+      "root_cause": "Documentation emphasizes long-form preference without nuanced trade-offs",
+      "fix": "Add decision note: 'Use wide-form when: (1) plotting matrix data directly as heatmap, (2) x-axis is implicit index/time and each column is a series, (3) source data is already wide and transformation adds no value'"
+    },
+    {
+      "priority": "P3",
+      "title": "Add data anonymization note for sensitive visualizations",
+      "observed_in": [],
+      "problem": "Security section mentions private data but not visualization-specific concerns",
+      "root_cause": "Visualizations can reveal sensitive patterns even when individual values are aggregated",
+      "fix": "Add security note: 'When visualizing sensitive data, consider: aggregation thresholds to prevent identification, removing or generalizing axis labels with PII, and reviewing plots for inadvertent disclosure before sharing'"
+    }
+  ]
+}

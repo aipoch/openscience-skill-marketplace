@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "skill_name": "venue-templates",
+    "description": "Prepare journal manuscripts, conference papers, research posters, and grant documents using venue-specific formatting guidance and bundled LaTeX scaffolds. Use when selecting an official template, checking current page or anonymity rules, adapting academic writing to a venue, or inspecting a submission PDF.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Academic Writing",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; documentation emphasizes verification of current venue rules and clear distinction between official templates and generic scaffolds"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for formatting and template selection; excellent boundaries requiring official source verification and prohibiting stale information"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established academic publishing standards with explicit references to official author instructions and style guides"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Helper scripts are syntactically correct with clear parameter documentation; LaTeX scaffolds follow standard conventions"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage including journals, conferences, grants, posters with verification workflow, bundled scaffolds (11 LaTeX files), helper scripts (3 utilities), and 11 reference files"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent mandatory currency rule requiring official source verification with date recording; clear scaffold vs official template distinctions; minor: lacks explicit guidance on handling conflicting requirements"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-structured documentation (270 lines) with clear 5-step verification workflow, comprehensive reference map, and organized asset inventory"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional mandatory currency rule (5-step verification); clear when-to-use guidance; comprehensive workflow for each document type; strong scaffold status documentation"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation requirements (Python 3.11+, optional LaTeX/Poppler); workflow examples for each document type; helper scripts for querying, customizing, and validating; final compliance checklist"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good practices for blind review (anonymity checking, metadata removal); LaTeX escaping mentioned for user text; minor: could add more explicit guidance on embedded metadata removal from PDFs"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding structure with version 1.2, license (MIT), comprehensive reference organization (11 files), explicit asset inventory with status, maintenance section with review date (2026-07-20)"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong composability with LaTeX toolchain; clear integration with official templates; comprehensive reference structure; minor: validation script capabilities could be more explicitly documented"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Conference paper preparation with verification workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from verification to submission",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "5-step verification workflow documented",
+            "result": "PASS",
+            "note": "Complete workflow: resolve target, consult reference, capture compliance note, use official template, validate"
+          },
+          {
+            "text": "Mandatory currency rule with official source requirement",
+            "result": "PASS",
+            "note": "Explicit rule requiring URL and date checking before giving exact requirements"
+          },
+          {
+            "text": "Compliance note template provided",
+            "result": "PASS",
+            "note": "Complete example showing target, source URL, date, limits, anonymity, template"
+          },
+          {
+            "text": "Annual conference workflow with official download",
+            "result": "PASS",
+            "note": "Common workflows section provides step-by-step conference paper workflow"
+          },
+          {
+            "text": "Anonymity checking emphasized",
+            "result": "PASS",
+            "note": "Blind review mentioned in workflow step 5 and final compliance checklist"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Journal manuscript with writing style adaptation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Selecting journal template and appropriate style guide",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Journal-specific reference files documented",
+            "result": "PASS",
+            "note": "References for Nature/Science, Cell Press, medical journals provided"
+          },
+          {
+            "text": "Format-flexible initial submission noted",
+            "result": "PASS",
+            "note": "Journal workflow mentions determining if initial submission is format-flexible"
+          },
+          {
+            "text": "Bundled journal scaffolds inventory",
+            "result": "PASS",
+            "note": "6 journal scaffolds listed with explicit status (official vs generic)"
+          },
+          {
+            "text": "Guide for Authors vs publisher template distinction",
+            "result": "PASS",
+            "note": "Warning not to apply publisher-wide template when journal has own guide"
+          },
+          {
+            "text": "Recheck rules after acceptance",
+            "result": "PASS",
+            "note": "Journal workflow includes: recheck final-production instructions after acceptance"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Grant proposal with multiple components",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "NSF/NIH proposal preparation with component mapping",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Grant requirements reference file provided",
+            "result": "PASS",
+            "note": "grants_requirements.md listed in reference map"
+          },
+          {
+            "text": "NSF and NIH scaffolds documented",
+            "result": "PASS",
+            "note": "NSF proposal template and NIH specific aims listed in bundled assets"
+          },
+          {
+            "text": "Solicitation vs general guidance priority",
+            "result": "PASS",
+            "note": "Grant workflow: read solicitation/NOFO before general agency guidance"
+          },
+          {
+            "text": "Component-to-limit mapping required",
+            "result": "PASS",
+            "note": "Workflow step 3: map every required component to page limit and upload field"
+          },
+          {
+            "text": "Sponsored-research office review mentioned",
+            "result": "PASS",
+            "note": "Final step of grant workflow requires institutional review"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "PDF validation and helper script usage",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Using validation script for compliance checking",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "validate_format.py script documented with parameters",
+            "result": "PASS",
+            "note": "Complete examples with --venue, --content-pages, --check parameters"
+          },
+          {
+            "text": "Preset venues and custom limits supported",
+            "result": "PASS",
+            "note": "Both --venue icml-2026 preset and explicit --max-pages shown"
+          },
+          {
+            "text": "Page count and font checking capabilities",
+            "result": "PASS",
+            "note": "--check page-count,fonts explicitly shown"
+          },
+          {
+            "text": "Content-pages manual counting requirement",
+            "result": "PASS",
+            "note": "Note states script cannot infer where references/appendices begin"
+          },
+          {
+            "text": "Limitations of validation script documented",
+            "result": "FAIL",
+            "note": "Cannot prove margins/font sizes/metadata but not comprehensively stated what script can/cannot check"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Scaffold vs official template distinction and stale information",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Preventing outdated or incorrect template usage",
+        "basic": 34,
+        "specialized": 43,
+        "total": 77,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Clear status column in bundled assets tables",
+            "result": "PASS",
+            "note": "Every asset table has Status column explicitly marking official vs scaffold"
+          },
+          {
+            "text": "Warning against inferring style-file names by year",
+            "result": "PASS",
+            "note": "Mandatory currency rule: 'Never infer current style-file name by changing year'"
+          },
+          {
+            "text": "Explicit scaffold warnings in asset descriptions",
+            "result": "FAIL",
+            "note": "Status marked but could be more prominent in descriptions (e.g., 'NOT AN OFFICIAL TEMPLATE')"
+          },
+          {
+            "text": "Maintenance section with review date",
+            "result": "FAIL",
+            "note": "Review date present (2026-07-20) but no guidance on when skill becomes stale"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 53.3,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional mandatory currency rule requiring official source verification with URL and date recording before providing exact requirements",
+    "Outstanding scaffold vs official template distinction with explicit status marking in all asset tables",
+    "Comprehensive reference organization with 11 specialized files covering journals, conferences, grants, posters, and writing styles",
+    "Excellent verification-first workflow (5 steps) establishing rigorous process from target resolution to validation",
+    "Strong maintenance practices with review date documentation and update guidelines for keeping content current"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add comprehensive validation script capability documentation",
+      "observed_in": [4],
+      "problem": "Validation script can check page count and fonts but other capabilities/limitations not fully documented",
+      "root_cause": "Users need to know what compliance checks are automated vs manual",
+      "fix": "Add section: 'PDF Validation Capabilities: CAN check: total pages, content-section pages (if --content-pages specified), embedded fonts. CANNOT check: margin compliance, font sizes within document, line spacing, hidden metadata, anonymization, required sections, figure quality. Manual review required for these.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Strengthen scaffold warnings in descriptions",
+      "observed_in": [5],
+      "problem": "Status column marks scaffolds but descriptions could be more prominent",
+      "root_cause": "Users skimming tables may miss status distinction",
+      "fix": "Prepend scaffold descriptions with '⚠️ GENERIC SCAFFOLD (NOT OFFICIAL):' and change official templates to '✓ OFFICIAL:' for visual distinction. Example: '⚠️ GENERIC SCAFFOLD: Nature-oriented writing scaffold; not an official Nature template'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add skill staleness guidance",
+      "observed_in": [5],
+      "problem": "Review date documented but no guidance on when information becomes unreliable",
+      "root_cause": "Annual conference details change yearly; users need freshness indicators",
+      "fix": "Add to maintenance: 'Conference snapshots are reliable for their labeled year only. After July of year N+1, treat year N conference details as historical reference—verify all requirements with current official sources. Journal and grant guidance has longer validity but always verify current solicitations.'"
+    },
+    {
+      "priority": "P3",
+      "title": "Add explicit PDF metadata removal guidance",
+      "observed_in": [],
+      "problem": "Anonymity checking mentioned but metadata removal not explicit",
+      "root_cause": "PDFs can contain author names in metadata even when document is anonymized",
+      "fix": "Add to security/anonymity section: 'For blind review, check PDF metadata: use `exiftool paper.pdf` or PDF viewer properties. Remove author, institution, and file path metadata. Many LaTeX compilers embed this by default. Use `exiftool -all= paper.pdf` or re-export with metadata stripping.'"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "anndata",
+    "description": "Data structure for annotated matrices in single-cell analysis. Use when working with .h5ad files or integrating with the scverse ecosystem. This is the data format skill—for analysis workflows use scanpy; for probabilistic models use scvi-tools; for population-scale queries use cellxgene-census.",
+    "evaluated_on": "2026-09-04",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated DOIs, clinical trial results, p-values, or sample sizes detected. All examples use synthetic or clearly labeled demonstration data."
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Not a medical or clinical skill; no diagnostic claims or treatment recommendations. Library wrapper for data structure manipulation."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "All data manipulation patterns follow established best practices. Quality control approaches align with single-cell genomics standards. No methodological fallacies detected."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct and executable. Imports properly documented. No infinite loops, syntax errors, or missing core dependencies."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "All seven promised use cases covered comprehensively with clear, complete instructions. API usage is factually correct and appropriate for task complexity."
+      },
+      "reliability": {
+        "score": 8,
+        "max": 12,
+        "note": "Troubleshooting section addresses common errors. Operations are inherently idempotent. Explicit fault tolerance patterns not fully documented but delegated to library layer."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent progressive disclosure with 404-line SKILL.md plus 5 reference files. Workflow is linear and efficient with no redundant operations."
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear structure with Quick Start section and consistent terminology throughout. Most steps have output specifications; some implicit. Common pitfalls documented."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Description uses natural trigger language aligned with user intent. Handles variations gracefully with multiple documented approaches for different use cases."
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "No credential exposure or dangerous patterns. Validation delegated to anndata library. Index alignment guidance provided to prevent silent errors."
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean separation of concerns across 6 modular files. Changes are well-isolated. Examples are testable but no formal test cases provided."
+      },
+      "agent_specific": {
+        "score": 20,
+        "max": 20,
+        "note": "Perfect trigger precision, progressive disclosure, composability, idempotency, and escape hatches. Explicitly designed to integrate with scverse ecosystem."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 25,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "10X data loading and QC filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow with proper QC metrics, filtering, and compressed output",
+        "basic": 40,
+        "specialized": 55,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Output contains proper 10X data loading pattern",
+            "result": "PASS",
+            "note": "Uses ad.read_10x_h5() correctly with proper parameter usage"
+          },
+          {
+            "text": "Quality filtering logic is correct",
+            "result": "PASS",
+            "note": "Applies both >200 genes and <5000 UMI filters sequentially with boolean indexing"
+          },
+          {
+            "text": "Output includes explanatory comments",
+            "result": "PASS",
+            "note": "Comprehensive inline documentation for each step with diagnostic outputs"
+          },
+          {
+            "text": "Saves filtered data appropriately",
+            "result": "PASS",
+            "note": "Uses h5ad format with gzip compression as recommended"
+          },
+          {
+            "text": "No fabricated metrics or values",
+            "result": "PASS",
+            "note": "All operations are deterministic library calls with no invented data"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Batch concatenation with tracking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct concatenation with batch tracking and verification",
+        "basic": 40,
+        "specialized": 55,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Uses ad.concat with correct parameters",
+            "result": "PASS",
+            "note": "axis=0 for cells, label='batch', keys=['batch1', 'batch2', 'batch3'] properly specified"
+          },
+          {
+            "text": "Tracks batch origin for each cell",
+            "result": "PASS",
+            "note": "Creates batch column in obs DataFrame automatically via label parameter"
+          },
+          {
+            "text": "Counts cells per batch correctly",
+            "result": "PASS",
+            "note": "Uses pandas value_counts() on batch column with proportions as alternative"
+          },
+          {
+            "text": "Explains join strategy",
+            "result": "PASS",
+            "note": "Documents inner vs outer join options with implications for gene retention"
+          },
+          {
+            "text": "Includes verification steps",
+            "result": "PASS",
+            "note": "Checks unique batches, total cells, and sum consistency"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Backed mode for large files",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Memory-efficient approach with backed mode and subset extraction",
+        "basic": 40,
+        "specialized": 55,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Uses backed='r' correctly",
+            "result": "PASS",
+            "note": "Opens file in read-only backed mode without loading X matrix into memory"
+          },
+          {
+            "text": "Filters without loading full data",
+            "result": "PASS",
+            "note": "Boolean indexing on obs creates lightweight view without data loading"
+          },
+          {
+            "text": "Calls to_memory() to load subset",
+            "result": "PASS",
+            "note": "Correctly loads only filtered T cells into RAM after metadata-based selection"
+          },
+          {
+            "text": "Includes alternative chunked approach",
+            "result": "PASS",
+            "note": "Shows advanced pattern in comments for processing very large subsets in chunks"
+          },
+          {
+            "text": "Uses compression when saving",
+            "result": "PASS",
+            "note": "Applies gzip compression to output file to reduce disk usage"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Raw data preservation workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive demonstration with multiple access patterns and best practices",
+        "basic": 39,
+        "specialized": 60,
+        "total": 99,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Stores raw before filtering",
+            "result": "PASS",
+            "note": "Uses adata.raw = adata.copy() pattern at correct step before gene filtering"
+          },
+          {
+            "text": "Demonstrates multiple access patterns",
+            "result": "PASS",
+            "note": "Shows 5 different ways to access raw data: by gene, all genes, subset, list, comparison"
+          },
+          {
+            "text": "Includes complete workflow",
+            "result": "PASS",
+            "note": "Setup with seed, store raw, normalize, identify HVGs, filter, access, save, reload"
+          },
+          {
+            "text": "Shows comparison between filtered and raw",
+            "result": "PASS",
+            "note": "Demonstrates coexistence of two data views with same cells but different gene sets"
+          },
+          {
+            "text": "Documents key pattern summary",
+            "result": "PASS",
+            "note": "Includes explicit takeaways section with 5-point pattern reference"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Multimodal data merging with cell alignment",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Three complete solutions covering different multimodal approaches",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Addresses cell ID alignment issue",
+            "result": "PASS",
+            "note": "Explicitly reorders protein data using adata_protein[adata_rna.obs_names, :] before concatenation"
+          },
+          {
+            "text": "Demonstrates axis=1 concatenation",
+            "result": "PASS",
+            "note": "Correct use of ad.concat(axis=1) for combining different feature types with modality labels"
+          },
+          {
+            "text": "Includes Muon/MuData approach",
+            "result": "PASS",
+            "note": "Shows recommended multimodal solution with automatic alignment in try/except block"
+          },
+          {
+            "text": "Provides three distinct approaches",
+            "result": "PASS",
+            "note": "Covers ad.concat, MuData, and obsm storage with different use cases for each"
+          },
+          {
+            "text": "Includes best practices summary",
+            "result": "PASS",
+            "note": "Documents decision criteria with 5-point recommendation list for approach selection"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 57.7,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional progressive disclosure with 404-line SKILL.md and 5 well-organized reference files",
+    "Clear scope boundaries explicitly stating 'data format skill—for analysis workflows use scanpy'",
+    "Comprehensive coverage of all promised use cases from basic I/O to complex multimodal merging",
+    "High composability with explicit scverse ecosystem integration examples",
+    "Excellent execution consistency with 96.2 average score and 100% assertion pass rate"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Enhance explicit error handling documentation",
+      "observed_in": [],
+      "problem": "Skill relies on anndata library error handling without documenting common error scenarios users may encounter.",
+      "root_cause": "Focus on happy-path workflows without failure mode guidance in SKILL.md.",
+      "fix": "Add a 'Common Errors and Solutions' section documenting: file not found errors when loading, index mismatch errors during concatenation, memory errors and when to use backed mode, schema validation errors for malformed h5ad files."
+    },
+    {
+      "priority": "P2",
+      "title": "Add formal test cases or examples",
+      "observed_in": [],
+      "problem": "While examples are excellent, no explicit test cases or small example datasets for validation.",
+      "root_cause": "Documentation-focused approach without verification artifacts.",
+      "fix": "Add a tests/ or examples/ directory with: small example h5ad files for testing, Jupyter notebook demonstrating all core workflows, expected outputs for canonical operations."
+    },
+    {
+      "priority": "P2",
+      "title": "Include troubleshooting for concatenation edge cases",
+      "observed_in": [],
+      "problem": "Concatenation documentation doesn't explicitly address what happens with conflicting obs/var metadata during merge.",
+      "root_cause": "Focus on simple merge strategies without edge case documentation.",
+      "fix": "In references/concatenation.md, add section on: handling conflicting metadata columns, when to use 'first', 'only', 'same' merge strategies with examples, demonstration of obs columns that don't align across datasets."
+    }
+  ]
+}

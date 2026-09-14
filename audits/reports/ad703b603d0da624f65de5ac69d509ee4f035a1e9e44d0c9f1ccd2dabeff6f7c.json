@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "skill_name": "nature-shared",
+    "description": "Shared support package for nature-* skills containing common definitions and reference materials: reader-workflow, paper-type-taxonomy, ethics, terminology-ledger, consistency-sweep, main-text-discipline, nature-results-discussion, nature-introduction, nature-abstract, journal-specific formats (Nature flagship, Nature Communications, NMI). Not a standalone skill, consumed by other nature-* skills via relative paths in manifest.yaml.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "N/A",
+    "complexity": "Simple",
+    "n_inputs": 0
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "N/A",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Infrastructure component - no executable outputs to evaluate"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Infrastructure component - provides reference materials only"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Infrastructure component - contains definitions, not methodological guidance"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Infrastructure component - no code generation"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive shared components: 10 core files (reader-workflow, paper-type-taxonomy, ethics, terminology-ledger, consistency-sweep, main-text-discipline, nature-results-discussion, nature-introduction, nature-abstract, research-compliance), 3 journal formats (Nature flagship, NatComms, NMI), scripts/check_consistency.py for mechanical pre-screening."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong version control potential. Usage documented per file. Minor: no explicit version tracking for shared components (nature-polishing v6.5 may depend on different terminology-ledger.md version than nature-writing v3.2)."
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient: only loaded by consuming skills when manifest specifies. Avoids duplication across skills. Small granular files enable selective loading."
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear relative path convention (../nature-shared/core/file.md). README documents what/when/who. Minor: lacks explicit dependency graph showing which skills use which shared files."
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good bilingual README (README.md Chinese, README_EN.md English). Usage table clear. Minor: no standalone documentation for shared components."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Safe: contains only definitions and reference materials. No executable code beyond check_consistency.py (mechanical screening, no auto-edit). Ethics.md included for compliance guidance."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent: DRY principle enforced (2+ skills → shared layer). Clear extension rule. Manifest.yaml tracks shared files. Scripts/ separate. Tests/ present. Versioned structure."
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Good shared-layer design. Relative path convention works. Minor: no version compatibility checks (consuming skill manifest doesn't specify required shared-layer version)."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 0,
+      "total": 0
+    },
+    "inputs": []
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 55.2,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent DRY principle enforcement: shared layer avoids duplication across 10+ consuming skills (nature-polishing, nature-writing, nature-reader, etc.)",
+    "Clear usage documentation: README table shows which files serve which skills with usage examples",
+    "Strong granularity: 10 core files enable selective loading (skills load only what they need)",
+    "Robust relative path convention: ../nature-shared/core/ works consistently across all skills",
+    "Comprehensive corpus-derived patterns: nature-abstract, nature-introduction, nature-results-discussion provide evidence-based guidance from 50+ published Nature papers"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add version tracking for shared components",
+      "observed_in": [],
+      "problem": "Shared files (terminology-ledger.md, main-text-discipline.md) evolve but no version tracking. nature-polishing v6.5 and nature-writing v3.2 may depend on different shared-file versions without explicit compatibility declaration.",
+      "root_cause": "Shared layer treated as monolithic, not versioned per file.",
+      "fix": "Add manifest.yaml to nature-shared/ with file versions: {core/terminology-ledger.md: v2.1, core/main-text-discipline.md: v1.3, ...}. Consuming skills declare required versions in their manifest. Add scripts/check_compatibility.py to validate version requirements before skill execution."
+    },
+    {
+      "priority": "P2",
+      "title": "Add dependency graph visualization",
+      "observed_in": [],
+      "problem": "README table shows examples ('nature-polishing, nature-writing') but incomplete. Which skills use consistency-sweep.md? Complete dependency graph not documented.",
+      "root_cause": "Manual usage table maintenance, incomplete coverage.",
+      "fix": "Generate dependency graph automatically: (1) scan all nature-* skill manifests for ../nature-shared references, (2) build graph (file → [consuming skills]), (3) render as Mermaid diagram in README, (4) include in CI to update on manifest changes. Add scripts/generate_dependency_graph.py."
+    },
+    {
+      "priority": "P2",
+      "title": "Add standalone component documentation",
+      "observed_in": [],
+      "problem": "Shared components lack standalone docs. To understand terminology-ledger.md usage, must read consuming skills (nature-polishing, nature-reader). No single-source documentation.",
+      "root_cause": "Components documented only in consuming skill context.",
+      "fix": "Add core/*.usage.md for each shared file documenting: (1) purpose (what problem it solves), (2) structure (expected format), (3) usage pattern (how skills should integrate), (4) examples (typical ledger entries), (5) consuming skills list. Generate usage docs as prerequisite for adding new shared components."
+    }
+  ]
+}

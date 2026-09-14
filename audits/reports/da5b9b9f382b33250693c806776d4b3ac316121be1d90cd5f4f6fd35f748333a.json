@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "skill_name": "kermt-pretrain-scratch",
+    "description": "Pretrain a fresh KERMT model from scratch on a user-provided corpus. Builds a new vocabulary from the corpus, instantiates the model architecture from defaults, and launches pretrain_ddp.py inside the kermt container (detached for long runs). Unlike kermt-continue-pretrain, no starting checkpoint is loaded — the model is randomly initialized.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 91,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete 7-step workflow for from-scratch pretraining; three pretrain modes supported (vocab, cmim, hybrid); fresh vocabulary building from corpus"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation with multi-stage checks; explicit runtime warning before launch; minor: no guidance on handling partial vocab building failures for very large corpora"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "198 lines within reasonable range; explicit line/token budget comment shows awareness; minor: hardware requirements table duplicated from kermt-continue-pretrain"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 7-step workflow; explicit pretrain-target-mode choice required; strong runtime warning; minor: GPU indexing caveat duplicated without inline diagnostic"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent cost transparency with days-scale warning; clear when-to-invoke guidance distinguishing from kermt-continue-pretrain; explicit confirmation required"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "No checkpoint modification risk (no input checkpoint); proper path isolation; strong guardrails against accidental expensive runs via explicit confirmation"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean single-file structure; replayability documented; minor: shared hardware requirements could reference kermt-continue-pretrain instead of duplicating"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Good trigger precision; clear distinction from kermt-continue-pretrain and kermt-add-cmim-pretrain; hard rules prevent dangerous operations; lacks explicit idempotency statement; no consolidated escape hatches"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 19
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hybrid pretrain from scratch with auto-split corpus",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete from-scratch workflow with hybrid mode, fresh vocab building, and runtime warning",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "pretrain-target-mode explicitly set to hybrid",
+            "result": "PASS",
+            "note": "Required parameter documented with three options (vocab/cmim/hybrid)"
+          },
+          {
+            "text": "prepare_data.py builds fresh vocabulary from corpus",
+            "result": "PASS",
+            "note": "Step 4: no --vocab-dir passed, prepare emits vocab_source: built_fresh"
+          },
+          {
+            "text": "Strong runtime warning with days-scale estimate shown",
+            "result": "PASS",
+            "note": "Step 5: explicit warning about days-scale training and suggestion to use continue-pretrain"
+          },
+          {
+            "text": "Runner launched with --from-scratch flag (no --ckpt)",
+            "result": "PASS",
+            "note": "Step 6: --from-scratch passed, --ckpt explicitly omitted"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Vocab-only pretrain for lightweight encoder",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Vocab mode selection with encoder-only architecture",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "pretrain-target-mode set to vocab for lightweight option",
+            "result": "PASS",
+            "note": "Mode choice documented as encoder-only, lightweight"
+          },
+          {
+            "text": "Architecture extracted from defaults_pretrain.json arch group",
+            "result": "PASS",
+            "note": "Step 6 and manifest documentation show arch from defaults"
+          },
+          {
+            "text": "Manifest records from_scratch: true",
+            "result": "PASS",
+            "note": "What's in the manifest section documents from_scratch field"
+          },
+          {
+            "text": "User prompted if pretrain-target-mode not provided",
+            "result": "PASS",
+            "note": "Hard rules: never silently default pretrain-target-mode"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "User provides both --ckpt and from-scratch request",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct conflict detection and clarification request",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Hard rule: never accept --ckpt flag for from-scratch",
+            "result": "PASS",
+            "note": "Hard rules section explicitly states from-scratch exclusive with input ckpt"
+          },
+          {
+            "text": "Common error documents --from-scratch incompatible with --ckpt",
+            "result": "PASS",
+            "note": "Error scenario documented with clarification prompt"
+          },
+          {
+            "text": "User asked which mode they intended",
+            "result": "PASS",
+            "note": "Common errors: ask which one they meant"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "cMIM contrastive pretrain with separate val CSV",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "cMIM mode with SMILES vocab building and explicit validation split",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "pretrain-target-mode set to cmim for contrastive objective",
+            "result": "PASS",
+            "note": "Mode documented as contrastive + SMILES reconstruction"
+          },
+          {
+            "text": "SMILES vocab built from corpus for decoder",
+            "result": "PASS",
+            "note": "Description: requires building SMILES vocab from corpus"
+          },
+          {
+            "text": "Separate val-csv passed to prepare_data.py",
+            "result": "PASS",
+            "note": "Step 4: --val-csv parameter documented"
+          },
+          {
+            "text": "Contrastive-specific hyperparameters available",
+            "result": "PASS",
+            "note": "Optional inputs: latent-dim, contrastive-temperature for cmim/hybrid"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "pretrain-target-mode omitted from user request",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Correct refusal to default but mode selection guidance could be more detailed",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Hard rule prevents silent defaulting of pretrain-target-mode",
+            "result": "PASS",
+            "note": "Hard rules: never silently default; prompt user if not given"
+          },
+          {
+            "text": "User prompted to make informed choice",
+            "result": "PASS",
+            "note": "Required input section emphasizes explicit choice needed"
+          },
+          {
+            "text": "Common error documents missing mode flag",
+            "result": "PASS",
+            "note": "Error: pretrain-target-mode required when --from-scratch set"
+          },
+          {
+            "text": "Guidance provided on which mode to choose for user's use case",
+            "result": "FAIL",
+            "note": "Modes described (vocab=lightweight, hybrid=SOTA) but no decision tree for when to use each"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.4,
+    "dynamic_weighted": 55.2,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional cost transparency with strong days-scale warning and recommendation to use kermt-continue-pretrain for faster convergence",
+    "Architectural choice made explicit: pretrain-target-mode required without default, forcing informed user decision",
+    "Clean separation from continue-pretrain: no checkpoint input, fresh vocabulary building, explicit --from-scratch flag",
+    "Strong safety guardrails preventing accidental expensive runs via explicit confirmation and conflict detection",
+    "Comprehensive manifest documentation capturing from-scratch provenance and architecture defaults"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add decision tree for pretrain-target-mode selection",
+      "observed_in": ["Input 5"],
+      "problem": "Modes described (vocab=lightweight, hybrid=SOTA, cmim=contrastive) but no guidance on when to choose each for specific use cases",
+      "root_cause": "Assumes user understands tradeoffs between modes from brief descriptions",
+      "fix": "Add to Inputs section after mode descriptions: 'Choosing a mode: Use vocab for fast lightweight pretraining when downstream tasks don't need contrastive features; use cmim for pure contrastive learning; use hybrid (recommended) for best downstream performance combining both objectives, at cost of slightly longer training.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Reference shared hardware requirements instead of duplicating",
+      "observed_in": ["Performance context evaluation", "Maintainability evaluation"],
+      "problem": "Hardware requirements table fully duplicated from kermt-continue-pretrain including GPU indexing caveat",
+      "root_cause": "Copy-paste for self-containment increases maintenance burden",
+      "fix": "Replace Hardware requirements section with: 'Same as kermt-continue-pretrain (see that skill for GPU/VRAM/disk details). Key difference: Wall time is days-scale for from-scratch pretraining vs hours for continue-pretrain, even on multi-GPU. The skill estimates runtime before launch.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance for large corpus vocab building failures",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No handling documented for scenarios where vocabulary building fails or runs out of memory on very large corpora (tens of millions of molecules)",
+      "root_cause": "Assumes prepare_data vocab building always succeeds",
+      "fix": "Add to Common errors: 'prepare_data vocab building OOM or timeout → very large corpora (>50M molecules) may need chunked vocab building. Consider sampling a representative subset for vocab construction, then using full corpus for training with --vocab-dir pointing to pre-built vocab.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for repeated from-scratch runs",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running from-scratch multiple times with same corpus produces similar models",
+      "root_cause": "Random initialization and stochastic training not discussed",
+      "fix": "Add to Hard rules: 'Idempotency: from-scratch pretraining with same corpus and --seed N produces deterministic data splits and shuffling, but model initialization is random. Different runs will converge to different local minima. For reproducible research, save and version final checkpoints rather than regenerating.'"
+    }
+  ]
+}

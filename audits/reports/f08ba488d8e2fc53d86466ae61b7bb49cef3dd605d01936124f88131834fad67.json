@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "flowio",
+    "description": "Read, inspect, and write Flow Cytometry Standard (FCS) 2.0, 3.0, and 3.1 files with FlowIO. Use for low-level FCS metadata and channel inspection, NumPy event extraction, multi-dataset files, table export, and FCS 3.1 creation; use FlowKit for compensation, cytometry transforms, gating, or FlowJo workspaces.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of FlowIO capabilities with clear boundaries (does not perform compensation, transforms, or gating) and precise preprocessing semantics"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for low-level FCS I/O with explicit direction to FlowKit for downstream analysis"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on FCS 2.0/3.0/3.1 specifications with documented preprocessing equations and FCS standard compliance"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper file handling and validation patterns"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of FCS operations including read (metadata/events), multi-dataset files, write FCS 3.1, with excellent reference organization and bundled inspector"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability with 6-point operating workflow, validation by reopening, non-negotiable checks (6 rules), and troubleshooting reference"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (310 lines) with clear critical semantics section, 5 comprehensive reference files, and bundled inspector script"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional with detailed critical semantics (TEXT normalization, two event representations, channel numbering), operating workflow, and clear FlowKit boundary"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with version confirmation; quick start for read/multi-dataset/write; bundled inspector with uv run pattern; metadata sensitivity warnings"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good security with metadata sensitivity warnings (sample/subject/operator identifiers), strict parsing by default; minor: lacks guidance on untrusted FCS files"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 2.0, clear license (BSD-3-Clause), 5 comprehensive references, version pinning (FlowIO 1.4.0, verified 2026-07-23), and authoritative FCS spec citations"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and NumPy integration; bundled inspector script; minor: memory-mapped access limitations mentioned but not workarounded"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 91.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "FCS file reading with preprocessing and metadata extraction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard flow cytometry file inspection workflow",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "FlowData() constructor with path or Path object",
+            "result": "PASS",
+            "note": "Quick start demonstrates FlowData(Path('sample.fcs')) pattern"
+          },
+          {
+            "text": "as_array(preprocess=True) for gain/log/time scaling",
+            "result": "PASS",
+            "note": "Operating workflow point 3 and quick start show preprocess=True for FCS metadata scaling"
+          },
+          {
+            "text": "TEXT key normalization (lowercase, no $)",
+            "result": "PASS",
+            "note": "Critical Semantics section explicitly warns: 'Do not look up \"$DATE\", \"$CYT\"...'"
+          },
+          {
+            "text": "only_text=True for metadata-only inspection",
+            "result": "PASS",
+            "note": "Operating workflow point 2 and quick start show only_text=True pattern"
+          },
+          {
+            "text": "Channel labels via pnn_labels and pns_labels",
+            "result": "PASS",
+            "note": "Quick start accesses flow.pnn_labels and flow.pns_labels with length matching documented"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Multi-dataset legacy file handling",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Legacy FCS format with multiple datasets",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "read_multiple_data_sets() standalone helper",
+            "result": "PASS",
+            "note": "Quick Start: Read Multiple Datasets demonstrates read_multiple_data_sets() usage"
+          },
+          {
+            "text": "Path argument recommended over handle for multi-dataset",
+            "result": "PASS",
+            "note": "Explicitly warns: 'pass a filesystem path for multi-dataset files' due to handle closing"
+          },
+          {
+            "text": "FCS 3.1 deprecation of multiple datasets noted",
+            "result": "PASS",
+            "note": "Multi-dataset section states 'FCS 3.1 specification deprecated multiple datasets'"
+          },
+          {
+            "text": "Per-dataset iteration and processing",
+            "result": "PASS",
+            "note": "Example shows 'for index, dataset in enumerate(datasets)' pattern"
+          },
+          {
+            "text": "$NEXTDATA offset handling abstracted",
+            "result": "PASS",
+            "note": "Section states 'Use the standalone helper rather than manually interpreting $NEXTDATA offsets'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "FCS 3.1 file creation with validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "FCS export with round-trip verification",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "create_fcs() with flattened event data",
+            "result": "PASS",
+            "note": "Quick start shows values.ravel(order='C') for row-major flattening"
+          },
+          {
+            "text": "Binary file handle requirement",
+            "result": "PASS",
+            "note": "Writing is intentionally limited section: 'An already-open binary file handle' and example uses 'xb' mode"
+          },
+          {
+            "text": "FCS 3.1 list-mode single-precision float specification",
+            "result": "PASS",
+            "note": "Writing section states '$MODE=L single-precision float $DATATYPE=F'"
+          },
+          {
+            "text": "Validation by reopening pattern",
+            "result": "PASS",
+            "note": "Operating workflow point 6 and quick start demonstrate reopening with assertions"
+          },
+          {
+            "text": "Metadata normalization handling in write",
+            "result": "FAIL",
+            "note": "Metadata dict usage shown but normalization implications not detailed in quick start"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "File rewriting with selective metadata preservation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "FCS transformation and deidentification workflow",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "write_fcs() for event preservation",
+            "result": "PASS",
+            "note": "Copy or Rewrite section demonstrates write_fcs() without event changes"
+          },
+          {
+            "text": "Selective metadata preservation pattern",
+            "result": "PASS",
+            "note": "Example shows write_fcs('copy.fcs') vs write_fcs('deidentified.fcs', metadata={...})"
+          },
+          {
+            "text": "Metadata merging vs replacement semantics",
+            "result": "PASS",
+            "note": "Explicitly states 'Passing any dictionary, including {}, replaces those defaults rather than merging'"
+          },
+          {
+            "text": "Overwrite behavior warning",
+            "result": "PASS",
+            "note": "Section warns 'opens the destination for overwrite, so reject an existing output path...'"
+          },
+          {
+            "text": "Preprocessing side effects on round-trip",
+            "result": "FAIL",
+            "note": "Warning about PnG/timestep changes affecting later preprocessing mentioned but not demonstrated"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Bundled inspector with memory limits and privacy controls",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Production inspection workflow with constraints",
+        "basic": 33,
+        "specialized": 43,
+        "total": 76,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "inspect_fcs.py bundled script",
+            "result": "PASS",
+            "note": "Bundled Inspector section documents script with uv run pattern"
+          },
+          {
+            "text": "Metadata-only mode by default",
+            "result": "PASS",
+            "note": "Inspector 'By default...reads metadata only' and requires --stats for events"
+          },
+          {
+            "text": "Size limit protection",
+            "result": "PASS",
+            "note": "Inspector 'refuses files above a configurable size limit'"
+          },
+          {
+            "text": "Privacy-aware output with --include-text flag",
+            "result": "PASS",
+            "note": "Inspector emits 'structural fields and channel labels without full TEXT' unless --include-text with review warning"
+          },
+          {
+            "text": "Memory limit configuration documented",
+            "result": "FAIL",
+            "note": "Inspector mentions 'input/array memory limits' in help but not detailed in main doc"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 54.6,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional semantic clarity with Critical Semantics section covering TEXT normalization, two event representations, channel numbering, and write limitations",
+    "Outstanding boundary definition clearly distinguishing FlowIO (low-level I/O) from FlowKit (compensation, transforms, gating) to prevent misuse",
+    "Excellent validation culture with 6-point operating workflow emphasizing 'Validate writes by reopening' and round-trip verification examples",
+    "Strong privacy awareness with metadata sensitivity warnings about sample/subject/operator identifiers and bundled inspector privacy controls",
+    "Comprehensive non-negotiable checks (6 rules) preventing common errors like passing 2D arrays to create_fcs or assuming TEXT keys retain $ prefix"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Document memory limit configuration for inspector",
+      "observed_in": [5],
+      "problem": "Inspector mentions memory limits in --help but not detailed in main documentation",
+      "root_cause": "Bundled Inspector section focuses on basic usage without parameter details",
+      "fix": "Add note: 'Use --max-input-size (default 128 MiB) and --max-array-size (default 512 MiB) to protect against resource exhaustion with large FCS files'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add preprocessing side effect example for write_fcs",
+      "observed_in": [4],
+      "problem": "Warning about PnG/timestep changes affecting round-trip mentioned but not demonstrated",
+      "root_cause": "Copy or Rewrite section describes behavior without illustrative example",
+      "fix": "Add brief example showing how dropping PnG during write_fcs changes subsequent as_array(preprocess=True) results, emphasizing validation of both representations"
+    },
+    {
+      "priority": "P3",
+      "title": "Add guidance for untrusted FCS files",
+      "observed_in": [],
+      "problem": "No discussion of handling potentially malicious FCS files",
+      "root_cause": "Security focuses on metadata sensitivity without addressing adversarial inputs",
+      "fix": "Add security note: 'When loading FCS files from untrusted sources, use only_text=True first and validate event_count, channel_count, and version before loading full event data'"
+    }
+  ]
+}

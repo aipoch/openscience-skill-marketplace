@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "pptx-posters",
+    "description": "Create and audit editable scientific posters in macro-free PowerPoint (.pptx) from author-approved local content and assets. Comprehensive workflow covering physical requirements, manifest building with approval/hashing, asset inventory, palette/contrast checks, generation with python-pptx 1.0.2, package security inspection, layout validation, and export planning. Use only when PowerPoint is the required deliverable with exact physical/printer/accessibility/provenance checks.",
+    "evaluated_on": "2026-09-09",
+    "category": "writing",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Strong integrity framework: author approval bound to content hash, no fabrication of claims/numbers/citations, exact provenance for every element/asset"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Clear scope: only for PowerPoint deliverables; 8 hard gates including never fabricate missing material, never leave plausible placeholders"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on python-pptx 1.0.2 with exact pinning, WCAG 2.2 contrast math, printer/conference requirements validation, accessibility standards"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready with 7 bundled CLIs covering manifest validation, generation, security inspection, layout checks, asset inventory, palette audit, export planning"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete poster workflow: requirements, manifest with approval/hashing, generation, security inspection, layout validation, asset audit, palette check, export planning"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional safety: 8 hard gates stopping on unmet conditions, exact pinning (python-pptx 1.0.2, Pillow 12.3.0, lxml 6.1.1), fail-closed drafts"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient local-only generation; SKILL.md 259 lines dense with security/validation requirements; could benefit from quick-start summary"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Strong structure with step-by-step workflow, 7 CLIs, templates, reference files; complexity high due to thorough safety requirements"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear scope statement (PowerPoint-only), hard gates prominent, workflow logical, approval/provenance requirements upfront"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding: package inspector never extracts/executes, rejects macros/OLE/external links, bounded ZIP, manifest SHA-256 hashing, image metadata blocking"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent: 5 reference files, exact dependency pins with -B bytecode avoidance, security validation document, dated source ledger, quality checklist"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Deterministic generation from manifest; strong composability with approved assets; minor: integration with figure generation skills could be clearer"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.33,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Manifest validation with author approval and content hash",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core workflow starting point with approval binding",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "validate_manifest.py checks author_verified on sources, author_approved on elements/assets",
+            "result": "PASS",
+            "note": "Approval requirements enforced at validation"
+          },
+          {
+            "text": "Content hash binds approval to exact manifest state",
+            "result": "PASS",
+            "note": "Non-approval edits invalidate approval by changing hash"
+          },
+          {
+            "text": "Local PNG/JPEG paths with lowercase SHA-256 hashes required",
+            "result": "PASS",
+            "note": "Asset integrity verification built into manifest"
+          },
+          {
+            "text": "Template in assets/poster_manifest_template.json with deliberate invalidity",
+            "result": "PASS",
+            "note": "Fail-closed design prevents accidental generation from template"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Asset inventory with effective DPI and metadata blocking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Pre-generation asset audit with security checks",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "inventory_images.py fully decodes bounded images",
+            "result": "PASS",
+            "note": "Actual decoding catches malformed/bomb images"
+          },
+          {
+            "text": "Effective DPI = pixels / final placed inches, not metadata DPI",
+            "result": "PASS",
+            "note": "Correct DPI calculation documented"
+          },
+          {
+            "text": "Blocks EXIF/XMP/comments and embedded text/application metadata",
+            "result": "PASS",
+            "note": "Privacy and security: metadata stripped before use"
+          },
+          {
+            "text": "Output to JSON for review before generation",
+            "result": "PASS",
+            "note": "Auditable intermediate results"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Palette check with WCAG 2.2 sRGB contrast",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Accessibility audit for color pairs",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_palette.py uses WCAG 2.2 sRGB mathematics",
+            "result": "PASS",
+            "note": "Standard contrast calculation method"
+          },
+          {
+            "text": "Contrast values are design targets not standalone conformance claims",
+            "result": "PASS",
+            "note": "Appropriate scope limitation for physical posters"
+          },
+          {
+            "text": "Requires color-redundant labels, markers, shapes, patterns, line styles",
+            "result": "PASS",
+            "note": "Multi-encoding requirement for accessibility"
+          },
+          {
+            "text": "Output to JSON with contrast pairs documented",
+            "result": "PASS",
+            "note": "Auditable color decisions"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Generation with exact pins and package inspection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Macro-free PPTX generation with security validation",
+        "basic": 40,
+        "specialized": 54,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "generate_poster.py uses exact python-pptx 1.0.2, Pillow 12.3.0, lxml 6.1.1",
+            "result": "PASS",
+            "note": "Supply chain control with exact pinning"
+          },
+          {
+            "text": "Never loads user template, creates blank presentation",
+            "result": "PASS",
+            "note": "Prevents template-based code execution"
+          },
+          {
+            "text": "inspect_pptx.py reads bounded ZIP metadata and XML only, never extracts/opens/executes",
+            "result": "PASS",
+            "note": "Security inspection without execution risk"
+          },
+          {
+            "text": "Rejects macros, VBA, ActiveX, OLE, embedded, executable, external relationships",
+            "result": "PARTIAL",
+            "note": "Comprehensive rejection list but enforcement depends on correct inspector implementation"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Layout validation with overlap and reading-order checks",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Post-generation technical audit",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "check_layout.py validates against manifest specifications",
+            "result": "PASS",
+            "note": "Bidirectional validation: generated matches manifest"
+          },
+          {
+            "text": "Checks bounds, overlaps, reading order, final font size",
+            "result": "PASS",
+            "note": "Accessibility and layout correctness"
+          },
+          {
+            "text": "Output to JSON with violations identified",
+            "result": "PASS",
+            "note": "Actionable quality report"
+          },
+          {
+            "text": "Does not replace manual PowerPoint accessibility check",
+            "result": "PASS",
+            "note": "Human verification gate clearly stated"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Export planning with CMYK and printer requirements",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Pre-print preflight with color mode validation",
+        "basic": 40,
+        "specialized": 54,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "plan_export.py assesses dimensions, scale, fonts, color, media",
+            "result": "PASS",
+            "note": "Comprehensive export readiness check"
+          },
+          {
+            "text": "Blocks CMYK claim without printer-approved conversion/profile/proof",
+            "result": "PASS",
+            "note": "Honest limitation: native PowerPoint PDF is not CMYK-compliant"
+          },
+          {
+            "text": "Output includes export plan and print readiness blockers",
+            "result": "PASS",
+            "note": "Prevents premature printing"
+          },
+          {
+            "text": "All 7 CLI scripts verified in scripts/ directory",
+            "result": "PARTIAL",
+            "note": "CLIs extensively documented but directory not fully verified"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 57.2,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security: package inspector never extracts/executes, rejects macros/OLE/external links, bounded ZIP validation, SHA-256 asset hashing",
+    "Outstanding integrity framework: author approval bound to content hash, 8 hard gates stopping on unmet conditions, no fabrication/placeholders, exact provenance",
+    "Comprehensive workflow with 7 specialized CLIs covering manifest validation, generation, security inspection, layout, assets, palette, export planning",
+    "Strong accessibility emphasis: WCAG 2.2 contrast, color-redundant encoding, reading order, alt text in PresentationML, manual verification gate",
+    "Excellent version control: exact dependency pinning (python-pptx 1.0.2, Pillow 12.3.0, lxml 6.1.1), -B bytecode avoidance, dated source ledger"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add quick-start summary before deep requirements",
+      "observed_in": [1],
+      "problem": "SKILL.md immediately dives into hard gates and requirements; no 2-minute overview of workflow stages",
+      "root_cause": "Optimized for safety and completeness over initial orientation",
+      "fix": "Add 'Quick Overview' section after Scope showing 5 main stages (requirements → manifest → audit → generate → validate) before detailed workflow"
+    },
+    {
+      "priority": "P2",
+      "title": "Clarify integration with figure generation skills",
+      "observed_in": [2],
+      "problem": "Assets must be local PNG/JPEG with approval, but how they were generated (scientific-schematics, matplotlib, etc.) not explicitly linked",
+      "root_cause": "Focus on asset validation rather than asset creation workflow",
+      "fix": "Add references/asset_preparation.md showing how to use scientific-schematics or matplotlib skills to generate figures, save as PNG, hash, and include in manifest with provenance"
+    }
+  ]
+}

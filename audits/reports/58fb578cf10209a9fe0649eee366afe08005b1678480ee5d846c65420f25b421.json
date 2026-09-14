@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "hypothesis-generation",
+    "description": "Formulate evidence-bounded scientific questions, candidate hypotheses, rival explanations, causal or associational claims, discriminating predictions, measurements, and preregistration-ready analysis plans. Use when turning observations or preliminary findings into transparent, testable research plans without treating hypotheses as facts.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Exceptional scientific integrity: never presents hypotheses as facts, requires evidence traceability, prevents HARKing, enforces distinction between observation and inference"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope with clear non-negotiable boundaries: no clinical diagnosis, no bypassing oversight, no fabrication, no automatic scoring"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established research methodology: strong inference, causal inference frameworks, preregistration, PICO/PECO frameworks, and current reporting guidelines"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "7 bundled deterministic, local-only CLIs that validate declarations and internal consistency without scoring or executing text from inputs"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 97,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive 12-step workflow from scope/safety to human accountability; 7 bundled CLIs with complete schemas; excellent 9-reference progressive disclosure"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: Python 3.11+ standard library only, deterministic and local-only CLIs, no network/credentials/models/external packages, bounded JSON/CSV/Markdown inputs"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized 265-line SKILL.md with exceptional progressive disclosure through 9 detailed reference files; clear workflow structure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Perfect trigger description with specific use-case patterns; clear scope boundaries and non-negotiable safety gates; explicit object distinctions table"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent: no installation required (standard library), clear workflow steps, templates for all major artifacts, and comprehensive safety guidance"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: non-negotiable safety boundaries, sensitive data authorization required, no external transmission without approval, fabrication prevention, oversight enforcement"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Excellent with version 2.1, last-reviewed date (2026-07-23), license, compatibility; dated source ledger verified through 2026-07-23; minor: no explicit changelog"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with clear input/output contracts for 7 CLIs; excellent progressive disclosure with 9 references; minor: workflow orchestration could show multi-tool sequences"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 24,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Generate rival hypotheses with evidence ledger",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from observation to rival generation with evidence traceability",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Observation frozen before interpretation with measurement and uncertainty",
+            "result": "PASS",
+            "note": "Workflow step 2 requires freezing observation with specific fields before interpretation"
+          },
+          {
+            "text": "Rivals generated from different explanatory classes (artifact, confounding, selection, etc.)",
+            "result": "PASS",
+            "note": "Workflow step 5 lists 9 genuinely different explanatory classes"
+          },
+          {
+            "text": "Evidence ledger template with search boundary documentation",
+            "result": "PASS",
+            "note": "Tool index includes evidence_ledger_template.csv and search_boundary_template.json"
+          },
+          {
+            "text": "audit_evidence_ledger.py validates ledger and boundary together",
+            "result": "PASS",
+            "note": "Tool index shows audit_evidence_ledger.py accepts both ledger.csv and boundary.json"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Causal estimand definition before analysis",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive causal inference framework with identification assumptions",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Claim type classification (descriptive, associational, predictive, causal, mechanistic)",
+            "result": "PASS",
+            "note": "Workflow step 6 requires classifying each target into 5 types"
+          },
+          {
+            "text": "Causal estimand requires 7 components before analysis",
+            "result": "PASS",
+            "note": "Step 6 lists target population, intervention/exposure, comparator, outcome, time, summary, and identification assumptions"
+          },
+          {
+            "text": "Confounding, selection, collider, measurement, and reverse-causation risks documented separately",
+            "result": "PASS",
+            "note": "Step 6 explicitly requires documenting 5 causal-bias risks separately"
+          },
+          {
+            "text": "causal_inference_and_claims.md reference for detailed guidance",
+            "result": "PASS",
+            "note": "References section lists causal_inference_and_claims.md for estimands and bias risks"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Prediction-rival matrix with discriminating tests",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Strong inference pattern with rival contrasts and indeterminate outcomes",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Six components required for every discriminating prediction",
+            "result": "PASS",
+            "note": "Workflow step 7 lists 6 required elements: conditions, observable, pattern, incompatible result, rival contrast, indeterminate"
+          },
+          {
+            "text": "Predictions must contrast rivals with meaningfully different outcomes",
+            "result": "PASS",
+            "note": "Step 7 prefers tests where rivals predict meaningfully different outcomes"
+          },
+          {
+            "text": "Indeterminate outcomes defined with learning plan",
+            "result": "PASS",
+            "note": "Step 7 requires defining indeterminate outcomes and what would be learned"
+          },
+          {
+            "text": "prediction_rival_matrix_template.csv with validate_prediction_matrix.py",
+            "result": "PASS",
+            "note": "Tool index includes prediction/rival matrix template and validation script"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Operationalization with measurement validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive measurement validity framework preventing proxy conflation",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "12 components required for every construct operationalization",
+            "result": "PASS",
+            "note": "Workflow step 8 lists 12 required elements from variable role to measurement bias"
+          },
+          {
+            "text": "Warning against treating convenient proxy as construct itself",
+            "result": "PASS",
+            "note": "Step 8 explicitly warns: 'Do not treat a convenient proxy as the construct itself'"
+          },
+          {
+            "text": "Measurement invariance or cross-group comparability when relevant",
+            "result": "PASS",
+            "note": "Operationalization checklist includes measurement invariance requirement"
+          },
+          {
+            "text": "check_operationalization.py validates operationalization.json",
+            "result": "PASS",
+            "note": "Tool index shows check_operationalization.py with template"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "HARKing prevention with preregistration scaffold",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive HARKing prevention with timestamping and deviation tracking",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Timestamp question, candidates, predictions before accessing outcomes",
+            "result": "PASS",
+            "note": "Workflow step 10 requires timestamping all elements before accessing target outcomes"
+          },
+          {
+            "text": "Data-dependent ideas labeled exploratory afterward",
+            "result": "PASS",
+            "note": "Step 10 requires labeling data-dependent analyses exploratory"
+          },
+          {
+            "text": "Deviations recorded with date, rationale, who decided, expected impact",
+            "result": "PASS",
+            "note": "Step 10 lists 4 required deviation elements"
+          },
+          {
+            "text": "generate_preregistration_scaffold.py creates scaffold from record",
+            "result": "PASS",
+            "note": "Tool index shows scaffold generation from hypothesis_record.json"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Non-negotiable safety boundaries and oversight",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Exceptional safety boundaries with 6 'never' rules and oversight enforcement",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Never present hypothesis as established evidence",
+            "result": "PASS",
+            "note": "Non-negotiable boundaries list 6 'never' rules including this as first"
+          },
+          {
+            "text": "Never supply patient-specific clinical advice",
+            "result": "PASS",
+            "note": "'Never' list explicitly prohibits diagnosis, treatment, dose, prognosis"
+          },
+          {
+            "text": "Never bypass IRB/REC, IACUC, IBC, biosafety, dual-use, privacy, legal, or regulatory review",
+            "result": "PASS",
+            "note": "Comprehensive list of oversight that must not be bypassed"
+          },
+          {
+            "text": "Stop at appropriate gate and route to qualified local authority",
+            "result": "PASS",
+            "note": "Non-negotiable boundaries require stopping at oversight gates and routing to authority"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.8,
+    "dynamic_weighted": 58.1,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional scientific integrity framework: never treats hypotheses as facts, enforces evidence traceability, prevents HARKing, maintains observation-inference distinction",
+    "Comprehensive 12-step workflow from scope/safety gate through human accountability with 7 bundled deterministic, local-only validation CLIs",
+    "Perfect security with non-negotiable safety boundaries: no clinical advice, no oversight bypass, no fabrication, no automatic scoring, authorization gates for sensitive data",
+    "Outstanding progressive disclosure with 9 detailed reference files covering concepts, quality criteria, literature search, causal inference, experimental design, preregistration, ethics/safety",
+    "Perfect reliability: Python 3.11+ standard library only, no network/credentials/models/packages, deterministic bounded inputs, dated source ledger verified through 2026-07-23"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add workflow orchestration showing multi-tool sequences",
+      "observed_in": [],
+      "problem": "Individual CLIs documented but complete multi-tool workflow not shown end-to-end",
+      "root_cause": "Agent-specific composability focuses on individual tool contracts rather than orchestration",
+      "fix": "Add to concepts_and_workflow.md: example showing hypothesis_record validation → operationalization check → prediction matrix validation → evidence ledger audit → preregistration scaffold generation sequence"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit changelog or version history reference",
+      "observed_in": [],
+      "problem": "Version 2.1 with last-reviewed date but no changelog location specified",
+      "root_cause": "Maintainability focuses on version and dated sources rather than change history",
+      "fix": "Add to maintainability metadata or references: link to skill changelog or note tracking version changes"
+    },
+    {
+      "priority": "P2",
+      "title": "Add quick-reference decision tree for framework selection",
+      "observed_in": [],
+      "problem": "PICO/PECO/prognostic frameworks documented but selection guidance is narrative",
+      "root_cause": "Workflow step 3 lists frameworks but relies on domain knowledge for selection",
+      "fix": "Add to concepts_and_workflow.md or experimental_design_patterns.md: decision tree or flowchart for choosing appropriate question framework (intervention → PICO, exposure → PECO, diagnostic → index/reference/target, etc.)"
+    }
+  ]
+}

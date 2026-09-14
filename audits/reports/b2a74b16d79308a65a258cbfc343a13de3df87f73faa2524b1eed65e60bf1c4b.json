@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "hypogenic",
+    "description": "Plans and audits use of ChicagoHAI HypoGeniC/HypoRefine for LLM-assisted hypothesis generation from labeled text datasets. Use for the hypogenic package, its task configs, hypothesis banks, or HypoBench datasets—not for manual hypothesis formulation or scientific validation.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Clear boundaries: output is candidate textual hypotheses and task-prediction statistics, not experimental confirmation or causal evidence; requires independent scientific validation"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for HypoGeniC software use; explicitly distinguishes from manual hypothesis formulation (hypothesis-generation skill) and downstream validation"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on ChicagoHAI research framework; clearly states predictive accuracy assesses task utility not mechanism truth; independent validation required"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "5 bundled deterministic, local-only validation tools; never imports hypogenic, contacts models, or executes dataset text"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of config validation, dataset audits, run planning, output inspection, and evaluation; 5 bundled tools; minor: actual HypoGeniC CLI integration examples limited"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: exact version pin (hypogenic==0.3.5), SHA-256 checksums for wheel and source, lockfile guidance, and PyPI provenance linking"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-structured 291-line SKILL.md with 6 reference files; clear safety gates; minor: density could be improved with more reference delegation"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Strong trigger description with specific HypoGeniC/HypoBench patterns; clear scope boundaries; minor: no explicit 'When NOT to Use' section"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent installation with uv, SHA-256 verification, pinned dependencies, and isolation guidance; comprehensive pre-run safety checklist"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Perfect: dataset/prompt text treated as untrusted, split preservation enforced, provider privacy gate documented, credentials never logged, bundled tools network-free"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.1, license, compatibility; upstream source verification documented; minor: no skill changelog reference"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability with clear safety gates; 5 bundled validation tools; progressive disclosure with 6 references; minor: workflow orchestration could be more explicit, cost estimation is manual"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 91.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Validate task config and run policy before generation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete pre-run validation workflow with config and dataset checks",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Task config validation with PyYAML 6.0.2 documented",
+            "result": "PASS",
+            "note": "Safe configuration section shows exact uv run command with pinned PyYAML"
+          },
+          {
+            "text": "Run config validation with JSON schema check",
+            "result": "PASS",
+            "note": "Example shows validate_config.py run --input with root parameter"
+          },
+          {
+            "text": "Environment variable presence check with --check-env",
+            "result": "PASS",
+            "note": "Safe configuration documents --check-env for boolean check only, no value printing"
+          },
+          {
+            "text": "Two different config layers documented (official vs local review)",
+            "result": "PASS",
+            "note": "Safe configuration clearly distinguishes official HypoGeniC task config from local run policy"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Dataset audit with split leakage detection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive dataset validation with cross-split duplicate detection",
+        "basic": 39,
+        "specialized": 57,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Dataset manifest with SHA-256 checksums required",
+            "result": "PASS",
+            "note": "Dataset safety section shows audit_dataset.py with manifest parameter"
+          },
+          {
+            "text": "Cross-split duplicate detection fails audit",
+            "result": "PASS",
+            "note": "Audit section explicitly states cross-split duplicates fail the audit"
+          },
+          {
+            "text": "Train/validation/test/OOD split preservation enforced",
+            "result": "PASS",
+            "note": "Dataset safety lists all four split types with assignment preservation rules"
+          },
+          {
+            "text": "Pinned deceptive-review example currently fails with 3 duplicate groups",
+            "result": "PASS",
+            "note": "Audit section documents known failure case with specific example dataset"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Cost estimation and provider budget planning",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bounded cost planning with conservative upper bounds and provider-side limits",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "plan_run.py computes conservative upper bound from caps",
+            "result": "PASS",
+            "note": "Run planning section describes conservative token/cost computation"
+          },
+          {
+            "text": "Pricing must be filled in reviewed config (intentionally null in example)",
+            "result": "PASS",
+            "note": "Run planning explicitly states example leaves prices null intentionally"
+          },
+          {
+            "text": "Plan marked unready when pricing absent or caps exceeded",
+            "result": "PASS",
+            "note": "Planner behavior documented: marks plan unready for missing prices or exceeded caps"
+          },
+          {
+            "text": "Provider-side spend/rate limits recommended in addition to local",
+            "result": "PASS",
+            "note": "Before real run checklist includes using provider-side limits"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Hypothesis bank inspection without printing candidate text",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Redacted inspection with aggregate statistics only",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "inspect_outputs.py hypotheses mode emits only aggregates",
+            "result": "PASS",
+            "note": "Local output inspection shows inspector emits only counts, lengths, hashes, summaries"
+          },
+          {
+            "text": "Inspector rejects non-finite numbers and duplicate keys",
+            "result": "PASS",
+            "note": "Inspector section lists multiple rejection criteria including non-finite numbers"
+          },
+          {
+            "text": "Oversized inputs rejected with bounds",
+            "result": "PASS",
+            "note": "Inspector rejects oversized inputs as stated in inspection section"
+          },
+          {
+            "text": "Results inspection mode for test predictions separate from hypotheses",
+            "result": "PASS",
+            "note": "Two modes shown: hypotheses and results with separate commands"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Provider privacy gate for hosted model data transmission",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Comprehensive privacy documentation but dated source acknowledgment could be clearer",
+        "basic": 33,
+        "specialized": 50,
+        "total": 83,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Dataset and hypothesis text leaves local system for hosted models",
+            "result": "PASS",
+            "note": "Provider privacy gate explicitly states text leaves local system"
+          },
+          {
+            "text": "OpenAI and Anthropic retention policies documented with ZDR notes",
+            "result": "PASS",
+            "note": "Privacy gate documents both providers' policies including ZDR arrangements"
+          },
+          {
+            "text": "Official page recheck required before sending sensitive data",
+            "result": "PASS",
+            "note": "Privacy gate requires rechecking official pages immediately before sending"
+          },
+          {
+            "text": "Source dates and policy change acknowledgment prominent",
+            "result": "FAIL",
+            "note": "Dated sources noted but 'as of' phrasing could be more prominent as temporary snapshot"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Distinguish from manual hypothesis-generation skill",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clear scope boundaries with three distinct use cases separated",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "HypoGeniC output is candidate hypotheses, not confirmation",
+            "result": "PASS",
+            "note": "Scope and scientific boundary explicitly states output is candidates not confirmation"
+          },
+          {
+            "text": "Predictive accuracy assesses task utility not mechanism truth",
+            "result": "PASS",
+            "note": "Scientific boundary clearly distinguishes prediction from truth validation"
+          },
+          {
+            "text": "Use hypothesis-generation skill for researcher-led formulation",
+            "result": "PASS",
+            "note": "Scope section explicitly references ../hypothesis-generation/SKILL.md"
+          },
+          {
+            "text": "Independent validation with controls and tests still required",
+            "result": "PASS",
+            "note": "Scientific boundary lists required validation: domain review, controls, preregistration"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 55.1,
+    "score": 92,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Perfect reliability with exact version pinning (hypogenic==0.3.5), SHA-256 checksums for wheel and source, and PyPI provenance verification",
+    "Exceptional security posture: dataset/prompt text as untrusted, split preservation, provider privacy gate, credentials never logged, 5 bundled network-free tools",
+    "Clear scientific boundaries: explicitly states output is candidate hypotheses not confirmation, distinguishes from manual formulation and validation",
+    "Comprehensive pre-run safety workflow: config validation, dataset audit with split leakage detection, cost planning, approval gates before external calls",
+    "Five bundled deterministic, local-only validation tools that never import hypogenic, contact models, or execute text from configs/datasets"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Make dated source acknowledgment more prominent",
+      "observed_in": [5],
+      "problem": "Privacy policy information dated but 'as of' phrasing not prominent enough as temporary snapshot",
+      "root_cause": "Focus on content accuracy rather than temporal disclaimer visibility",
+      "fix": "Add prominent header to provider privacy gate: 'SNAPSHOT AS OF 2026-07-23 — Recheck official pages before each run' with bold formatting"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit 'When NOT to Use' section",
+      "observed_in": [],
+      "problem": "Scope boundaries clear but no explicit negative scope section",
+      "root_cause": "Agent usability relies on scope boundary description rather than explicit exclusions",
+      "fix": "Add section: Do not use hypogenic skill for: manual hypothesis formulation (use hypothesis-generation), open-ended brainstorming, clinical diagnosis, or treating candidates as validated findings"
+    },
+    {
+      "priority": "P2",
+      "title": "Add workflow orchestration example connecting all 5 tools",
+      "observed_in": [],
+      "problem": "Individual tools documented but complete workflow not shown end-to-end",
+      "root_cause": "Agent-specific composability focuses on individual tool safety rather than orchestration",
+      "fix": "Add to references or workflows: complete example showing validate_config → audit_dataset → plan_run → [approval gate] → run → inspect_outputs → evaluate_local sequence"
+    }
+  ]
+}

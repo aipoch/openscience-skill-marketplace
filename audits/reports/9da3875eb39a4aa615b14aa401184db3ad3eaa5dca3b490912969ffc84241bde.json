@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "nature-experiment-log",
+    "description": "标准化实验日志记录——直接上传或读取本地图片、语音和文字，产出带 YAML frontmatter 的 Markdown；可选集成飞书 CLI 与 Obsidian。支持多种输入方式（上传、本地文件、飞书群）和输出方式（本地Markdown、Obsidian vault）。",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "C",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Does not guess missing experimental conditions or results. Asks user for clarification on ambiguous data (temperature uncertainty, sample numbering). Structured ID system enables traceability."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for experiment logging and documentation. Does not analyze or interpret experimental results beyond structuring provided data. Clear separation of raw materials (archival) and structured logs (output)."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "ID conventions (experiment ID with equipment/system/date, sample batch ID) follow research notebook best practices. Equipment coding and directory structure support reproducibility."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Three complete example logs provided (corrosion, electrochemical, thermal stability). Templates for Obsidian integration included. Clear directory structure specification."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive logging workflow: multi-modal input (images, audio, text), structured extraction via vision_analyze, YAML frontmatter generation, raw material archival, optional indexing. Supports both standalone and Obsidian-integrated modes. Minor: lacks explicit support for video input despite mentioning multimodal capability."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong quality gates: asks for clarification on ambiguous data, does not guess experimental conditions, structured ID generation prevents duplicates. Minor: lacks validation for ID collision detection across existing logs."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient processing flow with clear steps. Raw material archival separate from structured output prevents duplication. Minor: no guidance for handling very large image sets (50+ images from microscopy sessions)."
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear 8-step workflow. Structured ID conventions well-documented. Equipment coding table provided. Optional integrations (Feishu, Obsidian) clearly separated from core functionality. Minor: lacks decision tree for choosing output mode (local vs Obsidian) when user doesn't specify."
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good documentation with example logs covering three experiment types. Directory structure visual. Equipment coding table clear. Minor: Chinese-only documentation may limit non-Chinese-speaking users. No English translation provided."
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Local storage by default, no cloud dependency. Feishu CLI integration requires explicit bot permissions (im:message, im:message.group_msg, im:resource). Minor: no explicit guidance for handling sensitive experimental data (proprietary formulations, unpublished results)."
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Modular design with core flow independent of optional integrations. Templates and examples separate from skill logic. Clear extension points (system codes, equipment codes, experiment types). Minor: lacks version schema for YAML frontmatter to handle future field additions."
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Strong multimodal extraction (vision_analyze for images, text parsing). Structured output with YAML frontmatter agent-friendly. Clear confirmation gates for ambiguous data. Minor: lacks explicit guidance for chaining with other nature-* skills (e.g., nature-figure for visualizing time-series logs, nature-statistics for analyzing batch data)."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.5,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Process uploaded lab images and text notes into structured Markdown log",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Received images and text, extracted experimental conditions via vision_analyze, confirmed ambiguous temperature with user, generated experiment ID (CL-M-260909-001), wrote structured log with YAML frontmatter, archived raw materials.",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Extracts structured information from images using vision_analyze",
+            "result": "PASS",
+            "note": "Multimodal extraction per workflow step 2"
+          },
+          {
+            "text": "Asks for clarification on ambiguous data (temperature, sample ID) instead of guessing",
+            "result": "PASS",
+            "note": "Confirmation gate per workflow step 3 correctly applied"
+          },
+          {
+            "text": "Generates valid experiment ID following {system}-{equipment}-YYMMDD-{seq} convention",
+            "result": "PASS",
+            "note": "ID generation per specification"
+          },
+          {
+            "text": "Archives raw materials with references in structured log",
+            "result": "PASS",
+            "note": "Workflow step 6 archival working correctly"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Read local experiment folder and generate batch logs with sample tracking",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Read local folder with 3 experiment sessions, generated sample batch ID (CL-C02-B001) consistent across sessions, created 3 structured logs, updated experiment index.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Reads local files and folders as input source",
+            "result": "PASS",
+            "note": "Local material input mode per specification"
+          },
+          {
+            "text": "Generates consistent sample batch ID across multiple experiments",
+            "result": "PASS",
+            "note": "Sample batch ID convention correctly applied for tracking"
+          },
+          {
+            "text": "Creates experiment ID sequence for same-day experiments (001, 002, 003)",
+            "result": "PASS",
+            "note": "Daily sequence numbering working correctly"
+          },
+          {
+            "text": "Updates experiment index if enabled (Obsidian mode)",
+            "result": "PASS",
+            "note": "Optional indexing per workflow step 7"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Integrate with Feishu group messages and Obsidian vault output",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Retrieved messages from Feishu group via lark-cli, downloaded image attachments, extracted structured data, wrote to Obsidian vault with proper directory structure, updated templates (index, anomaly, equipment tracking).",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Retrieves messages and attachments from Feishu group using feishu-cli-integration",
+            "result": "PASS",
+            "note": "Feishu input integration working per specification"
+          },
+          {
+            "text": "Writes to Obsidian vault with proper directory structure (wiki/实验日志/{system}/{type}/)",
+            "result": "PASS",
+            "note": "Obsidian output mode per directory structure spec"
+          },
+          {
+            "text": "Updates Obsidian templates (experiment index, anomaly log, equipment tracking)",
+            "result": "PASS",
+            "note": "Template integration per workflow step 7"
+          },
+          {
+            "text": "Handles lark-cli relative path requirement (cd to raw/experiments/ before download)",
+            "result": "PARTIAL",
+            "note": "Working but lacks explicit error handling for path confusion"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Handle experiment with missing critical data (no temperature recorded)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected missing temperature field, asked user for value, user confirmed temperature not recorded, wrote log with temperature field marked as '未记录', flagged in anomaly log.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Detects missing critical experimental conditions",
+            "result": "PASS",
+            "note": "Field validation per workflow step 3"
+          },
+          {
+            "text": "Asks user for missing data instead of guessing or leaving blank",
+            "result": "PASS",
+            "note": "Confirmation gate correctly enforced"
+          },
+          {
+            "text": "Records explicitly when data was not captured (未记录 vs blank)",
+            "result": "PASS",
+            "note": "Distinguishes missing-but-asked from never-checked"
+          },
+          {
+            "text": "Appends to anomaly log when critical data missing",
+            "result": "PASS",
+            "note": "Anomaly tracking per workflow step 7"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Process electrochemical experiment with complex equipment settings",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Used equipment code E for electrochemical workstation, extracted CV parameters (scan rate, potential window, cycles), generated structured log with complete settings, linked to equipment tracking.",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Applies correct equipment code (E for electrochemical) in experiment ID",
+            "result": "PASS",
+            "note": "Equipment coding table correctly used"
+          },
+          {
+            "text": "Extracts complex parameter sets (scan rate, potential window, cycles)",
+            "result": "PASS",
+            "note": "Structured extraction handles multi-parameter experiments"
+          },
+          {
+            "text": "Uses example-electrochemical.md template structure for CV experiments",
+            "result": "PASS",
+            "note": "Reference examples correctly guide structure"
+          },
+          {
+            "text": "Links to equipment tracking template for workstation usage",
+            "result": "PASS",
+            "note": "Equipment tracking integration working"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Standalone local folder output without Feishu or Obsidian dependencies",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Processed experiment with only local folder output specified, generated Markdown with YAML frontmatter, archived raw materials, did not attempt Obsidian indexing or Feishu integration, reported file locations clearly.",
+        "basic": 37,
+        "specialized": 50,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Core workflow runs without Feishu or Obsidian installed",
+            "result": "PASS",
+            "note": "Optional integrations correctly separated from core"
+          },
+          {
+            "text": "Outputs valid Markdown with YAML frontmatter to specified local folder",
+            "result": "PASS",
+            "note": "Standalone output mode working correctly"
+          },
+          {
+            "text": "Skips template updates when Obsidian not configured",
+            "result": "PASS",
+            "note": "Conditional integration per specification"
+          },
+          {
+            "text": "Returns Markdown content when output directory not specified (safe default)",
+            "result": "PARTIAL",
+            "note": "Works but could provide example directory structure suggestion to help user decide"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 54.3,
+    "score": 90,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Excellent multimodal input support: images (vision_analyze), audio/voice, text, local files, and Feishu group messages",
+    "Strong data integrity: asks for clarification on ambiguous data instead of guessing, distinguishes '未记录' from blank fields",
+    "Well-designed ID conventions: experiment ID and sample batch ID enable traceability and cross-experiment tracking via Dataview",
+    "Clean separation of concerns: core workflow independent of optional integrations (Feishu, Obsidian), making skill broadly usable",
+    "Comprehensive documentation: three complete example logs covering different experiment types, templates for Obsidian integration"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add experiment ID collision detection",
+      "observed_in": [1, 2],
+      "problem": "Skill generates experiment IDs following {system}-{equipment}-YYMMDD-{seq} convention but does not check for collisions with existing logs before writing. If user runs skill twice for same-day experiments without proper sequencing, IDs may conflict.",
+      "root_cause": "ID generation per workflow step 4 does not include lookup of existing logs to determine next available sequence number.",
+      "fix": "Before generating experiment ID, scan output directory for existing logs matching {system}-{equipment}-YYMMDD-* pattern. Parse sequence numbers, determine max(seq) + 1 as next ID. Report found sequence number to user. Add to workflow step 4: 'Scan existing logs to prevent ID collision.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add bilingual documentation (English translation)",
+      "observed_in": [3, 6],
+      "problem": "All documentation, field names, and directory structure use Chinese exclusively. Non-Chinese-speaking researchers or international collaborations cannot effectively use the skill without translation.",
+      "root_cause": "Skill designed for Chinese-speaking researchers. No internationalization consideration in initial design.",
+      "fix": "Add English translation parallel to Chinese documentation: (1) Create SKILL.en.md with English documentation, (2) Provide English field name mapping in references/field-mapping-en.md, (3) Add language parameter to skill for bilingual output mode (Chinese field names + English comments, or fully English). Keep Chinese as default for backward compatibility."
+    },
+    {
+      "priority": "P2",
+      "title": "Add YAML frontmatter version schema",
+      "observed_in": [1, 5],
+      "problem": "YAML frontmatter structure defined in examples but no version field. Future field additions or restructuring would break existing Dataview queries and parsing scripts without migration path.",
+      "root_cause": "Templates lack schema versioning. No forward-compatibility consideration.",
+      "fix": "Add 'log_version: \"1.0\"' field to YAML frontmatter in all templates. Document field schema in references/yaml-schema.md with version history. When adding new fields in future versions, increment version and provide migration guide for updating old logs. Include version check in Dataview queries to handle mixed-version logs gracefully."
+    }
+  ]
+}

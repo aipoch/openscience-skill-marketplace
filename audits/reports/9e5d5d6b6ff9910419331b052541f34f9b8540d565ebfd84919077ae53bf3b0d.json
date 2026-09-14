@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "skill_name": "chembl_database",
+    "description": "Query the ChEMBL database for bioactive molecules, drug targets, bioactivity data, approved drugs, and chemical structures. Use when the user asks about compounds, targets, IC50/Ki values, drug mechanisms, or structure searches.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Evidence Insight",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Database query skill, returns verified ChEMBL data without fabrication"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope limited to database queries with license notification requirement"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Standard API query patterns, proper normalization for bioactivity comparisons"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "chembl_api.py script syntactically correct with proper error handling"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 88,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete ChEMBL API coverage including search, activity, similarity, substructure queries"
+      },
+      "reliability": {
+        "score": 9,
+        "max": 12,
+        "note": "Good error patterns documented but lacks explicit retry strategies for API failures"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "284 lines with CLI reference, slightly verbose but organized with progressive disclosure to references"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear workflow section and command examples. Minor: feedback design could specify expected output formats more explicitly"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural trigger language for chemical database queries. Clear use cases in description"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "License notification mechanism, secure API script patterns. Minor: API key handling not explicitly documented"
+      },
+      "maintainability": {
+        "score": 10,
+        "max": 12,
+        "note": "Clean script separation, modular subcommands. Lacks formal test cases for API script validation"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability with UniProt cross-reference. Escape hatches could be more explicit for out-of-scope queries"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 91.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 15,
+      "total": 15
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "EGFR drug query with IC50",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard target+bioactivity query pattern",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses chembl_api.py script correctly",
+            "result": "PASS",
+            "note": "Calls target search followed by activity query with proper filters"
+          },
+          {
+            "text": "Filters for approved drugs",
+            "result": "PASS",
+            "note": "Uses max_phase filter to identify approved drugs"
+          },
+          {
+            "text": "Retrieves IC50 values with normalization",
+            "result": "PASS",
+            "note": "Uses --normalize flag for bioactivity comparison"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Similarity search for aspirin",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Structure-based search functionality",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses similarity subcommand",
+            "result": "PASS",
+            "note": "Correctly invokes similarity search with CHEMBL ID and threshold"
+          },
+          {
+            "text": "Specifies similarity threshold",
+            "result": "PASS",
+            "note": "Uses --similarity parameter with 70% threshold"
+          },
+          {
+            "text": "Outputs to JSON file",
+            "result": "PASS",
+            "note": "Uses --output flag for structured results"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Complex activity query with filters",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced filtering with bioactivity threshold",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses activity subcommand with target ID",
+            "result": "PASS",
+            "note": "Correctly queries activity endpoint with CHEMBL target ID"
+          },
+          {
+            "text": "Applies multiple filters correctly",
+            "result": "PASS",
+            "note": "Combines standard_type and value threshold filters using ChEMBL filter syntax"
+          },
+          {
+            "text": "Handles nanomolar conversion",
+            "result": "PASS",
+            "note": "Correctly specifies value in nM units"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Substructure search with download",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Structure query with file export",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Uses substructure search",
+            "result": "PASS",
+            "note": "Correctly invokes substructure endpoint with SMILES string"
+          },
+          {
+            "text": "Downloads structure file",
+            "result": "PASS",
+            "note": "Uses --dl_format sdf to retrieve structure data"
+          },
+          {
+            "text": "Handles structure format conversion",
+            "result": "PASS",
+            "note": "API returns appropriate SDF format"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "UniProt cross-reference workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-step cross-database integration",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Cross-references with UniProt",
+            "result": "PASS",
+            "note": "Uses target_components__accession filter for UniProt ID lookup"
+          },
+          {
+            "text": "Chains multiple queries",
+            "result": "PASS",
+            "note": "Target query → activity query workflow documented"
+          },
+          {
+            "text": "Preserves data integrity across steps",
+            "result": "PASS",
+            "note": "Uses IDs from previous query results correctly"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 35.2,
+    "dynamic_weighted": 54.6,
+    "score": 90,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive ChEMBL API coverage with all major query types (search, activity, similarity, substructure)",
+    "Strong script-based architecture with chembl_api.py providing consistent interface",
+    "Excellent cross-database integration with UniProt accession lookup",
+    "Proper license notification requirement ensures compliance",
+    "Clear workflow documentation from status check through complex multi-step queries"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit API retry strategies",
+      "observed_in": [],
+      "problem": "Script lacks documented retry patterns for transient API failures or rate limiting",
+      "root_cause": "Focus on happy-path API interactions without resilience patterns",
+      "fix": "Add retry logic to chembl_api.py with exponential backoff. Document --retry flag usage in SKILL.md with examples of handling API timeouts"
+    },
+    {
+      "priority": "P2",
+      "title": "Document expected output formats",
+      "observed_in": [],
+      "problem": "While JSON output is specified, schema/structure of returned data not explicitly shown",
+      "root_cause": "Assumes familiarity with ChEMBL API response structure",
+      "fix": "Add example output JSON snippets for each major subcommand showing key fields users should expect (e.g., molecule_chembl_id, pref_name, bioactivity fields)"
+    },
+    {
+      "priority": "P2",
+      "title": "Enhance escape hatch documentation",
+      "observed_in": [],
+      "problem": "When to use alternative tools or databases not explicitly stated",
+      "root_cause": "Skill focuses on ChEMBL capabilities without boundary guidance",
+      "fix": "Add 'When NOT to Use' section: for PubChem use different skill; for internal compound libraries consider alternative tools; for pharmacokinetics use DrugBank"
+    }
+  ]
+}

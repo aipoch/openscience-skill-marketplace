@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "neuropixels-analysis",
+    "description": "Comprehensive end-to-end analysis of Neuropixels extracellular recordings using SpikeInterface. Covers loading SpikeGLX/Open Ephys/NWB data, preprocessing (filtering, common reference, bad-channel detection, phase shift), drift/motion correction, Kilosort4 and CPU spike sorting, postprocessing, quality metrics computation, and multi-method unit curation (threshold-based, model-based UnitRefine, AI-assisted visual review). Supports Neuropixels 1.0/2.0 probes.",
+    "evaluated_on": "2026-09-09",
+    "category": "research",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Strong emphasis on validation, human oversight, and documentation of thresholds/model provenance; warns automated curation is starting point not verdict"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Clear scope for Neuropixels analysis; distinguishes from general electrophysiology; emphasizes combining approaches and Phy export for critical experiments"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on SpikeInterface, Allen Institute, and IBL best practices; references current literature and validated curation approaches"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production-ready with bundled scripts, copy-edit templates, complete pipeline, and detailed workflow guidance covering full analysis chain"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete Neuropixels pipeline: loading, preprocessing, motion correction, sorting (GPU/CPU), postprocessing, metrics, multi-method curation, export"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent guidance with common pitfalls section, drift checks, API changes (folder= not output_folder=), trust_model parameter requirements"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong optimization guidance: GPU recommendations, cache_dir for reuse, sparse analysis, batch processing; SKILL.md 413 lines well-structured"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding clarity with 8-stage workflow, reference file mapping table, bundled scripts for each stage, copy-edit template, critical-things section"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural triggers (Neuropixels, spike sorting, MIMIC, electrophysiology), clear when-to-use, hardware/format support tables"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security: API keys from environment not hardcode, trust_model=True explicit requirement, model provenance validation, no automatic execution"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional structure with 9 detailed reference files, bundled scripts, copy-edit template, version guidance, clear module organization"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability across SpikeInterface ecosystem; deterministic core with documented stochastic elements; minor: long pipeline could use checkpoint/resume"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Load SpikeGLX data and apply IBL-style preprocessing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard preprocessing chain with bad channel removal and common reference",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "read_spikeglx with stream_name parameter selects AP stream",
+            "result": "PASS",
+            "note": "Current API pattern correctly documented"
+          },
+          {
+            "text": "Preprocessing chain: highpass → detect_bad_channels → remove_channels → phase_shift → common_reference",
+            "result": "PASS",
+            "note": "IBL-style pipeline with clear ordering rationale"
+          },
+          {
+            "text": "save() with format='binary' produces reusable preprocessed recording",
+            "result": "PASS",
+            "note": "Performance best practice for Kilosort compatibility"
+          },
+          {
+            "text": "phase_shift for Neuropixels 1.0 ADC correction documented",
+            "result": "PASS",
+            "note": "Hardware-specific requirement clearly stated"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Check and correct motion/drift with visualization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Critical pre-sorting drift assessment and correction workflow",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "detect_peaks and localize_peaks for drift raster generation",
+            "result": "PASS",
+            "note": "Standard SpikeInterface workflow for drift inspection"
+          },
+          {
+            "text": "plot_drift_raster_map visualizes drift before sorting decision",
+            "result": "PASS",
+            "note": "Visual inspection emphasized as mandatory"
+          },
+          {
+            "text": "correct_motion with preset parameter (nonrigid_fast_and_accurate, dredge, etc.)",
+            "result": "PASS",
+            "note": "Multiple presets documented with use case guidance"
+          },
+          {
+            "text": "Best practice: always check drift before sorting (>10 μm degrades quality)",
+            "result": "PASS",
+            "note": "Quantitative threshold provided for decision-making"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Run Kilosort4 sorting and compute quality metrics",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "GPU spike sorting with postprocessing and metrics",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "run_sorter with folder= parameter (not deprecated output_folder=)",
+            "result": "PASS",
+            "note": "API change explicitly documented"
+          },
+          {
+            "text": "create_sorting_analyzer with sparse=True for efficiency",
+            "result": "PASS",
+            "note": "Performance optimization documented"
+          },
+          {
+            "text": "Sequential compute() calls for extensions (waveforms, templates, metrics)",
+            "result": "PASS",
+            "note": "Modular postprocessing chain clearly shown"
+          },
+          {
+            "text": "Quality metrics: firing_rate, presence_ratio, snr, isi_violation, amplitude_cutoff",
+            "result": "PASS",
+            "note": "Standard metrics with clear interpretation"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Model-based curation with UnitRefine classifiers",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "ML-based noise vs neural and SUA vs MUA classification",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "model_based_label_units from spikeinterface.curation module",
+            "result": "PASS",
+            "note": "Current API correctly imported"
+          },
+          {
+            "text": "trust_model=True required to load .skops models from Hugging Face",
+            "result": "PASS",
+            "note": "Security requirement explicitly documented and enforced"
+          },
+          {
+            "text": "Two-stage workflow: noise/neural then SUA/MUA on surviving units",
+            "result": "PASS",
+            "note": "Logical curation pipeline clearly explained"
+          },
+          {
+            "text": "Returns DataFrame with prediction and probability (confidence) columns",
+            "result": "PASS",
+            "note": "Output structure documented for downstream filtering"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "AI-assisted curation with API key from environment",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Vision model review for uncertain units with proper credential handling",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "API key loaded from environment variable, never hardcoded",
+            "result": "PASS",
+            "note": "Security best practice explicitly shown with os.environ pattern"
+          },
+          {
+            "text": "Agent can directly inspect plots when running inside Cursor/Claude Code",
+            "result": "PASS",
+            "note": "Agent-native workflow documented as primary method"
+          },
+          {
+            "text": "Reference to AI_CURATION.md for programmatic pattern",
+            "result": "PASS",
+            "note": "Detailed guidance externalized to reference file"
+          },
+          {
+            "text": "Emphasized as supplement to, not replacement for, human review",
+            "result": "PARTIAL",
+            "note": "Stated but could be more prominent given potential over-reliance risk"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Complete bundled pipeline script with all stages",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "End-to-end automation with configurable parameters",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "neuropixels_pipeline.py with --sorter and --curation parameters",
+            "result": "PASS",
+            "note": "Complete automation option documented"
+          },
+          {
+            "text": "Individual stage scripts available for step-by-step execution",
+            "result": "PASS",
+            "note": "Flexibility for interactive vs automated workflow"
+          },
+          {
+            "text": "Copy-edit template (assets/analysis_template.py) for customization",
+            "result": "PASS",
+            "note": "Starting point for custom pipelines"
+          },
+          {
+            "text": "Scripts directory structure verified with all referenced files",
+            "result": "PARTIAL",
+            "note": "Multiple scripts referenced but not all verified in directory listing"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 57.6,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding comprehensive coverage of entire Neuropixels analysis pipeline with current SpikeInterface best practices from Allen Institute and IBL",
+    "Exceptional security handling: API keys from environment, trust_model=True requirement explicit, model provenance validation emphasized",
+    "Excellent pedagogical structure with 9 detailed reference files, critical-things section addressing common mistakes, and reference-file mapping table",
+    "Multi-method curation approach (threshold-based, model-based UnitRefine, AI-assisted) with clear guidance on combining approaches and human oversight",
+    "Production-ready with bundled scripts for each stage, complete pipeline script, copy-edit template, and hardware/format support tables"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add checkpoint/resume capability guidance for long pipelines",
+      "observed_in": [6],
+      "problem": "Complete pipeline can run for hours; interruption requires restart without checkpoint mechanism",
+      "root_cause": "Focus on complete execution rather than incremental processing with state persistence",
+      "fix": "Add guidance on saving intermediate outputs (preprocessed recording, sorting results, analyzer) and resuming from any stage using saved artifacts"
+    },
+    {
+      "priority": "P2",
+      "title": "Strengthen prominence of human oversight for AI-assisted curation",
+      "observed_in": [5],
+      "problem": "AI-assisted curation could be over-relied upon; human accountability statement present but not prominent",
+      "root_cause": "Balance between demonstrating capability and emphasizing limitations",
+      "fix": "Add prominent callout box in AI_CURATION.md: 'AI curation is a decision-support tool, not a ground truth. Always validate AI assessments against expert criteria and export borderline units to Phy for manual review.'"
+    }
+  ]
+}

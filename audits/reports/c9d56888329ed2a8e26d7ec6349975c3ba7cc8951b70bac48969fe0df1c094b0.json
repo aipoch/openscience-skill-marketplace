@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "pathml",
+    "description": "Computational pathology workflows using PathML 3.0.5 for local research. Covers loading and tiling whole-slide images (OpenSlide/Bio-Formats), building preprocessing and QC pipelines, managing h5path data, quantifying multiplex images, constructing spatial graphs, and planning bounded model inference. Research-only tool with strong safety boundaries for PHI and clinical use restrictions.",
+    "evaluated_on": "2026-09-09",
+    "category": "biology",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Exceptional safety boundaries: clear not-diagnostic disclaimers, PHI handling requirements, authorization/consent checks, de-identification mandates"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Explicit scope: local research only, not medical device/diagnostic/clinical decision support; strong workflow guidance with patient-level splits"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on PathML 3.0.5 from Dana-Farber AIOS with peer-reviewed publications (Rosenthal 2022, Omar 2025); clear beta status documented"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Production research workflows with bounded CLIs, provenance tracking, split enforcement, and model security guidance"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete pathology pipeline: slide loading (OpenSlide/Bio-Formats), preprocessing, QC, h5path, multiplex quantification, spatial graphs, inference"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent guidance: version reconciliation (3.0.5 PyPI vs GitHub releases), bounded pilot patterns, coordinate system documentation, network consent gates"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Strong optimization: bounded sampling (islice), tile/batch planning CLIs, memory estimation, CUDA guidance; SKILL.md 223 lines well-structured"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding: 8-step research workflow, no-network default with explicit consent, model security section, 6 reference files, 6 bounded CLIs"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear triggers (PathML, whole-slide, computational pathology, histology), safety boundary upfront, version baseline section, scope statement"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional: PHI handling protocol, no-network default, explicit consent for downloads, model trust warnings, pickle/ONNX security, no shadow modules"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure: 6 reference files, version verification (2026-07-23), primary sources with DOIs, GPL-2.0 license disclosure, install documentation"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with OpenSlide/Bio-Formats/PyTorch; deterministic core; minor: multi-slide batch orchestration could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.33,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Load WSI with OpenSlide and apply preprocessing pipeline",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard H&E slide processing with tissue detection",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "HESlide convenience class with backend='openslide' parameter",
+            "result": "PASS",
+            "note": "Current 3.0.5 API correctly documented"
+          },
+          {
+            "text": "Pipeline composed from transforms list with run() method on slide",
+            "result": "PASS",
+            "note": "Workflow pattern matches 3.0.5 (not deprecated from_slide pattern)"
+          },
+          {
+            "text": "TissueDetectionHE with mask_name and min_region_size parameters",
+            "result": "PASS",
+            "note": "Standard QC step with configurable thresholds"
+          },
+          {
+            "text": "write() saves to h5path format for reuse",
+            "result": "PASS",
+            "note": "Efficient intermediate storage documented"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Bounded pilot run with islice before full processing",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Risk mitigation pattern for exploring preprocessing",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "generate_tiles with shape, stride, level parameters",
+            "result": "PASS",
+            "note": "Standard tiling interface documented"
+          },
+          {
+            "text": "islice(tiles, 8) limits to 8 tiles for pilot inspection",
+            "result": "PASS",
+            "note": "Best practice pattern for bounded exploration"
+          },
+          {
+            "text": "Assert mask shape matches image shape for QC validation",
+            "result": "PASS",
+            "note": "Sanity check pattern shown"
+          },
+          {
+            "text": "Tiles use (i, j) = (row, column) coordinates at selected level",
+            "result": "PASS",
+            "note": "Coordinate system explicitly documented with conversion guidance"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Multiplex image quantification with SegmentMIFRemote",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Network-capable inference with explicit consent gate",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "SegmentMIFRemote downloads ONNX from Hugging Face at construction",
+            "result": "PASS",
+            "note": "Network behavior explicitly documented"
+          },
+          {
+            "text": "User consent required before instantiation with endpoint disclosure",
+            "result": "PASS",
+            "note": "No-network default with explicit consent gate enforced"
+          },
+          {
+            "text": "Local inference after download, no pixel upload in stable source",
+            "result": "PASS",
+            "note": "Data flow clearly documented"
+          },
+          {
+            "text": "No built-in checksum verification mentioned as limitation",
+            "result": "PASS",
+            "note": "Security gap honestly documented"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Model security: pickle vs ONNX with trust warnings",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Model artifact security guidance",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Never open untrusted .pt/pickle checkpoint files",
+            "result": "PASS",
+            "note": "Pickle execution risk explicitly documented"
+          },
+          {
+            "text": "ONNX safer but still requires source verification and SHA-256",
+            "result": "PASS",
+            "note": "Nuanced security guidance beyond simple recommendations"
+          },
+          {
+            "text": "EntityDataset loads .pt with weights_only=False",
+            "result": "PASS",
+            "note": "Dangerous default honestly documented"
+          },
+          {
+            "text": "Isolation recommended for third-party models",
+            "result": "PASS",
+            "note": "Defense-in-depth guidance provided"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "PHI handling workflow with de-identification and splits",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Research data management with privacy controls",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Authorization, consent/waiver, data-use terms checked before processing",
+            "result": "PASS",
+            "note": "5-point safety boundary checklist provided"
+          },
+          {
+            "text": "De-identify pixels and metadata with key outside analysis workspace",
+            "result": "PASS",
+            "note": "Re-identification key separation enforced"
+          },
+          {
+            "text": "Split by patient before tiling to prevent leakage",
+            "result": "PASS",
+            "note": "Critical methodological requirement stated"
+          },
+          {
+            "text": "Pseudonymous IDs in filenames, logs, h5path labels",
+            "result": "PARTIAL",
+            "note": "Requirement stated but enforcement mechanisms not detailed"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Bundled CLIs for manifest, planning, QC, validation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Bounded helper tools with no-network guarantee",
+        "basic": 40,
+        "specialized": 58,
+        "total": 98,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "All CLIs reject URLs and symlinks for security",
+            "result": "PASS",
+            "note": "Input validation documented"
+          },
+          {
+            "text": "CLIs require no PathML import for --help (fail-safe design)",
+            "result": "PASS",
+            "note": "Dependency-free help access"
+          },
+          {
+            "text": "plan_pipeline.py, plan_inference.py estimate resources before execution",
+            "result": "PASS",
+            "note": "Bounded work planning emphasized"
+          },
+          {
+            "text": "CLI scripts verified in scripts/ directory",
+            "result": "PARTIAL",
+            "note": "6 scripts referenced but directory not fully verified in listing"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 57.8,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding safety boundaries: explicit not-diagnostic disclaimers, comprehensive PHI handling protocol, authorization/consent/de-identification requirements upfront",
+    "Exceptional security guidance: no-network default with explicit consent gates, pickle vs ONNX trust model, shadow module warnings, isolation recommendations",
+    "Excellent version management: reconciles PyPI 3.0.5 vs GitHub releases, verifies sources 2026-07-23, documents beta status, clarifies license implications",
+    "Strong research workflow with 8-step process: inventory, freeze splits, plan bounds, pilot, preserve coordinates, spatial validation, bounded inference, provenance",
+    "Production research patterns with 6 bounded CLIs (URL/symlink rejection, no PathML import for --help, resource planning, strict JSON)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add explicit enforcement guidance for pseudonymous ID requirements",
+      "observed_in": [5],
+      "problem": "Pseudonymous IDs required in filenames/logs/labels but no validation or enforcement mechanism documented",
+      "root_cause": "Focus on stating requirements rather than providing validation tools",
+      "fix": "Add CLI script validate_anonymization.py that scans filenames, h5path labels, and logs for common PHI patterns (SSN, MRN formats, dates, names from allowlist) and flags violations before analysis begins"
+    },
+    {
+      "priority": "P2",
+      "title": "Add multi-slide batch orchestration guidance",
+      "observed_in": [1, 6],
+      "problem": "Single-slide workflows clear but batch processing across patient cohorts not explicitly documented",
+      "root_cause": "Examples focus on demonstrating API rather than production batch patterns",
+      "fix": "Add reference/batch_processing.md covering manifest iteration, error handling per slide, progress tracking, failed-slide recovery, and batch provenance aggregation"
+    }
+  ]
+}

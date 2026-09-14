@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "skill_name": "scanpy",
+    "description": "Standard single-cell RNA-seq analysis pipeline. Use for QC, normalization, dimensionality reduction (PCA/UMAP/t-SNE), clustering, differential expression, visualization, and converting R-friendly single-cell formats such as Seurat or SingleCellExperiment RDS files into h5ad for Scanpy. Best for exploratory scRNA-seq analysis with established workflows.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of scanpy capabilities with proper version documentation (1.12.x)"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for single-cell RNA-seq analysis with clear tool boundaries (scvi-tools for deep learning, anndata for data format)"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established single-cell analysis methods (Leiden clustering, UMAP, differential expression)"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Comprehensive bundled scripts (13 CLIs) are syntactically correct with shared helper module"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 98,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of scRNA-seq workflow: QC, normalization, dimensionality reduction, clustering, markers, visualization, R interop"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional reliability with 13 bundled scripts, shared helper module, sensible defaults, raw-count preservation"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized with script toolkit table, step-by-step chain examples, one-shot pipeline option, reference documentation"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding with 'prefer scripts over writing code' directive, complete script table, chaining examples, R interop guide"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with Python 3.12+ requirement, [leiden] extra documented, all scripts have --help"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security: local file operations only, no network calls, bounded outputs via scripts, safe relative paths"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.5, BSD-3-Clause license, current stable release documented (scanpy 1.12.x, January 2026)"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with explicit tool boundaries (scvi-tools, anndata), script-first approach; minor: config JSON schema not fully documented"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.1,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 26,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "One-shot end-to-end pipeline from raw counts to clustered",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow via run_pipeline.py",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "run_pipeline.py handles full workflow", "result": "PASS", "note": "QC → normalize → HVG → PCA → UMAP → Leiden → markers in one command"},
+          {"text": "Scrublet doublet detection available", "result": "PASS", "note": "--scrublet flag documented"},
+          {"text": "Reproducible parameters via JSON config", "result": "PASS", "note": "--config params.json option provided"},
+          {"text": "Output h5ad with figures and marker CSVs", "result": "PASS", "note": "Complete output bundle documented"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Step-by-step chain with manual inspection between stages",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Modular workflow with intermediate inspection",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Each script reads and writes h5ad", "result": "PASS", "note": "Chainable design with consistent I/O"},
+          {"text": "QC → preprocess → reduce → cluster → markers chain", "result": "PASS", "note": "Complete example shown"},
+          {"text": "Marker CSVs generated for manual review", "result": "PASS", "note": "results/markers/*.csv output"},
+          {"text": "Annotation step uses mapping JSON", "result": "PASS", "note": "annotate.py with --mapping celltypes.json"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Convert Seurat RDS to h5ad for Scanpy",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "R interop workflow",
+        "basic": 37,
+        "specialized": 54,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "R-to-h5ad conversion documented", "result": "PASS", "note": "references/r_interop.md mentioned"},
+          {"text": "Seurat and SingleCellExperiment supported", "result": "PASS", "note": "Both formats explicitly listed"},
+          {"text": "Agent-run installation instructions", "result": "PASS", "note": "Cross-platform R tooling guide referenced"},
+          {"text": "Convert before Scanpy analysis", "result": "PASS", "note": "Clear workflow: R conversion → h5ad → Scanpy"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Batch correction with Harmony across samples",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-sample integration workflow",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "batch_correct.py script available", "result": "PASS", "note": "Dedicated integration script"},
+          {"text": "Harmony method supported", "result": "PASS", "note": "--method harmony documented"},
+          {"text": "Batch key parameter required", "result": "PASS", "note": "--batch-key sample shown"},
+          {"text": "Alternative methods documented (bbknn, combat)", "result": "PASS", "note": "Multiple integration options listed"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Pseudobulk aggregation for differential expression",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced downstream analysis",
+        "basic": 35,
+        "specialized": 50,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "pseudobulk.py script available", "result": "PASS", "note": "Dedicated aggregation script"},
+          {"text": "Sample × cell type aggregation", "result": "PASS", "note": "--by sample cell_type pattern"},
+          {"text": "Output for pydeseq2 integration", "result": "PASS", "note": "Matrix for downstream DESeq2 analysis"},
+          {"text": "Counts aggregation (not normalized)", "result": "PASS", "note": "Raw counts preserved for proper DE"}
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Train deep learning model for cell type annotation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly redirected to scvi-tools",
+        "basic": 32,
+        "specialized": 45,
+        "total": 77,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Deep learning boundary clearly stated", "result": "PASS", "note": "Description: 'For deep learning models use scvi-tools'"},
+          {"text": "scvi-tools skill referenced", "result": "PASS", "note": "Explicit redirection provided"},
+          {"text": "Scanpy annotation capabilities shown", "result": "PASS", "note": "annotate.py for marker-based labeling within scope"},
+          {"text": "Comparison of approaches provided", "result": "FAIL", "note": "No guidance on when to use marker-based vs deep learning annotation"}
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Cluster without computing neighbors graph first",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Common failure mode correctly identified",
+        "basic": 33,
+        "specialized": 46,
+        "total": 79,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Neighbors required before clustering", "result": "PASS", "note": "reduce_dimensions.py computes neighbors"},
+          {"text": "Workflow order enforced by scripts", "result": "PASS", "note": "Step-by-step chain shows correct ordering"},
+          {"text": "run_pipeline.py handles dependencies automatically", "result": "PASS", "note": "One-shot pipeline manages workflow order"},
+          {"text": "Error message or prevention documented", "result": "PARTIAL", "note": "Correct workflow shown but failure case not explicitly documented"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 39.2,
+    "dynamic_weighted": 54.1,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional bundled tooling with 13 ready-to-run CLI scripts covering entire scRNA-seq workflow, reducing code-writing burden",
+    "Outstanding script-first approach with 'prefer these over writing code from scratch' directive and shared helper module",
+    "Comprehensive workflow coverage from raw counts to annotated cell types with both one-shot and step-by-step modes",
+    "Excellent R interoperability with documented Seurat/SingleCellExperiment conversion workflow",
+    "Strong integration options with Harmony/bbknn/combat batch correction and pseudobulk aggregation for DESeq2"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Document config JSON schema for run_pipeline.py",
+      "observed_in": [1],
+      "problem": "--config params.json mentioned but schema not fully documented",
+      "root_cause": "Agent-specific composability: config format not explicit",
+      "fix": "Add example params.json: '{\"resolution\": 0.5, \"n_top_genes\": 2000, \"scrublet\": true, \"batch_key\": \"sample\", \"batch_method\": \"harmony\"}' with note that keys mirror flag names with underscores"
+    },
+    {
+      "priority": "P2",
+      "title": "Add guidance on marker-based vs deep learning annotation",
+      "observed_in": [6],
+      "problem": "Boundary to scvi-tools clear but no decision guidance",
+      "root_cause": "Scope boundary lacks when-to-use-which comparison",
+      "fix": "Add to ## When to Use This Skill: 'Use scanpy annotate.py for marker-based labeling with known gene signatures. Use scvi-tools for reference-based transfer learning or when markers are ambiguous.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Document common workflow dependency errors",
+      "observed_in": [7],
+      "problem": "Correct ordering shown but failure cases not explicit",
+      "root_cause": "Error prevention documentation could be stronger",
+      "fix": "Add ## Common Pitfalls section: 'Clustering before neighbors: Leiden/Louvain require computing neighbors first (reduce_dimensions.py or sc.pp.neighbors). Pipeline handles this automatically.'"
+    }
+  ]
+}

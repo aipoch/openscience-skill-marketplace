@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "benchling-integration",
+    "description": "Benchling R&D platform integration. Access registry (DNA, proteins), inventory, ELN entries, workflows via API, build Benchling Apps, query Data Warehouse, for lab data management automation.",
+    "evaluated_on": "2026-09-04",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": {
+        "result": "PASS",
+        "detail": "SDK-based skill with stable API patterns, no crash risks"
+      },
+      "contract": {
+        "result": "PASS",
+        "detail": "Valid frontmatter with required fields, consistent structure"
+      },
+      "determinism": {
+        "result": "PASS",
+        "detail": "API calls are deterministic for given inputs"
+      },
+      "security": {
+        "result": "PASS",
+        "detail": "Credentials externalized, security best practices documented"
+      }
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated data, accurate SDK documentation"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Laboratory data management scope clearly defined"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Proper data management practices described"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples are syntactically correct and executable"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 100,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of Benchling SDK capabilities"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Retry strategies and error handling documented"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient pagination patterns, progressive disclosure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Clear examples, consistent patterns, good structure"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural language triggers, discoverable"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Credentials externalized, OAuth documented, security warnings"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Modular with references directory, clear structure"
+      },
+      "agent_specific": {
+        "score": 20,
+        "max": 20,
+        "note": "Clear scope, composable patterns, good escape hatches"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 92.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Create DNA sequence",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard registry operation",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Provides working code example", "result": "PASS", "note": "Syntax correct"},
+          {"text": "Includes authentication setup", "result": "PASS", "note": "Documented"},
+          {"text": "No hardcoded credentials", "result": "PASS", "note": "Uses env vars"},
+          {"text": "Stays in scope", "result": "PASS", "note": "Lab data management"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Inventory management",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Container and box operations",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Addresses inventory operations", "result": "PASS", "note": "Comprehensive"},
+          {"text": "Provides transfer examples", "result": "PASS", "note": "Documented"},
+          {"text": "Schema fields handled", "result": "PASS", "note": "Helper used"},
+          {"text": "No unsafe operations", "result": "PASS", "note": "Safe patterns"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Bulk import from FASTA",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Common use case well handled",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Handles bulk operations", "result": "PASS", "note": "BioPython integration"},
+          {"text": "Proper iteration pattern", "result": "PASS", "note": "Generator used"},
+          {"text": "Error handling mentioned", "result": "PASS", "note": "Retry strategy"},
+          {"text": "Memory efficient", "result": "PASS", "note": "Streaming approach"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Workflow automation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Task management covered",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Workflow operations documented", "result": "PASS", "note": "Create and update"},
+          {"text": "Async handling explained", "result": "PASS", "note": "wait_for_task helper"},
+          {"text": "Status updates shown", "result": "PASS", "note": "Complete example"},
+          {"text": "Integration patterns clear", "result": "PASS", "note": "EventBridge documented"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Data warehouse analytics setup",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "SQL access documented, minor detail gap",
+        "basic": 35,
+        "specialized": 53,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Data warehouse access explained", "result": "PASS", "note": "SQL interface"},
+          {"text": "Common queries mentioned", "result": "PASS", "note": "Use cases listed"},
+          {"text": "Integration tools listed", "result": "PASS", "note": "BI tools mentioned"},
+          {"text": "Connection details provided", "result": "FAIL", "note": "Lacks specific connection string format"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 40.0,
+    "dynamic_weighted": 55.2,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive SDK coverage with all major Benchling features",
+    "Strong security practices with credential externalization",
+    "Efficient pagination and memory management patterns",
+    "Clear integration patterns for workflows and automation"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add Data Warehouse connection details",
+      "observed_in": ["5"],
+      "problem": "Data warehouse section lacks specific connection string format and credential setup",
+      "root_cause": "High-level description without implementation details",
+      "fix": "Add example connection string format and credential retrieval process in references/api_endpoints.md"
+    }
+  ]
+}

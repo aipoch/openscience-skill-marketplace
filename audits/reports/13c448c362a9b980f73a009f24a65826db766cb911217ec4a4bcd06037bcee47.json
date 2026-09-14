@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "matplotlib",
+    "description": "Low-level plotting library for full customization and publication-quality visualizations. Covers both pyplot and object-oriented interfaces, all plot types (line, scatter, bar, histogram, heatmap, contour, 3D), multi-panel layouts, styling, export formats, and integration with scientific workflows. Use when fine-grained control over every plot element is needed.",
+    "evaluated_on": "2026-09-09",
+    "category": "coding",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category coding exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category coding exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category coding exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category coding exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of matplotlib functionality: all plot types, layouts, styling, 3D, export, with clear use case mapping"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent guidance on common gotchas section, explicit interface selection, memory management, and DPI handling"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Good performance guidance (rasterization, downsampling, blitting); SKILL.md 377 lines is reasonable but could be more progressive"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Outstanding clarity with two-interface comparison, workflow patterns, best practices, and explicit recommendations (OO interface preferred)"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural triggers (plot, chart, visualization), clear when-to-use section, alternative tool recommendations"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "No credential handling; minor: file output paths should be validated to prevent directory traversal in user-provided paths"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Well-organized with 4 reference files, bundled helper scripts, clear version requirements (3.10.x), and migration guidance"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good interface guidance and composability; deterministic for same inputs; minor: could strengthen automation workflow for batch figure generation"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.33,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Create single plot with OO interface and save high-res PNG",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard publication workflow with recommended patterns",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "OO interface with fig, ax = plt.subplots() works correctly",
+            "result": "PASS",
+            "note": "Recommended pattern clearly documented"
+          },
+          {
+            "text": "Plot customization via ax methods (set_xlabel, set_title, legend)",
+            "result": "PASS",
+            "note": "Complete API coverage with examples"
+          },
+          {
+            "text": "savefig with dpi=300, bbox_inches='tight' produces publication quality",
+            "result": "PASS",
+            "note": "Best practices documented with parameter explanations"
+          },
+          {
+            "text": "plt.show() displays figure interactively",
+            "result": "PASS",
+            "note": "Standard display workflow"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Multi-panel subplot layout with mosaic",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced layout using subplot_mosaic for flexible arrangements",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "subplot_mosaic creates flexible named subplot layouts",
+            "result": "PASS",
+            "note": "Modern matplotlib 3.10 feature well documented"
+          },
+          {
+            "text": "Dictionary-based axes access with string keys",
+            "result": "PASS",
+            "note": "Clear advantage over numeric indexing shown"
+          },
+          {
+            "text": "GridSpec alternative documented for maximum control",
+            "result": "PASS",
+            "note": "Three layout methods compared with use cases"
+          },
+          {
+            "text": "constrained_layout prevents overlapping elements",
+            "result": "PASS",
+            "note": "Best practice emphasized in multiple sections"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Multiple plot types in single workflow",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Demonstrates plot type diversity with appropriate use cases",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Line, scatter, bar, histogram, heatmap, contour, box, violin plots all documented",
+            "result": "PASS",
+            "note": "Comprehensive plot type catalog with use case matching"
+          },
+          {
+            "text": "Colorbar integration with imshow for heatmaps",
+            "result": "PASS",
+            "note": "Complete pattern with axis reference"
+          },
+          {
+            "text": "Each plot type includes key parameters and customization",
+            "result": "PASS",
+            "note": "Not just API listing but practical patterns"
+          },
+          {
+            "text": "Plot types reference to detailed guide in references/",
+            "result": "PASS",
+            "note": "Progressive disclosure with external reference"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "3D plotting with projection='3d'",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "3D visualization workflow with surface and scatter",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "3D axes creation via projection='3d' parameter",
+            "result": "PASS",
+            "note": "Standard 3D workflow documented"
+          },
+          {
+            "text": "plot_surface, scatter3D, and plot3D methods available",
+            "result": "PASS",
+            "note": "Key 3D plot types covered"
+          },
+          {
+            "text": "set_zlabel for 3D axis labeling",
+            "result": "PASS",
+            "note": "3D-specific API extensions shown"
+          },
+          {
+            "text": "Colormap application to 3D surfaces",
+            "result": "PASS",
+            "note": "Complete 3D visualization pattern"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Style sheets and rcParams customization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Global and local styling control",
+        "basic": 40,
+        "specialized": 56,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "plt.style.use() applies named style sheets",
+            "result": "PASS",
+            "note": "Style system documented with examples"
+          },
+          {
+            "text": "plt.rcParams dictionary for fine-grained control",
+            "result": "PASS",
+            "note": "Global configuration mechanism shown"
+          },
+          {
+            "text": "Colormap selection guidance (sequential, diverging, qualitative)",
+            "result": "PASS",
+            "note": "Perceptual principles and accessibility considered"
+          },
+          {
+            "text": "Colorblind-friendly recommendations (viridis, cividis)",
+            "result": "PASS",
+            "note": "Accessibility best practices included"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Export formats and resolution guidance",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Publication-ready export with format selection",
+        "basic": 40,
+        "specialized": 54,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "PNG, PDF, SVG export with appropriate DPI recommendations",
+            "result": "PASS",
+            "note": "Clear guidance: 300 for publication, 150 for web, 72 for screen"
+          },
+          {
+            "text": "Vector formats (PDF, SVG) recommended for scalability",
+            "result": "PASS",
+            "note": "Format selection tied to use case"
+          },
+          {
+            "text": "transparent and facecolor parameters documented",
+            "result": "PASS",
+            "note": "Common export parameters covered"
+          },
+          {
+            "text": "Helper scripts exist in scripts/ directory",
+            "result": "PARTIAL",
+            "note": "Scripts referenced (plot_template.py, style_configurator.py) but not verified in directory listing"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 57.2,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Outstanding pedagogical structure comparing pyplot vs OO interfaces with explicit recommendation for production code",
+    "Comprehensive plot type coverage with use case matching and progressive disclosure to detailed references",
+    "Strong best practices section covering interface selection, DPI, layout, colormaps, accessibility, and performance",
+    "Excellent common gotchas section addressing overlapping elements, state confusion, memory issues, and DPI confusion",
+    "Clear scope with alternative tool recommendations (seaborn for statistical, plotly for interactive, scientific-visualization for journals)"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add path validation guidance for user-provided output paths",
+      "observed_in": [1, 6],
+      "problem": "savefig examples use literal paths without discussing validation of user-provided file paths",
+      "root_cause": "Security consideration not prominent in visualization context",
+      "fix": "Add security note: 'When output path comes from user input, validate it to prevent directory traversal (e.g., check for .., absolute paths, symlinks)'"
+    },
+    {
+      "priority": "P2",
+      "title": "Verify helper scripts or remove references",
+      "observed_in": [6],
+      "problem": "SKILL.md references scripts/plot_template.py and scripts/style_configurator.py but files not confirmed",
+      "root_cause": "Documentation written ahead of implementation or scripts in different location",
+      "fix": "Either add the referenced scripts or update SKILL.md to remove references and integrate templates into main documentation"
+    }
+  ]
+}

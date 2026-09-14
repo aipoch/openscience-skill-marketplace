@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "skill_name": "complexa-design",
+    "description": "End-to-end Proteina-Complexa design pipeline driver. Use when the user wants to design a binder, run complexa design, de novo binder, design proteins for target, protein binder design, ligand binder, design a small-molecule binder, AME motif scaffolding, scaffold a motif near a ligand, motif + ligand design, enzyme scaffolding, flow matching protein design, beam-search binder, FK steering, MCTS protein design, or refold with AF2/RF3/ESMFold, or wants success rates, interface pAE, scRMSD, or FoldSeek diversity from one command.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated identifiers or results; uses documented metrics (ipAE, pLDDT, scRMSD, FoldSeek TM-score); references real tools and checkpoints from NVIDIA/community sources"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Computational protein design tool with no medical diagnostic claims; appropriate for research use"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Appropriate use of flow matching for generation, reward-guided search, independent refold validation with different backends; no methodological fallacies"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Wraps existing complexa CLI with proper validation step; bash commands syntactically correct; Python snippets (atomworks ligand rename) valid; dependency requirements clearly stated"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 82,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Complete 7-step workflow covering preflight, pipeline selection, parameter gathering, validation, execution, result collection, manifest emission; covers 3 pipeline variants (protein/ligand/AME); validation step prevents mid-run failures; missing explicit error recovery for interrupted runs"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Preflight validation before GPU spend, complexa validate command catches config errors upfront, detailed troubleshooting table with 6 common failure modes; lacks retry logic or checkpoint restart guidance"
+      },
+      "performance_context": {
+        "score": 3,
+        "max": 8,
+        "note": "SKILL.md is 336 lines (significantly exceeds ideal <150); uses 3 reference files for additional details but main file is very dense with inline tables, command examples, and pipeline comparisons"
+      },
+      "agent_usability": {
+        "score": 13,
+        "max": 16,
+        "note": "Clear 7-step structure with numbered sections; excellent pipeline comparison table; hardware requirements explicit; troubleshooting table helpful; very high complexity (3 pipelines, multiple search algorithms, 4 refold backends, 10+ override parameters)"
+      },
+      "human_usability": {
+        "score": 5,
+        "max": 8,
+        "note": "Clear section headers and comparison table; 336-line main file requires significant scrolling; pipeline cheat sheet is helpful but could be in reference; AME-specific RF3 ligand renaming gotcha buried in middle of document"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Environment variables for paths (AF2_DIR, RF3_CKPT_PATH); no hardcoded credentials; validation step prevents malformed configs; missing explicit dual-use screening (unlike complexa-binder-design)"
+      },
+      "maintainability": {
+        "score": 10,
+        "max": 12,
+        "note": "Good modularity with 3 reference files (pipelines.md, overrides.md, troubleshooting.md); pipeline selection via YAML swap is clean; version-pinned checkpoints; no mention of tests or CI/CD"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Excellent trigger precision with comprehensive keyword list; uses AskUserQuestion for parameters; composes with complexa-target and complexa-evaluate-pdbs skills; deterministic via run_name; references shared skills directory; could improve progressive disclosure (336 lines too dense)"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.3,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 27,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Protein binder for PDL1 with beam-search and colabdesign",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard workflow with default protein binder pipeline",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output runs preflight validation before execution", "result": "PASS", "note": "Preflight check performed and results reviewed"},
+          {"text": "Output uses correct pipeline YAML for protein binder", "result": "PASS", "note": "search_binder_local_pipeline.yaml selected"},
+          {"text": "Output validates configuration before running design", "result": "PASS", "note": "complexa validate command executed"},
+          {"text": "Output emits manifest with command and paths", "result": "PASS", "note": "Manifest JSON generated with replayability info"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Ligand binder for ATP with RF3 refold",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct pipeline switch for small-molecule target",
+        "basic": 38,
+        "specialized": 52,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output switches to ligand binder pipeline", "result": "PASS", "note": "search_ligand_binder_local_pipeline.yaml used"},
+          {"text": "Output uses RF3 refold backend for ligand", "result": "PASS", "note": "rf3_latest backend specified"},
+          {"text": "Output references ligand_targets_dict.yaml", "result": "PASS", "note": "Correct target dict for ligand pipeline"},
+          {"text": "Output mentions LoRA requirement for ligand checkpoint", "result": "PASS", "note": "LoRA settings documented"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "AME motif scaffolding with single-pass search",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct AME pipeline with V2 architecture flag",
+        "basic": 36,
+        "specialized": 49,
+        "total": 85,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output switches to AME pipeline", "result": "PASS", "note": "search_ame_local_pipeline.yaml used"},
+          {"text": "Output sets USE_V2_COMPLEXA_ARCH flag", "result": "PASS", "note": "V2 architecture mentioned for AME"},
+          {"text": "Output uses single-pass as default for AME", "result": "PASS", "note": "Default algorithm correctly stated"},
+          {"text": "Output handles ligand residue renaming for RF3", "result": "PASS", "note": "L:0 renaming gotcha explained"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Quick smoke test with ESMFold and reduced steps",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Fast iteration mode with reduced quality",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output uses single-pass for quick test", "result": "PASS", "note": "Algorithm switched to single-pass"},
+          {"text": "Output switches to ESMFold backend", "result": "PASS", "note": "esmfold specified for fast iteration"},
+          {"text": "Output reduces nsteps for speed", "result": "PASS", "note": "nsteps lowered appropriately"},
+          {"text": "Output warns about quality tradeoff", "result": "PASS", "note": "ESMFold noted as worse but faster"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "40GB GPU with batch size adjustment and custom thresholds",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Handles VRAM constraint with parameter adjustment",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output checks VRAM from preflight", "result": "PASS", "note": "Preflight VRAM check performed"},
+          {"text": "Output adjusts batch_size for 40GB GPU", "result": "PASS", "note": "Batch size lowered to 8"},
+          {"text": "Output applies custom success thresholds", "result": "PASS", "note": "User threshold override applied"},
+          {"text": "Output warns about increased wall-clock time", "result": "FAIL", "note": "No warning given about lower batch size increasing runtime"}
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Request for target not in dict",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correctly hands off to complexa-target skill",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {"text": "Output detects target missing from dict", "result": "PASS", "note": "KeyError case handled"},
+          {"text": "Output hands off to complexa-target skill", "result": "PASS", "note": "Explicit handoff to target registration"},
+          {"text": "Output does not fabricate target entry", "result": "PASS", "note": "No dict modification attempted"}
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Invalid override keys and missing checkpoint",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Validation catches errors before GPU execution",
+        "basic": 39,
+        "specialized": 55,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output runs validation before design", "result": "PASS", "note": "complexa validate executed"},
+          {"text": "Output catches invalid override keys", "result": "PASS", "note": "Validation detects config errors"},
+          {"text": "Output detects missing checkpoint", "result": "PASS", "note": "Preflight catches missing ckpt"},
+          {"text": "Output provides fix guidance", "result": "PASS", "note": "Points to complexa download command"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 32.8,
+    "dynamic_weighted": 52.4,
+    "score": 85,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive 7-step workflow with upfront validation preventing mid-run failures (preflight check + complexa validate)",
+    "Excellent pipeline comparison table clearly distinguishing protein/ligand/AME variants with all relevant parameters",
+    "Strong composability with handoff to complexa-target for missing targets and references to shared skills",
+    "Detailed troubleshooting table covering 6 common failure modes with cause and fix",
+    "Hardware requirements and wall-clock estimates explicit for capacity planning"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Significantly reduce main SKILL.md token cost",
+      "observed_in": [],
+      "problem": "SKILL.md is 336 lines, more than 2× the ideal <150 line target. Performance/Context scored only 3/8. Dense inline content includes full pipeline comparison table, command examples, override table, troubleshooting table.",
+      "root_cause": "Comprehensive coverage with inline tables and examples instead of progressive disclosure to reference files.",
+      "fix": "Move pipeline comparison table to reference/pipelines.md (already exists), move override table to reference/overrides.md (already exists), move troubleshooting table to reference/troubleshooting.md (already exists). Keep only essential 7-step workflow structure and pointers in main SKILL.md. Target <180 lines."
+    },
+    {
+      "priority": "P2",
+      "title": "Add dual-use screening guidance",
+      "observed_in": [],
+      "problem": "No explicit dual-use warning like complexa-binder-design has. Protein design can have dual-use implications (toxin engineering, pathogen enhancement).",
+      "root_cause": "Security category scored 11/12; missing proactive dual-use screening.",
+      "fix": "Add Responsible Use section similar to complexa-binder-design: 'De novo protein design is dual-use. Decline requests aimed at enhancing pathogen fitness, toxin potency, or bioweapon function; keep designs to legitimate research and therapeutic intent.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add checkpoint restart guidance for interrupted runs",
+      "observed_in": [],
+      "problem": "No guidance on resuming from checkpoint if pipeline is interrupted mid-evaluation (e.g., OOM crash, timeout). Reliability 2.3 would score higher with recovery documentation.",
+      "root_cause": "Functional completeness gap for error recovery scenarios.",
+      "fix": "Add to troubleshooting.md or new reference/recovery.md: how to resume from ./inference/ and ./evaluation_results/ checkpoints, which stages can restart independently, when to re-run vs continue from artifacts."
+    }
+  ]
+}

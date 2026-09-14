@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "treatment-plans",
+    "description": "Format and structurally validate local treatment-plan documentation after clinical decisions have already been supplied and verified by authorized licensed professionals. Use for source traceability, clinician-authored intervention records, goals and checkpoints, shared-decision records, reconciliation handoffs, and release gates—not for clinical decision-making.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Healthcare Documentation",
+    "execution_mode": "A",
+    "complexity": "High",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; documentation-only scope with no clinical recommendations; all content must be clinician-authored and verified"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Exceptional safety boundaries: 29 explicit prohibited uses listed; clear scope limited to formatting and validation of pre-existing decisions"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established healthcare documentation standards (FDA labeling, WHO guidance, Joint Commission, AHRQ, NICE) with clear source boundaries"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Bundled scripts are deterministic, local-only, with no network access, external services, or dynamic execution"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 97,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of documentation workflow including source traceability, validation, privacy checks, consistency verification, and timeline generation with 6 templates and 6 validation scripts"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding reliability: deterministic local-only validation, comprehensive input rejection rules, no clinical inference, explicit human review requirements, complete provenance tracking"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-structured documentation (447 lines) with clear 5-step workflow, comprehensive safety boundaries, and 8 reference files"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional safety boundary documentation (29 prohibited uses); clear workflow with explicit gates; comprehensive template and script descriptions; strong provenance requirements"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation (Python 3.11+ stdlib only); no external dependencies; comprehensive workflow documentation; explicit human review checklist; visible draft notice requirement"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Exceptional security: comprehensive privacy governance section, data gate with 6 conditions for patient data, no external tool usage, synthetic template preference, qualified review requirements"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding structure with version 2.1, license (MIT), comprehensive reference organization (8 files), dated source ledger, security validation record, clear governance boundaries"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Excellent composability with deterministic validation; clear integration patterns with authorized systems; comprehensive template structures; minor: could benefit from more explicit output format examples from validation scripts"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 22,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Generate synthetic documentation package",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Template generation with proper classification",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "generate_template.py script documented with parameters",
+            "result": "PASS",
+            "note": "Complete example with output-dir, subject-ref, classification parameters"
+          },
+          {
+            "text": "Synthetic classification explicitly required",
+            "result": "PASS",
+            "note": "--classification synthetic shown; data gate requires classification"
+          },
+          {
+            "text": "Six template files documented",
+            "result": "PASS",
+            "note": "All six template types listed in Allowed inputs section"
+          },
+          {
+            "text": "No clinical content created by generator",
+            "result": "PASS",
+            "note": "Explicit statement: does not create clinical content"
+          },
+          {
+            "text": "DRAFT notice requirement stated",
+            "result": "PASS",
+            "note": "Required visible notice documented in section 'Required visible notice'"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Validate documentation structure and traceability",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Running deterministic validation scripts",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Six validation scripts documented",
+            "result": "PASS",
+            "note": "All six scripts listed with descriptions in workflow step 4"
+          },
+          {
+            "text": "Local-only execution constraints documented",
+            "result": "PASS",
+            "note": "Scripts reject non-local paths, symlinks; no network access"
+          },
+          {
+            "text": "No clinical assessment performed by scripts",
+            "result": "PASS",
+            "note": "Explicit list of what scripts never assess (diagnosis, safety, interactions, etc.)"
+          },
+          {
+            "text": "Deterministic validation without inference",
+            "result": "PASS",
+            "note": "Scripts described as deterministic with no dynamic execution or LLMs"
+          },
+          {
+            "text": "Minimal report format (counts, codes, paths)",
+            "result": "PASS",
+            "note": "Reports minimize to counts, rule codes, document types, field paths"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Privacy governance and data gate compliance",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Handling patient-derived data restrictions",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Data gate section with 6 conditions",
+            "result": "PASS",
+            "note": "Complete data gate with locally authorized environment requirement"
+          },
+          {
+            "text": "Prohibition on external tool usage for patient data",
+            "result": "PASS",
+            "note": "Condition 3 prohibits model, search, API, image service access"
+          },
+          {
+            "text": "Minimum necessary principle stated",
+            "result": "PASS",
+            "note": "Condition 2 requires minimum information necessary"
+          },
+          {
+            "text": "Qualified privacy review requirement",
+            "result": "PASS",
+            "note": "Condition 6 requires qualified review before de-identification claims"
+          },
+          {
+            "text": "Synthetic template preference documented",
+            "result": "PASS",
+            "note": "First sentence of data gate prefers synthetic or qualified de-identified data"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Source boundaries and authority documentation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "FDA labeling and governance integration",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "FDA labeling as source record only with verification",
+            "result": "PASS",
+            "note": "Source boundaries section states FDA labeling used only when clinician/pharmacist verifies"
+          },
+          {
+            "text": "WHO and Joint Commission for process structure only",
+            "result": "PASS",
+            "note": "Explicit scope: process structure, not clinical content"
+          },
+          {
+            "text": "Source ledger reference with dated entries",
+            "result": "PASS",
+            "note": "source_ledger.md referenced for dated official-source ledger"
+          },
+          {
+            "text": "Accountable clinical owner required",
+            "result": "PASS",
+            "note": "Workflow step 1 requires establishing accountable clinical owner"
+          },
+          {
+            "text": "Local policy and jurisdiction confirmation",
+            "result": "FAIL",
+            "note": "Mentioned but not explicit checklist or validation that these are documented"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Hard safety boundary enforcement",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Prohibited use cases and refusal patterns",
+        "basic": 34,
+        "specialized": 44,
+        "total": 78,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "29 explicit prohibited uses listed",
+            "result": "PASS",
+            "note": "Hard safety boundary section lists 29 never-uses comprehensively"
+          },
+          {
+            "text": "Stop and route pattern for boundary crossing",
+            "result": "PASS",
+            "note": "Clear instruction: 'If a request crosses a boundary, stop. Ask for...'"
+          },
+          {
+            "text": "Prohibition on redirecting to other skills",
+            "result": "PASS",
+            "note": "Explicit: 'Do not redirect to another skill to obtain a patient-specific recommendation'"
+          },
+          {
+            "text": "Emergency escalation routing",
+            "result": "FAIL",
+            "note": "Mentioned that skill doesn't decide urgency but not explicit escalation protocol"
+          },
+          {
+            "text": "Examples of boundary-crossing requests",
+            "result": "FAIL",
+            "note": "Prohibited uses listed but no examples of how requests might be phrased"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.8,
+    "dynamic_weighted": 54.2,
+    "score": 93,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional hard safety boundary documentation with 29 explicit prohibited uses preventing any clinical decision-making",
+    "Outstanding privacy governance with comprehensive data gate (6 conditions) and synthetic template preference",
+    "Excellent deterministic validation approach: local-only scripts with no network, external services, or clinical inference",
+    "Strong provenance and traceability requirements ensuring all content is clinician-authored and verified",
+    "Comprehensive workflow with explicit human review requirements and release gate enforcement"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add examples of boundary-crossing requests",
+      "observed_in": [5],
+      "problem": "Prohibited uses listed but users may not recognize subtle boundary crossings",
+      "root_cause": "List is comprehensive but abstract; concrete examples aid recognition",
+      "fix": "Add examples section: 'Boundary-crossing requests include: \"Which antibiotic should I use?\" (selecting therapy), \"Is 10mg appropriate for this patient?\" (choosing dose), \"Can I give this medication?\" (checking contraindications). Instead ask: \"Format this clinician-verified prescription record.\"'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit jurisdiction/policy documentation checklist",
+      "observed_in": [4],
+      "problem": "Workflow mentions confirming jurisdiction and local policy but no checklist",
+      "root_cause": "Requirements stated but not operationalized for validation",
+      "fix": "Add to workflow step 1: 'Document in intended_use_handoff_template.json: jurisdiction (state/country), institution name, applicable policies (by title and effective date), responsible department, and compliance review contact'"
+    },
+    {
+      "priority": "P3",
+      "title": "Add validation script output format examples",
+      "observed_in": [],
+      "problem": "Scripts described but output format not shown",
+      "root_cause": "Users may need to understand report structure for automation",
+      "fix": "Add note: 'Validation scripts output JSON or plain text. Example: {\"status\": \"BLOCKED\", \"findings\": [{\"rule\": \"R042\", \"path\": \"interventions[2].source\", \"message\": \"missing source locator\"}]}. Exit code 0 = pass, non-zero = validation failures.'"
+    }
+  ]
+}

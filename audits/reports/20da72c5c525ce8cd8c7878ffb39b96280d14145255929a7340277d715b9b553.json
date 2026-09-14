@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "skill_name": "complexa-sweep",
+    "description": "Run parameter sweeps over Proteina-Complexa design pipelines — cartesian-product hyperparameter scans, Pareto search over generation/reward/evaluation knobs, or any compare configurations workflow. Use when user wants sweep beam width, sweep nsteps, hyperparameter sweep, parameter scan, compare configurations, find best generation params, optimal nsteps, Pareto search for binder quality vs wall-clock, complexa sweep, tune Complexa, ablate reward weights, or run sweep YAMLs.",
+    "evaluated_on": "2026-09-07",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "B",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {"result": "PASS", "detail": "Uses documented metrics; no fabricated results"},
+      "practice_boundaries": {"result": "PASS", "detail": "Computational sweep tool with no medical claims"},
+      "methodological_ground": {"result": "PASS", "detail": "Appropriate cartesian product methodology; Pareto frontier analysis scientifically sound"},
+      "code_usability": {"result": "PASS", "detail": "Bash loops syntactically correct; Python script invocations valid; multi-GPU sharding pattern correct"}
+    }
+  },
+  "static_score": {
+    "subtotal": 86,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {"score": 11, "max": 12, "note": "Complete 7-step sweep workflow; handles canned and custom sweepers; multi-GPU sharding; Pareto frontier ranking; missing explicit failure recovery for partial sweeps"},
+      "reliability": {"score": 10, "max": 12, "note": "Preflight with cost confirmation, dryrun preview, error continuation in loop; lacks checkpoint restart for interrupted sweeps"},
+      "performance_context": {"score": 6, "max": 8, "note": "219 lines with 2 reference files; inline sweep recipe table and multi-GPU code could move to references"},
+      "agent_usability": {"score": 14, "max": 16, "note": "Clear 7-step structure, canned sweeper table, sweep recipe recommendations; multi-GPU sharding adds complexity"},
+      "human_usability": {"score": 6, "max": 8, "note": "Good section headers, recipe table helpful; multi-GPU bash code dense; 219 lines requires scrolling"},
+      "security": {"score": 11, "max": 12, "note": "No credential handling needed; file paths validated; shell loop with error continuation safe; missing input validation for sweep YAML"},
+      "maintainability": {"score": 11, "max": 12, "note": "Good modularity with 2 reference files; version-tracked via manifest; canned sweepers reusable"},
+      "agent_specific": {"score": 17, "max": 20, "note": "Excellent trigger precision; delegates to complexa-design for pipeline selection; cartesian product deterministic; manifest captures full replay; cost warning before execution"}
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.0,
+    "max": 100,
+    "assertion_pass_rate": {"passed": 27, "total": 28},
+    "inputs": [
+      {"index": 1, "type": "Canonical", "label": "Beam width sweep with canned YAML", "status": "COMPLETED", "status_flag": "✅", "note": "Standard sweep workflow", "basic": 37, "specialized": 51, "total": 88, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output uses canned beam_width.yaml", "result": "PASS", "note": "Existing sweeper used"}, {"text": "Output runs dryrun preview", "result": "PASS", "note": "Config count confirmed"}, {"text": "Output loops complexa design over generated configs", "result": "PASS", "note": "Serial loop executed"}, {"text": "Output emits sweep_summary.csv with ranked configs", "result": "PASS", "note": "Per-config metrics aggregated"}]},
+      {"index": 2, "type": "Variant A", "label": "Custom 2-axis sweep with cost confirmation", "status": "COMPLETED", "status_flag": "✅", "note": "Multi-axis cartesian product", "basic": 38, "specialized": 52, "total": 90, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output authors new sweeper YAML", "result": "PASS", "note": "Custom sweep file created"}, {"text": "Output confirms GPU-hour cost with user", "result": "PASS", "note": "N × M calculation presented"}, {"text": "Output generates N configs via cartesian product", "result": "PASS", "note": "generate_inference_configs.py executed"}, {"text": "Output identifies best config by success rate", "result": "PASS", "note": "Argmax ranking applied"}]},
+      {"index": 3, "type": "Edge", "label": "Pareto frontier analysis", "status": "COMPLETED", "status_flag": "✅", "note": "Speed vs quality tradeoff", "basic": 36, "specialized": 50, "total": 86, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output computes wall-clock per config", "result": "PASS", "note": "Timestamps parsed from logs"}, {"text": "Output identifies Pareto frontier", "result": "PASS", "note": "No config dominates frontier members"}, {"text": "Output reports both best and frontier", "result": "PASS", "note": "Distinction clear"}, {"text": "Output explains Pareto criterion", "result": "PASS", "note": "Faster AND higher success"}]},
+      {"index": 4, "type": "Variant B", "label": "Multi-GPU sharded execution", "status": "COMPLETED", "status_flag": "✅", "note": "4-GPU parallel sweep", "basic": 37, "specialized": 52, "total": 89, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output shards config list across GPUs", "result": "PASS", "note": "K-way split with CUDA_VISIBLE_DEVICES"}, {"text": "Output uses subshell backgrounding", "result": "PASS", "note": "Parallel loops with wait"}, {"text": "Output avoids GPU collisions", "result": "PASS", "note": "Each design pinned to one GPU"}, {"text": "Output reports speedup", "result": "PASS", "note": "Wall-clock reduced by ~K factor"}]},
+      {"index": 5, "type": "Stress", "label": "Large 256-config sweep with partial failure", "status": "COMPLETED", "status_flag": "✅", "note": "Handles failed configs gracefully", "basic": 36, "specialized": 48, "total": 84, "assertions_passed": 3, "assertions_total": 4, "assertions": [{"text": "Output continues loop after failure", "result": "PASS", "note": "Error continuation with echo FAILED"}, {"text": "Output skips failed config_id in ranking", "result": "PASS", "note": "Missing CSVs excluded"}, {"text": "Output reports which configs failed", "result": "PASS", "note": "Failed list provided"}, {"text": "Output provides guidance for resuming failed configs", "result": "FAIL", "note": "No explicit re-run strategy for failed subset; user must manually identify and retry"}]},
+      {"index": 6, "type": "Scope Boundary", "label": "Request for real-time sweep monitoring", "status": "COMPLETED", "status_flag": "✅", "note": "Clarifies scope limits", "basic": 38, "specialized": 54, "total": 92, "assertions_passed": 3, "assertions_total": 3, "assertions": [{"text": "Output clarifies no built-in live monitoring", "result": "PASS", "note": "Sweep runs in background"}, {"text": "Output suggests checking per-config logs", "result": "PASS", "note": "Points to ./logs/design_pipeline_*/"}, {"text": "Output suggests alternative for monitoring", "result": "PASS", "note": "User can tail logs or use external tools"}]},
+      {"index": 7, "type": "Adversarial", "label": "Conflicting override and sweep axis", "status": "COMPLETED", "status_flag": "✅", "note": "Detects axis collapse", "basic": 38, "specialized": 53, "total": 91, "assertions_passed": 4, "assertions_total": 4, "assertions": [{"text": "Output detects override shadows sweep key", "result": "PASS", "note": "Troubleshooting case documented"}, {"text": "Output warns axis will collapse", "result": "PASS", "note": "N configs reduced to fewer"}, {"text": "Output suggests removing override or sweep key", "result": "PASS", "note": "Clear resolution path"}, {"text": "Output re-runs dryrun after fix", "result": "PASS", "note": "Verification step included"}]}
+    ]
+  },
+  "final": {
+    "static_weighted": 34.4,
+    "dynamic_weighted": 52.8,
+    "score": 87,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Complete cartesian-product sweep system with dryrun preview preventing wasted GPU time",
+    "Excellent cost awareness with N × M GPU-hour calculation and user confirmation before execution",
+    "Multi-GPU sharding pattern enables practical scaling on multi-GPU hosts with CUDA_VISIBLE_DEVICES pinning",
+    "Pareto frontier analysis provides speed vs quality tradeoff insights beyond simple best-config ranking",
+    "Sweep recipe recommendation table maps symptoms to appropriate parameter axes"
+  ],
+  "recommendations": [
+    {"priority": "P2", "title": "Add partial sweep recovery guidance", "observed_in": [5], "problem": "One assertion failed: no explicit strategy for resuming failed configs in large sweeps. Reliability 2.3 scored 10/12. User must manually identify and retry failed inf_*.yaml files.", "root_cause": "Error continuation with || echo FAILED allows sweep to complete but doesn't track failures for retry.", "fix": "Add to troubleshooting or new section: To retry failed configs, parse FAILED output or compare ls configs/inference_configs/inf_*.yaml vs ls evaluation_results/eval_*/. Re-run: for cfg in <failed-list>; do complexa design $cfg; done. Alternatively, emit failed_configs.txt during sweep for easy retry."},
+    {"priority": "P2", "title": "Move multi-GPU code to reference", "observed_in": [], "problem": "Performance/Context scored 6/8; 219 lines with dense bash sharding code inline. Multi-GPU pattern is advanced and optional.", "root_cause": "Multi-GPU section (lines 119-133) adds complexity to main workflow.", "fix": "Move multi-GPU sharding pattern to reference/sweep_axes.md or new reference/multi_gpu.md. Keep only pointer in main SKILL.md: 'For multi-GPU parallelization, see reference/multi_gpu.md.' Target <180 lines."},
+    {"priority": "P2", "title": "Add sweep YAML input validation", "observed_in": [], "problem": "Security 6.2 scored 11/12; no validation that sweep YAML is well-formed before config generation. Malformed YAML could cause cryptic errors mid-sweep.", "root_cause": "Delegates validation to generate_inference_configs.py at runtime.", "fix": "Add Step 3.5: Validate sweep YAML structure before dryrun. Check: top-level is mapping, all values are lists or scalars, keys use dot notation. Prevents generate_inference_configs.py failure after user investment in authoring."}
+  ]
+}

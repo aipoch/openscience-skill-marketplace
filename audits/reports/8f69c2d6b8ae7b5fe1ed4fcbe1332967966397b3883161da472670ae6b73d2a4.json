@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "clinvar-database",
+    "description": "Utilities for querying the NCBI ClinVar database to retrieve variant records, clinical significance, and phenotype relationships; use when searching variants by gene/condition/significance, interpreting Pathogenic/Benign/VUS classifications, or annotating VCF files with ClinVar annotations.",
+    "evaluated_on": "2026-09-04",
+    "category": "Evidence Insight",
+    "execution_mode": "B",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate ClinVar documentation"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Genomic medicine scope appropriate"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Proper variant interpretation"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Scripts appear runnable"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Core features covered, less comprehensive than synthetic-sciences version"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Stable patterns"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Efficient"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Concise and clear"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural terminology"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Public data, safe"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Modular with references"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Good but lacks some escape hatches"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 94.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 12
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Search pathogenic variants",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard search",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Search syntax documented",
+            "result": "PASS",
+            "note": "E-utilities patterns"
+          },
+          {
+            "text": "Script provided",
+            "result": "PASS",
+            "note": "search.py exists"
+          },
+          {
+            "text": "No fabrication",
+            "result": "PASS",
+            "note": "Real ClinVar"
+          },
+          {
+            "text": "Clinical boundary",
+            "result": "PASS",
+            "note": "Interpretation focus"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "VCF annotation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Annotation workflow",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "VCF workflow documented",
+            "result": "PASS",
+            "note": "annotate.py script"
+          },
+          {
+            "text": "bcftools integration",
+            "result": "PASS",
+            "note": "Dependency noted"
+          },
+          {
+            "text": "Input/output clear",
+            "result": "PASS",
+            "note": "CLI parameters"
+          },
+          {
+            "text": "Pipeline ready",
+            "result": "PASS",
+            "note": "Deterministic"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Conciseness vs completeness",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Very concise (65 lines)",
+        "basic": 37,
+        "specialized": 57,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Core functionality covered",
+            "result": "PASS",
+            "note": "Search and annotate"
+          },
+          {
+            "text": "References mentioned",
+            "result": "PASS",
+            "note": "Two reference files"
+          },
+          {
+            "text": "Comprehensive examples",
+            "result": "FAIL",
+            "note": "Minimal examples compared to synthetic-sciences version"
+          },
+          {
+            "text": "Clear scope",
+            "result": "PASS",
+            "note": "Well defined"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 56.4,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Concise and focused documentation",
+    "Script-based execution with clear CLI",
+    "Proper clinical interpretation guidance"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add more workflow examples",
+      "observed_in": [
+        "3"
+      ],
+      "problem": "Only 2 basic examples compared to comprehensive synthetic-sciences version",
+      "root_cause": "Minimalist documentation approach",
+      "fix": "Add examples for bulk downloads, conflict resolution, review status filtering"
+    }
+  ]
+}

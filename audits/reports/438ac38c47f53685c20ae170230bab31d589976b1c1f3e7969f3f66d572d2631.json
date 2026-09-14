@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "skill_name": "histolab",
+    "description": "Lightweight WSI tile extraction and preprocessing. Use for basic slide processing, tissue detection, tile extraction, and stain normalization for H&E images. Best for simple pipelines, dataset preparation, and quick tile-based analysis. For advanced spatial proteomics use pathml.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "biology",
+    "execution_mode": "B",
+    "complexity": "Moderate",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No data fabrication; processes real whole slide images with proper tissue detection and tile extraction methodology"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for basic WSI processing; clearly distinguishes from pathml for advanced spatial proteomics and multiplexed imaging"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established digital pathology practices with proper tissue detection, tile extraction, and stain normalization methods"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Complete working examples for all major workflows with proper parameter guidance and quality control recommendations"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of 6 capability areas (slide management, tissue detection, tile extraction, filters, stain normalization, visualization); excellent 5-reference progressive disclosure"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good version specification (0.7.0) with Python compatibility (3.8-3.11); OpenSlide dependency documented; minor: no explicit guidance on handling extraction failures"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized 244-line SKILL.md with excellent progressive disclosure through 5 detailed reference files; clear workflow structure"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Perfect trigger description with specific WSI operations and use-case patterns; clear when-to-use guidance; explicit alternative (pathml for advanced workflows)"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent setup instructions with OpenSlide system library requirement, Python version constraints, and platform compatibility (Linux/macOS, not Windows)"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good handling of WSI files with proper path management; sample data via pooch noted; minor: no explicit guidance on handling potentially malicious slide files"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good structure with version 1.2, license (Apache-2.0), compatibility notes; minor: no changelog reference"
+      },
+      "agent_specific": {
+        "score": 18,
+        "max": 20,
+        "note": "Strong composability with clear input/output contracts; excellent progressive disclosure with 5 reference files; good quality control guidance; minor: batch processing workflows could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 95.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 23,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Load slide and extract random tiles",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow from slide loading to random tile extraction with preview",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Slide loading with processed_path documented",
+            "result": "PASS",
+            "note": "Quick start shows Slide(path, processed_path) clearly"
+          },
+          {
+            "text": "RandomTiler with tile_size, n_tiles, level, seed parameters",
+            "result": "PASS",
+            "note": "Complete parameter set shown in quick start example"
+          },
+          {
+            "text": "locate_tiles() preview before extraction documented",
+            "result": "PASS",
+            "note": "Quick start and best practices emphasize locate_tiles() preview"
+          },
+          {
+            "text": "Seeds for reproducibility in RandomTiler recommended",
+            "result": "PASS",
+            "note": "Best practices explicitly mention using seeds for reproducibility"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Grid-based complete coverage extraction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "GridTiler for complete tissue coverage with spatial relationships",
+        "basic": 39,
+        "specialized": 58,
+        "total": 97,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "GridTiler recommended for complete tissue coverage",
+            "result": "PASS",
+            "note": "Best practices and use cases clearly state GridTiler for complete coverage"
+          },
+          {
+            "text": "pixel_overlap parameter for sliding window approaches",
+            "result": "PASS",
+            "note": "Use cases mention pixel_overlap for sliding window approaches"
+          },
+          {
+            "text": "Grid positions maintain spatial relationships",
+            "result": "PASS",
+            "note": "Whole slide analysis use case notes maintaining spatial relationships with grid"
+          },
+          {
+            "text": "pixel_overlap=0 for non-overlapping grids recommended",
+            "result": "PASS",
+            "note": "Performance best practices mention pixel_overlap=0"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Score-based quality-driven tile selection",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "ScoreTiler with NucleiScorer for cell-rich region prioritization",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ScoreTiler recommended for quality-driven selection",
+            "result": "PASS",
+            "note": "Best practices list ScoreTiler for quality-driven selection"
+          },
+          {
+            "text": "NucleiScorer for focusing on cell-rich regions",
+            "result": "PASS",
+            "note": "Deep learning use case mentions ScoreTiler with NucleiScorer"
+          },
+          {
+            "text": "Score distributions and top/bottom tiles review recommended",
+            "result": "PASS",
+            "note": "Quality control section explicitly mentions reviewing score distributions"
+          },
+          {
+            "text": "CellularityScorer as alternative scorer available",
+            "result": "PASS",
+            "note": "Core capabilities mention available scorers including CellularityScorer"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Custom tissue mask for artifact exclusion",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive mask customization with filter chains and annotation exclusion",
+        "basic": 37,
+        "specialized": 56,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "TissueMask vs BiggestTissueBoxMask use cases documented",
+            "result": "PASS",
+            "note": "Best practices explain TissueMask for multiple sections, BiggestTissueBoxMask for single"
+          },
+          {
+            "text": "Custom masks with filter chains for artifact removal",
+            "result": "PASS",
+            "note": "Troubleshooting and capability areas mention custom mask filters"
+          },
+          {
+            "text": "locate_mask() preview before extraction recommended",
+            "result": "PASS",
+            "note": "Best practices emphasize previewing masks with locate_mask()"
+          },
+          {
+            "text": "Pen annotation handling with custom masks",
+            "result": "PASS",
+            "note": "Best practices mention handling pen annotations with custom masks"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Stain normalization for consistency across slides",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Macenko and Reinhard normalization documented but target image selection guidance minimal",
+        "basic": 35,
+        "specialized": 52,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "MacenkoStainNormalizer and ReinhardStainNormalizer available",
+            "result": "PASS",
+            "note": "Core capabilities and troubleshooting mention both normalizers"
+          },
+          {
+            "text": "Normalization against target image pattern documented",
+            "result": "PASS",
+            "note": "Core capabilities mention normalization against a target image"
+          },
+          {
+            "text": "Staining quality adjustment per slide recommended",
+            "result": "PASS",
+            "note": "Troubleshooting mentions adjusting tissue_percent per staining quality"
+          },
+          {
+            "text": "Target image selection criteria provided",
+            "result": "FAIL",
+            "note": "No guidance on how to choose appropriate target image for normalization"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "When to use pathml instead of histolab",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Clear scope boundary with pathml as alternative for advanced workflows",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Advanced spatial proteomics: use pathml",
+            "result": "PASS",
+            "note": "Description explicitly recommends pathml for advanced spatial proteomics"
+          },
+          {
+            "text": "Multiplexed imaging: use pathml",
+            "result": "PASS",
+            "note": "Description mentions pathml for multiplexed imaging"
+          },
+          {
+            "text": "Deep learning pipelines: use pathml",
+            "result": "PASS",
+            "note": "Description recommends pathml for deep learning pipelines"
+          },
+          {
+            "text": "Best for simple pipelines and dataset preparation",
+            "result": "PASS",
+            "note": "Description clearly positions histolab for simple pipelines and dataset prep"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 57.0,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive coverage of 6 WSI processing capability areas with excellent progressive disclosure through 5 detailed reference files (slide management, tissue masks, tile extraction, filters, visualization)",
+    "Perfect agent discoverability with clear use-case patterns and explicit scope boundary (use pathml for advanced spatial proteomics)",
+    "Strong quality control guidance with mandatory locate_tiles() preview, tissue_percent thresholds, and score distribution review",
+    "Excellent troubleshooting section covering all common failure modes with specific fixes for no tiles, background tiles, slow extraction, and artifacts",
+    "Clear platform compatibility documentation (Python 3.8-3.11, Linux/macOS, not Windows) with OpenSlide system dependency"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add target image selection guidance for stain normalization",
+      "observed_in": [5],
+      "problem": "Stain normalization documented but no guidance on choosing appropriate target image",
+      "root_cause": "Focus on normalizer API rather than domain best practices",
+      "fix": "Add to filters_preprocessing.md or best practices: criteria for selecting stain normalization target (e.g., median-quality slide, representative staining, avoid artifacts)"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit guidance on handling extraction failures",
+      "observed_in": [],
+      "problem": "No explicit error handling pattern for failed tile extractions",
+      "root_cause": "Reliability section focuses on version compatibility rather than runtime failures",
+      "fix": "Add to troubleshooting or best practices: how to handle corrupt slides, extraction errors, and partial batch failures with logging recommendations"
+    },
+    {
+      "priority": "P2",
+      "title": "Add batch processing workflow examples",
+      "observed_in": [],
+      "problem": "Multi-slide processing mentioned in references but no explicit batch workflow",
+      "root_cause": "Agent-specific composability focuses on single-slide workflows",
+      "fix": "Add to typical_workflows.md: batch processing pattern for processing multiple slides with consistent parameters and aggregated QC reporting"
+    }
+  ]
+}

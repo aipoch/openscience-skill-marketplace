@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "skill_name": "geniml",
+    "description": "Use Geniml for audited local genomic-interval workflows: validate BED and universe contracts, plan Region2Vec or scEmbed runs, inspect model/tokenizer compatibility, and assess consensus universes.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Advanced",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of Geniml capabilities with explicit coordinate convention (0-based half-open), assembly contracts, and migration warnings for API changes"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for genomic interval ML with clear boundaries: validators plan but don't rewrite, separates train/validation/test by biological unit, and treats BEDspace as legacy"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established genomic interval representations (BED format, Region2Vec/scEmbed embeddings) with proper coordinate system documentation"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "All code examples are syntactically correct with proper imports and safety boundaries"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 96,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage including BED validation, Region2Vec, scEmbed, consensus universes, tokenizer/model compatibility, with excellent reference organization and bundled audit scripts"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability with 7-point safety gate, bounded validation planners, coordinate system validation, assembly contract enforcement, and migration notes for API drift"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Well-organized documentation (310 lines) with API map, migration notes, 5 comprehensive reference files, and bundled audit/planning scripts"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional with explicit safety gate (7 rules), coordinate/assembly contract section, API migration notes, model compatibility checklist, and clear reference navigation"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with lockfile guidance; reproducible pinning (geniml 0.8.4, gtars 0.9.2); bundled validators/planners; BEDbase cache management"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Outstanding security: safety gate rejecting URLs/FIFOs/symlinks, explicit approval for downloads, model artifacts as untrusted (weights_only=True), sensitive data redaction, aggregate logs, bounded execution"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.1, clear licenses (skill MIT, Geniml BSD-2-Clause), 5 comprehensive references, version baseline (0.8.4 verified 2026-07-23), upstream version tracking"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools including Glob; bundled audit/planning scripts; dependency-free validators; minor: model artifact schemas not fully detailed"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "BED validation with assembly contract enforcement",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Coordinate system validation and assembly checking",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "bed_validator.py for bounded validation planning",
+            "result": "PASS",
+            "note": "Coordinate/assembly contract section shows bed_validator.py with --assembly and --chrom-sizes"
+          },
+          {
+            "text": "0-based half-open coordinate convention documented",
+            "result": "PASS",
+            "note": "Coordinate contract explicitly states '[start, end): start is included, end is excluded'"
+          },
+          {
+            "text": "Assembly recording requirements",
+            "result": "PASS",
+            "note": "Contract lists assembly/patch, contig naming, coordinate convention, liftover details"
+          },
+          {
+            "text": "Validation errors without silent repair",
+            "result": "PASS",
+            "note": "Contract states 'Reject negative coordinates, end <= start...Sorting and normalization never repair an assembly mismatch'"
+          },
+          {
+            "text": "Plan-only execution without file rewriting",
+            "result": "PASS",
+            "note": "Validator 'reports proposed actions but never rewrites the BED file'"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Region2Vec training with tokenizer and dataset",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Genomic interval embedding workflow",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "Region2VecExModel from geniml.region2vec.main",
+            "result": "PASS",
+            "note": "API map shows concrete import path: 'from geniml.region2vec.main import Region2VecExModel'"
+          },
+          {
+            "text": "Tokenizer from Gtars with universe BED",
+            "result": "PASS",
+            "note": "Example shows 'Tokenizer.from_bed(\"refs/universe.bed\")'"
+          },
+          {
+            "text": "Region2VecDataset with Parquet tokens column",
+            "result": "PASS",
+            "note": "API map demonstrates 'Region2VecDataset(\"work/tokens.parquet\", shuffle=True)'"
+          },
+          {
+            "text": "Training parameters (epochs, window_size, seed)",
+            "result": "PASS",
+            "note": "Example shows model.train(dataset, epochs=10, window_size=5, num_cpus=4, seed=42)"
+          },
+          {
+            "text": "Migration warning about package re-exports",
+            "result": "PASS",
+            "note": "Migration notes warn '0.8.4 wheel...do not re-export their modern classes/functions. Use the concrete module paths'"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "scEmbed with AnnData and tokenization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Single-cell accessibility embedding",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "ScEmbed from geniml.scembed.main",
+            "result": "PASS",
+            "note": "API map states 'Import ScEmbed from geniml.scembed.main'"
+          },
+          {
+            "text": "AnnData .var requirements (chr, start, end)",
+            "result": "PASS",
+            "note": "scEmbed section states 'AnnData .var must contain chr, start, and end'"
+          },
+          {
+            "text": "Pre-tokenization to Parquet pattern",
+            "result": "PASS",
+            "note": "Section recommends 'Pre-tokenize to a Parquet tokens column and use the same Tokenizer'"
+          },
+          {
+            "text": "Reference for detailed scEmbed workflows",
+            "result": "PASS",
+            "note": "API map directs to 'references/scembed.md' for details"
+          },
+          {
+            "text": "CLI no-op warning for geniml scembed",
+            "result": "FAIL",
+            "note": "Migration notes warn 'geniml scembed...command body is a no-op in 0.8.4' but not in main API section"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Model artifact compatibility inspection with security",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Checkpoint validation without loading",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "model_artifact_inspector.py for metadata inspection",
+            "result": "PASS",
+            "note": "Model compatibility section shows model_artifact_inspector.py usage"
+          },
+          {
+            "text": "Compatibility checklist (vocab_size, embedding_dim, universe, tokenizer)",
+            "result": "PASS",
+            "note": "Model compatibility section lists 5-item agreement requirements"
+          },
+          {
+            "text": "Untrusted artifact policy",
+            "result": "PASS",
+            "note": "Section states '.pt, Gensim .model, pickle, joblib...remain untrusted inputs' with weights_only=True loader"
+          },
+          {
+            "text": "Inspection before loading policy",
+            "result": "PASS",
+            "note": "Guidance: 'Inspect and checksum artifacts before loading; use an isolated environment and never load a checkpoint merely to discover its metadata'"
+          },
+          {
+            "text": "Tokenizer special-token handling",
+            "result": "FAIL",
+            "note": "Gtars 0.9.2 adds seven special tokens mentioned but special-token ID preservation not detailed in compatibility section"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Corpus auditing with leakage detection and manifest validation",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Multi-file validation with privacy controls",
+        "basic": 33,
+        "specialized": 42,
+        "total": 75,
+        "assertions_passed": 3,
+        "assertions_total": 5,
+        "assertions": [
+          {
+            "text": "corpus_auditor.py for manifest-based validation",
+            "result": "PASS",
+            "note": "Local audit CLIs section demonstrates corpus_auditor.py with manifest parameters"
+          },
+          {
+            "text": "Group/split column specification for leakage detection",
+            "result": "PASS",
+            "note": "Example shows --group-column patient_id --split-column split for train/test contamination"
+          },
+          {
+            "text": "Redacted JSON output by default",
+            "result": "PASS",
+            "note": "Local audit section states 'All scripts are standard-library-only and default to redacted JSON'"
+          },
+          {
+            "text": "Biological unit separation requirement",
+            "result": "FAIL",
+            "note": "Safety gate point 4 requires separation 'by patient, donor, biological replicate' but not demonstrated in audit example"
+          },
+          {
+            "text": "Sensitive data enumeration in logs",
+            "result": "FAIL",
+            "note": "Safety gate warns 'BED filenames, sample IDs, phenotypes, labels, barcodes...may be sensitive' but audit output content not specified"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.4,
+    "dynamic_weighted": 53.0,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional security posture with comprehensive safety gate (7 rules), untrusted artifact policy (weights_only=True), explicit download approval requirements, and sensitive data redaction",
+    "Outstanding coordinate system discipline with explicit 0-based half-open BED convention, assembly contract requirements, and validation without silent repair",
+    "Excellent version transparency with API migration notes documenting module path changes, CLI drift, deprecated config keys, and package re-export removal",
+    "Strong reproducibility culture with lockfile guidance, PyPI artifact digest recording, Python/OS tracking, and checksum verification for models/universes",
+    "Comprehensive bundled tooling with dependency-free validators/planners that audit without executing Geniml or ML libraries"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Document audit output content for sensitive data review",
+      "observed_in": [5],
+      "problem": "Redacted JSON output mentioned but what remains in audit output not specified",
+      "root_cause": "Safety gate warns about sensitive data but audit script output format not detailed",
+      "fix": "Add to corpus_auditor.py description: 'Outputs file count, checksum mismatches, assembly conflicts, and split overlap warnings; excludes BED filenames, sample IDs, and phenotype values unless --reveal-paths specified'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add special-token ID preservation to compatibility checklist",
+      "observed_in": [4],
+      "problem": "Seven special tokens mentioned but not in compatibility agreement list",
+      "root_cause": "Gtars 0.9.2 behavior noted separately from model compatibility requirements",
+      "fix": "Add to compatibility checklist: 'Special-token IDs and vocabulary order (gtars 0.9.2 adds 7 special tokens to BED universe, changing tokenizer.len())'"
+    },
+    {
+      "priority": "P3",
+      "title": "Highlight CLI no-op warnings in main API sections",
+      "observed_in": [3],
+      "problem": "geniml scembed CLI no-op buried in migration notes",
+      "root_cause": "Critical migration warning separated from API map where CLI might be referenced",
+      "fix": "Add warning to scEmbed API section: 'Note: geniml scembed CLI is a no-op in 0.8.4; use geniml.scembed.main.ScEmbed class instead'"
+    }
+  ]
+}

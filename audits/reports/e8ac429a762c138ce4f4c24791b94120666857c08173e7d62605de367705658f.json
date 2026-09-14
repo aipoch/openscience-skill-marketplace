@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "evaluator_version": "skill-auditor@1.0",
+    "skill_name": "ensembl-database",
+    "description": "Query Ensembl genome database REST API for 250+ species. Gene lookups, sequence retrieval, variant analysis, comparative genomics, orthologs, VEP predictions, for genomic research.",
+    "evaluated_on": "2026-09-04",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": {
+        "result": "PASS",
+        "detail": "Well-established REST API with stable patterns"
+      },
+      "contract": {
+        "result": "PASS",
+        "detail": "Valid frontmatter, consistent structure"
+      },
+      "determinism": {
+        "result": "PASS",
+        "detail": "API queries are reproducible for versioned releases"
+      },
+      "security": {
+        "result": "PASS",
+        "detail": "Public API, rate limiting documented, no credential issues"
+      }
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate Ensembl documentation, correct release information"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Genomic research scope appropriate, no clinical overreach"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Proper comparative genomics and variant analysis methodology"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples are syntactically correct and executable"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 100,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive Ensembl API coverage: genes, sequences, variants, comparative genomics"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Rate limiting, retry logic, error handling well documented"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Caching strategies, batch endpoints, efficient patterns"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Clear examples with both ensembl_rest package and direct API approaches"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Natural genomics terminology, discoverable"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Public API, no security concerns, rate limiting respected"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Modular with references and scripts, clear structure"
+      },
+      "agent_specific": {
+        "score": 20,
+        "max": 20,
+        "note": "Clear scope, assembly version awareness, composable workflows"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 94.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 24,
+      "total": 25
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Gene lookup by symbol",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard gene query",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Provides working code example", "result": "PASS", "note": "Both package and direct API"},
+          {"text": "Correct API endpoint", "result": "PASS", "note": "REST URL verified"},
+          {"text": "Rate limiting mentioned", "result": "PASS", "note": "15 req/sec documented"},
+          {"text": "No fabricated data", "result": "PASS", "note": "Real Ensembl patterns"},
+          {"text": "Species handling documented", "result": "PASS", "note": "Multiple identifier formats"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "VEP variant prediction",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Variant consequence analysis",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "VEP usage documented", "result": "PASS", "note": "HGVS notation example"},
+          {"text": "Variant lookup methods shown", "result": "PASS", "note": "rsID and coordinates"},
+          {"text": "Population frequency mentioned", "result": "PASS", "note": "Capability documented"},
+          {"text": "Functional consequences explained", "result": "PASS", "note": "Use case clear"},
+          {"text": "Phenotype associations noted", "result": "PASS", "note": "Full workflow"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Assembly coordinate conversion",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "GRCh37 to GRCh38 mapping",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Assembly mapping documented", "result": "PASS", "note": "AssemblyMapper example"},
+          {"text": "Different server endpoints noted", "result": "PASS", "note": "grch37.rest vs rest"},
+          {"text": "Common assemblies covered", "result": "PASS", "note": "GRCh37/38 both mentioned"},
+          {"text": "Coordinate format correct", "result": "PASS", "note": "chrom:start-end syntax"},
+          {"text": "Practical use case", "result": "PASS", "note": "Common bioinformatics need"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Comparative genomics orthologs",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Cross-species comparison",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Ortholog finding documented", "result": "PASS", "note": "homology_ensemblgene method"},
+          {"text": "Gene tree access shown", "result": "PASS", "note": "evolutionary relationships"},
+          {"text": "Multiple species supported", "result": "PASS", "note": "250+ species noted"},
+          {"text": "Paralog identification mentioned", "result": "PASS", "note": "Related genes capability"},
+          {"text": "Workflow complete", "result": "PASS", "note": "Full comparative analysis"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Bulk queries with rate limiting",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "High-volume API usage",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Rate limiting strategy documented", "result": "PASS", "note": "Retry-After header handling"},
+          {"text": "Error handling implemented", "result": "PASS", "note": "Complete retry logic"},
+          {"text": "Batch endpoints mentioned", "result": "PASS", "note": "Multiple items per request"},
+          {"text": "Caching recommended", "result": "PASS", "note": "Reduce API calls"},
+          {"text": "Specific batch endpoint examples", "result": "FAIL", "note": "General mention but lacks concrete POST examples"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 40.0,
+    "dynamic_weighted": 56.4,
+    "score": 96,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive Ensembl REST API coverage across all major endpoints",
+    "Strong rate limiting and error handling patterns with retry logic",
+    "Dual approach documentation with both package and direct API methods",
+    "Clear assembly version awareness for coordinate mapping"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add batch endpoint examples",
+      "observed_in": ["5"],
+      "problem": "Batch endpoints mentioned but no concrete POST request examples provided",
+      "root_cause": "High-level guidance without implementation details for bulk queries",
+      "fix": "Add specific examples of POST batch requests in references/api_endpoints.md"
+    }
+  ]
+}

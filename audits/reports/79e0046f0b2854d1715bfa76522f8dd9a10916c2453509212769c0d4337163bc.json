@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "openfold3-nim",
+    "description": "Use this skill for OpenFold3, NVIDIA's BioNeMo NIM microservice for biomolecular structure prediction. Invoke for OpenFold3 or protein, protein-ligand, protein-DNA/RNA, or multi-chain complex prediction with hosted NVIDIA API or local Docker NIM. Covers endpoint choice, auth, request payloads, output artifacts, confidence scores, and local container setup.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 95,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of biomolecular structure prediction: proteins, DNA, RNA, ligands, multi-entity complexes; all molecule types and formats documented"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong preflight validation with NGC_API_KEY/NVIDIA_API_KEY fallback; error handling via raise_for_status; minor: no guidance on handling >1800 residue memory exhaustion beyond generic 'use larger GPU'"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent efficiency: 195 lines with progressive disclosure via 5 reference files; payload gotchas section prevents common errors"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Exceptional clarity: all molecule types explicitly shown (protein, dna, rna, ligand) with format requirements; exact preflight pattern prevents substitution errors; confidence score interpretation provided"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent scope coverage (proteins to multi-entity complexes); local Docker setup complete with shm-size and GPU device explicit; smoke test vs scientific caveat clear"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Explicit 'Do not print API keys' guidance with shell test confirmation; NGC_API_KEY/NVIDIA_API_KEY fallback robust; credentials externalized"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean structure with 5 reference files; exact preflight copy instruction prevents drift; molecule type schema clearly separated"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Excellent trigger precision; clear composability (accepts MSA from msa-search-nim); preflight copy instruction exemplary; lacks explicit idempotency statement; TensorRT vs PyTorch path mentioned without selection guidance"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 98.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted single protein with minimal MSA",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow with correct nested payload structure and structure saving",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Top-level inputs array with exactly one input",
+            "result": "PASS",
+            "note": "Payload gotchas: OpenFold3 accepts exactly one input"
+          },
+          {
+            "text": "MSA alignment starts with FASTA header >query",
+            "result": "PASS",
+            "note": "Gotchas and troubleshooting emphasize >query\\n requirement"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          },
+          {
+            "text": "All confidence scores extracted (confidence_score, plddt, ptm, iptm, pde)",
+            "result": "PASS",
+            "note": "Save And Interpret shows all 5 metrics"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local protein-ligand complex with CCD code",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-entity complex with correct ligand specification via CCD codes",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Ligand molecule with ccd_codes field (not smiles)",
+            "result": "PASS",
+            "note": "Gotchas show both ccd_codes: ATP and smiles options"
+          },
+          {
+            "text": "Multiple molecules in array (protein + ligand)",
+            "result": "PASS",
+            "note": "molecules can contain 1-32 objects documented"
+          },
+          {
+            "text": "Local endpoint /biology/openfold/openfold3/predict (no /v1/)",
+            "result": "PASS",
+            "note": "Correct local path"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly omit auth after readiness"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Protein-DNA complex with multiple diffusion samples",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multi-molecule complex with DNA entity and stochastic sampling",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "DNA molecule with sequence field",
+            "result": "PASS",
+            "note": "Gotchas show type: dna with sequence: ATCGATCG"
+          },
+          {
+            "text": "diffusion_samples set to 5 for diversity",
+            "result": "PASS",
+            "note": "Within 1-5 range documented in gotchas and limits"
+          },
+          {
+            "text": "Multiple structures saved from structures_with_scores array",
+            "result": "PASS",
+            "note": "Save loop iterates over all samples with enumerate"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 38.0,
+    "dynamic_weighted": 58.8,
+    "score": 97,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional biomolecular scope: unified interface for proteins, DNA, RNA, ligands, and multi-entity complexes (1-32 molecules)",
+    "Exemplary preflight pattern: explicit copy instruction with NGC_API_KEY/NVIDIA_API_KEY fallback prevents substitution errors",
+    "Comprehensive molecule type documentation: all four types (protein, dna, rna, ligand) with format requirements clearly shown",
+    "Strong confidence score guidance: all 5 metrics documented with interpretation (higher pLDDT/pTM/iPTM/confidence, lower pDE)",
+    "Clear memory guidance: specific thresholds (1800 residues needs 80GB GPU) for capacity planning"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add TensorRT vs PyTorch path selection guidance",
+      "observed_in": ["Agent-specific evaluation", "Common Limits"],
+      "problem": "TensorRT vs PyTorch paths mentioned (TensorRT for shorter, PyTorch for longer sequences) but no guidance on how to select or whether user control exists",
+      "root_cause": "Implementation detail surfaced without actionable user control",
+      "fix": "Clarify in Common Limits: 'TensorRT vs PyTorch: NIM auto-selects backend based on sequence length and available resources. No user control via API. For sequences >1000 residues, NIM uses PyTorch path which requires more memory but supports longer inputs. This is automatic and transparent.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add specific guidance for >1800 residue memory exhaustion",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "1800 residue threshold and 80GB requirement documented but no fallback strategy beyond 'use larger GPU'",
+      "root_cause": "Memory constraint mentioned without practical recovery for users with fixed hardware",
+      "fix": "Expand Troubleshooting memory errors: 'For sequences >1800 residues: (1) reduce diffusion_samples to 1, (2) split complex into domains and predict separately if biologically valid, (3) use local NIM on A100 80GB or H100, or (4) reduce MSA depth to decrease memory footprint. Hosted API has memory limits; use local for very long sequences.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for predictions",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running prediction with same inputs produces identical structures",
+      "root_cause": "Determinism via diffusion_samples=1 not consolidated",
+      "fix": "Add to Save And Interpret Output: 'Determinism: OpenFold3 with diffusion_samples=1 is deterministic — same molecules, MSAs, and templates produce identical structures across runs. With diffusion_samples >1, each sample explores different diffusion trajectories for structural diversity. Use samples=1 for reproducible benchmarking.'"
+    }
+  ]
+}

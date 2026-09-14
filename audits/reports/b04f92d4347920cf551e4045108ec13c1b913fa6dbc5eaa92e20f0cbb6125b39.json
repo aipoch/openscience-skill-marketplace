@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "skill_name": "nature-proposal-writer",
+    "description": "Proposal-first scientific writing pipeline (installed as researchwrite) for research proposals, opening reports, research plans with evidence-grounded workflow. Three modes (compose/revise/hybrid), enforces evidence-before-prose, argument-before-sections, contracts-before-paragraphs. Four-layer QA pipeline (professor convener → avoid-ai-writing → auto-validation → scoring). Dynamic expert system (professor skill), foundation files (scope, research_canon, evidence_table, argument_map, section_contracts).",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "research",
+    "execution_mode": "C",
+    "complexity": "Complex",
+    "n_inputs": 6
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Enforces evidence-before-prose (research_canon and evidence_table before drafting). Does not auto-upgrade facts (never changes 'may indicate' to 'proves' without evidence). Deletion preferred over explanation. Four-layer QA with professor expert review."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for proposal writing. Section contracts specify allowed/forbidden claims. Stopping rules for plateau, expert conflict, evidence gaps. Evidence-table maps claims to evidence. Argument-map before sections."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Evidence-before-prose, argument-before-sections, contracts-before-paragraphs principles sound. Professor dynamic expert dispatch by failure mode. QA pipeline order (content before language) correct. Eight-dimension scoring with four anchor points."
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Project structure with foundation files (00_scope through 05_style_guide), state.json tracking, worked example (quaternary-proposal). Export scripts for .md/.docx. Validation checklist for claims/citations/numbering."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive proposal writing: three modes (compose/revise/hybrid), foundation files (scope, canon, evidence, argument, contracts, style), four-layer QA (professor → anti-AI → validation → scoring), dynamic expert dispatch, reference numbering cascade, partial proposal scope, review framework. Minor: no explicit grant-specific templates (NSF, NIH, ERC)."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong quality gates: evidence-before-prose enforced, section contracts (allowed/forbidden claims), auto-validation (claims have citations, methods reproducible, numbering continuous), four-layer QA, stopping rules (plateau, conflict, evidence gap). Minor: no validation that evidence_table covers all claims in draft."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Efficient progressive loading: only mode-specific references loaded, professor dynamic dispatch. State.json tracks progress. Minor: no guidance for very long proposals (PhD thesis, 200+ pages), multi-agent parallel section writing mentioned but not detailed."
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear nine-principle foundation. Mode dispatch clear. Project structure explicit. QA pipeline order (Gate 2 before Gate 1: content before language). Minor: worked example only for materials science (quaternary proposal), lacks examples for other fields. Professor dispatch by failure mode documented but integration with main workflow not explicit."
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Strong bilingual support (Chinese proposals, anti-slop for Chinese templates, Chinese review writing style). QA gear system (paper/proposal/internal/quick). Clear deliverables. Minor: steep learning curve with foundation files, compatibility trigger name (researchwrite) may confuse users expecting nature-proposal-writer."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Does not auto-upgrade facts, deletion over explanation. Section contracts prevent forbidden claims. Stopping rules prevent forcing completion. State.json tracks technical_debts. No credential handling."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modular design: foundation files, mode-specific references (18 files), templates, state.json. Worked example for materials science. Clear extension points. Version tracking in state.json. Manifest-driven template/reference loading."
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong evidence-grounding: research_canon, evidence_table, argument_map. Dynamic expert system (professor). Four-layer QA pipeline. State machine with state.json. Minor: no explicit token budget management for multi-round revision. Professor integration not seamless (requires separate skill). Parallel section writing mentioned but not operationalized."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.5,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Compose mode: research proposal from scratch with foundation files",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected compose mode, initialized project, created foundation files (00_scope, 01_research_canon, 02_evidence_table, 03_argument_map, 04_section_contracts, 05_style_guide), enforced evidence-before-prose, drafted sections following contracts, ran four-layer QA, scored 7.2/10.",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Creates foundation files before drafting", "result": "PASS", "note": "Evidence-before-prose principle"},
+          {"text": "Builds argument_map before sections", "result": "PASS", "note": "Argument-before-sections principle"},
+          {"text": "Section contracts specify allowed/forbidden claims", "result": "PASS", "note": "Contracts-before-paragraphs"},
+          {"text": "Runs four-layer QA (professor → anti-AI → validation → scoring)", "result": "PASS", "note": "QA pipeline per specification"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Revise mode: existing proposal with professor expert review",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected revise mode, diagnosed failure modes (weak feasibility, missing evidence for claim 3), dispatched professor experts (feasibility + innovation), applied expert feedback, updated evidence_table, re-ran QA.",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Diagnoses failure modes before revision", "result": "PASS", "note": "Failure-mode diagnosis per revise-mode"},
+          {"text": "Dispatches dynamic professor experts by failure mode", "result": "PASS", "note": "Professor dispatch system"},
+          {"text": "Updates foundation files (evidence_table) during revision", "result": "PASS", "note": "Foundation maintenance"},
+          {"text": "Integrates professor feedback seamlessly into revision", "result": "PARTIAL", "note": "Works but requires explicit handoff between skills"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "QA pipeline with gear system (proposal gear, threshold 7.0)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Ran QA pipeline with proposal gear: Gate 2 (professor: feasibility + innovation experts), Gate 1 (anti-AI detect-only), Gate 3 (auto-validation: all claims cited, methods reproducible), Gate 4 (scored 6.8/10, below threshold), identified low-score dimensions, targeted revision.",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Runs Gate 2 before Gate 1 (content before language)", "result": "PASS", "note": "Pipeline order correct"},
+          {"text": "Auto-validation checks claims have citations, methods reproducible", "result": "PASS", "note": "Gate 3 validation"},
+          {"text": "Applies gear-specific threshold (7.0 for proposal)", "result": "PASS", "note": "Gear system"},
+          {"text": "Targets low-score dimensions for revision (max 3 rounds)", "result": "PARTIAL", "note": "Targeting works but lacks explicit round-count enforcement in state.json"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Stopping rule: evidence gap prevents completion",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected evidence gap (claim 5 in section 3 lacks supporting evidence, not in canon), applied stopping rule (evidence gap), flagged issue, recommended obtaining evidence or deleting claim, did not force completion.",
+        "basic": 37,
+        "specialized": 51,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Detects evidence gap (claim not in research_canon)", "result": "PASS", "note": "Evidence validation"},
+          {"text": "Applies stopping rule instead of fabricating evidence", "result": "PASS", "note": "Stopping-rules principle"},
+          {"text": "Recommends deletion over explanation for unsupported claim", "result": "PASS", "note": "Deletion-over-explanation principle"},
+          {"text": "Does not force completion when stopping condition met", "result": "PASS", "note": "Stopping discipline"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Edge",
+        "label": "Chinese proposal with anti-slop cleaning",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Detected Chinese proposal, ran Gate 1 with research-anti-slop.md, removed template phrases (本研究具有重要意义, 填补空白, 达到国际先进水平), replaced with specific evidence-grounded statements, cleaned generic expressions.",
+        "basic": 37,
+        "specialized": 49,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Detects Chinese proposal and loads research-anti-slop.md", "result": "PASS", "note": "Language-specific processing"},
+          {"text": "Removes template phrases (填补空白, 国际先进水平)", "result": "PASS", "note": "Anti-slop cleaning"},
+          {"text": "Replaces with evidence-grounded specific statements", "result": "PASS", "note": "Evidence grounding maintained"},
+          {"text": "Runs Gate 1 (anti-AI) appropriately for Chinese (skip or manual scan)", "result": "PARTIAL", "note": "Documented as 'skip or downgrade' but actual behavior unclear"}
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Partial proposal with scope boundary lock",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Loaded partial-proposal-scope.md, locked phase boundary (write intro + background only, defer methods + results), created 00_scope with explicit phase markers, prevented scope creep during drafting, flagged out-of-scope content.",
+        "basic": 35,
+        "specialized": 47,
+        "total": 82,
+        "assertions_passed": 2,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Loads partial-proposal-scope.md and locks phase boundary", "result": "PASS", "note": "Scope management"},
+          {"text": "Creates 00_scope with explicit phase markers", "result": "PASS", "note": "Foundation file usage"},
+          {"text": "Prevents scope creep during drafting", "result": "PARTIAL", "note": "Flags out-of-scope but lacks automatic blocking"},
+          {"text": "Tracks phase completion in state.json", "result": "PARTIAL", "note": "State.json has mode/round/scores but not explicit phase tracking"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 53.1,
+    "score": 89,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Strong evidence-grounding principles: evidence-before-prose, argument-before-sections, contracts-before-paragraphs enforced via foundation files",
+    "Sophisticated QA pipeline: four layers (professor expert → anti-AI → auto-validation → scoring) with correct order (content before language)",
+    "Dynamic expert system: professor skill dispatch by failure mode, field-specific domain experts",
+    "Robust stopping rules: plateau, expert conflict, evidence gaps trigger stop (not force completion or fabricate evidence)",
+    "Comprehensive project structure: foundation files (scope, canon, evidence, argument, contracts, style), state.json tracking, worked example"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add evidence-table coverage validation in auto-validation gate",
+      "observed_in": [1, 4],
+      "problem": "Auto-validation (Gate 3) checks claims have citations and methods reproducible but doesn't validate that evidence_table covers all claims in draft. Claims can slip through if added during revision without updating evidence_table.",
+      "root_cause": "Validation checklist focused on formatting (citations, numbering) not evidence grounding.",
+      "fix": "Add to validation-checklist.md: evidence_table_coverage check that: (1) extracts all claim statements from draft, (2) verifies each claim has entry in 02_evidence_table.md, (3) flags uncovered claims as ERROR. Include in Gate 3 before scoring."
+    },
+    {
+      "priority": "P1",
+      "title": "Add explicit round-count tracking and enforcement in state.json",
+      "observed_in": [3, 6],
+      "problem": "QA pipeline mentions 'targeted revision max 3 rounds' but state.json tracks mode/round/scores/technical_debts without explicit round-count enforcement. No automatic stopping after 3 rounds.",
+      "root_cause": "State tracking present but round limit not enforced programmatically.",
+      "fix": "Add to state.json: revision_rounds: {current: N, limit: 3, gear: 'proposal'}, phase_tracking: {current: 'intro', completed: ['scope']}. Add scripts/check_state.py that enforces round limit, recommends escalation after limit. Update partial-proposal-scope.md to use phase_tracking."
+    },
+    {
+      "priority": "P2",
+      "title": "Add grant-specific templates (NSF, NIH, ERC)",
+      "observed_in": [1],
+      "problem": "Worked example only for materials science quaternary proposal. No grant-specific templates for NSF (Broader Impacts, Intellectual Merit), NIH (Specific Aims, Research Strategy), ERC (sections A-B).",
+      "root_cause": "Generic research proposal focus, not grant application focused.",
+      "fix": "Add templates/grants/{nsf,nih,erc}/ with: (1) section_contracts tailored to each grant format, (2) evaluation_rubric with grant-specific dimensions, (3) worked examples for each. Update manifest.yaml templates.on_demand routing. Document grant-mode detection trigger."
+    }
+  ]
+}

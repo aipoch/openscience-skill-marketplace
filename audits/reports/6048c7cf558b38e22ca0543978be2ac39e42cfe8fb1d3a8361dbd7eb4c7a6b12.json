@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "skill_name": "nvmolkit-usage",
+    "description": "Write code that calls the installed nvMolKit Python API for GPU-accelerated, batched RDKit-style operations - Morgan fingerprints, Tanimoto/cosine similarity, ETKDG conformer embedding, MMFF/UFF optimization, TFD, conformer RMSD, Butina clustering, and substructure search. Use when importing nvmolkit.*, debugging an nvmolkit call, choosing between nvMolKit and RDKit for batched cheminformatics workflows.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 91,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive API coverage across all major nvMolKit operations; entry point table and recipe sections complete; when-to-use guidance clear (batched vs single-molecule)"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong smoke test verification before real usage; error handling patterns documented (ValueError with args[1] dict for filtering); minor: no guidance on handling GPU OOM during large batch operations"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "313 lines exceeds 250-line target but justified by API surface area; clear when-to-use section prevents misapplication; minor: recipe duplication (ETKDG appears in both recipe section and batched forcefield example)"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Excellent entry point table mapping tasks to modules; async execution model clearly explained; CUDA stream control documented; minor: HardwareOptions field defaults not shown inline (requires clicking to docs)"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear when-to-use guidance (batched workloads, thousands of molecules); torch CUDA backend installation warning prominent; no CPU fallback clarified upfront"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "No credential handling; proper GPU memory management patterns; synchronization requirements explicit to prevent race conditions"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Clean structure with entry point table, result types, config objects, and recipes; minor: version-specific features (stream parameter subset) require manual tracking when API evolves"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Excellent trigger precision with scope exclusion (not for building from source); clear composability via zero-copy tensor passing; lacks explicit idempotency statement; no consolidated troubleshooting beyond inline notes"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 26,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Morgan fingerprints with bulk Tanimoto similarity",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete batched fingerprint and similarity workflow with AsyncGpuResult handling",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Input list of RDKit Mol objects (not SMILES strings)",
+            "result": "PASS",
+            "note": "Recipe shows [Chem.MolFromSmiles(smi) for smi in smiles]"
+          },
+          {
+            "text": "AsyncGpuResult passed directly to similarity (zero-copy)",
+            "result": "PASS",
+            "note": "fps passed to crossTanimotoSimilarity without .torch() conversion"
+          },
+          {
+            "text": "torch.cuda.synchronize() before reading result",
+            "result": "PASS",
+            "note": "Synchronization required before print(sim.torch())"
+          },
+          {
+            "text": "Output shape (n, n) similarity matrix",
+            "result": "PASS",
+            "note": "Recipe notes cross-matrix returns (n, n)"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "ETKDG conformer embedding with MMFF optimization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete conformer generation and optimization pipeline",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Hydrogens added before ETKDG (AddHs)",
+            "result": "PASS",
+            "note": "Recipe shows [AddHs(MolFromSmiles(smi)) for smi in ...]"
+          },
+          {
+            "text": "params.useRandomCoords set to True (required)",
+            "result": "PASS",
+            "note": "Recipe and documentation emphasize useRandomCoords=True requirement"
+          },
+          {
+            "text": "Conformers added in-place to Mol objects",
+            "result": "PASS",
+            "note": "EmbedMolecules modifies mols; print(mol.GetNumConformers()) confirms"
+          },
+          {
+            "text": "MMFFOptimizeMoleculesConfs returns list[list[float]] energies",
+            "result": "PASS",
+            "note": "Recipe shows energies aligned with mol/conformer structure"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Custom stream for overlapped kernel execution",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "CUDA stream pattern for async fingerprint and similarity chaining",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Custom stream created with torch.cuda.Stream()",
+            "result": "PASS",
+            "note": "Pattern shows stream = torch.cuda.Stream()"
+          },
+          {
+            "text": "Stream passed to both GetFingerprints and crossTanimotoSimilarity",
+            "result": "PASS",
+            "note": "stream=stream argument shown for both calls"
+          },
+          {
+            "text": "torch.cuda.stream(stream) context manager used",
+            "result": "PASS",
+            "note": "with torch.cuda.stream(stream): wraps GPU work"
+          },
+          {
+            "text": "stream.synchronize() before reading results",
+            "result": "PASS",
+            "note": "Explicit sync after context manager"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "BatchedForcefield with per-molecule constraints",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Advanced forcefield with position and distance constraints",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Per-molecule nonBondedThreshold passed as list",
+            "result": "PASS",
+            "note": "nonBondedThreshold=[100.0, 20.0] for two molecules"
+          },
+          {
+            "text": "Constraints added via ff[i].add_*_constraint",
+            "result": "PASS",
+            "note": "ff[0].add_position_constraint and ff[1].add_distance_constraint shown"
+          },
+          {
+            "text": "minimize returns (energies, converged) tuple",
+            "result": "PASS",
+            "note": "energies, converged = ff.minimize(...)"
+          },
+          {
+            "text": "Coordinates written back to RDKit conformers by default",
+            "result": "PASS",
+            "note": "Recipe documents in-place update; CoordinateOutput.DEVICE for GPU-only"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Handling molecules without MMFF atom types",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Error pattern documented but recovery strategy not shown inline",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "ValueError raised for None mols or missing atom types",
+            "result": "PASS",
+            "note": "Recipe documents ValueError on invalid inputs"
+          },
+          {
+            "text": "Exception args[1] provides dict with 'none' and 'no_params' keys",
+            "result": "PASS",
+            "note": "Error dict structure documented for filtering"
+          },
+          {
+            "text": "Offending indices listed for debugging",
+            "result": "PASS",
+            "note": "Dict contains lists of invalid molecule indices"
+          },
+          {
+            "text": "Filtering pattern shown for noisy input sets",
+            "result": "FAIL",
+            "note": "Error structure documented but no example of using indices to filter input list before retry"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "Single-molecule operation request",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct delegation to RDKit for non-batched workflows",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Where nvMolKit does well section clarifies batch requirement",
+            "result": "PASS",
+            "note": "Reach for nvMolKit when workload is large batch of molecules"
+          },
+          {
+            "text": "Plain RDKit recommended for single-molecule one-offs",
+            "result": "PASS",
+            "note": "Explicit guidance: Plain RDKit is usually the better choice"
+          },
+          {
+            "text": "Scope exclusion clear (not meant to replace RDKit for those cases)",
+            "result": "PASS",
+            "note": "nvMolKit is not meant to replace RDKit for single-molecule workflows"
+          },
+          {
+            "text": "No CPU fallback available",
+            "result": "PASS",
+            "note": "If CUDA is unavailable, nvMolKit calls raise; no CPU fallback"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "PyTorch CUDA backend mismatch during installation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Comprehensive installation guidance with backend version pinning",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "User directed to choose PyTorch CUDA backend before nvMolKit install",
+            "result": "PASS",
+            "note": "Make the user choose a PyTorch CUDA backend that the host driver supports before installing nvMolKit"
+          },
+          {
+            "text": "Three package manager strategies documented (conda, pip, uv)",
+            "result": "PASS",
+            "note": "Conda with cuda-version pin, pip with PyTorch selector, uv with --torch-backend"
+          },
+          {
+            "text": "Warning about pip/uv selecting CUDA 13 PyTorch if not pinned",
+            "result": "PASS",
+            "note": "pip/uv can select CUDA 13 PyTorch wheel unless install command says otherwise"
+          },
+          {
+            "text": "Install verification smoke test provided",
+            "result": "FAIL",
+            "note": "Smoke test shows success path but not failure recovery (if test fails, what specific pip uninstall/reinstall steps)"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.4,
+    "dynamic_weighted": 54.2,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional API coverage: comprehensive entry point table mapping 11 task types to modules with primary functions",
+    "Clear performance guidance: when-to-use section prevents misapplication (batched workloads with thousands of molecules, not single-molecule operations)",
+    "Robust async execution model: AsyncGpuResult and Device3DResult patterns clearly explained with zero-copy tensor passing",
+    "Comprehensive recipes: 6 worked examples covering fingerprints, conformers, optimization, clustering, and advanced forcefield usage",
+    "Strong installation guidance: PyTorch CUDA backend version matching emphasized across 3 package managers"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Add filtering pattern for MMFF atom type errors",
+      "observed_in": ["Input 5"],
+      "problem": "ValueError args[1] dict structure documented but no example showing how to use indices to filter invalid molecules before retry",
+      "root_cause": "Error structure documented without recovery workflow",
+      "fix": "Add to MMFF recipe after ValueError documentation: 'Recovery pattern: try: MMFFOptimizeMoleculesConfs(mols); except ValueError as e: invalid = e.args[1]; bad_idx = set(invalid.get(\"none\", [])) | set(invalid.get(\"no_params\", [])); valid_mols = [m for i, m in enumerate(mols) if i not in bad_idx]; MMFFOptimizeMoleculesConfs(valid_mols)'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add GPU OOM handling guidance",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No guidance on handling GPU out-of-memory during large batch operations (thousands to millions of molecules)",
+      "root_cause": "Assumes users will tune batch sizes via HardwareOptions; failure scenario not addressed",
+      "fix": "Add troubleshooting section after Going deeper: 'GPU OOM errors → reduce batch size via HardwareOptions(batchSize=...) or split input into chunks. For similarity matrices too large for GPU, use crossTanimotoSimilarityMemoryConstrained (chunked compute, CPU output). Alternatively, use nvmolkit.autotune.tune_* functions to find optimal batch size for your hardware.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add install verification failure recovery",
+      "observed_in": ["Input 7"],
+      "problem": "Smoke test shows success path but not specific recovery steps if test fails (which package to uninstall, which reinstall order)",
+      "root_cause": "Delegates to docs for all failures rather than showing one common fix inline",
+      "fix": "Add after smoke test: 'If import fails or cuda unavailable=True: (1) pip uninstall nvmolkit torch; (2) reinstall torch for CUDA 12.x from pytorch.org; (3) pip install nvmolkit. If still failing, see docs install guide for driver/toolkit version diagnosis.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for deterministic operations",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether batched operations produce identical results across runs",
+      "root_cause": "Determinism assumed for fingerprints/RMSD but not stated; ETKDG stochasticity not consolidated",
+      "fix": "Add to Result types section: 'Determinism: fingerprints, similarity, RMSD, TFD are deterministic (same inputs → same outputs). ETKDG with useRandomCoords=True is stochastic unless RNG seed is fixed. MMFF/UFF minimization is deterministic given same starting conformers.'"
+    }
+  ]
+}

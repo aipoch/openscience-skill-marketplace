@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "skill_name": "two-sample-mr-research-planner",
+    "description": "Generates complete two-sample Mendelian randomization (MR) research designs from a user-provided research direction. Use when users want to design, plan, or build a study using two-sample MR to test causal relationships. Triggers: 'design a two-sample MR study', 'build a publishable MR paper', 'test whether this biomarker causally affects this disease', 'generate Lite/Standard/Advanced MR plans', 'screen multiple exposures with MR', 'bidirectional MR design', 'causal inference using GWAS summary statistics', or 'I want to study X and Y using MR'. Always outputs four workload configurations (Lite / Standard / Advanced / Publication+) with a recommended primary plan, step-by-step workflow, figure plan, validation strategy, minimal executable version, and publication upgrade path.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Protocol Design",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabricated DOIs, PMIDs, or p-values. All thresholds are field-standard (PP.H4 > 0.8 for colocalization, F-statistic > 10 for instrument strength, p < 5e-8 for GWAS significance) and correctly applied. MR-specific methodological rigor maintained."
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "No diagnostic conclusions or clinical recommendations. Skill generates causal inference research protocols, not clinical decisions. MR limitations appropriately stated (observational nature, assumptions). Appropriate for research planning."
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Methodologically sound with comprehensive MR workflow: instrument selection (F > 10), pleiotropy assessment (MR-Egger, MR-PRESSO), sensitivity analyses (weighted median, mode-based), and validation strategies (replication cohorts, colocalization). Ethical compliance addressed (GWAS = public summary statistics, no IRB required)."
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "No code generated. Mode A execution (direct instruction following). References standard MR tools (TwoSampleMR, MR-PRESSO, coloc) but does not generate runnable code."
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 92,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of two-sample MR research design with 4 workload tiers. Methods are scientifically sound (instrument selection, pleiotropy tests, sensitivity analyses). Complete workflow from GWAS data sourcing to publication."
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good fault tolerance with explicit handling of weak instruments (F < 10 warning), small SNP sets, and data availability issues. Clear error reporting. Minor: less explicit recovery logic for failed colocalization."
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Comprehensive output necessary for MR research planning. Well-structured workflow reduces redundancy. Minor token cost deduction for detailed MR methodology."
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent learnability with clear trigger phrases. Consistent 4-tier output format. Feedback includes methodological rationale for MR-specific decisions (instrument strength, pleiotropy handling). Strong error prevention with MR assumption checks."
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent discoverability with comprehensive description and multiple trigger examples. Forgiving design offers alternatives when data is unavailable and provides upgrade paths."
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "No credentials required, uses public GWAS summary statistics. No PHI handling. Input validation for exposure-outcome relationships."
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent modularity with clear workflow steps. Easy to update MR methods (new sensitivity tests) or GWAS data sources. Clear expected outputs enable testability."
+      },
+      "agent_specific": {
+        "score": 14,
+        "max": 20,
+        "note": "Multiple trigger examples provided. Good progressive disclosure (4 tiers). High composability with GWAS analysis and statistical skills. Idempotent design. Minor: escape hatch for non-causal inference questions could be more explicit; lacks pointer to observational study skills."
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 90.0,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 19,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Standard MR: biomarker → disease causality",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core MR protocol generation",
+        "basic": 39,
+        "specialized": 54,
+        "total": 93,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Output provides 4 workload configurations", "result": "PASS", "note": "All 4 tiers present"},
+          {"text": "Instrument selection criteria specified (F > 10, p < 5e-8)", "result": "PASS", "note": "Field-standard thresholds"},
+          {"text": "Pleiotropy assessment methods included (MR-Egger, MR-PRESSO)", "result": "PASS", "note": "Sensitivity analyses specified"},
+          {"text": "MR assumptions explicitly stated", "result": "PASS", "note": "Relevance, independence, exclusion restriction"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Bidirectional MR design",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Reverse causality testing",
+        "basic": 38,
+        "specialized": 52,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Forward and reverse MR directions specified", "result": "PASS", "note": "Bidirectional workflow"},
+          {"text": "Instrument selection for both directions", "result": "PASS", "note": "Separate GWAS for each direction"},
+          {"text": "4 workload tiers provided", "result": "PASS", "note": "All present"},
+          {"text": "Interpretation guidance for conflicting results", "result": "PASS", "note": "Reverse causality discussed"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Weak instruments or small SNP set",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Data limitations handled",
+        "basic": 37,
+        "specialized": 50,
+        "total": 87,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "F-statistic warning issued for weak instruments", "result": "PASS", "note": "F < 10 flagged"},
+          {"text": "Alternative approaches suggested (proxy SNPs, larger GWAS)", "result": "PASS", "note": "Recovery strategies provided"},
+          {"text": "Lite tier recommended for limited data", "result": "PASS", "note": "Workload adjusted"},
+          {"text": "Power calculation mentioned", "result": "FAIL", "note": "Power analysis not explicitly included in edge case"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "MVMR: multiple exposures simultaneously",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multivariable MR pattern",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "MVMR methodology explained", "result": "PASS", "note": "Conditional analysis approach"},
+          {"text": "Instrument validity checks for MVMR", "result": "PASS", "note": "Conditional F-statistics"},
+          {"text": "Advanced/Publication+ tier recommended", "result": "PASS", "note": "Appropriate for complexity"},
+          {"text": "Interpretation of MVMR results guidance", "result": "PASS", "note": "Independent effects discussed"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Comprehensive publication-grade MR with colocalization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Publication+ tier protocol",
+        "basic": 38,
+        "specialized": 53,
+        "total": 91,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Colocalization analysis included (coloc, PP.H4 > 0.8)", "result": "PASS", "note": "Shared causal variant test"},
+          {"text": "Full sensitivity analysis suite specified", "result": "PASS", "note": "MR-Egger, weighted median, mode-based, MR-PRESSO"},
+          {"text": "Replication cohort validation included", "result": "PASS", "note": "Independent GWAS validation"},
+          {"text": "Publication+ tier with complete figure plan", "result": "PASS", "note": "Forest plots, funnel plots, leave-one-out, colocalization"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.8,
+    "dynamic_weighted": 54.0,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive two-sample MR methodology with rigorous instrument selection (F > 10, p < 5e-8), pleiotropy assessment (MR-Egger, MR-PRESSO), and sensitivity analyses (weighted median, mode-based estimator)",
+    "Progressive disclosure via 4 workload tiers (Lite/Standard/Advanced/Publication+) tailored to MR complexity: single exposure screening to multivariable MR with colocalization",
+    "Strong methodological guardrails with explicit MR assumptions (instrument relevance, independence, exclusion restriction) and validation strategies (replication GWAS, bidirectional testing)",
+    "Excellent handling of MR-specific edge cases: weak instruments (F < 10 warning), small SNP sets (proxy SNPs, larger GWAS alternatives), and data unavailability"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add power calculation guidance",
+      "observed_in": [3],
+      "problem": "Power analysis not explicitly included when handling weak instruments or small SNP sets, despite being critical for MR study design",
+      "root_cause": "Power calculation mentioned in general workflow but not emphasized in edge case handling",
+      "fix": "Add to edge case workflow: 'For weak instruments or small SNP sets: (1) Calculate MR power using mRnd or online calculators (sample size, SNP R², effect size assumptions). (2) If underpowered (power < 0.8), recommend waiting for larger GWAS or combining cohorts. (3) Report expected detectable effect size in Lite tier.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add explicit escape hatch for non-causal questions",
+      "observed_in": [],
+      "problem": "Skill is for causal inference via MR but escape hatch for observational association questions is not explicit",
+      "root_cause": "When NOT to Use section focuses on MR limitations but doesn't redirect non-causal research questions",
+      "fix": "Add to 'When NOT to Use': 'For observational association studies (not causal inference), use [observational-study-design-skill] or [correlation-analysis-skill]. MR specifically tests causality using genetic instruments; if your goal is to describe associations rather than infer causation, MR is not appropriate.'"
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "skill_name": "molmim-nim",
+    "description": "Use this skill for MolMIM, NVIDIA's BioNeMo NIM microservice for small-molecule latent-space generation and optimization. Invoke for MolMIM, molecular embeddings, hidden states, latent decoding, sampling around a seed SMILES, CMA-ES guided molecule generation, QED or plogP optimization, hosted NVIDIA API calls, or local Docker deployment.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 90,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of hosted /generate and local latent workflow (/embedding, /hidden, /decode, /sampling); minor gap: no guidance on combining CMA-ES with custom fitness functions"
+      },
+      "reliability": {
+        "score": 10,
+        "max": 12,
+        "note": "Response parsing handles both 'generated' and 'molecules' formats; gotchas section prevents common errors; missing: no retry logic for transient failures, no handling for empty generation results"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "226-line SKILL.md with progressive disclosure via 5 reference files; efficient structure with clear separation between hosted and local patterns"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear mode distinction (hosted /generate vs local latent workflow); generation gotchas prevent parameter errors; minor: molmim_smiles helper function complex without inline explanation"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Good trigger coverage; mode selection clear; minor: min_similarity range confusion (0-1 in API, up to 0.7 in practice) not fully resolved"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Credentials externalized with explicit 'Do not print keys' guidance; NGC_API_KEY/NVIDIA_API_KEY mapping documented; local cache path secure"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean modular structure with 5 reference files; dual response format handling future-proofs against API changes; helper function externalized"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Good trigger precision; clear composability with GenMol and drug-discovery-pipeline; lacks explicit idempotency statement; no consolidated escape hatches; endpoint availability caveat well-documented"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 91.6,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 19
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted CMA-ES optimization for QED maximization",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete optimization workflow with seed SMILES, property target, and result validation",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Field name 'smi' used (not 'smiles')",
+            "result": "PASS",
+            "note": "Gotchas documented: smi not smiles"
+          },
+          {
+            "text": "algorithm set to 'CMA-ES' for guided optimization",
+            "result": "PASS",
+            "note": "Correct algorithm choice for property optimization"
+          },
+          {
+            "text": "property_name set to 'QED' for drug-likeness",
+            "result": "PASS",
+            "note": "Valid property choice from QED/plogP"
+          },
+          {
+            "text": "Response parsed with molmim_smiles helper handling both formats",
+            "result": "PASS",
+            "note": "Helper handles 'generated' list and 'molecules' JSON string"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local latent workflow with embedding and sampling",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete latent-space workflow using local-only endpoints",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Local endpoints used (/embedding, /hidden, /decode, /sampling)",
+            "result": "PASS",
+            "note": "All four local-only endpoints invoked"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly omit auth for local mode"
+          },
+          {
+            "text": "Hidden state and mask passed to /decode",
+            "result": "PASS",
+            "note": "Latent workflow chain correct"
+          },
+          {
+            "text": "scaled_radius parameter used for /sampling",
+            "result": "PASS",
+            "note": "Sampling parameter correctly specified"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Unguided sampling with algorithm none",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Sampling around seed without property guidance",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "algorithm set to 'none' for unguided sampling",
+            "result": "PASS",
+            "note": "Correct algorithm choice for sampling without optimization"
+          },
+          {
+            "text": "scaled_radius used with algorithm none",
+            "result": "PASS",
+            "note": "Gotchas document scaled_radius mainly used with algorithm none"
+          },
+          {
+            "text": "num_molecules within range (1-100)",
+            "result": "PASS",
+            "note": "Parameter within documented constraint"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "plogP minimization with similarity constraint",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Lipophilicity minimization with min_similarity constraint but range ambiguity",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "property_name set to 'plogP' for lipophilicity",
+            "result": "PASS",
+            "note": "Valid property choice"
+          },
+          {
+            "text": "minimize set to True for property minimization",
+            "result": "PASS",
+            "note": "Correct boolean for minimization objective"
+          },
+          {
+            "text": "min_similarity within practical range",
+            "result": "PASS",
+            "note": "Value 0.5 within both API range (0-1) and practical range (up to 0.7)"
+          },
+          {
+            "text": "Clear guidance on min_similarity range discrepancy",
+            "result": "FAIL",
+            "note": "Gotchas mention both 0-1 (API) and up to 0.7 (docs emphasis) but don't clarify which to follow"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Hosted request to local-only endpoint",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct error detection and explanation for endpoint availability",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Troubleshooting documents hosted 404 on latent endpoints",
+            "result": "PASS",
+            "note": "Clear explanation that /embedding, /hidden, /decode, /sampling are local-only"
+          },
+          {
+            "text": "Mode difference explained upfront in Choose Mode",
+            "result": "PASS",
+            "note": "Hosted exposes /generate; local exposes broader latent workflow"
+          },
+          {
+            "text": "Explicit warning not to invent hosted latent endpoints",
+            "result": "PASS",
+            "note": "Choose Mode: Do not invent hosted latent endpoints"
+          },
+          {
+            "text": "Redirection to local mode for latent workflows",
+            "result": "PASS",
+            "note": "Clear handoff documented"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 36.0,
+    "dynamic_weighted": 55.0,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Clear dual-mode architecture with explicit distinction between hosted /generate and local latent workflow endpoints",
+    "Robust response parsing via molmim_smiles helper handling both 'generated' and 'molecules' formats for API evolution",
+    "Comprehensive gotchas section preventing common parameter errors (smi vs smiles, algorithm values, property_name choices)",
+    "Strong security with explicit 'Do not print keys' guidance and NGC_API_KEY/NVIDIA_API_KEY mapping documented",
+    "Excellent progressive disclosure with 226-line SKILL.md and 5 focused reference files"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Clarify min_similarity range recommendation",
+      "observed_in": ["Input 4"],
+      "problem": "Gotchas mention 0-1 range in hosted API reference but emphasize up to 0.7 in local docs without clear guidance on which to follow",
+      "root_cause": "API spec vs practical usage documentation conflict not resolved",
+      "fix": "Update gotchas: 'min_similarity: 0-1 is the API-accepted range; values >0.7 may over-constrain optimization and yield few results. Start with 0.4-0.6 for balanced exploration; increase toward 0.7 for tighter similarity constraints.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add handling for empty generation results",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "molmim_smiles helper raises RuntimeError on empty results but no guidance on recovery or parameter adjustment",
+      "root_cause": "Assumes generation always produces molecules; constraint satisfaction failures not addressed",
+      "fix": "Add to Troubleshooting: 'Empty generation results → constraints too tight (min_similarity too high, iterations too low, or seed SMILES in low-density latent region). Try: reduce min_similarity by 0.1-0.2, increase iterations, or increase particles for broader exploration.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add inline explanation for molmim_smiles helper",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "molmim_smiles function handles complex response format variations but logic not explained inline",
+      "root_cause": "Helper function optimized for robustness without documentation",
+      "fix": "Add comment before molmim_smiles definition: '# Robust parser handling API format variations: generated (list of strings or nested lists) and molecules (JSON string of {sample, score} objects). Returns flat list of SMILES strings.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for generation",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running generation with same seed and parameters produces identical results",
+      "root_cause": "Stochastic latent sampling not discussed",
+      "fix": "Add to generation gotchas: 'Generation is stochastic: same seed SMILES and parameters will produce different molecules across runs (CMA-ES exploration is non-deterministic). For reproducible molecule libraries, save and version generated outputs rather than regenerating.'"
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "skill_name": "msa-search-nim",
+    "description": "Generate multiple sequence alignments (MSAs) for protein sequences using the ColabFold MSA-Search NIM. Use for homolog search, UniRef30/ColabFold env searches, A3M or FASTA alignments, paired MSA search for complexes, PDB70 structural templates, hosted NVIDIA API calls, or local Docker deployment. For local deployment, download the databases in parallel with aria2c and launch via NIM_MODEL_NAME (the recommended default fast path, ~14 min vs over 80 min for the built-in downloader).",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Complex",
+    "n_inputs": 7
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 87,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 11,
+        "max": 12,
+        "note": "Comprehensive coverage of standard/paired MSA and template search; parallel download strategy documented; minor gap: no guidance on handling partial download failures with aria2c resume"
+      },
+      "reliability": {
+        "score": 10,
+        "max": 12,
+        "note": "Strong validation with exact database name requirements and response key documentation; parallel download with --continue flag; missing: no retry logic for NGC API failures, no validation of downloaded file integrity"
+      },
+      "performance_context": {
+        "score": 5,
+        "max": 8,
+        "note": "373 lines significantly exceeds 250-line target for complex skills; parallel download rationale (80min to 14min) important but adds ~70 lines; could benefit from moving database profiles and download mechanics to reference files"
+      },
+      "agent_usability": {
+        "score": 14,
+        "max": 16,
+        "note": "Clear distinction between default (aria2c + NIM_MODEL_NAME) and fallback (built-in downloader); profile selection documented; minor inconsistency: hosted template endpoint 404 mentioned but not elevated to hard constraint"
+      },
+      "human_usability": {
+        "score": 7,
+        "max": 8,
+        "note": "Excellent performance transparency (14min vs 80min); database profile table clear; minor: aria2c installation requirement mentioned inline but not in prerequisites section"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "NGC_API_KEY externalized with NVIDIA_API_KEY fallback; presigned URL expiration documented; no credential logging; proper path isolation; aria2c --continue prevents partial file corruption"
+      },
+      "maintainability": {
+        "score": 11,
+        "max": 12,
+        "note": "Modular structure with 5 reference files; parallel download strategy abstracted; minor: profile hash table requires manual updates when image releases change"
+      },
+      "agent_specific": {
+        "score": 17,
+        "max": 20,
+        "note": "Excellent trigger precision; clear composability with OpenFold3/AlphaFold2; strong performance optimization guidance; lacks explicit idempotency statement; escape hatches present but scattered"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 88.4,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 25,
+      "total": 28
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted standard MSA with dual database search",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete standard MSA workflow with exact database names and A3M output",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Exact case-sensitive database names used (Uniref30_2302, colabfold_envdb_202108)",
+            "result": "PASS",
+            "note": "Standard MSA request section emphasizes exact case-sensitive names"
+          },
+          {
+            "text": "output_alignment_formats set to ['a3m'] for downstream use",
+            "result": "PASS",
+            "note": "A3M format specified for OpenFold3/AlphaFold2 compatibility"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          },
+          {
+            "text": "Response parsed with nested dict access result['alignments'][db][format]['alignment']",
+            "result": "PASS",
+            "note": "Save Outputs section shows exact key path"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local paired MSA for protein complex with aria2c download",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete local setup with parallel database download and paired MSA search",
+        "basic": 36,
+        "specialized": 56,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "aria2c parallel download with NGC presigned URLs",
+            "result": "PASS",
+            "note": "Parallel Download section shows aria2c with --split=16 and --max-connection-per-server=16"
+          },
+          {
+            "text": "NIM_MODEL_NAME=/databases used to skip profile/blob cache",
+            "result": "PASS",
+            "note": "Launch command uses NIM_MODEL_NAME pointing to downloaded directory"
+          },
+          {
+            "text": "Paired endpoint with sequences plural field",
+            "result": "PASS",
+            "note": "Paired MSA Request shows sequences array"
+          },
+          {
+            "text": "Response parsed with alignments_by_chain for multi-chain output",
+            "result": "PASS",
+            "note": "Save Outputs section shows per-chain iteration"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Local template search with max_msa_sequences constraint",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Template search workflow with MSA depth matching NIM_GLOBAL_MAX_MSA_DEPTH",
+        "basic": 36,
+        "specialized": 54,
+        "total": 90,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Template search endpoint local-only (no hosted equivalent working)",
+            "result": "PASS",
+            "note": "Choose Mode documents hosted template path returned 404"
+          },
+          {
+            "text": "max_msa_sequences=500 matches default NIM_GLOBAL_MAX_MSA_DEPTH",
+            "result": "PASS",
+            "note": "Local Template Search section documents 500 default"
+          },
+          {
+            "text": "structural_template_databases uses exact profile names",
+            "result": "PASS",
+            "note": "Payload shows pdb70_220313 exact name"
+          },
+          {
+            "text": "Both structures (mmCIF) and search_hits (M8) saved",
+            "result": "PASS",
+            "note": "Save Outputs section shows both output types"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Task-specific profile selection (databases:uniref30 for paired MSA)",
+        "status": "COMPLETED",
+        "status_flag": "⚠️",
+        "note": "Profile selection documented but hash lookup workflow requires multiple commands",
+        "basic": 34,
+        "specialized": 50,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "list-model-profiles entrypoint used to discover hashes",
+            "result": "PASS",
+            "note": "Faster Startup section shows docker run with list-model-profiles"
+          },
+          {
+            "text": "NIM_MODEL_PROFILE set with hash for specific database subset",
+            "result": "PASS",
+            "note": "Launch command shows -e NIM_MODEL_PROFILE=<hash>"
+          },
+          {
+            "text": "Profile table documents storage requirements per profile",
+            "result": "PASS",
+            "note": "Table shows PDB70 100MB, UniRef30 500GB, all 1.2TB"
+          },
+          {
+            "text": "Profile verification shown with metadata endpoint query",
+            "result": "FAIL",
+            "note": "Verification command shown but expected output format not documented"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "Fallback built-in downloader with slow startup",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Fallback path documented with clear warning about performance",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Fallback labeled for smoke test or deliberate cache management only",
+            "result": "PASS",
+            "note": "Fallback section: Use this only for quick pdb70 smoke test or when you want NIM to manage cache"
+          },
+          {
+            "text": "Performance warning shows 80min+ for UniRef30 via built-in",
+            "result": "PASS",
+            "note": "Fallback section mentions UniRef30 stalled past 80 min"
+          },
+          {
+            "text": "LOCAL_NIM_CACHE mount used for built-in downloader path",
+            "result": "PASS",
+            "note": "Fallback uses /opt/nim/.cache mount"
+          },
+          {
+            "text": "NIM_MODEL_PROFILE pinning recommended to avoid full 1.4TB download",
+            "result": "PASS",
+            "note": "Fallback section recommends pinning smallest profile"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "type": "Scope Boundary",
+        "label": "User requests hosted template search",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct redirection to local mode for template search",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Hosted template endpoint 404 documented upfront",
+            "result": "PASS",
+            "note": "Choose Mode: hosted template path returned HTTP 404 in validation"
+          },
+          {
+            "text": "User redirected to local Docker for template search",
+            "result": "PASS",
+            "note": "Use local Docker for structural templates"
+          },
+          {
+            "text": "Local Template Search section provides complete workflow",
+            "result": "PASS",
+            "note": "Section shows endpoint, payload, and output handling"
+          },
+          {
+            "text": "Hosted template restriction elevated to hard constraint",
+            "result": "FAIL",
+            "note": "404 mentioned as observation but not in hard rules or choose mode decision tree"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "type": "Adversarial",
+        "label": "Presigned URL expiration after delay",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct warning about prompt download after URL fetch",
+        "basic": 36,
+        "specialized": 48,
+        "total": 84,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "Presigned URL expiration documented (typically within a day)",
+            "result": "PASS",
+            "note": "Parallel Download notes section: URLs expire typically within a day"
+          },
+          {
+            "text": "Prompt download recommended after fetching files.json",
+            "result": "PASS",
+            "note": "Build aria2 input and start download promptly after fetching"
+          },
+          {
+            "text": "aria2c --continue flag enables resume on interruption",
+            "result": "PASS",
+            "note": "Command shows --continue=true for partial download resume"
+          },
+          {
+            "text": "Recovery guidance for expired URLs (re-fetch files.json)",
+            "result": "FAIL",
+            "note": "Expiration mentioned but no explicit recovery steps if URLs expire mid-download"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 34.8,
+    "dynamic_weighted": 53.0,
+    "score": 88,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional performance optimization: parallel download with aria2c reduces setup from 80+ minutes to 14 minutes with detailed rationale",
+    "Comprehensive coverage: standard MSA, paired MSA for complexes, and structural template search with clear endpoint distinctions",
+    "Strong task-specific guidance: database profile table with storage requirements and use-case recommendations",
+    "Robust deployment strategy: default fast path (aria2c + NIM_MODEL_NAME) vs fallback (built-in downloader) clearly distinguished",
+    "Clear scientific handoffs: A3M output compatibility with OpenFold3/AlphaFold2/RoseTTAFold documented"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Refactor parallel download mechanics to reference file",
+      "observed_in": ["Performance context evaluation"],
+      "problem": "373-line SKILL.md significantly exceeds 250-line target; parallel download rationale and loop add ~70 lines",
+      "root_cause": "Performance optimization critical but detailed mechanics inflate main file",
+      "fix": "Create references/database-setup.md covering aria2c rationale (80min vs 14min), NGC API file listing, download loop, and NIM_MODEL_NAME bypass; keep 3-5 line summary in SKILL.md Local Docker section with pointer to full guide"
+    },
+    {
+      "priority": "P1",
+      "title": "Add recovery guidance for presigned URL expiration",
+      "observed_in": ["Input 7"],
+      "problem": "Presigned URLs expire within ~1 day but no explicit recovery steps if URLs expire mid-download or before completion",
+      "root_cause": "Expiration mentioned as caution but failure scenario not addressed",
+      "fix": "Add to Troubleshooting: 'aria2c fails with 403/404 on some files → presigned URLs expired. Re-fetch files.json with NGC API call and rebuild aria2 input file. Use aria2c --continue to resume from existing partial downloads without re-downloading completed files.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Elevate hosted template restriction to hard constraint",
+      "observed_in": ["Input 6"],
+      "problem": "Hosted template endpoint 404 mentioned in Choose Mode as observation but not in decision tree or hard rules",
+      "root_cause": "Endpoint unavailability discovered during validation but not formalized as constraint",
+      "fix": "Add to Choose Mode: 'Template search requires local Docker — hosted template endpoint returned 404 in validation and should not be assumed available. If user requests hosted templates, explain limitation and redirect to local deployment.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for MSA generation",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running MSA search with same sequence produces identical alignments",
+      "root_cause": "Determinism via e_value threshold assumed but not documented",
+      "fix": "Add to Limits: 'MSA search is deterministic: same sequence, databases, and e_value produce identical alignments across runs. However, database versions change over time (e.g., Uniref30_2302 vs newer releases) affecting results. Version database names in documentation for reproducibility.'"
+    }
+  ]
+}

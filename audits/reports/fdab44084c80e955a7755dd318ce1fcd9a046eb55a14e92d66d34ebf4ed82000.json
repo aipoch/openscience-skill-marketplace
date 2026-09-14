@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "skill_name": "scikit-bio",
+    "description": "Biological data toolkit. Sequence analysis, alignments, phylogenetic trees, diversity metrics (alpha/beta, UniFrac), ordination (PCoA), PERMANOVA, FASTA/Newick I/O, for microbiome analysis. Comprehensive Python library for bioinformatics spanning sequence manipulation, alignment, phylogenetics, and microbial ecology.",
+    "evaluated_on": "2026-09-11",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "Accurate representation of scikit-bio capabilities with proper version documentation (0.7+)"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for bioinformatics and microbial ecology analysis with clear use cases"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on established bioinformatics methods (sequence alignment, phylogenetics, diversity metrics, ordination)"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples are syntactically correct with proper import patterns and API usage"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of bioinformatics workflows: sequences, alignments, phylogenetics, diversity, ordination, statistical tests"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Good reliability with important notes sections, metadata types documentation; minor: edge cases (degenerate sequences, gap handling) not exhaustively covered"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized with core capabilities structure; minor: no bundled scripts or reference files mentioned"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Strong with When to Use section, common patterns, important notes; minor: migration from deprecated aligners could be more prominent"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with Python 3.10+ and NumPy 2.0+ requirements, uv pip install command, optional dependencies listed"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent security: local-only bioinformatics operations, no network calls, file I/O with standard formats"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Version 1.1, BSD-3-Clause license, scikit-bio 0.7+ documented, NumPy 2.0+ compatibility noted"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Good composability with clear use cases, common patterns; minor: no tool boundaries to related skills, escape hatch for unsupported formats limited"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 87.8,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 18,
+      "total": 20
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Read FASTA sequences and find reverse complement",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Core sequence manipulation workflow",
+        "basic": 38,
+        "specialized": 57,
+        "total": 95,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "DNA class with validation", "result": "PASS", "note": "Grammared sequences with alphabet restrictions"},
+          {"text": "Read from FASTA format", "result": "PASS", "note": "DNA.read() documented"},
+          {"text": "Reverse complement operation", "result": "PASS", "note": "seq.reverse_complement() shown"},
+          {"text": "Transcription and translation available", "result": "PASS", "note": "seq.transcribe(), rna.translate() documented"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Perform pairwise sequence alignment with pair_align",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Modern alignment API (0.7.0+)",
+        "basic": 37,
+        "specialized": 55,
+        "total": 92,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "pair_align function documented", "result": "PASS", "note": "Versatile dynamic-programming aligner introduced in 0.7.0"},
+          {"text": "Convenience wrappers available", "result": "PASS", "note": "pair_align_nucl (BLASTN-like), pair_align_prot (BLASTP-like)"},
+          {"text": "CIGAR strings in PairAlignPath", "result": "PASS", "note": "Results carry CIGAR and convert to aligned sequences"},
+          {"text": "Deprecated aligners noted", "result": "PASS", "note": "Replaces SSW wrapper and pure-Python aligners"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Calculate UniFrac distance for microbiome samples",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Phylogenetic beta diversity metric",
+        "basic": 36,
+        "specialized": 52,
+        "total": 88,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "UniFrac mentioned in description", "result": "PASS", "note": "Alpha/beta diversity including UniFrac listed"},
+          {"text": "Phylogenetic tree capability", "result": "PASS", "note": "Phylogenetic trees section documented"},
+          {"text": "Beta diversity metrics available", "result": "PASS", "note": "When to Use: 'Calculate diversity metrics (alpha/beta diversity, UniFrac distances)'"},
+          {"text": "Newick I/O for trees", "result": "PASS", "note": "Newick format listed in description"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Variant B",
+        "label": "Perform PERMANOVA on ecological distance matrix",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Multivariate statistical test",
+        "basic": 34,
+        "specialized": 49,
+        "total": 83,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "PERMANOVA mentioned in description", "result": "PASS", "note": "Statistical test explicitly listed"},
+          {"text": "Ordination analysis capability", "result": "PASS", "note": "PCoA, CCA, RDA documented in When to Use"},
+          {"text": "Statistical tests documented", "result": "PASS", "note": "PERMANOVA, ANOSIM, Mantel listed"},
+          {"text": "Example usage shown", "result": "FAIL", "note": "PERMANOVA mentioned but no code example in main doc"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Scope Boundary",
+        "label": "Perform long-read assembly with overlap-layout-consensus",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Outside scope: sequence analysis not assembly",
+        "basic": 32,
+        "specialized": 44,
+        "total": 76,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Sequence manipulation within scope", "result": "PASS", "note": "Core capability 1 covers sequence operations"},
+          {"text": "Assembly not in use cases", "result": "PASS", "note": "When to Use section does not list assembly"},
+          {"text": "Alignment capability available", "result": "PASS", "note": "Pairwise and MSA documented"},
+          {"text": "Alternative tools recommended", "result": "FAIL", "note": "No pointer to Canu, Flye, or other assembly tools"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 52.7,
+    "score": 90,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Comprehensive bioinformatics coverage spanning sequences, alignments, phylogenetics, diversity metrics, and ordination",
+    "Excellent modernization with pair_align engine (0.7.0+) replacing deprecated SSW and pure-Python aligners",
+    "Strong microbiome analysis capabilities with UniFrac, PERMANOVA, and ordination methods",
+    "Clear API documentation with common patterns for each capability area",
+    "Good metadata handling with sequence-level, positional, and interval metadata types"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add PERMANOVA usage example",
+      "observed_in": [4],
+      "problem": "PERMANOVA mentioned but no code example provided",
+      "root_cause": "Agent usability: statistical test usage not demonstrated",
+      "fix": "Add to core capabilities: 'from skbio.stats.distance import permanova; result = permanova(distance_matrix, grouping, permutations=999)'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add references or bundled scripts section",
+      "observed_in": [1, 2, 3],
+      "problem": "No reference documentation or helper scripts mentioned",
+      "root_cause": "Performance context: supporting materials not documented",
+      "fix": "Add ## References section linking to detailed workflow guides or add ## Bundled Scripts if helper CLIs exist"
+    },
+    {
+      "priority": "P2",
+      "title": "Add pointers for out-of-scope assembly",
+      "observed_in": [5],
+      "problem": "Assembly identified as out-of-scope but no alternatives suggested",
+      "root_cause": "Agent-specific escape hatch: user not directed to appropriate tools",
+      "fix": "Add to ## When to Use: 'For genome assembly, use Canu, Flye, or Unicycler. For short-read assembly, use SPAdes or MEGAHIT.'"
+    }
+  ]
+}

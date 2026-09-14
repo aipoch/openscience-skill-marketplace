@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "skill_name": "openfold2-nim",
+    "description": "Use this skill for OpenFold2, NVIDIA's BioNeMo NIM microservice for monomer protein structure prediction. Invoke whenever the user mentions OpenFold2, AlphaFold2-like monomer folding, protein sequence-to-structure prediction, A3M MSAs, mmCIF templates, hosted NVIDIA API calls, or local Docker deployment.",
+    "evaluated_on": "2026-09-08",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Other",
+    "execution_mode": "A",
+    "complexity": "Simple",
+    "n_inputs": 3
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": false,
+      "gate": "N/A",
+      "scientific_integrity": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "practice_boundaries": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "methodological_ground": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      },
+      "code_usability": {
+        "result": "N/A",
+        "detail": "Category Other is exempt from research veto"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 93,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Complete coverage of monomer structure prediction with MSA and templates; clear scope restriction (monomer only) with redirection to OpenFold3/Boltz2 for complexes"
+      },
+      "reliability": {
+        "score": 11,
+        "max": 12,
+        "note": "Strong validation with sequence length caveat (1-1000 hosted, up to 2048 local); error handling via raise_for_status; minor: no guidance on handling timeout for long sequences"
+      },
+      "performance_context": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent efficiency: 177 lines with progressive disclosure via 5 reference files; save_strings helper function elegant and reusable"
+      },
+      "agent_usability": {
+        "score": 15,
+        "max": 16,
+        "note": "Clear payload structure with gotchas section; MSA handoff to msa-search-nim documented; minor: explicit_templates format (mmCIF) mentioned but not shown inline"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Excellent trigger coverage; monomer-only scope clear upfront; sequence length caveat prominent; smoke test vs production distinction clear"
+      },
+      "security": {
+        "score": 12,
+        "max": 12,
+        "note": "Explicit 'Do not print API keys' guidance; NGC_API_KEY/NVIDIA_API_KEY fallback documented; no credential logging in examples"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Clean single-file structure with 5 reference files; save_strings helper abstracts output handling; version-specific guidance (explicit_templates since 2.0.0) clearly marked"
+      },
+      "agent_specific": {
+        "score": 15,
+        "max": 20,
+        "note": "Excellent trigger precision; clear composability with msa-search-nim handoff; production guidance (5 models + relax) vs smoke test distinction; lacks explicit idempotency statement; no consolidated troubleshooting"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 96.7,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 11,
+      "total": 11
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Hosted single-sequence prediction with minimal MSA",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Complete workflow with single model selection and structure saving",
+        "basic": 40,
+        "specialized": 60,
+        "total": 100,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "MSA format follows nested alignments.uniref90.a3m.alignment structure",
+            "result": "PASS",
+            "note": "Correct schema with database name, format type, and alignment text"
+          },
+          {
+            "text": "selected_models uses list of integers [1] not bare 1",
+            "result": "PASS",
+            "note": "Correct list format for model selection"
+          },
+          {
+            "text": "Authorization header present for hosted mode",
+            "result": "PASS",
+            "note": "Bearer token pattern used"
+          },
+          {
+            "text": "save_strings helper extracts all structure artifacts",
+            "result": "PASS",
+            "note": "Function detects ATOM and data_ prefixes for PDB/mmCIF"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Local production run with 5 models and relaxation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Production configuration with all AlphaFold2 parameter sets and AMBER relaxation",
+        "basic": 38,
+        "specialized": 58,
+        "total": 96,
+        "assertions_passed": 4,
+        "assertions_total": 4,
+        "assertions": [
+          {
+            "text": "selected_models set to [1, 2, 3, 4, 5] for production",
+            "result": "PASS",
+            "note": "All five parameter sets used as recommended"
+          },
+          {
+            "text": "relax_prediction set to True for AMBER relaxation",
+            "result": "PASS",
+            "note": "Production guidance followed"
+          },
+          {
+            "text": "Local endpoint uses /biology/openfold/... (no /v1/)",
+            "result": "PASS",
+            "note": "Correct local path"
+          },
+          {
+            "text": "No Authorization header for local inference",
+            "result": "PASS",
+            "note": "Headers correctly omit auth for local mode"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Edge",
+        "label": "Protein complex request (multi-chain)",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Correct redirection to OpenFold3/Boltz2 for complex structures",
+        "basic": 38,
+        "specialized": 56,
+        "total": 94,
+        "assertions_passed": 3,
+        "assertions_total": 3,
+        "assertions": [
+          {
+            "text": "Monomer-only scope documented in payload gotchas",
+            "result": "PASS",
+            "note": "OpenFold2 is monomer-only explicitly stated"
+          },
+          {
+            "text": "User redirected to OpenFold3 or Boltz2 for complexes",
+            "result": "PASS",
+            "note": "Clear handoff for multi-chain, protein-ligand, protein-DNA/RNA"
+          },
+          {
+            "text": "Production guidance reinforces complex redirection",
+            "result": "PASS",
+            "note": "If task is complex rather than monomer, redirect"
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.2,
+    "dynamic_weighted": 58.0,
+    "score": 95,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional clarity with monomer-only scope prominently documented and clear redirection to OpenFold3/Boltz2 for complexes",
+    "Elegant save_strings helper function that recursively extracts all structure artifacts (PDB and mmCIF) from nested JSON response",
+    "Strong production guidance: 5 models + relaxation for production vs single model for smoke tests",
+    "Clear MSA handoff to msa-search-nim with schema mapping guidance for A3M alignment integration",
+    "Comprehensive sequence length documentation: hosted 1-1000 residues vs local up to 2048 with hardware caveat"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add timeout guidance for long sequences",
+      "observed_in": ["Reliability evaluation"],
+      "problem": "No guidance on handling timeout for sequences approaching limits (2048 residues local, 1000 hosted)",
+      "root_cause": "Assumes default 300s timeout sufficient; long sequences may exceed this",
+      "fix": "Add to Troubleshooting: 'Timeout on long sequences (>500 residues) → increase requests timeout parameter to 600-900s. With 5 models + relax, sequences near 1000 residues may take 10-15 minutes. For very long sequences (1500-2048 on local), consider reducing to 1-2 models or disabling relaxation.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add inline example for explicit_templates",
+      "observed_in": ["Agent usability evaluation"],
+      "problem": "explicit_templates with mmCIF content mentioned as 2.0.0+ feature but format not shown inline",
+      "root_cause": "Delegates to references without minimal inline example",
+      "fix": "Add after explicit_templates mention in gotchas: 'Example: \"explicit_templates\": [{\"id\": \"1abc\", \"mmcif_string\": \"data_1abc\\n_entry.id 1abc\\n...\"}] — see references/examples.md for full template structure.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add idempotency statement for predictions",
+      "observed_in": ["Agent-specific evaluation"],
+      "problem": "No explicit guidance on whether running prediction with same sequence and MSA produces identical structures",
+      "root_cause": "Determinism assumed but not documented",
+      "fix": "Add to Save And Interpret Output: 'Determinism: OpenFold2 predictions are deterministic — same sequence, MSA, templates, and selected_models produce identical structures across runs. For stochastic diversity, vary MSA depth or template selection rather than running multiple times with identical inputs.'"
+    }
+  ]
+}

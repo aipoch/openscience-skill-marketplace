@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "skill_name": "cellxgene-census",
+    "description": "Query the CZ CELLxGENE Census programmatically for versioned public single-cell and spatial transcriptomics data. Use when you need population-scale cell metadata, gene expression slices, Census summary counts, source H5AD URIs/downloads, embeddings, spatial Census data, or reference atlas comparisons across organisms, tissues, diseases, assays, and cell types.",
+    "evaluated_on": "2026-09-09",
+    "evaluator_version": "skill-auditor@1.0",
+    "category": "Data Analysis",
+    "execution_mode": "A",
+    "complexity": "Moderate",
+    "n_inputs": 5
+  },
+  "veto_gates": {
+    "skill_veto": {
+      "gate": "PASS",
+      "stability": "PASS",
+      "contract": "PASS",
+      "determinism": "PASS",
+      "security": "PASS"
+    },
+    "research_veto": {
+      "applicable": true,
+      "gate": "PASS",
+      "scientific_integrity": {
+        "result": "PASS",
+        "detail": "No fabrication; accurately describes Census data (217M+ cells, 1,845 datasets in 2025-11-08 LTS) with proper versioning"
+      },
+      "practice_boundaries": {
+        "result": "PASS",
+        "detail": "Appropriate scope for population-scale single-cell queries; clear boundary directing to scanpy/anndata/scvi-tools for local data analysis"
+      },
+      "methodological_ground": {
+        "result": "PASS",
+        "detail": "Based on standardized CZ CELLxGENE Discover data with reproducibility via census_version pinning"
+      },
+      "code_usability": {
+        "result": "PASS",
+        "detail": "Code examples executable with proper imports and version pinning guidance"
+      }
+    }
+  },
+  "static_score": {
+    "subtotal": 94,
+    "max": 100,
+    "categories": {
+      "functional_suitability": {
+        "score": 12,
+        "max": 12,
+        "note": "Comprehensive coverage of Census workflows: opening, exploring, querying, large-scale processing, ML integration, spatial data, Scanpy integration, multi-dataset analysis"
+      },
+      "reliability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent reliability guidance: is_primary_data filtering to avoid duplicates, query size estimation before loading, version pinning for reproducibility"
+      },
+      "performance_context": {
+        "score": 7,
+        "max": 8,
+        "note": "Well-organized with clear sections and reference files; performance guidance (out-of-core for >100k cells); could benefit from query timing estimates"
+      },
+      "agent_usability": {
+        "score": 16,
+        "max": 16,
+        "note": "Excellent 'When to Use' with 7 specific scenarios; clear scope boundary to scanpy/anndata/scvi-tools for local data; comprehensive best practices section"
+      },
+      "human_usability": {
+        "score": 8,
+        "max": 8,
+        "note": "Clear installation with version pinning (1.17.x), spatial extra documented, deprecated ML loader warning, no authentication required noted"
+      },
+      "security": {
+        "score": 11,
+        "max": 12,
+        "note": "Good practices: public data requires no credentials; minor: data download size limits not explicitly discussed for preventing resource exhaustion"
+      },
+      "maintainability": {
+        "score": 12,
+        "max": 12,
+        "note": "Excellent structure with version 1.2, license (MIT), Census version tracking (2025-11-08 LTS), deprecation warnings for experimental ML loaders"
+      },
+      "agent_specific": {
+        "score": 16,
+        "max": 20,
+        "note": "Strong composability with allowed-tools and integration patterns; clear data flow; minor: output format specifications for large queries could be more explicit"
+      }
+    }
+  },
+  "dynamic_score": {
+    "execution_avg": 89.2,
+    "max": 100,
+    "assertion_pass_rate": {
+      "passed": 21,
+      "total": 24
+    },
+    "inputs": [
+      {
+        "index": 1,
+        "type": "Canonical",
+        "label": "Open Census with version pinning and explore metadata",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Basic Census access with reproducibility",
+        "basic": 39,
+        "specialized": 56,
+        "total": 95,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "census_version parameter specified for reproducibility", "result": "PASS", "note": "open_soma(census_version='2025-11-08')"},
+          {"text": "get_obs used to query cell metadata", "result": "PASS", "note": "get_obs with organism, value_filter, column_names"},
+          {"text": "is_primary_data filter included to avoid duplicates", "result": "PASS", "note": "is_primary_data == True in all best practice examples"},
+          {"text": "Column selection minimizes data transfer", "result": "PASS", "note": "column_names parameter limits metadata fields"},
+          {"text": "Two-step workflow documented (explore then query)", "result": "PASS", "note": "Best practices show metadata exploration before expression query"}
+        ]
+      },
+      {
+        "index": 2,
+        "type": "Variant A",
+        "label": "Query expression data into AnnData",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Standard expression query workflow",
+        "basic": 38,
+        "specialized": 54,
+        "total": 92,
+        "assertions_passed": 5,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "get_anndata called with census and organism", "result": "PASS", "note": "get_anndata(census=census, organism='Homo sapiens')"},
+          {"text": "obs_value_filter includes cell type and is_primary_data", "result": "PASS", "note": "Complete filter shown with multiple conditions"},
+          {"text": "tissue_general vs tissue distinction documented", "result": "PASS", "note": "Best practices explain coarser vs specific tissue fields"},
+          {"text": "Query result is standard AnnData object", "result": "PASS", "note": "Integration with Scanpy/AnnData ecosystem clear"},
+          {"text": "Reference to core_workflow_patterns.md provided", "result": "PASS", "note": "Detailed patterns documented in reference file"}
+        ]
+      },
+      {
+        "index": 3,
+        "type": "Variant B",
+        "label": "Large-scale query with size estimation",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Out-of-core processing for memory management",
+        "basic": 37,
+        "specialized": 52,
+        "total": 89,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "Cell count estimated before loading data", "result": "PASS", "note": "get_obs with soma_joinid to count cells first"},
+          {"text": "Threshold documented for out-of-core decision", "result": "PASS", "note": ">100k cells triggers out-of-core processing"},
+          {"text": "Out-of-core processing pattern referenced", "result": "PASS", "note": "Large-scale queries workflow pattern mentioned"},
+          {"text": "Memory management guidance clear", "result": "PASS", "note": "Size estimation prevents OOM errors"},
+          {"text": "Chunked processing code example provided", "result": "FAIL", "note": "Out-of-core pattern mentioned but not shown in excerpt"}
+        ]
+      },
+      {
+        "index": 4,
+        "type": "Edge",
+        "label": "Gene presence matrix for dataset filtering",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Verify gene measurement across datasets",
+        "basic": 36,
+        "specialized": 50,
+        "total": 86,
+        "assertions_passed": 4,
+        "assertions_total": 5,
+        "assertions": [
+          {"text": "get_presence_matrix called with organism and gene filter", "result": "PASS", "note": "get_presence_matrix with var_value_filter for specific genes"},
+          {"text": "Gene names specified in var_value_filter", "result": "PASS", "note": "feature_name in ['CD4', 'CD8A'] syntax shown"},
+          {"text": "Presence matrix guides dataset selection", "result": "PASS", "note": "Best practice for gene-specific queries documented"},
+          {"text": "Multiple genes can be checked simultaneously", "result": "PASS", "note": "List syntax supports multiple gene queries"},
+          {"text": "Interpretation of presence matrix documented", "result": "FAIL", "note": "Usage shown but matrix structure not explained"}
+        ]
+      },
+      {
+        "index": 5,
+        "type": "Stress",
+        "label": "PyTorch ML integration with deprecated loader warning",
+        "status": "COMPLETED",
+        "status_flag": "✅",
+        "note": "Machine learning workflow with migration guidance",
+        "basic": 35,
+        "specialized": 48,
+        "total": 83,
+        "assertions_passed": 3,
+        "assertions_total": 4,
+        "assertions": [
+          {"text": "Deprecated experimental ML loaders flagged", "result": "PASS", "note": "cellxgene_census.experimental.ml noted as deprecated"},
+          {"text": "TileDB-SOMA-ML recommended as replacement", "result": "PASS", "note": "tiledbsoma-ml installation shown in setup"},
+          {"text": "Installation command includes ML dependencies", "result": "PASS", "note": "Separate pip install for ML workflows documented"},
+          {"text": "Migration path from old to new ML API shown", "result": "FAIL", "note": "Deprecation warning clear but new API usage not demonstrated"}
+        ]
+      }
+    ]
+  },
+  "final": {
+    "static_weighted": 37.6,
+    "dynamic_weighted": 53.5,
+    "score": 91,
+    "max": 100,
+    "grade": "Production Ready",
+    "grade_symbol": "⭐",
+    "deployable": true,
+    "veto_override": false
+  },
+  "key_strengths": [
+    "Exceptional data quality guidance with is_primary_data filtering to avoid counting cells multiple times across datasets",
+    "Strong reproducibility practices with census_version pinning and LTS release tracking (2025-11-08)",
+    "Excellent performance awareness with query size estimation and >100k threshold for out-of-core processing",
+    "Clear scope boundaries directing to scanpy/anndata/scvi-tools for local single-cell analysis",
+    "Outstanding scale documentation: 217M+ cells, 1,845 datasets, 5 organisms with standardized metadata"
+  ],
+  "recommendations": [
+    {
+      "priority": "P2",
+      "title": "Add ML API migration examples",
+      "observed_in": [5],
+      "problem": "Deprecated experimental.ml loaders flagged but TileDB-SOMA-ML usage not demonstrated",
+      "root_cause": "Deprecation warning without replacement API examples",
+      "fix": "Add code example showing TileDB-SOMA-ML DataLoader usage: from tiledbsoma import pytorch; loader = pytorch.ExperimentAxisQueryIterDataPipe(...)"
+    },
+    {
+      "priority": "P2",
+      "title": "Document presence matrix structure and interpretation",
+      "observed_in": [4],
+      "problem": "get_presence_matrix usage shown but output format not explained",
+      "root_cause": "Best practice mentions checking presence but doesn't explain what to do with results",
+      "fix": "Add note: 'Presence matrix returns DataFrame with datasets as rows, genes as columns, boolean values indicating measurement. Filter datasets where all queried genes are True before querying expression.'"
+    },
+    {
+      "priority": "P2",
+      "title": "Add data download size limits guidance",
+      "observed_in": [],
+      "problem": "No explicit guidance on maximum safe query sizes or rate limiting",
+      "root_cause": "Public data access without authentication but resource limits not documented",
+      "fix": "Add security/resource section: recommend query size limits (e.g., <1M cells per query), mention TileDB cloud rate limits if applicable, suggest chunked retrieval for very large analyses"
+    }
+  ]
+}
