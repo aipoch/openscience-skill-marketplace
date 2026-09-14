@@ -1,8 +1,8 @@
 # Batch publication and recovery
 
-The current release selects 392 reviewed Skills: all 388 previous members plus
-`cover-letter-generator`, `basic-research-design`, `meta-abstract-screener` and
-`meta-screening-fulltext` at `1.0.0`. It explicitly defers 192 other members. See [release selection](../skills/README.md#release-selection).
+The current release selects 394 reviewed Skills: all 392 previous members plus
+`hypothesis-generation` and `research-grants` at `1.0.0`. It explicitly defers
+190 other members. See [release selection](../skills/README.md#release-selection).
 Byte-bound redistribution reviews are recorded in
 `skills/reviews.json`; the seventeen assessment-omission records remain separate
 and are not license approvals. Production publication uses the protected main
@@ -34,12 +34,19 @@ consuming Apps need no protocol or database update. This introduces one optional
 repository configuration field, no state enums, migrations or compatibility aliases.
 The source-commit capability does not approve or publish a Skill by itself;
 `citation-network` has a separate byte-bound review at its selected commit.
-The four new members pin `d915031495e1c755d272c3de817ee3fc012e8b7b`, where their
+The preceding four-member batch pins `d915031495e1c755d272c3de817ee3fc012e8b7b`, where their
 core templates and screening prompts are present. This older source snapshot
 supplies their first Marketplace versions; it does not roll back an existing
 release. Their complete payloads and MIT notices are retained, and their original
 self-assessments are read from that same commit. Only new descriptors, a new shard
 and the updated catalog/index are produced; existing CDN objects remain unchanged.
+
+The next two-member batch pins `hypothesis-generation` to that same complete
+snapshot and keeps `research-grants` at the default commit. Both include the
+original K-Dense MIT notice alongside AIPOCH's notice. Their admission covers
+redistribution and source completeness; it does not certify generated research
+plans, grant eligibility or agency compliance. Refer to the intake guide for the
+separate schematic dependency and unavailable optional grant-checking helpers.
 
 ## Responsibilities
 

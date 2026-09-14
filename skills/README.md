@@ -54,11 +54,11 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-392 reviewed Skills, retaining all 388 previously selected members and adding
-`cover-letter-generator`, `basic-research-design`, `meta-abstract-screener` and
-`meta-screening-fulltext` at `1.0.0`. All preserve the complete source package and
-required MIT notices. The other 192 members remain explicitly deferred. Of these,
-179 have asset, attribution, source-completeness or implementation follow-ups. The original 13
+394 reviewed Skills, retaining all 392 previously selected members and adding
+`hypothesis-generation` and `research-grants` at `1.0.0`. Both retain their entire
+source package and the AIPOCH and original K-Dense MIT notices. The other 190
+members remain explicitly deferred; 177 have asset, attribution,
+source-completeness or implementation follow-ups. The original 13
 deferrals remain: 11 with remaining source errors, `pptx-skill`
 with conflicting bundled license terms, and `paper-tweet-generator` with an
 independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
@@ -99,7 +99,7 @@ original K-Dense MIT copyright notice is included alongside AIPOCH's notice.
 These static reviews do not certify clinical decisions, runtime behavior or the
 upstream self-assessments. Missing optional helpers are not reconstructed.
 
-The four new members pin the complete upstream snapshot
+The preceding four-member batch pins the complete upstream snapshot
 `d915031495e1c755d272c3de817ee3fc012e8b7b`; their required templates and prompts
 were removed in the default snapshot. These are first Marketplace releases of
 previously deferred members, not replacements for published content.
@@ -121,6 +121,31 @@ The source self-assessments retain final scores of 87/100, 87/100, 86/100 and
 Their report URLs point to the selected commit; no evaluated Skill version or
 independent safety endorsement is inferred. Static inspection does not certify
 runtime behavior or systematic-review decisions. Upstream files remain unmodified.
+
+The next batch adds two documentation-driven research planning Skills:
+
+- `hypothesis-generation` pins `d915031495e1c755d272c3de817ee3fc012e8b7b`.
+  Its three reference guides, LaTeX template, style file and formatting guide are
+  present. The template and style match the original K-Dense snapshot after line
+  ending normalization for review only; the packaged source bytes are unchanged.
+  Reports need XeLaTeX/LuaLaTeX, BibTeX, user-supplied evidence and a separately
+  installed `scientific-schematics` Skill. Figures and the bibliography are output
+  inputs created for the report, not missing bundled research data.
+- `research-grants` stays at the default source commit. Its five agency guides,
+  specific-aims and broader-impact guides, reference index and three templates
+  support the manual proposal-drafting path. Five advertised supplementary guides
+  (`budget_preparation`, `review_criteria`, `timeline_planning`, `team_building`,
+  `resubmission_strategies`) and the optional compliance, budget and deadline
+  scripts are absent. Automated checking is unavailable. Read the actual current
+  solicitation and institutional requirements before using the historical agency
+  guidance; illustrative budgets and sample proposals are not real applications
+  or current funding/compliance guarantees. Schematics require the separate Skill.
+
+Both original K-Dense Skill declarations explicitly identify MIT. The aggregation
+contains rewritten prose, so original-copy equivalence is not claimed beyond the
+normalized LaTeX template/style comparison. The exact aggregated payload remains
+authenticated and unchanged. Admission does not endorse the upstream assessments
+or validate generated hypotheses, statistical plans, funding rules or submissions.
 
 A selected member may specify `source_commit`, a lowercase 40-character commit
 from that same repository. Its source path still comes from the original manifest.
@@ -168,9 +193,9 @@ added. Public signatures and digests still cover their original bytes.
 ## Review records
 
 `reviews.json` retains the initial redistribution review for
-`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 391
+`abstract-trimmer@1.0.0`, recorded by `ewen-poch` on 2026-09-12, and contains 393
 static package and license reviews recorded by `Codex` on 2026-09-13 across the
-maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review, the `discussion-section-architect` review, the two-member extraction/appraisal intake and this four-member complete-snapshot intake. These reviews cover the pinned package inventory,
+maintainer-authorized 20-member batch, three 100-member batches, a 30-member batch, a 13-member batch, a 19-member batch, the K-Dense `paper-lookup` review, the repaired `citation-network` review, the `discussion-section-architect` review, the two-member extraction/appraisal intake, the four-member complete-snapshot intake and this two-member research-planning intake. These reviews cover the pinned package inventory,
 source declarations, provenance-sensitive examples and required MIT notice. They
 do not certify runtime behavior or provide independent safety endorsement.
 The seventeen assessment-omission records remain separate; omission-only records
