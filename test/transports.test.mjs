@@ -382,7 +382,7 @@ test("first publication never requests an unpublished CDN key that could cache a
 test("GitHub transport creates one draft catalog release and never clobbers existing assets", async () => {
   const { githubStore, assetName } =
     await import("../scripts/lib/transports.mjs");
-  const { copyFile, mkdir } = await import("node:fs/promises");
+
   const tmp = await mkdtemp(path.join(os.tmpdir(), "skill-github-test-"));
   let release;
   const assets = new Map();
@@ -391,6 +391,32 @@ test("GitHub transport creates one draft catalog release and never clobbers exis
     const run = async (command, args) => {
       commands.push([command, args]);
       assert.equal(command, "gh");
+      if (args[0] === "api") {
+        if (args.includes("POST")) {
+          assert.ok(
+            args[1].startsWith(
+              "https://uploads.github.com/repos/test/repo/releases/1/assets?name=",
+            ),
+          );
+          const filename = args[args.indexOf("--input") + 1];
+          const name = path.basename(filename);
+          const bytes = await readFile(filename);
+          const url = `https://api.github.com/repos/test/repo/releases/assets/${assets.size + 1}`;
+          assets.set(name, filename);
+          release.assets.push({ name, size: bytes.length, apiUrl: url });
+          return Buffer.from(
+            JSON.stringify({
+              name,
+              size: bytes.length,
+              url,
+              state: "uploaded",
+            }),
+          );
+        }
+        const asset = release.assets.find((asset) => asset.apiUrl === args[1]);
+        assert.ok(asset);
+        return readFile(assets.get(asset.name));
+      }
       const action = args[1];
       if (action === "view") {
         if (!release) {
@@ -401,24 +427,11 @@ test("GitHub transport creates one draft catalog release and never clobbers exis
       }
       if (action === "create") {
         release = {
+          apiUrl: "https://api.github.com/repos/test/repo/releases/1",
           assets: [],
           isDraft: true,
           targetCommitish: "a".repeat(40),
         };
-        return Buffer.alloc(0);
-      }
-      if (action === "upload") {
-        const filename = args[3];
-        const name = path.basename(filename);
-        assets.set(name, filename);
-        release.assets.push({ name });
-        return Buffer.alloc(0);
-      }
-      if (action === "download") {
-        const name = args[args.indexOf("--pattern") + 1];
-        const directory = args[args.indexOf("--dir") + 1];
-        await mkdir(directory, { recursive: true });
-        await copyFile(assets.get(name), path.join(directory, name));
         return Buffer.alloc(0);
       }
       throw new Error("unexpected operation");
@@ -446,12 +459,15 @@ test("GitHub transport creates one draft catalog release and never clobbers exis
       /immutable/,
     );
     assert.equal(commands.filter(([, a]) => a[1] === "create").length, 1);
-    assert.equal(commands.filter(([, a]) => a[1] === "upload").length, 2);
+    assert.equal(
+      commands.filter(([, a]) => a[0] === "api" && a.includes("POST")).length,
+      2,
+    );
     assert.ok(
       commands.find(([, a]) => a[1] === "create")[1].includes("--draft"),
     );
     assert.equal(
-      commands.some(([, a]) => a[1] === "upload" && a.includes("--clobber")),
+      commands.some(([, a]) => a[0] === "api" && a.includes("--clobber")),
       false,
     );
     assert.match(
@@ -471,13 +487,15 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
   const { buildCatalog } = await import("../scripts/lib/build.mjs");
   const { signRoot } = await import("../scripts/lib/signing.mjs");
   const { generateKeyPairSync } = await import("node:crypto");
-  const { mkdir, copyFile, writeFile } = await import("node:fs/promises");
+  const { mkdir, writeFile } = await import("node:fs/promises");
   const { makeCandidate } = await import("./fixtures.mjs");
   const tmp = await mkdtemp(path.join(os.tmpdir(), "skill-published-git-"));
   const repo = path.join(tmp, "repo");
   await mkdir(repo);
   const git = (args) => runCommand("git", args, { cwd: repo });
   const releases = new Map();
+  const assetUrls = new Map();
+  const assetBytes = new Map();
   let failPush = true;
   try {
     await runCommand("git", ["init", "--bare", path.join(tmp, "remote.git")]);
@@ -507,6 +525,32 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
         }
         return git(args);
       }
+      if (args[0] === "api") {
+        if (args.includes("POST")) {
+          const url = new URL(args[1]);
+          const releaseId = Number(url.pathname.split("/").at(-2));
+          const [tag, release] = [...releases].find(
+            ([, value]) => value.id === releaseId,
+          );
+          const file = args[args.indexOf("--input") + 1];
+          const name = url.searchParams.get("name");
+          const bytes = await readFile(file);
+          const apiUrl = `https://api.github.com/repos/test/repo/releases/assets/${assetBytes.size + 1}`;
+          release.assets.set(name, bytes);
+          assetUrls.set(`${tag}/${name}`, apiUrl);
+          assetBytes.set(apiUrl, bytes);
+          return Buffer.from(
+            JSON.stringify({
+              name,
+              size: bytes.length,
+              url: apiUrl,
+              state: "uploaded",
+            }),
+          );
+        }
+        assert.ok(assetBytes.has(args[1]));
+        return assetBytes.get(args[1]);
+      }
       const action = args[1],
         tag = args[2];
       const release = releases.get(tag);
@@ -514,7 +558,12 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
         if (!release) throw new Error("release not found");
         return Buffer.from(
           JSON.stringify({
-            assets: [...release.assets.keys()].map((name) => ({ name })),
+            apiUrl: `https://api.github.com/repos/test/repo/releases/${release.id}`,
+            assets: [...release.assets].map(([name, bytes]) => ({
+              name,
+              size: bytes.length,
+              apiUrl: assetUrls.get(`${tag}/${name}`),
+            })),
             isDraft: release.isDraft,
             targetCommitish: sourceCommit,
           }),
@@ -526,18 +575,11 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
           false,
           "concurrent workers create only one draft",
         );
-        releases.set(tag, { assets: new Map(), isDraft: true });
-        return Buffer.alloc(0);
-      }
-      if (action === "upload") {
-        const file = args[3];
-        release.assets.set(path.basename(file), await readFile(file));
-        return Buffer.alloc(0);
-      }
-      if (action === "download") {
-        const directory = args[args.indexOf("--dir") + 1];
-        const name = args[args.indexOf("--pattern") + 1];
-        await writeFile(path.join(directory, name), release.assets.get(name));
+        releases.set(tag, {
+          id: releases.size + 1,
+          assets: new Map(),
+          isDraft: true,
+        });
         return Buffer.alloc(0);
       }
       if (action === "edit") {
@@ -603,4 +645,126 @@ test("the GitHub adapter promotes real Git metadata and retries without another 
   } finally {
     await rm(tmp, { recursive: true, force: true });
   }
+});
+
+test("GitHub reads cached asset endpoints without querying release metadata per file", async () => {
+  const { githubStore, assetName } =
+    await import("../scripts/lib/transports.mjs");
+  const calls = [];
+  const bytes = Buffer.from([0, 255, 10, 13]);
+  const endpoint = "https://api.github.com/repos/test/repo/releases/assets/42";
+  const store = githubStore({
+    repository: "test/repo",
+    revision: "b".repeat(64),
+    temporary: os.tmpdir(),
+    run: async (command, args, options) => {
+      calls.push(args);
+      assert.equal(command, "gh");
+      if (args[0] === "release" && args[1] === "view") {
+        return Buffer.from(
+          JSON.stringify({
+            apiUrl: "https://api.github.com/repos/test/repo/releases/1",
+            isDraft: true,
+            assets: [
+              {
+                name: assetName("shards/example.zip"),
+                apiUrl: endpoint,
+                size: bytes.length,
+              },
+            ],
+          }),
+        );
+      }
+      assert.deepEqual(args, [
+        "api",
+        endpoint,
+        "--header",
+        "Accept: application/octet-stream",
+      ]);
+      assert.equal(options.maxBuffer, bytes.length);
+      return bytes;
+    },
+  });
+  assert.deepEqual(
+    await store.read("shards/example.zip", { maxBytes: bytes.length }),
+    bytes,
+  );
+  assert.deepEqual(
+    await store.read("shards/example.zip", { maxBytes: bytes.length }),
+    bytes,
+  );
+  await assert.rejects(
+    store.read("shards/example.zip", { maxBytes: 3 }),
+    /byte limit/,
+  );
+  assert.equal(calls.filter((args) => args[0] === "release").length, 1);
+  assert.equal(calls.length, 3);
+});
+
+test("GitHub asset API rejects foreign endpoints, oversized replies and rate-limit errors", async () => {
+  const { githubStore, assetName } =
+    await import("../scripts/lib/transports.mjs");
+  const relative = "releases/example/1.0.0.json";
+  const endpoint = "https://api.github.com/repos/test/repo/releases/assets/42";
+  for (const apiUrl of [
+    endpoint.replace("https:", "http:"),
+    endpoint.replace("api.github.com", "example.com"),
+    endpoint.replace("test/repo", "other/repo"),
+    endpoint + "?redirect=1",
+    endpoint.replace("42", "../42"),
+  ]) {
+    let calls = 0;
+    const store = githubStore({
+      repository: "test/repo",
+      revision: "b".repeat(64),
+      run: async (_command, args) => {
+        calls++;
+        assert.equal(args[1], "view");
+        return Buffer.from(
+          JSON.stringify({
+            assets: [{ name: assetName(relative), apiUrl, size: 1 }],
+          }),
+        );
+      },
+    });
+    await assert.rejects(
+      store.read(relative),
+      /invalid GitHub release API URL/,
+    );
+    assert.equal(calls, 1);
+  }
+  const oversized = githubStore({
+    repository: "test/repo",
+    revision: "b".repeat(64),
+    run: async (_command, args) =>
+      args[0] === "api"
+        ? Buffer.alloc(5)
+        : Buffer.from(
+            JSON.stringify({
+              assets: [
+                { name: assetName(relative), apiUrl: endpoint, size: 1 },
+              ],
+            }),
+          ),
+  });
+  await assert.rejects(oversized.read(relative, { maxBytes: 4 }), /byte limit/);
+  let calls = 0;
+  const limited = githubStore({
+    repository: "test/repo",
+    revision: "b".repeat(64),
+    sourceCommit: "a".repeat(40),
+    run: async () => {
+      calls++;
+      throw new Error("HTTP 403: API rate limit exceeded for installation");
+    },
+  });
+  await assert.rejects(
+    limited.putImmutable(relative, Buffer.from("x")),
+    /rate limit/,
+  );
+  assert.equal(
+    calls,
+    1,
+    "an explicit rate limit must not trigger release creation",
+  );
 });
