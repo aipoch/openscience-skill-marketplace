@@ -54,29 +54,32 @@ baseline is deliberate; changing it requires re-auditing provenance and reviews.
 members into `selected` and `deferred` entries at the configured source repository
 and default commit. Every entry identifies an exact `id` and package `version`; each
 deferred entry also requires a nonblank `reason`. The current release selects
-395 reviewed Skills, retaining all 394 previous members and adding
-`research-proposal-generator` at `1.0.0`. It pins the complete Medical snapshot
-`d915031495e1c755d272c3de817ee3fc012e8b7b`, which includes the required
-`references/prompts.md`; its original Skill instructions, prompt text and
-self-assessment remain byte-for-byte intact. The MIT declaration in SKILL.md and
-repository MIT notice are both bound into the release evidence. Its budget prompt
-provides a framework rather than a complete cost schedule; generated proposals
-must state assumptions and require domain review. No evaluated Skill version or
-independent safety approval is inferred.
+465 original Skills plus 60 provider releases, for 525 installable Skills. The
+current batch adds 72 previously evidence-pending IDs under maintainer-authorized
+`Unknown` license exceptions. Each review records the unresolved materials,
+retains the exact original license declaration and bytes, and binds the source
+commit, content digest and available evidence. `hierarchical-clustering-plot`
+uses provider intake because SKILL.md has no license field; its DESCRIPTION MIT
+statement is retained as evidence. `nature-academic-search` also uses the existing
+provider Unknown path. `resubmission-deadline-tracker` pins the repaired Medical
+commit `63c61d38c6c4bba5128f98f0b225aa44e3fe748d`; other new original entries use
+the default snapshot. Identity-mismatched assessments are omitted from the
+catalog while their source files remain in the ZIP.
 
-The other 189 original members remain explicitly deferred; 176 have asset,
-attribution, source-completeness or implementation follow-ups. This review replaces
-13 generic missing-file reasons with concrete source or implementation findings.
-The original 13
-deferrals remain: 11 with remaining source errors, `pptx-skill`
-with conflicting bundled license terms, and `paper-tweet-generator` with an
-independent CC BY-NC-ND 4.0 notice in its bundled article text. The latter notice
-appears in [`extracted_text.txt:117`](https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Other/paper-tweet-generator/extracted_text.txt#L117);
-its redistribution review and permission resolution remain pending.
-Selection is not a redistribution approval.
-See the [original-list review follow-up](../docs/original-list-review.md) for
-verified license discrepancies, source defects and dataset provenance findings
-that refine 12 of these existing deferrals without changing the selection.
+The other 119 original members remain explicitly deferred, including alternate
+provider sources for already published IDs. Seven candidates in this batch remain
+unselected: `bio-ontology-mapper`, `icd10-cpt-coding-assistant`, `gokegg-analysis`
+and `cibersort-immune-infiltration-analysis` require applicable distribution terms;
+`ppt` and `ppt-master` contain Python syntax defects; `open-source-license-check`
+mislabels Bowtie 2 as MIT/non-copyleft. Their concrete reasons remain in the release
+plan. Unknown exceptions do not resolve explicit restrictions or executable defects.
+AlphaFold and bibliography repairs remain deferred to upstream maintenance.
+
+All 453 preceding releases remain immutable. No upstream files are changed or
+removed, and no evaluated version or independent safety approval is inferred.
+Earlier findings in [the original-list review](../docs/original-list-review.md)
+remain historical observations; the current release plan and review records carry
+the explicit maintainer decisions for this batch.
 
 The previous batch resolved two missing-reference deferrals without adding
 invented files. `citation-network` pins upstream commit
@@ -256,6 +259,36 @@ Review `content_sha256` binds the original source-directory files, while
 complete distributed package, including added notices. No source files are
 rewritten. Regenerate unpublished development artifacts after this packaging
 change; existing immutable releases cannot be overwritten.
+
+### Mixed-license package display
+
+Keep `license_expression` equal to the exact upstream Skill declaration. For a
+new package containing independently licensed components, a complete review may
+add `package_license_expression`, such as `MIT AND CC-BY-4.0`, together with
+`exception_reason` describing component scope and attribution. This optional
+field accepts distinct license identifiers joined by `AND`, beginning with
+the unchanged primary declaration; alternative expressions and replacement of
+that declaration are rejected. It is an explicitly reviewed conjunction, not
+a general SPDX expression parser or automatic permission inference.
+
+At least two distinct hashed evidence files are required. Record the applicable
+component files and notices in `license_files` / `additional_license_files`; all
+existing source, content, evidence and reviewer checks still apply. The listing
+license and detail `license.expression` display the complete package expression.
+Original `SKILL.md`, attribution and notice bytes remain unchanged. Without this
+field, existing review behavior and generated release bytes are unchanged.
+
+For an explicitly authorized uncertainty exception, `package_license_expression`
+may instead be exactly `Unknown`. `exception_reason` must identify the unresolved
+source, license coverage or bundled materials and the maintainer decision. This
+labels uncertainty; it does not grant rights or erase known restrictions. The
+original `license_expression` must still match the source declaration, and the
+same source, content, evidence and reviewer checks apply. Preserve every original
+notice and file; a license uncertainty exception does not waive package defects.
+
+This review-only field does not change the public protocol or App data model.
+Previously published releases remain immutable; do not edit an existing release
+to add terms.
 
 ### Original notices from another repository
 

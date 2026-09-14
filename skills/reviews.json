@@ -1,8 +1,32 @@
 {
   "paper-web@1.0.0": {
-    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
     "content_sha256": "5a06896ea8cef8762a68fe2711068c495596019f924657493695c7909ec010aa",
-    "omit_evaluation_reason": "Report identity \"paper-2-web\" does not exactly match Marketplace Skill ID \"paper-web\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+    "omit_evaluation_reason": "Report identity \"paper-2-web\" does not exactly match Marketplace Skill ID \"paper-web\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias.",
+    "source_path": "scientific-skills/Academic Writing/paper-2-web",
+    "file_count": 7,
+    "total_bytes": 76101,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Academic Writing/paper-2-web/SKILL.md",
+        "sha256": "cde1b4f88764067dcc67e526879cb82ed671ab806c42296a9fb78174544b4d16"
+      }
+    ],
+    "review_notes": "License evidence inspected on 2026-09-14, not release approval. Original K-Dense scientific-skills/paper-2-web/SKILL.md at f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f declares Unknown and credits K-Dense Inc.; LICENSE.md at that exact commit supplies a complete MIT grant for its software and associated documentation. The existing retained K-Dense notice matches its raw bytes. This supports review of the original source while retaining Unknown, not blanket approval of modified aggregation files. Original instructions use --output-dir and --generate-website/--generate-poster, but the documented Paper2All pipeline at 0639654f6dc023c0372de5e7f0484e03e5b25c25 accepts --output_dir and chooses components via --model-choice. Resolve this CLI contract before selecting either source. Scientific-schematics and Paper2All remain external dependencies.",
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "additional_license_files": [
+      {
+        "source": {
+          "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+          "commit": "f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f",
+          "path": "LICENSE.md"
+        },
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ]
   },
   "d-molecule-ray-tracer@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -20,8 +44,27 @@
   },
   "diagnostic-study-quality-assessment-quadas@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/diagnostic-study-quality-assessment-quadas-2",
     "content_sha256": "befef6882972d0bd4387f7124cf4c2bba374fbf9af599addb258cb39362c5e0c",
-    "omit_evaluation_reason": "Report identity \"diagnostic-study-quality-assessment-quadas-2\" does not exactly match Marketplace Skill ID \"diagnostic-study-quality-assessment-quadas\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+    "file_count": 7,
+    "total_bytes": 27155,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/diagnostic-study-quality-assessment-quadas-2/SKILL.md",
+        "sha256": "fa67a8e08bbb91e54451fb6ca073465161ffed49838c900a8a8794cafcc9ad65"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled QUADAS-2 criteria need source attribution and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval.",
+    "omit_evaluation_reason": "Upstream assessment identity does not match the exact Marketplace Skill ID. Retain the raw report in the ZIP but omit evaluation; do not infer aliases or evaluated versions."
   },
   "meta-rob-plot@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -67,8 +110,27 @@
   },
   "rct-bias-assessment-rob@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/rct-bias-assessment-rob2",
     "content_sha256": "1acc91cd48b6c3e101973aae2fea5c6fa3c443585971e40f41f5e1efadc5d51c",
-    "omit_evaluation_reason": "Report identity \"rct-bias-assessment-rob2\" does not exactly match Marketplace Skill ID \"rct-bias-assessment-rob\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+    "file_count": 5,
+    "total_bytes": 24102,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/rct-bias-assessment-rob2/SKILL.md",
+        "sha256": "facc561fb8b02a86665813b2158b38c42586e100cf0dd608d230057f1c431481"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval.",
+    "omit_evaluation_reason": "Upstream assessment identity does not match the exact Marketplace Skill ID. Retain the raw report in the ZIP but omit evaluation; do not infer aliases or evaluated versions."
   },
   "torchdrug-english@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -100,8 +162,27 @@
   },
   "iso-certification@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Other/iso-13485-certification",
     "content_sha256": "e4e2e58f5573203cdc6a4221e82673f5391dd42357b8ee0a70bd37194e0e5b2e",
-    "omit_evaluation_reason": "Report identity \"iso-13485-certification\" does not exactly match Marketplace Skill ID \"iso-certification\"; omit this upstream self-assessment until reviewed source correction, without inferring an alias."
+    "file_count": 10,
+    "total_bytes": 198349,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/iso-13485-certification/SKILL.md",
+        "sha256": "d072d440dca62630aaf7ed4f6edd58300aa4938ba974199c70adb80362a7f385"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled ISO 13485 requirements and checklists require separate source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval.",
+    "omit_evaluation_reason": "Upstream assessment identity does not match the exact Marketplace Skill ID. Retain the raw report in the ZIP but omit evaluation; do not infer aliases or evaluated versions."
   },
   "bioinfo-analysis-plan@1.0.0": {
     "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6652,5 +6733,1712 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-14",
     "license_expression": "MIT"
+  },
+  "alphafold-db@1.0.0": {
+    "source_path": "scientific-skills/Evidence Insight/alphafold-db",
+    "content_sha256": "20a15e49cbac6653a2734a5bf4e49c01d822f90db1c6add8fe3779b9eaee3998",
+    "file_count": 7,
+    "total_bytes": 1754241,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/alphafold-db/SKILL.md",
+        "sha256": "fbf0ad91d0687a48d70891c63c94dc00401138b6ce93dbe8d881c735f51908fc"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/alphafold-db/out/P00520.cif",
+        "sha256": "c402f453ff9f43c082dd6336c7deb40bdec3916bc1e1ce9716b8b567831fa270"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/alphafold-db/out/P00520.pdb",
+        "sha256": "63f50710d8b1045542a220c96caaee5ed1f55c325d72bab023bdec2b4da25bb8"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/alphafold-db/out/P00520_metadata.json",
+        "sha256": "b17f5c3cfc1a501d33c0de4b1f48e7b410aedc9a38eb922d5990b796e66b563c"
+      }
+    ],
+    "review_notes": "License evidence inspected on 2026-09-14, not release approval. SKILL.md declares MIT. out/P00520.cif and out/P00520.pdb explicitly identify DeepMind Technologies Limited (2021), permit academic and commercial use under CC BY 4.0, and retain attribution, disclaimer and citation information. The metadata identifies AF-P00520-F1 model v6 and its original AlphaFold URLs. Preserve every source byte and all notices. The exact official CC BY 4.0 legal text is retained as supplemental evidence. The package contains independently licensed data; displaying only MIT would omit those terms. Complete mixed-license projection and package review before selecting this release. Publication follow-up: Pinned CIF/PDB files explicitly grant CC BY 4.0 with DeepMind attribution; exact evidence and official license text are recorded in reviews.json. Mixed-license display support is prepared, but references/api_reference.md labels mouse accession P00520 as ABL1_HUMAN/taxId 9606 and uses the human sequence length. This remains in Medical commit 63c61d38c6c4bba5128f98f0b225aa44e3fe748d. Await the upstream species-example correction and review its fixed commit before publication.",
+    "additional_license_files": [
+      {
+        "source": {
+          "repository": "https://github.com/creativecommons/cc-legal-tools-data",
+          "commit": "6d7046ff3146bbc034e88d9c87854e43d2a28e32",
+          "path": "docs/licenses/by/4.0/legalcode.txt"
+        },
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      }
+    ],
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab"
+  },
+  "bib-formatter@1.0.0": {
+    "source_path": "scientific-skills/Other/bib-formatter",
+    "content_sha256": "ac3fcda25e61a41590c0ae0ce1b3ebfa075e76a9f29abc68d740d1cbe9d94bce",
+    "file_count": 9,
+    "total_bytes": 54636,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/bib-formatter/SKILL.md",
+        "sha256": "c8e0ca060f478e593e43faf5999224f696effe75e047543798e1f9186b70fde2"
+      },
+      {
+        "path": "scientific-skills/Other/bib-formatter/styles/nature.csl",
+        "sha256": "31148c0d0a2b0cc7719e1de5145f0b866b6a890778dd1d19c095481b3acb195a"
+      },
+      {
+        "path": "scientific-skills/Other/bib-formatter/styles/new-england-journal-of-medicine.csl",
+        "sha256": "8d74b864eea323618ab13e9c4477392077aec546a4c8592057c466edc8d0a041"
+      },
+      {
+        "path": "scientific-skills/Other/bib-formatter/styles/the-lancet.csl",
+        "sha256": "705b55fe4bb0e61809c4217716b3dedc8d71514ca7326038be56bf7f00fe2557"
+      }
+    ],
+    "review_notes": "License evidence inspected on 2026-09-14, not release approval. SKILL.md declares MIT. All three bundled CSL styles explicitly declare CC BY-SA 3.0 and retain their source URLs, titles, authors and contributors: Nature (Michael Berkowitz; Patrick O Brien), The New England Journal of Medicine (Michael Berkowitz; Sean Takats; Sebastian Karcher), and The Lancet (Sebastian Karcher). Preserve their original XML and attribution. The official unported CC BY-SA 3.0 legal text is retained as supplemental evidence; this does not relicense the MIT helper or remove the style-specific ShareAlike terms. Complete mixed-license projection and package review before selection. Publication follow-up: All three CSL styles explicitly grant CC BY-SA 3.0 with preserved attribution; exact evidence and the official license text are recorded in reviews.json. The documented citations mode calls bibliography.cite(citation, warn=True), but citeproc-py exposes cite(citation, callback). This remains in Medical commit 63c61d38c6c4bba5128f98f0b225aa44e3fe748d. Await the upstream API-call correction and review its fixed commit before publication.",
+    "additional_license_files": [
+      {
+        "source": {
+          "repository": "https://github.com/creativecommons/cc-legal-tools-data",
+          "commit": "6d7046ff3146bbc034e88d9c87854e43d2a28e32",
+          "path": "docs/licenses/by-sa/3.0/legalcode.txt"
+        },
+        "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+      }
+    ],
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab"
+  },
+  "hierarchical-clustering-plot@1.0.0": {
+    "source_repository": "https://github.com/aipoch/medical-research-skills",
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot",
+    "manifest_sha256": "8aed9d398f5af5a4850533280a3891654d21429e4e6e6c85a8ba16fc5c728e62",
+    "content_sha256": "11fbd580328b56bcaf2daa9591023b6057e1fb67264c1a36499676c927741bac",
+    "file_count": 18,
+    "total_bytes": 75538,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot/SKILL.md",
+        "sha256": "5ba8faebcdf85237355fefdf969abe9634d0c91f693e5b35c4f1c8a39dcc2c05"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/hierarchical-clustering-plot/DESCRIPTION",
+        "sha256": "d9ed30f8c318c9a75c48b39c4bb187b4040326d2677b9e672a5def9885d57ddd"
+      }
+    ],
+    "license_expression": "Unknown",
+    "package_license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: SKILL.md lacks a license field, but the same Skill DESCRIPTION explicitly declares MIT; both it and the complete root MIT notice are now hash-bound in reviews.json. The original intake still rejects the absent frontmatter declaration. Establish the origin and redistribution evidence for the bundled expression matrix and sample groups before using the existing reviewed Unknown provider intake; generic Sample labels are not synthetic-data evidence. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Maintainer-authorized uncertainty exception. Exact source package and existing notices retained; source and package gates passed. Imported scripts/tests were not executed. Optional assessments are not inferred from provider payloads."
+  },
+  "reactome-skill@1.0.0": {
+    "source_path": "scientific-skills/Evidence Insight/reactome-skill",
+    "content_sha256": "76abefe8b1b493e0007482d2072794630ad0430b3583af8d9dc1134a11b6b7e8",
+    "file_count": 5,
+    "total_bytes": 18188,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/reactome-skill/SKILL.md",
+        "sha256": "2d62297b675fb4f0c377f2135df32129486d552ba07a8b62ea549aa1ec028148"
+      }
+    ],
+    "review_notes": "License evidence inspected on 2026-09-14, not release approval. Original K-Dense scientific-skills/reactome-database/SKILL.md at c61a6a2ee035720b59f9be6c8cec9db8398d9442 declares Unknown and credits K-Dense Inc.; LICENSE.md at that exact commit supplies a complete MIT grant for its software and associated documentation. The retained notice matches the raw bytes. This supports review of the intact original while retaining Unknown; no database dump is bundled there. The aggregation lacks original scripts/reactome_query.py. In that original helper, command_analyze uses gene_file.replace(.txt, _results.json) as its output path; inputs without .txt can be overwritten on successful analysis. Resolve package completeness and output-path safety before selection.",
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "additional_license_files": [
+      {
+        "source": {
+          "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+          "commit": "c61a6a2ee035720b59f9be6c8cec9db8398d9442",
+          "path": "LICENSE.md"
+        },
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ]
+  },
+  "adverse-event-narrative@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Academic Writing/adverse-event-narrative",
+    "content_sha256": "9547cd610e7abfd270c6acd672bf3eb1894bd149c6fb52311a4a99fc617e0ad2",
+    "file_count": 10,
+    "total_bytes": 49509,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Academic Writing/adverse-event-narrative/SKILL.md",
+        "sha256": "92654c52bd89eb03f43a684fbb8a5f067cbe2278f00005478be0d343da684678"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled CIOMS/MedDRA reference material and sample cases require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "batch-effect-correction@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/batch-effect-correction",
+    "content_sha256": "48bdf12a4eb92b8710b1ee2ee0cd0fbefa788f740b78e1fbbea49c46db8113ef",
+    "file_count": 18,
+    "total_bytes": 177031,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/batch-effect-correction/SKILL.md",
+        "sha256": "a2512af0a086ad222cb57f65a90694563ee7c7bc43400f3b346bc83ad681d25f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled expression_matrix_merged.csv and sample_info.csv include GEO GSM sample identifiers and identify GSE114007 as a batch. Verify dataset origins, transformations and redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "cerna-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/cerna-analysis",
+    "content_sha256": "99ee8b2ca1adf6aa47c723e216b83bca17c4329b062f08d95d2623c42ef1a117",
+    "file_count": 23,
+    "total_bytes": 76024642,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/cerna-analysis/SKILL.md",
+        "sha256": "38427e214218bbd4cdd119dc214afd6560714bb2955bd4ff20882bc46bcae209"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled miRDB, miRTarBase and starBase databases require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "clinical-data-cleaner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/clinical-data-cleaner",
+    "content_sha256": "1731458bb74363d45131bceca3887d84e49cdb1a48358168f1d410bca5cab4a3",
+    "file_count": 9,
+    "total_bytes": 56118,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/clinical-data-cleaner/SKILL.md",
+        "sha256": "808093f40d08a61d8d298abdd8b2e9c48ce622052827500033a921f32a95010b"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled SDTM guidance, domain definitions and clinical outlier thresholds require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "clinical-trial-protocol-skill@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Protocol Design/clinical-trial-protocol-skill",
+    "content_sha256": "37bb525707a72b8a7a805a4ff5161d522d2da58cbb02a35146596554ec0ec484",
+    "file_count": 11,
+    "total_bytes": 426582,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Protocol Design/clinical-trial-protocol-skill/SKILL.md",
+        "sha256": "d84f6ab1374d94338521e00b5fa537b41c61de31782d56170bf6056e3d2bd585"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled FDA protocol template and detailed operational reference material require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "conference-tweet-generator@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Other/conference-tweet-generator",
+    "content_sha256": "9d577e189b867500730c317c1eb1a4f9bc7b1a8480e6098d65faae9dd3f8a6f2",
+    "file_count": 4,
+    "total_bytes": 25059,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/conference-tweet-generator/SKILL.md",
+        "sha256": "f94fc22469522d62b9e01b1415e04c138daef2382c4efa3e850991a0747dd6ec"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled drug dictionary requires individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "decision-curve-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/decision-curve-analysis",
+    "content_sha256": "a1d238d402dae7f51dda1b1b7f91e90c203c21e5ed0ca0252bad9cb4654863d6",
+    "file_count": 12,
+    "total_bytes": 73212,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/decision-curve-analysis/SKILL.md",
+        "sha256": "a029cf4473fe464b2fe2386cdf48f87a292a99d85fe94f42549f10579e28b7a8"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/dca_data.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "decision-tree-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/decision-tree-analysis",
+    "content_sha256": "1fc1890892ecfa6eba2f34caf2dbc1f29310a486fe68158664bd18c24e9de368",
+    "file_count": 12,
+    "total_bytes": 143413,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/decision-tree-analysis/SKILL.md",
+        "sha256": "668c26cef95e087a7dbb678830a670ed36a483c2c3cf73275668df0f7fbd5388"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled dt_sample1.csv and dt_sample2.csv contain TCGA sample identifiers, survival status and expression values; dt_sample3.txt also contains expression data. Establish dataset origins, transformations and redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "deg-screening-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/deg-screening-analysis",
+    "content_sha256": "23b1d0de1020dbe64818f77e0f2f45f823594c3ab3af25d8ec3a1da7b9f4a155",
+    "file_count": 14,
+    "total_bytes": 1093056,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/deg-screening-analysis/SKILL.md",
+        "sha256": "6c396523fd8732ea512613cefca36bd92b06440f4d85ad603c35c09336a9d6b0"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/oa_exp.csv, tests/data/oa_group.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "diagnostic-study-quality-assessment-quadas-2@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/diagnostic-study-quality-assessment-quadas-2",
+    "content_sha256": "cc048c888cd3b4d180170fcaa917e4e2874ba864675c00f9741d8edbc5abda88",
+    "file_count": 7,
+    "total_bytes": 23160,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/diagnostic-study-quality-assessment-quadas-2/SKILL.md",
+        "sha256": "20528a5017456923949972189637961798ba415446dc3524deada99dd3a472d7"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "differential-expression-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/differential-expression-analysis",
+    "content_sha256": "52048889e2a5f5b083c4d5a5669ea7ad33cc5065b31257034098feedfb30818d",
+    "file_count": 13,
+    "total_bytes": 6957183,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/differential-expression-analysis/SKILL.md",
+        "sha256": "efb2b7100c1d2ab3aedb87f93ae99b054d58291c8f989444c91753e30f7d15dd"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled Combined_Datasets_Matrix_mus.csv expression data require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "drug-interaction-checker@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/drug-interaction-checker",
+    "content_sha256": "4ca46a7a5e6c97fff703743638d9e513a260bea1365f5163fa08160aa097fa05",
+    "file_count": 7,
+    "total_bytes": 67645,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/drug-interaction-checker/SKILL.md",
+        "sha256": "fc96a4bef262f16560dbd01f789e5e9ba473297105c823385c1f25c442c16e8e"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled drug-interaction database, CYP450 substrate data and severity criteria require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "emerging-topic-scout@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/emerging-topic-scout",
+    "content_sha256": "eecb135989c498f2add42d2df7e589947cbc42303342aa2ffa9e890f2a02ee74",
+    "file_count": 8,
+    "total_bytes": 66033,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/emerging-topic-scout/SKILL.md",
+        "sha256": "902475c128ea2b6adc193fd2f9bc1b2f3e355e11d72a9fd687eff54d247b391b"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Package content credits OpenClaw Skills Collection; verify original attribution, license evidence, and required redistribution notices before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "estimate-immune-score-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/estimate-immune-score-analysis",
+    "content_sha256": "351a1564e3fb6aa6cd456688f580bbe057f9bbfa908bf2673c58d2db7ddcde89",
+    "file_count": 16,
+    "total_bytes": 114247,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/estimate-immune-score-analysis/SKILL.md",
+        "sha256": "3eb2761d3966ec8125231be8684101ab05348f46bdb70694ce5f986ae3623f8b"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "experiment-detail-comparator@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Other/experiment-detail-comparator",
+    "content_sha256": "991e3668776d3181a45f368f033ca03a22574eb62eb4d0690a8b7e8adb050291",
+    "file_count": 37,
+    "total_bytes": 1482486,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/experiment-detail-comparator/SKILL.md",
+        "sha256": "92abc66f5b9a3ceac730e56d0c9e37cdb485e48247f0d6e1ca13b2321f81f4a2"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled full article text and extracted derivatives with independent content licenses require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "external-model-validation@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/external-model-validation",
+    "content_sha256": "93841a11403badb13d05f939cc17d53a3e4e4060a9b5962c1cdb4887324534a7",
+    "file_count": 18,
+    "total_bytes": 242598,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/external-model-validation/SKILL.md",
+        "sha256": "2ac5ed828786a08af8a27123512b34b2b78466b9fb45063da0672c6062b06f0a"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/BRCA_clinic.csv, tests/data/BRCA_coef.csv, tests/data/BRCA_data.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "gene-protein-expression-matrix-normalization@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/gene-protein-expression-matrix-normalization",
+    "content_sha256": "bca4a2d1ad0e35d01b5453605214c480d86fee56585f86d881d2ab1f72b2e433",
+    "file_count": 15,
+    "total_bytes": 1095048,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/gene-protein-expression-matrix-normalization/SKILL.md",
+        "sha256": "3bbd38a0c1a3f2d8e738fdda3359e1d2fba4f092afd0f577c6098f33fa0ccf30"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/gene-protein-expression-matrix-normalization/DESCRIPTION",
+        "sha256": "dc871a368891444aeb3d4db80c3a0f45aa2d7b0639bb35ce7b0c5288d9190f39"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: references/cli-guide.md explicitly identifies the bundled expression_matrix.csv as real data derived from GEO GSE150613. Verify the source supplement, transformations and redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "graphical-abstract-wizard@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/graphical-abstract-wizard",
+    "content_sha256": "b150f548fd0af7b82c28b363f18521dffa841d585485b5931db48fab06b350e2",
+    "file_count": 5,
+    "total_bytes": 56265,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/graphical-abstract-wizard/SKILL.md",
+        "sha256": "ccd6a8bd0503ad9ce30bfc356395e63fb2973406b960f0d0dc5fa033b1078c6f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Third-party collection attribution in SKILL.md:206 requires original license and notice evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "gsea@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/gsea",
+    "content_sha256": "3209b6e2d2a164a538662941f3909983b4d4fac2458ccd50fa85743e74e7ccb6",
+    "file_count": 12,
+    "total_bytes": 2890732,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/gsea/SKILL.md",
+        "sha256": "f8dfcb232500578409ede54ab90e4c063b37cc8e7c78709b4f1547922fab1d4f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled ssGSEA.rds gene-set data require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "gsva-analysis-and-visualization@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/gsva-analysis-and-visualization",
+    "content_sha256": "2872a8d497c041dacec7bde32b6edfd945aacb1ff4b7a4b19fb09fab7d9a3401",
+    "file_count": 17,
+    "total_bytes": 25615395,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/gsva-analysis-and-visualization/SKILL.md",
+        "sha256": "5fc350c43e98d3137de0cbd6c30816635de0e80619dd8b7a64f0f6b7078d061b"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled GSE44076-derived expression data require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "html-to-pdf@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Other/html-to-pdf",
+    "content_sha256": "93f4e50414827fea2be34b19ceebb3e8188f17d60b5d98850cd5df73b6b3f61f",
+    "file_count": 3384,
+    "total_bytes": 32493150,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/html-to-pdf/SKILL.md",
+        "sha256": "10f7b942fee5a09f37432c4fe1199576a2e635f37ab6dc4608b13773dac7a2a7"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled large vendored dependency tree require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "immune-pathway-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/immune-pathway-analysis",
+    "content_sha256": "ce176c956bcc84fae1e7aedcd2aec1aca392863be2f482c71aea7ed89027df70",
+    "file_count": 20,
+    "total_bytes": 2313592,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/immune-pathway-analysis/SKILL.md",
+        "sha256": "e5de1cb06314872a14e151e0c5c1b8e9421f3fa9b268944a6d35ac4eed883c8f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv, tests/data/immune_genesets.csv, tests/data/immune_genesets_minimal.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "inclusion-criteria-gen@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Protocol Design/inclusion-criteria-gen",
+    "content_sha256": "a746d3603317713012f0e5ce75c2d7e2b5f33a8093768250d603c2b1dc440c31",
+    "file_count": 9,
+    "total_bytes": 101954,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Protocol Design/inclusion-criteria-gen/SKILL.md",
+        "sha256": "ad0b16f76b1d44b4ebcdd40e0eecb2139d0c982d64530af9c19afd279a2d796d"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled eligibility templates, feasibility data and regulatory guidance require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "journal-matchmaker@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/journal-matchmaker",
+    "content_sha256": "9cb9e628ff5f0709b06a26d88c943f779e649218e89ee47a20fcd16608bb3294",
+    "file_count": 7,
+    "total_bytes": 65064,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/journal-matchmaker/SKILL.md",
+        "sha256": "6cac47ed0d2c8bdd8576653dac673fdf9ed352232ade963f61f3586e7a7c166a"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled journal catalog and scoring metadata require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "kegg-api@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/kegg-api",
+    "content_sha256": "7a06f27517b773707a7897bbd898b37796b615a7537c23f8a41a5202fa8f7aff",
+    "file_count": 4,
+    "total_bytes": 22373,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/kegg-api/SKILL.md",
+        "sha256": "15a67c29fb0a1b15fa72100bd30d6e075be937d60a4463128fa8edbd3c460090"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: references/KEGG_API_Manual.txt. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "km-survival-curve@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/km-survival-curve",
+    "content_sha256": "82657673a9bada37400a5bfeda14e5cb181b2fe77288c65d1e07e3d151c6a9ad",
+    "file_count": 13,
+    "total_bytes": 109471,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/km-survival-curve/SKILL.md",
+        "sha256": "e22a2a5b4b41175bb28526f2aa28f982187a67e90260c35d8ad775f0a50cd514"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/km_sample1.txt, km_sample2.txt and km_sample3.txt contain TCGA sample identifiers with follow-up, outcome, risk-score and expression columns. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "knn-imputation@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/knn-imputation",
+    "content_sha256": "3506ae7ca08b8a90ea2ac41330d91b4aa61e1192477fd5105012e0e4bb9d4b3e",
+    "file_count": 14,
+    "total_bytes": 7377821,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/knn-imputation/SKILL.md",
+        "sha256": "d0da0e05ae4888fb517859fa4f477a7e6bceeb165f7fa8fad22be2fbaa6d0c1f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled expression matrix and sample-group tables require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "lightgbm-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/LightGBM-analysis",
+    "content_sha256": "c681d5d188e6ce74d866d9a753c534478c86fd059fa0646097bc587eefa52117",
+    "file_count": 12,
+    "total_bytes": 182926,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/LightGBM-analysis/SKILL.md",
+        "sha256": "07961bdfb1c127bc5c89c89b9b050f051744594ffe5bb0a4b72f4186fa6bcb87"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "litbase@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Evidence Insight/litbase",
+    "content_sha256": "7139c20bb801b31adf6495552203cec90a70aad6ee23b049d1847963e86ce2c9",
+    "file_count": 48,
+    "total_bytes": 180357,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Evidence Insight/litbase/SKILL.md",
+        "sha256": "8c519a1ce258bf0bf8d4f7c1b939215a256717a2746846ffee987e5e90ff11b6"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The package includes populated research memory, reading notes and search_config.json alongside empty core templates. Verify their provenance and intended redistribution before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "lncrna-regulatory-network-construction-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/lncrna-regulatory-network-construction-analysis",
+    "content_sha256": "91dad833250c6fc001e2686bcbbc61325e5235eaf9cb07d172b9441b6c205cd9",
+    "file_count": 24,
+    "total_bytes": 76015721,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/lncrna-regulatory-network-construction-analysis/SKILL.md",
+        "sha256": "bf7013ea1f74e1024b6d5c6f379bc2596f0bcd92cd196036365512bea5826ce7"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled miRDB, miRTarBase and starBase databases require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "medical-scribe-dictation@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Academic Writing/medical-scribe-dictation",
+    "content_sha256": "b6b5a24dab2574c6e3854c3b34b912dbe61247c58cd0e943b7118b3745d6c5ac",
+    "file_count": 8,
+    "total_bytes": 151199,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Academic Writing/medical-scribe-dictation/SKILL.md",
+        "sha256": "e6e4ca9a09996acda656ea4a8aec58bdd254f558dae42f9f9118205ffef08cf7"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled medical-abbreviations.json needs terminology provenance and notice review; terminology-sources.md names external standards with separate terms. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "method-writing@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Academic Writing/method-writing",
+    "content_sha256": "2a2c7843e9df04d95e0af4e5b848bc816883e5412f6aafcb0824fcde0c922442",
+    "file_count": 6,
+    "total_bytes": 102916,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Academic Writing/method-writing/SKILL.md",
+        "sha256": "71644fbf5f4403e745950987c5bb89b7906da93ecd1e3e7e52a8d42143fd067c"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled reporting_guidelines.md includes multiple third-party reporting checklists; attribution and redistribution evidence need review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "methods-section-writer@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Academic Writing/methods-section-writer",
+    "content_sha256": "05ba807b28a2655f4de2e9ea6ac48c7a6863eeaf48f8b112c07a0ba8dd1c7926",
+    "file_count": 5,
+    "total_bytes": 107782,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Academic Writing/methods-section-writer/SKILL.md",
+        "sha256": "5cbd7170c3360c04538f602a8de1237f1a6c61bc6a56e29f57bc3fe77974f38e"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled reporting_guidelines.md includes multiple third-party reporting checklists; attribution and redistribution evidence need review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "model-calibration-curve@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/model-calibration-curve",
+    "content_sha256": "e5b9ebf13231e3c6cb6725153e7b5effd8c84eec97823f1b7b63182ec0704a9f",
+    "file_count": 12,
+    "total_bytes": 96797,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/model-calibration-curve/SKILL.md",
+        "sha256": "1dbdf02a16d4100d4ce39479972ac06432e160d32e6e01789d4f23d7a1d8484f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/sample_clinical_survival_data.csv contains TCGA identifiers, survival outcomes and derived risk scores. Establish its dataset origin, transformations and redistribution evidence before publication; illustrative SAMPLE IDs in SKILL.md do not establish that the bundled data are synthetic. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "nature-academic-search@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-academic-search",
+    "manifest_sha256": "2fe5a2bd9f0a91ba9a728cfb046f0f3b5acd646052ececae6c8f1a91f62850e3",
+    "content_sha256": "1a7cc5eea2238bbdc3b6c2d0ce8ba78317f0cbfe10b2ce695ab304d1650c3a34",
+    "file_count": 48,
+    "total_bytes": 259226,
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "license_expression": "Unknown",
+    "package_license_expression": "Unknown",
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Redistribution evidence for abstracts in bundled .nbib/.ris examples is unconfirmed. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Maintainer-authorized uncertainty exception. Exact source package and existing notices retained; source and package gates passed. Imported scripts/tests were not executed. Optional assessments are not inferred from provider payloads."
+  },
+  "nomogram-construction@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/nomogram-construction",
+    "content_sha256": "fc35175a236d940044ffce86c1745530c416e66cc7976404b2b2632f880c15ee",
+    "file_count": 21,
+    "total_bytes": 136513,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/nomogram-construction/SKILL.md",
+        "sha256": "a5e26dad0f47c2969a4c86b15ae3fa92776ab5bbd691bbd428a7f1a22c64b5ea"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/yuhou_cli_data.csv contains TCGA identifiers, survival outcomes and derived risk scores, with serialized expected model/data outputs. Establish dataset origin, transformations and redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "pca-dimensionality-reduction@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/pca-dimensionality-reduction",
+    "content_sha256": "5bb58d810328b0113666bcfdaa541335902551fbd74cc2493aa8f3f35a024106",
+    "file_count": 12,
+    "total_bytes": 3400692,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/pca-dimensionality-reduction/SKILL.md",
+        "sha256": "89b118a518522a75ddbde0bb117136898432cbcc35b5f4a35fcce58b4c02dddc"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/sample_pca_1.csv, tests/data/sample_pca_2.csv, tests/data/sample_pca_3.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "postdoc-fellowship-matcher@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Other/postdoc-fellowship-matcher",
+    "content_sha256": "f8cc195b3742ad0fa7eec4b0462ef9aa876be9d89313ffc7bed63286fb9d5839",
+    "file_count": 5,
+    "total_bytes": 21647,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/postdoc-fellowship-matcher/SKILL.md",
+        "sha256": "2c9db3ce068818d234b2cc4e381841f81d0f5ed3625d9c82e83007ff44a78b97"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled fellowship database requires source and currency verification before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "preprint-surveillance-finder@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Evidence Insight/preprint-surveillance-finder",
+    "content_sha256": "a029fa8ce663f2c030ed9747c2a71d97d6e07acb9a97132ea075149b65eef75d",
+    "file_count": 8,
+    "total_bytes": 66108,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Evidence Insight/preprint-surveillance-finder/SKILL.md",
+        "sha256": "f5f13c95a46cef8c29a118d5e6b66fd7834366201933fe91dde1f5b6655c45d1"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: data/history.json contains repeated arXiv abstract excerpts for arXiv:2602.09248, not an empty history template. Verify the cached content redistribution evidence before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "prior-auth-letter-drafter@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Academic Writing/prior-auth-letter-drafter",
+    "content_sha256": "32cea9bdd06cc3d3e2e65125cfa64af4c82ad226c6db2534af92b92f225d3266",
+    "file_count": 8,
+    "total_bytes": 42022,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Academic Writing/prior-auth-letter-drafter/SKILL.md",
+        "sha256": "1d345c12fbca5588da177da1f2917e950ea45383589a744d5d8245de2925eaab"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled carrier_requirements.json insurance requirements require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "probast-quality-assessment-for-prediction-model-studies@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/probast-quality-assessment-for-prediction-model-studies",
+    "content_sha256": "0bee284fe7f025a702a5ef90ca590c4d231ab79ee989596a44c295794eb32795",
+    "file_count": 4,
+    "total_bytes": 29126,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/probast-quality-assessment-for-prediction-model-studies/SKILL.md",
+        "sha256": "b7d4680abb4c8062197c26ce873ed6e77635f3cab9b7507f4611e00ac1441818"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "pseudotime-trajectory-viz@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/pseudotime-trajectory-viz",
+    "content_sha256": "9022905ac6caecd9dd403bdf3870a783310cc66a50be1c34352eccf56c6b5316",
+    "file_count": 6,
+    "total_bytes": 55415,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/pseudotime-trajectory-viz/SKILL.md",
+        "sha256": "4c114f07312016d44684bf1323a7399600208032b9819e4ab75cc32a5291c6a0"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "quadas-c-assessment-for-diagnostic-accuracy-studies@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/quadas-c-assessment-for-diagnostic-accuracy-studies",
+    "content_sha256": "3a22ce1c395c9ac4ca2d6240d479a9bc830ac7b3c2927daf1599862cbe7fc6e6",
+    "file_count": 5,
+    "total_bytes": 27319,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/quadas-c-assessment-for-diagnostic-accuracy-studies/SKILL.md",
+        "sha256": "98f784008a5167086ba00f3aa1c8d061fe82dfa8aa4ef42da2e71d49de0f2d1f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "quality-assessment@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/quality-assessment",
+    "content_sha256": "9c21c323a54b00aabbba22fc30e97437a46a04d0c77b40860d498748446af5b9",
+    "file_count": 4,
+    "total_bytes": 36848,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/quality-assessment/SKILL.md",
+        "sha256": "03a94d9a135541ebe432e809b0670302e929b7637f2eeb4bb3bfef5b0f5e17db"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "quapas-quality-assessment-for-prognosis-studies@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/quapas-quality-assessment-for-prognosis-studies",
+    "content_sha256": "e5dd05693b84b8cd1fc53d03862e9130e7f1635641522c402ebab6800e534005",
+    "file_count": 4,
+    "total_bytes": 26166,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/quapas-quality-assessment-for-prognosis-studies/SKILL.md",
+        "sha256": "7d9a65778bce92dcf658b68583a60df4d2ebe04f15bf49fc0cad9ff58f54bac1"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "rare-disease-hpo-mapper@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/rare-disease-hpo-mapper",
+    "content_sha256": "575e9edd3605547470ba0cf6db070f894fce1bdcace21dad61a503766530945a",
+    "file_count": 5,
+    "total_bytes": 22995,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/rare-disease-hpo-mapper/SKILL.md",
+        "sha256": "04615457546140cf21e010cf6526ab216fd8ba3f78806bb6550666528022f2c4"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled phenotype-to-gene lookup data requires source, scope and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "rct-bias-assessment-rob2@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/rct-bias-assessment-rob2",
+    "content_sha256": "3fb125f47efb731d2c697227e945411ba614c4e3af6bc61c2989015a577154ff",
+    "file_count": 6,
+    "total_bytes": 21024,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/rct-bias-assessment-rob2/SKILL.md",
+        "sha256": "4f3947915b18a5220ac65ac43cc0b7c35cb8e69fd3caa781d8712a880135eeb1"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assessment criteria require individual source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "reference-search@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/reference-search",
+    "content_sha256": "8a12030c81635c3cf4c1eede808a6328ff6bab77a891cf05e9e95d0d13907f1d",
+    "file_count": 10,
+    "total_bytes": 34652,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/reference-search/SKILL.md",
+        "sha256": "2f5d0f72c2f5b8e6fdc012dd58a77b0e6786079e663164b8af09b0b0e96c096a"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Blank CSV templates are reviewable, but inputs/query.json contains a full PDAC review abstract without its origin or redistribution evidence. Resolve that bundled text before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "resubmission-deadline-tracker@1.0.0": {
+    "source_commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d",
+    "source_path": "scientific-skills/Other/resubmission-deadline-tracker",
+    "content_sha256": "f0f6840083ab942cab04f9c8fa93e7c10e3d4c2f014bbe96596b9f47e4ba4ebb",
+    "file_count": 9,
+    "total_bytes": 52701,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/resubmission-deadline-tracker/SKILL.md",
+        "sha256": "c00b6c3e7d5031af6f681c142fe22b5b3265cfc69ee27682208e49e00404af7c"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The available 63c61d38c6c4bba5128f98f0b225aa44e3fe748d snapshot repairs --timezone and UTC deadline calculation, but still bundles populated data/deadlines.json manuscript titles, journals and reviewer notes without evidence identifying them as redistributable examples. Resolve those records and the unsourced journal timing reference before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "rf-model-importance-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/rf-model-importance-analysis",
+    "content_sha256": "b08e5616c9d289a87bbdcdeeddcdd542cf6b29c1aa5f3063696b4a04e984e2f1",
+    "file_count": 21,
+    "total_bytes": 85335,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/rf-model-importance-analysis/SKILL.md",
+        "sha256": "37c7e58fa30cde927c6fdfe2e9111231fdab6ff25f4a4f6d6ab370054e5e9661"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "sample-correlation-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/sample-correlation-analysis",
+    "content_sha256": "d4f9aa66e35ce683dec6ed2c163f3e14e8d17d26639900828fb6435929ff5460",
+    "file_count": 12,
+    "total_bytes": 133841,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/sample-correlation-analysis/SKILL.md",
+        "sha256": "942729908791812da9245b58ab7f642fa3d6497936d3d5926c2cf9b8c32360c9"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/sample_correlation_2.csv contains TCGA sample identifiers alongside drug-response columns, and sample_correlation_3.csv contains GEO sample identifiers. Establish dataset origins, transformations and redistribution evidence; do not assume synthetic examples from sample filenames. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "smiles-de-salter@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/smiles-de-salter",
+    "content_sha256": "eccca54e0e67391aede9fd864ba8be2d60285c1aa10de8e9ac9dfd610d988525",
+    "file_count": 5,
+    "total_bytes": 33293,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/smiles-de-salter/SKILL.md",
+        "sha256": "1664344b76744d2c3f4f302d89b13bec8024bfcf682f950db04353240f60ec9d"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: SKILL.md and scripts/main.py credit OpenClaw Skill Hub in addition to the AIPOCH frontmatter; verify original attribution and redistribution notices. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "ssgsea-immune-infiltration-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/ssgsea-immune-infiltration-analysis",
+    "content_sha256": "0ae4fd9c4b18e98fdc842aaa25d8ce4fdaa3887fd1df508c86548c74d1c3eb59",
+    "file_count": 17,
+    "total_bytes": 25630169,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/ssgsea-immune-infiltration-analysis/SKILL.md",
+        "sha256": "c3db6dbc2bf6e1a004f3ca8a59f661a4a726fabe75aa94ee723b0d4fe0f52185"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled expression data and Charoentong 2017-derived immune gene sets require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "survival-curve-risk-table@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/survival-curve-risk-table",
+    "content_sha256": "24bdaf8db279e61f03c79033eaf0e6a4693e223af639144bace3fd86c5433ff3",
+    "file_count": 6,
+    "total_bytes": 59079,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/survival-curve-risk-table/SKILL.md",
+        "sha256": "7fa27d1a465d254a4f2440a3d66fe8bfc06a522809d6a0d7c52a8d02a574329d"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "svm-model-importance-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/svm-model-importance-analysis",
+    "content_sha256": "94cd372a7794d424ab678bfbec8c6aa18fd6ec473fac4e333e8bd1189b7fd906",
+    "file_count": 22,
+    "total_bytes": 75973,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/svm-model-importance-analysis/SKILL.md",
+        "sha256": "5e1c6edc97a91ce9b8e88a6b1744f8b14fd03aa231cbb798351a4b3940f81f3c"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/expression_matrix.csv, tests/data/group_info.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "target-journal-matcher@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Academic Writing/target-journal-matcher",
+    "content_sha256": "719a264c87be50a1f9e0b3dea355966b8c59fe4773a6d61316bf0164c6dba65b",
+    "file_count": 7,
+    "total_bytes": 79523,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Academic Writing/target-journal-matcher/SKILL.md",
+        "sha256": "b67f6419499a23f0051cf24cce255623fbb33d6c73b25ecf0ac7403ba4a4eb46"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: references/journals.json. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "tf-target-gene-regulatory-network@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/tf-target-gene-regulatory-network",
+    "content_sha256": "32f72d389101872c46500fa831343544dc5bce6ca55a421d4b6b9183c1095d87",
+    "file_count": 43,
+    "total_bytes": 3530509,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/tf-target-gene-regulatory-network/SKILL.md",
+        "sha256": "442cb287a94cd74e4fdf4815a83f684a68abb414c318b3cc6db0f3974b97e856"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/tf-target-gene-regulatory-network/DESCRIPTION",
+        "sha256": "ab749f9823f3961876c85cf3c44a42ebab66718e5180f024f515633eb5f2bb30"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled DoRothEA RDS databases and generated RData/XLSX results require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "time-dependent-roc@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/time-dependent-roc",
+    "content_sha256": "61ac2b7546464699b53006727b39ec6790e7caf3300c1b49b074b9fe74c76a8d",
+    "file_count": 12,
+    "total_bytes": 98619,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/time-dependent-roc/SKILL.md",
+        "sha256": "d40f27d6982acfb7af58b98ab422babec4de97a7d2ab0e322bfdf8d4519bd5e2"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/time_roc_sample1.txt, tests/data/time_roc_sample2.txt, tests/data/time_roc_sample3.txt. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "tooluniverse-clinical-trial-design@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Protocol Design/tooluniverse-clinical-trial-design",
+    "content_sha256": "2f2fd9fd6c75b29522c720c918e0b146edba54cc07b80b6e4c3a22b526b535ae",
+    "file_count": 14,
+    "total_bytes": 188071,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Protocol Design/tooluniverse-clinical-trial-design/SKILL.md",
+        "sha256": "9afc9618555c33eb491f2d3bc3e145b0becb08c069a2ca7b861f736300b0ae4e"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled trial report and example implementation require individual provenance review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "umap-tsne-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/umap-tsne-analysis",
+    "content_sha256": "01e5be56bbc572a59ef5c60f2ff75feb7f9e1040a9ee4e44c0f7a4a5d7f7b074",
+    "file_count": 17,
+    "total_bytes": 944621,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/umap-tsne-analysis/SKILL.md",
+        "sha256": "ed77cd50292ee986e687afdabd48480a9994ebebd04f79cf2441393487fd519c"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: dependencies.lock.tsv, tests/data/group_info.csv, tests/data/otu_table.csv. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "unstructured-medical-text-miner@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/unstructured-medical-text-miner",
+    "content_sha256": "89ff9b4d1dfee8a45206c81866a3cee42f4aa3a0dcda41e68deb74a2dbc03012",
+    "file_count": 8,
+    "total_bytes": 53928,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/unstructured-medical-text-miner/SKILL.md",
+        "sha256": "8ac70e3309688503de3b514f1efe069254ce5a31aa13b2f106cbaabb6acfad6b"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The MIMIC-IV-oriented example discharge summary requires explicit provenance and redistribution evidence before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "variant-annotation@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/variant-annotation",
+    "content_sha256": "b4213df9a4d255a890fccaeaf44719c6230e96c01d67ad790f222b4404572fde",
+    "file_count": 8,
+    "total_bytes": 66439,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/variant-annotation/SKILL.md",
+        "sha256": "0e2bffde1ad4c4f81f8f98749477f043e946bd0f613050e89c432223017fc1b4"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled ACMG guideline material requires separate source and redistribution evidence review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "venue-templates@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Evidence Insight/venue-templates",
+    "content_sha256": "1fdee600ba59c830a40d090773ba0ddf7d6bd83f727f234753659a3aafdf3fa8",
+    "file_count": 22,
+    "total_bytes": 296983,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Evidence Insight/venue-templates/SKILL.md",
+        "sha256": "fc9bcd0ee7da8cec7d25af47ccd6feaaed67b0e3ab465032ea7914c4230c2f28"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled journal/conference/grant LaTeX templates and style guides require individual origin, applicable license and redistribution evidence review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "volcano-plot-labeler@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/volcano-plot-labeler",
+    "content_sha256": "1b9132e43a0f342225afa3db7a33f8eb952b83c9f5df8023aaf44ce5918d392b",
+    "file_count": 5,
+    "total_bytes": 41625,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/volcano-plot-labeler/SKILL.md",
+        "sha256": "45f2e00e2480d74f67f6fecf016566ca4b14bd06a1761ce0272c2560a472a9ff"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled scripts/main.py credits OpenClaw while SKILL.md credits AIPOCH; verify original attribution and required redistribution notices. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "western-blot-quantifier@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Data Analysis/western-blot-quantifier",
+    "content_sha256": "87a6eb25a8efe164a708ebed06256e5dfcb9f90812650cec34a61c54220124eb",
+    "file_count": 5,
+    "total_bytes": 27071,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Data Analysis/western-blot-quantifier/SKILL.md",
+        "sha256": "bfb972be1b3e4d704e182ccd3bb746fcc4a73dbeb224702e1cbeb7bfe7a9d72b"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: SKILL.md includes an OpenClaw Skills attribution; verify original source and required redistribution notices. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "wgcna-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/wgcna-analysis",
+    "content_sha256": "2bdeb420b2d8ea3b829205b7c45db888508ab4eb439f012e2989907b6fd3b0e0",
+    "file_count": 17,
+    "total_bytes": 781670,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/wgcna-analysis/SKILL.md",
+        "sha256": "9b087bf97049de780dd97f657446c31e63da8e836e5bc0ffeb856e5713c93347"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled tests/data/expression.csv and group.csv contain TCGA sample identifiers, expression values and assigned Case/Control groups. Establish dataset origins, transformations, group-label evidence and redistribution terms before publication. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "word-read-write@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "scientific-skills/Other/word-read-write",
+    "content_sha256": "3bb5dd0ffeca1082d562aab20a402ca71dabc8cd2d307c1038204e8b6b2de979",
+    "file_count": 59,
+    "total_bytes": 1146436,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "scientific-skills/Other/word-read-write/SKILL.md",
+        "sha256": "3f2e00a29a10e4964e04de92cff2b491f2ffe2c41d878755afcf1c3f2e8a1ad9"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled Office schemas and helper sources require individual third-party origin and redistribution notice review. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
+  },
+  "xgboost-analysis@1.0.0": {
+    "source_commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+    "source_path": "awesome-med-research-skills/Data Analysis/XGBoost-analysis",
+    "content_sha256": "13de6f8562f16adc1004722fed7f1ec6e5658aa736b6f000cc01abadcf1b4343",
+    "file_count": 12,
+    "total_bytes": 153486,
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "license_expression": "MIT",
+    "package_license_expression": "Unknown",
+    "license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+      },
+      {
+        "path": "awesome-med-research-skills/Data Analysis/XGBoost-analysis/SKILL.md",
+        "sha256": "82b2c924c184a88ab1c88d8e02eaad21f7fc3fef54053493c7598c0826930b4f"
+      }
+    ],
+    "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: Bundled assets require individual provenance review before selection: tests/data/dt_sample1.csv, tests/data/dt_sample2.csv, tests/data/dt_sample3.txt. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement.",
+    "review_notes": "Source/package validation and static payload inspection only; imported scripts/tests were not executed. The complete pinned payload, bundled examples, credits and notices are retained. Upstream self-assessment, when identity-valid, is preserved without treating it as independent approval."
   }
 }

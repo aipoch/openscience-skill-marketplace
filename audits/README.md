@@ -44,10 +44,10 @@ node scripts/import-full-aipoch-assessments.mjs \
 
 ### Temporary publication holds
 
-`skills/publication-holds.json` temporarily withholds **34 source records covering
-24 Skill names**, including same-name copies in AIPOCH, K-Dense and Synthetic
+`skills/publication-holds.json` temporarily withholds **32 source records covering
+23 Skill names**, including same-name copies in AIPOCH, K-Dense and Synthetic
 collections. All 776 records and their scores remain in `full-inclusion.json`:
-34 have `publication_status: temporarily-withheld`; the other 742 have
+32 have `publication_status: temporarily-withheld`; the other 744 have
 `publication_status: requires-review`, not an approval or installability claim.
 
 These are conservative release holds based on the supplied issue list, not newly
@@ -58,8 +58,10 @@ payload, license declaration or original report is rewritten to remove a blocker
 Production fetch/build/validation/signing entry points reject held source
 repository/directory pairs. New versions or commits do not automatically clear a
 hold. A follow-up reviewed change must resolve the evidence/dependency issue and
-remove the hold deliberately. The seven original-source holds resolved by PR #38 have been removed; all 452
-current production releases are outside the remaining holds,
+remove the hold deliberately. The seven original-source holds resolved by PR #38 have been removed. This batch
+explicitly lifts only the Medical `venue-templates` and Nature
+`nature-academic-search` holds under the maintainer-authorized Unknown policy; all 525
+selected production releases are outside the remaining holds,
 so this change does not remove existing installed packages or historical releases.
 
 ### Currently bound display subset

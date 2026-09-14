@@ -3,11 +3,14 @@
 An independent protocol and publication toolchain for individually distributed
 Open-Science Skills. The authoritative manifest contains **584 Skills**, resolved
 against a fixed upstream Git commit. [The release plan](skills/release_plan.json)
-selects **395 reviewed Skills**, including `research-proposal-generator` at `1.0.0`
-from a complete fixed Medical repository snapshot. The other 189 original members
+selects **465 reviewed Skills**. This batch adds 72 releases across original and
+provider intake under explicitly authorized `Unknown` license exceptions.
+The other 119 original members
 remain deferred. See [release selection](skills/README.md#release-selection).
 
-Every selected package has a byte-bound redistribution review. Deferred members
+Every selected package has a byte-bound review; unresolved license coverage is
+identified as `Unknown` with an explicit maintainer exception, not a permission
+grant. Deferred members
 require separate review before inclusion. See [GitHub Releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
 and [publication runs](https://github.com/aipoch/openscience-skill-marketplace/actions/workflows/publish.yml)
 for production status; a successful local build is not publication.
@@ -60,10 +63,10 @@ does not relicense them.
 
 ## Registered external sources
 
-The production configuration selects 395 original members and 58 independently
-reviewed provider releases, for **453 installable Skills**. Provider configurations
+The production configuration selects 465 original members and 60
+reviewed provider releases, for **525 installable Skills**. Provider configurations
 live in [authoring/production.json](authoring/production.json). The original
-584-member manifest is unchanged; its release plan retains 189 deferrals, including
+584-member manifest is unchanged; its release plan retains 119 deferrals, including
 alternate sources for some Skills already published through provider intake. See
 [provider publication](authoring/README.md#production-and-batch-publication) for
 source fetching, review requirements and incremental CDN publication.

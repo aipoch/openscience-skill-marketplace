@@ -10,21 +10,21 @@ import { readProductionProviders } from "../scripts/lib/production-providers.mjs
 import { parseMetadataJson } from "../scripts/lib/metadata-json.mjs";
 import { selectReleaseEntries } from "../scripts/lib/release-plan.mjs";
 
-test("34 provider-qualified records are withheld without deleting any of the 776 scores", async () => {
+test("32 provider-qualified records are withheld without deleting any of the 776 scores", async () => {
   const holds = await readPublicationHolds();
   const full = JSON.parse(await readFile("audits/full-inclusion.json"));
-  assert.equal(holds.length, 34);
-  assert.equal(new Set(holds.map((h) => h.id)).size, 24);
+  assert.equal(holds.length, 32);
+  assert.equal(new Set(holds.map((h) => h.id)).size, 23);
   assert.equal(full.entries.length, 776);
   assert.equal(
     full.entries.filter((e) => e.publication_status === "temporarily-withheld")
       .length,
-    34,
+    32,
   );
   assert.equal(
     full.entries.filter((e) => e.publication_status === "requires-review")
       .length,
-    742,
+    744,
   );
   for (const e of full.entries) {
     assert.equal(typeof e.evaluation.score, "number");

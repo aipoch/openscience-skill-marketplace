@@ -33,3 +33,26 @@ The package's content source remains the fixed AIPOCH aggregation repository;
 its author remains K-Dense Inc., its Marketplace publisher remains AIPOCH, and
 this notice points separately to the original K-Dense repository. Both the
 aggregator's root MIT notice and this original notice are retained in the ZIP.
+
+## Pending mixed-license evidence
+
+The following verbatim copies come from Creative Commons' official
+`cc-legal-tools-data` repository at commit
+`6d7046ff3146bbc034e88d9c87854e43d2a28e32`. Their raw SHA-256 filenames
+are bound by the unapproved evidence records in `skills/reviews.json`.
+
+| Material                                   | License copy                                                                                  | Original text                                                                                                                                                      |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `alphafold-db/out/P00520.cif` and `.pdb`   | [CC BY 4.0](9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411.txt)             | [Official pinned text](https://github.com/creativecommons/cc-legal-tools-data/blob/6d7046ff3146bbc034e88d9c87854e43d2a28e32/docs/licenses/by/4.0/legalcode.txt)    |
+| `bib-formatter/styles/*.csl` (three files) | [CC BY-SA 3.0 Unported](3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f.txt) | [Official pinned text](https://github.com/creativecommons/cc-legal-tools-data/blob/6d7046ff3146bbc034e88d9c87854e43d2a28e32/docs/licenses/by-sa/3.0/legalcode.txt) |
+
+The AlphaFold files retain DeepMind Technologies Limited's 2021 copyright
+notice, license declaration, citations and disclaimer. The CSL XML retains
+each style's title, source URI, authors, contributors and CC BY-SA 3.0 notice.
+Preserve those files unchanged; the additional legal texts supplement their
+existing notices. They do not replace the Skill's MIT declaration, relicense
+third-party components or establish permission for unrelated content.
+
+These records deliberately omit `reviewed_by` and `reviewed_on`. Both Skills
+remain deferred until mixed-license projection and package review are complete.
+Adding evidence does not select, approve or publish a release.
