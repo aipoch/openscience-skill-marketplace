@@ -181,6 +181,10 @@ the current listings must match the selected IDs, versions, resolved commits
 and source paths exactly. A selected member's missing review or source error still blocks the
 whole batch. No license or runtime approval is inferred from a deferral reason.
 
+The combined catalog also includes explicitly registered, reviewed external
+providers from `authoring/production.json`; their IDs cannot overlap this original
+authority. See [provider publication](../authoring/README.md#production-and-batch-publication).
+
 Only selected members appear in current Marketplace discovery. If a later plan
 defers a previously published member, its immutable release descriptors and
 shards remain in the signed history index; this does not uninstall or change the

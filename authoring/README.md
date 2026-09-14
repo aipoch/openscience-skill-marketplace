@@ -56,9 +56,10 @@ directory. Intake reads Git blobs and never executes imported code. It checks
 the existing package limits: 50 MiB per file, 128 MiB per Skill, 16,384 files,
 eight path segments and a 4 MiB `SKILL.md` preview. Symlinks, submodules, nested
 Skills, reserved App files and case-colliding paths are rejected. Content is not
-silently removed to fit a limit. Evidence outside the directory is linked in
-metadata; it is not automatically copied into the package. Providers must include
-any legally required notices in the distributed directory itself.
+silently removed to fit a limit. List required license notices in `license_files`,
+including evidence outside the Skill directory. After review, the builder retains
+those external notices under `LICENSES/<sha256>.txt` in the distributed package;
+files already inside the directory keep their original paths.
 
 Providers do **not** submit `eval_report_*`, `evaluation`, `inclusionTier`,
 `collection`, publisher identity, signatures, hashes or shard/download locations.

@@ -1,8 +1,9 @@
 # Batch publication and recovery
 
-The current release selects 394 reviewed Skills: all 392 previous members plus
-`hypothesis-generation` and `research-grants` at `1.0.0`. It explicitly defers
-190 other members. See [release selection](../skills/README.md#release-selection).
+The combined release selects 396 reviewed Skills: 394 original members plus
+`scientific-brainstorming` and `get-available-resources` from K-Dense at `1.0.0`.
+The original authority retains 190 deferrals. See
+[release selection](../skills/README.md#release-selection).
 Byte-bound redistribution reviews are recorded in
 `skills/reviews.json`; the seventeen assessment-omission records remain separate
 and are not license approvals. Production publication uses the protected main
@@ -10,6 +11,16 @@ workflow after explicit maintainer authorization. Check the
 [workflow runs](https://github.com/aipoch/openscience-skill-marketplace/actions/workflows/publish.yml)
 and [releases](https://github.com/aipoch/openscience-skill-marketplace/releases)
 for the actual publication outcome.
+
+## Registered provider sources
+
+`authoring/production.json` explicitly adds reviewed external provider releases to
+the original selection. The shared fetch command retrieves their fixed commits
+into separate `dist/providers/` Git caches; the shared build command uses the
+existing authoring review and package validation before combining candidates.
+Registration rejects duplicate IDs and any overlap with the original 584-member
+authority. The signing guard checks the complete combined source identities.
+See [provider publication](../authoring/README.md#production-and-batch-publication).
 
 ## Source commits within the original list
 
@@ -117,10 +128,9 @@ Publishing and mirror verification append the fixed path
 `/open-science/skill-marketplace/v1/` to the HTTPS origin. A trailing `/` on the
 origin is accepted; paths, credentials, queries and fragments are rejected.
 This follows Specialist's origin-plus-prefix configuration while keeping Skills
-under their own prefix. No real origin or distribution is selected by the tools.
-If the candidate origin `https://statics.aipoch.com` is approved later, discovery
-would be `https://statics.aipoch.com/open-science/skill-marketplace/v1/marketplace.json`;
-this is not a claimed live endpoint.
+under their own prefix. Production uses the approved origin and distribution
+from the protected environment; adding provider repositories does not change
+those settings or the discovery route.
 
 The production workflow:
 
@@ -128,10 +138,12 @@ The production workflow:
 2. Authenticates the previous signed root, reuses a verified cache for that exact
    revision when available, or reads JSON metadata in one Git batch and downloads
    each referenced ZIP once. All bytes are verified locally before reuse.
-3. Validates the release plan against the complete 584-member authority, then builds
-   every selected member after source, license-review and resource gates pass.
-4. Requires current listings to match exactly the selected IDs, versions and source
-   paths, then signs exact root bytes and verifies the configured key and fingerprint.
+3. Validates the original release plan against the complete 584-member authority
+   and reads the explicit provider register, then builds every selected member
+   after source, license-review and resource gates pass.
+4. Requires current listings to match exactly the combined selected IDs, versions
+   and source repository/commit/path, then signs exact root bytes and verifies
+   the configured key and fingerprint.
 5. Creates/reuses one draft catalog release and uploads missing assets without clobbering.
 6. Compares the candidate with its authenticated original parent. Reconciles all
    GitHub assets and only new CDN objects plus the snapshot pair, using up to four
