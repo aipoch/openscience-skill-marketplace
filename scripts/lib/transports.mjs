@@ -234,13 +234,23 @@ export function githubStore({
           "view",
           tag,
           "--json",
-          "assets,isDraft,targetCommitish",
+          "apiUrl,assets,isDraft,targetCommitish",
         ]),
       );
     } catch (e) {
       if (!missing(e)) throw e;
     }
     inspected = true;
+  }
+  function apiUrl(value, asset = false) {
+    const prefix = `https://api.github.com/repos/${repository}/releases/${asset ? "assets/" : ""}`;
+    if (
+      typeof value !== "string" ||
+      !value.startsWith(prefix) ||
+      !/^[1-9][0-9]*$/.test(value.slice(prefix.length))
+    )
+      throw new Error("invalid GitHub release API URL");
+    return value;
   }
   async function read(relative, { maxBytes = 64 * 1024 * 1024 } = {}) {
     await inspect();
@@ -249,26 +259,19 @@ export function githubStore({
     if (!asset) return undefined;
     if (asset.size > maxBytes)
       throw new Error("GitHub asset exceeds byte limit");
-    const directory = path.join(
-      temporary,
-      "download",
-      sha256(Buffer.from(relative)),
+    const bytes = await run(
+      "gh",
+      [
+        "api",
+        apiUrl(asset.apiUrl, true),
+        "--header",
+        "Accept: application/octet-stream",
+      ],
+      { maxBuffer: maxBytes },
     );
-    await mkdir(directory, { recursive: true });
-    await gh([
-      "release",
-      "download",
-      tag,
-      "--pattern",
-      name,
-      "--dir",
-      directory,
-      "--clobber",
-    ]);
-    const file = path.join(directory, name);
-    if ((await stat(file)).size > maxBytes)
+    if (bytes.length > maxBytes)
       throw new Error("GitHub asset exceeds byte limit");
-    return readFile(file);
+    return bytes;
   }
   return {
     read,
@@ -289,7 +292,9 @@ export function githubStore({
           "--notes",
           "Immutable Open-Science Skill catalog snapshot.",
         ]);
-        release = { assets: [], isDraft: true, targetCommitish: sourceCommit };
+        inspected = false;
+        await inspect();
+        if (!release) throw new Error("created GitHub release is unavailable");
       }
       const old = await read(relative);
       if (old) {
@@ -305,8 +310,32 @@ export function githubStore({
       const file = path.join(temporary, "upload", name);
       await mkdir(path.dirname(file), { recursive: true });
       await writeFile(file, bytes);
-      await gh(["release", "upload", tag, file]);
-      release.assets.push({ name });
+      const uploadUrl =
+        apiUrl(release.apiUrl).replace("api.github.com", "uploads.github.com") +
+        `/assets?name=${encodeURIComponent(name)}`;
+      const uploaded = JSON.parse(
+        await run("gh", [
+          "api",
+          uploadUrl,
+          "--method",
+          "POST",
+          "--input",
+          file,
+          "--header",
+          "Content-Type: application/octet-stream",
+        ]),
+      );
+      if (
+        uploaded.name !== name ||
+        uploaded.size !== bytes.length ||
+        uploaded.state !== "uploaded"
+      )
+        throw new Error("invalid GitHub upload response");
+      release.assets.push({
+        name,
+        size: uploaded.size,
+        apiUrl: apiUrl(uploaded.url, true),
+      });
     },
     async writeRootSignature(bytes) {
       signatureBytes = bytes;

@@ -66,6 +66,15 @@ snapshots. The tool caps a snapshot at 1,000 assets and fails if that limit is
 exceeded. Changing the GitHub layout requires a separate consumer-contract decision;
 this optimization adds no transport index or App requirement.
 
+GitHub transfers cache the release metadata once (and refresh once after draft
+creation), then upload to the release ID and read back each exact asset API URL.
+This avoids re-listing every release asset for each `gh release download` or
+upload invocation. Upload responses must match the expected name, size and
+uploaded state; raw read-back bytes still must match before promotion. API URLs
+are restricted to the configured GitHub repository. Quota or transfer failures
+leave the resumable draft and stable catalog intact; wait for quota recovery
+before retrying a rate-limited production run.
+
 ## Workflow
 
 `publish.yml` is manually dispatched and defaults to rehearsal only. Its reusable
