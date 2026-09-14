@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "hypothesis-generation",
+    "version": "1.0.0",
+    "display_name": "hypothesis-generation",
+    "summary": "Structured scientific hypothesis formulation from observations; use when you have experimental observations or preliminary data and need testable hypotheses with predictions, mechanisms, and validation experiments.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+      "path": "scientific-skills/Protocol Design/hypothesis-generation"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/scientific-skills/Protocol%20Design/hypothesis-generation/hypothesis-generation_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "a0e63f29b3f26615c7bb835321ca496ea76fd4ec5075dec903f0a9efbd4f206c",
+    "file_count": 10,
+    "uncompressed_bytes": 122598
+  },
+  "artifact": {
+    "path": "shards/de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20.zip",
+    "sha256": "de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20",
+    "bytes": 166464,
+    "skill_path": "hypothesis-generation"
+  }
+}

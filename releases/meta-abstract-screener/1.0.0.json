@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-abstract-screener",
+    "version": "1.0.0",
+    "display_name": "meta-abstract-screener",
+    "summary": "Screens research papers based on title/abstract and inclusion criteria, providing a structured Yes/No/Maybe decision. Use when you need to filter literature for meta-analysis or systematic reviews.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+      "path": "scientific-skills/Data Analysis/meta-abstract-screener"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/scientific-skills/Data%20Analysis/meta-abstract-screener/meta-abstract-screener_audit_result_v2.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 87,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "19efd0a63d165924e83a925a6dcea7a008d83489fa514ebf4e0bb7ea18e3d4b2",
+    "file_count": 5,
+    "uncompressed_bytes": 23892
+  },
+  "artifact": {
+    "path": "shards/de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20.zip",
+    "sha256": "de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20",
+    "bytes": 166464,
+    "skill_path": "meta-abstract-screener"
+  }
+}

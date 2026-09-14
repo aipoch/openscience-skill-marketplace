@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-screening-fulltext",
+    "version": "1.0.0",
+    "display_name": "meta-screening-fulltext",
+    "summary": "Screen full-text papers against inclusion/exclusion criteria, with optional PubMed metadata check using PMID. Use when the user needs to evaluate a paper for a meta-analysis.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+      "path": "scientific-skills/Data Analysis/meta-screening-fulltext"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 85,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/scientific-skills/Data%20Analysis/meta-screening-fulltext/meta-screening-fulltext_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 77,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "d909e9cb203709a2a61ba227042c8edc77b6cb554d9c340ef60ff9b3b6089639",
+    "file_count": 5,
+    "uncompressed_bytes": 23856
+  },
+  "artifact": {
+    "path": "shards/de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20.zip",
+    "sha256": "de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20",
+    "bytes": 166464,
+    "skill_path": "meta-screening-fulltext"
+  }
+}

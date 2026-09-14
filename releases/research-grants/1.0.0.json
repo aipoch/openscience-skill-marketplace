@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "research-grants",
+    "version": "1.0.0",
+    "display_name": "research-grants",
+    "summary": "Write competitive research proposals for NSF, NIH, DOE, DARPA, and Taiwan's NSTC when you need agency-compliant narratives, budgets, and review-criteria alignment for a specific solicitation/FOA/BAA.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/research-grants"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/f4b05302fa4e2c440e3853cd094f4ddeb78ffc7f/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Protocol%20Design/research-grants/research-grants_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 84,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "915f8368cb75ee7801a28b71556aaf646262c5cb2beafa7311ee4a6db0f20fee",
+    "file_count": 15,
+    "uncompressed_bytes": 236626
+  },
+  "artifact": {
+    "path": "shards/de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20.zip",
+    "sha256": "de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20",
+    "bytes": 166464,
+    "skill_path": "research-grants"
+  }
+}

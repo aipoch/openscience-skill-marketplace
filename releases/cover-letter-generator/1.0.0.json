@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "cover-letter-generator",
+    "version": "1.0.0",
+    "display_name": "cover-letter-generator",
+    "summary": "Generates a journal-ready cover letter from manuscript metadata, highlights, and journal-fit notes. Use when preparing an academic submission package and you need editor-facing language that clearly states novelty, relevance, declarations, and corresponding-author details.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+      "path": "scientific-skills/Academic Writing/cover-letter-generator"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/scientific-skills/Academic%20Writing/cover-letter-generator/cover-letter-generator_audit_result_v1.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 87.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "1f200ad9960ee54df9a2cf36422bf13dd0e81043d38fa8ea2f4aba781a67c736",
+    "file_count": 5,
+    "uncompressed_bytes": 20645
+  },
+  "artifact": {
+    "path": "shards/de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20.zip",
+    "sha256": "de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20",
+    "bytes": 166464,
+    "skill_path": "cover-letter-generator"
+  }
+}

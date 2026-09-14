@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "basic-research-design",
+    "version": "1.0.0",
+    "display_name": "basic-research-design",
+    "summary": "A biomedical research topic designer that generates progressive experimental subtitles and detailed research outlines based on a given subject. Use when the user wants to design a research proposal, outline experiments for a topic, or structure a biomedical study.",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d915031495e1c755d272c3de817ee3fc012e8b7b",
+      "path": "scientific-skills/Protocol Design/basic-research-design"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 87,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d915031495e1c755d272c3de817ee3fc012e8b7b/scientific-skills/Protocol%20Design/basic-research-design/basic-research-design_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 85,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 88.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "cef22ffbf901b1193c74aefb103d93abb2acf8ca98a1e591594ebf36f404ee44",
+    "file_count": 4,
+    "uncompressed_bytes": 21340
+  },
+  "artifact": {
+    "path": "shards/de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20.zip",
+    "sha256": "de33edee35bb8ab7aef49234e84a13f7363966440d4d5f381ae005f9e13edd20",
+    "bytes": 166464,
+    "skill_path": "basic-research-design"
+  }
+}
