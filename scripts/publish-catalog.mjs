@@ -9,6 +9,7 @@ import {
   assertReleaseSelection,
 } from "./lib/release-plan.mjs";
 import { validateManifest } from "./lib/catalog.mjs";
+import { readProductionProviders } from "./lib/production-providers.mjs";
 import { parseArgs } from "node:util";
 import { readFile, writeFile, mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
@@ -72,7 +73,8 @@ const selected = selectReleaseEntries(
   manifest.entries,
   config.source,
 );
-assertReleaseSelection(candidate.root, selected, config.source);
+const providers = await readProductionProviders(manifest.entries);
+assertReleaseSelection(candidate.root, selected, config.source, providers);
 const state = await publishedState();
 const metadata = state ? publishedMetadata(state) : new Map();
 const history = await publicationParent(candidate, metadata, pin);

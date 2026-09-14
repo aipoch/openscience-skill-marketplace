@@ -17,6 +17,11 @@ import {
 } from "../scripts/lib/release-plan.mjs";
 import { readBundle } from "../scripts/lib/bundle.mjs";
 import { signRoot } from "../scripts/lib/signing.mjs";
+import {
+  inspectSubmission,
+  submissionSnapshot,
+} from "../scripts/lib/authoring.mjs";
+import { providerDirectory } from "../scripts/lib/production-providers.mjs";
 
 const source = {
   repository: "https://github.com/test/source",
@@ -97,6 +102,11 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
     const workspace = join(directory, "input");
     await mkdir(upstream);
     await mkdir(join(workspace, "skills"), { recursive: true });
+    await mkdir(join(workspace, "authoring"));
+    await writeFile(
+      join(workspace, "authoring/production.json"),
+      metadataJsonBytes({ schemaVersion: 1, releases: [] }),
+    );
     const git = (cwd, ...args) =>
       execFileSync("git", ["-C", cwd, ...args], { encoding: "utf8" }).trim();
     const manifestBytes = await readFile(
@@ -187,6 +197,7 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
         join(workspace, "skills/reviews.json"),
         metadataJsonBytes(reviews),
       );
+    const providerFetchEnv = {};
     const run = (script, args = [], env = {}) =>
       spawnSync(
         process.execPath,
@@ -194,7 +205,11 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
           fileURLToPath(new URL(`../scripts/${script}.mjs`, import.meta.url)),
           ...args,
         ],
-        { cwd: workspace, encoding: "utf8", env: { ...process.env, ...env } },
+        {
+          cwd: workspace,
+          encoding: "utf8",
+          env: { ...process.env, ...providerFetchEnv, ...env },
+        },
       );
     const approve = (entry) => {
       const result = run("review-input", [
@@ -275,10 +290,78 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
     const missing = build(join(directory, "missing"), [], checkout);
     assert.notEqual(missing.status, 0);
     assert.match(missing.stderr, /cat-file|object|revision/i);
+    const providerSource = join(directory, "provider-source");
+    await mkdir(join(providerSource, "skills/provider-fixture"), {
+      recursive: true,
+    });
+    await writeFile(
+      join(providerSource, "skills/provider-fixture/SKILL.md"),
+      skill("provider-fixture", "Separate provider source"),
+    );
+    await writeFile(
+      join(providerSource, "LICENSE"),
+      "Test-only provider license",
+    );
+    git(providerSource, "init", "--quiet");
+    const providerRepository = "https://github.com/test/provider";
+    git(providerSource, "remote", "add", "origin", providerRepository);
+    git(providerSource, "add", ".");
+    git(
+      providerSource,
+      "-c",
+      "user.name=Test Fixture",
+      "-c",
+      "user.email=fixture@example.com",
+      "-c",
+      "commit.gpgsign=false",
+      "commit",
+      "--quiet",
+      "-m",
+      "test fixture",
+    );
+    const provider = {
+      schemaVersion: 1,
+      id: "provider-fixture",
+      version: "1.0.0",
+      category: "Other",
+      source: {
+        repository: providerRepository,
+        commit: git(providerSource, "rev-parse", "HEAD"),
+        path: "skills/provider-fixture",
+      },
+      licenseFiles: ["LICENSE"],
+    };
+    await writeFile(
+      join(workspace, "authoring/production.json"),
+      metadataJsonBytes({ schemaVersion: 1, releases: [provider] }),
+    );
+    const providerReview = inspectSubmission(
+      provider,
+      submissionSnapshot(providerSource, provider),
+    ).reviewInput;
+    reviews["provider-fixture@1.0.0"] = {
+      ...providerReview,
+      reviewedBy: "Test Fixture",
+      reviewedOn: "2026-09-13",
+    };
+    await saveReviews();
+    Object.assign(providerFetchEnv, {
+      GIT_CONFIG_COUNT: "1",
+      GIT_CONFIG_KEY_0: `url.${pathToFileURL(providerSource).href}.insteadOf`,
+      GIT_CONFIG_VALUE_0: providerRepository,
+    });
     const fetched = run("fetch-selected-sources", ["--source", checkout]);
     assert.equal(fetched.status, 0, fetched.stderr);
     assert.match(fetched.stdout, /2 fixed source commits/);
     assert.equal(git(checkout, "cat-file", "-t", repaired), "commit");
+    const providerCache = providerDirectory(
+      join(workspace, "dist/providers"),
+      providerRepository,
+    );
+    assert.equal(
+      git(providerCache, "cat-file", "-t", provider.source.commit),
+      "commit",
+    );
     assert.equal(git(checkout, "rev-parse", "HEAD"), baseline);
     const again = run("fetch-selected-sources", ["--source", checkout]);
     assert.equal(again.status, 0, again.stderr);
@@ -294,7 +377,21 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
       manifest.entries,
       config.source,
     );
-    assertReleaseSelection(built.root, selected, config.source);
+    assertReleaseSelection(built.root, selected, config.source, [provider]);
+    assert.equal(built.root.skills.length, 3);
+    assert.deepEqual(
+      built.root.skills.find((s) => s.id === provider.id).source,
+      provider.source,
+    );
+    for (const field of ["repository", "commit", "path"]) {
+      const tampered = structuredClone(built.root);
+      tampered.skills.find((s) => s.id === provider.id).source[field] = "wrong";
+      assert.throws(
+        () =>
+          assertReleaseSelection(tampered, selected, config.source, [provider]),
+        /differs from release selection/,
+      );
+    }
     const old = built.root.skills.find((s) => s.id === alpha.id);
     const added = built.root.skills.find((s) => s.id === beta.id);
     assert.deepEqual(old, history.root.skills[0]);
@@ -313,9 +410,32 @@ test("two Git snapshots flow through review, fetch, build, signed history and pu
     const stale = structuredClone(built.root);
     stale.skills.find((s) => s.id === beta.id).source.commit = baseline;
     assert.throws(
-      () => assertReleaseSelection(stale, selected, config.source),
+      () => assertReleaseSelection(stale, selected, config.source, [provider]),
       /differs from release selection/,
     );
+    git(
+      providerCache,
+      "remote",
+      "set-url",
+      "origin",
+      "https://github.com/test/wrong-source",
+    );
+    assert.match(
+      run("fetch-selected-sources", ["--source", checkout]).stderr,
+      /provider cache origin differs/,
+    );
+    git(providerCache, "remote", "set-url", "origin", providerRepository);
+    delete reviews["provider-fixture@1.0.0"];
+    await saveReviews();
+    assert.match(
+      build(join(directory, "unreviewed-provider")).stderr,
+      /missing maintainer review/,
+    );
+    reviews["provider-fixture@1.0.0"] = {
+      ...providerReview,
+      reviewedBy: "Test Fixture",
+      reviewedOn: "2026-09-13",
+    };
     reviews[`${beta.id}@${beta.version}`].sourceCommit = baseline;
     await saveReviews();
     assert.match(

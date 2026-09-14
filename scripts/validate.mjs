@@ -5,6 +5,7 @@ import { selectReleaseEntries } from "./lib/release-plan.mjs";
 import { validateManifest } from "./lib/catalog.mjs";
 import { readBundle } from "./lib/bundle.mjs";
 import { assertSource } from "./lib/common.mjs";
+import { readProductionProviders } from "./lib/production-providers.mjs";
 const config = parseMetadataJson(await readFile("marketplace.config.json"));
 assertSource(config.source);
 const manifest = parseMetadataJson(await readFile("skills/manifest.json"));
@@ -28,6 +29,7 @@ const selected = selectReleaseEntries(
   config.source,
 );
 const fixtures = await readBundle("protocol/fixtures/snapshot");
+const providers = await readProductionProviders(manifest.entries);
 assert.equal(fixtures.root.skills.length, 2);
 const scored = fixtures.root.skills.find(
   (s) => s.id === "primary-plan-recommender",
@@ -40,5 +42,5 @@ assert.equal(
   false,
 );
 console.log(
-  `Validated 584-member manifest, fixed-source audit, ${selected.length} selected / ${manifest.entries.length - selected.length} deferred members, and scored/unscored fixtures. ${report.entries.filter((e) => e.issues.length).length} members have source blockers; release reviews remain required.`,
+  `Validated 584-member manifest, fixed-source audit, ${selected.length} selected / ${manifest.entries.length - selected.length} deferred original members, ${providers.length} production provider releases, and scored/unscored fixtures. ${report.entries.filter((e) => e.issues.length).length} members have source blockers; release reviews remain required.`,
 );

@@ -167,23 +167,49 @@ The original single-manifest command remains valid.
 
 ## Production and batch publication
 
-This command does not sign, upload, add catalog members or change production
-configuration. The original 584-member manifest and all pending review/source
-blockers remain intact. No real provider submissions are included in this change.
-Migrating that manifest or admitting new members needs a separate inclusion
-decision. A successful local build is not production eligibility.
+`intake:skill` produces unsigned local artifacts only. Production enrollment is
+explicitly maintained in [`production.json`](production.json): `schema_version: 1`
+and a `releases` array of the same strict release-config objects described above.
+The register currently selects `scientific-brainstorming` and
+`get-available-resources` from the fixed K-Dense source, alongside the 394 selected
+original members. Review records remain in `skills/reviews.json` and bind every
+provider's manifest, source and license bytes. A registration without approved
+review evidence fails the build.
 
-The existing [publication workflow](../docs/publication.md) publishes a whole
-catalog snapshot in one batch and creates bounded shards automatically. Provider
-batch intake prepares local review material and unsigned catalogs; wiring
-submissions into the production catalog still requires a separate inclusion
-decision and is not performed by this command.
+Provider IDs must be unique and disjoint from all 584 original manifest members,
+including deferred members. Two IDs cannot register the same provider directory.
+Do not rename an existing Skill to evade this gate: check semantic duplicates
+and original-name aliases during maintainer review. The original authority and
+its deferrals remain unchanged. Files under `authoring/submissions/` are never
+automatically enrolled. Adding a new provider remains a maintainer decision.
 
-The Skill CDN route prefix remains `/open-science/skill-marketplace/v1/`.
-If the Specialist origin is approved for Skills, the proposed discovery URL is
+The shared validation/publication commands read this explicit register:
+
+```bash
+node scripts/fetch-selected-sources.mjs --source dist/upstream
+npm run build:catalog -- --source dist/upstream
+```
+
+Fetch stores each provider's Git objects under `dist/providers/<repository-sha256>`
+and verifies its configured origin and fixed commits, without checking out or
+executing its files. A cached commit is reused. Both commands accept
+`--providers /path/to/provider-cache` to change that local cache directory.
+Repository-specific clones prevent one source from being mistaken for another.
+Ordinary Git transport URL rewrites are allowed; identity checks use the declared
+remote URL before transport rewriting.
+
+The builder combines the original selection with reviewed provider candidates in
+one catalog. Publication checks the exact combined IDs, versions and source
+repository/commit/path before signing. The protected main workflow and production
+authorization are still required. The existing signed-history build and incremental
+publication preserve previously released bytes and upload only new immutable
+objects plus the updated catalog metadata.
+
+Consumers continue reading
 `https://statics.aipoch.com/open-science/skill-marketplace/v1/marketplace.json`.
-That is a proposal, **not a live endpoint**. This change performs no CDN writes,
-does not configure an origin/distribution, and does not change publication routing.
+Provider origins do not change the Skill Protocol v1 download routes or require
+an App model change. Provider payloads are packaged into the same bounded CDN
+ZIP shards as original members.
 
 ## Compatibility and storage
 
@@ -197,7 +223,7 @@ remain camelCase after boundary conversion, and filenames are unchanged.
 
 Provider input is a new authoring contract, separate from the unchanged public
 Skill Protocol v1. It adds no categories, App installation states, database
-migrations or historical compatibility adapter. Metadata may be committed to
+migrations or historical compatibility adapter. The production register and approved review metadata are committed to
 Marketplace Git; payloads stay upstream; generated review material and local
 bundles stay local until deliberately reviewed and promoted. Do not commit local
 plans, generated bundles, credentials or fabricated approval records.
@@ -207,8 +233,8 @@ plans, generated bundles, credentials or fabricated approval records.
 Providers and authors do not have to be AIPOCH. Keep the actual upstream
 repository, immutable commit/path and original author credits in the submission;
 the Marketplace config supplies its separate publisher identity. Provider intake
-supports multiple source repositories for reviewed unsigned local builds, but
-does not automatically add them to the production manifest.
+supports multiple source repositories. Production inclusion requires explicit
+registration and approval through the production workflow above.
 
 Include all required third-party notices in the submitted Git snapshot and list
 them in `license_files`. The supplemental copies used by the historical catalog

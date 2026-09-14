@@ -49,11 +49,12 @@ export function validateReleaseConfig(manifest) {
 
 // The local clone is operator-supplied. Check its origin to catch wrong-clone
 // mistakes; this is not proof of ownership or redistribution permission.
+// Read the configured identity before Git applies transport URL rewrites.
 export function submissionSnapshot(repository, manifest) {
   validateReleaseConfig(manifest);
   const origin = execFileSync(
     "git",
-    ["-C", repository, "remote", "get-url", "origin"],
+    ["-C", repository, "config", "--get", "remote.origin.url"],
     { encoding: "utf8" },
   ).trim();
   const normalized = origin

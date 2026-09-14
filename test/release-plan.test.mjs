@@ -20,6 +20,7 @@ import { sha256 } from "../scripts/lib/common.mjs";
 import { readBundle } from "../scripts/lib/bundle.mjs";
 import { toAppEntry } from "../scripts/lib/protocol.mjs";
 import { makeCandidate } from "./fixtures.mjs";
+import { parseProductionProviders } from "../scripts/lib/production-providers.mjs";
 
 const source = {
   repository: "https://github.com/test/source",
@@ -653,12 +654,19 @@ test("committed release retains prior members and pins the repaired skill separa
   const reviews = parseMetadataJson(
     await readFile(new URL("../skills/reviews.json", import.meta.url)),
   );
+  const providers = parseProductionProviders(
+    await readFile(new URL("../authoring/production.json", import.meta.url)),
+    manifest.entries,
+  );
   assert.deepEqual(
     Object.entries(reviews)
       .filter(([, review]) => review.reviewedBy)
       .map(([key]) => key)
       .sort(),
-    selectedIds.map((id) => `${id}@1.0.0`).sort(),
+    [
+      ...selected.map(({ id, version }) => `${id}@${version}`),
+      ...providers.map(({ id, version }) => `${id}@${version}`),
+    ].sort(),
   );
   assert.equal(reviews["abstract-trimmer@1.0.0"].reviewedBy, "ewen-poch");
   assert.throws(
@@ -734,6 +742,11 @@ test("catalog CLI uses the explicit plan and fails the whole selected batch when
       source,
       publisher: inputCandidates[0].skill.publisher,
     };
+    await mkdir(join(inputDirectory, "authoring"), { recursive: true });
+    await writeFile(
+      join(inputDirectory, "authoring/production.json"),
+      metadataJsonBytes({ schemaVersion: 1, releases: [] }),
+    );
     await writeFile(
       join(inputDirectory, "marketplace.config.json"),
       metadataJsonBytes(config),
