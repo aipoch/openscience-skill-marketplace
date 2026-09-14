@@ -8,5 +8,5 @@
     "commit": "558eae555d64e09b152efc449ca274bbd7747947",
     "path": "skills/nature-literature-pipeline"
   },
-  "license_files": ["LICENSE"]
+  "license_files": ["skills/nature-literature-pipeline/SKILL.md", "LICENSE"]
 }

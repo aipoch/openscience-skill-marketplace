@@ -6474,5 +6474,166 @@
     "reviewed_by": "Codex",
     "reviewed_on": "2026-09-14",
     "exception_reason": "Preserve the original per-Skill Unknown declaration without inferring a different expression. The original K-Dense LICENSE.md at this fixed commit grants MIT redistribution of the source and associated documentation and retains Copyright (c) 2025 K-Dense Inc. This is the intact original source behind the PR #32 Synthetic Sciences copy: every reference/script matches byte-for-byte, and SKILL.md differs only in the copied category and author metadata. Use the original K-Dense author and complete MIT notice rather than the copy with replaced attribution. The package contains the original USPTO guide, four API references and three query helpers; no patent corpus or user credentials are bundled. Provider-specific credentials, network access and endpoint availability remain runtime prerequisites; imported API clients were not executed."
+  },
+  "datamol@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/datamol",
+    "manifest_sha256": "7d21eb7e80e367a47443f40f241bbe633afe85d5d7dd9cd14dbcc620d7e5f7d6",
+    "content_sha256": "f764b608c932112be2544e02cd610af6106f3287637f0d7a97cb9ba3e4a9be71",
+    "file_count": 9,
+    "total_bytes": 57300,
+    "license_expression": "Apache-2.0 license",
+    "license_files": [
+      {
+        "path": "skills/datamol/SKILL.md",
+        "sha256": "41062cea6b8a15e33910984321e6572e189df539b5303af5fe258df6af449ff2"
+      },
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "lamindb@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/lamindb",
+    "manifest_sha256": "884459a0f0821e181d427e4b814c9b80063db57ed3918ef383c1df0b9a27b51b",
+    "content_sha256": "4094e3ea07d3a941b3d9bea0a0f6293c1c477a4103a6f73fb54ef51ffcb2f515",
+    "file_count": 7,
+    "total_bytes": 93189,
+    "license_expression": "Apache-2.0 license",
+    "license_files": [
+      {
+        "path": "skills/lamindb/SKILL.md",
+        "sha256": "68822136d375fd36aac118081b82443d7062e9ea310d49a692a910b05329ac1b"
+      },
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "scanpy@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/scanpy",
+    "manifest_sha256": "b4e7f039117a1d7cca478206f190cdf6abda722e2327b525ae8cb23cf0444180",
+    "content_sha256": "0cdde7f358dac85b9fd660d761f204288c5f4f7c8c7f59fff67820a7729d2981",
+    "file_count": 25,
+    "total_bytes": 121763,
+    "license_expression": "BSD-3-Clause",
+    "license_files": [
+      {
+        "path": "skills/scanpy/SKILL.md",
+        "sha256": "3ca2db22fb47dff7f49504816dba3f4600e1290c4731459b44355837955ed9ba"
+      },
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "deeptools@1.0.0": {
+    "source_repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "source_commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "source_path": "skills/deeptools",
+    "manifest_sha256": "1b162c486ff0e82d32db5ea84bf1dd228432ccc7cb42db6a3d42b85189a3ea24",
+    "content_sha256": "21180cfe178532cd6c95e5df851964adba9b9499302d49ef4f94f53c326a61ce",
+    "file_count": 9,
+    "total_bytes": 91958,
+    "license_expression": "BSD license",
+    "license_files": [
+      {
+        "path": "skills/deeptools/SKILL.md",
+        "sha256": "2724906bdf23e60fe15aa5e7bb9af2bf36cab82d9e8640de847a69523c0a334a"
+      },
+      {
+        "path": "LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Use the original K-Dense source and declared K-Dense Inc. author, retaining its complete MIT copyright/permission notice. These are guides, examples and helpers, not redistributions of the referenced scientific libraries. Scientific libraries are external runtime prerequisites. The literal BSD license label does not identify a BSD variant; publish that exact upstream label without claiming BSD-2-Clause or BSD-3-Clause. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "nature-experiment-log@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-experiment-log",
+    "manifest_sha256": "673669e9eebeb02ef0e8d92711a1adbb9c932cd13b9c7a59266c6943e340e35b",
+    "content_sha256": "f025dceb01ab720ba1cd5c56e08726d3a5b9ddc1c5d341a255b67b3fb68a7458",
+    "file_count": 11,
+    "total_bytes": 20493,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "skills/nature-experiment-log/SKILL.md",
+        "sha256": "1f7fffcbc950d4f60fcb5ad9f2aabe82246ebbd83bf29621a0e90c9ff4ec4b8b"
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Preserve the declared Skill author and the original MIT declaration, together with the repository Apache-2.0 notice. The package contains its own workflow references/templates; messaging, scheduling, document-export and literature-service integrations require a configured host environment. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "nature-literature-pipeline@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-literature-pipeline",
+    "manifest_sha256": "22bf063629994fb63edb4c0ef48842c916520a695a82ae78358add2fea42d6ca",
+    "content_sha256": "b5e07b292f9e0476e918af4feac6cbfdad4dfe8680ad44b5c6284b2ae9af3a1a",
+    "file_count": 12,
+    "total_bytes": 36879,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "skills/nature-literature-pipeline/SKILL.md",
+        "sha256": "1dcaa692457ec9c2be409cb7777f834a2db833788b2e9b680baf0e961126b01a"
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Preserve the declared Skill author and the original MIT declaration, together with the repository Apache-2.0 notice. The package contains its own workflow references/templates; messaging, scheduling, document-export and literature-service integrations require a configured host environment. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
+  },
+  "researchwrite@1.0.0": {
+    "source_repository": "https://github.com/Yuan1z0825/nature-skills",
+    "source_commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "source_path": "skills/nature-proposal-writer",
+    "manifest_sha256": "4433f409d71b22db8b35daacd2195c4b9a07334d9b1f8662591051ad3b17f901",
+    "content_sha256": "b2d29abc66ed159f20e2932351fb46b04fca0c74ef1f4f199cff82a6d23cd9f9",
+    "file_count": 34,
+    "total_bytes": 102937,
+    "license_expression": "MIT",
+    "license_files": [
+      {
+        "path": "skills/nature-proposal-writer/SKILL.md",
+        "sha256": "aed7568f8e9fc99e7dad2d2257d2beadd47570b875071cadb29406f2c84a9c2c"
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "reviewed_by": "Codex",
+    "reviewed_on": "2026-09-14",
+    "exception_reason": "Use the explicit per-Skill SKILL.md declaration as the primary license evidence, as directed by the maintainer; a different repository-root license does not override that declaration. Preserve the declaration verbatim and retain the unchanged root notice as supplemental upstream notice, not as a replacement expression. Both evidence files and the complete package are bound to this fixed source commit and their exact hashes. Preserve the declared Skill author and the original MIT declaration, together with the repository Apache-2.0 notice. The package contains its own workflow references/templates; messaging, scheduling, document-export and literature-service integrations require a configured host environment. Static source inspection only; no imported programs or remote services were executed and no independent safety evaluation is asserted."
   }
 }
