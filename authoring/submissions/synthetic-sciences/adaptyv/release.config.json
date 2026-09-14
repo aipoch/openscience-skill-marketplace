@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "provider": {
+    "id": "synthetic-sciences",
+    "name": "Synthetic Sciences",
+    "url": "https://github.com/synthetic-sciences"
+  },
+  "id": "adaptyv",
+  "version": "1.0.0",
+  "category": "Other",
+  "source": {
+    "repository": "https://github.com/synthetic-sciences/openscience",
+    "commit": "aa243cfa3ad3605bc7a66b439766e14e6fb638e2",
+    "path": "backend/cli/skills/ml-training/adaptyv"
+  },
+  "license_files": ["LICENSE", "NOTICE"]
+}

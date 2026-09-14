@@ -13,7 +13,21 @@
     "license_files"
   ],
   "properties": {
-    "schema_version": { "const": 1 },
+    "schema_version": { "enum": [1, 2] },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "url"],
+      "properties": {
+        "id": { "$ref": "../protocol/common.schema.json#/$defs/id" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "url": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+$",
+          "maxLength": 4096
+        }
+      }
+    },
     "id": { "$ref": "../protocol/common.schema.json#/$defs/id" },
     "version": {
       "$ref": "../protocol/common.schema.json#/$defs/skill/properties/version"
@@ -48,5 +62,12 @@
       "uniqueItems": true,
       "items": { "type": "string", "format": "safe-path" }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "schema_version": { "const": 1 } } },
+      "then": { "properties": { "provider": false } },
+      "else": { "properties": { "provider": {} }, "required": ["provider"] }
+    }
+  ]
 }

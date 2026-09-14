@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "provider": {
+    "id": "yuan1z0825",
+    "name": "Yuan1z0825",
+    "url": "https://github.com/Yuan1z0825"
+  },
+  "id": "nature-reader",
+  "version": "1.0.0",
+  "category": "Evidence Insight",
+  "source": {
+    "repository": "https://github.com/Yuan1z0825/nature-skills",
+    "commit": "558eae555d64e09b152efc449ca274bbd7747947",
+    "path": "skills/nature-reader"
+  },
+  "license_files": ["LICENSE"]
+}

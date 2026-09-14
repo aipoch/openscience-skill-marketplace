@@ -21,6 +21,7 @@ import {
   validateReleaseConfig,
   inspectSubmission,
   prepareSubmission,
+  submissionKey,
   submissionSnapshot,
 } from "../scripts/lib/authoring.mjs";
 import { buildCatalog, loadCatalog } from "../scripts/lib/build.mjs";
@@ -164,16 +165,24 @@ test("batch CLI combines explicit sources deterministically and rejects incomple
     assert.match(result.stderr, /required|matching --source/);
     assert.equal(existsSync(rejectedOutput), false);
   }
-  rejectBuild([...inputs, inputs[0]], /duplicate current Skill ID/);
+  rejectBuild([...inputs, inputs[0]], /duplicate submission identity/);
   const anotherVersion = join(directory, "another-version.json");
   writeFileSync(
     anotherVersion,
     metadataJsonBytes({ ...inputs[0].manifest, version: "2.0.0" }),
   );
-  rejectBuild(
-    [...inputs, { ...inputs[0], path: anotherVersion }],
-    /duplicate current Skill ID/,
-  );
+  const versioned = [...inputs, { ...inputs[0], path: anotherVersion }];
+  const versionedInspection = cli(...args(versioned));
+  assert.equal(versionedInspection.status, 0, versionedInspection.stderr);
+  const versionedReviews = parseMetadataJson(versionedInspection.stdout);
+  for (const review of Object.values(versionedReviews))
+    Object.assign(review, {
+      reviewedBy: "Test-only reviewer",
+      reviewedOn: "2026-09-12",
+    });
+  writeFileSync(reviewPath, metadataJsonBytes(versionedReviews));
+  rejectBuild(versioned, /duplicate current Skill ID/);
+  writeFileSync(reviewPath, metadataJsonBytes(reviews));
   const wrongSource = inputs.map((input, index) =>
     index === 2 ? { ...input, repo: inputs[0].repo } : input,
   );
@@ -216,7 +225,7 @@ function fixture(extra = []) {
 }
 function reviewed(m, snapshot) {
   return {
-    [`${m.id}@${m.version}`]: {
+    [submissionKey(m)]: {
       ...inspectSubmission(m, snapshot).reviewInput,
       reviewedBy: "Test-only reviewer",
       reviewedOn: "2026-09-12",
@@ -277,6 +286,44 @@ test("provider manifest is strict, uses existing categories/SemVer and excludes 
   const noVersion = manifest();
   delete noVersion.version;
   assert.throws(() => validateReleaseConfig(noVersion), /version/);
+});
+
+test("authoring v2 qualifies provider review keys without changing runtime IDs", () => {
+  const first = {
+    ...manifest(),
+    schemaVersion: 2,
+    provider: {
+      id: "first-provider",
+      name: "First Provider",
+      url: "https://github.com/first-provider",
+    },
+  };
+  const second = {
+    ...first,
+    provider: {
+      id: "second-provider",
+      name: "Second Provider",
+      url: "https://github.com/second-provider",
+    },
+  };
+  validateReleaseConfig(first);
+  validateReleaseConfig(second);
+  assert.equal(submissionKey(first), "first-provider/example-skill@1.0.0");
+  assert.equal(submissionKey(second), "second-provider/example-skill@1.0.0");
+  assert.equal(inspectSubmission(first, fixture()).entry.id, "example-skill");
+  assert.equal(
+    prepareSubmission(first, fixture(), reviewed(first, fixture()), config)
+      .skill.id,
+    "example-skill",
+  );
+  assert.throws(
+    () => validateReleaseConfig({ ...manifest(), schemaVersion: 2 }),
+    /provider/,
+  );
+  assert.throws(
+    () => validateReleaseConfig({ ...manifest(), provider: first.provider }),
+    /provider/,
+  );
 });
 
 test("intake needs no assessment and builds deterministic reviewed packages through the existing builder", async () => {

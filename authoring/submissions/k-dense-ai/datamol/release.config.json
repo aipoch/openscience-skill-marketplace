@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "provider": {
+    "id": "k-dense-ai",
+    "name": "K-Dense AI",
+    "url": "https://github.com/K-Dense-AI"
+  },
+  "id": "datamol",
+  "version": "1.0.0",
+  "category": "Other",
+  "source": {
+    "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+    "path": "skills/datamol"
+  },
+  "license_files": ["LICENSE.md"]
+}

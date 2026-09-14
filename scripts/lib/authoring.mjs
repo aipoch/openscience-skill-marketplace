@@ -47,6 +47,12 @@ export function validateReleaseConfig(manifest) {
   return manifest;
 }
 
+export function submissionKey(manifest) {
+  validateReleaseConfig(manifest);
+  const prefix = manifest.provider ? `${manifest.provider.id}/` : "";
+  return `${prefix}${manifest.id}@${manifest.version}`;
+}
+
 // The local clone is operator-supplied. Check its origin to catch wrong-clone
 // mistakes; this is not proof of ownership or redistribution permission.
 // Read the configured identity before Git applies transport URL rewrites.
@@ -135,6 +141,7 @@ export function inspectSubmission(manifest, snapshot) {
       issues: [],
     },
     reviewInput: {
+      ...(manifest.provider ? { provider: manifest.provider } : {}),
       sourceRepository: manifest.source.repository,
       sourceCommit: manifest.source.commit,
       sourcePath: manifest.source.path,
@@ -151,7 +158,7 @@ export function inspectSubmission(manifest, snapshot) {
 
 export function prepareSubmission(manifest, snapshot, reviews, config) {
   const { entry, reviewInput } = inspectSubmission(manifest, snapshot);
-  const key = `${manifest.id}@${manifest.version}`;
+  const key = submissionKey(manifest);
   const review = reviews[key];
   if (!review) throw new Error(`missing maintainer review: ${key}`);
   if (Object.hasOwn(review, "additionalLicenseFiles"))
@@ -171,5 +178,10 @@ export function prepareSubmission(manifest, snapshot, reviews, config) {
     )
   )
     throw new Error("reviewed license files differ from submission");
-  return prepareCandidates({ entries: [entry] }, reviews, config, snapshot)[0];
+  return prepareCandidates(
+    { entries: [entry] },
+    { [`${manifest.id}@${manifest.version}`]: review },
+    config,
+    snapshot,
+  )[0];
 }

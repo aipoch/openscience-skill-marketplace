@@ -3,7 +3,8 @@
 A provider supplies one `release.config.json` referencing a committed Skill
 directory in a GitHub repository. The Marketplace stores the authoring metadata;
 the complete payload remains in its upstream Git repository. A maintainer can
-track a submission at `authoring/submissions/<id>/release.config.json` after review.
+track a submission at
+`authoring/submissions/<provider-id>/<id>/release.config.json` for review.
 There is no automatic discovery or production inclusion of files in that directory.
 
 Copy [the example](example/release.config.json) and replace every placeholder.
@@ -12,7 +13,8 @@ The [strict schema](release.config.schema.json) rejects unknown fields.
 
 | Field               | Required | Meaning                                                                                                                                                    |
 | ------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `schema_version`    | Yes      | `1`, the provider input format version.                                                                                                                    |
+| `schema_version`    | Yes      | `1` for the legacy globally keyed format, or `2` for provider-qualified submissions. New submissions use `2`.                                              |
+| `provider`          | v2 only  | Stable provider `id`, display `name`, and GitHub account `url`. This is the source owner, not the Marketplace publisher.                                   |
 | `id`                | Yes      | Lowercase kebab-case, at most 128 characters; must equal `SKILL.md` frontmatter `name`.                                                                    |
 | `version`           | Yes      | Marketplace package SemVer, for example `1.0.0`; independent of upstream tags and immutable once published.                                                |
 | `category`          | Yes      | `Academic Writing`, `Data Analysis`, `Evidence Insight`, `Other`, or `Protocol Design`. Used for catalog display and filtering.                            |
@@ -86,7 +88,8 @@ npm run --silent intake:skill -- \
 ```
 
 The command validates the manifest, source identity, metadata, package and license
-evidence, then prints a JSON map keyed by `<id>@<version>`. It includes computed
+evidence, then prints a JSON map keyed by `<provider-id>/<id>@<version>` for v2,
+or the legacy `<id>@<version>` for v1. It includes computed
 content/evidence hashes, source repository/commit/path, license declaration and
 package metrics. `manifest_sha256` binds the authored metadata using the tool's
 JSON serialization; regenerate review input after any manifest edits, including
@@ -142,10 +145,12 @@ npm run --silent intake:skill -- \
   > /tmp/batch-review-input.json
 ```
 
-This emits one combined review map, sorted by Skill ID. No review JSON is emitted
+This emits one combined review map, sorted by provider-qualified submission key.
+No review JSON is emitted
 if any selected submission fails validation. Check the command's exit status;
-shell redirection can still create an empty file on failure. Each ID may appear
-only once, including when manifests specify different versions of that ID.
+shell redirection can still create an empty file on failure. One runtime ID may
+appear under multiple providers in review input. An exact provider/ID/version key
+may appear only once.
 
 Review each record as described above, then supply the completed review file and
 an output directory with the same selection:
@@ -162,6 +167,11 @@ Every selected Skill must pass validation and exact-byte review before bundle
 writing starts. The existing builder creates one unsigned snapshot with bounded
 ZIP shards containing the entire selection. Reordering manifest/source pairs
 does not change the review input or built bytes. Invalid members are not skipped.
+The public App protocol still uses the unqualified `SKILL.md` name as the runtime
+ID, so one local catalog build cannot contain two provider variants with the same
+ID. Review-input generation supports those variants; publishing one requires an
+explicit selection decision. Provider qualification must not be presented as
+support for installing same-name variants side by side.
 Filesystem failures during bundle writing retain the existing retry and immutable
 conflict behavior; the output directory is not a transactional filesystem commit.
 The original single-manifest command remains valid.
@@ -176,6 +186,11 @@ The register currently selects `scientific-brainstorming` and
 original members. Review records remain in `skills/reviews.json` and bind every
 provider's manifest, source and license bytes. A registration without approved
 review evidence fails the build.
+
+Tracked files under `authoring/submissions/` are review-queue metadata, not
+production enrollment. Merging a submission record does not add a catalog member,
+approve a release, or publish anything. Promotion requires a separate reviewed
+change to `production.json` and the protected publication workflow.
 
 Provider IDs must be unique and disjoint from all 584 original manifest members,
 including deferred members. Two IDs cannot register the same provider directory.
@@ -222,9 +237,11 @@ Regenerate local review input and rebuild local candidates using the current
 format. Manifest hashes bind the snake_case serialization. JavaScript models
 remain camelCase after boundary conversion, and filenames are unchanged.
 
-Provider input is a new authoring contract, separate from the unchanged public
-Skill Protocol v1. It adds no categories, App installation states, database
-migrations or historical compatibility adapter. The production register and approved review metadata are committed to
+Provider input is an authoring contract, separate from the unchanged public Skill
+Protocol v1. Authoring v2 adds provider-qualified review identity while v1 remains
+readable. It adds no categories, App installation states, database migrations or
+historical compatibility adapter. The production register, approved review
+metadata, and pending submission metadata may be committed to
 Marketplace Git; payloads stay upstream; generated review material and local
 bundles stay local until deliberately reviewed and promoted. Do not commit local
 plans, generated bundles, credentials or fabricated approval records.
@@ -242,3 +259,19 @@ them in `license_files`. The supplemental copies used by the historical catalog
 are maintainer-controlled repository inputs; `additional_license_files` is not
 part of the provider manifest, and intake rejects this field in review records
 rather than ignoring notices. See [catalog review records](../skills/README.md#original-notices-from-another-repository).
+
+## Tracked third-party review queue
+
+[`submissions/index.json`](submissions/index.json) tracks the complete non-AIPOCH
+selection from `open-science-skills-20260911.zip`: 192 source records from five
+providers and 130 unique runtime IDs. Each record points to a v2
+`release.config.json`; no Skill payload or ZIP evaluation attachment is copied
+into this repository.
+
+The index records evidence gaps instead of treating repository presence as
+approval. In this snapshot, 46 records lack a per-Skill license declaration, 104
+require license-policy review, and 141 reuse a runtime ID already present in the
+historical AIPOCH catalog. Those sets can overlap. All records still require
+source, attribution, license, security and content review. Merging this metadata
+does not add a catalog member, approve a release, publish to the CDN, or establish
+that the OpenScience client can install same-name provider variants concurrently.
