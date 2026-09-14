@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "literature-review",
+    "version": "1.0.0",
+    "display_name": "literature-review",
+    "summary": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature reviews, meta-analyses, research synthesis, or comprehensive literature searches across biomedical, scientific, and technical domains. Creates professionally formatted markdown documents and PDFs with verified citations in multiple citation styles (APA, Nature, Vancouver, etc.).",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/literature-review"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT license",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13",
+        "exception_reason": "The upstream Skill declares the literal expression \"MIT license\". Reviewed the complete MIT grant and K-Dense Inc. copyright in LICENSE.md at this fixed commit; retain that notice in the package and preserve the original declaration. This exception applies only to these reviewed bytes and does not expand the global license allowlist."
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e93ab0e4927198429082b8c497029fc640f77c80bd95f3244d0a84f0c27f21d7",
+    "file_count": 13,
+    "uncompressed_bytes": 133937
+  },
+  "artifact": {
+    "path": "shards/b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6.zip",
+    "sha256": "b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6",
+    "bytes": 624089,
+    "skill_path": "literature-review"
+  }
+}

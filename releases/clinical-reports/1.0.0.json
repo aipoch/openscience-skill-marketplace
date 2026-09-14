@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "clinical-reports",
+    "version": "1.0.0",
+    "display_name": "clinical-reports",
+    "summary": "Create safety-bounded draft structures and run local deterministic checks for clinical case, diagnostic, trial, safety, and aggregate research reports. Use only with synthetic, de-identified, or aggregate inputs and verified source-fact manifests; every output requires qualified review.",
+    "category": "Other",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/clinical-reports"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "2995a039d42e99bad69057e468f6fb810bb125036fa83798d3b2eba7d904e8c7",
+    "file_count": 37,
+    "uncompressed_bytes": 194346
+  },
+  "artifact": {
+    "path": "shards/b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6.zip",
+    "sha256": "b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6",
+    "bytes": 624089,
+    "skill_path": "clinical-reports"
+  }
+}

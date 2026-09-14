@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "shap",
+    "version": "1.0.0",
+    "display_name": "shap",
+    "summary": "Explain and audit machine-learning predictions with SHAP. Use for selecting SHAP explainers and maskers, computing and validating feature attributions, handling multi-output explanations, and producing local or global SHAP visualizations.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/shap"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "7f484af991be3f16faf90195ed5a070e724190a669eff5c87ab07c9bf456071f",
+    "file_count": 11,
+    "uncompressed_bytes": 121168
+  },
+  "artifact": {
+    "path": "shards/b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6.zip",
+    "sha256": "b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6",
+    "bytes": 624089,
+    "skill_path": "shap"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "pysam",
+    "version": "1.0.0",
+    "display_name": "pysam",
+    "summary": "Python/HTSlib workflows for genomic files. Use when reading, querying, filtering, or writing SAM/BAM/CRAM, VCF/BCF, FASTA/FASTQ, or tabix data with pysam, including pileup, coverage, indexing, and CRAM references.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/pysam"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "bd21289c79d62bfa5709853a2201836c440b2c8ab8dc86307c3d91e92e6d7f84",
+    "file_count": 15,
+    "uncompressed_bytes": 138788
+  },
+  "artifact": {
+    "path": "shards/b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6.zip",
+    "sha256": "b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6",
+    "bytes": 624089,
+    "skill_path": "pysam"
+  }
+}

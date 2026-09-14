@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "clinical-decision-support",
+    "version": "1.0.0",
+    "display_name": "clinical-decision-support",
+    "summary": "Prepare and validate research-only clinical decision-support evaluation, evidence-profile, cohort, survival, biomarker/model, privacy, and governance artifacts. Use for aggregate or synthetic research documentation and traceability—not patient care or live clinical operation.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "path": "skills/clinical-decision-support"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "K-Dense Inc."
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/36d8f13a1e754618794bf42f417884940077b4ae/LICENSE.md",
+          "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-13"
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "ab1e084233f14bb69eded2c57337e1abecbca7f2d77296a441bc9a3e9c58d7d4",
+    "file_count": 29,
+    "uncompressed_bytes": 196134
+  },
+  "artifact": {
+    "path": "shards/b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6.zip",
+    "sha256": "b55fb597588b663d1d9dfe3695492a0b1a9b88845adbce48fe564656e55759c6",
+    "bytes": 624089,
+    "skill_path": "clinical-decision-support"
+  }
+}
