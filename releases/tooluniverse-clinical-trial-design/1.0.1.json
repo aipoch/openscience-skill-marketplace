@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "tooluniverse-clinical-trial-design",
+    "version": "1.0.1",
+    "display_name": "tooluniverse-clinical-trial-design",
+    "summary": "Strategic clinical trial design feasibility assessment using ToolUniverse. Evaluates patient population sizing, biomarker prevalence, endpoint selection, comparator analysis, safety monitoring, and regulatory pathways. Creates comprehensive feasibility reports with evidence gr...",
+    "category": "Protocol Design",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Protocol Design/tooluniverse-clinical-trial-design"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "Unknown",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        },
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Protocol%20Design/tooluniverse-clinical-trial-design/SKILL.md",
+          "sha256": "9afc9618555c33eb491f2d3bc3e145b0becb08c069a2ca7b861f736300b0ae4e"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-30",
+        "exception_reason": "Maintainer explicitly authorizes publication with Unknown on 2026-09-14 while provenance, license coverage or bundled-material redistribution evidence remains unresolved. Unresolved scope: The bundled trial report and example implementation require individual provenance review before selection. Original declarations, attributions, source commit/path and all payload bytes are preserved. Unknown is an uncertainty label, not a permission grant or independent safety/accuracy endorsement."
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 89,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Protocol%20Design/tooluniverse-clinical-trial-design/eval_report_tooluniverse-clinical-trial-design_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 92,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "ca491ed6bf960a200eebcda84e15f37dd0af113edd6f17712e6a9e7f52010e2b",
+    "file_count": 14,
+    "uncompressed_bytes": 188610
+  },
+  "artifact": {
+    "path": "shards/2b2d134141e3d5698b9e174f154599abf13d7ddd3c9060e29ef536399fd82407.zip",
+    "sha256": "2b2d134141e3d5698b9e174f154599abf13d7ddd3c9060e29ef536399fd82407",
+    "bytes": 17034738,
+    "skill_path": "tooluniverse-clinical-trial-design"
+  }
+}

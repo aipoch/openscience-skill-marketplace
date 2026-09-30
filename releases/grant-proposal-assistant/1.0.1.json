@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "grant-proposal-assistant",
+    "version": "1.0.1",
+    "display_name": "grant-proposal-assistant",
+    "summary": "Assist with biomedical grant proposal drafting, structure, and revision; use when preparing fundable proposal sections, aligning aims and methods, or improving reviewer-facing clarity.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/grant-proposal-assistant"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-30"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 91,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/grant-proposal-assistant/eval_report_grant-proposal-assistant_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 97,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "e588a1a15c987fdcd95ebb294b8e1f8d3ec89f5e5d0df31c28fe2d1f8446cb96",
+    "file_count": 10,
+    "uncompressed_bytes": 72890
+  },
+  "artifact": {
+    "path": "shards/96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b.zip",
+    "sha256": "96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b",
+    "bytes": 66876850,
+    "skill_path": "grant-proposal-assistant"
+  }
+}

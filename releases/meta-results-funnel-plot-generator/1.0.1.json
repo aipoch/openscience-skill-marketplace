@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-results-funnel-plot-generator",
+    "version": "1.0.1",
+    "display_name": "meta-results-funnel-plot-generator",
+    "summary": "Generates a Meta-analysis results section description for funnel plots, including statistical tables (Egger's, Begg's, Trim & Fill) and figure legends. Supports English and Chinese outputs. Use when user provides a funnel plot image and statistics and wants a formatted report.",
+    "category": "Academic Writing",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Academic Writing/meta-results-funnel-plot-generator"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-30"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 90,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Academic%20Writing/meta-results-funnel-plot-generator/eval_report_meta-results-funnel-plot-generator_result.json",
+      "evaluated_on": "2026-06-15",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 96,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 86.2,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "ed3a17dc49ab3245d9c530768791049a4ab0d5768e729401c75d6269816c5bcb",
+    "file_count": 6,
+    "uncompressed_bytes": 20652
+  },
+  "artifact": {
+    "path": "shards/96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b.zip",
+    "sha256": "96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b",
+    "bytes": 66876850,
+    "skill_path": "meta-results-funnel-plot-generator"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-criteria-generator",
+    "version": "1.0.1",
+    "display_name": "meta-criteria-generator",
+    "summary": "Generates scientifically sound inclusion and exclusion criteria for Meta-Analysis based on a given title or keywords. Use when user wants to design eligibility criteria for a systematic review or meta-analysis.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/meta-criteria-generator"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-30"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 91,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/meta-criteria-generator/meta-criteria-generator_audit_result_v2.json",
+      "evaluated_on": "2026-03-23",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 83,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 95.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "40d82f41b70858528a2feb8b28bc90b4e557c8dea71f39efa6ecd6842ec082d8",
+    "file_count": 5,
+    "uncompressed_bytes": 22742
+  },
+  "artifact": {
+    "path": "shards/96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b.zip",
+    "sha256": "96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b",
+    "bytes": 66876850,
+    "skill_path": "meta-criteria-generator"
+  }
+}

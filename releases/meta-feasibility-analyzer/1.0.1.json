@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "openscience-skill-marketplace",
+  "skill": {
+    "id": "meta-feasibility-analyzer",
+    "version": "1.0.1",
+    "display_name": "meta-feasibility-analyzer",
+    "summary": "Analyzes the feasibility of a proposed Meta-analysis topic by searching for existing Meta-analyses and Clinical Trials on PubMed/ClinicalTrials.gov. Use when you need to evaluate if a topic is viable for a new Meta-analysis.",
+    "category": "Data Analysis",
+    "source": {
+      "repository": "https://github.com/aipoch/medical-research-skills",
+      "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
+      "path": "scientific-skills/Data Analysis/meta-feasibility-analyzer"
+    },
+    "publisher": {
+      "id": "aipoch",
+      "name": "AIPOCH",
+      "url": "https://aipoch.com/agent-skills"
+    },
+    "authors": [
+      {
+        "name": "AIPOCH"
+      }
+    ],
+    "license": {
+      "expression": "MIT",
+      "evidence": [
+        {
+          "url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/LICENSE",
+          "sha256": "92cd32f3b4857f97a3ad6bf276c42dea2e93fd2bb714b08d75a558c9f215f596"
+        }
+      ],
+      "review": {
+        "reviewed_by": "Codex",
+        "reviewed_on": "2026-09-30"
+      }
+    },
+    "evaluation": {
+      "kind": "upstream-self-assessment",
+      "score": 86,
+      "max_score": 100,
+      "report_url": "https://github.com/aipoch/medical-research-skills/blob/d92441066ea6259967469be8e0c8c7b6587928ab/scientific-skills/Data%20Analysis/meta-feasibility-analyzer/meta-feasibility-analyzer_audit_result_v1.json",
+      "evaluated_on": "2026-03-22",
+      "evaluator_version": "skill-auditor@1.0",
+      "static_score": {
+        "score": 78,
+        "max_score": 100
+      },
+      "dynamic_score": {
+        "score": 90.6,
+        "max_score": 100
+      }
+    }
+  },
+  "package": {
+    "content_sha256": "88359dbbaa9fa233560bac56f0525b2598a741095cda916461a0984ba045ec7f",
+    "file_count": 4,
+    "uncompressed_bytes": 25429
+  },
+  "artifact": {
+    "path": "shards/96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b.zip",
+    "sha256": "96e0bee15398ff148a6f7b7621559d78a91f04db18abf812f38c34fc1cbc321b",
+    "bytes": 66876850,
+    "skill_path": "meta-feasibility-analyzer"
+  }
+}
