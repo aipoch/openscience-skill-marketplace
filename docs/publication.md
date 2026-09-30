@@ -18,9 +18,18 @@ clean shard. Retained historical objects are not rewritten or filtered during
 loading. This tooling fix alone does not repair installed or cached packages,
 update production selections, sign releases or publish to either mirror.
 
-The combined release selects 396 reviewed Skills: 394 original members plus
+The clean-shard selection now advances the 200 affected current Skills to
+`1.0.1`: 190 original-list members and 10 registered providers. The seven
+members owning hidden files receive filtered content digests; the other 193
+receive a new version and shard while retaining the same package content digest.
+All complete-source review digests and source identities remain unchanged.
+The previously signed `1.0.0` descriptors and ZIPs remain in the release index.
+This selection change requires a separately authorized publication before it
+affects the public catalog or any existing installation.
+
+An earlier combined release selected 396 reviewed Skills: 394 original members plus
 `scientific-brainstorming` and `get-available-resources` from K-Dense at `1.0.0`.
-The original authority retains 190 deferrals. See
+The original authority retained 190 deferrals at that point. See
 [release selection](../skills/README.md#release-selection).
 Byte-bound redistribution reviews are recorded in
 `skills/reviews.json`; the seventeen assessment-omission records remain separate

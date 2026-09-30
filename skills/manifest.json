@@ -7,7 +7,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/abstract-summarizer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "abstract-trimmer",
@@ -21,49 +21,49 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/academic-abstract-refiner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "academic-highlight-generator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/academic-highlight-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "adverse-event-narrative",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/adverse-event-narrative",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "anatomy-quiz-master",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/anatomy-quiz-master",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "anki-card-creator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/anki-card-creator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "arxiv-preflight",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/arxiv-preflight",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "author-response-builder",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/author-response-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "authorship-credit-gen",
@@ -77,28 +77,28 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/automated-soap-note-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biomed-outline-generator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/biomed-outline-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biotech-pitch-deck-narrative",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/biotech-pitch-deck-narrative",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "blind-review-sanitizer",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/blind-review-sanitizer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "citation-formatter",
@@ -112,7 +112,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/claim-strength-calibrator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "clinical-decision-support",
@@ -126,35 +126,35 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/conference-abstract-adaptor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conference-abstract-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/conference-abstract-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conference-poster-pitch",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/conference-poster-pitch",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "consistency-checker-across-manuscript",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/consistency-checker-across-manuscript",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "cover-letter-drafter",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/cover-letter-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "cover-letter-generator",
@@ -168,7 +168,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/dei-statement-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "digital-twin-discharge-drafter",
@@ -189,7 +189,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/discussion-composer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "discussion-section-architect",
@@ -203,7 +203,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/ectd-xml-compiler",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "ehr-semantic-compressor",
@@ -217,28 +217,28 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/faq-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "figure-legend-gen",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/figure-legend-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "figure-legend-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/figure-legend-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "figure-reference-checker",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/figure-reference-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "find-paper-references",
@@ -266,28 +266,28 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/grant-budget-justification",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "grant-mock-reviewer",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/grant-mock-reviewer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "grant-proposal-assistant",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/grant-proposal-assistant",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "grant-specific-aims-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/grant-specific-aims-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "graph-interpretation",
@@ -301,7 +301,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/graphical-abstract-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "hipaa-compliance-auditor",
@@ -315,21 +315,21 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/iacuc-protocol-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "introduction-logic-builder",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/introduction-logic-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "introduction-section-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/introduction-section-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "irb-application-assistant",
@@ -343,7 +343,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/journal-club-presenter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "journal-cover-prompter",
@@ -357,14 +357,14 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/labarchive-integration",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "latex-manuscript-format-converter",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/latex-manuscript-format-converter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "latex-posters",
@@ -378,28 +378,28 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/lay-press-release-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lay-summary-for-cross-disciplinary-teams",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/lay-summary-for-cross-disciplinary-teams",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lay-summary-gen",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/lay-summary-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "limitation-and-risk-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/limitation-and-risk-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "linkedin-optimizer",
@@ -420,42 +420,42 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/market-access-value",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-cv-resume-builder",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-cv-resume-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-device-mdr-auditor",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-device-mdr-auditor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-email-polisher",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-email-polisher",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-english-precision-editor",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/medical-english-precision-editor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-imaging-review",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-imaging-review",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-review-writer-architect",
@@ -469,42 +469,42 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-scribe-dictation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-translation",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-translation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medication-adherence-message-gen",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medication-adherence-message-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meeting-minutes",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meeting-minutes",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-analysis-methods-generator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-analysis-methods-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-baseline-generator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-baseline-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-manuscript-generator",
@@ -518,56 +518,56 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-forest-plot-analyzer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-results-funnel-plot-generator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-funnel-plot-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-results-risk-of-bias",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-risk-of-bias",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-results-sensitivity-analysis",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-sensitivity-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "method-writing",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/method-writing",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "methods-section-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/methods-section-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "microbiome-diversity-reporter",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/microbiome-diversity-reporter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "moa-explainer",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/moa-explainer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "molecular-review-workflow",
@@ -581,21 +581,21 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/networking-email-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "nih-biosketch-builder",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/nih-biosketch-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "nsfc-grant-writer",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/nsfc-grant-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "paper-sprint-review",
@@ -616,28 +616,28 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/patent-assistant",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "patient-recruitment-ad-gen",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/patient-recruitment-ad-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "peer-review",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/peer-review",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "peer-review-response-drafter",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/peer-review-response-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "personal-statement",
@@ -651,35 +651,35 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/poster-layout-planner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "poster-storyline-builder",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/poster-storyline-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "presentation-hook",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/presentation-hook",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "prior-auth-letter-drafter",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/prior-auth-letter-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "q-and-a-prep-partner",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/q-and-a-prep-partner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "radiology-image-quiz",
@@ -693,56 +693,56 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/rebuttal-letter-strategist",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "recommendation-letter-assistant",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/recommendation-letter-assistant",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reference-integrity-checker",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/reference-integrity-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reference-style-sync",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/reference-style-sync",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "referral-letter-generator",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/referral-letter-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "regulatory-submission",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/regulatory-submission",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reporting-guideline-compliance-checker",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/reporting-guideline-compliance-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "residency-interview-prep",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/residency-interview-prep",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "response-letter",
@@ -763,21 +763,21 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/results-section-structurer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "results-section-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/results-section-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "revision-strategy-planner",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/revision-strategy-planner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "sample-size-power-calculator",
@@ -791,56 +791,56 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/semantic-consistency-auditor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "slide-deck-for-lab-meeting",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/slide-deck-for-lab-meeting",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "study-limitations-drafter",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/study-limitations-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "style-journal-rewrite",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/style-journal-rewrite",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "systematic-review",
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/systematic-review",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "table-narrative-writer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/table-narrative-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "target-journal-matcher",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/target-journal-matcher",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "title-and-abstract-optimizer",
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/title-and-abstract-optimizer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "tone-adjuster",
@@ -861,21 +861,21 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/visual-content-desc",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "adme-property-predictor",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/adme-property-predictor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "anndata",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/anndata",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "baseline-extraction-for-clinical-trials",
@@ -889,28 +889,28 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/batch-effect-correction",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "bio-causal-genomics-mediation-analysis",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/bio-causal-genomics-mediation-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "bio-causal-genomics-pleiotropy-detection",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/bio-causal-genomics-pleiotropy-detection",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biopython",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/biopython",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biopython-advanced",
@@ -924,7 +924,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/biopython-alignment",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biopython-phylo",
@@ -952,7 +952,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/bioservices",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "case-control-study-quality-assessment-nos",
@@ -966,7 +966,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/cerna-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "cibersort-immune-infiltration-analysis",
@@ -987,7 +987,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/clinical-data-cleaner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "cnv-caller-plotter",
@@ -1001,7 +1001,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/cobrapy",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "code-refactor-for-reproducibility",
@@ -1036,35 +1036,35 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/3d-molecule-ray-tracer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "data-stats-analysis",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/data-stats-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "data-transform",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/data-transform",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "decision-curve-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/decision-curve-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "decision-tree-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/decision-tree-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "deeptools",
@@ -1078,21 +1078,21 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/deg-screening-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "diagnostic-study-quality-assessment-quadas",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/diagnostic-study-quality-assessment-quadas-2",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "differential-expression-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/differential-expression-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "dnanexus-integration",
@@ -1113,28 +1113,28 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/epidemiology",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "estimate-immune-score-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/estimate-immune-score-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "etetoolkit",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/etetoolkit",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "experimental-data-analysis",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/experimental-data-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "exploratory-data-analysis",
@@ -1148,14 +1148,14 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/external-model-validation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "facs-gating-viz-style",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/facs-gating-viz-style",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "fastqc-report-interpreter",
@@ -1169,7 +1169,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/flowio",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "forest-plot-styler",
@@ -1183,28 +1183,28 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/gene-protein-expression-matrix-normalization",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gene-structure-mapper",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/gene-structure-mapper",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "geniml",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/geniml",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "geopandas",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/geopandas",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gokegg-analysis",
@@ -1218,35 +1218,35 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/graphical-abstract-wizard",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gsea",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/gsea",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gsva-analysis-and-visualization",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/gsva-analysis-and-visualization",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gtars",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/gtars",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "heatmap-beautifier",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/heatmap-beautifier",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "hierarchical-clustering-plot",
@@ -1260,35 +1260,35 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/histolab",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "immune-pathway-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/immune-pathway-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "km-survival-curve",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/km-survival-curve",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "knn-imputation",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/knn-imputation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lab-budget-forecaster",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/lab-budget-forecaster",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lamindb",
@@ -1309,28 +1309,28 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/LightGBM-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lipinski-rule-filter",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/lipinski-rule-filter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lncrna-regulatory-network-construction-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/lncrna-regulatory-network-construction-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "matchms",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/matchms",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "matplotlib",
@@ -1344,7 +1344,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/mechanism-flowchart",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "mendelian-randomisation",
@@ -1372,56 +1372,56 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-baujat-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-criteria-generator",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-criteria-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-feasibility-analyzer",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-feasibility-analyzer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-forest-binary-plot",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-forest-binary-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-forest-continuous-plot",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-forest-continuous-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-forest-model-plot",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-forest-model-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-funnel-plot",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-funnel-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-picos-generator",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-picos-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-radial-plot",
@@ -1477,7 +1477,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/model-calibration-curve",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "motif-logo-generator",
@@ -1512,7 +1512,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/nomogram-construction",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "outcome-extraction-for-clinical-trials",
@@ -1547,7 +1547,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/pca-dimensionality-reduction",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "phylogenetic-tree-styler",
@@ -1575,7 +1575,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/probast-quality-assessment-for-prediction-model-studies",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "protocol-deviation-classifier",
@@ -1589,7 +1589,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/pseudotime-trajectory-viz",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pydeseq",
@@ -1631,35 +1631,35 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/quadas-c-assessment-for-diagnostic-accuracy-studies",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "quality-assessment",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/quality-assessment",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "quapas-quality-assessment-for-prognosis-studies",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/quapas-quality-assessment-for-prognosis-studies",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rct-bias-assessment-rob",
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/rct-bias-assessment-rob2",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rf-model-importance-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/rf-model-importance-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "roc-diagnostic-performance",
@@ -1680,7 +1680,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/sample-correlation-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "sample-group-sankey-plot",
@@ -1764,7 +1764,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/smiles-de-salter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "spatial-transcriptomics-mapper",
@@ -1778,7 +1778,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/ssgsea-immune-infiltration-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "statistical-analysis",
@@ -1813,14 +1813,14 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/survival-curve-risk-table",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "svm-model-importance-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/svm-model-importance-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "table-1-generator",
@@ -1841,14 +1841,14 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/tf-target-gene-regulatory-network",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "time-dependent-roc",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/time-dependent-roc",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "tooluniverse-statistical-modeling",
@@ -1876,7 +1876,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/umap-tsne-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "univariate-multivariable-cox-regression",
@@ -1904,7 +1904,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/volcano-plot-labeler",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "volcano-plot-script",
@@ -1918,21 +1918,21 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/western-blot-quantifier",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "wgcna-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/wgcna-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "xgboost-analysis",
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/XGBoost-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "acronym-unpacker",
@@ -2198,7 +2198,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/diagnostic-study-quality-assessment-quadas-2",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "diffdock-molecular-docking",
@@ -2219,7 +2219,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/drug-interaction-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "drug-target-evidence-landscape",
@@ -2240,7 +2240,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/emerging-topic-scout",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "ena-database",
@@ -2408,7 +2408,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/journal-matchmaker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "journal-skills",
@@ -2422,7 +2422,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/kegg-api",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "kegg-database",
@@ -2450,7 +2450,7 @@
       "category": "Evidence Insight",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Evidence Insight/litbase",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "literature-close-read",
@@ -2653,7 +2653,7 @@
       "category": "Evidence Insight",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Evidence Insight/preprint-surveillance-finder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pubchem-database-skill",
@@ -2695,14 +2695,14 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/rare-disease-hpo-mapper",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rct-bias-assessment-rob2",
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/rct-bias-assessment-rob2",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reactome-skill",
@@ -2737,7 +2737,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/reference-search",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "research-article-weekly",
@@ -2898,21 +2898,21 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/unstructured-medical-text-miner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "variant-annotation",
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/variant-annotation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "venue-templates",
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/venue-templates",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "zinc-database",
@@ -3066,7 +3066,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/conference-tweet-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conflict-of-interest-checker",
@@ -3136,7 +3136,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/experiment-detail-comparator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "expert-interview-generator",
@@ -3178,7 +3178,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/html-to-pdf",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "icd10-cpt-coding-assistant",
@@ -3206,7 +3206,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/iso-13485-certification",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "journal-recommender",
@@ -3409,7 +3409,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/postdoc-fellowship-matcher",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "poster-designer",
@@ -3465,7 +3465,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/resubmission-deadline-tracker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "result-figure-consistencycheck",
@@ -3584,7 +3584,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/word-read-write",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "active-comparator-single-soc-faers-safety-comparison",
@@ -3668,7 +3668,7 @@
       "category": "Protocol Design",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Protocol Design/clinical-trial-protocol-skill",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "comorbidity-common-immune-biomarker-research-planner",
@@ -3801,7 +3801,7 @@
       "category": "Protocol Design",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Protocol Design/inclusion-criteria-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "inclusion-exclusion-criteria-builder",
@@ -4046,7 +4046,7 @@
       "category": "Protocol Design",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Protocol Design/tooluniverse-clinical-trial-design",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "translational-study-blueprint",

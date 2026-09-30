@@ -58,7 +58,9 @@ test("776 input records map exactly to the existing 584-member authority and 192
   const queue = await read("authoring/submissions/index.json");
   assert.deepEqual(register.selection_input, queue.selection_input);
   const expected = new Set([
-    ...manifest.entries.map((e) => `aipoch/${e.id}@${e.version}`),
+    // The submitted-material register records the original 1.0.0 intake.
+    // Marketplace package versions may change without rewriting that evidence.
+    ...manifest.entries.map((e) => `aipoch/${e.id}@1.0.0`),
     ...queue.submissions.map((e) => e.submission_key),
   ]);
   assert.deepEqual(

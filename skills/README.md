@@ -47,6 +47,15 @@ Each manifest entry starts at the approved `1.0.0` package version. A later chan
 can bump that entry's version without bumping the entire catalog. The fixed source
 baseline is deliberate; changing it requires re-auditing provenance and reviews.
 
+The hidden-path packaging repair advances 190 selected original members to
+`1.0.1`. Their pinned source commits and complete-source review hashes are
+unchanged. The matching release-plan entries, source audit version fields and
+per-version review keys advance together. The 193 unchanged-package neighbors
+across all affected shards also need new versions because an unchanged version
+retains its old shard association. The other 10 affected members are registered
+providers; see the [provider publication guide](../authoring/README.md#production-and-batch-publication).
+Historical `1.0.0` review entries remain recorded.
+
 ## Release selection
 
 [release_plan.json](release_plan.json), validated by

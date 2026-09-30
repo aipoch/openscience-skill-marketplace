@@ -20,6 +20,10 @@ const root = { revision: "a".repeat(64), skills: registry.entries };
 test("430 exact source-bound audits preserve the two explicit omissions", async () => {
   const { catalog, reports } = await buildAuditCatalog(root);
   assert.equal(catalog.entries.length, 430);
+  assert.equal(
+    catalog.entries.filter(({ version }) => version === "1.0.1").length,
+    120,
+  );
   assert.equal(reports.size, 430);
   assert.deepEqual(registry.excluded_ids, [
     "get-available-resources",

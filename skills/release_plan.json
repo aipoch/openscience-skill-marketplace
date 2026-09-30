@@ -7,7 +7,7 @@
   "selected": [
     {
       "id": "abstract-summarizer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "abstract-trimmer",
@@ -15,7 +15,7 @@
     },
     {
       "id": "academic-abstract-refiner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "academic-cv-generator",
@@ -23,7 +23,7 @@
     },
     {
       "id": "academic-highlight-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "acronym-unpacker",
@@ -43,11 +43,11 @@
     },
     {
       "id": "adme-property-predictor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "adverse-event-narrative",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "aim-and-hypothesis-designer",
@@ -55,7 +55,7 @@
     },
     {
       "id": "anatomy-quiz-master",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "animal-and-cell-validation-planner",
@@ -63,11 +63,11 @@
     },
     {
       "id": "anki-card-creator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "anndata",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "arboreto",
@@ -83,15 +83,15 @@
     },
     {
       "id": "arxiv-preflight",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "author-response-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "automated-soap-note-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "baseline-extraction-for-clinical-trials",
@@ -108,7 +108,7 @@
     },
     {
       "id": "batch-effect-correction",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "benchling-integration",
@@ -128,11 +128,11 @@
     },
     {
       "id": "bio-causal-genomics-mediation-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "bio-causal-genomics-pleiotropy-detection",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biodbnet-api",
@@ -152,7 +152,7 @@
     },
     {
       "id": "biomed-outline-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biomedical-search-strategy-builder",
@@ -160,7 +160,7 @@
     },
     {
       "id": "biopython",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biopython-advanced",
@@ -168,7 +168,7 @@
     },
     {
       "id": "biopython-alignment",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biopython-entrez",
@@ -192,15 +192,15 @@
     },
     {
       "id": "bioservices",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "biotech-pitch-deck-narrative",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "blind-review-sanitizer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "brenda-database",
@@ -228,7 +228,7 @@
     },
     {
       "id": "cerna-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "chart-style-unifier",
@@ -257,7 +257,7 @@
     },
     {
       "id": "claim-strength-calibrator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "clinic-sample-size",
@@ -269,7 +269,7 @@
     },
     {
       "id": "clinical-data-cleaner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "clinical-diagnostic-reasoning",
@@ -285,7 +285,7 @@
     },
     {
       "id": "clinical-trial-protocol-skill",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "clinicaltrials-database",
@@ -309,7 +309,7 @@
     },
     {
       "id": "cobrapy",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "cold-chain-risk-calculator",
@@ -337,19 +337,19 @@
     },
     {
       "id": "conference-abstract-adaptor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conference-abstract-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conference-poster-pitch",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conference-tweet-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "conflict-of-interest-checker",
@@ -361,7 +361,7 @@
     },
     {
       "id": "consistency-checker-across-manuscript",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "content-proofreading",
@@ -385,7 +385,7 @@
     },
     {
       "id": "cover-letter-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "cover-letter-generator",
@@ -406,15 +406,15 @@
     },
     {
       "id": "d-molecule-ray-tracer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "data-stats-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "data-transform",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "date-calculator",
@@ -422,35 +422,35 @@
     },
     {
       "id": "decision-curve-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "decision-tree-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "deg-screening-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "dei-statement-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "diagnostic-study-quality-assessment-quadas",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "diagnostic-study-quality-assessment-quadas-2",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "differential-expression-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "discussion-composer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "discussion-section-architect",
@@ -470,7 +470,7 @@
     },
     {
       "id": "drug-interaction-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "drug-repurposing-study-planner",
@@ -498,7 +498,7 @@
     },
     {
       "id": "ectd-xml-compiler",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "ehr-semantic-compressor",
@@ -506,7 +506,7 @@
     },
     {
       "id": "emerging-topic-scout",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "ena-database",
@@ -530,7 +530,7 @@
     },
     {
       "id": "epidemiology",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "equipment-maintenance-log",
@@ -542,11 +542,11 @@
     },
     {
       "id": "estimate-immune-score-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "etetoolkit",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "evidence-level-ranker",
@@ -558,11 +558,11 @@
     },
     {
       "id": "experiment-detail-comparator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "experimental-data-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "expert-interview-generator",
@@ -578,11 +578,11 @@
     },
     {
       "id": "external-model-validation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "facs-gating-viz-style",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "faers-multi-drug-soc-planner",
@@ -594,7 +594,7 @@
     },
     {
       "id": "faq-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "feasibility-aware-study-planner",
@@ -606,15 +606,15 @@
     },
     {
       "id": "figure-legend-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "figure-legend-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "figure-reference-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "file-security-toolkit",
@@ -626,7 +626,7 @@
     },
     {
       "id": "flowio",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "fulltext-fetcher",
@@ -642,11 +642,11 @@
     },
     {
       "id": "gene-protein-expression-matrix-normalization",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gene-structure-mapper",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "generic-phenotype-scoring-research-planner",
@@ -654,7 +654,7 @@
     },
     {
       "id": "geniml",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "geo-search-api",
@@ -662,7 +662,7 @@
     },
     {
       "id": "geopandas",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gget",
@@ -670,7 +670,7 @@
     },
     {
       "id": "grant-budget-justification",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "grant-gantt-chart-gen",
@@ -678,39 +678,39 @@
     },
     {
       "id": "grant-mock-reviewer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "grant-proposal-assistant",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "grant-specific-aims-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "graphical-abstract-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "graphical-abstract-wizard",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gsea",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gsva-analysis-and-visualization",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "gtars",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "heatmap-beautifier",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "hgnc-api",
@@ -726,7 +726,7 @@
     },
     {
       "id": "histolab",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "hmdb-database",
@@ -734,7 +734,7 @@
     },
     {
       "id": "html-to-pdf",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "hypogenic",
@@ -747,7 +747,7 @@
     },
     {
       "id": "iacuc-protocol-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "ib-summarizer",
@@ -763,11 +763,11 @@
     },
     {
       "id": "immune-pathway-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "inclusion-criteria-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "inclusion-exclusion-criteria-builder",
@@ -779,15 +779,15 @@
     },
     {
       "id": "introduction-logic-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "introduction-section-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "iso-certification",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "jaspar-api",
@@ -795,11 +795,11 @@
     },
     {
       "id": "journal-club-presenter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "journal-matchmaker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "journal-recommender",
@@ -811,7 +811,7 @@
     },
     {
       "id": "kegg-api",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "kegg-database",
@@ -823,11 +823,11 @@
     },
     {
       "id": "km-survival-curve",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "knn-imputation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "knowledge-base-search",
@@ -835,7 +835,7 @@
     },
     {
       "id": "lab-budget-forecaster",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lab-inventory-predictor",
@@ -847,11 +847,11 @@
     },
     {
       "id": "labarchive-integration",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "latex-manuscript-format-converter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "latex-posters",
@@ -859,31 +859,31 @@
     },
     {
       "id": "lay-press-release-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lay-summary-for-cross-disciplinary-teams",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lay-summary-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lightgbm-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "limitation-and-risk-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "lipinski-rule-filter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "litbase",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "literature-close-read",
@@ -907,11 +907,11 @@
     },
     {
       "id": "lncrna-regulatory-network-construction-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "market-access-value",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "markitdown",
@@ -919,11 +919,11 @@
     },
     {
       "id": "matchms",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "mechanism-flowchart",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "mechanism-to-validation-planner",
@@ -943,23 +943,23 @@
     },
     {
       "id": "medical-cv-resume-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-device-mdr-auditor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-email-polisher",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-english-precision-editor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-imaging-review",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-research-algorithm-matcher",
@@ -979,7 +979,7 @@
     },
     {
       "id": "medical-scribe-dictation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-topic-saturation-and-whitespace-checker",
@@ -987,7 +987,7 @@
     },
     {
       "id": "medical-translation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medical-unit-converter",
@@ -999,7 +999,7 @@
     },
     {
       "id": "medication-adherence-message-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "medication-reconciliation",
@@ -1007,7 +1007,7 @@
     },
     {
       "id": "meeting-minutes",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "mendelian-randomization-protocol-designer",
@@ -1020,43 +1020,43 @@
     },
     {
       "id": "meta-analysis-methods-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-baseline-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-baujat-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-criteria-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-feasibility-analyzer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-forest-binary-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-forest-continuous-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-forest-model-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-funnel-plot",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-picos-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-protocol-writer",
@@ -1068,19 +1068,19 @@
     },
     {
       "id": "meta-results-forest-plot-analyzer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-results-funnel-plot-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-results-risk-of-bias",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-results-sensitivity-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "meta-rob-plot",
@@ -1109,7 +1109,7 @@
     },
     {
       "id": "method-writing",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "methodology-extractor",
@@ -1121,11 +1121,11 @@
     },
     {
       "id": "methods-section-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "microbiome-diversity-reporter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "microscopy-scale-bar-adder",
@@ -1141,11 +1141,11 @@
     },
     {
       "id": "moa-explainer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "model-calibration-curve",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "motif-logo-generator",
@@ -1173,7 +1173,7 @@
     },
     {
       "id": "networking-email-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "neurokit",
@@ -1189,11 +1189,11 @@
     },
     {
       "id": "nih-biosketch-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "nomogram-construction",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "non-tumor-mechanism-guided-diagnostic-ml-research-planner",
@@ -1209,7 +1209,7 @@
     },
     {
       "id": "nsfc-grant-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "open-targets-db",
@@ -1241,7 +1241,7 @@
     },
     {
       "id": "patent-assistant",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pathway-introduction-expert",
@@ -1249,11 +1249,11 @@
     },
     {
       "id": "patient-recruitment-ad-gen",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pca-dimensionality-reduction",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pcd-immune-oncology-research-planner",
@@ -1277,11 +1277,11 @@
     },
     {
       "id": "peer-review",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "peer-review-response-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "phenotype-introduction",
@@ -1309,7 +1309,7 @@
     },
     {
       "id": "postdoc-fellowship-matcher",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "poster-designer",
@@ -1317,11 +1317,11 @@
     },
     {
       "id": "poster-layout-planner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "poster-storyline-builder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pptx-posters",
@@ -1333,11 +1333,11 @@
     },
     {
       "id": "preprint-surveillance-finder",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "presentation-hook",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "primary-plan-recommender",
@@ -1345,11 +1345,11 @@
     },
     {
       "id": "prior-auth-letter-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "probast-quality-assessment-for-prediction-model-studies",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "process-related-diagnostic-biomarker-nomogram-research-planner",
@@ -1373,7 +1373,7 @@
     },
     {
       "id": "pseudotime-trajectory-viz",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "pubchem-database-skill",
@@ -1405,7 +1405,7 @@
     },
     {
       "id": "q-and-a-prep-partner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "qtl-colocalization-study-planner",
@@ -1413,27 +1413,27 @@
     },
     {
       "id": "quadas-c-assessment-for-diagnostic-accuracy-studies",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "quality-assessment",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "quapas-quality-assessment-for-prognosis-studies",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rare-disease-hpo-mapper",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rct-bias-assessment-rob",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rct-bias-assessment-rob2",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reagent-expiry-alert",
@@ -1445,11 +1445,11 @@
     },
     {
       "id": "rebuttal-letter-strategist",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "recommendation-letter-assistant",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reference-finder",
@@ -1457,7 +1457,7 @@
     },
     {
       "id": "reference-integrity-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reference-retrieval-skill",
@@ -1465,23 +1465,23 @@
     },
     {
       "id": "reference-search",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reference-style-sync",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "referral-letter-generator",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "regulatory-submission",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reporting-guideline-compliance-checker",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "reproducibility-check",
@@ -1510,11 +1510,11 @@
     },
     {
       "id": "residency-interview-prep",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "resubmission-deadline-tracker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source_commit": "63c61d38c6c4bba5128f98f0b225aa44e3fe748d"
     },
     {
@@ -1527,11 +1527,11 @@
     },
     {
       "id": "results-section-structurer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "results-section-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "retraction-watcher",
@@ -1539,15 +1539,15 @@
     },
     {
       "id": "revision-strategy-planner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "rf-model-importance-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "sample-correlation-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "sample-group-sankey-plot",
@@ -1611,7 +1611,7 @@
     },
     {
       "id": "semantic-consistency-auditor",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "semantic-scholar-database",
@@ -1655,7 +1655,7 @@
     },
     {
       "id": "slide-deck-for-lab-meeting",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "smart-journal-monitor",
@@ -1663,7 +1663,7 @@
     },
     {
       "id": "smiles-de-salter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "spreadsheet-ops",
@@ -1671,7 +1671,7 @@
     },
     {
       "id": "ssgsea-immune-infiltration-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "statistical-analysis-advisor",
@@ -1687,7 +1687,7 @@
     },
     {
       "id": "study-limitations-drafter",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "study-objective-refiner",
@@ -1695,19 +1695,19 @@
     },
     {
       "id": "style-journal-rewrite",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "survival-curve-risk-table",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "svm-model-importance-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "systematic-review",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "systematic-review-screener",
@@ -1723,11 +1723,11 @@
     },
     {
       "id": "table-narrative-writer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "target-journal-matcher",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "text-to-technical-roadmap",
@@ -1735,19 +1735,19 @@
     },
     {
       "id": "tf-target-gene-regulatory-network",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "time-dependent-roc",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "title-and-abstract-optimizer",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "tooluniverse-clinical-trial-design",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "tooluniverse-clinical-trial-matching",
@@ -1795,7 +1795,7 @@
     },
     {
       "id": "umap-tsne-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "uniprot-database",
@@ -1807,7 +1807,7 @@
     },
     {
       "id": "unstructured-medical-text-miner",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "upset-plot-converter",
@@ -1819,7 +1819,7 @@
     },
     {
       "id": "variant-annotation",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "variant-pathogenicity-predictor",
@@ -1831,7 +1831,7 @@
     },
     {
       "id": "venue-templates",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "virtual-patient-roleplay",
@@ -1839,11 +1839,11 @@
     },
     {
       "id": "visual-content-desc",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "volcano-plot-labeler",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "volcano-plot-script",
@@ -1855,19 +1855,19 @@
     },
     {
       "id": "western-blot-quantifier",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "wgcna-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "word-read-write",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "xgboost-analysis",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "id": "zinc-database",
