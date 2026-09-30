@@ -93,6 +93,16 @@ The ZIP contains `<skill-id>/SKILL.md` and that Skill's regular files, without
 explicit directory entries. Files/Skills are sorted; DOS ZIP time is fixed to
 1980-01-01 00:00:00 in local calendar fields. Compression uses pinned fflate.
 
+Newly built packages exclude files with any dot-prefixed path segment, including
+`.Rhistory`, `.gitignore`, `.env.template` and files in `.github/` or `.bin/`.
+The builder validates the complete input before exclusion: hidden paths cannot
+bypass path safety, reserved App filenames, file-type checks or resource limits.
+Package content hashes, file counts, expanded sizes and shard bytes all describe
+the same filtered file set. Source-review hashes and audit metrics continue to
+bind the complete upstream directory, including excluded files. Explicitly
+reviewed license evidence on an excluded path is retained under
+`LICENSES/<sha256>.txt`.
+
 | Limit                                               | Maximum |
 | --------------------------------------------------- | ------: |
 | One file                                            |  50 MiB |

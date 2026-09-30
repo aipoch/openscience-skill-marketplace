@@ -240,6 +240,33 @@ function reviewed(m, snapshot) {
   };
 }
 
+test("provider review includes hidden source files while publication excludes them", async () => {
+  const { unzipSync } = await import("fflate");
+  const m = manifest();
+  const snapshot = fixture([
+    ["skills/example-skill/scripts/.Rhistory", Buffer.alloc(0)],
+  ]);
+  const reviews = reviewed(m, snapshot);
+  const raw = reviews["example-skill@1.0.0"];
+  assert.equal(raw.fileCount, 2);
+  assert.notEqual(
+    raw.contentSha256,
+    inspectSubmission(m, fixture()).reviewInput.contentSha256,
+  );
+  const built = buildCatalog([prepareSubmission(m, snapshot, reviews, config)]);
+  const listing = built.root.skills[0];
+  const archive = unzipSync(built.objects.get(listing.artifact.path));
+  assert.equal(
+    Object.keys(archive).some((path) => path.includes(".Rhistory")),
+    false,
+  );
+  assert.equal(Object.keys(archive).length, 2); // SKILL.md and the license copy.
+  assert.throws(
+    () => prepareSubmission(m, fixture(), reviews, config),
+    /reviewed package bytes changed/,
+  );
+});
+
 test("provider manifest is strict, uses existing categories/SemVer and excludes platform metadata", () => {
   validateReleaseConfig(manifest());
   parseReleaseConfig(

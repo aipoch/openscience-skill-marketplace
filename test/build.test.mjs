@@ -1,6 +1,174 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { makeCandidate } from "./fixtures.mjs";
+test("cleaning a historical shard requires new versions and retains original objects", async () => {
+  const { buildCatalog } = await import("../scripts/lib/build.mjs");
+  const { inspectSkill } = await import("../scripts/lib/package.mjs");
+  const { sha256, jsonBytes } = await import("../scripts/lib/common.mjs");
+  const { zipSync, unzipSync } = await import("fflate");
+  const alpha = makeCandidate("alpha"),
+    beta = makeCandidate("beta");
+  const clean = buildCatalog([alpha, beta]);
+  beta.files.push({
+    path: ".Rhistory",
+    bytes: Buffer.alloc(0),
+    mode: "100644",
+  });
+  // Construct the previously published shape independently of the new builder.
+  const oldZip = Buffer.from(
+    zipSync(
+      Object.fromEntries(
+        [alpha, beta].flatMap((c) =>
+          c.files.map((f) => [`${c.skill.id}/${f.path}`, f.bytes]),
+        ),
+      ),
+    ),
+  );
+  const oldPath = `shards/${sha256(oldZip)}.zip`;
+  const history = new Map([[oldPath, oldZip]]);
+  for (const c of [alpha, beta]) {
+    const path = `releases/${c.skill.id}/1.0.0.json`;
+    const descriptor = JSON.parse(clean.objects.get(path));
+    const metrics = inspectSkill({ id: c.skill.id, files: c.files });
+    descriptor.package = {
+      content_sha256: metrics.contentSha256,
+      file_count: metrics.fileCount,
+      uncompressed_bytes: metrics.totalBytes,
+    };
+    descriptor.artifact = {
+      ...descriptor.artifact,
+      path: oldPath,
+      sha256: sha256(oldZip),
+      bytes: oldZip.length,
+    };
+    history.set(path, jsonBytes(descriptor));
+  }
+  assert.throws(
+    () => buildCatalog([alpha, beta], { history }),
+    /immutable release changed: releases\/beta\/1.0.0.json/,
+  );
+  for (const c of [alpha, beta]) c.skill.version = "1.0.1";
+  const next = buildCatalog([alpha, beta], { history });
+  for (const [path, bytes] of history)
+    assert.ok(next.objects.get(path).equals(bytes));
+  for (const listing of next.root.skills) {
+    assert.notEqual(listing.artifact.path, oldPath);
+    assert.equal(
+      Object.keys(unzipSync(next.objects.get(listing.artifact.path))).some(
+        (path) => path.includes(".Rhistory"),
+      ),
+      false,
+    );
+  }
+});
+
+test("a neighbor's hidden files are excluded from the shared shard and authenticated package metrics", async () => {
+  const { buildCatalog, loadCatalog } =
+    await import("../scripts/lib/build.mjs");
+  const { contentDigest } = await import("../scripts/lib/package.mjs");
+  const { unzipSync } = await import("fflate");
+  const alpha = makeCandidate("abstract-summarizer");
+  const beta = makeCandidate("conference-abstract-writer");
+  const clean = buildCatalog([alpha, beta]);
+  beta.files.push({
+    path: ".Rhistory",
+    bytes: Buffer.alloc(0),
+    mode: "100644",
+  });
+  const built = buildCatalog([alpha, beta]);
+  assert.ok(built.rootBytes.equals(clean.rootBytes));
+  const shardPath = built.root.skills[0].artifact.path;
+  assert.equal(built.root.skills[1].artifact.path, shardPath);
+  const archive = unzipSync(built.objects.get(shardPath));
+  assert.deepEqual(Object.keys(archive), [
+    "abstract-summarizer/SKILL.md",
+    "conference-abstract-writer/SKILL.md",
+  ]);
+  for (const listing of built.root.skills) {
+    const descriptor = JSON.parse(built.objects.get(listing.release.path));
+    const files = [
+      {
+        path: "SKILL.md",
+        bytes: Buffer.from(archive[`${listing.id}/SKILL.md`]),
+      },
+    ];
+    assert.deepEqual(descriptor.package, {
+      content_sha256: contentDigest(files),
+      file_count: 1,
+      uncompressed_bytes: files[0].bytes.length,
+    });
+  }
+  await loadCatalog(built.rootBytes, async (path) => built.objects.get(path));
+});
+
+test("hidden license evidence survives packaging while review hashes bind every source file", async () => {
+  const { prepareCandidates } = await import("../scripts/lib/prepare.mjs");
+  const { buildCatalog } = await import("../scripts/lib/build.mjs");
+  const { contentDigest } = await import("../scripts/lib/package.mjs");
+  const { sha256 } = await import("../scripts/lib/common.mjs");
+  const { unzipSync } = await import("fflate");
+  const c = makeCandidate("example");
+  const license = Buffer.from("Required license notice");
+  c.files.push(
+    { path: ".legal/LICENSE", bytes: license, mode: "100644" },
+    { path: ".Rhistory", bytes: Buffer.alloc(0), mode: "100644" },
+  );
+  const prefix = c.skill.source.path + "/";
+  const input = new Map(c.files.map((f) => [prefix + f.path, f.bytes]));
+  const snapshot = {
+    files: [...input].map(([path, bytes]) => ({
+      path,
+      size: bytes.length,
+      mode: "100644",
+    })),
+    read: (paths) => new Map(paths.map((path) => [path, input.get(path)])),
+  };
+  const audit = {
+    entries: [
+      {
+        id: "example",
+        version: "1.0.0",
+        source: c.skill.source,
+        description: c.skill.summary,
+        declaredLicense: "MIT",
+        category: "Other",
+        issues: [],
+      },
+    ],
+  };
+  const review = {
+    sourceCommit: c.skill.source.commit,
+    contentSha256: contentDigest(c.files),
+    reviewedBy: "Test-only reviewer",
+    reviewedOn: "2026-09-30",
+    licenseExpression: "MIT",
+    licenseFiles: [
+      { path: prefix + ".legal/LICENSE", sha256: sha256(license) },
+    ],
+  };
+  const prepare = () =>
+    prepareCandidates(
+      audit,
+      { "example@1.0.0": review },
+      { publisher: c.skill.publisher },
+      snapshot,
+    );
+  const built = buildCatalog(prepare());
+  const archive = unzipSync(
+    built.objects.get(built.root.skills[0].artifact.path),
+  );
+  assert.deepEqual(Object.keys(archive).sort(), [
+    `example/LICENSES/${sha256(license)}.txt`,
+    "example/SKILL.md",
+  ]);
+  assert.deepEqual(
+    Buffer.from(archive[`example/LICENSES/${sha256(license)}.txt`]),
+    license,
+  );
+  input.set(prefix + ".Rhistory", Buffer.from("unreviewed change"));
+  assert.throws(prepare, /reviewed package bytes changed/);
+});
+
 test("catalog snapshots authenticate immutable details and reuse old shard associations when neighbors change", async () => {
   const { buildCatalog } = await import("../scripts/lib/build.mjs");
   const a = makeCandidate("alpha"),
