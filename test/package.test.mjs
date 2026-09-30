@@ -14,6 +14,49 @@ const skill = (id = "example", extra = []) => ({
     ...extra,
   ],
 });
+test("shards exclude hidden paths before hashing without weakening source safety", async () => {
+  const { buildShards, contentDigest } =
+    await import("../scripts/lib/package.mjs");
+  const clean = skill("example", [
+    { path: "scripts/run.R", bytes: Buffer.from("print(1)"), mode: "100644" },
+    {
+      path: "docs/config.example",
+      bytes: Buffer.from("example"),
+      mode: "100644",
+    },
+  ]);
+  const hidden = [
+    ".Rhistory",
+    "scripts/.Rhistory",
+    ".gitignore",
+    ".env.template",
+    "node_modules/.bin/tool",
+    ".github/workflows/ci.yml",
+  ].map((path) => ({ path, bytes: Buffer.alloc(0), mode: "100644" }));
+  const input = { ...clean, files: [...clean.files, ...hidden] };
+  const before = structuredClone(input);
+  const [shard] = buildShards([input]);
+  assert.ok(shard.bytes.equals(buildShards([clean])[0].bytes));
+  assert.equal(shard.skills[0].contentSha256, contentDigest(clean.files));
+  assert.equal(shard.skills[0].fileCount, clean.files.length);
+  assert.deepEqual(structuredClone(input), before);
+  for (const file of [
+    { path: ".cache/../secret", mode: "100644" },
+    { path: ".SOURCE.JSON", mode: "100644" },
+    { path: ".specialist-package.json", mode: "100644" },
+    { path: ".link", mode: "120000" },
+  ])
+    assert.throws(
+      () =>
+        buildShards([skill("example", [{ ...file, bytes: Buffer.from("x") }])]),
+      /path|reserved|symlink/,
+    );
+  assert.throws(
+    () => buildShards([input], { maxFiles: clean.files.length }),
+    /count/,
+  );
+});
+
 test("deterministic shards keep complete Skill roots, stable content digests and canonical ZIP bytes", async () => {
   const { buildShards } = await import("../scripts/lib/package.mjs");
   const a = skill("alpha", [

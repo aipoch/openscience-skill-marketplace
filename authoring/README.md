@@ -64,8 +64,12 @@ eight path segments and a 4 MiB `SKILL.md` preview. Symlinks, submodules, nested
 Skills, reserved App files and case-colliding paths are rejected. Content is not
 silently removed to fit a limit. List required license notices in `license_files`,
 including evidence outside the Skill directory. After review, the builder retains
-those external notices under `LICENSES/<sha256>.txt` in the distributed package;
-files already inside the directory keep their original paths.
+those external notices under `LICENSES/<sha256>.txt` in the distributed package.
+Publication excludes every dot-prefixed path segment, including `.Rhistory`,
+`.env.template` and hidden directories, after validating the complete source.
+Keep runtime resources on non-hidden paths. Reviewed license evidence inside a
+hidden path is also copied to `LICENSES/<sha256>.txt`; other evidence inside the
+directory keeps its original path.
 
 Providers do **not** submit `eval_report_*`, `evaluation`, `inclusionTier`,
 `collection`, publisher identity, signatures, hashes or shard/download locations.
@@ -105,9 +109,11 @@ Review the source, attribution, license scope, bundled notices and exact package
 bytes. Copy the generated JSON map to a local review file and add `reviewed_by`
 and `reviewed_on` (`YYYY-MM-DD`) to the version's record only after that review.
 The build retains reviewed external license evidence under
-`LICENSES/<sha256>.txt`; evidence inside the Skill remains at its original path.
+`LICENSES/<sha256>.txt`; evidence inside the Skill remains at its original path
+unless that path is hidden, in which case it receives the same license-copy treatment.
 Review-input hashes and metrics describe the source directory. Published package
-hashes and metrics also include added license files. See
+hashes and metrics exclude hidden paths and include added license files. Source
+reviews still bind excluded files; changing them requires renewed review. See
 [license packaging](../skills/README.md#review-records) for collision, size and
 notice-retention rules. Preserve the complete required notices when selecting
 evidence; copying an unrelated license does not approve third-party content.

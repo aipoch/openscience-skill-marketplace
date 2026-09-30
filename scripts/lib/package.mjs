@@ -96,6 +96,24 @@ export function inspectSkill(skill, overrides = {}) {
     previewBytes,
   };
 }
+
+export const isHiddenPackagePath = (path) =>
+  path.split("/").some((part) => part.startsWith("."));
+
+// Review hashes bind the complete source. Only published metrics and ZIP bytes
+// exclude hidden paths; validate the original input before removing anything.
+export function prepareSkillPackage(skill, overrides = {}) {
+  const sourceMetrics = inspectSkill(skill, overrides);
+  const files = skill.files.filter((file) => !isHiddenPackagePath(file.path));
+  return {
+    files,
+    metrics:
+      files.length === skill.files.length
+        ? sourceMetrics
+        : inspectSkill({ ...skill, files }, overrides),
+  };
+}
+
 function pack(skills) {
   const entries = Object.create(null);
   for (const skill of skills)
@@ -116,7 +134,7 @@ export function buildShards(input, overrides = {}) {
     .map((skill) => {
       if (seen.has(skill.id)) throw new Error("duplicate Skill ID");
       seen.add(skill.id);
-      return { ...skill, metrics: inspectSkill(skill, limits) };
+      return { ...skill, ...prepareSkillPackage(skill, limits) };
     });
   const result = [];
   let current = [];

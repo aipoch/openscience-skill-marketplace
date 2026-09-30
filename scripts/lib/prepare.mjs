@@ -1,7 +1,11 @@
 import { lstat, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { assertPath, assertSource, sha256 } from "./common.mjs";
-import { contentDigest, inspectSkill } from "./package.mjs";
+import {
+  contentDigest,
+  inspectSkill,
+  isHiddenPackagePath,
+} from "./package.mjs";
 import { evaluationToWire } from "./protocol.mjs";
 import { sourceUrl } from "./catalog.mjs";
 
@@ -182,7 +186,8 @@ export function prepareCandidates(
       if (sha256(bytes) !== file.sha256)
         throw new Error(`license evidence changed: ${file.path}`);
       if (
-        !file.path.startsWith(entry.source.path + "/") &&
+        (!file.path.startsWith(entry.source.path + "/") ||
+          isHiddenPackagePath(file.path.slice(entry.source.path.length + 1))) &&
         !bundledEvidence.has(file.sha256)
       ) {
         files.push({

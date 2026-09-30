@@ -1,4 +1,4 @@
-import { buildShards, inspectSkill } from "./package.mjs";
+import { buildShards, prepareSkillPackage } from "./package.mjs";
 import { jsonBytes, sha256, utf8Compare, assertPath } from "./common.mjs";
 import { validateDocument } from "./protocol.mjs";
 
@@ -21,10 +21,13 @@ export function buildCatalog(
   for (const candidate of [...candidates].sort((a, b) =>
     utf8Compare(a.skill.id, b.skill.id),
   )) {
-    const { skill, files } = candidate;
+    const { skill } = candidate;
     if (seen.has(skill.id)) throw new Error("duplicate current Skill ID");
     seen.add(skill.id);
-    const metrics = inspectSkill({ id: skill.id, files });
+    const { files, metrics } = prepareSkillPackage({
+      id: skill.id,
+      files: candidate.files,
+    });
     const packageInfo = {
       content_sha256: metrics.contentSha256,
       file_count: metrics.fileCount,
@@ -52,7 +55,7 @@ export function buildCatalog(
           `missing or corrupt historical shard: ${old.artifact.path}`,
         );
       descriptors.set(skill.id, old);
-    } else pending.push({ ...candidate, packageInfo, releasePath });
+    } else pending.push({ ...candidate, files, packageInfo, releasePath });
   }
   for (const shard of buildShards(
     pending.map((c) => ({ id: c.skill.id, files: c.files })),

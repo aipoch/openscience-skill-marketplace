@@ -1,5 +1,23 @@
 # Batch publication and recovery
 
+## Hidden-file packaging and existing releases
+
+New builds validate the complete reviewed source, then exclude dot-prefixed files
+and directories from the published package. The complete source remains bound to
+its existing review hash; package hashes and metrics describe the filtered files
+plus required license copies. This changes no review schema, protocol enum,
+database state or storage layout.
+
+Existing release descriptors and ZIPs remain immutable. Cleaning a previously
+published Skill changes its content hash even when the removed file is empty;
+rebuilding it at the same version fails with `immutable release changed`.
+Prepare separately reviewed new versions to distribute corrected packages.
+Unchanged neighbors still reuse their original shard association, so repairing
+an affected shard also requires new versions for neighbors that must move to a
+clean shard. Retained historical objects are not rewritten or filtered during
+loading. This tooling fix alone does not repair installed or cached packages,
+update production selections, sign releases or publish to either mirror.
+
 The combined release selects 396 reviewed Skills: 394 original members plus
 `scientific-brainstorming` and `get-available-resources` from K-Dense at `1.0.0`.
 The original authority retains 190 deferrals. See
