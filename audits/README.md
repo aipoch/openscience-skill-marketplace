@@ -71,9 +71,13 @@ so this change does not remove existing installed packages or historical release
 repository-relative directory and the report's exact `meta.skill_name`, never a
 global name-only lookup. `get-available-resources` and `scientific-brainstorming`
 are explicitly excluded from this batch.
+The clean-shard version update rebinds 120 existing display records to `1.0.1`
+and their verified new package digests. Report bytes, source attribution and
+`submitted-material` scope do not change. The complete 776-member submission
+register remains a historical record of the original `1.0.0` intake.
 They are not among the 776 supplied Skill directories. The 430 records are
-exact-version display bindings for the previously inspected 432-entry production
-catalog, **not** the full submission count. An updated production source or package
+exact-version display bindings for the current production catalog,
+**not** the full submission count. An updated production source or package
 digest intentionally stops matching an old binding until its mapping is reviewed.
 
 Reports are preserved byte-for-byte under their SHA-256 names. They are evidence,

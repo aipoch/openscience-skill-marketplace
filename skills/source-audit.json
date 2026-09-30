@@ -13,7 +13,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/abstract-summarizer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -93,7 +93,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/academic-abstract-refiner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -133,7 +133,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/academic-highlight-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -173,7 +173,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/adverse-event-narrative",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -213,7 +213,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/anatomy-quiz-master",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -253,7 +253,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/anki-card-creator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -293,7 +293,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/arxiv-preflight",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -333,7 +333,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/author-response-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -413,7 +413,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/automated-soap-note-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -453,7 +453,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/biomed-outline-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -493,7 +493,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/biotech-pitch-deck-narrative",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -533,7 +533,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/blind-review-sanitizer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -613,7 +613,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/claim-strength-calibrator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -693,7 +693,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/conference-abstract-adaptor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -733,7 +733,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/conference-abstract-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -773,7 +773,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/conference-poster-pitch",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -813,7 +813,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/consistency-checker-across-manuscript",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -853,7 +853,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/cover-letter-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -933,7 +933,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/dei-statement-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1053,7 +1053,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/discussion-composer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1133,7 +1133,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/ectd-xml-compiler",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1213,7 +1213,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/faq-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1253,7 +1253,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/figure-legend-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1293,7 +1293,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/figure-legend-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1333,7 +1333,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/figure-reference-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1489,7 +1489,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/grant-budget-justification",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1529,7 +1529,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/grant-mock-reviewer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1569,7 +1569,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/grant-proposal-assistant",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1609,7 +1609,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/grant-specific-aims-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1689,7 +1689,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/graphical-abstract-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1769,7 +1769,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/iacuc-protocol-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1809,7 +1809,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/introduction-logic-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1849,7 +1849,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/introduction-section-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1929,7 +1929,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/journal-club-presenter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2009,7 +2009,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/labarchive-integration",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2049,7 +2049,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/latex-manuscript-format-converter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2129,7 +2129,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/lay-press-release-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2169,7 +2169,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/lay-summary-for-cross-disciplinary-teams",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2209,7 +2209,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/lay-summary-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2249,7 +2249,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/limitation-and-risk-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2369,7 +2369,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/market-access-value",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2409,7 +2409,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-cv-resume-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2449,7 +2449,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-device-mdr-auditor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2489,7 +2489,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-email-polisher",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2529,7 +2529,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/medical-english-precision-editor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2569,7 +2569,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-imaging-review",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2649,7 +2649,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-scribe-dictation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2689,7 +2689,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medical-translation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2729,7 +2729,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/medication-adherence-message-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2769,7 +2769,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meeting-minutes",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2809,7 +2809,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-analysis-methods-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2849,7 +2849,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-baseline-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2929,7 +2929,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-forest-plot-analyzer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2969,7 +2969,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-funnel-plot-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3009,7 +3009,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-risk-of-bias",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3049,7 +3049,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/meta-results-sensitivity-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3089,7 +3089,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/method-writing",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3129,7 +3129,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/methods-section-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3169,7 +3169,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/microbiome-diversity-reporter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3209,7 +3209,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/moa-explainer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3289,7 +3289,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/networking-email-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3329,7 +3329,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/nih-biosketch-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3369,7 +3369,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/nsfc-grant-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3478,7 +3478,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/patent-assistant",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3518,7 +3518,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/patient-recruitment-ad-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3558,7 +3558,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/peer-review",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3598,7 +3598,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/peer-review-response-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3678,7 +3678,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/poster-layout-planner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3718,7 +3718,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/poster-storyline-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3758,7 +3758,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/presentation-hook",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3798,7 +3798,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/prior-auth-letter-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3838,7 +3838,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/q-and-a-prep-partner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3918,7 +3918,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/rebuttal-letter-strategist",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3958,7 +3958,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/recommendation-letter-assistant",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3998,7 +3998,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/reference-integrity-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4038,7 +4038,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/reference-style-sync",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4078,7 +4078,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/referral-letter-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4118,7 +4118,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/regulatory-submission",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4158,7 +4158,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/reporting-guideline-compliance-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4198,7 +4198,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/residency-interview-prep",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4318,7 +4318,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/results-section-structurer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4358,7 +4358,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/results-section-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4398,7 +4398,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/revision-strategy-planner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4478,7 +4478,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/semantic-consistency-auditor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4518,7 +4518,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/slide-deck-for-lab-meeting",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4558,7 +4558,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/study-limitations-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4598,7 +4598,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/style-journal-rewrite",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4638,7 +4638,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/systematic-review",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4678,7 +4678,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/table-narrative-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4718,7 +4718,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/target-journal-matcher",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4758,7 +4758,7 @@
       "category": "Academic Writing",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Academic Writing/title-and-abstract-optimizer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4878,7 +4878,7 @@
       "category": "Academic Writing",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Academic Writing/visual-content-desc",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4918,7 +4918,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/adme-property-predictor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4958,7 +4958,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/anndata",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5038,7 +5038,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/batch-effect-correction",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5073,7 +5073,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/bio-causal-genomics-mediation-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5113,7 +5113,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/bio-causal-genomics-pleiotropy-detection",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5153,7 +5153,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/biopython",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5233,7 +5233,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/biopython-alignment",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5393,7 +5393,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/bioservices",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5473,7 +5473,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/cerna-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5588,7 +5588,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/clinical-data-cleaner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5668,7 +5668,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/cobrapy",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5868,7 +5868,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/3d-molecule-ray-tracer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5897,7 +5897,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/data-stats-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5937,7 +5937,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/data-transform",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5977,7 +5977,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/decision-curve-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6012,7 +6012,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/decision-tree-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6092,7 +6092,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/deg-screening-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6132,7 +6132,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/diagnostic-study-quality-assessment-quadas-2",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6161,7 +6161,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/differential-expression-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6280,7 +6280,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/epidemiology",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6320,7 +6320,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/estimate-immune-score-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6355,7 +6355,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/etetoolkit",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6395,7 +6395,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/experimental-data-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6475,7 +6475,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/external-model-validation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6510,7 +6510,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/facs-gating-viz-style",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6590,7 +6590,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/flowio",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6670,7 +6670,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/gene-protein-expression-matrix-normalization",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6710,7 +6710,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/gene-structure-mapper",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6750,7 +6750,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/geniml",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6790,7 +6790,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/geopandas",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6870,7 +6870,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/graphical-abstract-wizard",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6910,7 +6910,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/gsea",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6950,7 +6950,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/gsva-analysis-and-visualization",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -6985,7 +6985,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/gtars",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7025,7 +7025,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/heatmap-beautifier",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7104,7 +7104,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/histolab",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7144,7 +7144,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/immune-pathway-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7184,7 +7184,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/km-survival-curve",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7224,7 +7224,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/knn-imputation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7259,7 +7259,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/lab-budget-forecaster",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7378,7 +7378,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/LightGBM-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7418,7 +7418,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/lipinski-rule-filter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7458,7 +7458,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/lncrna-regulatory-network-construction-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7498,7 +7498,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/matchms",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7578,7 +7578,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/mechanism-flowchart",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7734,7 +7734,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-baujat-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7774,7 +7774,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-criteria-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7814,7 +7814,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-feasibility-analyzer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7854,7 +7854,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-forest-binary-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7894,7 +7894,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-forest-continuous-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7934,7 +7934,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-forest-model-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -7974,7 +7974,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-funnel-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -8014,7 +8014,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/meta-picos-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -8323,7 +8323,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/model-calibration-curve",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -8507,7 +8507,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/nomogram-construction",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -8702,7 +8702,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/pca-dimensionality-reduction",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -8875,7 +8875,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/probast-quality-assessment-for-prediction-model-studies",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -8955,7 +8955,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/pseudotime-trajectory-viz",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9184,7 +9184,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/quadas-c-assessment-for-diagnostic-accuracy-studies",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9224,7 +9224,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/quality-assessment",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9264,7 +9264,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/quapas-quality-assessment-for-prognosis-studies",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9304,7 +9304,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/rct-bias-assessment-rob2",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9333,7 +9333,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/rf-model-importance-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9452,7 +9452,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/sample-correlation-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -9927,7 +9927,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/smiles-de-salter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10007,7 +10007,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/ssgsea-immune-infiltration-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10207,7 +10207,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/survival-curve-risk-table",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10247,7 +10247,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/svm-model-importance-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10367,7 +10367,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/tf-target-gene-regulatory-network",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10402,7 +10402,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/time-dependent-roc",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10551,7 +10551,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/umap-tsne-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10705,7 +10705,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/volcano-plot-labeler",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10785,7 +10785,7 @@
       "category": "Data Analysis",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Data Analysis/western-blot-quantifier",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10825,7 +10825,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/wgcna-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -10865,7 +10865,7 @@
       "category": "Data Analysis",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Data Analysis/XGBoost-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -12385,7 +12385,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/diagnostic-study-quality-assessment-quadas-2",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -12505,7 +12505,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/drug-interaction-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -12625,7 +12625,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/emerging-topic-scout",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -13585,7 +13585,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/journal-matchmaker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -13665,7 +13665,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/kegg-api",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -13825,7 +13825,7 @@
       "category": "Evidence Insight",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Evidence Insight/litbase",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -14985,7 +14985,7 @@
       "category": "Evidence Insight",
       "collection": "awesome-med-research-skills",
       "source_path": "awesome-med-research-skills/Evidence Insight/preprint-surveillance-finder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -15225,7 +15225,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/rare-disease-hpo-mapper",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -15265,7 +15265,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/rct-bias-assessment-rob2",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -15465,7 +15465,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/reference-search",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -16385,7 +16385,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/unstructured-medical-text-miner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -16425,7 +16425,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/variant-annotation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -16465,7 +16465,7 @@
       "category": "Evidence Insight",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Evidence Insight/venue-templates",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -17329,7 +17329,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/conference-tweet-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -17729,7 +17729,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/experiment-detail-comparator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -17969,7 +17969,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/html-to-pdf",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -18129,7 +18129,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/iso-13485-certification",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -19260,7 +19260,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/postdoc-fellowship-matcher",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -19580,7 +19580,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/resubmission-deadline-tracker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -20260,7 +20260,7 @@
       "category": "Other",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Other/word-read-write",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -20726,7 +20726,7 @@
       "category": "Protocol Design",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Protocol Design/clinical-trial-protocol-skill",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -21464,7 +21464,7 @@
       "category": "Protocol Design",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Protocol Design/inclusion-criteria-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -22831,7 +22831,7 @@
       "category": "Protocol Design",
       "collection": "scientific-skills",
       "source_path": "scientific-skills/Protocol Design/tooluniverse-clinical-trial-design",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",

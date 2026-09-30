@@ -74,7 +74,7 @@
     {
       "schema_version": 1,
       "id": "complexa-target",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Data Analysis",
       "source": {
         "repository": "https://github.com/NVIDIA-BioNeMo/bionemo-agent-toolkit",
@@ -249,7 +249,7 @@
     {
       "schema_version": 1,
       "id": "hierarchical-clustering-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Data Analysis",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
@@ -488,7 +488,7 @@
     {
       "schema_version": 1,
       "id": "nature-academic-search",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Evidence Insight",
       "source": {
         "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -500,7 +500,7 @@
     {
       "schema_version": 1,
       "id": "nature-citation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Academic Writing",
       "source": {
         "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -512,7 +512,7 @@
     {
       "schema_version": 1,
       "id": "nature-downloader",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Evidence Insight",
       "source": {
         "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -536,7 +536,7 @@
     {
       "schema_version": 1,
       "id": "nature-image2ppt",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Academic Writing",
       "source": {
         "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -560,7 +560,7 @@
     {
       "schema_version": 1,
       "id": "nature-paper-to-patent",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Academic Writing",
       "source": {
         "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -575,7 +575,7 @@
     {
       "schema_version": 1,
       "id": "nature-ref-verifier",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Evidence Insight",
       "source": {
         "repository": "https://github.com/Yuan1z0825/nature-skills",
@@ -713,7 +713,7 @@
     {
       "schema_version": 1,
       "id": "pyhealth",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Data Analysis",
       "source": {
         "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
@@ -827,7 +827,7 @@
     {
       "schema_version": 1,
       "id": "string-database",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Evidence Insight",
       "source": {
         "repository": "https://github.com/google-deepmind/science-skills",

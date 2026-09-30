@@ -644,7 +644,13 @@ test("committed release retains prior members and pins the repaired skill separa
   );
   assert.ok(selectedIds.includes("paper-lookup"));
   for (const id of retainedIds) assert.ok(selectedIds.includes(id), id);
-  assert.ok(selected.every(({ version }) => version === "1.0.0"));
+  assert.equal(
+    selected.filter(({ version }) => version === "1.0.1").length,
+    190,
+  );
+  assert.ok(
+    selected.every(({ version }) => ["1.0.0", "1.0.1"].includes(version)),
+  );
   assert.deepEqual(
     parseMetadataJson(bytes)
       .deferred.map((entry) => entry.id)
@@ -664,14 +670,32 @@ test("committed release retains prior members and pins the repaired skill separa
     await readFile(new URL("../authoring/production.json", import.meta.url)),
     selected,
   );
+  const current = [...selected, ...providers];
+  const upgraded = current.filter(({ version }) => version === "1.0.1");
+  assert.equal(upgraded.length, 200);
+  assert.equal(
+    upgraded.filter(({ id }) => providers.some((p) => p.id === id)).length,
+    10,
+  );
+  assert.equal(
+    sha256(
+      Buffer.from(
+        upgraded
+          .map(({ id }) => id)
+          .sort()
+          .join("\n") + "\n",
+      ),
+    ),
+    "6a686871b6fba3f0606d419364ef4183cc45f0e76037d876c5afd595eaf6d30e",
+  );
   assert.deepEqual(
     Object.entries(reviews)
       .filter(([, review]) => review.reviewedBy)
       .map(([key]) => key)
       .sort(),
     [
-      ...selected.map(({ id, version }) => `${id}@${version}`),
-      ...providers.map(({ id, version }) => `${id}@${version}`),
+      ...current.map(({ id, version }) => `${id}@${version}`),
+      ...upgraded.map(({ id }) => `${id}@1.0.0`),
     ].sort(),
   );
   assert.equal(reviews["abstract-trimmer@1.0.0"].reviewedBy, "ewen-poch");

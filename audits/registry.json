@@ -6,7 +6,7 @@
   "entries": [
     {
       "id": "abstract-summarizer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -30,7 +30,7 @@
     },
     {
       "id": "academic-abstract-refiner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -54,7 +54,7 @@
     },
     {
       "id": "academic-highlight-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -114,7 +114,7 @@
     },
     {
       "id": "adme-property-predictor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -138,7 +138,7 @@
     },
     {
       "id": "anatomy-quiz-master",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -162,7 +162,7 @@
     },
     {
       "id": "anki-card-creator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -174,7 +174,7 @@
     },
     {
       "id": "anndata",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -222,7 +222,7 @@
     },
     {
       "id": "arxiv-preflight",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -234,7 +234,7 @@
     },
     {
       "id": "author-response-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -246,7 +246,7 @@
     },
     {
       "id": "automated-soap-note-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -342,7 +342,7 @@
     },
     {
       "id": "bio-causal-genomics-mediation-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -354,7 +354,7 @@
     },
     {
       "id": "bio-causal-genomics-pleiotropy-detection",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -414,7 +414,7 @@
     },
     {
       "id": "biomed-outline-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -438,7 +438,7 @@
     },
     {
       "id": "biopython",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -462,7 +462,7 @@
     },
     {
       "id": "biopython-alignment",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -534,7 +534,7 @@
     },
     {
       "id": "bioservices",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -546,7 +546,7 @@
     },
     {
       "id": "biotech-pitch-deck-narrative",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -558,7 +558,7 @@
     },
     {
       "id": "blind-review-sanitizer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -726,7 +726,7 @@
     },
     {
       "id": "claim-strength-calibrator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -882,7 +882,7 @@
     },
     {
       "id": "cobrapy",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -978,7 +978,7 @@
     },
     {
       "id": "conference-abstract-adaptor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -990,19 +990,19 @@
     },
     {
       "id": "conference-abstract-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
         "path": "awesome-med-research-skills/Academic Writing/conference-abstract-writer"
       },
-      "content_sha256": "02b81c02a790d47be5e61f4524ffcb217fec1e0e7d4b7f3701d0ccadaecafcb2",
+      "content_sha256": "9c70efd53df66004e50117b14d975f8c3fe64d23da5ec99fd27190fc6fee885b",
       "report_sha256": "c7b4d0c465c6f24be244718b3a9f47677ed4bd55be838e71050cd6e300803b0d",
       "report_archive_path": "skills/aipoch__medical-research-skills/awesome-med-research-skills/Academic Writing/conference-abstract-writer/eval_report_conference-abstract-writer_result.json"
     },
     {
       "id": "conference-poster-pitch",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1038,7 +1038,7 @@
     },
     {
       "id": "consistency-checker-across-manuscript",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1110,7 +1110,7 @@
     },
     {
       "id": "cover-letter-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1170,7 +1170,7 @@
     },
     {
       "id": "d-molecule-ray-tracer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1182,7 +1182,7 @@
     },
     {
       "id": "data-stats-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1194,7 +1194,7 @@
     },
     {
       "id": "data-transform",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1218,7 +1218,7 @@
     },
     {
       "id": "dei-statement-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1242,7 +1242,7 @@
     },
     {
       "id": "discussion-composer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1398,7 +1398,7 @@
     },
     {
       "id": "ectd-xml-compiler",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1482,7 +1482,7 @@
     },
     {
       "id": "epidemiology",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1518,7 +1518,7 @@
     },
     {
       "id": "etetoolkit",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1566,7 +1566,7 @@
     },
     {
       "id": "experimental-data-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1614,7 +1614,7 @@
     },
     {
       "id": "facs-gating-viz-style",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1650,7 +1650,7 @@
     },
     {
       "id": "faq-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1686,7 +1686,7 @@
     },
     {
       "id": "figure-legend-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1698,7 +1698,7 @@
     },
     {
       "id": "figure-legend-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1710,7 +1710,7 @@
     },
     {
       "id": "figure-reference-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1746,7 +1746,7 @@
     },
     {
       "id": "flowio",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1794,7 +1794,7 @@
     },
     {
       "id": "gene-structure-mapper",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1818,7 +1818,7 @@
     },
     {
       "id": "geniml",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1866,7 +1866,7 @@
     },
     {
       "id": "geopandas",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1890,7 +1890,7 @@
     },
     {
       "id": "grant-budget-justification",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1914,7 +1914,7 @@
     },
     {
       "id": "grant-mock-reviewer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1926,7 +1926,7 @@
     },
     {
       "id": "grant-proposal-assistant",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1938,7 +1938,7 @@
     },
     {
       "id": "grant-specific-aims-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1950,7 +1950,7 @@
     },
     {
       "id": "graphical-abstract-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1962,7 +1962,7 @@
     },
     {
       "id": "gtars",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -1974,7 +1974,7 @@
     },
     {
       "id": "heatmap-beautifier",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2022,7 +2022,7 @@
     },
     {
       "id": "histolab",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2070,7 +2070,7 @@
     },
     {
       "id": "iacuc-protocol-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2142,7 +2142,7 @@
     },
     {
       "id": "introduction-logic-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2154,7 +2154,7 @@
     },
     {
       "id": "introduction-section-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2178,7 +2178,7 @@
     },
     {
       "id": "journal-club-presenter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2346,7 +2346,7 @@
     },
     {
       "id": "lab-budget-forecaster",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2382,7 +2382,7 @@
     },
     {
       "id": "labarchive-integration",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2394,7 +2394,7 @@
     },
     {
       "id": "latex-manuscript-format-converter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2418,7 +2418,7 @@
     },
     {
       "id": "lay-press-release-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2430,7 +2430,7 @@
     },
     {
       "id": "lay-summary-for-cross-disciplinary-teams",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2442,7 +2442,7 @@
     },
     {
       "id": "lay-summary-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2454,7 +2454,7 @@
     },
     {
       "id": "limitation-and-risk-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2466,7 +2466,7 @@
     },
     {
       "id": "lipinski-rule-filter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2550,7 +2550,7 @@
     },
     {
       "id": "market-access-value",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2574,7 +2574,7 @@
     },
     {
       "id": "matchms",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2586,7 +2586,7 @@
     },
     {
       "id": "mechanism-flowchart",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2646,7 +2646,7 @@
     },
     {
       "id": "medical-cv-resume-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2658,7 +2658,7 @@
     },
     {
       "id": "medical-device-mdr-auditor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2670,7 +2670,7 @@
     },
     {
       "id": "medical-email-polisher",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2682,7 +2682,7 @@
     },
     {
       "id": "medical-english-precision-editor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2694,7 +2694,7 @@
     },
     {
       "id": "medical-imaging-review",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2766,7 +2766,7 @@
     },
     {
       "id": "medical-translation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2802,7 +2802,7 @@
     },
     {
       "id": "medication-adherence-message-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2826,7 +2826,7 @@
     },
     {
       "id": "meeting-minutes",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2862,7 +2862,7 @@
     },
     {
       "id": "meta-analysis-methods-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2874,7 +2874,7 @@
     },
     {
       "id": "meta-baseline-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2886,7 +2886,7 @@
     },
     {
       "id": "meta-baujat-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2898,7 +2898,7 @@
     },
     {
       "id": "meta-criteria-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2910,7 +2910,7 @@
     },
     {
       "id": "meta-feasibility-analyzer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2922,19 +2922,19 @@
     },
     {
       "id": "meta-forest-binary-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
         "path": "scientific-skills/Data Analysis/meta-forest-binary-plot"
       },
-      "content_sha256": "766beb7da18ab918feee9981be4638dec9119e739fe7dab963424c2f9a799868",
+      "content_sha256": "04c6a1ee230e43a61190c46199bd8edb04b1fce30aa4a84efa9fa6f734b39c98",
       "report_sha256": "a3ff2e5124c466a149704e7a03a1dc9dd15d431c8f762b6d3644bf88d2612353",
       "report_archive_path": "skills/aipoch__medical-research-skills/scientific-skills/Data Analysis/meta-forest-binary-plot/eval_report_meta-forest-binary-plot_result.json"
     },
     {
       "id": "meta-forest-continuous-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2946,7 +2946,7 @@
     },
     {
       "id": "meta-forest-model-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2958,7 +2958,7 @@
     },
     {
       "id": "meta-funnel-plot",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -2970,7 +2970,7 @@
     },
     {
       "id": "meta-picos-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3006,7 +3006,7 @@
     },
     {
       "id": "meta-results-forest-plot-analyzer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3018,7 +3018,7 @@
     },
     {
       "id": "meta-results-funnel-plot-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3030,7 +3030,7 @@
     },
     {
       "id": "meta-results-risk-of-bias",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3042,7 +3042,7 @@
     },
     {
       "id": "meta-results-sensitivity-analysis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3150,7 +3150,7 @@
     },
     {
       "id": "microbiome-diversity-reporter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3198,7 +3198,7 @@
     },
     {
       "id": "moa-explainer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3318,7 +3318,7 @@
     },
     {
       "id": "networking-email-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3366,7 +3366,7 @@
     },
     {
       "id": "nih-biosketch-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3414,7 +3414,7 @@
     },
     {
       "id": "nsfc-grant-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3558,7 +3558,7 @@
     },
     {
       "id": "patent-assistant",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3594,7 +3594,7 @@
     },
     {
       "id": "patient-recruitment-ad-gen",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3666,7 +3666,7 @@
     },
     {
       "id": "peer-review",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3678,7 +3678,7 @@
     },
     {
       "id": "peer-review-response-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3774,7 +3774,7 @@
     },
     {
       "id": "poster-layout-planner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3786,7 +3786,7 @@
     },
     {
       "id": "poster-storyline-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -3822,7 +3822,7 @@
     },
     {
       "id": "presentation-hook",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4038,7 +4038,7 @@
     },
     {
       "id": "q-and-a-prep-partner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4086,7 +4086,7 @@
     },
     {
       "id": "rebuttal-letter-strategist",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4098,7 +4098,7 @@
     },
     {
       "id": "recommendation-letter-assistant",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4122,7 +4122,7 @@
     },
     {
       "id": "reference-integrity-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4146,7 +4146,7 @@
     },
     {
       "id": "reference-style-sync",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4158,7 +4158,7 @@
     },
     {
       "id": "referral-letter-generator",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4170,7 +4170,7 @@
     },
     {
       "id": "regulatory-submission",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4182,7 +4182,7 @@
     },
     {
       "id": "reporting-guideline-compliance-checker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4254,7 +4254,7 @@
     },
     {
       "id": "residency-interview-prep",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4290,7 +4290,7 @@
     },
     {
       "id": "results-section-structurer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4302,7 +4302,7 @@
     },
     {
       "id": "results-section-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4326,7 +4326,7 @@
     },
     {
       "id": "revision-strategy-planner",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4542,7 +4542,7 @@
     },
     {
       "id": "semantic-consistency-auditor",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4686,7 +4686,7 @@
     },
     {
       "id": "slide-deck-for-lab-meeting",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4770,7 +4770,7 @@
     },
     {
       "id": "study-limitations-drafter",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4794,7 +4794,7 @@
     },
     {
       "id": "style-journal-rewrite",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4806,7 +4806,7 @@
     },
     {
       "id": "systematic-review",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4854,7 +4854,7 @@
     },
     {
       "id": "table-narrative-writer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -4878,7 +4878,7 @@
     },
     {
       "id": "title-and-abstract-optimizer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",
@@ -5118,7 +5118,7 @@
     },
     {
       "id": "visual-content-desc",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": {
         "repository": "https://github.com/aipoch/medical-research-skills",
         "commit": "d92441066ea6259967469be8e0c8c7b6587928ab",

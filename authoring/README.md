@@ -194,6 +194,10 @@ explicitly maintained in [`production.json`](production.json): `schema_version: 
 and a `releases` array of the same strict release-config objects described above.
 The register selects 465 original members and 60 provider Skills: 23 K-Dense,
 26 NVIDIA BioNeMo, one Google DeepMind, nine Nature and one Medical entry. Ten releases
+in the affected published shards advance to `1.0.1`, with the same pinned source
+commits and license evidence. Their original submission configs and index remain
+historical `1.0.0` intake records; current production registration and new
+per-version reviews select the repackaged releases. Separately, ten releases
 with absent per-Skill license declarations have explicit `Unknown` reviews with
 retained license evidence. Five database Skills additionally preserve their original
 K-Dense `Unknown` declarations, authors and MIT evidence at
