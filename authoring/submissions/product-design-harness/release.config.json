@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "product-design-harness",
+  "version": "1.0.0",
+  "category": "Other",
+  "display_name": "UX3 Product Design Harness",
+  "source": {
+    "repository": "https://github.com/cis2042/ux3-product-design-harness",
+    "commit": "48965c6b501f61ebbb8130c9c2e4f9af08922b9f",
+    "path": "skills/product-design-harness"
+  },
+  "license_files": [
+    "skills/product-design-harness/SKILL.md",
+    "skills/product-design-harness/LICENSE"
+  ]
+}
